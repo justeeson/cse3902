@@ -33,7 +33,7 @@ namespace Sprint0.Sprites
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
-
+            //controll speed of moving
             if (xCoordinate >= 775)
             {
                 velocity = -3;

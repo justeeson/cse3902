@@ -29,12 +29,13 @@ namespace Sprint0.Sprites
         }
 
         public void Update()
-        {
+        {   //controll speed of animate
             timeDelay--;
+        
             if (timeDelay == 0)
             {
                 currentFrame++;
-                timeDelay = 5;
+                timeDelay = 4;
             }
             if (currentFrame == totalFrames)
                 currentFrame = 0;
