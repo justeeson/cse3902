@@ -36,6 +36,7 @@ namespace Sprint0
             texture = Content.Load<Texture2D>("Mario3");
             sprite = new NonMovingNonAnimatedMarioSprite(texture, 1, 4);
 
+            //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.W, new NonMovingNonAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
