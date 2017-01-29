@@ -10,6 +10,7 @@ using Sprint0.Command;
 
 namespace Sprint0.Controller
 {
+    // This file is used to map Keyboard keys to commands, if detect a key press then execute the commands.
     // This file is modified from http://web.cse.ohio-state.edu/~boggus/3902/slides/KeyboardController.cs
     public class KeyboardController : IController
     {
