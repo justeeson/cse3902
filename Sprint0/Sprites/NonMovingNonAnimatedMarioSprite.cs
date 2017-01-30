@@ -17,7 +17,7 @@ namespace Sprint0.Sprites
         public int Columns { get; set; }
 
         public NonMovingNonAnimatedMarioSprite(Texture2D texture, int rows, int columns)
-        {
+        {   
             Texture = texture;
             Rows = rows;
             Columns = columns;

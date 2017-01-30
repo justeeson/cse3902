@@ -29,7 +29,7 @@ namespace Sprint0.Sprites
             height = Texture.Height / Rows;
         }
         public void Update()
-        {
+        {   //controll speed
             if (Game1.yPos >= Game1.yMax - Texture.Height / Rows)
             {
                 velocity = -3;

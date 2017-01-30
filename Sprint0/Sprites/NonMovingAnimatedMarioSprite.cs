@@ -31,7 +31,6 @@ namespace Sprint0.Sprites
         public void Update()
         {   //controll speed of animate
             timeDelay--;
-        
             if (timeDelay == 0)
             {
                 currentFrame++;
