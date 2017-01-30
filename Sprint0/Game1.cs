@@ -17,6 +17,7 @@ namespace Sprint0
         public ISprite sprite;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
+        public static int xPos, yPos, xMax, yMax;
 
         public Game1()
         {
@@ -48,6 +49,11 @@ namespace Sprint0
             gamepadController.RegisterCommand(Buttons.B, new NonMovingAnimatedMarioCommand(this));
             gamepadController.RegisterCommand(Buttons.X, new MovingNonAnimatedMarioCommand(this));
             gamepadController.RegisterCommand(Buttons.Y, new MovingAnimatedMarioCommand(this));
+
+            xMax = GraphicsDevice.Viewport.Width;
+            yMax = GraphicsDevice.Viewport.Height;
+            xPos = xMax / 2;
+            yPos = yMax / 2;
         }
 
         protected override void UnloadContent()
@@ -69,8 +75,7 @@ namespace Sprint0
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            sprite.Draw(spriteBatch, new Vector2(400, 200));
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
 
             base.Draw(gameTime);
         }

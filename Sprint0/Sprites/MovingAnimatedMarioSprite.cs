@@ -18,7 +18,7 @@ namespace Sprint0.Sprites
         private int currentFrame;
         private int totalFrames;
         int velocity = 5;
-        int xCoordinate = 0;
+        //int Game1xPos = 0;
 
         public MovingAnimatedMarioSprite(Texture2D texture, int rows, int columns)
         {
@@ -33,16 +33,16 @@ namespace Sprint0.Sprites
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
-            //controll speed of moving
-            if (xCoordinate >= 775)
+            //control speed of moving
+            if (Game1.xPos >= Game1.xMax - Texture.Width / Columns)
             {
                 velocity = -3;
             }
-            else if (xCoordinate <= 0)
+            else if (Game1.xPos <= 0)
             {
                 velocity = 3;
             }
-            xCoordinate += velocity;
+            Game1.xPos += velocity;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -52,7 +52,7 @@ namespace Sprint0.Sprites
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(xCoordinate, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
