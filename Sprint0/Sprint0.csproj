@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprites\MovingNonAnimatedMarioSprite.cs" />
     <Compile Include="Sprites\MovingAnimatedMarioSprite.cs" />
+    <Compile Include="Sprites\NonMovingNonAnimatedGoombaSprite.cs" />
     <Compile Include="Sprites\NonMovingNonAnimatedMarioSprite.cs" />
     <Compile Include="Sprites\NonMovingAnimatedMarioSprite.cs" />
   </ItemGroup>
