@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0
+namespace Sprint0.Game_Object_Sprite_Classes.Enemy_Sprites
 {
-    class Turtle
+    class Boss
     {
     }
 }

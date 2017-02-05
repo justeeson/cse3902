@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Game_Object_Classes.Mario
+namespace Sprint0.Game_Object_Sprite_Classes.Mario
 {
-    class NormalMario
+    class SmallMario
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint0.Game_Object_Classes.Mario
 {
-    class NormalMario
+    class BigMario
     {
     }
 }
