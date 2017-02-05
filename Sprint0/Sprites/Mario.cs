@@ -16,7 +16,6 @@ namespace Sprint0.Sprites
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int currentFrame;
         public int totalFrames;
         private int timeDelay = 5;
 
@@ -26,7 +25,6 @@ namespace Sprint0.Sprites
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 6;
             totalFrames = Rows * Columns;
         }
 

@@ -9,21 +9,22 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.Sprites
 {
-    class StandingRightSmallMarioState : IMarioState
+    class StandingLeftSmallMarioState : IMarioState
     {
-        private Mario mario;
         private int currentFrame;
-        public StandingRightSmallMarioState(Mario mario)
+        private Mario mario;
+
+        public StandingLeftSmallMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 6;
+            currentFrame = 5;
         }
 
         public void ChangeDirection()
         {
-            mario.state = new StandingLeftSmallMarioState(mario);
+            mario.state = new StandingRightSmallMarioState(mario);
         }
-        
+
         public void Grow()
         {
 
