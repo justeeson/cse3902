@@ -9,27 +9,39 @@ using Sprint0.Interfaces;
 
 namespace Sprint0.Sprites
 {
-    class NonMovingAnimatedMarioSprite : ISprite
+    class Mario : ISprite
     {
+        public IMarioState state;
         // Modify from http://rbwhitaker.wikidot.com/monogame-texture-atlases-2
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        private int currentFrame;
-        private int totalFrames;
+        public int totalFrames;
         private int timeDelay = 5;
 
-        public NonMovingAnimatedMarioSprite(Texture2D texture, int rows, int columns)
+        public Mario(Texture2D texture, int rows, int columns)
         {
+            state = new StandingRightSmallMarioState(this);
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 0;
             totalFrames = Rows * Columns;
         }
 
+        public void ChangeDirection()
+        {
+            state.ChangeDirection();
+        }
+
+        public void Grow()
+        {
+            state.Grow();
+        }
+
         public void Update()
-        {   //controll speed of animate
+        {   //Control speed of animation
+
+            /*
             timeDelay--;
             if (timeDelay == 0)
             {
@@ -38,21 +50,12 @@ namespace Sprint0.Sprites
             }
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+                */
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            int row = (int)((float)currentFrame / (float)Columns);
-            int column = currentFrame % Columns;
-
-            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            state.Draw(spriteBatch, location);
         }
     }
 }

@@ -34,9 +34,10 @@ namespace Sprint0
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            texture = Content.Load<Texture2D>("Mario3");
-            sprite = new NonMovingNonAnimatedMarioSprite(texture, 1, 4);
+            texture = Content.Load<Texture2D>("smallMario");
+            sprite = new Mario(texture, 1, 12);
 
+            /*
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.W, new NonMovingNonAnimatedMarioCommand(this));
@@ -49,7 +50,7 @@ namespace Sprint0
             gamepadController.RegisterCommand(Buttons.B, new NonMovingAnimatedMarioCommand(this));
             gamepadController.RegisterCommand(Buttons.X, new MovingNonAnimatedMarioCommand(this));
             gamepadController.RegisterCommand(Buttons.Y, new MovingAnimatedMarioCommand(this));
-
+            */
             xMax = GraphicsDevice.Viewport.Width;
             yMax = GraphicsDevice.Viewport.Height;
             xPos = xMax / 2;
@@ -62,11 +63,13 @@ namespace Sprint0
 
         protected override void Update(GameTime gameTime)
         {
+            /*
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 Exit();
 
             keyboardController.Update();
             gamepadController.Update();
+            */
             sprite.Update();
 
             base.Update(gameTime);
@@ -76,7 +79,6 @@ namespace Sprint0
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-
             base.Draw(gameTime);
         }
     }
