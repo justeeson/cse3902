@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Sprint0.Interfaces;
+using SuperMario.Interfaces;
 
-namespace Sprint0.Controller
+namespace SuperMario.Controller
 {
     // This file is modified from http://web.cse.ohio-state.edu/~boggus/3902/slides/KeyboardController.cs
     public class GamepadController : IController

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint0.Game_Object_Sprite_Classes.Enemy_Sprites
+namespace SuperMario.Game_Object_Sprite_Classes.Enemy_Sprites
 {
     class Turtle
     {

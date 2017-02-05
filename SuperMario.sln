@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint0", "Sprint0\Sprint0.csproj", "{4B5B9E91-6989-453E-AC05-8DC2A1448966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMario", "Sprint0\SuperMario.csproj", "{4B5B9E91-6989-453E-AC05-8DC2A1448966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

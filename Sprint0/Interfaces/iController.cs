@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace Sprint0.Interfaces
+namespace SuperMario.Interfaces
 {
     public interface IController
     {

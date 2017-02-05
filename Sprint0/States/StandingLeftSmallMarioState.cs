@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Sprint0.Interfaces;
+using SuperMario.Interfaces;
 
-namespace Sprint0.Sprites
+namespace SuperMario.Sprites
 {
     class StandingLeftSmallMarioState : IMarioState
     {

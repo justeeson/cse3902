@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Sprint0.Command;
-using Sprint0.Controller;
-using Sprint0.Interfaces;
-using Sprint0.Sprites;
+using SuperMario.Command;
+using SuperMario.Controller;
+using SuperMario.Interfaces;
+using SuperMario.Sprites;
 
-namespace Sprint0
+namespace SuperMario
 {
     public class Game1 : Game
     {
