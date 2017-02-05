@@ -59,9 +59,41 @@
     <Compile Include="Command\MovingNonAnimatedMarioCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Game Object Classes\Enemy\KillerFlower.cs" />
+    <Compile Include="Game Object Classes\Enemy\Boss.cs" />
+    <Compile Include="Game Object Classes\Item\Coin.cs" />
+    <Compile Include="Game Object Classes\Item\FireMushroom.cs" />
+    <Compile Include="Game Object Classes\Item\GrownupMushroom.cs" />
+    <Compile Include="Game Object Classes\Item\Star.cs" />
+    <Compile Include="Game Object Classes\Item\Flower.cs" />
+    <Compile Include="Game Object Classes\Enemy\Turtle.cs" />
+    <Compile Include="Game Object Classes\Mario\FireMario.cs" />
+    <Compile Include="Game Object Classes\Mario\BigMario.cs" />
+    <Compile Include="Game Object Classes\Mario\SmallMario.cs" />
+    <Compile Include="Game Object Classes\Obstacle\BreakableBrick.cs" />
+    <Compile Include="Game Object Classes\Obstacle\Pipe.cs" />
+    <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrick.cs" />
+    <Compile Include="Game Object Classes\Obstacle\UnbreakableBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\Boss.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KillerFlower.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\Turtle.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\Coin.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\Flower.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroom.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\Star.cs" />
+    <Compile Include="Game Object Sprite Classes\Mario\BigMario.cs" />
+    <Compile Include="Game Object Sprite Classes\Mario\FireMario.cs" />
+    <Compile Include="Game Object Sprite Classes\Mario\SmallMario.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\Pipe.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\QuestionMarkBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\UnbreakableBrick.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Interfaces\IAnimateSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +131,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
