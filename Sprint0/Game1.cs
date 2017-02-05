@@ -37,10 +37,11 @@ namespace Sprint0
             texture = Content.Load<Texture2D>("smallMario");
             sprite = new Mario(texture, 1, 12);
 
-            /*
+            
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
-            keyboardController.RegisterCommand(Keys.W, new NonMovingNonAnimatedMarioCommand(this));
+            keyboardController.RegisterCommand(Keys.Left, new NonMovingAnimatedMarioCommand(this));
+            /*
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.T, new MovingAnimatedMarioCommand(this));
@@ -66,10 +67,11 @@ namespace Sprint0
             /*
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 Exit();
-
+                */
             keyboardController.Update();
-            gamepadController.Update();
-            */
+
+           // gamepadController.Update();
+            
             sprite.Update();
 
             base.Update(gameTime);

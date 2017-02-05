@@ -12,5 +12,6 @@ namespace Sprint0.Interfaces
     {
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
+        void ChangeDirection();
     }
 }

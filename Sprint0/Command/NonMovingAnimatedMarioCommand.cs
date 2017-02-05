@@ -20,7 +20,7 @@ namespace Sprint0.Command
 
         public void Execute()
         {
-            myGame.sprite = new Mario(myGame.texture, 1, 4);
+            myGame.sprite.ChangeDirection();
         }
     }
 }
