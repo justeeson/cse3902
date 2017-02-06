@@ -10,7 +10,6 @@ namespace SuperMario
 {
     public class Game1 : Game
     {
-        // Modified from http://rbwhitaker.wikidot.com/monogame-texture-atlases-3
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Texture2D texture;
