@@ -8,12 +8,11 @@ using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    // This file is modified from http://web.cse.ohio-state.edu/~boggus/3902/slides/KillMarioCommand.cs
-    class NonMovingAnimatedMarioCommand : ICommand
+    class ChangeDirectionCommand : ICommand
     {
         private Game1 myGame;
 
-        public NonMovingAnimatedMarioCommand(Game1 game)
+        public ChangeDirectionCommand(Game1 game)
         {
             myGame = game;
         }

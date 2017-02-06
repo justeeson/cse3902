@@ -53,7 +53,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Command\NonMovingAnimatedMarioCommand.cs" />
+    <Compile Include="Command\ChangeDirectionCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Game Object Classes\Enemy\KillerFlower.cs" />

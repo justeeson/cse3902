@@ -12,12 +12,11 @@ namespace SuperMario.Sprites
     class Mario : ISprite
     {
         public IMarioState state;
-        // Modify from http://rbwhitaker.wikidot.com/monogame-texture-atlases-2
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
-        private int timeDelay = 5;
+        //private int timeDelay = 5;
 
         public Mario(Texture2D texture, int rows, int columns)
         {

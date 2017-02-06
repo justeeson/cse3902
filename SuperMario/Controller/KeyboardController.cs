@@ -10,10 +10,8 @@ using SuperMario.Command;
 
 namespace SuperMario.Controller
 {
-    // This file is used to map Keyboard keys to commands, if detect a key press then execute the commands.
-    // This file is modified from http://web.cse.ohio-state.edu/~boggus/3902/slides/KeyboardController.cs
     public class KeyboardController : IController
-    {   //declare map of key globally
+    {
         private Dictionary<Keys, ICommand> controllerMappings;
 
         public KeyboardController()
@@ -22,7 +20,7 @@ namespace SuperMario.Controller
         }
 
         public void RegisterCommand(Keys key, ICommand command)
-        {   //add keys to the map
+        {  
             controllerMappings.Add(key, command);
         }
 

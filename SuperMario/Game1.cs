@@ -40,7 +40,8 @@ namespace SuperMario
             
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
-            keyboardController.RegisterCommand(Keys.Left, new NonMovingAnimatedMarioCommand(this));
+            keyboardController.RegisterCommand(Keys.Left, new ChangeDirectionCommand(this));
+            keyboardController.RegisterCommand(Keys.Right, new ChangeDirectionCommand(this));
             /*
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
