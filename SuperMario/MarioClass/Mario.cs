@@ -74,7 +74,7 @@ namespace SuperMario.MarioClass
 
         }
         public void Update()
-        { 
+        {
 
         }
 

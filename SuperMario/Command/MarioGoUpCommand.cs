@@ -5,25 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
-using SuperMario.Blocks;
-
 
 namespace SuperMario.Command
 {
-    class ResetCommand : ICommand
+    class MarioGoUpCommand : ICommand
     {
         private Game1 myGame;
 
-        public ResetCommand(Game1 game)
+        public MarioGoUpCommand(Game1 game)
         {
             myGame = game;
         }
+
         public void Execute()
         {
-            myGame.Mario.Small();
-            //myGame.QuestionBlock = new QuestionBlockClass(myGame);
-            //myGame.HiddenBlock = new HiddenBlockClass(myGame);
-            //myGame.BrickBlock = new BrickClass(myGame);
+            myGame.Mario.Jump();
         }
     }
 }
