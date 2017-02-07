@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class Turtle
+    class SolidBrickWithCrews
     {
         private Game1 myGame;
 
-        public Turtle(Game1 game)
+        public SolidBrickWithCrews(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateTurtle();
+            ISprite mySprite = SpriteFactory.Instance.CreateSolidBrickWithCrews();
             myGame.sprite = mySprite;
         }
     }

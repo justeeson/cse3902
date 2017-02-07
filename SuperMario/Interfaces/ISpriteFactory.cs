@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMario.Game_Object_Sprite_Classes.Enemy_Sprites
+namespace SuperMario
 {
-    class Boss
+    interface ISpriteFactory
     {
+       // IAnimatedSprite build(SpriteFactory.sprites sprite);
     }
 }

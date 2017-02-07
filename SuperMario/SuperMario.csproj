@@ -56,8 +56,7 @@
     <Compile Include="Command\ChangeDirectionCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
-    <Compile Include="Game Object Classes\Enemy\KillerFlower.cs" />
-    <Compile Include="Game Object Classes\Enemy\Boss.cs" />
+    <Compile Include="Game Object Classes\Enemy\NormalMonster.cs" />
     <Compile Include="Game Object Classes\Item\Coin.cs" />
     <Compile Include="Game Object Classes\Item\FireMushroom.cs" />
     <Compile Include="Game Object Classes\Item\GrownupMushroom.cs" />
@@ -67,33 +66,37 @@
     <Compile Include="Game Object Classes\Mario\FireMario.cs" />
     <Compile Include="Game Object Classes\Mario\BigMario.cs" />
     <Compile Include="Game Object Classes\Mario\SmallMario.cs" />
-    <Compile Include="Game Object Classes\Obstacle\BreakableBrick.cs" />
+    <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
+    <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\Pipe.cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrick.cs" />
-    <Compile Include="Game Object Classes\Obstacle\UnbreakableBrick.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\Boss.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KillerFlower.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\Turtle.cs" />
+    <Compile Include="Game Object Classes\Obstacle\SolidBrickWithCrews.cs" />
+    <Compile Include="Game Object Classes\Obstacle\SolidBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\NormalMonsterSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\TurtleSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\Coin.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\Flower.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\Star.cs" />
     <Compile Include="Game Object Sprite Classes\Mario\BigMario.cs" />
     <Compile Include="Game Object Sprite Classes\Mario\FireMario.cs" />
     <Compile Include="Game Object Sprite Classes\Mario\SmallMario.cs" />
-    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableBrick.cs" />
-    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\Pipe.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableCurlyBrickSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\PipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\QuestionMarkBrick.cs" />
-    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\UnbreakableBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickSprite.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Interfaces\IAnimateSprite.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="Interfaces\ISpriteFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpriteFactory\SpriteFactory.cs" />
     <Compile Include="Sprites\Mario.cs" />
     <Compile Include="States\StandingLeftSmallMarioState.cs" />
     <Compile Include="States\StandingRightSmallMarioState.cs" />
@@ -109,6 +112,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\coin.jpg" />
+    <Content Include="Content\breakableCurlyBrick.jpg" />
+    <Content Include="Content\flower.jpg" />
+    <Content Include="Content\brickableHorizontalBrick.jpg" />
+    <Content Include="Content\mushrooms.jpg" />
+    <Content Include="Content\pipe.jpg" />
+    <Content Include="Content\questionMarkBrick.jpg" />
+    <Content Include="Content\normalMonster.png" />
+    <Content Include="Content\solidBrick.jpg" />
+    <Content Include="Content\star.jpg" />
+    <Content Include="Content\turtle.png" />
+    <Content Include="Content\unbreakablebrickwith4screws.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

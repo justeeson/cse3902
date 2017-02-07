@@ -37,7 +37,7 @@ namespace SuperMario.Sprites
             state.Grow();
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {   //Control speed of animation
 
             /*
