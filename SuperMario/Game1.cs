@@ -15,6 +15,7 @@ namespace SuperMario
         SpriteBatch spriteBatch;
         public Texture2D texture;
         public ISprite sprite;
+        public IMario Mario;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
@@ -52,15 +53,14 @@ namespace SuperMario
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //texture = Content.Load<Texture2D>("turtle");
-            //sprite = new Mario(texture, 1, 3);
-            SpriteFactory.Instance.LoadAllTextures(Content);
-            //sprite = SpriteFactory.Instance.CreateTurtle();
-            //sprite = SpriteFactory.Instance.CreateFlower();
+            texture = Content.Load<Texture2D>("smallMario");
+            sprite = new Mario(texture, 1, 12);
+
+            
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
-            keyboardController.RegisterCommand(Keys.Left, new ChangeDirectionCommand(this));
-            keyboardController.RegisterCommand(Keys.Right, new ChangeDirectionCommand(this));
+            keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
+            keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
             /*
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
@@ -92,7 +92,7 @@ namespace SuperMario
 
            // gamepadController.Update();
             
-          //  sprite.Update(gameTime);
+            sprite.Update();
 
             base.Update(gameTime);
         }
@@ -100,34 +100,7 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            turtleObject = new Turtle(this);
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            flowerObject = new Flower(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            coinObject = new Coin(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            grownupMushroomObject = new GrownupMushroom(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            fireMushroomObject= new FireMushroom(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            starObject= new Star(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            normalMonsterObject= new NormalMonster(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            solidBrickObject= new SolidBrick(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            solidBrickWithCrewsObject= new SolidBrickWithCrews(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            questionMarkBrickObject= new QuestionMarkBrick(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            breakableHorizontalBrickObject= new BreakableHorizontalBrick(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            breakableCurlyBrickObject= new BreakableCurlyBrick(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-            pipeObject= new Pipe(this);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
-
-
             base.Draw(gameTime);
         }
     }

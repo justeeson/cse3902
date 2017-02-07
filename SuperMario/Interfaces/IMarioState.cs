@@ -9,11 +9,10 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Interfaces
 {
-    interface IMarioState
+    public interface IMarioState
     {
         void Update();
         void Grow();
-        void ChangeDirection();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }

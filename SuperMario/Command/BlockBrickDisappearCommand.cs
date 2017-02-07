@@ -8,18 +8,18 @@ using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    class ChangeDirectionCommand : ICommand
+    class BlockBrickDisappearCommand
     {
         private Game1 myGame;
 
-        public ChangeDirectionCommand(Game1 game)
+        public BlockBrickDisappearCommand(Game1 game)
         {
             myGame = game;
         }
-
         public void Execute()
-        {
-            myGame.sprite.ChangeDirection();
+        {            
+            // Brick Block object file does not exist
+            //myGame.BrickBlock.BrickToDisappear();
         }
     }
 }

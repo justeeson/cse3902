@@ -1,21 +1,17 @@
-﻿using SuperMario.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SuperMario.Interfaces;
 
-namespace SuperMario
+namespace SuperMario.Blocks
 {
-    class SolidBrick
+    interface IAnimateSprite
     {
-        private Game1 myGame;
-
-        public SolidBrick(Game1 game)
-        {
-            myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateSolidBrick();
-            myGame.sprite = mySprite;
-        }
+        void Update(GameTime gameTime);
+        void Draw(SpriteBatch spriteBatch, Vector2 location, Color color);
     }
 }

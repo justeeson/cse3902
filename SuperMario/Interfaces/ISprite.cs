@@ -12,6 +12,5 @@ namespace SuperMario.Interfaces
     {
         void Update(GameTime time);
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
-        void ChangeDirection();
     }
 }
