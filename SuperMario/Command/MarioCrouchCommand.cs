@@ -8,12 +8,11 @@ using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    class MarioLookRightCommand : ICommand
-
+    class MarioCrouchCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioLookRightCommand(Game1 game)
+        public MarioCrouchCommand(Game1 game)
         {
             myGame = game;
         }

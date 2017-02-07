@@ -8,18 +8,18 @@ using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    class MarioGoUpCommand : ICommand
+    class MarioBecomeBigCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioGoUpCommand(Game1 game)
+        public MarioBecomeBigCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.GoUp();
+            myGame.Mario.Big();
         }
     }
 }

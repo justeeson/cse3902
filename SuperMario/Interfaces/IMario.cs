@@ -16,7 +16,12 @@ namespace SuperMario.Interfaces
 
         void LookLeft();
         void LookRight();
-        void GoUp();
+        void Jump();
+        void Crouch();
+        void Big();
+        void Small();
+        void Dead();
+        void Fire();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
     }

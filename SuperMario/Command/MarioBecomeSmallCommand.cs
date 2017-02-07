@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
 
+
 namespace SuperMario.Command
 {
-    class MarioLookRightCommand : ICommand
-
+    class MarioBecomeSmallCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioLookRightCommand(Game1 game)
+        public MarioBecomeSmallCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.LookRight();
+            myGame.Mario.Small();
         }
     }
 }

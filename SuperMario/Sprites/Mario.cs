@@ -16,7 +16,6 @@ namespace SuperMario.Sprites
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
-        //private int timeDelay = 5;
 
         public Mario(Texture2D texture, int rows, int columns)
         {
@@ -38,30 +37,45 @@ namespace SuperMario.Sprites
 
         }
 
-        public void GoUp()
+        public void Jump()
         {
+            // Need a new state for mario is UP
             state = new StandingRightSmallMarioState(this);
 
         }
-
-        public void Grow()
+        public void Crouch()
         {
-            state.Grow();
+            // Need a new state for mario is UP
+            state = new StandingRightSmallMarioState(this);
+
         }
+        public void Big()
+        {
+            // Need a new state for mario is Big Mario
+            state = new StandingRightSmallMarioState(this);
 
+        }
+        public void Small()
+        {
+            // Need a new state for mario is Small
+            state = new StandingRightSmallMarioState(this);
+
+        }
+        public void Dead()
+        {
+            // Need a new state for mario is Dead
+            state = new StandingRightSmallMarioState(this);
+
+        }
+        public void Fire()
+        {
+            // Need a new state for mario is Fire
+            state = new StandingRightSmallMarioState(this);
+
+        }
         public void Update()
-        {   //Control speed of animation
+        { 
 
-            /*
-            timeDelay--;
-            if (timeDelay == 0)
-            {
-                currentFrame++;
-                timeDelay = 4;
-            }
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
-                */
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

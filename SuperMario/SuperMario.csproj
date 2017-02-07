@@ -53,7 +53,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Command\MarioGoUpCommand.cs" />
+    <Compile Include="Blocks\Brick.cs" />
+    <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
+    <Compile Include="Command\MarioCrouchCommand.cs" />
+    <Compile Include="Command\MarioBecomeSmallCommand.cs" />
+    <Compile Include="Command\MarioBecomeFireCommand.cs" />
+    <Compile Include="Command\MarioDeadCommand.cs" />
+    <Compile Include="Command\MarioBecomeBigCommand.cs" />
+    <Compile Include="Command\MarioJumpCommand.cs" />
     <Compile Include="Command\MarioLookRightCommand.cs" />
     <Compile Include="Command\MarioLookLeftCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
