@@ -14,6 +14,7 @@ namespace SuperMario
         SpriteBatch spriteBatch;
         public Texture2D texture;
         public ISprite sprite;
+        public IMario Mario;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
@@ -34,7 +35,7 @@ namespace SuperMario
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("smallMario");
-            sprite = new Mario(texture, 1, 12);
+            Mario = new Mario(texture, 1, 12);
 
             
             //Declare the controllers and register the commands
@@ -72,7 +73,7 @@ namespace SuperMario
 
            // gamepadController.Update();
             
-            sprite.Update();
+            Mario.Update();
 
             base.Update(gameTime);
         }
@@ -80,7 +81,7 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
             base.Draw(gameTime);
         }
     }

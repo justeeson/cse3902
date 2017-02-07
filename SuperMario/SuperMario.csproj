@@ -53,6 +53,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Command\MarioGoUpCommand.cs" />
     <Compile Include="Command\MarioLookRightCommand.cs" />
     <Compile Include="Command\MarioLookLeftCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\QuestionMarkBrick.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\UnbreakableBrick.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Interfaces\IAnimateSprite.cs" />
+    <Compile Include="Interfaces\IMario.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />

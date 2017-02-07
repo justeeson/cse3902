@@ -19,7 +19,7 @@ namespace SuperMario.Command
 
         public void Execute()
         {
-            myGame.sprite.LookRight();
+            myGame.Mario.LookRight();
         }
     }
 }

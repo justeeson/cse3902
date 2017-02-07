@@ -12,7 +12,5 @@ namespace SuperMario.Interfaces
     {
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
-        void LookLeft();
-        void LookRight();
     }
 }

@@ -9,7 +9,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Interfaces
 {
-    interface IMarioState
+    public interface IMarioState
     {
         void Update();
         void Grow();

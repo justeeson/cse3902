@@ -8,18 +8,18 @@ using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    class MarioLookLeftCommand : ICommand
+    class MarioGoUpCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioLookLeftCommand(Game1 game)
+        public MarioGoUpCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.LookLeft();
+            myGame.Mario.GoUp();
         }
     }
 }

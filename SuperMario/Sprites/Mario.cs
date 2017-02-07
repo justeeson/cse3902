@@ -9,9 +9,9 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites
 {
-    class Mario : ISprite
+    class Mario : IMario
     {
-        public IMarioState state;
+        public IMarioState state { get; set; }
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
@@ -33,6 +33,12 @@ namespace SuperMario.Sprites
         }
 
         public void LookRight()
+        {
+            state = new StandingRightSmallMarioState(this);
+
+        }
+
+        public void GoUp()
         {
             state = new StandingRightSmallMarioState(this);
 
