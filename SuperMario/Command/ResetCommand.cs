@@ -5,22 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
+using SuperMario.Blocks;
 
 
 namespace SuperMario.Command
 {
-    class BlockQuestionBecomeUsedCommand : ICommand
+    class ResetCommand :ICommand
     {
         private Game1 myGame;
 
-        public BlockQuestionBecomeUsedCommand(Game1 game)
+        public ResetCommand(Game1 game)
         {
             myGame = game;
         }
         public void Execute()
         {
-            // Question Block object file does not exist
-            //myGame.QuestionBlock.questionToUsed();
+            myGame.Mario.Small();
+            //myGame.QuestionBlock = new QuestionBlockClass(myGame);
+            //myGame.HiddenBlock = new HiddenBlockClass(myGame);
+            //myGame.BrickBlock = new BrickClass(myGame);
         }
     }
 }
