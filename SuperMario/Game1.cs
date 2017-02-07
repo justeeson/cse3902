@@ -15,7 +15,7 @@ namespace SuperMario
         SpriteBatch spriteBatch;
         public Texture2D texture;
         public ISprite sprite;
-        public IMario Mario;
+        public Mario Mario;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
@@ -27,7 +27,7 @@ namespace SuperMario
         private FireMushroom fireMushroomObject;
         private Star starObject;
         private NormalMonster normalMonsterObject;
-        private SolidBrick solidBrickObject;
+        //private SolidBrick solidBrickObject;
         private SolidBrickWithCrews solidBrickWithCrewsObject;
         private QuestionMarkBrick questionMarkBrickObject;
         private BreakableHorizontalBrick breakableHorizontalBrickObject;
@@ -54,9 +54,10 @@ namespace SuperMario
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("smallMario");
-            sprite = new Mario(texture, 1, 12);
+            //sprite = new Mario(texture, 1, 12);
+            Mario = new Mario(texture, 1, 12);
 
-            
+
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
@@ -92,7 +93,7 @@ namespace SuperMario
 
            // gamepadController.Update();
             
-            sprite.Update();
+            Mario.Update();
 
             base.Update(gameTime);
         }

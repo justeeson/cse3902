@@ -9,7 +9,6 @@ using SuperMario.Sprites;
 namespace SuperMario.Command
 {
     class MarioLookRightCommand : ICommand
-
     {
         private Game1 myGame;
 

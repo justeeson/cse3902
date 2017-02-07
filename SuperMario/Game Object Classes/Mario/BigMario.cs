@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.Game_Object_Sprite_Classes.Mario
 {
-    class BigMario
+    public class BigMario
     {
     }
 }

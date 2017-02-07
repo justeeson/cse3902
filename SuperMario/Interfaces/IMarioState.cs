@@ -12,7 +12,6 @@ namespace SuperMario.Interfaces
     public interface IMarioState
     {
         void Update();
-        void Grow();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }

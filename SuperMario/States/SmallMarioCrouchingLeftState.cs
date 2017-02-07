@@ -9,24 +9,19 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites
 {
-    class StandingRightSmallMarioState : IMarioState
+    class SmallMarioCrouchingLeftState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
-        public StandingRightSmallMarioState(Mario mario)
+
+        public SmallMarioCrouchingLeftState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 6;
-        }
-
-        public void Grow()
-        {
-
+            currentFrame = 1;
         }
 
         public void Update()
-        {
-
+        { 
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

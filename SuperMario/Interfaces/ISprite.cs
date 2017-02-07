@@ -10,7 +10,7 @@ namespace SuperMario.Interfaces
 {
     public interface ISprite
     {
-        void Update(GameTime time);
+        void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
     }
 }

@@ -9,27 +9,21 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites
 {
-    class StandingLeftSmallMarioState : IMarioState
+    class SmallMarioStandingLeftState : IMarioState
     {
         private int currentFrame;
         private Mario mario;
 
-        public StandingLeftSmallMarioState(Mario mario)
+        public SmallMarioStandingLeftState(Mario mario)
         {
             this.mario = mario;
             currentFrame = 5;
         }
 
-        public void Grow()
-        {
-
-        }
-
         public void Update()
         {
-
         }
-
+        
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = mario.Texture.Width / mario.Columns;

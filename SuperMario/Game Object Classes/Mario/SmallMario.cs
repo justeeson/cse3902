@@ -9,8 +9,13 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Game_Object_Classes.Mario
 {
-    class SmallMario
+    public class SmallMario
     {
+        public bool isSmallMarioType(IMarioState marioState)
+        {
+            switch (marioState.)
+            return false;
+        }
     }
 }
 

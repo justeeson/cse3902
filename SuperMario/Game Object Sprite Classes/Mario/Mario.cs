@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.Game_Object_Classes.Mario
 {
-    class BigMario
+    public class BigMario
     {
     }
 }
