@@ -27,9 +27,15 @@ namespace SuperMario.Sprites
             totalFrames = Rows * Columns;
         }
 
-        public void ChangeDirection()
+        public void LookLeft()
         {
-            state.ChangeDirection();
+            state = new StandingLeftSmallMarioState(this);
+        }
+
+        public void LookRight()
+        {
+            state = new StandingRightSmallMarioState(this);
+
         }
 
         public void Grow()

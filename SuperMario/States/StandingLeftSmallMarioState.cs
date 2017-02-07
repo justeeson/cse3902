@@ -20,11 +20,6 @@ namespace SuperMario.Sprites
             currentFrame = 5;
         }
 
-        public void ChangeDirection()
-        {
-            mario.state = new StandingRightSmallMarioState(mario);
-        }
-
         public void Grow()
         {
 

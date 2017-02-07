@@ -13,7 +13,6 @@ namespace SuperMario.Interfaces
     {
         void Update();
         void Grow();
-        void ChangeDirection();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }
