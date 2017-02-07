@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Interfaces;
-using SuperMario.Sprites;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -93,7 +93,7 @@ namespace SuperMario
 
            // gamepadController.Update();
             
-            sprite.Update(gameTime);
+            Mario.Update();
 
             base.Update(gameTime);
         }

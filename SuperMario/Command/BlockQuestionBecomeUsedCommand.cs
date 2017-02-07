@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
-using SuperMario.Sprites;
+using SuperMario.MarioClass;
 
 
 namespace SuperMario.Command

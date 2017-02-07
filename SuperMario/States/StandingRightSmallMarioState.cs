@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 
-namespace SuperMario.Sprites
+namespace SuperMario.MarioClass
 {
     class StandingRightSmallMarioState : IMarioState
     {
