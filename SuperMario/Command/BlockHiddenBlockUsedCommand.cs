@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
 
-
 namespace SuperMario.Command
 {
-    class BlockQuestionBecomeUsedCommand : ICommand
+    class BlockHiddenBlockUsedCommand : ICommand
     {
         private Game1 myGame;
 
-        public BlockQuestionBecomeUsedCommand(Game1 game)
+        public BlockHiddenBlockUsedCommand(Game1 game)
         {
             myGame = game;
         }
         public void Execute()
         {
-            // Question Block object file does not exist
-            //myGame.QuestionBlock.questionToUsed();
+            // Hidden Block object file does not exist
+            //myGame.HiddenBlock.HiddenToUsed();
         }
     }
 }
