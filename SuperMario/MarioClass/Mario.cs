@@ -27,15 +27,15 @@ namespace SuperMario.MarioClass
             Rows = rows;
             Columns = columns;
             totalFrames = Rows * Columns;
-            isLookingRight = true;
+            /*isLookingRight = true;
             isCrouching = false;
             isJumping = false;
-            isStanding = true;
+            isStanding = true;*/
         }
 
         public void LookLeft()
         {
-            state = new StandingRightSmallMarioState(this);
+            state = new StandingLeftSmallMarioState(this);
         }
 
         public void LookRight()
@@ -82,7 +82,7 @@ namespace SuperMario.MarioClass
         }
         public void Update()
         {
-
+            state.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
