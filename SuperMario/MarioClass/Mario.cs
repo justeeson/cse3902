@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
+using SuperMario.Sprites;
+
 
 namespace SuperMario.MarioClass
 {
-    class Mario : IMario
+    public class Mario : IMario
     {
         public IMarioState state { get; set; }
         public Texture2D Texture { get; set; }

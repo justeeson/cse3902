@@ -112,8 +112,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteFactory\SpriteFactory.cs" />
-    <Compile Include="States\StandingLeftSmallMarioState.cs" />
+    <Compile Include="States\CrouchingLeftSmallMarioState.cs" />
+    <Compile Include="States\CrouchingRightSmallMarioState.cs" />
+    <Compile Include="States\JumpingRightSmallMarioState.cs" />
+    <Compile Include="States\JumpingLeftSmallMarioState.cs" />
+    <Compile Include="States\RunningLeftSmallMarioState.cs" />
+    <Compile Include="States\RunningRightSmallMarioState.cs" />
     <Compile Include="States\StandingRightSmallMarioState.cs" />
+    <Compile Include="States\StandingLeftSmallMarioState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
