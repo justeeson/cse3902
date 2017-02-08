@@ -73,7 +73,6 @@ namespace SuperMario
             yMax = GraphicsDevice.Viewport.Height;
             xPos = xMax / 2;
             yPos = yMax / 2;
-            Console.Out.WriteLine("xMax " + xMax + " yMax " + yMax + " " + xPos + " " + yPos);
         }
 
         protected override void UnloadContent()
@@ -89,7 +88,12 @@ namespace SuperMario
 
                 keyboardController.Update();
                 Mario.Update();
-                sprite.Update(gameTime);
+            foreach (ISprite obj in listOfObjects)
+            {
+                obj.Update(gameTime);
+
+            }
+            sprite.Update(gameTime);
            // gamepadController.Update();
             
             
@@ -102,9 +106,7 @@ namespace SuperMario
             GraphicsDevice.Clear(Color.CornflowerBlue);
             foreach (ISprite obj in listOfObjects)
             {
-                sprite = obj;
-                sprite.Update(gameTime);
-                sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+                obj.Draw(spriteBatch, new Vector2(xPos, yPos));
 
             }
 
