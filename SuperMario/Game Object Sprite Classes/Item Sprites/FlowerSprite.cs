@@ -16,19 +16,30 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int currentFrame;
-
+        private int currentFrame;
+        private int count;
+        private int timer;
         public FlowerSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 0;
+            currentFrame = 1;
+            count = 300;
         }
 
         public void Update(GameTime gameTime)
         {
-
+            //Add a delay between drawing each frame
+            timer += gameTime.ElapsedGameTime.Milliseconds;
+            // make Mario Animate
+            if (timer > count)
+            {
+                timer -= count;
+                currentFrame++; ;
+                if (currentFrame == 4)
+                { currentFrame = 0; }
+            }
         }
         public void ChangeDirection()
         {
