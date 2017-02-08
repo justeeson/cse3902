@@ -10,15 +10,15 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Sprites
 {
-    public class JumpingLeftBigFireState : IMarioState
+    public class DeadFireMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
 
-        public JumpingLeftBigFireState(Mario mario)
+        public DeadFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 0;
+            currentFrame = 0;//change this
         }
 
         public void Update()
