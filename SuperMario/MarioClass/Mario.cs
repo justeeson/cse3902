@@ -18,8 +18,19 @@ namespace SuperMario.MarioClass
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
-        private bool isLookingRight, isCrouching, isJumping, isStanding;
+        int delay = 50;
 
+        enum Orientations
+            { CrouchingRight, CrouchingLeft,
+            JumpingRight, JumpingLeft,
+            RunningRight, RunningLeft,
+            StandingRight, StandingLeft,
+            Dead};
+        enum MarioModes
+        { Big, Fire, Small};
+
+        int orientation, marioMode;
+        
         public Mario(Texture2D texture, int rows, int columns)
         {
             state = new StandingRightSmallMarioState(this);
@@ -27,59 +38,153 @@ namespace SuperMario.MarioClass
             Rows = rows;
             Columns = columns;
             totalFrames = Rows * Columns;
-            /*isLookingRight = true;
-            isCrouching = false;
-            isJumping = false;
-            isStanding = true;*/
+            orientation = (int)Orientations.StandingRight;
+            marioMode = (int)MarioModes.Small;
         }
 
         public void LookLeft()
         {
-            state = new StandingLeftSmallMarioState(this);
+            //if already looking left then start running else look left
+            if (orientation == (int)Orientations.StandingLeft)
+            {
+                state = new RunningLeftSmallMarioState(this);
+                orientation = (int)Orientations.RunningLeft;
+            }
+            else
+            {
+                state = new StandingLeftSmallMarioState(this);
+                orientation = (int)Orientations.StandingLeft;
+            }
         }
 
         public void LookRight()
         {
-            state = new StandingRightSmallMarioState(this);
-
+            //if already looking right then start running else look right
+            if (orientation == (int)Orientations.StandingRight)
+            {
+                state = new RunningRightSmallMarioState(this);
+                orientation = (int)Orientations.RunningRight;
+            }
+            else
+            {
+                state = new StandingRightSmallMarioState(this);
+                orientation = (int)Orientations.StandingRight;
+            }
         }
 
         public void Jump()
         {
-            // Need a new state for mario is UP
-            state = new JumpingRightSmallMarioState(this);
-
+            if (orientation == (int)Orientations.CrouchingRight)
+            {
+                state = new StandingRightSmallMarioState(this);
+                orientation = (int)Orientations.StandingRight;
+            }
+            else if (orientation == (int)Orientations.CrouchingLeft)
+            {
+                state = new StandingLeftSmallMarioState(this);
+                orientation = (int)Orientations.StandingLeft;
+            }
+            else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
+            {
+                state = new JumpingRightSmallMarioState(this);
+                orientation = (int)Orientations.JumpingRight;
+            }
+            else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
+            {
+                state = new JumpingLeftSmallMarioState(this);
+                orientation = (int)Orientations.JumpingLeft;
+            }
+            else
+            {
+                //do nothing
+            }
+            System.Threading.Thread.Sleep(delay);
         }
         public void Crouch()
         {
-            // Need a new state for mario is UP
-            state = new StandingRightSmallMarioState(this);
-
+            if (orientation == (int)Orientations.JumpingRight)
+            {
+                state = new StandingRightSmallMarioState(this);
+                orientation = (int)Orientations.StandingRight;
+            }
+            else if (orientation == (int)Orientations.JumpingLeft)
+            {
+                state = new StandingLeftSmallMarioState(this);
+                orientation = (int)Orientations.StandingLeft;
+            }
+            else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
+            {
+                state = new CrouchingRightSmallMarioState(this);
+                orientation = (int)Orientations.CrouchingRight;
+            }
+            else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
+            {
+                state = new CrouchingLeftSmallMarioState(this);
+                orientation = (int)Orientations.CrouchingLeft;
+            }
+            else
+            {
+                //do nothing
+            }
+            System.Threading.Thread.Sleep(delay);
         }
         public void Big()
         {
-            // Need a new state for mario is Big Mario
-            state = new StandingRightSmallMarioState(this);
-
+            
         }
+
         public void Small()
         {
-            // Need a new state for mario is Small
-            state = new StandingRightSmallMarioState(this);
-
+            if (marioMode != (int)MarioModes.Small)
+            {
+                marioMode = (int)MarioModes.Small;
+                switch (orientation)
+                {
+                    case (int)Orientations.CrouchingLeft:
+                        state = new CrouchingLeftSmallMarioState(this);
+                        break;
+                    case (int)Orientations.CrouchingRight:
+                        state = new CrouchingRightSmallMarioState(this);
+                        break;
+                    case (int)Orientations.JumpingLeft:
+                        state = new JumpingLeftSmallMarioState(this);
+                        break;
+                    case (int)Orientations.JumpingRight:
+                        state = new JumpingRightSmallMarioState(this);
+                        break;
+                    case (int)Orientations.RunningLeft:
+                        state = new RunningLeftSmallMarioState(this);
+                        break;
+                    case (int)Orientations.RunningRight:
+                        state = new RunningRightSmallMarioState(this);
+                        break;
+                    case (int)Orientations.StandingLeft:
+                        state = new StandingLeftSmallMarioState(this);
+                        break;
+                    case (int)Orientations.StandingRight:
+                        state = new StandingRightSmallMarioState(this);
+                        break;
+                    default:
+                        state = new StandingRightSmallMarioState(this);
+                        break;
+                }
+            }
         }
-        public void Dead()
-        {
-            // Need a new state for mario is Dead
-            state = new StandingRightSmallMarioState(this);
 
-        }
         public void Fire()
         {
             // Need a new state for mario is Fire
             state = new StandingRightSmallMarioState(this);
 
         }
+
+        public void Dead()
+        {
+            // Need a new state for mario is Dead
+            state = new StandingRightSmallMarioState(this);
+
+        }
+        
         public void Update()
         {
             state.Update();

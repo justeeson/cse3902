@@ -10,33 +10,19 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Sprites
 {
-    public class RunningRightSmallMarioState : IMarioState
+    class CrouchingRightFireMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeDelay;
 
-        public RunningRightSmallMarioState(Mario mario)
+        public CrouchingRightFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 4;
-            startFrame = currentFrame;
-            totalFrames = 3;
-            timeDelay = 4;
+            currentFrame = 10;
         }
 
         public void Update()
         {
-            timeDelay--;
-            if (timeDelay == 0)
-            {
-                currentFrame++;
-                timeDelay = 4;
-            }
-            if (currentFrame == currentFrame + totalFrames)
-                currentFrame = startFrame;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

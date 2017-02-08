@@ -4,10 +4,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperMario.Command;
 using SuperMario.Controller;
-using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
-using System.Collections;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SuperMario
 {
@@ -22,7 +22,19 @@ namespace SuperMario
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
         public static ContentManager game1Content;
-        private ArrayList listOfObjects;
+        private Turtle turtleObject;
+        private Flower flowerObject;
+        private Coin coinObject;
+        private GrownupMushroom grownupMushroomObject;
+        private FireMushroom fireMushroomObject;
+        private Star starObject;
+        private NormalMonster normalMonsterObject;
+        private SolidBrick solidBrickObject;
+        private SolidBrickWithCrews solidBrickWithCrewsObject;
+        private QuestionMarkBrick questionMarkBrickObject;
+        private BreakableHorizontalBrick breakableHorizontalBrickObject;
+        private BreakableCurlyBrick breakableCurlyBrickObject;
+        private Pipe pipeObject;
         
 
         public Game1()
@@ -35,9 +47,7 @@ namespace SuperMario
 
         protected override void Initialize()
         {
-            
             base.Initialize();
-            
         }
 
         protected override void LoadContent()
@@ -48,12 +58,13 @@ namespace SuperMario
             Mario = new Mario(texture, 1, 12);
 
             SpriteFactory.Instance.LoadAllTextures(Content);
-            listOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
 
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
             keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
+            keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
             /*
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
@@ -81,11 +92,13 @@ namespace SuperMario
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 Exit();
                 */
-            keyboardController.Update();
+
+                keyboardController.Update();
+                Mario.Update();
 
            // gamepadController.Update();
             
-            Mario.Update();
+            
 
             base.Update(gameTime);
         }
@@ -93,13 +106,35 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
-            foreach (ISprite obj in listOfObjects)
-            {
-                obj.Draw(spriteBatch, new Vector2(xPos, yPos));
+            turtleObject = new Turtle(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            flowerObject = new Flower(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            coinObject = new Coin(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            grownupMushroomObject = new GrownupMushroom(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            fireMushroomObject = new FireMushroom(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            starObject = new Star(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            normalMonsterObject = new NormalMonster(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            solidBrickObject = new SolidBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            solidBrickWithCrewsObject = new SolidBrickWithCrews(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            questionMarkBrickObject = new QuestionMarkBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            breakableHorizontalBrickObject = new BreakableHorizontalBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            breakableCurlyBrickObject = new BreakableCurlyBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            pipeObject = new Pipe(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
 
-            }
-           
+            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
+
             base.Draw(gameTime);
         }
     }

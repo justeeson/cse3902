@@ -5,38 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperMario.Interfaces;
 using SuperMario.MarioClass;
+using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites
 {
-    public class RunningLeftSmallMarioState : IMarioState
+    public class CrouchingLeftBigMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeDelay;
 
-        public RunningLeftSmallMarioState(Mario mario)
+        public CrouchingLeftBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 4;
-            startFrame = currentFrame;
-            totalFrames = 3;
-            timeDelay = 4;
+            currentFrame = 1;
         }
 
         public void Update()
         {
-            timeDelay--;
-            if (timeDelay == 0)
-            {
-                currentFrame--;
-                timeDelay = 4;
-            }
-            if (currentFrame == currentFrame - totalFrames)
-                currentFrame = startFrame;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
