@@ -57,7 +57,6 @@
     <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
     <Compile Include="Command\BlockBrickDisappearCommand.cs" />
     <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
-    <Compile Include="Command\MarioGoUpCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\MarioCrouchCommand.cs" />
     <Compile Include="Command\MarioBecomeSmallCommand.cs" />
