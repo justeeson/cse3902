@@ -18,7 +18,7 @@ namespace SuperMario.MarioClass
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
-        int delay = 50;
+        int delay = 100;
 
         enum Orientations
             { CrouchingRight, CrouchingLeft,
@@ -76,6 +76,7 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.StandingLeft;
                 state = getState(orientation, marioMode);
             }
+            System.Threading.Thread.Sleep(delay);
         }
 
         public void LookRight()
@@ -91,6 +92,7 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.StandingRight;
                 state = getState(orientation, marioMode);
             }
+            System.Threading.Thread.Sleep(delay);
         }
 
         public void Jump()

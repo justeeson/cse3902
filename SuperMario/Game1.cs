@@ -58,17 +58,12 @@ namespace SuperMario
             keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
             keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
             keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
-            /*
-            keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
-            keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
-            keyboardController.RegisterCommand(Keys.T, new MovingAnimatedMarioCommand(this));
+            keyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
+            keyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
+            keyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
+            keyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
 
-            gamepadController = new GamepadController();
-            gamepadController.RegisterCommand(Buttons.A, new NonMovingNonAnimatedMarioCommand(this));
-            gamepadController.RegisterCommand(Buttons.B, new NonMovingAnimatedMarioCommand(this));
-            gamepadController.RegisterCommand(Buttons.X, new MovingNonAnimatedMarioCommand(this));
-            gamepadController.RegisterCommand(Buttons.Y, new MovingAnimatedMarioCommand(this));
-            */
+
             xMax = GraphicsDevice.Viewport.Width;
             yMax = GraphicsDevice.Viewport.Height;
             xPos = xMax / 2;
