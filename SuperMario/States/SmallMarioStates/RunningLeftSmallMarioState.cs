@@ -24,7 +24,7 @@ namespace SuperMario.Sprites
             currentFrame = 4;
             startFrame = currentFrame;
             totalFrames = 3;
-            timeDelay = 4;
+            timeDelay = 10;
         }
 
         public void Update()
@@ -33,7 +33,7 @@ namespace SuperMario.Sprites
             if (timeDelay == 0)
             {
                 currentFrame--;
-                timeDelay = 4;
+                timeDelay = 10;
             }
             if (currentFrame == startFrame - totalFrames)
                 currentFrame = startFrame;

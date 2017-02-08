@@ -87,7 +87,7 @@
     <Compile Include="Game Object Classes\Obstacle\SolidBrick.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\NormalMonsterSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\TurtleSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\Coin.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroom.cs" />

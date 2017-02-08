@@ -18,7 +18,7 @@ namespace SuperMario.Sprites
         public StandingLeftBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 5;
+            currentFrame = 17;
         }
 
         public void Update()

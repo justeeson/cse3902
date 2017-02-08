@@ -18,7 +18,7 @@ namespace SuperMario.Sprites
         public JumpingLeftFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 0;
+            currentFrame = 25;
         }
 
         public void Update()

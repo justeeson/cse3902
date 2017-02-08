@@ -18,7 +18,7 @@ namespace SuperMario.Sprites
         public DeadFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 0;//change this
+            currentFrame = 0;
         }
 
         public void Update()

@@ -21,7 +21,7 @@ namespace SuperMario.Sprites
         public RunningRightBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 7;
+            currentFrame = 19;
             startFrame = currentFrame;
             totalFrames = 3;
             timeDelay = 10;

@@ -37,7 +37,7 @@ namespace SuperMario
             {
                 timer -= count;
                 currentFrame++; ;
-                if (currentFrame == 6)
+                if (currentFrame == 5)
                 { currentFrame = 0; }
             }
 

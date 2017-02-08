@@ -18,7 +18,7 @@ namespace SuperMario.Sprites
         public DeadBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 6; //change this
+            currentFrame = 0;
         }
 
         public void Update()

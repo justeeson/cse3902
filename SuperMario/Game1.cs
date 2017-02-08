@@ -46,8 +46,8 @@ namespace SuperMario
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            texture = Content.Load<Texture2D>("smallMario");
-            Mario = new Mario(texture, 1, 12);
+            texture = Content.Load<Texture2D>("MarioSheet");
+            Mario = new Mario(texture, 3, 12);
 
             SpriteFactory.Instance.LoadAllTextures(Content);
             listOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
