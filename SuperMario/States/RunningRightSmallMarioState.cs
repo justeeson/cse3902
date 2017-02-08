@@ -21,10 +21,10 @@ namespace SuperMario.Sprites
         public RunningRightSmallMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 4;
+            currentFrame = 7;
             startFrame = currentFrame;
             totalFrames = 3;
-            timeDelay = 4;
+            timeDelay = 10;
         }
 
         public void Update()
@@ -33,7 +33,7 @@ namespace SuperMario.Sprites
             if (timeDelay == 0)
             {
                 currentFrame++;
-                timeDelay = 4;
+                timeDelay = 10;
             }
             if (currentFrame == currentFrame + totalFrames)
                 currentFrame = startFrame;

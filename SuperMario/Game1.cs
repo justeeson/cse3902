@@ -101,7 +101,6 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
             turtleObject = new Turtle(this);
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
             flowerObject = new Flower(this);
@@ -128,6 +127,9 @@ namespace SuperMario
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
             pipeObject = new Pipe(this);
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+
+            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
+
             base.Draw(gameTime);
         }
     }

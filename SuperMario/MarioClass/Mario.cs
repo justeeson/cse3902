@@ -18,7 +18,13 @@ namespace SuperMario.MarioClass
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
-        private bool isLookingRight, isCrouching, isJumping, isStanding;
+        enum Orientations
+            { CrouchingRight, CrouchingLeft,
+            JumpingRight, JumpingLeft,
+            RunningRight, RunningLeft,
+            StandingRight, StandingLeft,
+            Dead };
+        int orientation;
 
         public Mario(Texture2D texture, int rows, int columns)
         {
@@ -27,33 +33,46 @@ namespace SuperMario.MarioClass
             Rows = rows;
             Columns = columns;
             totalFrames = Rows * Columns;
-            /*isLookingRight = true;
-            isCrouching = false;
-            isJumping = false;
-            isStanding = true;*/
+            orientation = (int)Orientations.StandingRight;
         }
 
         public void LookLeft()
         {
-            state = new StandingLeftSmallMarioState(this);
+            //if already looking left then start running else look left
+            if (orientation == (int)Orientations.StandingLeft)
+            {
+                state = new RunningLeftSmallMarioState(this);
+                orientation = (int)Orientations.RunningLeft;
+            }
+            else
+            {
+                state = new StandingLeftSmallMarioState(this);
+                orientation = (int)Orientations.StandingLeft;
+            }
         }
 
         public void LookRight()
         {
-            state = new StandingRightSmallMarioState(this);
-
+            //if already looking right then start running else look right
+            if (orientation == (int)Orientations.StandingRight)
+            {
+                state = new RunningRightSmallMarioState(this);
+                orientation = (int)Orientations.RunningRight;
+            }
+            else
+            {
+                state = new StandingRightSmallMarioState(this);
+                orientation = (int)Orientations.StandingRight;
+            }
         }
 
         public void Jump()
         {
-            // Need a new state for mario is UP
             state = new JumpingRightSmallMarioState(this);
-
         }
         public void Crouch()
         {
-            // Need a new state for mario is UP
-            state = new StandingRightSmallMarioState(this);
+            state = new CrouchingRightSmallMarioState(this);
 
         }
         public void Big()
