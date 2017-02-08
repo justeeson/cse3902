@@ -8,11 +8,11 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
-    class MarioJumpCommand : ICommand
+    class MarioGoUpCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioJumpCommand(Game1 game)
+        public MarioGoUpCommand(Game1 game)
         {
             myGame = game;
         }

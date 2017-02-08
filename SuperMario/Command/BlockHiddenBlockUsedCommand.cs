@@ -8,18 +8,18 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
-    class MarioJumpCommand : ICommand
+    class BlockHiddenBlockUsedCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioJumpCommand(Game1 game)
+        public BlockHiddenBlockUsedCommand(Game1 game)
         {
             myGame = game;
         }
-
         public void Execute()
         {
-            myGame.Mario.Jump();
+            // Hidden Block object file does not exist
+            //myGame.HiddenBlock.HiddenToUsed();
         }
     }
 }

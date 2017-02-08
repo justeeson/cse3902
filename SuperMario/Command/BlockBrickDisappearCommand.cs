@@ -8,18 +8,19 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
-    class MarioJumpCommand : ICommand
+    class BlockBrickDisappearCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioJumpCommand(Game1 game)
+        public BlockBrickDisappearCommand(Game1 game)
         {
             myGame = game;
         }
-
         public void Execute()
         {
-            myGame.Mario.Jump();
+            // Brick Block object file does not exist
+            //myGame.BrickBlock.BrickToDisappear();
         }
     }
 }
+

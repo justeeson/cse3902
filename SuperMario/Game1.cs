@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Interfaces;
-using SuperMario.Sprites;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -15,7 +15,7 @@ namespace SuperMario
         SpriteBatch spriteBatch;
         public Texture2D texture;
         public ISprite sprite;
-        public Mario Mario;
+        public IMario Mario;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
@@ -27,7 +27,7 @@ namespace SuperMario
         private FireMushroom fireMushroomObject;
         private Star starObject;
         private NormalMonster normalMonsterObject;
-        //private SolidBrick solidBrickObject;
+        private SolidBrick solidBrickObject;
         private SolidBrickWithCrews solidBrickWithCrewsObject;
         private QuestionMarkBrick questionMarkBrickObject;
         private BreakableHorizontalBrick breakableHorizontalBrickObject;
@@ -54,9 +54,9 @@ namespace SuperMario
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("smallMario");
-            //sprite = new Mario(texture, 1, 12);
             Mario = new Mario(texture, 1, 12);
 
+            SpriteFactory.Instance.LoadAllTextures(Content);
 
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
@@ -101,6 +101,32 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
+            turtleObject = new Turtle(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            flowerObject = new Flower(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            coinObject = new Coin(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            grownupMushroomObject = new GrownupMushroom(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            fireMushroomObject = new FireMushroom(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            starObject = new Star(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            normalMonsterObject = new NormalMonster(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            solidBrickObject = new SolidBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            solidBrickWithCrewsObject = new SolidBrickWithCrews(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            questionMarkBrickObject = new QuestionMarkBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            breakableHorizontalBrickObject = new BreakableHorizontalBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            breakableCurlyBrickObject = new BreakableCurlyBrick(this);
+            sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
+            pipeObject = new Pipe(this);
             sprite.Draw(spriteBatch, new Vector2(xPos, yPos));
             base.Draw(gameTime);
         }
