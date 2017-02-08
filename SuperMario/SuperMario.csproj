@@ -92,9 +92,9 @@
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\Star.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario\BigMario.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario\FireMario.cs" />
     <Compile Include="Game Object Sprite Classes\Mario\SmallMario.cs" />
+    <Compile Include="Game Object Sprite Classes\Mario\FireMario.cs" />
+    <Compile Include="Game Object Sprite Classes\Mario\BigMario.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableCurlyBrickSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\PipeSprite.cs" />

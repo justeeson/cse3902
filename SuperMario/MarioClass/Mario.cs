@@ -18,6 +18,7 @@ namespace SuperMario.MarioClass
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int totalFrames;
+        private bool isLookingRight, isCrouching, isJumping, isStanding;
 
         public Mario(Texture2D texture, int rows, int columns)
         {
@@ -26,11 +27,15 @@ namespace SuperMario.MarioClass
             Rows = rows;
             Columns = columns;
             totalFrames = Rows * Columns;
+            isLookingRight = true;
+            isCrouching = false;
+            isJumping = false;
+            isStanding = true;
         }
 
         public void LookLeft()
         {
-            state = new StandingLeftSmallMarioState(this);
+            state = new StandingRightSmallMarioState(this);
         }
 
         public void LookRight()
@@ -42,7 +47,7 @@ namespace SuperMario.MarioClass
         public void Jump()
         {
             // Need a new state for mario is UP
-            state = new StandingRightSmallMarioState(this);
+            state = new JumpingRightSmallMarioState(this);
 
         }
         public void Crouch()

@@ -11,11 +11,11 @@ namespace SuperMario.Game_Object_Classes.Mario
 {
     public class SmallMario
     {
-        public bool isSmallMarioType(IMarioState marioState)
+        /*public bool isSmallMarioType(IMarioState marioState)
         {
-            switch (marioState.)
+            //switch (marioState.)
             return false;
-        }
+        }*/
     }
 }
 
