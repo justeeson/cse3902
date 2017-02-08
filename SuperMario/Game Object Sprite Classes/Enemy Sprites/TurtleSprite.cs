@@ -45,7 +45,7 @@ namespace SuperMario
             // make change to xCoordinate so that Mario can  move left to right
             Rectangle destinationRectangle = new Rectangle(700, 160, width, height);
             spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.CornflowerBlue);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
     }

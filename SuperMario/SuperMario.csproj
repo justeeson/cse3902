@@ -149,18 +149,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\coin.jpg" />
-    <Content Include="Content\breakableCurlyBrick.jpg" />
-    <Content Include="Content\flower.jpg" />
-    <Content Include="Content\brickableHorizontalBrick.jpg" />
-    <Content Include="Content\mushrooms.jpg" />
-    <Content Include="Content\pipe.jpg" />
-    <Content Include="Content\questionMarkBrick.jpg" />
-    <Content Include="Content\normalMonster.png" />
-    <Content Include="Content\solidBrick.jpg" />
-    <Content Include="Content\star.jpg" />
-    <Content Include="Content\turtle.png" />
-    <Content Include="Content\unbreakablebrickwith4screws.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
