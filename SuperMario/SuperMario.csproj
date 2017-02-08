@@ -112,6 +112,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteFactory\SpriteFactory.cs" />
     <Compile Include="States\BigMarioStates\CrouchingLeftBigMarioState.cs" />
+    <Compile Include="States\FireMarioStates\CrouchingLeftFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\CrouchingRightFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\JumpingLeftBigFireState.cs" />
+    <Compile Include="States\FireMarioStates\JumpingRightFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\RunningLeftFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\RunningRightFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\StandingLeftFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\StandingRightFireMarioState.cs" />
     <Compile Include="States\SmallMarioStates\CrouchingLeftSmallMarioState.cs" />
     <Compile Include="States\BigMarioStates\CrouchingRightBigMarioState.cs" />
     <Compile Include="States\SmallMarioStates\CrouchingRightSmallMarioState.cs" />
