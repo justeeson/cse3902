@@ -26,11 +26,13 @@ namespace SuperMario.MarioClass
             RunningRight, RunningLeft,
             StandingRight, StandingLeft,
             Dead};
+
         enum MarioModes
         { Big, Fire, Small};
 
-        int orientation, marioMode;
-        
+        private int orientation, marioMode;
+        IMarioState[,] StateArray;
+
         public Mario(Texture2D texture, int rows, int columns)
         {
             state = new StandingRightSmallMarioState(this);
@@ -40,6 +42,25 @@ namespace SuperMario.MarioClass
             totalFrames = Rows * Columns;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
+
+            //makes state assignments easy to manage
+            StateArray = new IMarioState[3, 9] { 
+                {new CrouchingRightBigMarioState(this), new CrouchingLeftBigMarioState(this), new JumpingRightBigMarioState(this),
+                    new JumpingLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
+                    new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)}, 
+
+                {new CrouchingRightFireMarioState(this), new CrouchingLeftFireMarioState(this), new JumpingRightFireMarioState(this),
+                    new JumpingLeftFireMarioState(this), new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
+                    new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)}, 
+
+                {new CrouchingRightSmallMarioState(this), new CrouchingLeftSmallMarioState(this), new JumpingRightSmallMarioState(this),
+                    new JumpingLeftSmallMarioState(this), new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
+                    new StandingRightSmallMarioState(this), new StandingLeftSmallMarioState(this), new DeadSmallMarioState(this)} };
+        }
+
+        private IMarioState getState(int orient, int mMode)
+        {
+            return StateArray[mMode, orient];
         }
 
         public void LookLeft()
@@ -47,13 +68,13 @@ namespace SuperMario.MarioClass
             //if already looking left then start running else look left
             if (orientation == (int)Orientations.StandingLeft)
             {
-                state = new RunningLeftSmallMarioState(this);
                 orientation = (int)Orientations.RunningLeft;
+                state = getState(orientation, marioMode);
             }
-            else
+            else if (orientation != (int)Orientations.Dead)
             {
-                state = new StandingLeftSmallMarioState(this);
                 orientation = (int)Orientations.StandingLeft;
+                state = getState(orientation, marioMode);
             }
         }
 
@@ -62,13 +83,13 @@ namespace SuperMario.MarioClass
             //if already looking right then start running else look right
             if (orientation == (int)Orientations.StandingRight)
             {
-                state = new RunningRightSmallMarioState(this);
                 orientation = (int)Orientations.RunningRight;
+                state = getState(orientation, marioMode);
             }
-            else
+            else if (orientation != (int)Orientations.Dead)
             {
-                state = new StandingRightSmallMarioState(this);
                 orientation = (int)Orientations.StandingRight;
+                state = getState(orientation, marioMode);
             }
         }
 
@@ -76,23 +97,23 @@ namespace SuperMario.MarioClass
         {
             if (orientation == (int)Orientations.CrouchingRight)
             {
-                state = new StandingRightSmallMarioState(this);
                 orientation = (int)Orientations.StandingRight;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.CrouchingLeft)
             {
-                state = new StandingLeftSmallMarioState(this);
                 orientation = (int)Orientations.StandingLeft;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
             {
-                state = new JumpingRightSmallMarioState(this);
                 orientation = (int)Orientations.JumpingRight;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
-                state = new JumpingLeftSmallMarioState(this);
                 orientation = (int)Orientations.JumpingLeft;
+                state = getState(orientation, marioMode);
             }
             else
             {
@@ -104,23 +125,23 @@ namespace SuperMario.MarioClass
         {
             if (orientation == (int)Orientations.JumpingRight)
             {
-                state = new StandingRightSmallMarioState(this);
                 orientation = (int)Orientations.StandingRight;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.JumpingLeft)
             {
-                state = new StandingLeftSmallMarioState(this);
                 orientation = (int)Orientations.StandingLeft;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
             {
-                state = new CrouchingRightSmallMarioState(this);
                 orientation = (int)Orientations.CrouchingRight;
+                state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
-                state = new CrouchingLeftSmallMarioState(this);
                 orientation = (int)Orientations.CrouchingLeft;
+                state = getState(orientation, marioMode);
             }
             else
             {
@@ -130,7 +151,11 @@ namespace SuperMario.MarioClass
         }
         public void Big()
         {
-            
+            if (marioMode != (int)MarioModes.Big)
+            {
+                marioMode = (int)MarioModes.Big;
+                state = getState(orientation, marioMode);
+            }
         }
 
         public void Small()
@@ -138,51 +163,26 @@ namespace SuperMario.MarioClass
             if (marioMode != (int)MarioModes.Small)
             {
                 marioMode = (int)MarioModes.Small;
-                switch (orientation)
-                {
-                    case (int)Orientations.CrouchingLeft:
-                        state = new CrouchingLeftSmallMarioState(this);
-                        break;
-                    case (int)Orientations.CrouchingRight:
-                        state = new CrouchingRightSmallMarioState(this);
-                        break;
-                    case (int)Orientations.JumpingLeft:
-                        state = new JumpingLeftSmallMarioState(this);
-                        break;
-                    case (int)Orientations.JumpingRight:
-                        state = new JumpingRightSmallMarioState(this);
-                        break;
-                    case (int)Orientations.RunningLeft:
-                        state = new RunningLeftSmallMarioState(this);
-                        break;
-                    case (int)Orientations.RunningRight:
-                        state = new RunningRightSmallMarioState(this);
-                        break;
-                    case (int)Orientations.StandingLeft:
-                        state = new StandingLeftSmallMarioState(this);
-                        break;
-                    case (int)Orientations.StandingRight:
-                        state = new StandingRightSmallMarioState(this);
-                        break;
-                    default:
-                        state = new StandingRightSmallMarioState(this);
-                        break;
-                }
+                state = getState(orientation, marioMode);
             }
         }
 
         public void Fire()
         {
-            // Need a new state for mario is Fire
-            state = new StandingRightSmallMarioState(this);
-
+            if (marioMode != (int)MarioModes.Fire)
+            {
+                marioMode = (int)MarioModes.Fire;
+                state = getState(orientation, marioMode);
+            }
         }
 
         public void Dead()
         {
-            // Need a new state for mario is Dead
-            state = new StandingRightSmallMarioState(this);
-
+            if (orientation != (int)Orientations.Dead)
+            {
+                orientation = (int)Orientations.Dead;
+                state = getState(orientation, marioMode);
+            }
         }
         
         public void Update()
