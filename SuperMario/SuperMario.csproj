@@ -78,6 +78,7 @@
     <Compile Include="Game Object Classes\Mario\FireMario.cs" />
     <Compile Include="Game Object Classes\Mario\BigMario.cs" />
     <Compile Include="Game Object Classes\Mario\SmallMario.cs" />
+    <Compile Include="Game Object Classes\ObjectArray.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\Pipe.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IMario.cs" />
     <Compile Include="Interfaces\IMarioState.cs" />
+    <Compile Include="Interfaces\IObject.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Interfaces\ISpriteFactory.cs" />
     <Compile Include="MarioClass\Mario.cs" />
