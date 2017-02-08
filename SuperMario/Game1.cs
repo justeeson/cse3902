@@ -6,6 +6,8 @@ using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SuperMario
 {
@@ -46,7 +48,6 @@ namespace SuperMario
         protected override void Initialize()
         {
             base.Initialize();
-            
         }
 
         protected override void LoadContent()
@@ -62,6 +63,8 @@ namespace SuperMario
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
             keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
+            keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
+            keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
             /*
             keyboardController.RegisterCommand(Keys.E, new NonMovingAnimatedMarioCommand(this));
             keyboardController.RegisterCommand(Keys.R, new MovingNonAnimatedMarioCommand(this));
@@ -89,11 +92,13 @@ namespace SuperMario
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
                 Exit();
                 */
-            keyboardController.Update();
+
+                keyboardController.Update();
+                Mario.Update();
 
            // gamepadController.Update();
             
-            Mario.Update();
+            
 
             base.Update(gameTime);
         }

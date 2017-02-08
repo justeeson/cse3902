@@ -28,11 +28,10 @@ namespace SuperMario.Controller
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
 
-            foreach (Keys key in pressedKeys)
-            {
-                controllerMappings[key].Execute();
-
-            }
+                foreach (Keys key in pressedKeys)
+                {
+                    controllerMappings[key].Execute();
+                }
         }
     }
 }

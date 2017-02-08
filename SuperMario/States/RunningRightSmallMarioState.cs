@@ -35,7 +35,7 @@ namespace SuperMario.Sprites
                 currentFrame++;
                 timeDelay = 10;
             }
-            if (currentFrame == currentFrame + totalFrames)
+            if (currentFrame == startFrame + totalFrames)
                 currentFrame = startFrame;
         }
 
