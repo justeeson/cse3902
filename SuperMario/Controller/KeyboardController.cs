@@ -30,7 +30,10 @@ namespace SuperMario.Controller
 
                 foreach (Keys key in pressedKeys)
                 {
-                    controllerMappings[key].Execute();
+                    if (Game1.validKeys.Contains(key))
+                 {
+                      controllerMappings[key].Execute();
+                 }
                 }
         }
     }

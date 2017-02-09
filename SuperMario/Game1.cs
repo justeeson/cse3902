@@ -26,8 +26,7 @@ namespace SuperMario
         public static int xPos, yPos, xMax, yMax;
         public static ContentManager game1Content;
         private ArrayList listOfObjects;
-
-
+        public static ArrayList validKeys;
 
         public Game1()
         {
@@ -39,6 +38,7 @@ namespace SuperMario
 
         protected override void Initialize()
         {
+            validKeys = ValidKeys.Instance.ArrayOfKeys(this);
             base.Initialize();
         }
 
@@ -62,6 +62,12 @@ namespace SuperMario
             keyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
             keyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
             keyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
+            keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
+            keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
+
+            keyboardController.RegisterCommand(Keys.Z, new BlockQuestionBecomeUsedCommand(this));
+            keyboardController.RegisterCommand(Keys.X, new BlockBrickDisappearCommand(this));
+            keyboardController.RegisterCommand(Keys.C, new BlockHiddenBlockUsedCommand(this));
 
 
             xMax = GraphicsDevice.Viewport.Width;

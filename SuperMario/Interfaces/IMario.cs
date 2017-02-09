@@ -22,6 +22,7 @@ namespace SuperMario.Interfaces
         void Small();
         void Dead();
         void Fire();
+        void Reset();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
     }

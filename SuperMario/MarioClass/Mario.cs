@@ -117,10 +117,6 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.JumpingLeft;
                 state = getState(orientation, marioMode);
             }
-            else
-            {
-                //do nothing
-            }
             System.Threading.Thread.Sleep(delay);
         }
         public void Crouch()
@@ -185,6 +181,13 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.Dead;
                 state = getState(orientation, marioMode);
             }
+        }
+
+        public void Reset()
+        {
+            orientation = (int)Orientations.StandingRight;
+            marioMode = (int)MarioModes.Small;
+            state = getState(orientation, marioMode);          
         }
         
         public void Update()

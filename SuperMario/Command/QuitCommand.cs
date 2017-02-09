@@ -5,22 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
-using SuperMario.Blocks;
-
 
 namespace SuperMario.Command
 {
-    class ResetCommand : ICommand
+    class QuitCommand : ICommand
     {
         private Game1 myGame;
 
-        public ResetCommand(Game1 game)
+        public QuitCommand(Game1 game)
         {
             myGame = game;
         }
+
         public void Execute()
         {
-            myGame.Mario.Reset();
+            myGame.Exit();
         }
     }
 }
