@@ -153,6 +153,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeReview\Quality By Son Le.txt" />
+    <Content Include="CodeReview\Readability by Son Le.txt" />
     <Content Include="CodeReview\SebastinCodeReview.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
