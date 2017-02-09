@@ -43,7 +43,6 @@ namespace SuperMario.MarioClass
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
 
-            //makes state assignments easy to manage
             StateArray = new IMarioState[3, 9] { 
                 {new CrouchingRightBigMarioState(this), new CrouchingLeftBigMarioState(this), new JumpingRightBigMarioState(this),
                     new JumpingLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
@@ -65,7 +64,6 @@ namespace SuperMario.MarioClass
 
         public void LookLeft()
         {
-            //if already looking left then start running else look left
             if (orientation == (int)Orientations.StandingLeft)
             {
                 orientation = (int)Orientations.RunningLeft;
@@ -81,7 +79,6 @@ namespace SuperMario.MarioClass
 
         public void LookRight()
         {
-            //if already looking right then start running else look right
             if (orientation == (int)Orientations.StandingRight)
             {
                 orientation = (int)Orientations.RunningRight;
@@ -154,10 +151,6 @@ namespace SuperMario.MarioClass
                 {
                     return;
                 }
-            }
-            else
-            {
-                //do nothing
             }
             System.Threading.Thread.Sleep(delay);
         }

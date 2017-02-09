@@ -14,7 +14,6 @@ namespace SuperMario
         public Flower(Game1 game)
         {
             myGame = game;
-            //myGame.sprite = new TurtleSprite(myGame.texture, 4, 8);
             ISprite mySprite = SpriteFactory.Instance.CreateFlower();
             myGame.sprite = mySprite;
         }

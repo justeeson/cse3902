@@ -45,7 +45,6 @@ namespace SuperMario
 
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
             Mario = new Mario(texture, 3, 12);
@@ -54,7 +53,6 @@ namespace SuperMario
             listOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
             Block = new BlockLogic(this);
 
-            //Declare the controllers and register the commands
             keyboardController = new KeyboardController();
             keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
             keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
@@ -84,23 +82,14 @@ namespace SuperMario
 
         protected override void Update(GameTime gameTime)
         {
-            /*
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Q))
-                Exit();
-                */
-
-                keyboardController.Update();
-                Mario.Update();
+            keyboardController.Update();
+            Mario.Update();
             foreach (ISprite obj in listOfObjects)
             {
                 obj.Update(gameTime);
 
             }
             sprite.Update(gameTime);
-           // gamepadController.Update();
-            
-            
-
             base.Update(gameTime);
         }
 
@@ -110,11 +99,8 @@ namespace SuperMario
             foreach (ISprite obj in listOfObjects)
             {
                 obj.Draw(spriteBatch, new Vector2(xPos, yPos));
-
             }
-
             Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
-
             base.Draw(gameTime);
         }
     }

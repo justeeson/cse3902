@@ -16,18 +16,28 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int currentFrame;
-
+        private int currentFrame;
+        private int count;
+        private int timer;
         public NormalMonsterSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 0;
+            currentFrame = 1;
+            count = 300;
         }
 
         public void Update(GameTime gameTime)
         {
+            timer += gameTime.ElapsedGameTime.Milliseconds;
+            if (timer > count)
+            {
+                timer -= count;
+                currentFrame++; ;
+                if (currentFrame == 3)
+                { currentFrame = 1; }
+            }
 
         }
         public void ChangeDirection()
@@ -37,13 +47,12 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 15;
+            int width = 26;
             int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            // make change to xCoordinate so that Mario can  move left to right
             Rectangle destinationRectangle = new Rectangle(600, 160, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
