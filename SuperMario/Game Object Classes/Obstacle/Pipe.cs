@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using SuperMario;
-
 using SuperMario.Interfaces;
 
-class Pipe
+namespace SuperMario
+{
+    class Pipe
     {
         private Game1 myGame;
 
@@ -19,4 +19,4 @@ class Pipe
             myGame.sprite = mySprite;
         }
     }
-
+}

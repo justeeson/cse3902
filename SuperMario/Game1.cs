@@ -87,7 +87,6 @@ namespace SuperMario
             foreach (ISprite obj in listOfObjects)
             {
                 obj.Update(gameTime);
-
             }
             sprite.Update(gameTime);
             base.Update(gameTime);

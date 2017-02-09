@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +11,6 @@ namespace SuperMario
 {
     class SolidBrickWithCrewsSprite2 : ISprite
     {
-        // Modify from http://rbwhitaker.wikidot.com/monogame-texture-atlases-2
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
@@ -30,11 +28,6 @@ namespace SuperMario
         {
 
         }
-        public void ChangeDirection()
-        {
-
-        }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 36;
@@ -43,7 +36,6 @@ namespace SuperMario
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            // make change to xCoordinate so that Mario can  move left to right
             Rectangle destinationRectangle = new Rectangle(100, 250, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

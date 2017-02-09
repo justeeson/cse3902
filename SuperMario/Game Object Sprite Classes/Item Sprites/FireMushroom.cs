@@ -12,7 +12,6 @@ namespace SuperMario
 {
     class FireMushroomSprite : ISprite
     {
-        // Modify from http://rbwhitaker.wikidot.com/monogame-texture-atlases-2
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
@@ -30,11 +29,6 @@ namespace SuperMario
         {
 
         }
-        public void ChangeDirection()
-        {
-
-        }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 28;

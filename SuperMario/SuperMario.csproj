@@ -54,7 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
-    <Compile Include="Blocks\Brick.cs" />
     <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
     <Compile Include="Command\BlockBrickDisappearCommand.cs" />
     <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
@@ -103,14 +102,13 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickSprite.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Content\Interfaces\IBlock.cs" />
-    <Compile Include="Content\Interfaces\IController.cs" />
-    <Compile Include="Content\Interfaces\ICommand.cs" />
-    <Compile Include="Content\Interfaces\IMario.cs" />
-    <Compile Include="Content\Interfaces\IMarioState.cs" />
-    <Compile Include="Content\Interfaces\IObject.cs" />
-    <Compile Include="Content\Interfaces\ISprite.cs" />
-    <Compile Include="Content\Interfaces\ISpriteFactory.cs" />
+    <Compile Include="Interfaces\IBlock.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IMario.cs" />
+    <Compile Include="Interfaces\IMarioState.cs" />
+    <Compile Include="Interfaces\IObject.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Keys\ValidKeys.cs" />
     <Compile Include="MarioClass\Mario.cs" />
     <Compile Include="Program.cs" />
@@ -172,11 +170,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Game Object Classes\Mario\" />
-    <Folder Include="Game Object Sprite Classes\Mario\" />
-    <Folder Include="Sprites\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

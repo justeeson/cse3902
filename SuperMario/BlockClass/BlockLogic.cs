@@ -10,7 +10,6 @@ namespace SuperMario
     public class BlockLogic : IBlock
     {
         Game1 mygame;
-        bool isHidden = false;
         public BlockLogic(Game1 game)
         {
             mygame = game;

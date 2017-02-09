@@ -39,11 +39,6 @@ namespace SuperMario
             }
 
         }
-        public void ChangeDirection()
-        {
-
-        }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 17;
