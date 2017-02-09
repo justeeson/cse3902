@@ -77,9 +77,6 @@
     <Compile Include="Game Object Classes\Item\Star.cs" />
     <Compile Include="Game Object Classes\Item\Flower.cs" />
     <Compile Include="Game Object Classes\Enemy\Turtle.cs" />
-    <Compile Include="Game Object Classes\Mario\FireMario.cs" />
-    <Compile Include="Game Object Classes\Mario\BigMario.cs" />
-    <Compile Include="Game Object Classes\Mario\SmallMario.cs" />
     <Compile Include="Game Object Classes\ObjectArray.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrickToUsed.cs" />
@@ -96,9 +93,6 @@
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\Star.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario\SmallMario.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario\FireMario.cs" />
-    <Compile Include="Game Object Sprite Classes\Mario\BigMario.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableCurlyBrickSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\PipeSprite.cs" />
@@ -178,6 +172,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Game Object Classes\Mario\" />
+    <Folder Include="Game Object Sprite Classes\Mario\" />
     <Folder Include="Sprites\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

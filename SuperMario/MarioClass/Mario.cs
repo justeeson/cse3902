@@ -159,8 +159,12 @@ namespace SuperMario.MarioClass
             if (marioMode != (int)MarioModes.Big)
             {
                 marioMode = (int)MarioModes.Big;
-                state = getState(orientation, marioMode);
             }
+            if (orientation == (int)Orientations.Dead)
+            {
+                orientation = (int)Orientations.StandingRight;
+            }
+            state = getState(orientation, marioMode);
         }
 
         public void Small()
@@ -168,8 +172,12 @@ namespace SuperMario.MarioClass
             if (marioMode != (int)MarioModes.Small)
             {
                 marioMode = (int)MarioModes.Small;
-                state = getState(orientation, marioMode);
             }
+            if (orientation == (int)Orientations.Dead)
+            {
+                orientation = (int)Orientations.StandingRight;
+            }
+            state = getState(orientation, marioMode);
         }
 
         public void Fire()
@@ -177,8 +185,12 @@ namespace SuperMario.MarioClass
             if (marioMode != (int)MarioModes.Fire)
             {
                 marioMode = (int)MarioModes.Fire;
-                state = getState(orientation, marioMode);
             }
+            if (orientation == (int)Orientations.Dead)
+            {
+                orientation = (int)Orientations.StandingRight;
+            }
+            state = getState(orientation, marioMode);
         }
 
         public void Dead()
