@@ -79,6 +79,7 @@
     <Compile Include="Game Object Classes\Enemy\Turtle.cs" />
     <Compile Include="Game Object Classes\ObjectArray.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
+    <Compile Include="Game Object Classes\Obstacle\HiddenBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrickToUsed.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrickToUsed.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrick.cs" />
