@@ -25,7 +25,7 @@ namespace SuperMario
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            //speed of fflipping
+            //speed of flipping
             count = 300;
         }
 
