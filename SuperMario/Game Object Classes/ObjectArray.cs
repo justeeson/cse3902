@@ -54,5 +54,6 @@ namespace SuperMario.Game_Object_Classes
             result.Add(game.sprite);
             return result;
         }
+        
     }
 }

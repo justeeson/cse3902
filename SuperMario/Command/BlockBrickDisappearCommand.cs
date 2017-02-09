@@ -18,8 +18,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Brick Block object file does not exist
-            //myGame.BrickBlock.BrickToDisappear();
+            myGame.Block.BrickToDisappear();
         }
     }
 }

@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
-using SuperMario.MarioClass;
-
 
 namespace SuperMario.Command
 {
@@ -19,8 +17,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Question Block object file does not exist
-            //myGame.QuestionBlock.questionToUsed();
+            myGame.Block.BecomeUsed();
         }
     }
 }

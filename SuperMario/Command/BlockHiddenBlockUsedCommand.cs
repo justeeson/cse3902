@@ -18,8 +18,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Hidden Block object file does not exist
-            //myGame.HiddenBlock.HiddenToUsed();
+            myGame.Block.HiddenToUsed();
         }
     }
 }

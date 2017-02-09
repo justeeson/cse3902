@@ -21,11 +21,12 @@ namespace SuperMario
         public Texture2D texture;
         public ISprite sprite;
         public IMario Mario;
+        public IBlock Block;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
         public static int xPos, yPos, xMax, yMax;
         public static ContentManager game1Content;
-        private ArrayList listOfObjects;
+        public static ArrayList listOfObjects;
         public static ArrayList validKeys;
 
         public Game1()
@@ -51,6 +52,7 @@ namespace SuperMario
 
             SpriteFactory.Instance.LoadAllTextures(Content);
             listOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
+            Block = new BlockLogic(this);
 
             //Declare the controllers and register the commands
             keyboardController = new KeyboardController();

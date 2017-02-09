@@ -133,13 +133,27 @@ namespace SuperMario.MarioClass
             }
             else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
             {
-                orientation = (int)Orientations.CrouchingRight;
-                state = getState(orientation, marioMode);
+                if (marioMode != (int)MarioModes.Small)
+                {
+                    orientation = (int)Orientations.CrouchingRight;
+                    state = getState(orientation, marioMode);
+                }
+                else
+                {
+                    return;
+                }
             }
             else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
-                orientation = (int)Orientations.CrouchingLeft;
-                state = getState(orientation, marioMode);
+                if (marioMode != (int)MarioModes.Small)
+                {
+                    orientation = (int)Orientations.CrouchingLeft;
+                    state = getState(orientation, marioMode);
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {

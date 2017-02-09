@@ -98,6 +98,16 @@ public class SpriteFactory
         return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, 32, 32);
     }
 
+    public ISprite CreateSolidBrickWithCrews2()
+    {
+        return new SolidBrickWithCrewsSprite2(solidBrickWithCrewsTexture, 32, 32);
+    }
+
+    public ISprite CreateSolidBrickWithCrews3()
+    {
+        return new SolidBrickWithCrewsSprite3(solidBrickWithCrewsTexture, 32, 32);
+    }
+
     public ISprite CreateQuestionMarkBrick()
     {
         return new QuestionMarkBrickSprite(questionMarkBrickTexture, 32, 32);
