@@ -153,10 +153,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReview\Quality By Son Le.txt" />
-    <Content Include="CodeReview\Readability by Son Le.txt" />
+    <Content Include="CodeReview\Son Le%27s Readability Review.txt" />
     <Content Include="CodeReview\Yihang Du%27s Readability Review.txt" />
-    <Content Include="CodeReview\SebastinCodeReview.txt" />
+    <Content Include="CodeReview\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
