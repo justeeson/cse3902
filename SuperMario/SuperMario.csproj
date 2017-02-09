@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeReview\Yihang Du%27s Readability Review.txt" />
+    <Content Include="CodeReview\SebastinCodeReview.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
