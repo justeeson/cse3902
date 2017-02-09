@@ -29,9 +29,8 @@ namespace SuperMario
         }
 
         public void Update(GameTime gameTime)
-        {    //Add a delay between drawing each frame
+        {    
             timer += gameTime.ElapsedGameTime.Milliseconds;
-            // make Mario Animate
             if (timer > count)
             {
                 timer -= count;
@@ -54,7 +53,6 @@ namespace SuperMario
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            // make change to xCoordinate so that Mario can  move left to right
             Rectangle destinationRectangle = new Rectangle(500, 160, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

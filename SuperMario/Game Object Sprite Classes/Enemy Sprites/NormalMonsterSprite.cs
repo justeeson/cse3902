@@ -43,7 +43,6 @@ namespace SuperMario
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            // make change to xCoordinate so that Mario can  move left to right
             Rectangle destinationRectangle = new Rectangle(600, 160, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

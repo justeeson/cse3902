@@ -19,8 +19,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Question Block object file does not exist
-            //myGame.QuestionBlock.questionToUsed();
+
         }
     }
 }
