@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using SuperMario.Interfaces;
-using SuperMario.MarioClass;
-using SuperMario.Blocks;
-
+using SuperMario.Game_Object_Classes;
 
 namespace SuperMario.Command
 {
@@ -21,6 +18,7 @@ namespace SuperMario.Command
         public void Execute()
         {
             myGame.Mario.Reset();
+            Game1.listOfObjects = ObjectArray.Instance.ArrayOfObjects(myGame);
         }
     }
 }
