@@ -1,0 +1,9 @@
+Sebastin Justeeson
+2/8/2017
+Sprint 2
+KeyboardController.cs
+Yihang
+4 minutes 
+The intent of the declared variable is clear based on the chosen name. 
+The functions use straightforward names that directly convey what they are supposed to do. 
+Also, the indentation in the Update function makes it very easy to read and understand what is going on.
