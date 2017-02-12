@@ -16,7 +16,7 @@ namespace SuperMario
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        private GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Texture2D texture;
         public ISprite sprite;
@@ -24,22 +24,20 @@ namespace SuperMario
         public IBlock Block;
         public KeyboardController keyboardController;
         public GamepadController gamepadController;
-        public static int xPos, yPos, xMax, yMax;
-        public static ContentManager game1Content;
+        private static int xPos, yPos, xMax, yMax;
         public static ArrayList listOfObjects;
         public static ArrayList validKeys;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-           
-            game1Content = Content;
+            Content.RootDirectory = "Content";         
+    
         }
 
         protected override void Initialize()
         {
-            validKeys = ValidKeys.Instance.ArrayOfKeys(this);
+            validKeys = ValidKeys.Instance.ArrayOfKeys();
             base.Initialize();
         }
 

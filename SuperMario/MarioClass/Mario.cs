@@ -17,7 +17,6 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int totalFrames;
         int delay = 100;
 
         enum Orientations
@@ -39,7 +38,6 @@ namespace SuperMario.MarioClass
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            totalFrames = Rows * Columns;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
 
@@ -154,7 +152,7 @@ namespace SuperMario.MarioClass
             }
             System.Threading.Thread.Sleep(delay);
         }
-        public void Big()
+        public void MarioBigState()
         {
             if (marioMode != (int)MarioModes.Big)
             {
@@ -167,7 +165,7 @@ namespace SuperMario.MarioClass
             state = getState(orientation, marioMode);
         }
 
-        public void Small()
+        public void MarioSmallState()
         {
             if (marioMode != (int)MarioModes.Small)
             {
@@ -180,7 +178,7 @@ namespace SuperMario.MarioClass
             state = getState(orientation, marioMode);
         }
 
-        public void Fire()
+        public void MarioFireState()
         {
             if (marioMode != (int)MarioModes.Fire)
             {

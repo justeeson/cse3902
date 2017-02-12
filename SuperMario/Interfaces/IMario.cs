@@ -18,10 +18,10 @@ namespace SuperMario.Interfaces
         void LookRight();
         void Jump();
         void Crouch();
-        void Big();
-        void Small();
+        void MarioBigState();
+        void MarioSmallState();
         void Dead();
-        void Fire();
+        void MarioFireState();
         void Reset();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 destination);

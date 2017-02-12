@@ -15,6 +15,7 @@ namespace SuperMario.Game_Object_Classes
 {
     class ValidKeys 
     {
+        private ArrayList result;
         private static ValidKeys instance = new ValidKeys();
         private ValidKeys()
         {
@@ -28,9 +29,9 @@ namespace SuperMario.Game_Object_Classes
                 return instance;
             }
         }
-        public ArrayList ArrayOfKeys(Game1 game)
+        public ArrayList ArrayOfKeys()
         {
-            ArrayList result = new ArrayList();
+            result = new ArrayList();
             result.Add(Keys.Left);
             result.Add(Keys.Right);
             result.Add(Keys.Up);

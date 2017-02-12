@@ -19,7 +19,7 @@ namespace SuperMario.Command
 
         public void Execute()
         {
-            myGame.Mario.Fire();
+            myGame.Mario.MarioFireState();
         }
     }
 }

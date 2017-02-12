@@ -20,7 +20,7 @@ namespace SuperMario.Command
 
         public void Execute()
         {
-            myGame.Mario.Small();
+            myGame.Mario.MarioSmallState();
         }
     }
 }

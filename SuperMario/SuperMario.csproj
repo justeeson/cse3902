@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -80,7 +81,6 @@
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
     <Compile Include="Game Object Classes\Obstacle\HiddenBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrickToUsed.cs" />
-    <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrickToUsed.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableHorizontalBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\Pipe.cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrick.cs" />
