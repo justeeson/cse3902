@@ -1,0 +1,15 @@
+﻿Sebastin Justeeson
+2/13/2017
+Sprint 2
+KeyboardController.cs
+Yihang
+
+The number of lines in the code is quite appropriate given the task that the controller is meant to perform. The class
+has high cohesion because all the variables and methods are together meant to perform the single task of handling the 
+key presses on the keyboard. The class has low coupling since it only refers to a variable in another class once. The 
+cyclomatic complexity of the code is only 5 and thus there aren't any unnecessary additional flows. 
+One change that could be made to the code is to make it use a method from a class or declare an object of the class directly
+within the code instead of calling an object from the Game1 class. This would also make it more maintainable as now changes
+made in the Game1 class will never affect the logic for determining the set of valid keys. The controller code can easily
+be changed to accommodate this change by either declaring the object directly within the KeyboardController.cs file or
+changing the logic of the validKeys class.
