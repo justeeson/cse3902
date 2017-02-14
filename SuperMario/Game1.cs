@@ -67,8 +67,8 @@ namespace SuperMario
             get
             { return ListOfObjects; }
 
-            set
-            { ListOfObjects = value; }
+            /*set
+            { ListOfObjects = value; }*/
         }
 
         private static int xPos, yPos, xMax, yMax;
