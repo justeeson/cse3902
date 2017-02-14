@@ -6,7 +6,9 @@ This warning shows up for several different sprite classes. The reason is becaus
 have a single row and thus get Rows.get() function serves no purpose for now. However, if the spritesheet were to be 
 changed in the future, then the Rows.get() command would be useful and necessary. Thus, this warning has been suppressed.
 
-2. 
+2. MSBUILD : warning CA1823: Microsoft.Performance : It appears that field 'Game1.graphics' is never used or is only ever assigned to. Use this field or remove it.
+
+This warning can be ignored because Game1.graphics must be assigned to in order for the game to run, but it is not used after assignment
 
 
 Keybindings:

@@ -18,7 +18,7 @@ namespace SuperMario.Command
         public void Execute()
         {
             myGame.Mario.Reset();
-            Game1.listOfObjects = ObjectArray.Instance.ArrayOfObjects(myGame);
+            ObjectArray.ResetArrayOfObjects(myGame, Game1.listOfObjects);
         }
     }
 }

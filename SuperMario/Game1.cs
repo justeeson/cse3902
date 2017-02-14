@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperMario.Command;
@@ -7,10 +6,7 @@ using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
-using System;
 using System.Collections;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace SuperMario
 {
@@ -19,14 +15,72 @@ namespace SuperMario
         private GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
-        public ISprite sprite;
-        public IMario Mario;
-        public IBlock Block;
-        public KeyboardController keyboardController;
-        public GamepadController gamepadController;
+        private ISprite Sprite;
+        public ISprite sprite
+        {
+            get
+            { return Sprite; }
+            set
+            { Sprite = value; }
+        }
+
+        private IMario mario;
+        public IMario Mario
+        {
+            get
+            { return mario; }
+            set
+            { mario = value; }
+        }
+
+        private IBlock block;
+        public IBlock Block
+        {
+            get {return block; }
+            set {block = value; }
+        }
+
+        
+
+        private KeyboardController keyboardController;
+        public KeyboardController KeyboardController
+        {
+            get
+            { return keyboardController; }
+            set
+            { keyboardController = value; }
+        }
+
+        //Gamepad is not used for this sprint but will be later
+        /*private GamepadController gamepadController;
+        public GamepadController GamepadController
+        {
+            get
+            { return gamepadController; }
+            set
+            { gamepadController = value; }
+        }*/
+
+        private static ArrayList ListOfObjects;
+        public static ArrayList listOfObjects
+        {
+            get
+            { return ListOfObjects; }
+
+            set
+            { ListOfObjects = value; }
+        }
+
         private static int xPos, yPos, xMax, yMax;
-        public static ArrayList listOfObjects;
-        public static ArrayList validKeys;
+        
+        private static ArrayList Valid_Keys;
+        public static ArrayList validKeys
+        {
+            get
+            { return Valid_Keys; }
+            /*set
+            { Valid_Keys = value; }*/
+        }
 
         public Game1()
         {
@@ -36,7 +90,7 @@ namespace SuperMario
 
         protected override void Initialize()
         {
-            validKeys = ValidKeys.Instance.ArrayOfKeys();
+            Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
             base.Initialize();
         }
 
@@ -47,24 +101,24 @@ namespace SuperMario
             Mario = new Mario(texture, 3, 12);
 
             SpriteFactory.Instance.LoadAllTextures(Content);
-            listOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
-            Block = new BlockLogic(this);
+            ListOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
+            block = new BlockLogic(this);
 
-            keyboardController = new KeyboardController();
-            keyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
-            keyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
-            keyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
-            keyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
-            keyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
-            keyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
-            keyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
-            keyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
-            keyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
-            keyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
+            KeyboardController = new KeyboardController();
+            KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
+            KeyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
+            KeyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
+            KeyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
+            KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
+            KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
+            KeyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
+            KeyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
+            KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
+            KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
 
-            keyboardController.RegisterCommand(Keys.Z, new BlockQuestionBecomeUsedCommand(this));
-            keyboardController.RegisterCommand(Keys.X, new BlockBrickDisappearCommand(this));
-            keyboardController.RegisterCommand(Keys.C, new BlockHiddenBlockUsedCommand(this));
+            KeyboardController.RegisterCommand(Keys.Z, new BlockQuestionBecomeUsedCommand(this));
+            KeyboardController.RegisterCommand(Keys.X, new BlockBrickDisappearCommand(this));
+            KeyboardController.RegisterCommand(Keys.C, new BlockHiddenBlockUsedCommand(this));
 
 
             xMax = GraphicsDevice.Viewport.Width;
@@ -79,9 +133,9 @@ namespace SuperMario
 
         protected override void Update(GameTime gameTime)
         {
-            keyboardController.Update();
+            KeyboardController.Update();
             Mario.Update();
-            foreach (ISprite obj in listOfObjects)
+            foreach (ISprite obj in ListOfObjects)
             {
                 obj.Update(gameTime);
             }
@@ -92,7 +146,7 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            foreach (ISprite obj in listOfObjects)
+            foreach (ISprite obj in ListOfObjects)
             {
                 obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             }

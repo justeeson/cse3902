@@ -23,6 +23,7 @@ namespace SuperMario.Game_Object_Classes
                 return instance;
             }
         }
+
         public ArrayList ArrayOfObjects(Game1 game)
         {
             ArrayList result = new ArrayList();
@@ -52,9 +53,38 @@ namespace SuperMario.Game_Object_Classes
             result.Add(game.sprite);
             new Pipe(game);
             result.Add(game.sprite);
-            result.Add(game.sprite);
             return result;
         }
-        
+
+        public static void ResetArrayOfObjects(Game1 game, ArrayList result)
+        {
+            new Turtle(game);
+            result.Add(game.sprite);
+            new Coin(game);
+            result.Add(game.sprite);
+            new GrownupMushroom(game);
+            result.Add(game.sprite);
+            new FireMushroom(game);
+            result.Add(game.sprite);
+            new Star(game);
+            result.Add(game.sprite);
+            new Flower(game);
+            result.Add(game.sprite);
+            new NormalMonster(game);
+            result.Add(game.sprite);
+            new SolidBrick(game);
+            result.Add(game.sprite);
+            new SolidBrickWithCrews(game);
+            result.Add(game.sprite);
+            new QuestionMarkBrick(game);
+            result.Add(game.sprite);
+            new BreakableCurlyBrick(game);
+            result.Add(game.sprite);
+            new BreakableHorizontalBrick(game);
+            result.Add(game.sprite);
+            new Pipe(game);
+            result.Add(game.sprite);
+        }
+
     }
 }
