@@ -1,0 +1,7 @@
+﻿Dellon Collins
+2/13/2017
+Sprint 2
+
+Game Object Classes/ObjectArray.cs by Son Le
+
+The code is cohesive. The method only concerns itself with creating/resetting an ArrayList of non-Mario game objects.

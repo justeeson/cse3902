@@ -1,10 +1,5 @@
 ﻿using SuperMario.Interfaces;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperMario.Game_Object_Classes
 {
@@ -59,6 +54,7 @@ namespace SuperMario.Game_Object_Classes
 
         public static void ResetArrayOfObjects(Game1 game, ArrayList result)
         {
+            result.Clear();
             new Turtle(game);
             result.Add(game.sprite);
             new Coin(game);

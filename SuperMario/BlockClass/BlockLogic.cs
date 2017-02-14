@@ -1,9 +1,4 @@
-﻿using SuperMario.Game_Object_Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SuperMario.Interfaces;
+﻿using SuperMario.Interfaces;
 
 namespace SuperMario
 {
