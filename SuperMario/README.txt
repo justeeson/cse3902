@@ -10,6 +10,11 @@ changed in the future, then the Rows.get() command would be useful and necessary
 
 This warning can be ignored because Game1.graphics must be assigned to in order for the game to run, but it is not used after assignment
 
+3. CA1814	'Mario.StateArray' is a multidimensional array. Replace it with a jagged array if possible.
+
+This warning showned up since we used multidimensional array, instead of jagged array. The reason we didnt change the multidimensional array is it store linearly in the memory, 
+which allow easier access and easier to modify. Jagged array which is an array of array, which is not easy to modify and take mutli blocks of memory. The Reason Visual Studio
+suggest to change to jagged array is it will improve preference.
 
 Keybindings:
 

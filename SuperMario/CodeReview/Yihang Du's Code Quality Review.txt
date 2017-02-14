@@ -1,0 +1,13 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 2/13/2017
+Sprint number: 2 
+Name of the .cs file being reviewed: SpirteFactory.cs
+Author of the .cs file being reviewed: Son Le
+Specific comments on code quality: This is a long class, but the method is not a lot. We used this file to create 2D texture for each sprites, load the 
+texture to the content, and then create a ISprite of that types. The code is easy to understand and easy to maintaince, everything is easy to find and 
+we could modify the sprites quickly. This class create a lot of convenience for us to change the loaded contents.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+It will quite wasy to add the new sprites to the game by just adding new 2D texture, then create the sprite in this class. Then we can create a new class
+to draw that class. If we would like to change the picture for the sprites, we could just mondify the sprites in this class, instead of finding it from 
+entire solution. 
