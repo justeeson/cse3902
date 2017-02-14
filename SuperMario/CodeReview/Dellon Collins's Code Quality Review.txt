@@ -5,3 +5,8 @@ Sprint 2
 Game Object Classes/ObjectArray.cs by Son Le
 
 The code is cohesive. The method only concerns itself with creating/resetting an ArrayList of non-Mario game objects.
+There is a high amount of coupling with the Game1 class because each of the object constructors updates Game1.sprite
+and sprites are added to Game1.listOfObjects from Game1.sprite. The coupling with Game1 is a slight problem since 
+changing Game1.sprite multiple times just to add it to Game1.listOfObjects works but is redundant.
+This could be fixed by creating a NonMarioObject interface that is implemented by non-Mario game objects with a 
+method that return an ISprite that can be directly added to Game1.listOfObjects

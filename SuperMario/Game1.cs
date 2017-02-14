@@ -139,7 +139,6 @@ namespace SuperMario
             {
                 obj.Update(gameTime);
             }
-            sprite.Update(gameTime);
             base.Update(gameTime);
         }
 
