@@ -18,7 +18,7 @@ namespace SuperMario
     {
         private GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public Texture2D texture;
+        private Texture2D texture { get; set; }
         public ISprite sprite;
         public IMario Mario;
         public IBlock Block;
@@ -32,7 +32,6 @@ namespace SuperMario
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";         
-    
         }
 
         protected override void Initialize()
