@@ -6,6 +6,7 @@ using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
+using System;
 using System.Collections;
 
 namespace SuperMario
@@ -15,6 +16,8 @@ namespace SuperMario
         private GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
+        private Texture2D background;
+        private Rectangle mainFrame;
         private ISprite Sprite;
         public ISprite sprite
         {
@@ -98,6 +101,8 @@ namespace SuperMario
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
+            background = Content.Load<Texture2D>("background");
+            mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             Mario = new Mario(texture, 3, 12);
 
             SpriteFactory.Instance.LoadAllTextures(Content);
@@ -145,6 +150,9 @@ namespace SuperMario
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, mainFrame, Color.White);
+            spriteBatch.End();
             foreach (ISprite obj in ListOfObjects)
             {
                 obj.Draw(spriteBatch, new Vector2(xPos, yPos));

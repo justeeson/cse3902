@@ -37,6 +37,7 @@ namespace SuperMario.Sprites
             }
             if (currentFrame == startFrame - totalFrames)
                 currentFrame = startFrame;
+                
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

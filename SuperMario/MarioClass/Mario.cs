@@ -17,6 +17,7 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        private int locationX, locationY;
         int delay = 100;
 
         enum Orientations
@@ -38,6 +39,8 @@ namespace SuperMario.MarioClass
             Texture = texture;
             Rows = rows;
             Columns = columns;
+            locationX = 400;
+            locationY = 350;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
 
@@ -62,8 +65,10 @@ namespace SuperMario.MarioClass
 
         public void LookLeft()
         {
-            if (orientation == (int)Orientations.StandingLeft)
+            if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
+                //TODO: Need to fix the movement speed.
+                locationX = locationX - 1;
                 orientation = (int)Orientations.RunningLeft;
                 state = getState(orientation, marioMode);
             }
@@ -214,7 +219,7 @@ namespace SuperMario.MarioClass
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            state.Draw(spriteBatch, location);
+            state.Draw(spriteBatch, new Vector2(locationX, locationY));
         }
     }
 }
