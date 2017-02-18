@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+
+<object> 
+<name>PipeSprite</name>
+<locationX>200</locationX>
+<locationY>200</locationY>
+</object>
+
+<object> 
+<name>SolidBrick</name>
+<locationX>250</locationX>
+<locationY>200</locationY>
+</object>
+
+</objects>

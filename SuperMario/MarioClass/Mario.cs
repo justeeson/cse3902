@@ -18,6 +18,7 @@ namespace SuperMario.MarioClass
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int locationX, locationY;
+        private Boolean starStatus;
         int delay = 100;
 
         enum Orientations
@@ -41,6 +42,7 @@ namespace SuperMario.MarioClass
             Columns = columns;
             locationX = 400;
             locationY = 350;
+            starStatus = false;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
 
@@ -220,6 +222,11 @@ namespace SuperMario.MarioClass
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             state.Draw(spriteBatch, new Vector2(locationX, locationY));
+        }
+        
+        public void StarPowerUp()
+        {
+            starStatus = true;
         }
     }
 }
