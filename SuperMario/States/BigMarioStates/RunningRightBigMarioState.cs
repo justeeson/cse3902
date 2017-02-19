@@ -17,6 +17,8 @@ namespace SuperMario.Sprites
         private int startFrame;
         private int totalFrames;
         private int timeDelay;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
 
         public RunningRightBigMarioState(Mario mario)
         {
@@ -25,15 +27,17 @@ namespace SuperMario.Sprites
             startFrame = currentFrame;
             totalFrames = 3;
             timeDelay = 10;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 150;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            timeDelay--;
-            if (timeDelay == 0)
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
             {
+                timeSinceLastFrame -= millisecondsPerFrame;
                 currentFrame++;
-                timeDelay = 10;
             }
             if (currentFrame == startFrame + totalFrames)
                 currentFrame = startFrame;

@@ -138,8 +138,8 @@ namespace SuperMario
 
         protected override void Update(GameTime gameTime)
         {
-            KeyboardController.Update();
-            Mario.Update();
+            KeyboardController.Update(gameTime);
+            Mario.Update(gameTime);
             foreach (ISprite obj in ListOfObjects)
             {
                 obj.Update(gameTime);

@@ -15,27 +15,30 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int count;
-        private int timer;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            count = 300;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 350;
+
         }
 
         public void Update(GameTime gameTime)
-        {   
-            timer += gameTime.ElapsedGameTime.Milliseconds;
-            if (timer > count)
+        {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
             {
-                timer -= count;
-                currentFrame++; ;
-                if (currentFrame == 3)
-                { currentFrame = 0; }
+                timeSinceLastFrame -= millisecondsPerFrame;
+                currentFrame++;
             }
+
+            if (currentFrame == 3)
+            { currentFrame = 0; }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

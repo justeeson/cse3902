@@ -16,27 +16,30 @@ namespace SuperMario.Sprites
         private int currentFrame;
         private int startFrame;
         private int totalFrames;
-        private int timeDelay;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
 
         public RunningRightSmallMarioState(Mario mario)
         {
             this.mario = mario;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 150;
             currentFrame = 7;
             startFrame = currentFrame;
             totalFrames = 3;
-            timeDelay = 10;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            timeDelay--;
-            if (timeDelay == 0)
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
             {
-                currentFrame++;
-                timeDelay = 10;
+                timeSinceLastFrame -= millisecondsPerFrame;
+                currentFrame++;    
             }
             if (currentFrame == startFrame + totalFrames)
                 currentFrame = startFrame;
+            Mario.locationX++;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

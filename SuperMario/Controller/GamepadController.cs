@@ -21,7 +21,7 @@ namespace SuperMario.Controller
         {
             controllerMappings.Add(botton, command);
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             if (currentState.IsConnected && currentState.Buttons.Start == ButtonState.Pressed)

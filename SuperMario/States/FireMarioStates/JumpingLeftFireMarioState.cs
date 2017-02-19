@@ -21,7 +21,7 @@ namespace SuperMario.Sprites
             currentFrame = 25;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
         }
 

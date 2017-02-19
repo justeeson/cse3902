@@ -17,7 +17,7 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        private int locationX, locationY;
+        public static int locationX, locationY;
         private Boolean starStatus;
         int delay = 100;
 
@@ -70,7 +70,6 @@ namespace SuperMario.MarioClass
             if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
                 //TODO: Need to fix the movement speed.
-                locationX = locationX - 1;
                 orientation = (int)Orientations.RunningLeft;
                 state = getState(orientation, marioMode);
             }
@@ -214,9 +213,9 @@ namespace SuperMario.MarioClass
             state = getState(orientation, marioMode);          
         }
         
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            state.Update();
+            state.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

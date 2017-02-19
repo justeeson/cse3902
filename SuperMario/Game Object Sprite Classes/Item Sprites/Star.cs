@@ -18,6 +18,8 @@ namespace SuperMario
         private int currentFrame;
         private int count;
         private int timer;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
         public StarSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -25,18 +27,21 @@ namespace SuperMario
             Columns = columns;
             currentFrame = 1;
             count = 300;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 250;
         }
 
         public void Update(GameTime gameTime)
-        {    
-            timer += gameTime.ElapsedGameTime.Milliseconds;
-            if (timer > count)
+        {
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
             {
-                timer -= count;
-                currentFrame++; ;
-                if (currentFrame == 4)
-                { currentFrame = 1; }
+                timeSinceLastFrame -= millisecondsPerFrame;
+                currentFrame++;
             }
+
+            if (currentFrame == 4)
+            { currentFrame = 1; }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
