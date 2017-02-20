@@ -1,4 +1,5 @@
-﻿using SuperMario.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using SuperMario.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,20 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class Coin
+    class Coin : IItem
     {
         private Game1 myGame;
-
+        ISprite mySprite;
         public Coin(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateCoin();
+            mySprite = SpriteFactory.Instance.CreateCoin();
             myGame.sprite = mySprite;
         }
+        public Rectangle Area()
+        {
+            return mySprite.Area();
+        }
+
     }
 }
