@@ -23,11 +23,7 @@ namespace SuperMario.Sprites
         public CrouchingLeftFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 28;
-            startFrame = currentFrame;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 150;
-            totalFrames = 3;
+            currentFrame = 24;
         }
 
         public void Update(GameTime gameTime)
@@ -35,14 +31,7 @@ namespace SuperMario.Sprites
             KeyboardState newState = Keyboard.GetState();
             if (newState.IsKeyDown(Keys.Down))
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-                if (timeSinceLastFrame > millisecondsPerFrame)
-                {
-                    timeSinceLastFrame -= millisecondsPerFrame;
-                    currentFrame--;
-                }
-                if (currentFrame == startFrame - totalFrames)
-                    currentFrame = startFrame;
+                currentFrame = 24;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;

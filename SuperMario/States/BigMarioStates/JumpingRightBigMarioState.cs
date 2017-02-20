@@ -34,6 +34,7 @@ namespace SuperMario.Sprites
         {
             KeyboardState newState = Keyboard.GetState();
             if (newState.IsKeyDown(Keys.Up))
+
             {
                 timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)

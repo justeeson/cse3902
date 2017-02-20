@@ -23,11 +23,7 @@ namespace SuperMario.Sprites
         public CrouchingLeftSmallMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 4;
-            startFrame = currentFrame;
-            totalFrames = 3;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 150;
+            currentFrame = 5;
         }
 
         public void Update(GameTime gameTime)
@@ -35,14 +31,7 @@ namespace SuperMario.Sprites
             KeyboardState newState = Keyboard.GetState();
             if (newState.IsKeyDown(Keys.Down))
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-                if (timeSinceLastFrame > millisecondsPerFrame)
-                {
-                    timeSinceLastFrame -= millisecondsPerFrame;
-                    currentFrame--;
-                }
-                if (currentFrame == startFrame - totalFrames)
-                    currentFrame = startFrame;
+                currentFrame = 5;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;
@@ -51,10 +40,6 @@ namespace SuperMario.Sprites
                 {
                     Mario.locationY++;
                 }
-            }
-            else
-            {
-                currentFrame = 5;
             }
         }
 
