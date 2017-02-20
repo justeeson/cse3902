@@ -47,16 +47,16 @@ namespace SuperMario.MarioClass
             marioMode = (int)MarioModes.Small;
 
             StateArray = new IMarioState[3, 9] {
-                {new CrouchingRightBigMarioState(this), new CrouchingLeftBigMarioState(this), new JumpingRightBigMarioState(this),
-                    new JumpingLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
+                {new MovingDownRightBigMarioState(this), new MovingDownLeftBigMarioState(this), new MovingUpRightBigMarioState(this),
+                    new MovingUpLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
                     new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)},
 
-                {new CrouchingRightFireMarioState(this), new CrouchingLeftFireMarioState(this), new JumpingRightFireMarioState(this),
-                    new JumpingLeftFireMarioState(this), new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
+                {new MovingDownRightFireMarioState(this), new MovingDownLeftFireMarioState(this), new MovingUpRightFireMarioState(this),
+                    new MovingUpLeftFireMarioState(this), new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
                     new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)},
 
-                {new CrouchingRightSmallMarioState(this), new CrouchingLeftSmallMarioState(this), new JumpingRightSmallMarioState(this),
-                    new JumpingLeftSmallMarioState(this), new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
+                {new MovingDownRightSmallMario(this), new MovingDownLeftSmallMario(this), new MovingUpRightSmallMario(this),
+                    new MovingUpLeftSmallMario(this), new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
                     new StandingRightSmallMarioState(this), new StandingLeftSmallMarioState(this), new DeadSmallMarioState(this)} };
         }
 
@@ -94,7 +94,7 @@ namespace SuperMario.MarioClass
             }
         }
 
-        public void Jump()
+        public void LookUp()
         {         
             if (orientation == (int)Orientations.CrouchingRight)
             {
@@ -117,7 +117,7 @@ namespace SuperMario.MarioClass
                 state = getState(orientation, marioMode);
             }
         }
-        public void Crouch()
+        public void LookDown()
         {
             if (orientation == (int)Orientations.JumpingRight)
             {

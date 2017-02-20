@@ -11,36 +11,40 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
-    public class JumpingLeftSmallMarioState : IMarioState
+    class MovingDownRightFireMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
+        private int startFrame;
+        private int totalFrames;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
 
-        public JumpingLeftSmallMarioState(Mario mario)
+        public MovingDownRightFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 1;
+            currentFrame = 35;
         }
 
         public void Update(GameTime gameTime)
         {
-            KeyboardState newKeyboardState = Keyboard.GetState();
+           KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
-            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
+            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
             {
-                currentFrame = 1;
-                if (Mario.locationY == 0)
+                currentFrame = 35;
+                if (Mario.locationY == 400)
                 {
-                    Mario.locationY = 400;
+                    Mario.locationY = 0;
                 }
                 else
                 {
-                    Mario.locationY--;
+                    Mario.locationY++;
                 }
             }
             else
             {
-                currentFrame = 5;
+                currentFrame = 30;
             }
         }
 
@@ -58,7 +62,5 @@ namespace SuperMario.Sprites
             spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
-
-    }
+   }
 }

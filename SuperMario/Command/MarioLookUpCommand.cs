@@ -8,18 +8,18 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
-    class MarioJumpCommand : ICommand
+    class MarioLookUpCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioJumpCommand(Game1 game)
+        public MarioLookUpCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.Jump();
+            myGame.Mario.LookUp();
         }
     }
 }

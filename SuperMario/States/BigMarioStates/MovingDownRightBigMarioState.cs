@@ -5,21 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperMario.MarioClass;
 using SuperMario.Interfaces;
+using SuperMario.MarioClass;
 using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
-    public class CrouchingLeftSmallMarioState : IMarioState
+    class MovingDownRightBigMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
+        private int startFrame;
+        private int totalFrames;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
 
-        public CrouchingLeftSmallMarioState(Mario mario)
+        public MovingDownRightBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 5;
+            currentFrame = 23;
         }
 
         public void Update(GameTime gameTime)
@@ -28,7 +32,7 @@ namespace SuperMario.Sprites
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
             if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
             {
-                currentFrame = 5;
+                currentFrame = 23;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;
@@ -37,6 +41,10 @@ namespace SuperMario.Sprites
                 {
                     Mario.locationY++;
                 }
+            }
+            else
+            {
+                currentFrame = 18;
             }
         }
 
@@ -54,7 +62,5 @@ namespace SuperMario.Sprites
             spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
-
     }
 }

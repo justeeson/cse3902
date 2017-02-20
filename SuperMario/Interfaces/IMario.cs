@@ -16,8 +16,8 @@ namespace SuperMario.Interfaces
 
         void LookLeft();
         void LookRight();
-        void Jump();
-        void Crouch();
+        void LookUp();
+        void LookDown();
         void MarioBigState();
         void MarioSmallState();
         void Dead();

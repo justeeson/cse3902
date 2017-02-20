@@ -8,18 +8,18 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
-    class MarioCrouchCommand : ICommand
+    class MarioLookDownCommand : ICommand
     {
         private Game1 myGame;
 
-        public MarioCrouchCommand(Game1 game)
+        public MarioLookDownCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.Crouch();
+            myGame.Mario.LookDown();
         }
     }
 }

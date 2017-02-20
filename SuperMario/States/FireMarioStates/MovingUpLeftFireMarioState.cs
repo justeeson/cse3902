@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
-    public class JumpingLeftBigMarioState : IMarioState
+    public class MovingUpLeftFireMarioState : IMarioState
     {
         private Mario mario;
         private int currentFrame;
@@ -20,10 +20,10 @@ namespace SuperMario.Sprites
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
 
-        public JumpingLeftBigMarioState(Mario mario)
+        public MovingUpLeftFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 13;
+            currentFrame = 25;
         }
 
         public void Update(GameTime gameTime)
@@ -32,7 +32,7 @@ namespace SuperMario.Sprites
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
             if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
             {
-                currentFrame = 13;
+                currentFrame = 25;
                 if (Mario.locationY == 0)
                 {
                     Mario.locationY = 400;
@@ -44,7 +44,7 @@ namespace SuperMario.Sprites
             }
             else
             {
-                currentFrame = 17;
+                currentFrame = 29;
             }
         }
 

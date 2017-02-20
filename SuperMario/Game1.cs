@@ -111,12 +111,15 @@ namespace SuperMario
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
             KeyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
-            KeyboardController.RegisterCommand(Keys.Up, new MarioJumpCommand(this));
-            KeyboardController.RegisterCommand(Keys.Down, new MarioCrouchCommand(this));
+            KeyboardController.RegisterCommand(Keys.Up, new MarioLookUpCommand(this));
+            KeyboardController.RegisterCommand(Keys.Down, new MarioLookDownCommand(this));
             KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
+
+            //For final implementation use these keys to impleement jump, crouch, etc(use powerups for fire and big)
             KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
             KeyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
             KeyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
+
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             KeyboardController.RegisterCommand(Keys.Z, new BlockQuestionBecomeUsedCommand(this));
@@ -126,10 +129,10 @@ namespace SuperMario
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
-            GamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
-            GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioCrouchCommand(this));
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioLookUpCommand(this));
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
 
-            //DELETE THIS
+            //For final implementation use these keys to impleement jump, crouch, etc(use powerups for fire and big)
             GamepadController.RegisterCommand(Buttons.A, new MarioBecomeSmallCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioBecomeBigCommand(this));
             GamepadController.RegisterCommand(Buttons.X, new MarioBecomeFireCommand(this));
