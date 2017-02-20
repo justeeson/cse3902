@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
@@ -16,7 +17,6 @@ namespace SuperMario.Sprites
         private int currentFrame;
         private int startFrame;
         private int totalFrames;
-        private int timeDelay;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
 
@@ -28,20 +28,34 @@ namespace SuperMario.Sprites
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 150;
             totalFrames = 3;
-            timeDelay = 10;
         }
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            KeyboardState newState = Keyboard.GetState();
+            if (newState.IsKeyDown(Keys.Left))
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame--;
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame--;
+                }
+                if (currentFrame == startFrame - totalFrames)
+                    currentFrame = startFrame;
+                if (Mario.locationX == 0)
+                {
+                    Mario.locationX = 800;
+                }
+                else
+                {
+                    Mario.locationX--;
+                }
             }
-            if (currentFrame == startFrame - totalFrames)
-                currentFrame = startFrame;
-            Mario.locationX--;
+            else
+            {
+                currentFrame = 29;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -52,13 +66,11 @@ namespace SuperMario.Sprites
             int column = currentFrame % mario.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, 350, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             spriteBatch.Begin();
             spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
-
     }
 }
