@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 
@@ -14,13 +9,15 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        public Vector2 Location { get; set; }
         public int currentFrame;
 
-        public PipeSprite(Texture2D texture, int rows, int columns)
+        public PipeSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
+            Location = location;
             currentFrame = 0;
         }
 
@@ -28,7 +25,7 @@ namespace SuperMario
         {
 
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             int width = 70;
             int height = 68;
@@ -41,11 +38,11 @@ namespace SuperMario
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area(Vector2 location)
+        public Rectangle Area()
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
         }
     }
 }

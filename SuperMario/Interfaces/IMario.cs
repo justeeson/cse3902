@@ -14,6 +14,8 @@ namespace SuperMario.Interfaces
 
         Texture2D Texture { get; set; }
 
+        Rectangle Area();
+
         void LookLeft();
         void LookRight();
         void LookUp();
@@ -24,6 +26,6 @@ namespace SuperMario.Interfaces
         void MarioFireState();
         void Reset();
         void Update(GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch, Vector2 destination);
+        void Draw(SpriteBatch spriteBatch);
     }
 }

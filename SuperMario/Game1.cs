@@ -18,6 +18,7 @@ namespace SuperMario
         private Texture2D texture { get; set; }
         private Texture2D background;
         private Rectangle mainFrame;
+
         private ISprite Sprite;
         public ISprite sprite
         {
@@ -68,9 +69,7 @@ namespace SuperMario
         {
             get
             { return ListOfObjects; }
-
-            /*set
-            { ListOfObjects = value; }*/
+            
         }
 
         private static int xPos, yPos, xMax, yMax;
@@ -80,8 +79,6 @@ namespace SuperMario
         {
             get
             { return Valid_Keys; }
-            /*set
-            { Valid_Keys = value; }*/
         }
 
         public Game1()

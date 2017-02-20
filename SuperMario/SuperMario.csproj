@@ -55,6 +55,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
+    <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
+    <Compile Include="Collision Detection and Responses\MarioAndEnemyCollisionHandling.cs" />
     <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
     <Compile Include="Command\BlockBrickDisappearCommand.cs" />
     <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
@@ -180,9 +182,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Collision Defection and Responses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

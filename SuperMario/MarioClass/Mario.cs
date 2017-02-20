@@ -17,7 +17,8 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public static int locationX, locationY;
+        public int locationX { get; set; }
+        public int locationY { get; set; }
         private Boolean starStatus;
         int delay = 100;
 
@@ -200,7 +201,7 @@ namespace SuperMario.MarioClass
             state.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             state.Draw(spriteBatch, new Vector2(locationX, locationY));
         }
@@ -208,6 +209,11 @@ namespace SuperMario.MarioClass
         public void StarPowerUp()
         {
             starStatus = true;
+        }
+
+        public Rectangle Area()
+        {
+            return new Rectangle(locationX, locationY, Texture.Width, Texture.Height);
         }
     }
 }

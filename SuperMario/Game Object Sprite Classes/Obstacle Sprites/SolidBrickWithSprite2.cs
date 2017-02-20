@@ -14,13 +14,15 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        public Vector2 Location { get; set; }
         public int currentFrame;
 
-        public SolidBrickWithCrewsSprite2(Texture2D texture, int rows, int columns)
+        public SolidBrickWithCrewsSprite2(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
+            Location = location;
             currentFrame = 0;
         }
 
@@ -28,7 +30,7 @@ namespace SuperMario
         {
 
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             int width = 36;
             int height = 34;
@@ -41,7 +43,7 @@ namespace SuperMario
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area(Vector2 location)
+        public Rectangle Area()
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;

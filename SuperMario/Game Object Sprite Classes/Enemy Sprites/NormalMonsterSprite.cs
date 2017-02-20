@@ -15,14 +15,17 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        public Vector2 Location { get; set; }
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        public NormalMonsterSprite(Texture2D texture, int rows, int columns)
+
+        public NormalMonsterSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
+            Location = location;
             currentFrame = 1;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
@@ -41,7 +44,7 @@ namespace SuperMario
             { currentFrame = 1; }
 
         }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             int width = 26;
             int height = 24;
@@ -55,11 +58,11 @@ namespace SuperMario
             spriteBatch.End();
         }
 
-        public Rectangle Area(Vector2 location)
+        public Rectangle Area()
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
         }
     }
 }
