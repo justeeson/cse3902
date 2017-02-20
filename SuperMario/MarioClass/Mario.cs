@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
-
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.MarioClass
 {
@@ -22,14 +22,14 @@ namespace SuperMario.MarioClass
         int delay = 100;
 
         enum Orientations
-            { CrouchingRight, CrouchingLeft,
+        { CrouchingRight, CrouchingLeft,
             JumpingRight, JumpingLeft,
             RunningRight, RunningLeft,
             StandingRight, StandingLeft,
-            Dead};
+            Dead };
 
         enum MarioModes
-        { Big, Fire, Small};
+        { Big, Fire, Small };
 
         private int orientation, marioMode;
         IMarioState[,] StateArray;
@@ -46,14 +46,14 @@ namespace SuperMario.MarioClass
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
 
-            StateArray = new IMarioState[3, 9] { 
+            StateArray = new IMarioState[3, 9] {
                 {new CrouchingRightBigMarioState(this), new CrouchingLeftBigMarioState(this), new JumpingRightBigMarioState(this),
                     new JumpingLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
-                    new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)}, 
+                    new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)},
 
                 {new CrouchingRightFireMarioState(this), new CrouchingLeftFireMarioState(this), new JumpingRightFireMarioState(this),
                     new JumpingLeftFireMarioState(this), new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
-                    new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)}, 
+                    new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)},
 
                 {new CrouchingRightSmallMarioState(this), new CrouchingLeftSmallMarioState(this), new JumpingRightSmallMarioState(this),
                     new JumpingLeftSmallMarioState(this), new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
@@ -67,23 +67,33 @@ namespace SuperMario.MarioClass
 
         public void LookLeft()
         {
-            if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
+            KeyboardState newState = Keyboard.GetState();
+
+            if (orientation == (int)Orientations.RunningLeft && newState.IsKeyDown(Keys.Left))
             {
-                //TODO: Need to fix the movement speed.
+
+            }
+            else if (orientation == (int)Orientations.StandingLeft)
+            {
                 orientation = (int)Orientations.RunningLeft;
                 state = getState(orientation, marioMode);
             }
+
             else if (orientation != (int)Orientations.Dead)
             {
                 orientation = (int)Orientations.StandingLeft;
                 state = getState(orientation, marioMode);
             }
-            System.Threading.Thread.Sleep(delay);
         }
 
         public void LookRight()
         {
-            if (orientation == (int)Orientations.StandingRight)
+            KeyboardState newState = Keyboard.GetState();
+            if (orientation == (int)Orientations.RunningRight && newState.IsKeyDown(Keys.Right))
+            {
+
+            }
+            else if (orientation == (int)Orientations.StandingRight)
             {
                 orientation = (int)Orientations.RunningRight;
                 state = getState(orientation, marioMode);
@@ -93,12 +103,16 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.StandingRight;
                 state = getState(orientation, marioMode);
             }
-            System.Threading.Thread.Sleep(delay);
         }
 
         public void Jump()
         {
-            if (orientation == (int)Orientations.CrouchingRight)
+            KeyboardState newState = Keyboard.GetState();
+            if ((orientation == (int)Orientations.JumpingLeft || orientation == (int)Orientations.JumpingRight)  && newState.IsKeyDown(Keys.Up))
+            {
+
+            }
+            else if (orientation == (int)Orientations.CrouchingRight)
             {
                 orientation = (int)Orientations.StandingRight;
                 state = getState(orientation, marioMode);
@@ -118,7 +132,6 @@ namespace SuperMario.MarioClass
                 orientation = (int)Orientations.JumpingLeft;
                 state = getState(orientation, marioMode);
             }
-            System.Threading.Thread.Sleep(delay);
         }
         public void Crouch()
         {
@@ -133,30 +146,15 @@ namespace SuperMario.MarioClass
                 state = getState(orientation, marioMode);
             }
             else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
-            {
-                if (marioMode != (int)MarioModes.Small)
-                {
+            {      
                     orientation = (int)Orientations.CrouchingRight;
                     state = getState(orientation, marioMode);
-                }
-                else
-                {
-                    return;
-                }
             }
             else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
             {
-                if (marioMode != (int)MarioModes.Small)
-                {
                     orientation = (int)Orientations.CrouchingLeft;
                     state = getState(orientation, marioMode);
-                }
-                else
-                {
-                    return;
-                }
             }
-            System.Threading.Thread.Sleep(delay);
         }
         public void MarioBigState()
         {
