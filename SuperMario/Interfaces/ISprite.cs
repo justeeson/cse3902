@@ -12,5 +12,7 @@ namespace SuperMario.Interfaces
     {
         void Update(GameTime gametime);
         void Draw(SpriteBatch spriteBatch, Vector2 destination);
+        Rectangle Area(Vector2 loc);
+
     }
 }
