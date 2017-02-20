@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
+    <Compile Include="Collision Detection and Responses\CollsionHandler.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndEnemyCollisionHandling.cs" />
     <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
