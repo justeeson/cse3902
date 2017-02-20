@@ -17,17 +17,40 @@ namespace SuperMario.Controller
         {
             controllerMappings = new Dictionary<Buttons, ICommand>();
         }
-        public void RegisterCommand(Buttons botton, ICommand command)
+        public void RegisterCommand(Buttons button, ICommand command)
         {
-            controllerMappings.Add(botton, command);
+            controllerMappings.Add(button, command);
         }
         public void Update(GameTime gameTime)
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
+            {
+                controllerMappings[Buttons.LeftThumbstickLeft].Execute();
+            }
+
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickRight))
+            {
+                controllerMappings[Buttons.LeftThumbstickRight].Execute();
+            }
+
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickUp))
+            {
+                controllerMappings[Buttons.LeftThumbstickUp].Execute();
+            }
+
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickDown))
+            {
+                controllerMappings[Buttons.LeftThumbstickDown].Execute();
+            }
+
+            /*
+
             if (currentState.IsConnected && currentState.Buttons.Start == ButtonState.Pressed)
             {
                 controllerMappings[Buttons.Start].Execute();
             }
+            */
             if (currentState.IsConnected && currentState.Buttons.A == ButtonState.Pressed)
             {
                 controllerMappings[Buttons.A].Execute();
@@ -39,11 +62,9 @@ namespace SuperMario.Controller
             if (currentState.IsConnected && currentState.Buttons.X == ButtonState.Pressed)
             {
                 controllerMappings[Buttons.X].Execute();
+            }         
             }
-            if (currentState.IsConnected && currentState.Buttons.Y == ButtonState.Pressed)
-            {
-                controllerMappings[Buttons.Y].Execute();
-            }
+            
         }
     }
-}
+

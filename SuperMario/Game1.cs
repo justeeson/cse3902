@@ -54,15 +54,14 @@ namespace SuperMario
             { keyboardController = value; }
         }
 
-        //Gamepad is not used for this sprint but will be later
-        /*private GamepadController gamepadController;
+        private GamepadController gamepadController;
         public GamepadController GamepadController
         {
             get
             { return gamepadController; }
             set
             { gamepadController = value; }
-        }*/
+        }
 
         private static ArrayList ListOfObjects;
         public static ArrayList listOfObjects
@@ -120,10 +119,20 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
-
             KeyboardController.RegisterCommand(Keys.Z, new BlockQuestionBecomeUsedCommand(this));
             KeyboardController.RegisterCommand(Keys.X, new BlockBrickDisappearCommand(this));
             KeyboardController.RegisterCommand(Keys.C, new BlockHiddenBlockUsedCommand(this));
+
+            GamepadController = new GamepadController();
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
+            GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioCrouchCommand(this));
+
+            //DELETE THIS
+            GamepadController.RegisterCommand(Buttons.A, new MarioBecomeSmallCommand(this));
+            GamepadController.RegisterCommand(Buttons.B, new MarioBecomeBigCommand(this));
+            GamepadController.RegisterCommand(Buttons.X, new MarioBecomeFireCommand(this));
 
 
             xMax = GraphicsDevice.Viewport.Width;
@@ -139,6 +148,7 @@ namespace SuperMario
         protected override void Update(GameTime gameTime)
         {
             KeyboardController.Update(gameTime);
+            GamepadController.Update(gameTime);
             Mario.Update(gameTime);
             foreach (ISprite obj in ListOfObjects)
             {

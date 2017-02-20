@@ -15,34 +15,20 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
 
         public CrouchingLeftBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 16;
-            startFrame = currentFrame;
-            totalFrames = 3;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 150;
+            currentFrame = 12;
         }
 
         public void Update(GameTime gameTime)
         {
-            KeyboardState newState = Keyboard.GetState();
-            if (newState.IsKeyDown(Keys.Down))
+            KeyboardState newKeyboardState = Keyboard.GetState();
+            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-                if (timeSinceLastFrame > millisecondsPerFrame)
-                {
-                    timeSinceLastFrame -= millisecondsPerFrame;
-                    currentFrame--;
-                }
-                if (currentFrame == startFrame - totalFrames)
-                    currentFrame = startFrame;
+                currentFrame = 12;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;

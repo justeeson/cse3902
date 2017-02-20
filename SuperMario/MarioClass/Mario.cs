@@ -67,19 +67,13 @@ namespace SuperMario.MarioClass
 
         public void LookLeft()
         {
-            KeyboardState newState = Keyboard.GetState();
-
-            if (orientation == (int)Orientations.RunningLeft && newState.IsKeyDown(Keys.Left))
-            {
-
-            }
-            else if (orientation == (int)Orientations.StandingLeft)
+            if (orientation == (int)Orientations.StandingLeft)
             {
                 orientation = (int)Orientations.RunningLeft;
                 state = getState(orientation, marioMode);
             }
 
-            else if (orientation != (int)Orientations.Dead)
+            else if (orientation != (int)Orientations.Dead && !(orientation == (int)Orientations.RunningLeft))
             {
                 orientation = (int)Orientations.StandingLeft;
                 state = getState(orientation, marioMode);
@@ -88,17 +82,12 @@ namespace SuperMario.MarioClass
 
         public void LookRight()
         {
-            KeyboardState newState = Keyboard.GetState();
-            if (orientation == (int)Orientations.RunningRight && newState.IsKeyDown(Keys.Right))
-            {
-
-            }
-            else if (orientation == (int)Orientations.StandingRight)
+            if (orientation == (int)Orientations.StandingRight)
             {
                 orientation = (int)Orientations.RunningRight;
                 state = getState(orientation, marioMode);
             }
-            else if (orientation != (int)Orientations.Dead)
+            else if (orientation != (int)Orientations.Dead && !(orientation == (int)Orientations.RunningRight))
             {
                 orientation = (int)Orientations.StandingRight;
                 state = getState(orientation, marioMode);
@@ -106,13 +95,8 @@ namespace SuperMario.MarioClass
         }
 
         public void Jump()
-        {
-            KeyboardState newState = Keyboard.GetState();
-            if ((orientation == (int)Orientations.JumpingLeft || orientation == (int)Orientations.JumpingRight)  && newState.IsKeyDown(Keys.Up))
-            {
-
-            }
-            else if (orientation == (int)Orientations.CrouchingRight)
+        {         
+            if (orientation == (int)Orientations.CrouchingRight)
             {
                 orientation = (int)Orientations.StandingRight;
                 state = getState(orientation, marioMode);

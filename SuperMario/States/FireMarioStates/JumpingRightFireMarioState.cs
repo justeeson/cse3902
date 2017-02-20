@@ -24,8 +24,9 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
-            KeyboardState newState = Keyboard.GetState();
-            if (newState.IsKeyDown(Keys.Up))
+            KeyboardState newKeyboardState = Keyboard.GetState();
+            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
             {
                 currentFrame = 34;
                 if (Mario.locationY == 0)

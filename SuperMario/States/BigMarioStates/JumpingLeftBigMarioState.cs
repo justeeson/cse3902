@@ -23,26 +23,16 @@ namespace SuperMario.Sprites
         public JumpingLeftBigMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 16;
-            startFrame = currentFrame;
-            totalFrames = 3;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 150;
+            currentFrame = 13;
         }
 
         public void Update(GameTime gameTime)
         {
-            KeyboardState newState = Keyboard.GetState();
-            if (newState.IsKeyDown(Keys.Up))
+            KeyboardState newKeyboardState = Keyboard.GetState();
+            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-                if (timeSinceLastFrame > millisecondsPerFrame)
-                {
-                    timeSinceLastFrame -= millisecondsPerFrame;
-                    currentFrame--;
-                }
-                if (currentFrame == startFrame - totalFrames)
-                    currentFrame = startFrame;
+                currentFrame = 13;
                 if (Mario.locationY == 0)
                 {
                     Mario.locationY = 400;

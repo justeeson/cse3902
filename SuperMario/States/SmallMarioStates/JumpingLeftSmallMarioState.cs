@@ -15,11 +15,6 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
-
 
         public JumpingLeftSmallMarioState(Mario mario)
         {
@@ -29,8 +24,9 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
-            KeyboardState newState = Keyboard.GetState();
-            if (newState.IsKeyDown(Keys.Up))
+            KeyboardState newKeyboardState = Keyboard.GetState();
+            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
             {
                 currentFrame = 1;
                 if (Mario.locationY == 0)
