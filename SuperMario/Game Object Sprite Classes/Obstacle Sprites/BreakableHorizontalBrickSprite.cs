@@ -40,5 +40,11 @@ using SuperMario.Interfaces;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
+    public Rectangle Area(Vector2 location)
+    {
+        int width = Texture.Width / Columns;
+        int height = Texture.Height / Rows;
+        return new Rectangle((int)location.X, (int)location.Y, width, height);
     }
+}
 
