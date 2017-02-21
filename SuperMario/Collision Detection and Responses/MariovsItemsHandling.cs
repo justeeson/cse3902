@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
@@ -23,7 +24,7 @@ namespace SuperMario
             collisionRectangle = Rectangle.Intersect(mario.Area(), item.Area());
             mario.locationX -= collisionRectangle.Width;
             mario.locationY -= collisionRectangle.Height;
-            item.
+            item.CollisionSprite();
         }
 
     }

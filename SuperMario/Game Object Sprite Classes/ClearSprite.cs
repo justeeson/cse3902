@@ -37,5 +37,9 @@ namespace SuperMario
            
             return new Rectangle();
         }
+        public void CollisionSprite()
+        {
+
+        }
     }
 }

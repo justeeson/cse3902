@@ -21,6 +21,8 @@ namespace SuperMario
         private int millisecondsPerFrame;
         public ISprite Sprite { get; set; }
         public Rectangle rectangle { get; set; }
+        private SpriteBatch spriteBatch;
+
         public FlowerSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
@@ -51,6 +53,7 @@ namespace SuperMario
             int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
+            this.spriteBatch = spriteBatch;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle(100, 160, width, height);
@@ -64,10 +67,14 @@ namespace SuperMario
             int height = Texture.Height / Rows;
             return new Rectangle((int)Location.X, (int)Location.Y, width, height);
         }
-        public void destroySprite()
+        public void CollisionSprite()
         {
-            this.Sprite = new ClearSprite(Texture);
-            this.rectangle = this.Sprite.Area();
+            Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
+            Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);
+
+            this.spriteBatch.Begin();
+            this.spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            this.spriteBatch.End();
 
         }
     }

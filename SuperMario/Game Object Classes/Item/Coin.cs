@@ -25,7 +25,6 @@ namespace SuperMario
 
         public void destroyItem()
         {
-            mySprite = mySprite.
         }
 
     }
