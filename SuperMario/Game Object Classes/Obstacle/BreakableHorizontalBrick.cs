@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class BreakableHorizontalBrick
+    class BreakableHorizontalBrick : IBlock
     {
         private Game1 myGame;
 

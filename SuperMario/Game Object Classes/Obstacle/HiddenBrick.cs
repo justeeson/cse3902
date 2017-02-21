@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class HiddenBrick
+    class HiddenBrick : IBlock
     {
         private Game1 myGame;
 

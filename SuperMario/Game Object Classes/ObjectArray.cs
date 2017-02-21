@@ -1,10 +1,13 @@
 ﻿using SuperMario.Interfaces;
 using System.Collections;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario.Game_Object_Classes
 {
     class ObjectArray : IObject
     {
+        public Rectangle Area { get; set; }
         private static ObjectArray instance = new ObjectArray();
         private ObjectArray()
         {

@@ -68,25 +68,28 @@ namespace SuperMario.Levels
                         enemies.Add(new Koopa(game));
                         break;
                     case "SolidBrick":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new SolidBrick(game));
                         break;
                     case "HiddenBlock":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new HiddenBrick(game));
                         break;
                     case "QuestionBlock":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new QuestionMarkBrick(game));
                         break;
                     case "BreakableCurlyBrick":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new BreakableCurlyBrick(game));
+                        break;
+                    case "BreakableHorizontalBrick":
+                        blocks.Add(new BreakableHorizontalBrick(game));
                         break;
                     case "SolidBrickWithCrews":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new SolidBrickWithCrews(game));
                         break;
                     case "UsedBlock":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new QuestionMarkBrickToUsed(game));
                         break;
                     case "Pipe":
-                        blocks.Add(new BrickClass(game));
+                        blocks.Add(new Pipe(game));
                         break;
                     case "Coin":
                         items.Add(new Coin(game));

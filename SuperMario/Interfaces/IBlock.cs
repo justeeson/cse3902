@@ -11,9 +11,9 @@ namespace SuperMario.Interfaces
     public interface IBlock : IObject
     {
         ISprite Sprite { get; set; }
-        Game1 Mygame { get; set; }
+        Game1 myGame { get; set; }
         Rectangle Area { get; set; }
-        void Update();
+        void Update(GameTime gameTime);
         void BrickToDisappear();
         void HiddenToUsed();
         void BecomeUsed();

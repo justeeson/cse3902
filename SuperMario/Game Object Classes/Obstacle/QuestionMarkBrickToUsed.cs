@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class QuestionMarkBrickToUsed
+    class QuestionMarkBrickToUsed : IBlock
     {
         private Game1 myGame;
 

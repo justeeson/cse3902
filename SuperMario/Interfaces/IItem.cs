@@ -11,7 +11,7 @@ namespace SuperMario.Interfaces
     interface IItem : IObject
     {
         ISprite Sprite { get; set; }
-        Game1 Mygame { get; set; }
+        Game1 myGame { get; set; }
         Rectangle Area { get; set; }
         void Update();
         void Used();
