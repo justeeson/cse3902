@@ -18,11 +18,12 @@ namespace SuperMario
          {
             this.game = game;
         }
-        public void MariovsItemsResponder(Mario mario, IItem item)
+        public void MariovsItemsResponder(Mario mario, ISprite item)
         {
             collisionRectangle = Rectangle.Intersect(mario.Area(), item.Area());
             mario.locationX -= collisionRectangle.Width;
             mario.locationY -= collisionRectangle.Height;
+            item.
         }
 
     }

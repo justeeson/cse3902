@@ -21,6 +21,8 @@ namespace SuperMario
         private int timer;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        public ISprite Sprite { get; set; }
+        public Rectangle rectangle { get; set; }
         public StarSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
@@ -65,6 +67,12 @@ namespace SuperMario
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
             return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+        }
+        public void destroySprite()
+        {
+            this.Sprite = new ClearSprite(Texture);
+            this.rectangle = this.Sprite.Area();
+
         }
     }
 }

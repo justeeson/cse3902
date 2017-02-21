@@ -23,5 +23,10 @@ namespace SuperMario
             return mySprite.Area();
         }
 
+        public void destroyItem()
+        {
+            mySprite = mySprite.
+        }
+
     }
 }

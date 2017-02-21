@@ -19,6 +19,9 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        public ISprite Sprite { get; set; }
+        public Rectangle rectangle { get; set; }
+
         public CoinSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
@@ -62,5 +65,17 @@ namespace SuperMario
             int height = Texture.Height / Rows;
             return new Rectangle((int)Location.X, (int)Location.Y, width, height);
         }
+        public void destroySprite(SpriteBatch spriteBatch)
+        {
+            Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
+            Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
+
+        }
+
+      
     }
 }

@@ -90,6 +90,7 @@
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\SolidBrickWithCrews.cs" />
     <Compile Include="Game Object Classes\Obstacle\SolidBrick.cs" />
+    <Compile Include="Game Object Sprite Classes\ClearSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\NormalMonsterSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\TurtleSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />

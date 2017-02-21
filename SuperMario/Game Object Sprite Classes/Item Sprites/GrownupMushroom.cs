@@ -17,7 +17,8 @@ namespace SuperMario
         public int Columns { get; set; }
         public Vector2 Location { get; set; }
         public int currentFrame;
-
+        public ISprite Sprite { get; set; }
+        public Rectangle rectangle { get; set; }
         public GrowupMushroomSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
@@ -50,6 +51,12 @@ namespace SuperMario
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
             return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+        }
+        public void destroySprite()
+        {
+            this.Sprite = new ClearSprite(Texture);
+            this.rectangle = this.Sprite.Area();
+
         }
     }
 }

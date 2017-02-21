@@ -64,5 +64,9 @@ namespace SuperMario
             int height = Texture.Height / Rows;
             return new Rectangle((int)Location.X, (int)Location.Y, width, height);
         }
+        void CollisionSprite()
+        {
+
+        }
     }
 }
