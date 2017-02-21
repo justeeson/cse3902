@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace SuperMario.Interfaces
 {
-    interface IObject
+    public interface IObject
     {
-        ArrayList ArrayOfObjects(Game1 game);
+        Rectangle Area { get; set; }
     }
 }

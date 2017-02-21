@@ -1,20 +1,21 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario.Interfaces
 {
-    interface IItem : IObject
+    public interface IEnemy : IObject
     {
         ISprite Sprite { get; set; }
-        Game1 Mygame { get; set; }
+        Game1 myGame { get; set; }
         Rectangle Area { get; set; }
-        void Update();
-        void Used();
+        void Update(GameTime gameTime);
+        void TakeDamage(IMario mario);
+        void AttackEnemy();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

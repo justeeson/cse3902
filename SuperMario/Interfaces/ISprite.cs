@@ -11,7 +11,7 @@ namespace SuperMario.Interfaces
     public interface ISprite
     {
         void Update(GameTime gametime);
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
         Rectangle Area();
         void CollisionSprite();
     }

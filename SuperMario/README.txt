@@ -1,6 +1,6 @@
 ﻿Suppressed warnings:
 
-1. CA1811	'NormalMonsterSprite.Rows.get()' appears to have no upstream public or protected callers.	
+1. CA1811	'GoombaSprite.Rows.get()' appears to have no upstream public or protected callers.	
 
 This warning shows up for several different sprite classes. The reason is because the spritesheets being used only
 have a single row and thus get Rows.get() function serves no purpose for now. However, if the spritesheet were to be 

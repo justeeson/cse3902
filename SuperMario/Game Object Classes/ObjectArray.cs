@@ -22,7 +22,7 @@ namespace SuperMario.Game_Object_Classes
         public ArrayList ArrayOfObjects(Game1 game)
         {
             ArrayList result = new ArrayList();
-            new Turtle(game);
+            new Koopa(game);
             result.Add(game.sprite);
             new Coin(game);
             result.Add(game.sprite);
@@ -34,7 +34,7 @@ namespace SuperMario.Game_Object_Classes
             result.Add(game.sprite);
             new Flower(game);
             result.Add(game.sprite);
-            new NormalMonster(game);
+            new Goomba(game);
             result.Add(game.sprite);
             new SolidBrick(game);
             result.Add(game.sprite);
@@ -55,7 +55,7 @@ namespace SuperMario.Game_Object_Classes
         public static void ResetArrayOfObjects(Game1 game, ArrayList result)
         {
             result.Clear();
-            new Turtle(game);
+            new Koopa(game);
             result.Add(game.sprite);
             new Coin(game);
             result.Add(game.sprite);
@@ -67,7 +67,7 @@ namespace SuperMario.Game_Object_Classes
             result.Add(game.sprite);
             new Flower(game);
             result.Add(game.sprite);
-            new NormalMonster(game);
+            new Goomba(game);
             result.Add(game.sprite);
             new SolidBrick(game);
             result.Add(game.sprite);

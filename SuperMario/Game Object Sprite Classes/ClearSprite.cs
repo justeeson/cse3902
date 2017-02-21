@@ -18,7 +18,7 @@ namespace SuperMario
         }
       
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
             Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);

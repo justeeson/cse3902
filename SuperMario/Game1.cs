@@ -17,6 +17,7 @@ namespace SuperMario
         SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
         private Texture2D background;
+        public Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
 
         private ISprite Sprite;
@@ -43,8 +44,6 @@ namespace SuperMario
             get {return block; }
             set {block = value; }
         }
-
-        
 
         private KeyboardController keyboardController;
         public KeyboardController KeyboardController

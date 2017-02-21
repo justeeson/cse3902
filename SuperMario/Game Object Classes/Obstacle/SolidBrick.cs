@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class SolidBrick
+    class SolidBrick : IBlock
     {
         private Game1 myGame;
 

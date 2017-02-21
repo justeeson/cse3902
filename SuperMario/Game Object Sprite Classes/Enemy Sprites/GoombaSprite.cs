@@ -10,7 +10,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class NormalMonsterSprite : ISprite
+    class GoombaSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -20,7 +20,7 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
 
-        public NormalMonsterSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public GoombaSprite(Texture2D texture, int rows, int columns, Vector2 location)
         {
             Texture = texture;
             Rows = rows;
@@ -44,7 +44,7 @@ namespace SuperMario
             { currentFrame = 1; }
 
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 26;
             int height = 24;

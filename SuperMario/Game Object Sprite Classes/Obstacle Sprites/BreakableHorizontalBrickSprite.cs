@@ -29,7 +29,7 @@ using SuperMario.Interfaces;
         {
 
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 36;
             int height = 34;

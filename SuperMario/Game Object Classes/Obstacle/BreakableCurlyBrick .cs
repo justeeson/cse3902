@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario
 {
-    class BreakableCurlyBrick
+    class BreakableCurlyBrick : IBlock
     {
         private Game1 myGame;
 

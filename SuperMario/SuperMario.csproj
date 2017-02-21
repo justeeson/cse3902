@@ -74,13 +74,13 @@
     <Compile Include="Command\MarioLookLeftCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
-    <Compile Include="Game Object Classes\Enemy\NormalMonster.cs" />
+    <Compile Include="Game Object Classes\Enemy\Goomba.cs" />
     <Compile Include="Game Object Classes\Item\Coin.cs" />
     <Compile Include="Game Object Classes\Item\FireMushroom.cs" />
     <Compile Include="Game Object Classes\Item\GrownupMushroom.cs" />
     <Compile Include="Game Object Classes\Item\Star.cs" />
     <Compile Include="Game Object Classes\Item\Flower.cs" />
-    <Compile Include="Game Object Classes\Enemy\Turtle.cs" />
+    <Compile Include="Game Object Classes\Enemy\Koopa.cs" />
     <Compile Include="Game Object Classes\ObjectArray.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
     <Compile Include="Game Object Classes\Obstacle\HiddenBrick.cs" />
@@ -91,8 +91,8 @@
     <Compile Include="Game Object Classes\Obstacle\SolidBrickWithCrews.cs" />
     <Compile Include="Game Object Classes\Obstacle\SolidBrick.cs" />
     <Compile Include="Game Object Sprite Classes\ClearSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\NormalMonsterSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\TurtleSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickSprite.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
@@ -116,6 +117,8 @@
     <Compile Include="Interfaces\IObject.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Keys\ValidKeys.cs" />
+    <Compile Include="Levels\LevelReader.cs" />
+    <Compile Include="Levels\CreateLevel.cs" />
     <Compile Include="MarioClass\Mario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,7 +171,7 @@
     <Content Include="CodeReview\Yihang Du%27s Readability Review.txt" />
     <Content Include="CodeReview\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="Icon.ico" />
-    <Content Include="Levels\Level1.xml" />
+    <Content Include="Content\Level1.xml" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>

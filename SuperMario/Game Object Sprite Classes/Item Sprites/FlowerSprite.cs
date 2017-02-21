@@ -47,7 +47,7 @@ namespace SuperMario
             if (currentFrame == 4)
             { currentFrame = 0; }
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 16;
             int height = 24;

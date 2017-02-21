@@ -201,7 +201,7 @@ namespace SuperMario.MarioClass
             state.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             state.Draw(spriteBatch, new Vector2(locationX, locationY));
         }

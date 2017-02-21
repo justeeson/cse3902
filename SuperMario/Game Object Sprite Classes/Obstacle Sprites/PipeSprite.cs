@@ -25,7 +25,7 @@ namespace SuperMario
         {
 
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 70;
             int height = 68;
