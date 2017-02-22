@@ -15,7 +15,7 @@ namespace SuperMario.MarioClass
         public int Columns { get; set; }
         public static int locationX { get; set; }
         public static int locationY { get; set; }
-        private Boolean starStatus;
+        public Boolean starStatus;
 
         enum Orientations
         { CrouchingRight, CrouchingLeft,

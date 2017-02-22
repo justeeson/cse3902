@@ -28,7 +28,7 @@ namespace SuperMario
         {
         }
         public void BecomeUsed()
-        {
+        {   
         }
         public void Update(GameTime gameTime)
         {
