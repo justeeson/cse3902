@@ -11,10 +11,9 @@ namespace SuperMario
 {
     public class FireMushroom : IItem
     {
-        private Game1 myGame;
-        public ISprite Sprite;
+        public ISprite Sprite { get; set; }
+        public Game1 myGame { get; set; }
         public Rectangle Rectangle { get; set; }
-
         public FireMushroom(Game1 game)
         {
             myGame = game;

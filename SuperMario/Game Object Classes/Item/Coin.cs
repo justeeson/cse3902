@@ -11,10 +11,8 @@ namespace SuperMario
 {
     public class Coin : IItem
     {
-        public Game1 myGame;
-        public ISprite Sprite;
-        public int locationX, locationY;
-
+        public ISprite Sprite { get; set; }
+        public Game1 myGame { get; set; }
         public Rectangle Rectangle { get; set; }
         public Coin(Game1 game)
         {
@@ -40,11 +38,6 @@ namespace SuperMario
             myGame.store.arrayOfSprites[2] = Sprite;
             this.Rectangle = new Rectangle();
         }
-
-        public void destroyItem()
-        {
-        }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             throw new NotImplementedException();
