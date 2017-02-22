@@ -213,7 +213,7 @@ namespace SuperMario.MarioClass
 
         public Rectangle Area()
         {
-            return new Rectangle(locationX, locationY, Texture.Width, Texture.Height);
+            return new Rectangle(locationX, locationY, Texture.Width/10, Texture.Height/10);
         }
     }
 }

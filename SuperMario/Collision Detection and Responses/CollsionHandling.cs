@@ -22,7 +22,6 @@ namespace SuperMario.Collision_Defection_and_Responses
                 if (marioRect.Intersects(itemRect))
                 {
                     MarioAndItemCollisionResponser.Response(store.GameClass.Mario, item);
-
                 }
 
             }

@@ -21,7 +21,7 @@ namespace SuperMario
             myGame = game;
             this.Sprite = SpriteFactory.CreateCoin();
             myGame.sprite = this.Sprite;
-            Rectangle = new Rectangle(200, 160, 0, 0);
+            Rectangle = new Rectangle(200, 160, 0, 8);
 
         }
 

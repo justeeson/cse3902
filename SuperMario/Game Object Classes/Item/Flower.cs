@@ -20,7 +20,7 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateFlower();
             myGame.sprite = Sprite;
-            Rectangle = new Rectangle(100, 160, 0, 0);
+            Rectangle = new Rectangle(100, 160, 0, 8);
 
         }
 
@@ -36,6 +36,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
             myGame.store.arrayOfSprites[4] = Sprite;
+            myGame.Mario.MarioFireState();
             this.Rectangle = new Rectangle();
         }
 
