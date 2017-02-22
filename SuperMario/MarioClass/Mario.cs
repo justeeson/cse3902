@@ -16,6 +16,7 @@ namespace SuperMario
         public static int locationX { get; set; }
         public static int locationY { get; set; }
         public static Boolean starStatus;
+        private int starPowerTimer;
 
         public enum Orientations
         {
@@ -40,6 +41,7 @@ namespace SuperMario
             Columns = columns;
             locationX = 400;
             locationY = 350;
+            starPowerTimer = 0;
             starStatus = false;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
@@ -311,12 +313,18 @@ namespace SuperMario
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
             state = getState(orientation, marioMode);
-            /*locationX = 400;
-            locationY = 350;*/
         }
 
         public void Update(GameTime gameTime)
         {
+            if (starStatus)
+            {
+                starPowerTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if(starPowerTimer > 7000)
+                {
+                    StarPowerUp();
+                }
+            }
             state.Update(gameTime);
         }
 
@@ -327,7 +335,10 @@ namespace SuperMario
 
         public static void StarPowerUp()
         {
-            starStatus = true;
+            if (starStatus == false)
+                starStatus = true;
+            else
+                starStatus = false;
         }
 
         public Rectangle Area()
