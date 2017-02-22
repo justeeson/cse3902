@@ -29,28 +29,28 @@ namespace SuperMario.Controller
             if (currentState.IsConnected &&
                 (currentState.IsButtonDown(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickUp)))
             {
-              //  command = new MarioMoveUpLeftCommand(Game1.self);
+                command = new MarioMoveUpLeftCommand(Game1.self);
                 command.Execute();
             }
 
             else if (currentState.IsConnected &&
                 (currentState.IsButtonDown(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickUp)))
             {
-              //  command = new MarioMoveUpRightCommand(Game1.self);
+                command = new MarioMoveUpRightCommand(Game1.self);
                 command.Execute();
             }
 
             else if (currentState.IsConnected &&
                 (currentState.IsButtonDown(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickDown)))
             {
-             //   command = new MarioMoveDownLeftCommand(Game1.self);
+                command = new MarioMoveDownLeftCommand(Game1.self);
                 command.Execute();
             }
 
             else if (currentState.IsConnected &&
               (currentState.IsButtonDown(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickDown)))
             {
-               // command = new MarioMoveDownRightCommand(Game1.self);
+                command = new MarioMoveDownRightCommand(Game1.self);
                 command.Execute();
             }
 

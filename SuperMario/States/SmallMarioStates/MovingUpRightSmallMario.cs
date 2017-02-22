@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
+using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
-    public class DeadFireMarioState : IMarioState
+    public class MovingUpRightSmallMario : IMarioState
     {
         private Mario mario;
         private int currentFrame;
@@ -17,10 +19,10 @@ namespace SuperMario.Sprites
         private int nextFlashTime;
         private int millisecondsPerFlash;
 
-        public DeadFireMarioState(Mario mario)
+        public MovingUpRightSmallMario(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 0;
+            currentFrame = 10;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -28,6 +30,8 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
+            KeyboardState newKeyboardState = Keyboard.GetState();
+            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
             if (Mario.starStatus == true)
             {
                 nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
@@ -49,6 +53,25 @@ namespace SuperMario.Sprites
             else
             {
                 flashStatus = 0;
+            }
+            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
+            {
+                currentFrame = 10;
+                if (Mario.locationY == 0)
+                {
+                    Mario.locationY = 400;
+                }
+
+                else
+                {
+                    Mario.locationY--;
+                }
+            }
+            else
+            {
+                Mario.marioMode = (int)Mario.MarioModes.Small;
+                Mario.orientation = (int)Mario.Orientations.StandingRight;
+                currentFrame = 6;
             }
         }
 

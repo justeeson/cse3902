@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
 using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites
@@ -13,15 +14,43 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
+        private int flashStatus;
+        private int nextFlashTime;
+        private int millisecondsPerFlash;
 
         public DeadSmallMarioState(Mario mario)
         {
             this.mario = mario;
             currentFrame = 0;
+            flashStatus = 0;
+            nextFlashTime = 0;
+            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime gameTime)
         {
+            if (Mario.starStatus == true)
+            {
+                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
+                if (nextFlashTime > millisecondsPerFlash)
+                {
+                    nextFlashTime -= millisecondsPerFlash;
+                    if (flashStatus == 0)
+                    {
+                        flashStatus = 1;
+                    }
+
+                    else if (flashStatus == 1)
+                    {
+                        flashStatus = 0;
+                    }
+
+                }
+            }
+            else
+            {
+                flashStatus = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -34,8 +63,15 @@ namespace SuperMario.Sprites
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+            if (flashStatus == 1)
+            {
+                spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White * 0.5f);
+            }
+            else
+            {
+                spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
+            }
             spriteBatch.End();
         }
 

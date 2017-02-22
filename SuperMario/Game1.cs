@@ -22,6 +22,7 @@ namespace SuperMario
         public ObjectAndSpriteStore store;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
+        public static Game1 self;
 
       
         
@@ -87,6 +88,7 @@ namespace SuperMario
         protected override void Initialize()
         {
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
+            self = this;
             base.Initialize();
         }
 

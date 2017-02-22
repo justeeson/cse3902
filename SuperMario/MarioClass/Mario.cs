@@ -325,7 +325,7 @@ namespace SuperMario
             state.Draw(spriteBatch, new Vector2(locationX, locationY));
         }
 
-        public void StarPowerUp()
+        public static void StarPowerUp()
         {
             starStatus = true;
         }
