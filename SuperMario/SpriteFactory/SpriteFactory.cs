@@ -13,13 +13,13 @@ namespace SuperMario
 {
     public class SpriteFactory
     {
-        public static Texture2D turtleTexture;
+        public static Texture2D goombaTexture;
         public static Texture2D flowerTexture;
         public static Texture2D coinTexture;
         public static Texture2D growupMushroomTexture;
         public static Texture2D fireMushroomTexture;
         public static Texture2D starTexture;
-        public static Texture2D normalMonsterTexture;
+        public static Texture2D koopaTexture;
         public static Texture2D solidBrickTexture;
         public static Texture2D solidBrickWithCrewsTexture;
         public static Texture2D questionMarkBrickTexture;
@@ -29,13 +29,13 @@ namespace SuperMario
 
         public void LoadAllTextures(ContentManager content)
         {
-            turtleTexture = content.Load<Texture2D>("turtle");
+            koopaTexture = content.Load<Texture2D>("turtle");
             flowerTexture = content.Load<Texture2D>("flower");
             coinTexture = content.Load<Texture2D>("coin");
             growupMushroomTexture = content.Load<Texture2D>("growupMushroom");
             fireMushroomTexture = content.Load<Texture2D>("fireMushroom");
             starTexture = content.Load<Texture2D>("star");
-            normalMonsterTexture = content.Load<Texture2D>("normalMonster");
+            goombaTexture = content.Load<Texture2D>("normalMonster");
             solidBrickTexture = content.Load<Texture2D>("solidBrick");
             solidBrickWithCrewsTexture = content.Load<Texture2D>("unbreakablebrickwith4screws");
             questionMarkBrickTexture = content.Load<Texture2D>("questionMarkBrick");
@@ -47,7 +47,7 @@ namespace SuperMario
 
         public static ISprite CreateKoopa()
         {
-            return new KoopaSprite(turtleTexture, 32, 32);
+            return new KoopaSprite(koopaTexture, 32, 32);
         }
         public static ISprite CreateFlower()
         {
@@ -73,7 +73,7 @@ namespace SuperMario
         }
         public static ISprite CreateGoomba()
         {
-            return new GoombaSprite(normalMonsterTexture, 32, 32);
+            return new GoombaSprite(goombaTexture, 32, 32);
         }
         public static ISprite CreateSolidBrick()
         {

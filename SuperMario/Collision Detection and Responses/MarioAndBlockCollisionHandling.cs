@@ -29,7 +29,9 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     Mario.locationX -= collisionRectangle.Width+1;
                 }
-           
+
+          
+
         }
 
     }
