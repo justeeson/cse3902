@@ -20,7 +20,7 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
             myGame.sprite = Sprite;
-            Rectangle = new Rectangle(300, 160, 10, 15);
+            Rectangle = new Rectangle(300, 160, 0, 0);
 
         }
 
@@ -35,6 +35,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
+            myGame.store.arrayOfSprites[5] = Sprite;
             this.Rectangle = new Rectangle();
         }
 

@@ -41,8 +41,6 @@ namespace SuperMario
         }
        
 
-       
-
         public void Initialize(Game1 game)
         {
             arrayOfSprites = new ArrayList();
@@ -57,15 +55,17 @@ namespace SuperMario
 
             coin = new Coin(game);
             arrayOfSprites.Add(game.sprite);
-            growupMushroom = new GrownupMushroom(game);
-            arrayOfSprites.Add(game.sprite);
             fireMushroom = new FireMushroom(game);
-            arrayOfSprites.Add(game.sprite);
-            star = new Star(game);
             arrayOfSprites.Add(game.sprite);
             flower = new Flower(game);
             arrayOfSprites.Add(game.sprite);
+            growupMushroom = new GrownupMushroom(game);
+            arrayOfSprites.Add(game.sprite);
+            star = new Star(game);
+            arrayOfSprites.Add(game.sprite);
            
+
+
             solidBrick = new SolidBrick(game);
             arrayOfSprites.Add(game.sprite);
             solidBrickWithCrews = new SolidBrickWithCrews(game);
@@ -100,7 +100,7 @@ namespace SuperMario
         public void Update()
         {
 
-            GameTime gameTime = GameClass.gameTime;
+        GameTime gameTime = GameClass.gameTime;
         koopa.Update(gameTime);
         goomba.Update(gameTime);
 

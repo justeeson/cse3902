@@ -21,7 +21,7 @@ namespace SuperMario
             myGame = game;
             this.Sprite = SpriteFactory.CreateCoin();
             myGame.sprite = this.Sprite;
-            Rectangle = new Rectangle(200, 160, 10, 15);
+            Rectangle = new Rectangle(200, 160, 0, 0);
 
         }
 
@@ -37,6 +37,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
+            myGame.store.arrayOfSprites[2] = Sprite;
             this.Rectangle = new Rectangle();
         }
 

@@ -20,7 +20,7 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateFlower();
             myGame.sprite = Sprite;
-            Rectangle = new Rectangle(100, 160, 10, 15);
+            Rectangle = new Rectangle(100, 160, 0, 0);
 
         }
 
@@ -35,6 +35,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
+            myGame.store.arrayOfSprites[4] = Sprite;
             this.Rectangle = new Rectangle();
         }
 

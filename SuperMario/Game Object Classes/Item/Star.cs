@@ -20,7 +20,7 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateStar();
             myGame.sprite = Sprite;
-            Rectangle = new Rectangle(500, 160, 10, 15);
+            Rectangle = new Rectangle(500, 160, 0, 0);
 
         }
 
@@ -35,6 +35,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
+            myGame.store.arrayOfSprites[6] = Sprite;
             this.Rectangle = new Rectangle();
         }
 
