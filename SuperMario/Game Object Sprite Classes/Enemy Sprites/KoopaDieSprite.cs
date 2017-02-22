@@ -60,7 +60,7 @@ namespace SuperMario
         public Rectangle Area()
         {
 
-            return new Rectangle(700, 160, 17, 24);
+            return new Rectangle();
         }
         public void CollisionSprite()
         {

@@ -62,9 +62,13 @@ namespace SuperMario
 
         public Rectangle Area()
         {
+            if (goombaState == (int)goombaStates.Dead)
+            {
+                return new Rectangle(0, 0, 0, 0);
+            }
             int width = 22;//Texture.Width / Columns;
             int height = 22;//Texture.Height / Rows;
-            return new Rectangle(600 - 4, 160, width, height);
+            return new Rectangle(596, 160, width, height);
         }
         public void CollisionSprite()
         {

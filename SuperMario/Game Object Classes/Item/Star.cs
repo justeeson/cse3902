@@ -36,6 +36,7 @@ namespace SuperMario
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             this.Rectangle = new Rectangle();
             myGame.store.arrayOfSprites[6] = Sprite;
+          //  myGame.Mario. update mario when eat star power up
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

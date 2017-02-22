@@ -19,7 +19,7 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateFireMushroom();
             myGame.sprite = Sprite;
-            Rectangle = new Rectangle(400, 160, 0, 8);
+            Rectangle = new Rectangle(400, 160, 4, 8);
 
         }
 
