@@ -11,7 +11,7 @@ namespace SuperMario
 {
    public class Koopa : IEnemy
     {
-        private bool alive = false;
+        private bool alive = true;
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
@@ -20,6 +20,8 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateKoopa();
             myGame.sprite = Sprite;
+            Area = Sprite.Area();
+
         }
         public void Update(GameTime gameTime)
         {
@@ -27,16 +29,20 @@ namespace SuperMario
         }
         public void TakeDamage(IMario mario)
         {
+            alive = false;
+            this.Sprite = new KoopaDieSprite(SpriteFactory.koopaTexture, 4, 8);
+            myGame.store.arrayOfSprites[1] = this.Sprite;
+
+            this.Area = new Rectangle(120, 120, 4, 8);
+
+        }
+        public void AttackEnemy(IMario mario)
+        {
             if (alive)
             {
                 mario.Dead();
             }
-        }
-        public void AttackEnemy()
-        {
-            alive = true;
-          //  this.Sprite = new KoopaStompedSprite(myGame.enemies);
-            this.Area = new Rectangle(120, 120, 32, 28);
+
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

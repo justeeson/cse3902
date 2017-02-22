@@ -15,7 +15,7 @@ namespace SuperMario.Interfaces
         Rectangle Area { get; set; }
         void Update(GameTime gameTime);
         void TakeDamage(IMario mario);
-        void AttackEnemy();
+        void AttackEnemy(IMario mario);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

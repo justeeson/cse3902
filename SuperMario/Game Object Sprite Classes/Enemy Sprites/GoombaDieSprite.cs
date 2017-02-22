@@ -10,7 +10,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class GoombaSprite : ISprite
+    class GoombaDieSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -18,12 +18,12 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        public GoombaSprite(Texture2D texture, int rows, int columns)
+        public GoombaDieSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 1;
+            currentFrame = 2;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
         }

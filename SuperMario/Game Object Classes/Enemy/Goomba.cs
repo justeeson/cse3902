@@ -21,6 +21,8 @@ namespace SuperMario
             myGame = game;
             Sprite = SpriteFactory.CreateGoomba();
             myGame.sprite = Sprite;
+            Area = Sprite.Area();
+
         }
         public void Update(GameTime gameTime)
         {
@@ -28,17 +30,22 @@ namespace SuperMario
         }
         public void TakeDamage(IMario mario)
         {
+            alive = false;
+            this.Sprite = new GoombaDieSprite(SpriteFactory.goombaTexture,4,8 );
+            myGame.store.arrayOfSprites[0] = this.Sprite;
+
+            this.Area = new Rectangle(120, 120, 4, 8);
+           
+        }
+        public void AttackEnemy(IMario mario)
+        {
             if (alive)
             {
                 mario.Dead();
             }
+
         }
-        public void AttackEnemy()
-        {
-            alive = true;
-           // this.Sprite = new GoombaSprite(myGame.enemies);
-            this.Area = new Rectangle(120, 120, 32, 28);
-        }
+       
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             location = new Vector2(this.Area.X, this.Area.Y);

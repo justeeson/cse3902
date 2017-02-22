@@ -16,7 +16,7 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int timeSinceLastFrame;
+       private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         public KoopaSprite(Texture2D texture, int rows, int columns)
         {
@@ -30,15 +30,18 @@ namespace SuperMario
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
-            {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame++;
-            }
 
-            if (currentFrame == 4)
-            { currentFrame = 1; }
+            //Temporary comment just for this sprint
+
+            //timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            //if (timeSinceLastFrame > millisecondsPerFrame)
+            //{
+            //    timeSinceLastFrame -= millisecondsPerFrame;
+            //    currentFrame++;
+            //}
+
+            //if (currentFrame == 4)
+            //{ currentFrame = 1; }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -56,9 +59,8 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle(700, 160, width, height);
+          
+            return new Rectangle(700, 160, 17, 24);
         }
         public void CollisionSprite()
         {

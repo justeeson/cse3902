@@ -46,7 +46,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (marioRect.Intersects(enemyRect))
                 {
-                    MarioAndEnemyCollisionHandling.HandleCollision(store.GameClass.Mario, item.Sprite);
+                    MarioAndEnemyCollisionHandling.HandleCollision(store.GameClass.Mario, item);
                 }
 
             }
