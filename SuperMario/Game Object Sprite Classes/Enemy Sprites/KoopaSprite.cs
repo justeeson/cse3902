@@ -72,6 +72,10 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
+            if (turtleState == (int)turtleStates.Dead)
+            {
+                return new Rectangle(0,0,0,0);
+            }
             int width = 16;//Texture.Width / Columns;
             int height = 24;// Texture.Height / Rows;
             return new Rectangle(700 - 4, 160, width, height);
