@@ -10,8 +10,12 @@ namespace SuperMario.Interfaces
 {
     interface IItem
     {
+        ISprite Sprite { get; set; }
+        Game1 myGame { get; set; }
+        Rectangle Rectangle { get; set; }
         Rectangle Area();
         void UpdateCollision();
+        void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }
