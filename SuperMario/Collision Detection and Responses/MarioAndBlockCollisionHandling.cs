@@ -6,9 +6,10 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     public class MarioAndBlockCollisionHandling
     {
-        public static void HandleCollision(IMario mario, ISprite block)
+        public static void HandleCollision(IMario mario, IBlock item)
         {
             Rectangle collisionRectangle;
+            ISprite block = item.Sprite;
             
                 collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area());
                 if (collisionRectangle.Bottom == block.Area().Bottom && collisionRectangle.Width > collisionRectangle.Height)

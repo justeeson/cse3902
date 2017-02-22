@@ -194,7 +194,9 @@ namespace SuperMario.MarioClass
         {
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
-            state = getState(orientation, marioMode);          
+            state = getState(orientation, marioMode);
+            /*locationX = 400;
+            locationY = 350;*/
         }
         
         public void Update(GameTime gameTime)

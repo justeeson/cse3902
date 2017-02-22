@@ -1,10 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 
@@ -18,6 +12,10 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+
+        private int goombaState;
+        private enum goombaStates { Normal, Smashed, Dead }
+
         public GoombaSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -30,15 +28,22 @@ namespace SuperMario
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            if (goombaState == (int)goombaStates.Normal)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame++;
-            }
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame++;
+                }
 
-            if (currentFrame == 3)
-            { currentFrame = 1; }
+                if (currentFrame == 2)
+                { currentFrame = 0; }
+            }
+            else if (goombaState == (int)goombaStates.Smashed)
+            {
+                currentFrame = 2;
+            }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -57,13 +62,16 @@ namespace SuperMario
 
         public Rectangle Area()
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle(600, 160, width, height);
+            int width = 22;//Texture.Width / Columns;
+            int height = 22;//Texture.Height / Rows;
+            return new Rectangle(600 - 4, 160, width, height);
         }
         public void CollisionSprite()
         {
-
+            if (goombaState == (int)goombaStates.Normal)
+            {
+                goombaState = (int)goombaStates.Smashed;
+            }
         }
     }
 }

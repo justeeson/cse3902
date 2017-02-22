@@ -10,12 +10,12 @@ namespace SuperMario.Interfaces
 {
     public interface IEnemy : IObject
     {
+        bool canAttack { get; set; }
         ISprite Sprite { get; set; }
         Game1 myGame { get; set; }
         Rectangle Area { get; set; }
+
         void Update(GameTime gameTime);
-        void TakeDamage(IMario mario);
-        void AttackEnemy();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

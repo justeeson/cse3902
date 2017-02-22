@@ -18,27 +18,43 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+
+        private int turtleState;
+        private enum turtleStates { Normal, InShell, Dead}
+
         public KoopaSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 1;
+            currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 400;
+            turtleState = (int)turtleStates.Normal;
         }
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            if (turtleState == (int)turtleStates.Normal)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame++;
-            }
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame++;
+                }
 
-            if (currentFrame == 4)
-            { currentFrame = 1; }
+                if (currentFrame == 2)
+                { currentFrame = 0; }
+            }
+            else if (turtleState == (int)turtleStates.InShell)
+            {
+                currentFrame = 2;
+            }
+            else
+            {
+                currentFrame = 3;
+            }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -56,13 +72,20 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle(700, 160, width, height);
+            int width = 16;//Texture.Width / Columns;
+            int height = 24;// Texture.Height / Rows;
+            return new Rectangle(700 - 4, 160, width, height);
         }
         public void CollisionSprite()
         {
-
+            if (turtleState == (int)turtleStates.Normal)
+            {
+                turtleState = (int)turtleStates.InShell;
+            }
+            else if (turtleState == (int)turtleStates.InShell)
+            {
+                turtleState = (int)turtleStates.Dead;
+            }
         }
     }
 }
