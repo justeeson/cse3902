@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMario.Collision_Defection_and_Responses
+namespace SuperMario.Collision_Detection_and_Responses
 {
     class MarioAndItemCollisionResponser
     {

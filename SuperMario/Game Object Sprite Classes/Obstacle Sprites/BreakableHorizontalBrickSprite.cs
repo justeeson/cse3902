@@ -43,9 +43,9 @@ using SuperMario.Interfaces;
         }
     public Rectangle Area()
     {
-        int width = Texture.Width / Columns;
-        int height = Texture.Height / Rows;
-        return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+        int width = 30;//Texture.Width / Columns;
+        int height = 30;//Texture.Height / Rows;
+        return new Rectangle(500, 250, width, height);
     }
     public void CollisionSprite()
     {

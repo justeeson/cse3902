@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
+using Microsoft.Xna.Framework.Content;
 
 namespace SuperMario
 {
@@ -19,6 +20,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        private bool hasBeenUsed;
+
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -27,21 +30,23 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
-
+            hasBeenUsed = false;
         }
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
+            if(!hasBeenUsed)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame++;
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame++;
+                }
+
+                if (currentFrame == 3)
+                { currentFrame = 0; }
             }
-
-            if (currentFrame == 3)
-            { currentFrame = 0; }
-
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -58,13 +63,15 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            int width  = 30; //Texture.Width / Columns;
+            int height =30;// Texture.Height / Rows;
+            return new Rectangle(400, 250, width, height);
         }
         public void CollisionSprite()
         {
-
+            Texture = SpriteFactory.solidBrickWithCrewsTexture;
+            hasBeenUsed = true;
+            currentFrame = 0;
         }
     }
 }

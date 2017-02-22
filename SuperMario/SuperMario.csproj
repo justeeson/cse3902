@@ -103,8 +103,8 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\PipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\QuestionMarkBrick.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite3.cs" />
-    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite2.cs" />
-    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HiddenBrickSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithScrewsSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickSprite.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />

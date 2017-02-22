@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
-using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.MarioClass
 {
@@ -17,7 +12,8 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public static int locationX, locationY;
+        public static int locationX { get; set; }
+        public static int locationY { get; set; }
 
         private Boolean starStatus;
         int delay = 100;
@@ -182,9 +178,14 @@ namespace SuperMario.MarioClass
 
         public void Dead()
         {
-            if (orientation != (int)Orientations.Dead)
+            if (marioMode == (int)MarioModes.Small)
             {
                 orientation = (int)Orientations.Dead;
+                state = getState(orientation, marioMode);
+            }
+            else
+            {
+                marioMode = (int)MarioModes.Small;
                 state = getState(orientation, marioMode);
             }
         }
@@ -213,7 +214,10 @@ namespace SuperMario.MarioClass
 
         public Rectangle Area()
         {
-            return new Rectangle(locationX, locationY, Texture.Width/9, Texture.Height/5);
+            if (marioMode == (int)MarioModes.Small)
+                return new Rectangle(locationX + 2, locationY + 10, 17, 19);
+            else
+                return new Rectangle(locationX, locationY, 19, 33);
         }
     }
 }

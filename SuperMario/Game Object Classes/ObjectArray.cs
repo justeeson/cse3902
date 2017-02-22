@@ -51,6 +51,7 @@ namespace SuperMario.Game_Object_Classes
             result.Add(game.sprite);
             new Pipe(game);
             result.Add(game.sprite);
+            new HiddenBrick(game);
             result.Add(game.sprite);
             return result;
         }

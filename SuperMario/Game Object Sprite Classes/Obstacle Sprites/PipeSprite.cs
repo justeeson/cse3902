@@ -39,9 +39,9 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            int width = 65; //Texture.Width / Columns;
+            int height = 65;//Texture.Height / Rows;
+            return new Rectangle(700, 250, width, height);
         }
         public void CollisionSprite()
         {

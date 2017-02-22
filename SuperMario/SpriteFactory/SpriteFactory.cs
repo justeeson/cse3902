@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using SuperMario;
 using SuperMario.Interfaces;
+using System.Collections;
 
 namespace SuperMario
 {
@@ -25,10 +26,6 @@ namespace SuperMario
         public static Texture2D brickableHorizontalBrickTexture;
         public static Texture2D breakableCurlyBrickTexture;
         public static Texture2D pipeTexture;
-
-
-
-
 
         public void LoadAllTextures(ContentManager content)
         {
@@ -87,9 +84,9 @@ namespace SuperMario
             return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, 32, 32);
         }
 
-        public static ISprite CreateSolidBrickWithCrews2()
+        public static ISprite CreateHiddenBrick()
         {
-            return new SolidBrickWithCrewsSprite2(solidBrickWithCrewsTexture, 32, 32);
+            return new HiddenBrickSprite(solidBrickWithCrewsTexture, 32, 32);
         }
 
         public static ISprite CreateSolidBrickWithCrews3()

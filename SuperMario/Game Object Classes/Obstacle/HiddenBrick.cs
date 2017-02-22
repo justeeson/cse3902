@@ -17,7 +17,7 @@ namespace SuperMario
         public HiddenBrick(Game1 game)
         {
             myGame = game;
-            Sprite = SpriteFactory.CreateSolidBrickWithCrews2();
+            Sprite = SpriteFactory.CreateHiddenBrick();
             myGame.sprite = Sprite;
         }
         public void BrickToDisappear()

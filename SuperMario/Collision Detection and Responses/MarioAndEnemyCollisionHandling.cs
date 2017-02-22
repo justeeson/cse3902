@@ -1,18 +1,33 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Interfaces;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
     class MarioAndEnemyCollisionHandling
     {
-        Rectangle collisionRectangle;
+        
 
-        public void HandleCollision(IMario mario, ISprite enemy)
+        public static void HandleCollision(IMario mario, ISprite enemy)
         {
-            //if(mario.Area().Intersects(enemy.Area()))
-            //{
-            //    mario.Dead();
-            //}
+            Rectangle collisionRectangle;
+            collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area());
+            if (collisionRectangle.Bottom == enemy.Area().Bottom && collisionRectangle.Width > collisionRectangle.Height)
+            {
+                Mario.locationY += collisionRectangle.Height + 1;
+            }
+            else if (collisionRectangle.Top == enemy.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
+            {
+                Mario.locationY -= collisionRectangle.Height + 1;
+            }
+            else if (collisionRectangle.Right == enemy.Area().Right)
+            {
+                Mario.locationX += collisionRectangle.Width + 1;
+            }
+            else if (collisionRectangle.Left == enemy.Area().Left)
+            {
+                Mario.locationX -= collisionRectangle.Width + 1;
+            }
         }
 
     }

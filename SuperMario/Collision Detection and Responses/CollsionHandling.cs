@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMario.Collision_Detection_and_Responses;
 using SuperMario.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMario.Collision_Defection_and_Responses
+namespace SuperMario.Collision_Detection_and_Responses
 {
     class CollisionHandling
     {
@@ -22,6 +23,30 @@ namespace SuperMario.Collision_Defection_and_Responses
                 if (marioRect.Intersects(itemRect))
                 {
                     MarioAndItemCollisionResponser.Response(store.GameClass.Mario, item);
+                }
+
+            }
+
+            foreach (IBlock item in store.blockArray)
+            {
+
+                Rectangle blockRect = item.Sprite.Area();
+
+                if (marioRect.Intersects(blockRect))
+                {
+                    MarioAndBlockCollisionHandling.HandleCollision(store.GameClass.Mario, item.Sprite);
+                }
+
+            }
+
+            foreach (IEnemy item in store.enemyArray)
+            {
+
+                Rectangle enemyRect = item.Sprite.Area();
+
+                if (marioRect.Intersects(enemyRect))
+                {
+                    MarioAndEnemyCollisionHandling.HandleCollision(store.GameClass.Mario, item.Sprite);
                 }
 
             }

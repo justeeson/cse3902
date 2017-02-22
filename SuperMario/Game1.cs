@@ -23,6 +23,7 @@ namespace SuperMario
         public ObjectAndSpriteStore store;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
+
         public ISprite sprite
         {
             get

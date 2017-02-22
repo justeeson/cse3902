@@ -4,18 +4,31 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    class MarioAndBlockCollisionHandling
+    public class MarioAndBlockCollisionHandling
     {
-        Rectangle collisionRectangle;
-
-        public void HandleCollision(Mario mario, ISprite block)
+        public static void HandleCollision(IMario mario, ISprite block)
         {
-            //if(mario.Area().Intersects(block.Area()))
-            //{
-            //    collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area());
-            //    mario.locationX -= collisionRectangle.Width;
-            //    mario.locationY -= collisionRectangle.Height;
-            //}
+            Rectangle collisionRectangle;
+            
+                collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area());
+                if (collisionRectangle.Bottom == block.Area().Bottom && collisionRectangle.Width > collisionRectangle.Height)
+                {
+                    Mario.locationY += collisionRectangle.Height+1;
+                    block.CollisionSprite();
+                }
+                else if (collisionRectangle.Top == block.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
+                {
+                    Mario.locationY -= collisionRectangle.Height+1;
+                }
+                else if (collisionRectangle.Right == block.Area().Right)
+                {
+                    Mario.locationX += collisionRectangle.Width+1;
+                }
+                else if (collisionRectangle.Left == block.Area().Left)
+                {
+                    Mario.locationX -= collisionRectangle.Width+1;
+                }
+           
         }
 
     }

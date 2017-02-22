@@ -32,7 +32,11 @@ namespace SuperMario
         {
 
         }
-        public Rectangle Area(Vector2 loc)
+
+        public void CollisionSprite()
+        { }
+
+        public Rectangle Area()
         {
             return new Rectangle();
 

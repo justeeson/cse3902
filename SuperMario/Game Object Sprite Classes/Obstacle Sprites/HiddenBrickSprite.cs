@@ -9,16 +9,17 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class SolidBrickSprite : ISprite
+    class HiddenBrickSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public Vector2 Location { get; set; }
-
         public int currentFrame;
 
-        public SolidBrickSprite(Texture2D texture, int rows, int columns)
+        private Boolean isHidden = true;
+
+        public HiddenBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -32,26 +33,29 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 36;
-            int height = 34;
-            int row = (int)((float)currentFrame / (float)Columns);
-            int column = currentFrame % Columns;
+            if (isHidden == false)
+            {
+                int width = 36;
+                int height = 34;
+                int row = (int)((float)currentFrame / (float)Columns);
+                int column = currentFrame % Columns;
 
-            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(200, 250, width, height);
-            spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+                Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
+                Rectangle destinationRectangle = new Rectangle(100, 250, width, height);
+                spriteBatch.Begin();
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+            }
         }
         public Rectangle Area()
         {
             int width = 33;//Texture.Width / Columns;
             int height = 33;//Texture.Height / Rows;
-            return new Rectangle(200, 250, width, height);
+            return new Rectangle(100, 250, width, height);
         }
         public void CollisionSprite()
         {
-
+            isHidden = false;
         }
     }
 }

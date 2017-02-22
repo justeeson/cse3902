@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using SuperMario.Collision_Defection_and_Responses;
+using SuperMario.Collision_Detection_and_Responses;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -78,6 +78,8 @@ namespace SuperMario
             arrayOfSprites.Add(game.sprite);
             pipe = new Pipe(game);
             arrayOfSprites.Add(game.sprite);
+            hiddenBrick = new HiddenBrick(game);
+            arrayOfSprites.Add(game.sprite);
 
             enemyArray.Add(koopa);
             enemyArray.Add(goomba);
@@ -94,7 +96,8 @@ namespace SuperMario
             blockArray.Add(breakableCurlyBrick);
             blockArray.Add(breakableHorizontalBrick);
             blockArray.Add(pipe);
-   
+            blockArray.Add(hiddenBrick);
+
         }
 
         public void Update()
@@ -112,7 +115,7 @@ namespace SuperMario
 
         breakableCurlyBrick.Update(gameTime);
         breakableHorizontalBrick.Update(gameTime);
-       // hiddenBrick.Update();
+        hiddenBrick.Update(gameTime);
         pipe.Update(gameTime);
         questionMarkBrick.Update(gameTime);
         //questionMarkBrickToUsed.Update();
