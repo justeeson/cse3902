@@ -11,14 +11,24 @@ namespace SuperMario
 {
     public class QuestionMarkBrick : IBlock
     {
-        private Game1 myGame;
-        public ISprite Sprite;
-
+        public ISprite Sprite { get; set; }
+        public Game1 myGame { get; set; }
+        public Rectangle Area { get; set; }
         public QuestionMarkBrick(Game1 game)
         {
             myGame = game;
             Sprite = SpriteFactory.CreateQuestionMarkBrick();
             myGame.sprite = Sprite;
+        }
+        public void BrickToDisappear()
+        {
+        }
+        public void HiddenToUsed()
+        {
+        }
+        public void BecomeUsed()
+        {
+            new QuestionMarkBrickToUsed(myGame);
         }
         public void Update(GameTime gameTime)
         {

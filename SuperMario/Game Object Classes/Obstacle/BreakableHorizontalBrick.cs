@@ -11,20 +11,29 @@ namespace SuperMario
 {
     public class BreakableHorizontalBrick : IBlock
     {
-        private Game1 myGame;
-        public ISprite Sprite;
-
+        public ISprite Sprite { get; set; }
+        public Game1 myGame { get; set; }
+        public Rectangle Area { get; set; }
         public BreakableHorizontalBrick(Game1 game)
         {
             myGame = game;
             Sprite = SpriteFactory.CreateBreakableHorizonalBrick();
             myGame.sprite = Sprite;
         }
+        public void BrickToDisappear()
+        {
+            new SolidBrick(myGame);
+        }
+        public void HiddenToUsed()
+        {
+        }
+        public void BecomeUsed()
+        {
+        }
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
         }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             throw new NotImplementedException();
