@@ -17,8 +17,8 @@ namespace SuperMario.MarioClass
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int locationX { get; set; }
-        public int locationY { get; set; }
+        public static int locationX, locationY;
+
         private Boolean starStatus;
         int delay = 100;
 

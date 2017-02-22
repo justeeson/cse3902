@@ -47,18 +47,18 @@ namespace SuperMario.Levels
         {
             foreach (IEnemy enemy in enemyList)
             {
-                enemy.Update();
+               // enemy.Update(gameTime);
             }
             foreach (IBlock block in blockList)
             {
-                block.Update();
+                //block.Update(gameTime);
             }
 
             foreach (IItem item in itemList)
             {
-                item.Update();
+              //  item.Update(gameTime);
             }
-            mario.Update(gameTime);
+            //mario.Update(gameTime);
         }
     }
 }

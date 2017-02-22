@@ -15,14 +15,10 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        public ISprite Sprite { get; set; }
-        public Rectangle rectangle { get; set; }
-        private SpriteBatch spriteBatch;
-        public CoinSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public CoinSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -30,8 +26,6 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 200;
-            Location = location;
-
         }
 
         public void Update(GameTime gameTime)
@@ -44,7 +38,7 @@ namespace SuperMario
             }
 
             if (currentFrame == 5)
-                { currentFrame = 0; }
+            { currentFrame = 0; }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -52,30 +46,18 @@ namespace SuperMario
             int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
-            this.spriteBatch = spriteBatch;
+
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle(200, 160, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
-        public void CollisionSprite()
-        {
-            Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
-            Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);
-
-            this.spriteBatch.Begin();
-            this.spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            this.spriteBatch.End();
-
-        }
-
-      
     }
 }

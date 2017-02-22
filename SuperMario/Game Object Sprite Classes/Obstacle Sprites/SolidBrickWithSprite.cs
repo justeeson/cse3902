@@ -17,12 +17,11 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public int currentFrame;
 
-        public SolidBrickWithCrewsSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public SolidBrickWithCrewsSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            Location = location;
             currentFrame = 0;
         }
 

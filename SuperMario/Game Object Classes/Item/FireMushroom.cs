@@ -5,23 +5,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class FireMushroom : IItem
+    public class FireMushroom : IItem
     {
         private Game1 myGame;
-        ISprite mySprite;
+        public ISprite Sprite;
+        public Rectangle Rectangle { get; set; }
 
         public FireMushroom(Game1 game)
         {
             myGame = game;
-             mySprite = SpriteFactory.Instance.CreateFireMushroom();
-            myGame.sprite = mySprite;
+            Sprite = SpriteFactory.CreateFireMushroom();
+            myGame.sprite = Sprite;
+            Rectangle = new Rectangle(400, 160, 10, 15);
+
+        }
+
+        public void Update()
+        {
+            Sprite.Update(myGame.gameTime);
         }
         public Rectangle Area()
         {
-            return mySprite.Area();
+            return Rectangle;
+        }
+        public void UpdateCollision()
+        {
+            this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
+            this.Rectangle = new Rectangle();
+        }
+
+        public void Draw(SpriteBatch sb, Vector2 v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

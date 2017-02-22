@@ -9,10 +9,10 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         public void HandleCollision(IMario mario, ISprite enemy)
         {
-            if(mario.Area().Intersects(enemy.Area()))
-            {
-                mario.Dead();
-            }
+            //if(mario.Area().Intersects(enemy.Area()))
+            //{
+            //    mario.Dead();
+            //}
         }
 
     }

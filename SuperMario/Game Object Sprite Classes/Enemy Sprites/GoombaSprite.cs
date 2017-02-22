@@ -15,17 +15,14 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-
-        public GoombaSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public GoombaSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            Location = location;
             currentFrame = 1;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
@@ -58,11 +55,11 @@ namespace SuperMario
             spriteBatch.End();
         }
 
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

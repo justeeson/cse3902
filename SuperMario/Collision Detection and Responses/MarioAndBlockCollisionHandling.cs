@@ -10,12 +10,12 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         public void HandleCollision(Mario mario, ISprite block)
         {
-            if(mario.Area().Intersects(block.Area()))
-            {
-                collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area());
-                mario.locationX -= collisionRectangle.Width;
-                mario.locationY -= collisionRectangle.Height;
-            }
+            //if(mario.Area().Intersects(block.Area()))
+            //{
+            //    collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area());
+            //    mario.locationX -= collisionRectangle.Width;
+            //    mario.locationY -= collisionRectangle.Height;
+            //}
         }
 
     }

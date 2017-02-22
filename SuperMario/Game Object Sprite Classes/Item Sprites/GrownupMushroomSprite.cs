@@ -10,66 +10,47 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class StarSprite : ISprite
+    class GrowupMushroomSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
-        private int currentFrame;
-        private int count;
-        private int timer;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
+        public int currentFrame;
         public ISprite Sprite { get; set; }
         public Rectangle rectangle { get; set; }
         private SpriteBatch spriteBatch;
 
-        public StarSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public GrowupMushroomSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 1;
-            count = 300;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 250;
-            Location = location;
-
+            currentFrame = 0;
         }
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
-            {
-                timeSinceLastFrame -= millisecondsPerFrame;
-                currentFrame++;
-            }
-
-            if (currentFrame == 4)
-            { currentFrame = 1; }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 28;
-            int height = 27;
+            int height = 28;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             this.spriteBatch = spriteBatch;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(500, 160, width, height);
+            Rectangle destinationRectangle = new Rectangle(300, 160, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

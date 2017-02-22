@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace SuperMario.Interfaces
 {
-    interface IItem : IObject
+    interface IItem
     {
-        ISprite Sprite { get; set; }
-        Game1 myGame { get; set; }
-        Rectangle Area { get; set; }
-        void Update();
-        void Used();
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        Rectangle Area();
+        void UpdateCollision();
+        void Draw(SpriteBatch sb, Vector2 v);
+
     }
 }

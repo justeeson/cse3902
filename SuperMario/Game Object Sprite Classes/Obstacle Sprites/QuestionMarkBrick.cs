@@ -19,12 +19,11 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            Location = location;
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class SolidBrickWithCrews : IBlock
+    public class SolidBrickWithCrews : IBlock
     {
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
@@ -17,8 +17,8 @@ namespace SuperMario
         public SolidBrickWithCrews(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateSolidBrickWithCrews();
-            myGame.sprite = mySprite;
+            Sprite = SpriteFactory.CreateSolidBrickWithCrews();
+            myGame.sprite = Sprite;
         }
         public void BrickToDisappear()
         {

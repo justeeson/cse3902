@@ -1,24 +1,24 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using SuperMario.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class ClearSprite : ISprite
+    class CleanSprite : ISprite
     {
         private Texture2D texture;
-        public ClearSprite(Texture2D text)
-        {
-            this.texture = text;
-        }
-      
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public CleanSprite(Texture2D item)
+        {
+            this.texture = item;
+        }
+
+        public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
             Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
             Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);
@@ -28,18 +28,15 @@ namespace SuperMario
             spriteBatch.End();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gametime)
         {
 
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 loc)
         {
-           
             return new Rectangle();
-        }
-        public void CollisionSprite()
-        {
 
         }
+
     }
 }

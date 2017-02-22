@@ -19,7 +19,9 @@ namespace SuperMario
         private Texture2D background;
         public Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
-
+        public GameTime gameTime;
+        public ObjectAndSpriteStore store;
+        public SpriteFactory SpriteFactory;
         private ISprite Sprite;
         public ISprite sprite
         {
@@ -63,13 +65,7 @@ namespace SuperMario
             { gamepadController = value; }
         }
 
-        private static ArrayList ListOfObjects;
-        public static ArrayList listOfObjects
-        {
-            get
-            { return ListOfObjects; }
-            
-        }
+      
 
         private static int xPos, yPos, xMax, yMax;
         
@@ -100,8 +96,10 @@ namespace SuperMario
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             Mario = new Mario(texture, 3, 12);
 
-            SpriteFactory.Instance.LoadAllTextures(Content);
-            ListOfObjects = ObjectArray.Instance.ArrayOfObjects(this);
+            SpriteFactory = new SpriteFactory();
+            SpriteFactory.LoadAllTextures(Content);
+            store = new ObjectAndSpriteStore(this);
+            store.Initialize(this);
             block = new BlockLogic(this);
 
             KeyboardController = new KeyboardController();
@@ -146,13 +144,12 @@ namespace SuperMario
 
         protected override void Update(GameTime gameTime)
         {
+            this.gameTime = gameTime;
             KeyboardController.Update(gameTime);
             GamepadController.Update(gameTime);
             Mario.Update(gameTime);
-            foreach (ISprite obj in ListOfObjects)
-            {
-                obj.Update(gameTime);
-            }
+            store.Update();
+
             base.Update(gameTime);
         }
 
@@ -162,7 +159,7 @@ namespace SuperMario
             spriteBatch.Begin();
             spriteBatch.Draw(background, mainFrame, Color.White);
             spriteBatch.End();
-            foreach (ISprite obj in ListOfObjects)
+            foreach (ISprite obj in store.arrayOfSprites)
             {
                 obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             }

@@ -17,12 +17,11 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public int currentFrame;
 
-        public BreakableCurlyBrickSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public BreakableCurlyBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            Location = location;
             currentFrame = 0;
         }
 

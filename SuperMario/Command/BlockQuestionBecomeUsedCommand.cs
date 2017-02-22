@@ -17,7 +17,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            myGame.Block.BecomeUsed();
+            //myGame.Block.BecomeUsed();
         }
     }
 }

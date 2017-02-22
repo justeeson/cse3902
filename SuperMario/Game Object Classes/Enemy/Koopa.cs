@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class Koopa : IEnemy
+   public class Koopa : IEnemy
     {
         private bool alive = false;
         public ISprite Sprite { get; set; }
@@ -18,8 +18,8 @@ namespace SuperMario
         public Koopa(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateKoopa();
-            myGame.sprite = mySprite;
+            Sprite = SpriteFactory.CreateKoopa();
+            myGame.sprite = Sprite;
         }
         public void Update(GameTime gameTime)
         {
@@ -35,7 +35,7 @@ namespace SuperMario
         public void AttackEnemy()
         {
             alive = true;
-            this.Sprite = new KoopaStompedSprite(myGame.enemies);
+          //  this.Sprite = new KoopaStompedSprite(myGame.enemies);
             this.Area = new Rectangle(120, 120, 32, 28);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

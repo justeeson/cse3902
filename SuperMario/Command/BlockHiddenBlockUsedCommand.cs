@@ -18,7 +18,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            myGame.Block.HiddenToUsed();
+           // myGame.Block.HiddenToUsed();
         }
     }
 }

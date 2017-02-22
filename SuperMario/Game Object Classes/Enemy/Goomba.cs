@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class Goomba : IEnemy
+    public class Goomba : IEnemy
     {
         private bool alive = false;
         public ISprite Sprite { get; set; }
@@ -19,8 +19,8 @@ namespace SuperMario
         public Goomba(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreateGoomba();
-            myGame.sprite = mySprite;
+            Sprite = SpriteFactory.CreateGoomba();
+            myGame.sprite = Sprite;
         }
         public void Update(GameTime gameTime)
         {
@@ -36,7 +36,7 @@ namespace SuperMario
         public void AttackEnemy()
         {
             alive = true;
-            this.Sprite = new GoobaStompedSprite(myGame.enemies);
+           // this.Sprite = new GoombaSprite(myGame.enemies);
             this.Area = new Rectangle(120, 120, 32, 28);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -45,5 +45,5 @@ namespace SuperMario
             Sprite.Draw(spriteBatch, location);
         }
     }
-}
+
 }

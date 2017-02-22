@@ -5,27 +5,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class Coin : IItem
+    public class Coin : IItem
     {
-        private Game1 myGame;
-        ISprite mySprite;
+        public Game1 myGame;
+        public ISprite Sprite;
+        public int locationX, locationY;
+
+        public Rectangle Rectangle { get; set; }
         public Coin(Game1 game)
         {
             myGame = game;
-            mySprite = SpriteFactory.Instance.CreateCoin();
-            myGame.sprite = mySprite;
+            this.Sprite = SpriteFactory.CreateCoin();
+            myGame.sprite = this.Sprite;
+            Rectangle = new Rectangle(200, 160, 10, 15);
+
+        }
+
+        public void Update()
+        {
+            Sprite.Update(myGame.gameTime);
         }
         public Rectangle Area()
         {
-            return mySprite.Area();
+            return Rectangle;
+        }
+
+        public void UpdateCollision()
+        {
+            this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
+            this.Rectangle = new Rectangle();
         }
 
         public void destroyItem()
         {
         }
 
+        public void Draw(SpriteBatch sb, Vector2 v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

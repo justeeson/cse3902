@@ -18,7 +18,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            myGame.Block.BrickToDisappear();
+          //  myGame.Block.BrickToDisappear();
         }
     }
 }

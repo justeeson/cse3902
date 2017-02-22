@@ -15,20 +15,17 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
         public int currentFrame;
         public ISprite Sprite { get; set; }
         public Rectangle rectangle { get; set; }
         private SpriteBatch spriteBatch;
 
-        public FireMushroomSprite(Texture2D texture, int rows, int columns, Vector2 location)
+        public FireMushroomSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            Location = location;
-
         }
 
         public void Update(GameTime gameTime)
@@ -48,11 +45,11 @@ namespace SuperMario
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle((int)Location.X, (int)Location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

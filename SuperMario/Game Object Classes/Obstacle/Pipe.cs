@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario
 {
-    class Pipe : IBlock
+    public class Pipe : IBlock
     {
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
@@ -18,8 +18,8 @@ namespace SuperMario
         public Pipe(Game1 game)
         {
             myGame = game;
-            ISprite mySprite = SpriteFactory.Instance.CreatePipe();
-            myGame.sprite = mySprite;
+            Sprite = SpriteFactory.CreatePipe();
+            myGame.sprite = Sprite;
         }
         public void BrickToDisappear()
         {

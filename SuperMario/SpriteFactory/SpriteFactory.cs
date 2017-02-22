@@ -12,45 +12,33 @@ namespace SuperMario
 {
     public class SpriteFactory
     {
-        private Texture2D KoopaTexture;
-        private Texture2D flowerTexture;
-        private Texture2D coinTexture;
-        private Texture2D growupMushroomTexture;
-        private Texture2D fireMushroomTexture;
-        private Texture2D starTexture;
-        private Texture2D GoombaTexture;
-        private Texture2D solidBrickTexture;
-        private Texture2D solidBrickWithCrewsTexture;
-        private Texture2D questionMarkBrickTexture;
-        private Texture2D brickableHorizontalBrickTexture;
-        private Texture2D breakableCurlyBrickTexture;
-        private Texture2D pipeTexture;
+        public static Texture2D turtleTexture;
+        public static Texture2D flowerTexture;
+        public static Texture2D coinTexture;
+        public static Texture2D growupMushroomTexture;
+        public static Texture2D fireMushroomTexture;
+        public static Texture2D starTexture;
+        public static Texture2D normalMonsterTexture;
+        public static Texture2D solidBrickTexture;
+        public static Texture2D solidBrickWithCrewsTexture;
+        public static Texture2D questionMarkBrickTexture;
+        public static Texture2D brickableHorizontalBrickTexture;
+        public static Texture2D breakableCurlyBrickTexture;
+        public static Texture2D pipeTexture;
 
 
 
-        private static SpriteFactory instance = new SpriteFactory();
 
-        public static SpriteFactory Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
-
-        private SpriteFactory()
-        {
-        }
 
         public void LoadAllTextures(ContentManager content)
         {
-            KoopaTexture = content.Load<Texture2D>("turtle");
+            turtleTexture = content.Load<Texture2D>("turtle");
             flowerTexture = content.Load<Texture2D>("flower");
             coinTexture = content.Load<Texture2D>("coin");
             growupMushroomTexture = content.Load<Texture2D>("growupMushroom");
             fireMushroomTexture = content.Load<Texture2D>("fireMushroom");
             starTexture = content.Load<Texture2D>("star");
-            GoombaTexture = content.Load<Texture2D>("normalMonster");
+            normalMonsterTexture = content.Load<Texture2D>("normalMonster");
             solidBrickTexture = content.Load<Texture2D>("solidBrick");
             solidBrickWithCrewsTexture = content.Load<Texture2D>("unbreakablebrickwith4screws");
             questionMarkBrickTexture = content.Load<Texture2D>("questionMarkBrick");
@@ -60,69 +48,69 @@ namespace SuperMario
         }
 
 
-        public ISprite CreateKoopa()
+        public static ISprite CreateKoopa()
         {
-            return new KoopaSprite(KoopaTexture, 32, 32);
+            return new KoopaSprite(turtleTexture, 32, 32);
         }
-        public ISprite CreateFlower()
+        public static ISprite CreateFlower()
         {
             return new FlowerSprite(flowerTexture, 32, 32);
         }
 
-        public ISprite CreateCoin()
+        public static ISprite CreateCoin()
         {
             return new CoinSprite(coinTexture, 32, 32);
         }
 
-        public ISprite CreateGrowupMushroom()
+        public static ISprite CreateGrowupMushroom()
         {
             return new GrowupMushroomSprite(growupMushroomTexture, 32, 32);
         }
-        public ISprite CreateFireMushroom()
+        public static ISprite CreateFireMushroom()
         {
             return new FireMushroomSprite(fireMushroomTexture, 32, 32);
         }
-        public ISprite CreateStar()
+        public static ISprite CreateStar()
         {
             return new StarSprite(starTexture, 32, 32);
         }
-        public ISprite CreateGoomba()
+        public static ISprite CreateGoomba()
         {
-            return new GoombaSprite(GoombaTexture, 32, 32);
+            return new GoombaSprite(normalMonsterTexture, 32, 32);
         }
-        public ISprite CreateSolidBrick()
+        public static ISprite CreateSolidBrick()
         {
             return new SolidBrickSprite(solidBrickTexture, 32, 32);
         }
-        public ISprite CreateSolidBrickWithCrews()
+        public static ISprite CreateSolidBrickWithCrews()
         {
             return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, 32, 32);
         }
 
-        public ISprite CreateSolidBrickWithCrews2()
+        public static ISprite CreateSolidBrickWithCrews2()
         {
             return new SolidBrickWithCrewsSprite2(solidBrickWithCrewsTexture, 32, 32);
         }
 
-        public ISprite CreateSolidBrickWithCrews3()
+        public static ISprite CreateSolidBrickWithCrews3()
         {
             return new SolidBrickWithCrewsSprite3(solidBrickWithCrewsTexture, 32, 32);
         }
 
-        public ISprite CreateQuestionMarkBrick()
+        public static ISprite CreateQuestionMarkBrick()
         {
             return new QuestionMarkBrickSprite(questionMarkBrickTexture, 32, 32);
         }
 
-        public ISprite CreateBreakableHorizonalBrick()
+        public static ISprite CreateBreakableHorizonalBrick()
         {
             return new BreakableHorizontalBrickSprite(brickableHorizontalBrickTexture, 32, 32);
         }
-        public ISprite CreateBreakableCurlyBrick()
+        public static ISprite CreateBreakableCurlyBrick()
         {
             return new BreakableCurlyBrickSprite(breakableCurlyBrickTexture, 32, 32);
         }
-        public ISprite CreatePipe()
+        public static ISprite CreatePipe()
         {
             return new PipeSprite(pipeTexture, 32, 32);
         }

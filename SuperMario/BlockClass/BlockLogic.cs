@@ -1,4 +1,7 @@
-﻿using SuperMario.Interfaces;
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using SuperMario.Interfaces;
 
 namespace SuperMario
 {
@@ -10,22 +13,27 @@ namespace SuperMario
             mygame = game;
         }
 
-        public void BrickToDisappear()
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-           new SolidBrick(mygame);
-           Game1.listOfObjects[11] = mygame.sprite;
+            throw new NotImplementedException();
         }
 
-        public void HiddenToUsed()
-        {
-            new HiddenBrick(mygame);
-            Game1.listOfObjects[13] = mygame.sprite;
-        }
+        //public void BrickToDisappear()
+        //{
+        //   new SolidBrick(mygame);
+        //   Game1.listOfObjects[11] = mygame.sprite;
+        //}
 
-        public void BecomeUsed()
-        {
-            new QuestionMarkBrickToUsed(mygame);
-            Game1.listOfObjects[9] = mygame.sprite;
-        }
+        //public void HiddenToUsed()
+        //{
+        //    new HiddenBrick(mygame);
+        //    Game1.listOfObjects[13] = mygame.sprite;
+        //}
+
+        //public void BecomeUsed()
+        //{
+        //    new QuestionMarkBrickToUsed(mygame);
+        //    Game1.listOfObjects[9] = mygame.sprite;
+        //}
     }
 }
