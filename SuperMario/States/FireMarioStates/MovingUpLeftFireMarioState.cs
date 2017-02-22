@@ -21,7 +21,7 @@ namespace SuperMario.Sprites
         public MovingUpLeftFireMarioState(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 25;
+            currentFrame = 28;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;

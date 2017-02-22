@@ -14,6 +14,10 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
+        private int startFrame;
+        private int totalFrames;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
         private int flashStatus;
         private int nextFlashTime;
         private int millisecondsPerFlash;
@@ -21,7 +25,11 @@ namespace SuperMario.Sprites
         public MovingUpLeftDiagonalFireMario(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 25;
+            currentFrame = 28;
+            startFrame = currentFrame;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 150;
+            totalFrames = 3;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -57,7 +65,14 @@ namespace SuperMario.Sprites
                 || (newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp) &&
                 newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft)))
             {
-                currentFrame = 25;
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame--;
+                }
+                if (currentFrame == startFrame - totalFrames)
+                    currentFrame = startFrame;
                 if (Mario.locationY == 0)
                 {
                     Mario.locationY = 400;

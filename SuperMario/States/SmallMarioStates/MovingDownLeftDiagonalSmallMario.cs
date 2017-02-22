@@ -12,11 +12,19 @@ namespace SuperMario.Sprites
         private int flashStatus;
         private int nextFlashTime;
         private int millisecondsPerFlash;
+        private int startFrame;
+        private int totalFrames;
+        private int timeSinceLastFrame;
+        private int millisecondsPerFrame;
 
         public MovingDownLeftDiagonalSmallMario(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 5;
+            currentFrame = 4;
+            startFrame = currentFrame;
+            totalFrames = 3;
+            timeSinceLastFrame = 0;
+            millisecondsPerFrame = 150;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -52,6 +60,14 @@ namespace SuperMario.Sprites
                 || (newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown) &&
                 newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft)))
             {
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                if (timeSinceLastFrame > millisecondsPerFrame)
+                {
+                    timeSinceLastFrame -= millisecondsPerFrame;
+                    currentFrame--;
+                }
+                if (currentFrame == startFrame - totalFrames)
+                    currentFrame = startFrame;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;
