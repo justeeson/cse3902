@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
+using System.Timers;
 
 namespace SuperMario.MarioClass
 {
@@ -14,9 +15,7 @@ namespace SuperMario.MarioClass
         public int Columns { get; set; }
         public static int locationX { get; set; }
         public static int locationY { get; set; }
-
         private Boolean starStatus;
-        int delay = 100;
 
         enum Orientations
         { CrouchingRight, CrouchingLeft,

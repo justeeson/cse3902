@@ -24,6 +24,8 @@ namespace SuperMario
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
 
+      
+        
         public ISprite sprite
         {
             get
