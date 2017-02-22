@@ -12,7 +12,7 @@ namespace SuperMario.Interfaces
     {
         Rectangle Area();
         void UpdateCollision();
-        void Draw(SpriteBatch sb, Vector2 v);
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }
 }
