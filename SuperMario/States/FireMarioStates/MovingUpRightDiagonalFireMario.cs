@@ -1,11 +1,16 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using Microsoft.Xna.Framework.Input;
 
-namespace SuperMario
+namespace SuperMario.Sprites
 {
-    public class MovingDownLeftBigMarioState : IMarioState
+    public class MovingUpRightDiagonalFireMario : IMarioState
     {
         private Mario mario;
         private int currentFrame;
@@ -13,10 +18,10 @@ namespace SuperMario
         private int nextFlashTime;
         private int millisecondsPerFlash;
 
-        public MovingDownLeftBigMarioState(Mario mario)
+        public MovingUpRightDiagonalFireMario(Mario mario)
         {
             this.mario = mario;
-            currentFrame = 12;
+            currentFrame = 34;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -48,21 +53,30 @@ namespace SuperMario
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
+            if ((newKeyboardState.IsKeyDown(Keys.Up) && newKeyboardState.IsKeyDown(Keys.Right))
+                || (newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp) &&
+                newGamepadState.IsButtonDown(Buttons.LeftThumbstickRight)))
             {
-                currentFrame = 12;
-                if (Mario.locationY == 400)
+                currentFrame = 34;
+                if (Mario.locationY == 0)
                 {
-                    Mario.locationY = 0;
+                    Mario.locationY = 400;
+                }
+                else if(Mario.locationX == 800)
+                {
+                    Mario.locationX = 0;
                 }
                 else
                 {
-                    Mario.locationY++;
+                    Mario.locationY--;
+                    Mario.locationX++;
                 }
             }
             else
             {
-                currentFrame = 17;
+                Mario.marioMode = (int)Mario.MarioModes.Fire;
+                Mario.orientation = (int)Mario.Orientations.StandingRight;
+                currentFrame = 30;
             }
         }
 
@@ -87,5 +101,7 @@ namespace SuperMario
             }
             spriteBatch.End();
         }
+
+
     }
 }

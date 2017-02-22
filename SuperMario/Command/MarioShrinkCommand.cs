@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
+using SuperMario.Sprites;
 
 namespace SuperMario.Command
 {
-    class MarioDeadCommand : ICommand
-    { 
+    class MarioShrinkCommand : ICommand
+    {
         private Game1 myGame;
 
-        public MarioDeadCommand(Game1 game)
+        public MarioShrinkCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.Dead();
+            //myGame.sprite.Shrink();
         }
     }
 }

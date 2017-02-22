@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Interfaces;
-using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {

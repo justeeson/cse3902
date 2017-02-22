@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperMario.MarioClass;
 using SuperMario.Interfaces;
+using SuperMario.Sprites;
+using System.Timers;
 using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites

@@ -7,18 +7,18 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    class MarioDeadCommand : ICommand
+    class MarioMoveUpLeftCommand : ICommand
     { 
         private Game1 myGame;
 
-        public MarioDeadCommand(Game1 game)
+        public MarioMoveUpLeftCommand(Game1 game)
         {
             myGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.Dead();
+            myGame.Mario.MoveUpLeft();
         }
     }
 }

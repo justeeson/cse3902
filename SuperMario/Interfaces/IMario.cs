@@ -27,5 +27,11 @@ namespace SuperMario.Interfaces
         void Reset();
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
+
+
+        void MoveUpRight();
+        void MoveUpLeft();
+        void MoveDownRight();
+        void MoveDownLeft();
     }
 }

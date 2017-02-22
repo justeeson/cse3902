@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperMario.MarioClass;
 using SuperMario.Interfaces;
 
 namespace SuperMario.Sprites

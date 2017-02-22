@@ -1,11 +1,16 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using Microsoft.Xna.Framework.Input;
 
-namespace SuperMario
+namespace SuperMario.Sprites
 {
-    public class MovingDownLeftBigMarioState : IMarioState
+    public class MovingDownLeftDiagonalBigMario : IMarioState
     {
         private Mario mario;
         private int currentFrame;
@@ -13,7 +18,7 @@ namespace SuperMario
         private int nextFlashTime;
         private int millisecondsPerFlash;
 
-        public MovingDownLeftBigMarioState(Mario mario)
+        public MovingDownLeftDiagonalBigMario(Mario mario)
         {
             this.mario = mario;
             currentFrame = 12;
@@ -48,20 +53,29 @@ namespace SuperMario
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
+            if ((newKeyboardState.IsKeyDown(Keys.Down) && newKeyboardState.IsKeyDown(Keys.Left))
+                || (newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown) &&
+                newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft)))
             {
                 currentFrame = 12;
                 if (Mario.locationY == 400)
                 {
                     Mario.locationY = 0;
                 }
+                else if(Mario.locationX == 0)
+                {
+                    Mario.locationX = 800;
+                }
                 else
                 {
                     Mario.locationY++;
+                    Mario.locationX--;
                 }
             }
             else
             {
+                Mario.marioMode = (int)Mario.MarioModes.Big;
+                Mario.orientation = (int)Mario.Orientations.StandingLeft;
                 currentFrame = 17;
             }
         }
@@ -87,5 +101,7 @@ namespace SuperMario
             }
             spriteBatch.End();
         }
+
+
     }
 }
