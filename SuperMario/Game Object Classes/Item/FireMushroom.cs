@@ -39,7 +39,7 @@ namespace SuperMario
             this.Rectangle = new Rectangle();
         }
 
-        public void Draw(SpriteBatch sb, Vector2 v)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             throw new NotImplementedException();
         }
