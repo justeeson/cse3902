@@ -6,11 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using SuperMario.Game_Object_Classes;
+using System.Xml;
+using Microsoft.Xna.Framework;
 
 namespace SuperMario.Levels
 {
     class LevelReader
     {
+        public Vector2 position;
         static public CreateLevel LoadLevelFromFile(String filename)
         {
             CreateLevel level = null;
@@ -24,89 +27,48 @@ namespace SuperMario.Levels
 
         public void LoadLevel(StreamReader stream, Game1 game)
         {
-            List<IEnemy> enemies = new List<IEnemy>();
-            List<IBlock> blocks = new List<IBlock>();
-            List<IItem> items = new List<IItem>();
-            Mario mario = null;
-
-
             String tag;
-
-            stream.ReadLine(); //should be <level>
-            while ((tag = stream.ReadLine()) != null && !tag.Equals("</level>"))
-            {
-                string[] words = tag.Split(' ');
-                int? xpos = null;
-                int? ypos = null;
-
-                String type = "";
-                for (int wordsCount = 1; wordsCount < words.Length; wordsCount++)
+            XmlReader reader = XmlReader.Create("Level.xml");
+            while (reader.Read()){
+                if (reader.HasAttributes)
                 {
-                    if (words[wordsCount].Length >= 6)
+                    position.X = Int32.Parse(reader.GetAttribute("x"));
+                    position.Y = Int32.Parse(reader.GetAttribute("y"));
+                    switch (reader.Name)
                     {
-                        if (words[wordsCount].Substring(0, 5).Equals("type="))
-                        {
-                            type = words[wordsCount].Substring(5).Trim('"').ToLower();
-                        }
-                        else if (words[wordsCount].Substring(0, 5).Equals("xpos="))
-                        {
-                            xpos = Int32.Parse(words[wordsCount].Substring(5).Trim('"'));
-                        }
-                        else if (words[wordsCount].Substring(0, 5).Equals("ypos="))
-                        {
-                            ypos = Int32.Parse(words[wordsCount].Substring(5).Trim('"'));
-                        }
+                        case "Goomba":
+                            break;
+                        case "Koopa":
+                            break;
+                        case "SolidBrick":
+                            break;
+                        case "HiddenBlock":
+                            break;
+                        case "QuestionBlock":
+                            break;
+                        case "BreakableCurlyBrick":
+                            break;
+                        case "BreakableHorizontalBrick":
+                            break;
+                        case "SolidBrickWithCrews":
+                            break;
+                        case "UsedBlock":
+                            break;
+                        case "Pipe":
+                            break;
+                        case "Coin":
+                            break;
+                        case "Flower":
+                            break;
+                        case "GrownupMushroom":
+                            break;
+                        case "FireMushroom":
+                            break;
+                        case "Star":
+                            break;
+                        default:
+                            break;
                     }
-                }
-                switch (type.Trim('"'))
-                {
-                    case "Goomba":
-                        enemies.Add(new Goomba(game));
-                        break;
-                    case "Koopa":
-                        enemies.Add(new Koopa(game));
-                        break;
-                    case "SolidBrick":
-                        blocks.Add(new SolidBrick(game));
-                        break;
-                    case "HiddenBlock":
-                        blocks.Add(new HiddenBrick(game));
-                        break;
-                    case "QuestionBlock":
-                        blocks.Add(new QuestionMarkBrick(game));
-                        break;
-                    case "BreakableCurlyBrick":
-                        blocks.Add(new BreakableCurlyBrick(game));
-                        break;
-                    case "BreakableHorizontalBrick":
-                        blocks.Add(new BreakableHorizontalBrick(game));
-                        break;
-                    case "SolidBrickWithCrews":
-                        blocks.Add(new SolidBrickWithCrews(game));
-                        break;
-                    case "UsedBlock":
-                        blocks.Add(new QuestionMarkBrickToUsed(game));
-                        break;
-                    case "Pipe":
-                        blocks.Add(new Pipe(game));
-                        break;
-                    case "Coin":
-                        items.Add(new Coin(game));
-                        break;
-                    case "Flower":
-                        items.Add(new Flower(game));
-                        break;
-                    case "GrownupMushroom":
-                        items.Add(new GrownupMushroom(game));
-                        break;
-                    case "FireMushroom":
-                        items.Add(new FireMushroom(game));
-                        break;
-                    case "Star":
-                        items.Add(new Star(game));
-                        break;
-                    default:
-                        break;
                 }
             }
         }
