@@ -1,0 +1,10 @@
+Author of the code review: Sebastin Justeeson
+Date of the code review: 2/22/2017
+Sprint number: 03
+Name of the .cs file being reviewed: GrownupMushroom.cs
+Author of the .cs file being reviewed: Son Le
+Number of minutes taken to complete the review: 5 minutes
+Specific comments on what is readable and what is not: The code has been nicely split into several small functions
+which make the code really easy to read and to understand the logic. The variable names are suitable as they immediately
+tell the reader what purpose they serve in the code. The logic of the Draw() function was however, a little hard
+to understand at first since it was confusing as to why the program would need to throw an exception. 
