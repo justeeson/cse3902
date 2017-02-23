@@ -16,6 +16,8 @@ namespace SuperMario
         public static int locationX { get; set; }
         public static int locationY { get; set; }
         public static Boolean starStatus;
+        public static Boolean invulnStatus;
+        private int invulnTimer;
         private int starPowerTimer;
 
         public enum Orientations
@@ -42,6 +44,7 @@ namespace SuperMario
             locationX = 400;
             locationY = 350;
             starPowerTimer = 0;
+            invulnTimer = 0;
             starStatus = false;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;
@@ -320,9 +323,18 @@ namespace SuperMario
             if (starStatus)
             {
                 starPowerTimer += gameTime.ElapsedGameTime.Milliseconds;
-                if(starPowerTimer > 7000)
+                if(starPowerTimer > 10000)
                 {
                     StarPowerUp();
+                }
+            }
+            if(invulnStatus)
+            {
+                invulnTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if (invulnTimer > 3500)
+                {
+                    Mario.invulnStatus = false;
+                    invulnTimer = 0;
                 }
             }
             state.Update(gameTime);
@@ -339,6 +351,11 @@ namespace SuperMario
                 starStatus = true;
             else
                 starStatus = false;
+        }
+
+        public static void Invulnerability()
+        {
+                invulnStatus = true;
         }
 
         public Rectangle Area()

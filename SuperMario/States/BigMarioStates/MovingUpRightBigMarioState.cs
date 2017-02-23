@@ -30,7 +30,7 @@ namespace SuperMario.Sprites
         {
             KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
-            if (Mario.starStatus == true)
+            if (Mario.starStatus || Mario.invulnStatus)
             {
                 nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)

@@ -17,9 +17,27 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
                 Mario.locationY += collisionRectangle.Height + 1;
 
-                if (item.canAttack)
+                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
                 {
-                    mario.Dead();
+                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        Mario.Invulnerability();
+                    }
+                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        Mario.Invulnerability();
+                    }
+                    else
+                    {
+                        mario.Dead();
+                    }
+                }
+                else if(item.canAttack && !Mario.invulnStatus)
+                {
+                    enemy.CollisionSprite();
+                    item.canAttack = false;
                 }
             }
             else if (collisionRectangle.Top == enemy.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
@@ -32,17 +50,53 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
                 Mario.locationX += collisionRectangle.Width + 1;
 
-                if (item.canAttack)
+                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
                 {
-                    mario.Dead();
+                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        Mario.Invulnerability();
+                    }
+                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        Mario.Invulnerability();
+                    }
+                    else
+                    {
+                        mario.Dead();
+                    }
+                }
+                else if (item.canAttack && !Mario.invulnStatus)
+                {
+                    enemy.CollisionSprite();
+                    item.canAttack = false;
                 }
             }
             else if (collisionRectangle.Left == enemy.Area().Left)
             {
                 Mario.locationX -= collisionRectangle.Width + 1;
-                if (item.canAttack)
+                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
                 {
-                    mario.Dead();
+                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        Mario.Invulnerability();
+                    }
+                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    {
+                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        Mario.Invulnerability();
+                    }
+                    else
+                    {
+                        mario.Dead();
+                    }
+                }
+                else if (item.canAttack && !Mario.invulnStatus)
+                {
+                    enemy.CollisionSprite();
+                    item.canAttack = false;
                 }
             }
         }

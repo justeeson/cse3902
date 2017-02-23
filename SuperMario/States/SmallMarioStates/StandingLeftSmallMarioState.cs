@@ -29,7 +29,7 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
-            if (Mario.starStatus == true)
+            if (Mario.starStatus || Mario.invulnStatus)
             {
                 nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)

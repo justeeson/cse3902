@@ -20,7 +20,6 @@ namespace SuperMario
             Sprite = SpriteFactory.CreateStar();
             myGame.sprite = Sprite;
             Rectangle = new Rectangle(500, 160, 4, 8);
-
         }
 
         public void Update()

@@ -14,17 +14,45 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
+        private int flashStatus;
+        private int nextFlashTime;
+        private int millisecondsPerFlash;
 
         public MovingUpRightSmallMario(Mario mario)
         {
             this.mario = mario;
             currentFrame = 10;
+            flashStatus = 0;
+            nextFlashTime = 0;
+            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime gameTime)
         {
             KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if (Mario.starStatus || Mario.invulnStatus)
+            {
+                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
+                if (nextFlashTime > millisecondsPerFlash)
+                {
+                    nextFlashTime -= millisecondsPerFlash;
+                    if (flashStatus == 0)
+                    {
+                        flashStatus = 1;
+                    }
+
+                    else if (flashStatus == 1)
+                    {
+                        flashStatus = 0;
+                    }
+
+                }
+            }
+            else
+            {
+                flashStatus = 0;
+            }
             if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp))
             {
                 currentFrame = 10;
