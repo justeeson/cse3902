@@ -12,3 +12,4 @@ R = Reset program.
 
 Note: 
 	Our Xml reader will not successfully construst the world, so we revised to a executable version. We will try to work it out during factoring.
+	We will need to revise the structure of data so that we can store useful information for drawing sprites as well as getting location of objects.
