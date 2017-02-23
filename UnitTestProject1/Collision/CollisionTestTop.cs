@@ -30,7 +30,7 @@ namespace SuperMario.Collision
             Rectangle collisionRectangle;
             TopTest obj = new TopTest(100, 50, 4, 8);
             TopTest mario = new TopTest(50, 100, 20, 40);
-            for (int y = 0; y <= 50; y++)
+            for (int y = 0; y < 50; y++)
             {
                 mario.Area = new Rectangle(100, 100 - y, 20, 40);
                 collisionRectangle = Rectangle.Intersect(mario.Area, obj.Area);
