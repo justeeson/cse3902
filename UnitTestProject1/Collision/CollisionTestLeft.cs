@@ -30,18 +30,15 @@ namespace SuperMario.Collision
             Rectangle collisionRectangle;
             LeftTest obj = new LeftTest(20, 16, 4, 8);
             LeftTest mario = new LeftTest(50, 80, 20, 40);
-            for (int y = 0; y < 30; y++)
+            for (int y = 0; y < 20; y++)
             {
                 mario.Area = new Rectangle(50-y, 80, 20, 40);
                 collisionRectangle = Rectangle.Intersect(mario.Area, obj.Area);
                 if (collisionRectangle.Left == obj.Area.Left && collisionRectangle.Width > collisionRectangle.Height)
                 {
-
-                }
-                else
-                {
                     Assert.Fail();
                 }
+               
             }
         }
 
