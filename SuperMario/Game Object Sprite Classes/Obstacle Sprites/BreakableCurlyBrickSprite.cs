@@ -12,8 +12,7 @@ namespace SuperMario
         public int Columns { get; set; }
         public Vector2 Location { get; set; }
         public int currentFrame;
-
-        private Boolean isNotDestroyed = true;
+        
 
         public BreakableCurlyBrickSprite(Texture2D texture, int rows, int columns)
         {
@@ -29,35 +28,26 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            if(isNotDestroyed)
-            {
-                int width = 36;
-                int height = 34;
-                int row = (int)((float)currentFrame / (float)Columns);
-                int column = currentFrame % Columns;
+            int width = 36;
+            int height = 34;
+            int row = (int)((float)currentFrame / (float)Columns);
+            int column = currentFrame % Columns;
 
-                Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle(600, 250, width, height);
-                spriteBatch.Begin();
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
-            }
+            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
+            Rectangle destinationRectangle = new Rectangle(600, 250, width, height);
+            spriteBatch.Begin();
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.End();
         }
         public Rectangle Area()
         {
-            if (isNotDestroyed)
-            {
-                int width = 34;//Texture.Width / Columns;
-                int height = 32;//Texture.Height;// / Rows;
-                return new Rectangle(600, 250, width, height);
-            }
-            else
-                return Rectangle.Empty;
+            int width = 34;//Texture.Width / Columns;
+            int height = 32;//Texture.Height;// / Rows;
+            return new Rectangle(600, 250, width, height);
 
         }
         public void CollisionSprite()
         {
-            isNotDestroyed = false;
         }
     }
 }
