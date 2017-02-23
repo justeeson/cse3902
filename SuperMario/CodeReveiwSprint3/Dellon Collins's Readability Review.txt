@@ -1,0 +1,9 @@
+﻿Dellon Collins
+2/22/2017
+Sprint 3
+
+MarioClass/Mario.cs by Sebastin Justeeson
+
+The method StarPowerUp() is ambiguously named. The name implies that it would be used to make Mario have
+star power but it toggles Mario's star power status.
+

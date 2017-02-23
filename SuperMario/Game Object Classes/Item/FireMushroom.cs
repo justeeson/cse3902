@@ -35,6 +35,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
             myGame.store.arrayOfSprites[3] = Sprite;
+            myGame.Mario.MarioFireState();
             this.Rectangle = new Rectangle();
         }
 
