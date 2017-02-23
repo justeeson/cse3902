@@ -35,15 +35,12 @@ namespace SuperMario.Game_Object_Classes
             result.Add(Keys.Right);
             result.Add(Keys.Up);
             result.Add(Keys.Down);
-            result.Add(Keys.Y);
-            result.Add(Keys.U);
-            result.Add(Keys.I);
-            result.Add(Keys.O);
+            result.Add(Keys.A);
+            result.Add(Keys.D);
+            result.Add(Keys.W);
+            result.Add(Keys.S);
             result.Add(Keys.Q);
             result.Add(Keys.R);
-            result.Add(Keys.Z);
-            result.Add(Keys.X);
-            result.Add(Keys.C);
             return result;
         }
     }

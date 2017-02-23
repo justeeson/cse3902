@@ -63,7 +63,7 @@ namespace SuperMario.Sprites
             }
             if ((newKeyboardState.IsKeyDown(Keys.Up) && newKeyboardState.IsKeyDown(Keys.Left))
                 || (newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp) &&
-                newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft)))
+                newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft)) || (newKeyboardState.IsKeyDown(Keys.W) && newKeyboardState.IsKeyDown(Keys.A)))
             {
                 timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)

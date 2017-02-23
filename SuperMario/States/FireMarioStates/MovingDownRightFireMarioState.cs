@@ -53,7 +53,7 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
+            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown) || newKeyboardState.IsKeyDown(Keys.S))
             {
                 currentFrame = 35;
                 if (Mario.locationY == 400)

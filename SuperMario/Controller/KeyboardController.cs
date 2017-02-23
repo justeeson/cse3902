@@ -28,7 +28,7 @@ namespace SuperMario.Controller
         public void Update(GameTime gameTime)
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-            if (pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Up))
+            if ((pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Up))||(pressedKeys.Contains(Keys.D) && pressedKeys.Contains(Keys.W)))
             {
                 if (!(command is MarioMoveUpRightCommand))
                 {
@@ -36,7 +36,7 @@ namespace SuperMario.Controller
                 }
                 command.Execute();
             }
-            else if (pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Up))
+            else if ((pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Up))|| (pressedKeys.Contains(Keys.A) && pressedKeys.Contains(Keys.W)))
             {
                 if (!(command is MarioMoveUpLeftCommand))
                 {
@@ -45,7 +45,7 @@ namespace SuperMario.Controller
 
                 command.Execute();
             }
-            else if (pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Down))
+            else if ((pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Down))||(pressedKeys.Contains(Keys.D) && pressedKeys.Contains(Keys.S)))
             {
                 if (!(command is MarioMoveDownRightCommand))
                 {
@@ -53,7 +53,7 @@ namespace SuperMario.Controller
                 }
                 command.Execute();
             }
-            else if (pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Down))
+            else if ((pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Down))||(pressedKeys.Contains(Keys.A) && pressedKeys.Contains(Keys.S)))
             {
                 if (!(command is MarioMoveDownLeftCommand))
                 {
