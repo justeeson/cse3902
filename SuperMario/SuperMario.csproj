@@ -183,14 +183,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeReview\Son Le%27s Code Quality Review.txt" />
-    <Content Include="CodeReview\Dellon Collins%27s Code Quality Review.txt" />
-    <Content Include="CodeReview\Son Le%27s Readability Review.txt" />
-    <Content Include="CodeReview\Dellon Collins%27s Readability Review.txt" />
-    <Content Include="CodeReview\Sebastin Justeeson%27s Code Quality Review.txt" />
-    <Content Include="CodeReview\Yihang Du%27s Code Quality Review.txt" />
-    <Content Include="CodeReview\Yihang Du%27s Readability Review.txt" />
-    <Content Include="CodeReview\Sebastin Justeeson%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Dellon Collins%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Dellon Collins%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Sebastin Justeeson%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Yihang Du%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Yihang Du%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint2\Sebastin Justeeson%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint3\Sebastin Justeeson%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint3\Son Le%27s Readability Review.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Content\Level1.xml" />
     <Content Include="README.txt" />
