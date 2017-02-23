@@ -45,6 +45,7 @@ namespace SuperMario
             locationY = 350;
             starPowerTimer = 0;
             invulnTimer = 0;
+            invulnStatus = false;
             starStatus = false;
             orientation = (int)Orientations.StandingRight;
             marioMode = (int)MarioModes.Small;

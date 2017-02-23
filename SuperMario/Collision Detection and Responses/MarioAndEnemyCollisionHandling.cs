@@ -21,12 +21,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     if (Mario.marioMode == (int)Mario.MarioModes.Fire)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        mario.MarioBigState();
                         Mario.Invulnerability();
                     }
                     else if (Mario.marioMode == (int)Mario.MarioModes.Big)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        mario.MarioSmallState();
                         Mario.Invulnerability();
                     }
                     else
@@ -34,10 +34,14 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if(item.canAttack && !Mario.invulnStatus)
+                else if(item.canAttack)
                 {
-                    enemy.CollisionSprite();
-                    item.canAttack = false;
+                    
+                    if (Mario.starStatus)
+                    {
+                        enemy.CollisionSprite();
+                        item.canAttack = false;
+                    }
                 }
             }
             else if (collisionRectangle.Top == enemy.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
@@ -54,12 +58,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     if (Mario.marioMode == (int)Mario.MarioModes.Fire)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        mario.MarioBigState();
                         Mario.Invulnerability();
                     }
                     else if (Mario.marioMode == (int)Mario.MarioModes.Big)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        mario.MarioSmallState();
                         Mario.Invulnerability();
                     }
                     else
@@ -67,10 +71,14 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if (item.canAttack && !Mario.invulnStatus)
+                else if (item.canAttack)
                 {
-                    enemy.CollisionSprite();
-                    item.canAttack = false;
+
+                    if (Mario.starStatus)
+                    {
+                        enemy.CollisionSprite();
+                        item.canAttack = false;
+                    }
                 }
             }
             else if (collisionRectangle.Left == enemy.Area().Left)
@@ -80,12 +88,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     if (Mario.marioMode == (int)Mario.MarioModes.Fire)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Big;
+                        mario.MarioBigState();
                         Mario.Invulnerability();
                     }
                     else if (Mario.marioMode == (int)Mario.MarioModes.Big)
                     {
-                        Mario.marioMode = (int)Mario.MarioModes.Small;
+                        mario.MarioSmallState();
                         Mario.Invulnerability();
                     }
                     else
@@ -93,10 +101,14 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if (item.canAttack && !Mario.invulnStatus)
+                else if (item.canAttack)
                 {
-                    enemy.CollisionSprite();
-                    item.canAttack = false;
+
+                    if (Mario.starStatus)
+                    {
+                        enemy.CollisionSprite();
+                        item.canAttack = false;
+                    }
                 }
             }
         }
