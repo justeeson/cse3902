@@ -1,0 +1,13 @@
+Dellon Collins
+2/13/2017
+Sprint 2
+
+MarioClass/Mario.cs Code Author: Sebastin Justeeson
+
+Mario.StarPowerUp is a misnomer as it just toggles Mario's star power status. And the code does not make this 
+clear immediately either. Its body could be replaced with 
+
+starStatus = !starStatus;
+
+to make it more obvious. Mario.Update is readable though. It is obvious that the method controls the duration 
+of star and invulnerability status. 
