@@ -88,7 +88,6 @@
     <Compile Include="Game Object Classes\Item\Star.cs" />
     <Compile Include="Game Object Classes\Item\Flower.cs" />
     <Compile Include="Game Object Classes\Enemy\Koopa.cs" />
-    <Compile Include="Game Object Classes\ObjectArray.cs" />
     <Compile Include="Game Object Classes\Obstacle\BreakableCurlyBrick .cs" />
     <Compile Include="Game Object Classes\Obstacle\HiddenBrick.cs" />
     <Compile Include="Game Object Classes\Obstacle\QuestionMarkBrickToUsed.cs" />
