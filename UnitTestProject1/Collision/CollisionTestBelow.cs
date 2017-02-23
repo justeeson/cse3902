@@ -2,68 +2,48 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Xna.Framework;
+using SuperMario.Interfaces;
 
-namespace UnitTestProject1.Collision
+namespace SuperMario.Collision
 {
-    /// <summary>
-    /// Summary description for UnitTest1
-    /// </summary>
+    
     [TestClass]
-    public class CollisionTestBelow
+    public class CollisionTestBelow : IObject
     {
-        public CollisionTestBelow()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
+        public Rectangle Area { get; set; }
 
-        private TestContext testContextInstance;
 
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
+        public class BelowTest
         {
-            get
+            public Rectangle Area { get; set; }
+            public BelowTest(int X, int Y, int width, int height)
             {
-                return testContextInstance;
+                this.Area = new Rectangle(X, Y, width, height);
             }
-            set
-            {
-                testContextInstance = value;
-            }
+           
         }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
-        [TestMethod]
-        public void TestMethod1()
+        [TestMethod()]
+        public void TestBelow()
         {
-            //
-            // TODO: Add test logic here
-            //
+           
+            Rectangle collisionRectangle;
+            BelowTest obj = new BelowTest(16, 16, 4, 8);
+            BelowTest mario = new BelowTest(50, 80, 20, 40);
+            for (int y = 0; y <= 54; y++)
+            {
+                mario.Area = new Rectangle(50, 80 - y, 20, 40);
+                collisionRectangle = Rectangle.Intersect(mario.Area, obj.Area);
+                if (collisionRectangle.Bottom == obj.Area.Bottom && collisionRectangle.Width > collisionRectangle.Height)
+                {
+                    
+                }
+                else
+                {
+                    Assert.Fail();
+                }
+            }
         }
+      
     }
 }
