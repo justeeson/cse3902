@@ -15,7 +15,7 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
-
+       
         public Koopa(Game1 game)
         {
             myGame = game;

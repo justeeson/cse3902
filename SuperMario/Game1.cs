@@ -13,7 +13,7 @@ namespace SuperMario
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
         private Texture2D background;
         public Texture2D enemies; // need to load the enemies somewhere
@@ -165,10 +165,10 @@ namespace SuperMario
             spriteBatch.Begin();
             spriteBatch.Draw(background, mainFrame, Color.White);
             spriteBatch.End();
-            foreach (ISprite obj in store.arrayOfSprites)
-            {
-                obj.Draw(spriteBatch, new Vector2(xPos, yPos));
-            }
+            //foreach (ISprite obj in store.arrayOfSprites)
+            //{
+            //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
+            //}
             Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
             base.Draw(gameTime);
         }

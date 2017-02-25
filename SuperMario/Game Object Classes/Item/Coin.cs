@@ -14,6 +14,8 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Rectangle { get; set; }
+        public static int LocationX;
+        public static int LocationY;
         public Coin(Game1 game)
         {
             myGame = game;
@@ -40,7 +42,8 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            throw new NotImplementedException();
+            location = new Vector2(location.X, location.Y);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

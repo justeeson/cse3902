@@ -15,7 +15,6 @@ namespace SuperMario
         {
             myGame = game;
             Sprite = SpriteFactory.CreateGoomba();
-            myGame.sprite = Sprite;
             canAttack = true;
         }
 
@@ -26,7 +25,7 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(this.Area.X, this.Area.Y);
+            location = new Vector2(location.X, location.Y);
             Sprite.Draw(spriteBatch, location);
         }
     }

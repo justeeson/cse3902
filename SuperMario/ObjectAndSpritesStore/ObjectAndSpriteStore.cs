@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Collision_Detection_and_Responses;
+using SuperMario.Interfaces;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -122,6 +123,12 @@ namespace SuperMario
         solidBrick.Update(gameTime);
         solidBrickWithCrews.Update(gameTime);
         CollisionHandling.Update(this);
+        }
+
+        void Draw()
+        {
+           goomba.Draw(GameClass.spriteBatch, LocationX);
+
         }
     }
 }
