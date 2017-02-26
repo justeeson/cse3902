@@ -19,23 +19,23 @@ namespace SuperMario
         public ArrayList arrayOfSprites = new ArrayList();
 
 
-        public Goomba goomba;
-        public Koopa koopa;
+        private Goomba goomba;
+        private Koopa koopa;
 
-        public Coin coin;
-        public FireMushroom fireMushroom;
-        public Flower flower;
-        public GrownupMushroom growupMushroom;
-        public Star star;
+        private Coin coin;
+        private FireMushroom fireMushroom;
+        private Flower flower;
+        private GrownupMushroom growupMushroom;
+        private Star star;
 
-        public BreakableCurlyBrick breakableCurlyBrick;
-        public BreakableHorizontalBrick breakableHorizontalBrick;
-        public HiddenBrick hiddenBrick;
-        public Pipe pipe;
-        public QuestionMarkBrick questionMarkBrick;
-        public QuestionMarkBrickToUsed questionMarkBrickToUsed;
-        public SolidBrick solidBrick;
-        public SolidBrickWithCrews solidBrickWithCrews;
+        private BreakableCurlyBrick breakableCurlyBrick;
+        private BreakableHorizontalBrick breakableHorizontalBrick;
+        private HiddenBrick hiddenBrick;
+        private Pipe pipe;
+        private QuestionMarkBrick questionMarkBrick;
+        private QuestionMarkBrickToUsed questionMarkBrickToUsed;
+        private SolidBrick solidBrick;
+        private SolidBrickWithCrews solidBrickWithCrews;
         public ObjectAndSpriteStore(Game1 game)
         {
             GameClass = game;
@@ -126,8 +126,9 @@ namespace SuperMario
         }
 
         void Draw()
-        {
-           goomba.Draw(GameClass.spriteBatch, LocationX);
+        {/*
+           goomba.Draw(GameClass.spriteBatch, goomba.locationX);
+           */
 
         }
     }

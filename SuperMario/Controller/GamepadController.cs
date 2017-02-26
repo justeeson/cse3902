@@ -73,19 +73,6 @@ namespace SuperMario.Controller
             {
                 controllerMappings[Buttons.LeftThumbstickDown].Execute();
             }
-
-            else if (currentState.IsConnected && currentState.Buttons.A == ButtonState.Pressed)
-            {
-                controllerMappings[Buttons.A].Execute();
-            }
-            else if (currentState.IsConnected && currentState.Buttons.B == ButtonState.Pressed)
-            {
-                controllerMappings[Buttons.B].Execute();
-            }
-            else if (currentState.IsConnected && currentState.Buttons.X == ButtonState.Pressed)
-            {
-                controllerMappings[Buttons.X].Execute();
-            }
         }
 
     }

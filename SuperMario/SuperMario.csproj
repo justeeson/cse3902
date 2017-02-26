@@ -62,13 +62,10 @@
     <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
     <Compile Include="Command\BlockBrickDisappearCommand.cs" />
     <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
-    <Compile Include="Command\MarioFireCommand.cs" />
-    <Compile Include="Command\MarioGrowCommand.cs" />
     <Compile Include="Command\MarioMoveDownLeftCommand.cs" />
     <Compile Include="Command\MarioMoveDownRightCommand.cs" />
     <Compile Include="Command\MarioMoveUpLeftCommand.cs" />
     <Compile Include="Command\MarioMoveUpRightCommand.cs" />
-    <Compile Include="Command\MarioShrinkCommand.cs" />
     <Compile Include="Command\QuitCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\MarioLookDownCommand.cs" />

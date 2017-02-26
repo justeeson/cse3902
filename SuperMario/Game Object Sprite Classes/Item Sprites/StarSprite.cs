@@ -16,8 +16,7 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int count;
-        private int timer;
+
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         public StarSprite(Texture2D texture, int rows, int columns)
@@ -26,7 +25,6 @@ namespace SuperMario
             Rows = rows;
             Columns = columns;
             currentFrame = 1;
-            count = 300;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 250;
         }

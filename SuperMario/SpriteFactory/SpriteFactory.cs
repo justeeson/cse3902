@@ -27,7 +27,7 @@ namespace SuperMario
         public static Texture2D breakableCurlyBrickTexture;
         public static Texture2D pipeTexture;
 
-        public void LoadAllTextures(ContentManager content)
+        public static void LoadAllTextures(ContentManager content)
         {
             koopaTexture = content.Load<Texture2D>("turtle");
             flowerTexture = content.Load<Texture2D>("flower");

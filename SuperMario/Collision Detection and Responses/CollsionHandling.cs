@@ -11,6 +11,11 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     class CollisionHandling
     {
+
+        private CollisionHandling()
+        {
+
+        }
         public static void Update(ObjectAndSpriteStore store)
         {
             Rectangle marioRect = store.GameClass.Mario.Area();

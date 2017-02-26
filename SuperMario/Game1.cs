@@ -13,10 +13,10 @@ namespace SuperMario
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        public SpriteBatch spriteBatch;
+        private SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
         private Texture2D background;
-        public Texture2D enemies; // need to load the enemies somewhere
+        private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
         public GameTime gameTime;
         public ObjectAndSpriteStore store;
@@ -115,10 +115,10 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.D, new MarioLookRightCommand(this));
             KeyboardController.RegisterCommand(Keys.W, new MarioLookUpCommand(this));
             KeyboardController.RegisterCommand(Keys.S, new MarioLookDownCommand(this));
-            //KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
-            //KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
-            //KeyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
-            //KeyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
+            KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeSmallCommand(this));
+            KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
+            KeyboardController.RegisterCommand(Keys.I, new MarioBecomeFireCommand(this));
+            KeyboardController.RegisterCommand(Keys.O, new MarioDeadCommand(this));
 
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
@@ -131,11 +131,9 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioLookUpCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
-
-            //For final implementation use these keys to impleement jump, crouch, etc(use powerups for fire and big)
-            //GamepadController.RegisterCommand(Buttons.A, new MarioBecomeSmallCommand(this));
-            //GamepadController.RegisterCommand(Buttons.B, new MarioBecomeBigCommand(this));
-            //GamepadController.RegisterCommand(Buttons.X, new MarioBecomeFireCommand(this));
+            GamepadController.RegisterCommand(Buttons.A, new MarioBecomeSmallCommand(this));
+            GamepadController.RegisterCommand(Buttons.B, new MarioBecomeBigCommand(this));
+            GamepadController.RegisterCommand(Buttons.X, new MarioBecomeFireCommand(this));
 
 
             xMax = GraphicsDevice.Viewport.Width;
@@ -154,7 +152,7 @@ namespace SuperMario
             KeyboardController.Update(gameTime);
             GamepadController.Update(gameTime);
             Mario.Update(gameTime);
-            store.Update();
+            //store.Update();
 
             base.Update(gameTime);
         }
