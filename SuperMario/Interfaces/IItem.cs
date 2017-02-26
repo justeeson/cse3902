@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.Interfaces
 {
-    interface IItem
+    public interface IItem
     {
         ISprite Sprite { get; set; }
         Game1 myGame { get; set; }

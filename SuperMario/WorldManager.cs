@@ -24,11 +24,6 @@ namespace SuperMario
             Level.Load();
         }
 
-        public void AddItem(IItem item)
-        {
-            Level.ItemList.Add(item);
-        }
-
         public void Update(GameTime gameTime)
         {
             Level.Update(gameTime);

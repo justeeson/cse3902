@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework;
 
 namespace SuperMario.Levels
 {
-    class LevelReader
+    public class LevelReader
     {
         Game1 myGame;
         public Vector2 location;

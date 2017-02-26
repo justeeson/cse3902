@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario.Levels
 {
-    class LevelClass
+    public class LevelClass
     {
         public Game1 myGame;
         public List<IItem> ItemList = new List<IItem>();
