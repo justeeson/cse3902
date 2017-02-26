@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
+    <Compile Include="WorldManager.cs" />
     <Compile Include="Collision Detection and Responses\CollsionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndEnemyCollisionHandling.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickWithScrewsSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\SolidBrickSprite.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IBlock.cs" />
     <Compile Include="Interfaces\IController.cs" />
@@ -121,7 +123,7 @@
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Keys\ValidKeys.cs" />
     <Compile Include="Levels\LevelReader.cs" />
-    <Compile Include="Levels\CreateLevel.cs" />
+    <Compile Include="Levels\LevelClass.cs" />
     <Compile Include="MarioClass\Mario.cs" />
     <Compile Include="ObjectAndSpritesStore\ObjectAndSpriteStore.cs" />
     <Compile Include="Program.cs" />

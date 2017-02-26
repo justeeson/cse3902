@@ -13,7 +13,7 @@ namespace SuperMario
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
+        public SpriteBatch spriteBatch;
         private Texture2D texture { get; set; }
         private Texture2D background;
         private Texture2D enemies; // need to load the enemies somewhere
@@ -23,7 +23,8 @@ namespace SuperMario
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
         public static Game1 self;
-
+        public WorldManager World;
+        public Vector2 location { get; set; }
       
         
         public ISprite sprite
@@ -106,6 +107,9 @@ namespace SuperMario
             store.Initialize(this);
             block = new BlockLogic(this);
 
+            World = new WorldManager(this);
+            World.Load();
+
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
             KeyboardController.RegisterCommand(Keys.Right, new MarioLookRightCommand(this));
@@ -153,7 +157,7 @@ namespace SuperMario
             GamepadController.Update(gameTime);
             Mario.Update(gameTime);
             //store.Update();
-
+            World.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -163,6 +167,7 @@ namespace SuperMario
             spriteBatch.Begin();
             spriteBatch.Draw(background, mainFrame, Color.White);
             spriteBatch.End();
+            World.Draw(location);
             //foreach (ISprite obj in store.arrayOfSprites)
             //{
             //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));

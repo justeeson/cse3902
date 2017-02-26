@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario.Interfaces
 {
-    public interface IEnemy : IObject
+    public interface IBackground
     {
-        bool canAttack { get; set; }
         ISprite Sprite { get; set; }
         Game1 myGame { get; set; }
+        Rectangle Rectangle { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

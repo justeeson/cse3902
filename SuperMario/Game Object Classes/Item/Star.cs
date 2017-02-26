@@ -22,9 +22,9 @@ namespace SuperMario
             Rectangle = new Rectangle(500, 160, 4, 8);
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            Sprite.Update(myGame.gameTime);
+            Sprite.Update(gameTime);
         }
         public Rectangle Area()
         {

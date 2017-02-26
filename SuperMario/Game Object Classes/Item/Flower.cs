@@ -23,9 +23,9 @@ namespace SuperMario
 
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            Sprite.Update(myGame.gameTime);
+            Sprite.Update(gameTime);
         }
         public Rectangle Area()
         {
