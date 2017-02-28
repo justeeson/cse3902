@@ -13,6 +13,8 @@ namespace SuperMario.Interfaces
         ISprite Sprite { get; set; }
         Game1 myGame { get; set; }
         Rectangle Area { get; set; }
+        Vector2 location { get; set; }
+
         void Update(GameTime gameTime);
         void BrickToDisappear();
         void HiddenToUsed();

@@ -48,7 +48,7 @@ namespace SuperMario
             itemArray = new ArrayList();
             enemyArray = new ArrayList();
             blockArray = new ArrayList();
-
+            /*
             goomba = new Goomba(game);
             arrayOfSprites.Add(game.sprite);
             koopa = new Koopa(game);
@@ -66,7 +66,7 @@ namespace SuperMario
             arrayOfSprites.Add(game.sprite);
            
 
-
+            
             solidBrick = new SolidBrick(game);
             arrayOfSprites.Add(game.sprite);
             solidBrickWithCrews = new SolidBrickWithCrews(game);
@@ -80,7 +80,7 @@ namespace SuperMario
             pipe = new Pipe(game);
             arrayOfSprites.Add(game.sprite);
             hiddenBrick = new HiddenBrick(game);
-            arrayOfSprites.Add(game.sprite);
+            arrayOfSprites.Add(game.sprite);*/
 
             enemyArray.Add(koopa);
             enemyArray.Add(goomba);
@@ -108,11 +108,11 @@ namespace SuperMario
         koopa.Update(gameTime);
         goomba.Update(gameTime);
 
-       coin.Update();
-       fireMushroom.Update();
-       flower.Update();
-       growupMushroom.Update();
-       star.Update();
+        coin.Update(gameTime);
+        fireMushroom.Update(gameTime);
+        flower.Update(gameTime);
+        growupMushroom.Update(gameTime);
+        star.Update(gameTime);
 
         breakableCurlyBrick.Update(gameTime);
         breakableHorizontalBrick.Update(gameTime);
@@ -122,7 +122,7 @@ namespace SuperMario
         //questionMarkBrickToUsed.Update();
         solidBrick.Update(gameTime);
         solidBrickWithCrews.Update(gameTime);
-        CollisionHandling.Update(this);
+        //CollisionHandling.Update(this);
         }
 
         void Draw()

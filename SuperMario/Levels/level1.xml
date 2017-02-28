@@ -5,9 +5,9 @@
   <solidbrick x="300" y="200" />
   <hiddenBlock x="400" y="200" />
   <BreakableCurlyBrick x="500" y ="200" />
-  <usedBlock x="600" y="200" />
+  <horizontalblock x="600" y="200" />
 
-  <pipe x="600" y="300" />
+  <pipe x="700" y="300" />
 
   <goomba x="220" y="100" />
   <koopa x="120" y="100" />

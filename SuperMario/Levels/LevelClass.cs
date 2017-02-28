@@ -12,13 +12,14 @@ namespace SuperMario.Levels
     public class LevelClass
     {
         public Game1 myGame;
-        public List<IItem> ItemList = new List<IItem>();
-        public List<IEnemy> EnemyList = new List<IEnemy>();
-        public List<IBlock> BlockList = new List<IBlock>();
-        public List<IBackground> BackgroundList = new List<IBackground>();
+        public static List<IItem> ItemList = new List<IItem>();
+        public static List<IEnemy> EnemyList = new List<IEnemy>();
+        public static List<IBlock> BlockList = new List<IBlock>();
+        public static List<IBackground> BackgroundList = new List<IBackground>();
 
         public LevelReader loader;
         private int count = 0;
+
         public LevelClass(Game1 game)
         {
             myGame = game;
@@ -27,7 +28,7 @@ namespace SuperMario.Levels
         }
         public void Load()
         {
-            loader.Loader();
+            loader.Load();
         }
 
         public void Update(GameTime gameTime)

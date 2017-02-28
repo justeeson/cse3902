@@ -14,11 +14,14 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
-        public QuestionMarkBrickToUsed(Game1 game)
+        public Vector2 location { get; set; }
+
+        public QuestionMarkBrickToUsed(Game1 game, Vector2 location)
         {
             myGame = game;
             Sprite = SpriteFactory.CreateSolidBrickWithCrews3();
             myGame.sprite = Sprite;
+            this.location = location;
         }
         public void BrickToDisappear()
         {

@@ -14,15 +14,18 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
-        public BreakableCurlyBrick(Game1 game)
+        public Vector2 location { get; set; }
+
+        public BreakableCurlyBrick(Game1 game, Vector2 location)
         {
             myGame = game;
             Sprite = SpriteFactory.CreateBreakableCurlyBrick();
             myGame.sprite = Sprite;
+            this.location = location;
         }
+
         public void BrickToDisappear()
         {
-            new SolidBrick(myGame);
         }
         public void HiddenToUsed()
         {
@@ -30,13 +33,14 @@ namespace SuperMario
         public void BecomeUsed()
         {
         }
+
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(location.X, location.Y);
+            location = new Vector2(this.location.X, this.location.Y);
             Sprite.Draw(spriteBatch, location);
         }
     }

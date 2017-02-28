@@ -14,13 +14,15 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Rectangle { get; set; }
-        public GrownupMushroom(Game1 game)
+        public Vector2 location { get; set; }
+
+        public GrownupMushroom(Game1 game, Vector2 location)
         {
             myGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
             myGame.sprite = Sprite;
             Rectangle = new Rectangle(300, 160, 4, 8);
-
+            this.location = location;
         }
 
         public void Update(GameTime gameTime)
@@ -39,7 +41,7 @@ namespace SuperMario
             {
                 myGame.Mario.MarioBigState();
             }
-            myGame.store.arrayOfSprites[5] = Sprite;
+            //myGame.store.arrayOfSprites[5] = Sprite;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

@@ -11,6 +11,7 @@ namespace SuperMario.Interfaces
     public interface IEnemy : IObject
     {
         bool canAttack { get; set; }
+        Vector2 location { get; set; }
         ISprite Sprite { get; set; }
         Game1 myGame { get; set; }
         void Update(GameTime gameTime);

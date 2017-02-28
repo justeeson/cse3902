@@ -271,6 +271,9 @@ namespace SuperMario
                 state = getState(orientation, marioMode);
             }
         }
+
+        public void TakeDamage() { }
+
         public void MarioBigState()
         {
             if (marioMode != (int)MarioModes.Big)

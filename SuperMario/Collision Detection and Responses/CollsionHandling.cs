@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Collision_Detection_and_Responses;
 using SuperMario.Interfaces;
+using SuperMario.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,42 +17,42 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
 
         }
-        public static void Update(ObjectAndSpriteStore store)
+        public static void Update(LevelClass level, Game1 game)
         {
-            Rectangle marioRect = store.GameClass.Mario.Area();
+            Rectangle marioRect = game.Mario.Area();
 
-            foreach (IItem item in store.itemArray)
+            foreach (IItem item in LevelClass.ItemList)
             {
 
                 Rectangle itemRect = item.Area();
 
                 if (marioRect.Intersects(itemRect))
                 {
-                    MarioAndItemCollisionResponser.Response(store.GameClass.Mario, item);
+                    MarioAndItemCollisionResponser.Response(game.Mario, item);
                 }
 
             }
 
-            foreach (IBlock item in store.blockArray)
+            foreach (IBlock item in LevelClass.BlockList)
             {
 
                 Rectangle blockRect = item.Sprite.Area();
 
                 if (marioRect.Intersects(blockRect))
                 {
-                    MarioAndBlockCollisionHandling.HandleCollision(store.GameClass.Mario, item);
+                    MarioAndBlockCollisionHandling.HandleCollision(game.Mario, item);
                 }
 
             }
 
-            foreach (IEnemy item in store.enemyArray)
+            foreach (IEnemy item in LevelClass.EnemyList)
             {
 
                 Rectangle enemyRect = item.Sprite.Area();
 
                 if (marioRect.Intersects(enemyRect))
                 {
-                    MarioAndEnemyCollisionHandling.HandleCollision(store.GameClass.Mario, item);
+                    MarioAndEnemyCollisionHandling.HandleCollision(game.Mario, item);
                 }
 
             }

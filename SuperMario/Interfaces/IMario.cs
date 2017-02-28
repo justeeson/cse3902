@@ -22,8 +22,9 @@ namespace SuperMario.Interfaces
         void LookDown();
         void MarioBigState();
         void MarioSmallState();
-        void Dead();
         void MarioFireState();
+        void TakeDamage();
+        void Dead();
         void Reset();
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);

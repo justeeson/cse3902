@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xna.Framework;
-using SuperMario.Interfaces;
+//using SuperMario.Interfaces;
 
 namespace SuperMario.Collision
 {

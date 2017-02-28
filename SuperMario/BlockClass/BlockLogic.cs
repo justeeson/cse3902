@@ -10,6 +10,8 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
+        public Vector2 location { get; set; }
+
         public BlockLogic(Game1 game)
         {
             myGame = game;
@@ -25,17 +27,17 @@ namespace SuperMario
 
         public void BrickToDisappear()
         {
-           new SolidBrick(myGame);
+           //new SolidBrick(myGame);
         }
 
         public void HiddenToUsed()
         {
-           new HiddenBrick(myGame);
+           //new HiddenBrick(myGame);
         }
 
         public void BecomeUsed()
         {
-            new QuestionMarkBrickToUsed(myGame);
+            //new QuestionMarkBrickToUsed(myGame);
         }
     }
 }

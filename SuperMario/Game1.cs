@@ -103,8 +103,8 @@ namespace SuperMario
 
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
-            store = new ObjectAndSpriteStore(this);
-            store.Initialize(this);
+            /*store = new ObjectAndSpriteStore(this);
+            store.Initialize(this);*/
             block = new BlockLogic(this);
 
             World = new WorldManager(this);
@@ -158,6 +158,7 @@ namespace SuperMario
             Mario.Update(gameTime);
             //store.Update();
             World.Update(gameTime);
+            Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(gameTime);
         }
 
