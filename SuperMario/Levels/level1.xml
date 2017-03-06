@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <level>
-  <solidbrickwithcrews x="100" y="200" />
-  <questionBlock x="200" y="200" />
-  <solidbrick x="300" y="200" />
+  <solidbrickwithcrews x="300" y="250" />
+  <questionBlock x="400" y="250" />
+  <solidbrick x="200" y="250" />
   <hiddenBlock x="400" y="200" />
   <BreakableCurlyBrick x="500" y ="200" />
   <horizontalblock x="600" y="200" />

@@ -192,7 +192,6 @@
     <Content Include="CodeReview\CodeReviewSprint3\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Son Le%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Yihang Du%27s Readability Review.txt" />
-    <Content Include="Content\Level1.xml" />
     <Content Include="Icon.ico" />
     <Content Include="Levels\level1.xml" />
     <Content Include="README.txt" />
