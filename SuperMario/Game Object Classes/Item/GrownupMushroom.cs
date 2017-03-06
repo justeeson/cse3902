@@ -12,22 +12,22 @@ namespace SuperMario
     public class GrownupMushroom : IItem
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Rectangle { get; set; }
-        public Vector2 location { get; set; }
+        public Vector2 Location { get; set; }
 
         public GrownupMushroom(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
-            myGame.sprite = Sprite;
+            MyGame.sprite = Sprite;
             Rectangle = new Rectangle(300, 160, 4, 8);
-            this.location = location;
+            this.Location = location;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(GameTime);
         }
         public Rectangle Area()
         {
@@ -39,9 +39,9 @@ namespace SuperMario
             this.Rectangle = new Rectangle();
             if (Mario.MarioMode == (int)Mario.MarioModes.Small)
             {
-                myGame.Mario.MarioBigState();
+                MyGame.Mario.MarioBigState();
             }
-            //myGame.store.arrayOfSprites[5] = Sprite;
+            //MyGame.store.arrayOfSprites[5] = Sprite;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

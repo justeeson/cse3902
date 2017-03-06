@@ -9,15 +9,15 @@ namespace SuperMario.Command
 {
     class BlockQuestionBecomeUsedCommand : ICommand
     {
-        private Game1 myGame;
+        private Game1 MyGame;
 
         public BlockQuestionBecomeUsedCommand(Game1 game)
         {
-            myGame = game;
+            MyGame = game;
         }
         public void Execute()
         {
-            //myGame.Block.BecomeUsed();
+            //MyGame.Block.BecomeUsed();
         }
     }
 }

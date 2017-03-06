@@ -9,15 +9,15 @@ namespace SuperMario.Command
 {
     class BlockHiddenBlockUsedCommand : ICommand
     {
-        private Game1 myGame;
+        private Game1 MyGame;
 
         public BlockHiddenBlockUsedCommand(Game1 game)
         {
-            myGame = game;
+            MyGame = game;
         }
         public void Execute()
         {
-           // myGame.Block.HiddenToUsed();
+           // MyGame.Block.HiddenToUsed();
         }
     }
 }

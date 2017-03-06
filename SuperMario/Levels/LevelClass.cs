@@ -11,63 +11,63 @@ namespace SuperMario.Levels
 {
     public class LevelClass
     {
-        public Game1 myGame;
+        public Game1 MyGame;
         public static List<IItem> ItemList = new List<IItem>();
         public static List<IEnemy> EnemyList = new List<IEnemy>();
         public static List<IBlock> BlockList = new List<IBlock>();
         public static List<IBackground> BackgroundList = new List<IBackground>();
 
-        public LevelReader loader;
+        public LevelReader Loader;
         private int count = 0;
 
         public LevelClass(Game1 game)
         {
-            myGame = game;
-            loader = new LevelReader(this, game);
+            MyGame = game;
+            Loader = new LevelReader(this, game);
 
         }
         public void Load()
         {
-            loader.Load();
+            Loader.Load();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             foreach (IEnemy enemy in EnemyList)
             {
-                enemy.Update(gameTime);
+                enemy.Update(GameTime);
             }
             foreach (IBlock block in BlockList)
             {
-                block.Update(gameTime);
+                block.Update(GameTime);
             }
             foreach (IItem item in ItemList)
             {
-                item.Update(gameTime);
+                item.Update(GameTime);
 
             }
             foreach (IBackground background in BackgroundList)
             {
-                background.Update(gameTime);
+                background.Update(GameTime);
             }
         }
         public void Draw(Vector2 location)
         {
             foreach (IBackground background in BackgroundList)
             {
-                background.Draw(myGame.spriteBatch, location);
+                background.Draw(MyGame.SpriteBatch, location);
             }
             foreach (IItem item in ItemList)
             {
-                item.Draw(myGame.spriteBatch, location);
+                item.Draw(MyGame.SpriteBatch, location);
             }
             foreach (IBlock block in BlockList)
             {
-                block.Draw(myGame.spriteBatch, location);
+                block.Draw(MyGame.SpriteBatch, location);
             }
             foreach (IEnemy enemy in EnemyList)
             {
-                enemy.Draw(myGame.spriteBatch, location);
+                enemy.Draw(MyGame.SpriteBatch, location);
             }
         }
     }

@@ -26,11 +26,11 @@ namespace SuperMario.Sprites
             millisecondsPerFlash = 400;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             if (Mario.StarStatus)
             {
-                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
+                nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)
                 {
                     nextFlashTime -= millisecondsPerFlash;
@@ -51,7 +51,7 @@ namespace SuperMario.Sprites
                 flashStatus = 0;
             }
 
-            if (Mario.jumpStatus)
+            if (Mario.JumpStatus)
             {
                 currentFrame = 35;
             }

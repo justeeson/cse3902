@@ -12,16 +12,16 @@ namespace SuperMario
    public class BreakableCurlyBrick : IBlock
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
-        public Vector2 location { get; set; }
+        public Vector2 Location { get; set; }
 
         public BreakableCurlyBrick(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateBreakableCurlyBrick();
-            myGame.sprite = Sprite;
-            this.location = location;
+            MyGame.sprite = Sprite;
+            this.Location = location;
         }
 
         public void BrickToDisappear()
@@ -34,13 +34,13 @@ namespace SuperMario
         {
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(GameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(this.location.X, this.location.Y);
+            location = new Vector2(this.Location.X, this.Location.Y);
             Sprite.Draw(spriteBatch, location);
         }
     }

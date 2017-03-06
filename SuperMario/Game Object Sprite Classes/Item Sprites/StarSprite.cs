@@ -29,9 +29,9 @@ namespace SuperMario
             millisecondsPerFrame = 250;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame > millisecondsPerFrame)
             {
                 timeSinceLastFrame -= millisecondsPerFrame;

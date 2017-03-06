@@ -16,7 +16,7 @@ namespace SuperMario
         public int Columns { get; set; }
         public Vector2 Location { get; set; }
 
-        public int currentFrame;
+        private int currentFrame;
         private int locationX;
         private int locationY;
 
@@ -28,7 +28,7 @@ namespace SuperMario
             currentFrame = 0;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
 
         }

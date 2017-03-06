@@ -9,7 +9,7 @@ namespace SuperMario.Interfaces
 {
     public interface IMarioState
     {
-        void Update(GameTime gameTime);
+        void Update(GameTime GameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }

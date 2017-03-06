@@ -12,7 +12,6 @@ namespace SuperMario.Controller
 {
     public class GamepadController : IController
     {
-        private ICommand command;
         private Dictionary<Buttons, ICommand> controllerMappings;
 
         public GamepadController()
@@ -23,7 +22,7 @@ namespace SuperMario.Controller
         {
             controllerMappings.Add(button, command);
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             

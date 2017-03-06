@@ -28,7 +28,7 @@ namespace SuperMario
             spriteBatch.End();
         }
 
-        public void Update(GameTime gametime)
+        public void Update(GameTime GameTime)
         {
 
         }

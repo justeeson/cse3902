@@ -12,16 +12,16 @@ namespace SuperMario
     public class QuestionMarkBrickToUsed : IBlock
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
-        public Vector2 location { get; set; }
+        public Vector2 Location { get; set; }
 
         public QuestionMarkBrickToUsed(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateSolidBrickWithCrews3();
-            myGame.sprite = Sprite;
-            this.location = location;
+            MyGame.sprite = Sprite;
+            this.Location = location;
         }
         public void BrickToDisappear()
         {
@@ -32,9 +32,9 @@ namespace SuperMario
         public void BecomeUsed()
         {
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(GameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

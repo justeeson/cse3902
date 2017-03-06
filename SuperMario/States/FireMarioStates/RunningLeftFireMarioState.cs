@@ -36,13 +36,13 @@ namespace SuperMario.Sprites
             millisecondsPerFlash = 400;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
             if (Mario.StarStatus)
             {
-                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
+                nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)
                 {
                     nextFlashTime -= millisecondsPerFlash;
@@ -64,7 +64,7 @@ namespace SuperMario.Sprites
             }
             if (newKeyboardState.IsKeyDown(Keys.Left) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft) || newKeyboardState.IsKeyDown(Keys.A))
             {
-                if (Mario.jumpStatus)
+                if (Mario.JumpStatus)
                 {
                     currentFrame = 25;
                     if (Mario.LocationX <= 0)
@@ -76,7 +76,7 @@ namespace SuperMario.Sprites
                 }
                 else
                 {
-                    timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                    timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                     if (timeSinceLastFrame > millisecondsPerFrame)
                     {
                         timeSinceLastFrame -= millisecondsPerFrame;
@@ -94,7 +94,7 @@ namespace SuperMario.Sprites
                     }
                 }
             }
-            else if (Mario.jumpStatus)
+            else if (Mario.JumpStatus)
             {
                 currentFrame = 25;
             }

@@ -13,17 +13,17 @@ namespace SuperMario
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        public SpriteBatch spriteBatch;
+        public SpriteBatch SpriteBatch;
         private Texture2D texture { get; set; }
         private Texture2D background;
         private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
-        public GameTime gameTime;
+        public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
-        public static Game1 self;
+        public static Game1 Self;
         public WorldManager World;
-        public Vector2 location { get; set; }
+        public Vector2 Location { get; set; }
       
         
         public ISprite sprite
@@ -88,13 +88,13 @@ namespace SuperMario
         protected override void Initialize()
         {
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
-            self = this;
+            Self = this;
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
@@ -145,31 +145,31 @@ namespace SuperMario
         {
         }
 
-        protected override void Update(GameTime gameTime)
+        protected override void Update(GameTime GameTime)
         {
-            this.gameTime = gameTime;
-            KeyboardController.Update(gameTime);
-            GamepadController.Update(gameTime);
-            Mario.Update(gameTime);
+            this.GameTime = GameTime;
+            KeyboardController.Update(GameTime);
+            GamepadController.Update(GameTime);
+            Mario.Update(GameTime);
             //store.Update();
-            World.Update(gameTime);
+            World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
-            base.Update(gameTime);
+            base.Update(GameTime);
         }
 
-        protected override void Draw(GameTime gameTime)
+        protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, mainFrame, Color.White);
-            spriteBatch.End();
-            World.Draw(location);
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(background, mainFrame, Color.White);
+            SpriteBatch.End();
+            World.Draw(Location);
             //foreach (ISprite obj in store.arrayOfSprites)
             //{
             //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             //}
-            Mario.Draw(spriteBatch, new Vector2(xPos, yPos));
-            base.Draw(gameTime);
+            Mario.Draw(SpriteBatch, new Vector2(xPos, yPos));
+            base.Draw(GameTime);
         }
     }
 }

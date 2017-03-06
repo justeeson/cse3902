@@ -12,22 +12,22 @@ namespace SuperMario
     public class Flower : IItem
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Rectangle { get; set; }
-        public Vector2 location { get; set; }
+        public Vector2 Location { get; set; }
 
         public Flower(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateFlower();
-            myGame.sprite = Sprite;
+            MyGame.sprite = Sprite;
             Rectangle = new Rectangle(100, 160, 4, 8);
-            this.location = location;
+            this.Location = location;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(GameTime);
         }
         public Rectangle Area()
         {
@@ -36,8 +36,8 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
-            //myGame.store.arrayOfSprites[4] = Sprite;
-            myGame.Mario.MarioFireState();
+            //MyGame.store.arrayOfSprites[4] = Sprite;
+            MyGame.Mario.MarioFireState();
             this.Rectangle = new Rectangle();
         }
 

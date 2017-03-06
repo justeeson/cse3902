@@ -18,7 +18,7 @@ namespace SuperMario
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
         private int yVelocity, yAcceleration;
-        public static Boolean jumpStatus;
+        public static Boolean JumpStatus;
         private int invulnTimer;
         private int starPowerTimer;
 
@@ -167,10 +167,10 @@ namespace SuperMario
 
         public void Jump()
         {
-            if (Mario.jumpStatus == false)
+            if (Mario.JumpStatus == false)
             {
                 yVelocity = 15;
-                Mario.jumpStatus = true;
+                Mario.JumpStatus = true;
             }
         }
 
@@ -183,11 +183,11 @@ namespace SuperMario
             Mario.LocationY = 350;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             if (StarStatus)
             {
-                starPowerTimer += gameTime.ElapsedGameTime.Milliseconds;
+                starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (starPowerTimer > 10000)
                 {
                     StarPowerUp();
@@ -195,21 +195,21 @@ namespace SuperMario
             }
             if (InvulnStatus)
             {
-                invulnTimer += gameTime.ElapsedGameTime.Milliseconds;
+                invulnTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (invulnTimer > 1800)
                 {
                     Mario.InvulnStatus = false;
                     invulnTimer = 0;
                 }
             }
-            if (jumpStatus)
+            if (JumpStatus)
             {
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
                 if (LocationY >= 350)
-                    Mario.jumpStatus = false;
+                    Mario.JumpStatus = false;
             }
-            State.Update(gameTime);
+            State.Update(GameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

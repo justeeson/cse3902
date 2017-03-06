@@ -9,16 +9,16 @@ namespace SuperMario.Command
 {
     class MarioJumpCommand : ICommand
     {
-        private Game1 myGame;
+        private Game1 MyGame;
 
         public MarioJumpCommand(Game1 game)
         {
-            myGame = game;
+            MyGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.Jump();
+            MyGame.Mario.Jump();
         }
     }
 }

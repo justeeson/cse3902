@@ -4,7 +4,7 @@ Sprint 2
 
 Game Object Classes/ObjectArray.cs by Son Le
 
-The code is cohesive. The method only concerns itself with creating/resetting an ArrayList of non-Mario game objects.
+The code is cohesive. The method only concerns itSelf with creating/resetting an ArrayList of non-Mario game objects.
 There is a high amount of coupling with the Game1 class because each of the object constructors updates Game1.sprite
 and sprites are added to Game1.listOfObjects from Game1.sprite. The coupling with Game1 is a slight problem since 
 changing Game1.sprite multiple times just to add it to Game1.listOfObjects works but is redundant.

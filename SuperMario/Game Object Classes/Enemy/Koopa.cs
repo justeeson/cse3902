@@ -13,22 +13,22 @@ namespace SuperMario
     {
         public bool canAttack { get; set; }
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
-        public Vector2 location { get; set; }
+        public Game1 MyGame { get; set; }
+        public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
        
         public Koopa(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateKoopa();
-            myGame.sprite = Sprite;
+            MyGame.sprite = Sprite;
             canAttack = true;
-            this.location = location;
+            this.Location = location;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(GameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

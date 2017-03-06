@@ -33,11 +33,11 @@ namespace SuperMario
             turtleState = (int)turtleStates.Normal;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             if (turtleState == (int)turtleStates.Normal)
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+                timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)
                 {
                     timeSinceLastFrame -= millisecondsPerFrame;

@@ -10,6 +10,6 @@ namespace SuperMario.Interfaces
 {
     public interface IController
     {
-        void Update(GameTime gameTime);
+        void Update(GameTime GameTime);
     }
 }

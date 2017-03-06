@@ -11,22 +11,22 @@ namespace SuperMario
 {
     public class WorldManager
     {
-        public Game1 myGame;
+        public Game1 MyGame;
         public LevelClass Level;
 
         public WorldManager(Game1 game)
         {
-            myGame = game;
-            Level = new LevelClass(myGame);
+            MyGame = game;
+            Level = new LevelClass(MyGame);
         }
         public void Load()
         {
             Level.Load();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            Level.Update(gameTime);
+            Level.Update(GameTime);
 
         }
 

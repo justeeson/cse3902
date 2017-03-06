@@ -19,7 +19,7 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         public ISprite Sprite { get; set; }
-        public Rectangle rectangle { get; set; }
+        public Rectangle Rectangle { get; set; }
         private SpriteBatch spriteBatch;
 
         public FlowerSprite(Texture2D texture, int rows, int columns)
@@ -32,9 +32,9 @@ namespace SuperMario
             millisecondsPerFrame = 300;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame > millisecondsPerFrame)
             {
                 timeSinceLastFrame -= millisecondsPerFrame;

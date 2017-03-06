@@ -27,7 +27,7 @@ namespace SuperMario.Sprites
             millisecondsPerFlash = 400;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
            
         }

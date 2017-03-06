@@ -31,13 +31,13 @@ namespace SuperMario.Sprites
             millisecondsPerFlash = 400;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
             if (Mario.StarStatus)
             {
-                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
+                nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)
                 {
                     nextFlashTime -= millisecondsPerFlash;

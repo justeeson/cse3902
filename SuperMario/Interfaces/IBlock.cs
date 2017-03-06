@@ -11,11 +11,11 @@ namespace SuperMario.Interfaces
     public interface IBlock
     {
         ISprite Sprite { get; set; }
-        Game1 myGame { get; set; }
+        Game1 MyGame { get; set; }
         Rectangle Area { get; set; }
-        Vector2 location { get; set; }
+        Vector2 Location { get; set; }
 
-        void Update(GameTime gameTime);
+        void Update(GameTime GameTime);
         void BrickToDisappear();
         void HiddenToUsed();
         void BecomeUsed();

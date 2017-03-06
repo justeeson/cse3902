@@ -15,7 +15,7 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         public Vector2 Location { get; set; }
-        public int currentFrame;
+        private int currentFrame;
 
         private Boolean isHidden = true;
 
@@ -27,7 +27,7 @@ namespace SuperMario
             currentFrame = 0;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
 
         }

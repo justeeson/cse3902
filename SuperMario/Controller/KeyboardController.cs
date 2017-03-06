@@ -12,7 +12,6 @@ namespace SuperMario.Controller
 {
     public class KeyboardController : IController
     {
-        private ICommand command;
         private Dictionary<Keys, ICommand> controllerMappings;
 
         public KeyboardController()
@@ -25,7 +24,7 @@ namespace SuperMario.Controller
             controllerMappings.Add(key, command);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();          
                 foreach (Keys key in pressedKeys)

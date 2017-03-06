@@ -15,9 +15,9 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int currentFrame;
+        private int currentFrame;
         public ISprite Sprite { get; set; }
-        public Rectangle rectangle { get; set; }
+        public Rectangle Rectangle { get; set; }
         private SpriteBatch spriteBatch;
 
         public GrowupMushroomSprite(Texture2D texture, int rows, int columns)
@@ -28,7 +28,7 @@ namespace SuperMario
             currentFrame = 0;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime GameTime)
         {
 
         }
