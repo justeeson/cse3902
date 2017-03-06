@@ -13,103 +13,103 @@ namespace SuperMario
 {
     public class SpriteFactory
     {
-        public static Texture2D goombaTexture;
-        public static Texture2D flowerTexture;
-        public static Texture2D coinTexture;
-        public static Texture2D growupMushroomTexture;
-        public static Texture2D fireMushroomTexture;
-        public static Texture2D starTexture;
-        public static Texture2D koopaTexture;
-        public static Texture2D solidBrickTexture;
-        public static Texture2D solidBrickWithCrewsTexture;
-        public static Texture2D questionMarkBrickTexture;
-        public static Texture2D brickableHorizontalBrickTexture;
-        public static Texture2D breakableCurlyBrickTexture;
-        public static Texture2D pipeTexture;
+        public static Texture2D GoombaTexture;
+        public static Texture2D FlowerTexture;
+        public static Texture2D CoinTexture;
+        public static Texture2D GrowupMushroomTexture;
+        public static Texture2D FireMushroomTexture;
+        public static Texture2D StarTexture;
+        public static Texture2D KoopaTexture;
+        public static Texture2D SolidBrickTexture;
+        public static Texture2D SolidBrickWithCrewsTexture;
+        public static Texture2D QuestionMarkBrickTexture;
+        public static Texture2D BrickableHorizontalBrickTexture;
+        public static Texture2D BreakableCurlyBrickTexture;
+        public static Texture2D PipeTexture;
 
-        public static void LoadAllTextures(ContentManager content)
+        public void LoadAllTextures(ContentManager content)
         {
-            koopaTexture = content.Load<Texture2D>("turtle");
-            flowerTexture = content.Load<Texture2D>("flower");
-            coinTexture = content.Load<Texture2D>("coin");
-            growupMushroomTexture = content.Load<Texture2D>("growupMushroom");
-            fireMushroomTexture = content.Load<Texture2D>("fireMushroom");
-            starTexture = content.Load<Texture2D>("star");
-            goombaTexture = content.Load<Texture2D>("normalMonster");
-            solidBrickTexture = content.Load<Texture2D>("solidBrick");
-            solidBrickWithCrewsTexture = content.Load<Texture2D>("unbreakablebrickwith4screws");
-            questionMarkBrickTexture = content.Load<Texture2D>("questionMarkBrick");
-            brickableHorizontalBrickTexture = content.Load<Texture2D>("brickableHorizontalBrick");
-            breakableCurlyBrickTexture = content.Load<Texture2D>("breakableCurlyBrick");
-            pipeTexture = content.Load<Texture2D>("pipe");
+            KoopaTexture = content.Load<Texture2D>("turtle");
+            FlowerTexture = content.Load<Texture2D>("flower");
+            CoinTexture = content.Load<Texture2D>("coin");
+            GrowupMushroomTexture = content.Load<Texture2D>("growupMushroom");
+            FireMushroomTexture = content.Load<Texture2D>("fireMushroom");
+            StarTexture = content.Load<Texture2D>("star");
+            GoombaTexture = content.Load<Texture2D>("normalMonster");
+            SolidBrickTexture = content.Load<Texture2D>("solidBrick");
+            SolidBrickWithCrewsTexture = content.Load<Texture2D>("unbreakablebrickwith4screws");
+            QuestionMarkBrickTexture = content.Load<Texture2D>("questionMarkBrick");
+            BrickableHorizontalBrickTexture = content.Load<Texture2D>("brickableHorizontalBrick");
+            BreakableCurlyBrickTexture = content.Load<Texture2D>("breakableCurlyBrick");
+            PipeTexture = content.Load<Texture2D>("pipe");
         }
 
 
         public static ISprite CreateKoopa()
         {
-            return new KoopaSprite(koopaTexture, 32, 32);
+            return new KoopaSprite(KoopaTexture, 32, 32);
         }
         public static ISprite CreateFlower()
         {
-            return new FlowerSprite(flowerTexture, 32, 32);
+            return new FlowerSprite(FlowerTexture, 32, 32);
         }
 
         public static ISprite CreateCoin()
         {
-            return new CoinSprite(coinTexture, 32, 32);
+            return new CoinSprite(CoinTexture, 32, 32);
         }
 
         public static ISprite CreateGrowupMushroom()
         {
-            return new GrowupMushroomSprite(growupMushroomTexture, 32, 32);
+            return new GrowupMushroomSprite(GrowupMushroomTexture, 32, 32);
         }
         public static ISprite CreateFireMushroom()
         {
-            return new FireMushroomSprite(fireMushroomTexture, 32, 32);
+            return new FireMushroomSprite(FireMushroomTexture, 32, 32);
         }
         public static ISprite CreateStar()
         {
-            return new StarSprite(starTexture, 32, 32);
+            return new StarSprite(StarTexture, 32, 32);
         }
         public static ISprite CreateGoomba()
         {
-            return new GoombaSprite(goombaTexture, 32, 32);
+            return new GoombaSprite(GoombaTexture, 32, 32);
         }
         public static ISprite CreateSolidBrick()
         {
-            return new SolidBrickSprite(solidBrickTexture, 32, 32);
+            return new SolidBrickSprite(SolidBrickTexture, 32, 32);
         }
         public static ISprite CreateSolidBrickWithCrews()
         {
-            return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, 32, 32);
+            return new SolidBrickWithCrewsSprite(SolidBrickWithCrewsTexture, 32, 32);
         }
 
         public static ISprite CreateHiddenBrick()
         {
-            return new HiddenBrickSprite(solidBrickWithCrewsTexture, 32, 32);
+            return new HiddenBrickSprite(SolidBrickWithCrewsTexture, 32, 32);
         }
 
         public static ISprite CreateSolidBrickWithCrews3()
         {
-            return new SolidBrickWithCrewsSprite3(solidBrickWithCrewsTexture, 32, 32);
+            return new SolidBrickWithCrewsSprite3(SolidBrickWithCrewsTexture, 32, 32);
         }
 
         public static ISprite CreateQuestionMarkBrick()
         {
-            return new QuestionMarkBrickSprite(questionMarkBrickTexture, 32, 32);
+            return new QuestionMarkBrickSprite(QuestionMarkBrickTexture, 32, 32);
         }
 
         public static ISprite CreateBreakableHorizonalBrick()
         {
-            return new BreakableHorizontalBrickSprite(brickableHorizontalBrickTexture, 32, 32);
+            return new BreakableHorizontalBrickSprite(BrickableHorizontalBrickTexture, 32, 32);
         }
         public static ISprite CreateBreakableCurlyBrick()
         {
-            return new BreakableCurlyBrickSprite(breakableCurlyBrickTexture, 32, 32);
+            return new BreakableCurlyBrickSprite(BreakableCurlyBrickTexture, 32, 32);
         }
         public static ISprite CreatePipe()
         {
-            return new PipeSprite(pipeTexture, 32, 32);
+            return new PipeSprite(PipeTexture, 32, 32);
         }
     }
 }
