@@ -134,6 +134,8 @@
     <Compile Include="States\FireMarioStates\MovingDownLeftFireMarioState.cs" />
     <Compile Include="States\FireMarioStates\MovingDownRightFireMarioState.cs" />
     <Compile Include="States\FireMarioStates\DeadFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\MovingUpLeftFireMarioState.cs" />
+    <Compile Include="States\FireMarioStates\MovingUpRightFireMarioState.cs" />
     <Compile Include="States\FireMarioStates\RunningLeftFireMarioState.cs" />
     <Compile Include="States\FireMarioStates\RunningRightFireMarioState.cs" />
     <Compile Include="States\FireMarioStates\StandingLeftFireMarioState.cs" />
@@ -142,7 +144,10 @@
     <Compile Include="States\SmallMarioStates\MovingDownLeftSmallMario.cs" />
     <Compile Include="States\BigMarioStates\MovingDownRightBigMarioState.cs" />
     <Compile Include="States\SmallMarioStates\MovingDownRightSmallMario.cs" />
+    <Compile Include="States\BigMarioStates\MovingUpLeftBigMarioState.cs" />
+    <Compile Include="States\BigMarioStates\MovingUpRightBigMarioState.cs" />
     <Compile Include="States\SmallMarioStates\MovingDownSmallMarioState.cs" />
+    <Compile Include="States\SmallMarioStates\MovingUpLeftSmallMarioState.cs" />
     <Compile Include="States\BigMarioStates\RunningLeftBigMarioState.cs" />
     <Compile Include="States\SmallMarioStates\RunningLeftSmallMarioState.cs" />
     <Compile Include="States\BigMarioStates\RunningRightBigMarioState.cs" />

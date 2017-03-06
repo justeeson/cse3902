@@ -6,31 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
-
 using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario.Sprites
 {
-    public class RunningRightSmallMarioState : IMarioState
+    public class MovingUpLeftSmallMario : IMarioState
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
         private int flashStatus;
         private int nextFlashTime;
         private int millisecondsPerFlash;
 
-        public RunningRightSmallMarioState(Mario mario)
+        public MovingUpLeftSmallMario(Mario mario)
         {
             this.mario = mario;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 150;
-            currentFrame = 7;
-            startFrame = currentFrame;
-            totalFrames = 3;
+            currentFrame = 1;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -62,31 +53,21 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
-
-            if (newKeyboardState.IsKeyDown(Keys.Right) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickRight) || newKeyboardState.IsKeyDown(Keys.D))
+            if (newKeyboardState.IsKeyDown(Keys.Up) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickUp) || newKeyboardState.IsKeyDown(Keys.W))
             {
-                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-                if (timeSinceLastFrame > millisecondsPerFrame)
+                currentFrame = 1;
+                if (Mario.locationY == 0)
                 {
-                    timeSinceLastFrame -= millisecondsPerFrame;
-                    currentFrame++;
-                }
-                if (currentFrame == startFrame + totalFrames)
-                    currentFrame = startFrame;
-                if (Mario.locationX == 800)
-                {
-                    Mario.locationX = 0;
+                    Mario.locationY = 400;
                 }
                 else
                 {
-                    Mario.locationX++;
+                    Mario.locationY--;
                 }
             }
             else
             {
-                Mario.marioMode = (int)Mario.MarioModes.Small;
-                Mario.orientation = (int)Mario.Orientations.StandingRight;
-                currentFrame = 6;
+                currentFrame = 5;
             }
         }
 
@@ -100,15 +81,8 @@ namespace SuperMario.Sprites
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-            if (flashStatus == 1)
-            {
-                spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White*0.5f);
-            }
-            else
-            {
-                spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
+            spriteBatch.Begin();
+            spriteBatch.Draw(mario.Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
 
