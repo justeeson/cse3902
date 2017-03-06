@@ -17,10 +17,10 @@ namespace SuperMario
         public static int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
-        private int yVelocity, yAcceleration;
+        public int yVelocity, yAcceleration;
         public static Boolean jumpStatus;
-        private int invulnTimer;
-        private int starPowerTimer;
+        public int invulnTimer;
+        public int starPowerTimer;
 
         public enum Orientations
         {
