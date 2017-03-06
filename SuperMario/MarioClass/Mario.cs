@@ -9,21 +9,22 @@ namespace SuperMario
 {
     public class Mario : IMario
     {
-        public IMarioState state { get; set; }
+        public IMarioState State { get; set; }
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public static int locationX { get; set; }
-        public static int locationY { get; set; }
-        public static Boolean starStatus;
-        public static Boolean invulnStatus;
+        public static int LocationX { get; set; }
+        public static int LocationY { get; set; }
+        public static Boolean StarStatus;
+        public static Boolean InvulnStatus;
+        private int yVelocity, yAcceleration;
+        public static Boolean jumpStatus;
         private int invulnTimer;
         private int starPowerTimer;
 
         public enum Orientations
         {
             CrouchingRight, CrouchingLeft,
-            JumpingRight, JumpingLeft,
             RunningRight, RunningLeft,
             StandingRight, StandingLeft,
             Dead
@@ -32,36 +33,38 @@ namespace SuperMario
         public enum MarioModes
         { Big, Fire, Small };
 
-        public static int orientation, marioMode;
+        public static int Orientation, MarioMode;
         IMarioState[,] StateArray;
 
         public Mario(Texture2D texture, int rows, int columns)
         {
-            state = new StandingRightSmallMarioState(this);
+            State = new StandingRightSmallMarioState(this);
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            locationX = 400;
-            locationY = 350;
+            LocationX = 400;
+            LocationY = 350;
             starPowerTimer = 0;
             invulnTimer = 0;
-            invulnStatus = false;
-            starStatus = false;
-            orientation = (int)Orientations.StandingRight;
-            marioMode = (int)MarioModes.Small;
-        
+            yAcceleration = -1;
+            yVelocity = 0;
+            InvulnStatus = false;
+            StarStatus = false;
+            Orientation = (int)Orientations.StandingRight;
+            MarioMode = (int)MarioModes.Small;
 
-        StateArray = new IMarioState[3, 9] {
-                {new MovingDownRightBigMarioState(this), new MovingDownLeftBigMarioState(this), new MovingUpRightBigMarioState(this),
-                    new MovingUpLeftBigMarioState(this), new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
+
+            StateArray = new IMarioState[3, 7] {
+                {new MovingDownRightBigMarioState(this), new MovingDownLeftBigMarioState(this),
+                 new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
                     new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)},
 
-                {new MovingDownRightFireMarioState(this), new MovingDownLeftFireMarioState(this), new MovingUpRightFireMarioState(this),
-                    new MovingUpLeftFireMarioState(this), new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
+                {new MovingDownRightFireMarioState(this), new MovingDownLeftFireMarioState(this),
+                new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
                     new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)},
 
-                {new MovingDownRightSmallMario(this), new MovingDownLeftSmallMario(this), new MovingUpRightSmallMario(this),
-                    new MovingUpLeftSmallMario(this), new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
+                {new MovingDownRightSmallMario(this), new MovingDownLeftSmallMario(this),
+                new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
                     new StandingRightSmallMarioState(this), new StandingLeftSmallMarioState(this), new DeadSmallMarioState(this)} };
         }
 
@@ -69,305 +72,172 @@ namespace SuperMario
         {
             return StateArray[mMode, orient];
         }
-       
+
 
         public void LookLeft()
         {
-            if (orientation == (int)Orientations.StandingLeft)
+            if (Orientation == (int)Orientations.StandingLeft)
             {
-                orientation = (int)Orientations.RunningLeft;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.RunningLeft;
+                State = getState(Orientation, MarioMode);
             }
 
-            else if (orientation != (int)Orientations.Dead && !(orientation == (int)Orientations.RunningLeft))
+            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningLeft))
             {
-                orientation = (int)Orientations.StandingLeft;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.StandingLeft;
+                State = getState(Orientation, MarioMode);
             }
         }
 
         public void LookRight()
         {
-            if (orientation == (int)Orientations.StandingRight)
+            if (Orientation == (int)Orientations.StandingRight)
             {
-                orientation = (int)Orientations.RunningRight;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.RunningRight;
+                State = getState(Orientation, MarioMode);
             }
-            else if (orientation != (int)Orientations.Dead && !(orientation == (int)Orientations.RunningRight))
+            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningRight))
             {
-                orientation = (int)Orientations.StandingRight;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.StandingRight;
+                State = getState(Orientation, MarioMode);
             }
         }
 
-        public void LookUp()
-        {
-            if (orientation == (int)Orientations.CrouchingRight)
-            {
-                orientation = (int)Orientations.StandingRight;
-                state = getState(orientation, marioMode);
-            }
-            else if (orientation == (int)Orientations.CrouchingLeft)
-            {
-                orientation = (int)Orientations.StandingLeft;
-                state = getState(orientation, marioMode);
-            }
-            else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
-            {
-                orientation = (int)Orientations.JumpingRight;
-                state = getState(orientation, marioMode);
-            }
-            else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
-            {
-                orientation = (int)Orientations.JumpingLeft;
-                state = getState(orientation, marioMode);
-            }
-        }
         public void LookDown()
         {
-            if (orientation == (int)Orientations.JumpingRight)
+            if (Orientation == (int)Orientations.StandingRight || Orientation == (int)Orientations.RunningRight)
             {
-                orientation = (int)Orientations.StandingRight;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.CrouchingRight;
+                State = getState(Orientation, MarioMode);
             }
-            else if (orientation == (int)Orientations.JumpingLeft)
+            else if (Orientation == (int)Orientations.StandingLeft || Orientation == (int)Orientations.RunningLeft)
             {
-                orientation = (int)Orientations.StandingLeft;
-                state = getState(orientation, marioMode);
-            }
-            else if (orientation == (int)Orientations.StandingRight || orientation == (int)Orientations.RunningRight)
-            {
-                orientation = (int)Orientations.CrouchingRight;
-                state = getState(orientation, marioMode);
-            }
-            else if (orientation == (int)Orientations.StandingLeft || orientation == (int)Orientations.RunningLeft)
-            {
-                orientation = (int)Orientations.CrouchingLeft;
-                state = getState(orientation, marioMode);
-            }
-        }
-        public void MoveUpRight()
-        {
-            if (marioMode == (int)MarioModes.Small)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingUpRightDiagonalSmallMario))
-                {
-                    state = new MovingUpRightDiagonalSmallMario(this);
-                }
-            }
-            else if (marioMode == (int)MarioModes.Fire)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingUpRightDiagonalFireMario))
-                {
-                    state = new MovingUpRightDiagonalFireMario(this);
-                }
-            }
-            else if (marioMode == (int)MarioModes.Big)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingUpRightDiagonalBigMario))
-                {
-                    state = new MovingUpRightDiagonalBigMario(this);
-                }
+                Orientation = (int)Orientations.CrouchingLeft;
+                State = getState(Orientation, MarioMode);
             }
         }
 
-        public void MoveUpLeft()
-        {
-            if (marioMode == (int)MarioModes.Small)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingUpLeftDiagonalSmallMario))
-                {
-                    state = new MovingUpLeftDiagonalSmallMario(this);
-                }
-            }
-
-            else if (marioMode == (int)MarioModes.Fire)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingUpLeftDiagonalFireMario))
-                {
-                    state = new MovingUpLeftDiagonalFireMario(this);
-                }
-            }
-            else if (marioMode == (int)MarioModes.Big)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingUpLeftDiagonalBigMario))
-                {
-                    state = new MovingUpLeftDiagonalBigMario(this);
-                }
-            }
-        }
-
-        public void MoveDownRight()
-        {
-            if (marioMode == (int)MarioModes.Small)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingDownRightDiagonalSmallMario))
-                {
-                    state = new MovingDownRightDiagonalSmallMario(this);
-                }
-            }
-
-            else if (marioMode == (int)MarioModes.Fire)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingDownRightDiagonalFireMario))
-                {
-                    state = new MovingDownRightDiagonalFireMario(this);
-                }
-            }
-
-            else if (marioMode == (int)MarioModes.Big)
-            {
-                orientation = (int)Orientations.RunningRight;
-                if (!(state is MovingDownRightDiagonalBigMario))
-                {
-                    state = new MovingDownRightDiagonalBigMario(this);
-                }
-            }
-        }
-
-        public void MoveDownLeft()
-        {
-            if (marioMode == (int)MarioModes.Small)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingDownLeftDiagonalSmallMario))
-                {
-                    state = new MovingDownLeftDiagonalSmallMario(this);
-                }
-            }
-
-            else if (marioMode == (int)MarioModes.Fire)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingDownLeftDiagonalFireMario))
-                {
-                    state = new MovingDownLeftDiagonalFireMario(this);
-                }
-            }
-
-            else if (marioMode == (int)MarioModes.Big)
-            {
-                orientation = (int)Orientations.RunningLeft;
-                if (!(state is MovingDownLeftDiagonalBigMario))
-                {
-                    state = new MovingDownLeftDiagonalBigMario(this);
-                }
-            }
-        }
 
         public void Dead()
         {
-            if (orientation != (int)Orientations.Dead)
+            if (Orientation != (int)Orientations.Dead)
             {
-                orientation = (int)Orientations.Dead;
-                state = getState(orientation, marioMode);
+                Orientation = (int)Orientations.Dead;
+                State = getState(Orientation, MarioMode);
             }
         }
-
-        public void TakeDamage() { }
-
         public void MarioBigState()
         {
-            if (marioMode != (int)MarioModes.Big)
+            if (MarioMode != (int)MarioModes.Big)
             {
-                marioMode = (int)MarioModes.Big;
+                MarioMode = (int)MarioModes.Big;
             }
-            if (orientation == (int)Orientations.Dead)
+            if (Orientation == (int)Orientations.Dead)
             {
-                orientation = (int)Orientations.StandingRight;
+                Orientation = (int)Orientations.StandingRight;
             }
-            state = getState(orientation, marioMode);
+            State = getState(Orientation, MarioMode);
         }
 
         public void MarioSmallState()
         {
-            if (marioMode != (int)MarioModes.Small)
+            if (MarioMode != (int)MarioModes.Small)
             {
-                marioMode = (int)MarioModes.Small;
+                MarioMode = (int)MarioModes.Small;
             }
-            if (orientation == (int)Orientations.Dead)
+            if (Orientation == (int)Orientations.Dead)
             {
-                orientation = (int)Orientations.StandingRight;
+                Orientation = (int)Orientations.StandingRight;
             }
-            state = getState(orientation, marioMode);
+            State = getState(Orientation, MarioMode);
         }
 
         public void MarioFireState()
         {
-            if (marioMode != (int)MarioModes.Fire)
+            if (MarioMode != (int)MarioModes.Fire)
             {
-                marioMode = (int)MarioModes.Fire;
+                MarioMode = (int)MarioModes.Fire;
             }
-            if (orientation == (int)Orientations.Dead)
+            if (Orientation == (int)Orientations.Dead)
             {
-                orientation = (int)Orientations.StandingRight;
+                Orientation = (int)Orientations.StandingRight;
             }
-            state = getState(orientation, marioMode);
+            State = getState(Orientation, MarioMode);
         }
 
-       
+        public void Jump()
+        {
+            if (Mario.jumpStatus == false)
+            {
+                yVelocity = 15;
+                Mario.jumpStatus = true;
+            }
+        }
 
         public void Reset()
         {
-            orientation = (int)Orientations.StandingRight;
-            marioMode = (int)MarioModes.Small;
-            state = getState(orientation, marioMode);
+            Orientation = (int)Orientations.StandingRight;
+            MarioMode = (int)MarioModes.Small;
+            State = getState(Orientation, MarioMode);
+            Mario.LocationX = 400;
+            Mario.LocationY = 350;
         }
 
         public void Update(GameTime gameTime)
         {
-            if (starStatus)
+            if (StarStatus)
             {
                 starPowerTimer += gameTime.ElapsedGameTime.Milliseconds;
-                if(starPowerTimer > 10000)
+                if (starPowerTimer > 10000)
                 {
                     StarPowerUp();
                 }
             }
-            if(invulnStatus)
+            if (InvulnStatus)
             {
                 invulnTimer += gameTime.ElapsedGameTime.Milliseconds;
-                if (invulnTimer > 3500)
+                if (invulnTimer > 1800)
                 {
-                    Mario.invulnStatus = false;
+                    Mario.InvulnStatus = false;
                     invulnTimer = 0;
                 }
             }
-            state.Update(gameTime);
+            if (jumpStatus)
+            {
+                LocationY = LocationY - yVelocity;
+                yVelocity = yVelocity + yAcceleration;
+                if (LocationY >= 350)
+                    Mario.jumpStatus = false;
+            }
+            State.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            state.Draw(spriteBatch, new Vector2(locationX, locationY));
+            State.Draw(spriteBatch, new Vector2(LocationX, LocationY));
         }
 
         public static void StarPowerUp()
         {
-            if (starStatus == false)
-                starStatus = true;
+            if (StarStatus == false)
+                StarStatus = true;
             else
-                starStatus = false;
+                StarStatus = false;
         }
 
         public static void Invulnerability()
         {
-                invulnStatus = true;
+
+            InvulnStatus = true;
+
         }
 
         public Rectangle Area()
         {
-            if (marioMode == (int)MarioModes.Small)
-                return new Rectangle(locationX + 2, locationY + 10, 17, 19);
+            if (MarioMode == (int)MarioModes.Small)
+                return new Rectangle(LocationX + 12, LocationY + 27, 29, 33);
             else
-                return new Rectangle(locationX, locationY, 19, 33);
+                return new Rectangle(LocationX + 10, LocationY + 1, 33, 65);
         }
     }
 }
