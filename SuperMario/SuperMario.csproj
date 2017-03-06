@@ -67,6 +67,7 @@
     <Compile Include="Command\MarioBecomeFireCommand.cs" />
     <Compile Include="Command\MarioDeadCommand.cs" />
     <Compile Include="Command\MarioBecomeBigCommand.cs" />
+    <Compile Include="Command\MarioLookUpCommand.cs" />
     <Compile Include="Command\MarioLookRightCommand.cs" />
     <Compile Include="Command\MarioLookLeftCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
