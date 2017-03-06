@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    public  class MarioLookRightCommand : ICommand
+    class MarioLookRightCommand : ICommand
     {
         private Game1 myGame;
 

@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    public class MarioMoveDownLeftCommand : ICommand
+    class MarioMoveDownLeftCommand : ICommand
     { 
         private Game1 myGame;
 

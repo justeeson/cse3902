@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    public class BlockHiddenBlockUsedCommand : ICommand
+    class BlockHiddenBlockUsedCommand : ICommand
     {
         private Game1 myGame;
 

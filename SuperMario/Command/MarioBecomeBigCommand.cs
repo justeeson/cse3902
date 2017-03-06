@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    public class MarioBecomeBigCommand : ICommand
+    class MarioBecomeBigCommand : ICommand
     {
         private Game1 myGame;
 
