@@ -6,14 +6,14 @@ namespace SuperMario.Levels
 {
     public class LevelReader
     {
-        Game1 myGame;
+        Game1 MyGame;
         public Vector2 location;
         public LevelClass level;
 
         public LevelReader(LevelClass level, Game1 game)
         {
             this.level = level;
-            myGame = game;
+            MyGame = game;
         }
 
         public void Load()
@@ -28,48 +28,48 @@ namespace SuperMario.Levels
                 switch (nodeList[i].Name)
                 {
                     case "solidblockwithcrews":
-                        LevelClass.BlockList.Add(new SolidBrickWithCrews(myGame, location));
+                        LevelClass.BlockList.Add(new SolidBrickWithCrews(MyGame, location));
                         break;
                     case "questionBlock":
-                        LevelClass.BlockList.Add(new QuestionMarkBrick(myGame, location));
+                        LevelClass.BlockList.Add(new QuestionMarkBrick(MyGame, location));
                         break;
                     case "solidbrick":
-                        LevelClass.BlockList.Add(new SolidBrick(myGame, location));
+                        LevelClass.BlockList.Add(new SolidBrick(MyGame, location));
                         break;
                     case "hiddenBlock":
-                        LevelClass.BlockList.Add(new HiddenBrick(myGame, location));
+                        LevelClass.BlockList.Add(new HiddenBrick(MyGame, location));
                         break;
                     case "BreakableCurlyBrick":
-                        LevelClass.BlockList.Add(new BreakableCurlyBrick(myGame, location));
+                        LevelClass.BlockList.Add(new BreakableCurlyBrick(MyGame, location));
                         break;
                     case "horizontalblock":
-                        LevelClass.BlockList.Add(new BreakableHorizontalBrick(myGame, location));
+                        LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, location));
                         break;
                     case "pipe":
-                        LevelClass.BlockList.Add(new Pipe(myGame, location));
+                        LevelClass.BlockList.Add(new Pipe(MyGame, location));
                         break;
 
                     case "goomba":
-                        LevelClass.EnemyList.Add(new Goomba(myGame, location));
+                        LevelClass.EnemyList.Add(new Goomba(MyGame, location));
                         break;
                     case "koopa":
-                        LevelClass.EnemyList.Add(new Koopa(myGame, location));
+                        LevelClass.EnemyList.Add(new Koopa(MyGame, location));
                         break;
 
                     case "flower":
-                        LevelClass.ItemList.Add(new Flower(myGame, location));
+                        LevelClass.ItemList.Add(new Flower(MyGame, location));
                         break;
                     case "coin":
-                        LevelClass.ItemList.Add(new Coin(myGame, location));
+                        LevelClass.ItemList.Add(new Coin(MyGame, location));
                         break;
                     case "fireMushroom":
-                        LevelClass.ItemList.Add(new FireMushroom(myGame, location));
+                        LevelClass.ItemList.Add(new FireMushroom(MyGame, location));
                         break;
                     case "GrownupMushroom":
-                        LevelClass.ItemList.Add(new GrownupMushroom(myGame, location));
+                        LevelClass.ItemList.Add(new GrownupMushroom(MyGame, location));
                         break;
                     case "star":
-                        LevelClass.ItemList.Add(new Star(myGame, location));
+                        LevelClass.ItemList.Add(new Star(MyGame, location));
                         break;
 
                 }
@@ -84,7 +84,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new SolidBrickWithCrews(myGame, location));
+                        level.BlockList.Add(new SolidBrickWithCrews(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "solidBrick"))
@@ -93,7 +93,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new SolidBrick(myGame, location));
+                        level.BlockList.Add(new SolidBrick(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "questionMarkBlock"))
@@ -103,7 +103,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new QuestionMarkBrick(myGame, location));
+                        level.BlockList.Add(new QuestionMarkBrick(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "questionMarkBrickToUsed"))
@@ -112,7 +112,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new QuestionMarkBrickToUsed(myGame, location));
+                        level.BlockList.Add(new QuestionMarkBrickToUsed(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "breakableCurlyBrick"))
@@ -121,7 +121,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new BreakableCurlyBrick(myGame, location));
+                        level.BlockList.Add(new BreakableCurlyBrick(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "breakableHorizontalBrick"))
@@ -130,7 +130,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new BreakableHorizontalBrick(myGame, location));
+                        level.BlockList.Add(new BreakableHorizontalBrick(MyGame, location));
                     }
                 }
 
@@ -140,7 +140,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new HiddenBrick(myGame, location));
+                        level.BlockList.Add(new HiddenBrick(MyGame, location));
                     }
                 }
 
@@ -151,7 +151,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.BlockList.Add(new Pipe(myGame, location));
+                        level.BlockList.Add(new Pipe(MyGame, location));
                     }
                 }
 
@@ -161,7 +161,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.EnemyList.Add(new Goomba(myGame, location));
+                        level.EnemyList.Add(new Goomba(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "koopa"))
@@ -170,7 +170,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.EnemyList.Add(new Koopa(myGame, location));
+                        level.EnemyList.Add(new Koopa(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "flower"))
@@ -179,7 +179,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.ItemList.Add(new Flower(myGame, location));
+                        level.ItemList.Add(new Flower(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "coin"))
@@ -188,7 +188,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.ItemList.Add(new Coin(myGame, location));
+                        level.ItemList.Add(new Coin(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "fireMushroom"))
@@ -197,7 +197,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.ItemList.Add(new FireMushroom(myGame, location));
+                        level.ItemList.Add(new FireMushroom(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "grownupMushroom"))
@@ -206,7 +206,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.ItemList.Add(new GrownupMushroom(myGame, location));
+                        level.ItemList.Add(new GrownupMushroom(MyGame, location));
                     }
                 }
                 else if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "star"))
@@ -215,7 +215,7 @@ namespace SuperMario.Levels
                     {
                         location.X = Int32.Parse(reader.GetAttribute("x"));
                         location.Y = Int32.Parse(reader.GetAttribute("y"));
-                        level.ItemList.Add(new Star(myGame, location));
+                        level.ItemList.Add(new Star(MyGame, location));
                     }
                 }
             }*/

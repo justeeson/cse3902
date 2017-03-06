@@ -9,16 +9,16 @@ namespace SuperMario.Command
 {
     public  class MarioLookRightCommand : ICommand
     {
-        private Game1 myGame;
+        private Game1 MyGame;
 
         public MarioLookRightCommand(Game1 game)
         {
-            myGame = game;
+            MyGame = game;
         }
 
         public void Execute()
         {
-            myGame.Mario.LookRight();
+            MyGame.Mario.LookRight();
         }
     }
 }

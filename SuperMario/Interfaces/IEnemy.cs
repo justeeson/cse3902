@@ -13,7 +13,7 @@ namespace SuperMario.Interfaces
         bool canAttack { get; set; }
         Vector2 location { get; set; }
         ISprite Sprite { get; set; }
-        Game1 myGame { get; set; }
+        Game1 MyGame { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

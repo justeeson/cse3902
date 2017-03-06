@@ -13,15 +13,15 @@ namespace SuperMario
     public class Pipe : IBlock
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 location { get; set; }
 
         public Pipe(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreatePipe();
-            myGame.sprite = Sprite;
+            MyGame.sprite = Sprite;
             this.location = location;
         }
         public void BrickToDisappear()
