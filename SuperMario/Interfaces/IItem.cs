@@ -13,10 +13,10 @@ namespace SuperMario.Interfaces
         ISprite Sprite { get; set; }
         Game1 MyGame { get; set; }
         Rectangle Rectangle { get; set; }
+        Vector2 location { get; set; }
         Rectangle Area();
         void UpdateCollision();
-        void Update();
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-
     }
 }
