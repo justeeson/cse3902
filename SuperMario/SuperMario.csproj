@@ -60,9 +60,6 @@
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndItemCollisionResponser.cs" />
-    <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
-    <Compile Include="Command\BlockBrickDisappearCommand.cs" />
-    <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
     <Compile Include="Command\MarioMoveDownLeftCommand.cs" />
     <Compile Include="Command\MarioMoveDownRightCommand.cs" />
     <Compile Include="Command\MarioMoveUpLeftCommand.cs" />
