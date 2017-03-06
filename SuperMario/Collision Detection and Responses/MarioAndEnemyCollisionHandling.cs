@@ -15,16 +15,16 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area());
             if (collisionRectangle.Bottom == enemy.Area().Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
-                Mario.locationY += collisionRectangle.Height + 1;
+                Mario.LocationY += collisionRectangle.Height + 1;
 
-                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
+                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();
@@ -37,7 +37,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else if(item.canAttack)
                 {
                     
-                    if (Mario.starStatus)
+                    if (Mario.StarStatus)
                     {
                         enemy.CollisionSprite();
                         item.canAttack = false;
@@ -46,22 +46,22 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == enemy.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                Mario.locationY -= collisionRectangle.Height + 1;
+                Mario.LocationY -= collisionRectangle.Height + 1;
                 enemy.CollisionSprite();
                 item.canAttack = false;
             }
             else if (collisionRectangle.Right == enemy.Area().Right)
             {
-                Mario.locationX += collisionRectangle.Width + 1;
+                Mario.LocationX += collisionRectangle.Width + 1;
 
-                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
+                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();
@@ -74,7 +74,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else if (item.canAttack)
                 {
 
-                    if (Mario.starStatus)
+                    if (Mario.StarStatus)
                     {
                         enemy.CollisionSprite();
                         item.canAttack = false;
@@ -83,15 +83,15 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Left == enemy.Area().Left)
             {
-                Mario.locationX -= collisionRectangle.Width + 1;
-                if (item.canAttack && !Mario.starStatus && !Mario.invulnStatus)
+                Mario.LocationX -= collisionRectangle.Width + 1;
+                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.marioMode == (int)Mario.MarioModes.Fire)
+                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.marioMode == (int)Mario.MarioModes.Big)
+                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();
@@ -104,7 +104,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else if (item.canAttack)
                 {
 
-                    if (Mario.starStatus)
+                    if (Mario.StarStatus)
                     {
                         enemy.CollisionSprite();
                         item.canAttack = false;

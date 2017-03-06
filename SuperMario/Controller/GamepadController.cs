@@ -26,35 +26,9 @@ namespace SuperMario.Controller
         public void Update(GameTime gameTime)
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
-            if (currentState.IsConnected &&
-                (currentState.IsButtonDown(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickUp)))
-            {
-                command = new MarioMoveUpLeftCommand(Game1.self);
-                command.Execute();
-            }
+            
 
-            else if (currentState.IsConnected &&
-                (currentState.IsButtonDown(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickUp)))
-            {
-                command = new MarioMoveUpRightCommand(Game1.self);
-                command.Execute();
-            }
-
-            else if (currentState.IsConnected &&
-                (currentState.IsButtonDown(Buttons.LeftThumbstickLeft) && currentState.IsButtonDown(Buttons.LeftThumbstickDown)))
-            {
-                command = new MarioMoveDownLeftCommand(Game1.self);
-                command.Execute();
-            }
-
-            else if (currentState.IsConnected &&
-              (currentState.IsButtonDown(Buttons.LeftThumbstickRight) && currentState.IsButtonDown(Buttons.LeftThumbstickDown)))
-            {
-                command = new MarioMoveDownRightCommand(Game1.self);
-                command.Execute();
-            }
-
-            else if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
             {
                 controllerMappings[Buttons.LeftThumbstickLeft].Execute();
             }

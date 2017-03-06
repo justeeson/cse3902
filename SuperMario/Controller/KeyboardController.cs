@@ -27,42 +27,7 @@ namespace SuperMario.Controller
 
         public void Update(GameTime gameTime)
         {
-            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-            if ((pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Up))||(pressedKeys.Contains(Keys.D) && pressedKeys.Contains(Keys.W)))
-            {
-                if (!(command is MarioMoveUpRightCommand))
-                {
-                    command = new MarioMoveUpRightCommand(Game1.self);
-                }
-                command.Execute();
-            }
-            else if ((pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Up))|| (pressedKeys.Contains(Keys.A) && pressedKeys.Contains(Keys.W)))
-            {
-                if (!(command is MarioMoveUpLeftCommand))
-                {
-                    command = new MarioMoveUpLeftCommand(Game1.self);
-                }
-
-                command.Execute();
-            }
-            else if ((pressedKeys.Contains(Keys.Right) && pressedKeys.Contains(Keys.Down))||(pressedKeys.Contains(Keys.D) && pressedKeys.Contains(Keys.S)))
-            {
-                if (!(command is MarioMoveDownRightCommand))
-                {
-                    command = new MarioMoveDownRightCommand(Game1.self);
-                }
-                command.Execute();
-            }
-            else if ((pressedKeys.Contains(Keys.Left) && pressedKeys.Contains(Keys.Down))||(pressedKeys.Contains(Keys.A) && pressedKeys.Contains(Keys.S)))
-            {
-                if (!(command is MarioMoveDownLeftCommand))
-                {
-                    command = new MarioMoveDownLeftCommand(Game1.self);
-                }
-                command.Execute();
-            }
-            else
-            {
+            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();          
                 foreach (Keys key in pressedKeys)
                 {
                     if (Game1.validKeys.Contains(key))
@@ -70,7 +35,7 @@ namespace SuperMario.Controller
                         controllerMappings[key].Execute();
                     }
                 }
-            }
+            
         }
     }
 }

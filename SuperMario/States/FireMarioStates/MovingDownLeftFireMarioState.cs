@@ -30,7 +30,7 @@ namespace SuperMario.Sprites
         {
             KeyboardState newKeyboardState = Keyboard.GetState();
             GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
-            if (Mario.starStatus || Mario.invulnStatus)
+            if (Mario.StarStatus)
             {
                 nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)
@@ -52,22 +52,13 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown) || newKeyboardState.IsKeyDown(Keys.S))
+            if (newKeyboardState.IsKeyDown(Keys.Down) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickDown))
             {
                 currentFrame = 24;
-                if (Mario.locationY == 400)
-                {
-                    Mario.locationY = 0;
-                }
-                else
-                {
-                    Mario.locationY++;
-                }
             }
             else
             {
-                Mario.marioMode = (int)Mario.MarioModes.Fire;
-                Mario.orientation = (int)Mario.Orientations.StandingLeft;
+                Mario.Orientation = (int)Mario.Orientations.StandingLeft;
                 currentFrame = 29;
             }
         }
@@ -80,7 +71,7 @@ namespace SuperMario.Sprites
             int column = currentFrame % mario.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 2, height * 2);
 
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             if (flashStatus == 1)

@@ -10,27 +10,21 @@ namespace SuperMario.Interfaces
 {
     public interface IMario
     {
-        IMarioState state { get; set; }
+        IMarioState State { get; set; }
 
         Texture2D Texture { get; set; }
 
         Rectangle Area();
-
+        void Jump();
         void LookLeft();
         void LookRight();
-        void LookUp();
         void LookDown();
         void MarioBigState();
         void MarioSmallState();
-        void MarioFireState();
-        void TakeDamage();
         void Dead();
+        void MarioFireState();
         void Reset();
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        void MoveUpRight();
-        void MoveUpLeft();
-        void MoveDownRight();
-        void MoveDownLeft();
     }
 }

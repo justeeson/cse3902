@@ -28,28 +28,7 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
-            if (Mario.starStatus || Mario.invulnStatus)
-            {
-                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
-                if (nextFlashTime > millisecondsPerFlash)
-                {
-                    nextFlashTime -= millisecondsPerFlash;
-                    if (flashStatus == 0)
-                    {
-                        flashStatus = 1;
-                    }
-
-                    else if (flashStatus == 1)
-                    {
-                        flashStatus = 0;
-                    }
-
-                }
-            }
-            else
-            {
-                flashStatus = 0;
-            }
+           
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

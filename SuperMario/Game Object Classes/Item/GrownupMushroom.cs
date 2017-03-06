@@ -37,7 +37,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
             this.Rectangle = new Rectangle();
-            if (Mario.marioMode == (int)Mario.MarioModes.Small)
+            if (Mario.MarioMode == (int)Mario.MarioModes.Small)
             {
                 myGame.Mario.MarioBigState();
             }

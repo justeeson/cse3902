@@ -28,7 +28,7 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime gameTime)
         {
-            if (Mario.starStatus || Mario.invulnStatus)
+            if (Mario.StarStatus)
             {
                 nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > millisecondsPerFlash)
@@ -50,6 +50,10 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
+            if (Mario.jumpStatus)
+                currentFrame = 22;
+            else
+                currentFrame = 18;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -60,7 +64,7 @@ namespace SuperMario.Sprites
             int column = currentFrame % mario.Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 2, height * 2);
 
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             if (flashStatus == 1)
