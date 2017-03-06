@@ -19,7 +19,7 @@ namespace SuperMario.Levels
         public void Load()
         {
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
-            xmlDoc.Load("C:/Users/Dellon/Source/Repos/cse3902team2/SuperMario/Levels/level1.xml");
+            xmlDoc.Load("../../../../Levels/level1.xml");
             XmlNodeList nodeList = xmlDoc.ChildNodes[1].ChildNodes;
             for(int i = 0; i < nodeList.Count; i++)
             {
