@@ -7,7 +7,7 @@ using SuperMario.Game_Object_Classes;
 
 namespace SuperMario.Command
 {
-    class ResetCommand : ICommand
+    public class ResetCommand : ICommand
     {
         private Game1 myGame;
 

@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    class BlockBrickDisappearCommand : ICommand
+    public class BlockBrickDisappearCommand : ICommand
     {
         private Game1 myGame;
 

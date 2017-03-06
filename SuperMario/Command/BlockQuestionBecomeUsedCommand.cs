@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    class BlockQuestionBecomeUsedCommand : ICommand
+    public class BlockQuestionBecomeUsedCommand : ICommand
     {
         private Game1 myGame;
 

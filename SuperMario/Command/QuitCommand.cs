@@ -7,7 +7,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Command
 {
-    class QuitCommand : ICommand
+    public class QuitCommand : ICommand
     {
         private Game1 myGame;
 
