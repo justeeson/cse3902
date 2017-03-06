@@ -50,7 +50,7 @@ namespace SuperMario
         {
             int width = 30;//Texture.Width / Columns;
             int height = 30;// Texture.Height / Rows;
-            return new Rectangle(locationX - 2, 250, locationY, height);
+            return new Rectangle(locationX - 2, locationY, width, height);
         }
         public void CollisionSprite()
         {
