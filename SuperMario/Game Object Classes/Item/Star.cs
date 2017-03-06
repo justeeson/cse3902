@@ -12,15 +12,15 @@ namespace SuperMario
     public class Star : IItem
     {
         public ISprite Sprite { get; set; }
-        public Game1 myGame { get; set; }
+        public Game1 MyGame { get; set; }
         public Rectangle Rectangle { get; set; }
         public Vector2 location { get; set; }
 
         public Star(Game1 game, Vector2 location)
         {
-            myGame = game;
+            MyGame = game;
             Sprite = SpriteFactory.CreateStar();
-            myGame.sprite = Sprite;
+            MyGame.sprite = Sprite;
             Rectangle = new Rectangle(500, 160, 4, 8);
             this.location = location;
         }
@@ -37,7 +37,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             this.Rectangle = new Rectangle();
-            //myGame.store.arrayOfSprites[6] = Sprite;
+            //MyGame.store.arrayOfSprites[6] = Sprite;
             Mario.StarPowerUp();
         }
 
