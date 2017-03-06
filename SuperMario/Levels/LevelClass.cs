@@ -11,7 +11,7 @@ namespace SuperMario.Levels
 {
     public class LevelClass
     {
-        public Game1 MyGame;
+        public Game1 myGame;
         public static List<IItem> ItemList = new List<IItem>();
         public static List<IEnemy> EnemyList = new List<IEnemy>();
         public static List<IBlock> BlockList = new List<IBlock>();
@@ -22,7 +22,7 @@ namespace SuperMario.Levels
 
         public LevelClass(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
             loader = new LevelReader(this, game);
 
         }
@@ -55,19 +55,19 @@ namespace SuperMario.Levels
         {
             foreach (IBackground background in BackgroundList)
             {
-                background.Draw(MyGame.spriteBatch, location);
+                background.Draw(myGame.spriteBatch, location);
             }
             foreach (IItem item in ItemList)
             {
-                item.Draw(MyGame.spriteBatch, location);
+                item.Draw(myGame.spriteBatch, location);
             }
             foreach (IBlock block in BlockList)
             {
-                block.Draw(MyGame.spriteBatch, location);
+                block.Draw(myGame.spriteBatch, location);
             }
             foreach (IEnemy enemy in EnemyList)
             {
-                enemy.Draw(MyGame.spriteBatch, location);
+                enemy.Draw(myGame.spriteBatch, location);
             }
         }
     }

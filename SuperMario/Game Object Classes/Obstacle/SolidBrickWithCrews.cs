@@ -12,15 +12,15 @@ namespace SuperMario
     public class SolidBrickWithCrews : IBlock
     {
         public ISprite Sprite { get; set; }
-        public Game1 MyGame { get; set; }
+        public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 location { get; set; }
 
         public SolidBrickWithCrews(Game1 game, Vector2 location)
         {
-            MyGame = game;
+            myGame = game;
             Sprite = SpriteFactory.CreateSolidBrickWithCrews();
-            MyGame.sprite = Sprite;
+            myGame.sprite = Sprite;
             this.location = location;
         }
         public void BrickToDisappear()

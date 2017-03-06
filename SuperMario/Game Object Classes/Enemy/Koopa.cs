@@ -13,15 +13,15 @@ namespace SuperMario
     {
         public bool canAttack { get; set; }
         public ISprite Sprite { get; set; }
-        public Game1 MyGame { get; set; }
+        public Game1 myGame { get; set; }
         public Vector2 location { get; set; }
         public Rectangle Area { get; set; }
        
         public Koopa(Game1 game, Vector2 location)
         {
-            MyGame = game;
+            myGame = game;
             Sprite = SpriteFactory.CreateKoopa();
-            MyGame.sprite = Sprite;
+            myGame.sprite = Sprite;
             canAttack = true;
             this.location = location;
         }

@@ -12,15 +12,15 @@ namespace SuperMario
     public class FireMushroom : IItem
     {
         public ISprite Sprite { get; set; }
-        public Game1 MyGame { get; set; }
+        public Game1 myGame { get; set; }
         public Rectangle Rectangle { get; set; }
         public Vector2 location { get; set; }
 
         public FireMushroom(Game1 game, Vector2 location)
         {
-            MyGame = game;
+            myGame = game;
             Sprite = SpriteFactory.CreateFireMushroom();
-            MyGame.sprite = Sprite;
+            myGame.sprite = Sprite;
             Rectangle = new Rectangle(400, 160, 4, 8);
             this.location = location;
         }
@@ -36,8 +36,8 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
-            //MyGame.store.arrayOfSprites[3] = Sprite;
-            MyGame.Mario.MarioFireState();
+            //myGame.store.arrayOfSprites[3] = Sprite;
+            myGame.Mario.MarioFireState();
             this.Rectangle = new Rectangle();
         }
 

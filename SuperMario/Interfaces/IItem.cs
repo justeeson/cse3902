@@ -11,7 +11,7 @@ namespace SuperMario.Interfaces
     public interface IItem
     {
         ISprite Sprite { get; set; }
-        Game1 MyGame { get; set; }
+        Game1 myGame { get; set; }
         Rectangle Rectangle { get; set; }
         Vector2 location { get; set; }
         Rectangle Area();

@@ -9,17 +9,17 @@ namespace SuperMario.Command
 {
     public class ResetCommand : ICommand
     {
-        private Game1 MyGame;
+        private Game1 myGame;
 
         public ResetCommand(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
         }
         public void Execute()
         {
-            MyGame.Mario.Reset();
-            //MyGame.World.Load();
-            //MyGame.store.Initialize(MyGame);
+            myGame.Mario.Reset();
+            //myGame.World.Load();
+            //myGame.store.Initialize(myGame);
         }
     }
 }

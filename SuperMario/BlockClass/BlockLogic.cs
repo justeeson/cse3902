@@ -8,13 +8,13 @@ namespace SuperMario
     public class BlockLogic : IBlock
     {
         public ISprite Sprite { get; set; }
-        public Game1 MyGame { get; set; }
+        public Game1 myGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 location { get; set; }
 
         public BlockLogic(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
         }
         public void Update(GameTime gameTime)
         {
@@ -27,17 +27,17 @@ namespace SuperMario
 
         public void BrickToDisappear()
         {
-           //new SolidBrick(MyGame);
+           //new SolidBrick(myGame);
         }
 
         public void HiddenToUsed()
         {
-           //new HiddenBrick(MyGame);
+           //new HiddenBrick(myGame);
         }
 
         public void BecomeUsed()
         {
-            //new QuestionMarkBrickToUsed(MyGame);
+            //new QuestionMarkBrickToUsed(myGame);
         }
     }
 }

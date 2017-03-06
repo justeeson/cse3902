@@ -9,16 +9,16 @@ namespace SuperMario.Command
 {
     public class MarioDeadCommand : ICommand
     { 
-        private Game1 MyGame;
+        private Game1 myGame;
 
         public MarioDeadCommand(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
         }
 
         public void Execute()
         {
-            MyGame.Mario.Dead();
+            myGame.Mario.Dead();
         }
     }
 }

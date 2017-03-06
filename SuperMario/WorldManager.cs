@@ -11,13 +11,13 @@ namespace SuperMario
 {
     public class WorldManager
     {
-        public Game1 MyGame;
+        public Game1 myGame;
         public LevelClass Level;
 
         public WorldManager(Game1 game)
         {
-            MyGame = game;
-            Level = new LevelClass(MyGame);
+            myGame = game;
+            Level = new LevelClass(myGame);
         }
         public void Load()
         {

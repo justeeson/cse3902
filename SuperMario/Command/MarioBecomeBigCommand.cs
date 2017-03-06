@@ -9,16 +9,16 @@ namespace SuperMario.Command
 {
     public class MarioBecomeBigCommand : ICommand
     {
-        private Game1 MyGame;
+        private Game1 myGame;
 
         public MarioBecomeBigCommand(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
         }
 
         public void Execute()
         {
-            MyGame.Mario.MarioBigState();
+            myGame.Mario.MarioBigState();
         }
     }
 }

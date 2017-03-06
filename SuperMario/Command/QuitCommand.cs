@@ -9,16 +9,16 @@ namespace SuperMario.Command
 {
     public class QuitCommand : ICommand
     {
-        private Game1 MyGame;
+        private Game1 myGame;
 
         public QuitCommand(Game1 game)
         {
-            MyGame = game;
+            myGame = game;
         }
 
         public void Execute()
         {
-            MyGame.Exit();
+            myGame.Exit();
         }
     }
 }
