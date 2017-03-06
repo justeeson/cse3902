@@ -35,7 +35,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
+            this.Sprite = new CleanSprite(SpriteFactory.FlowerTexture);
             //MyGame.store.arrayOfSprites[4] = Sprite;
             MyGame.Mario.MarioFireState();
             this.Rectangle = new Rectangle();

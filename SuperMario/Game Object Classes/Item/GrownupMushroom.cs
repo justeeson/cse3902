@@ -35,7 +35,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
+            this.Sprite = new CleanSprite(SpriteFactory.GrowupMushroomTexture);
             this.Rectangle = new Rectangle();
             if (Mario.marioMode == (int)Mario.MarioModes.Small)
             {

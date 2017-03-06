@@ -15,7 +15,7 @@ namespace SuperMario.Interfaces
         Rectangle Rectangle { get; set; }
         Rectangle Area();
         void UpdateCollision();
-        void Update();
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
 
     }
