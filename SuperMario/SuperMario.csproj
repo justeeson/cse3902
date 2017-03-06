@@ -125,7 +125,6 @@
     <Compile Include="Levels\LevelReader.cs" />
     <Compile Include="Levels\LevelClass.cs" />
     <Compile Include="MarioClass\Mario.cs" />
-    <Compile Include="ObjectAndSpritesStore\ObjectAndSpriteStore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteFactory\SpriteFactory.cs" />

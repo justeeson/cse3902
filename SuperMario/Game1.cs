@@ -19,7 +19,6 @@ namespace SuperMario
         private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
         public GameTime gameTime;
-        public ObjectAndSpriteStore store;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
         public static Game1 self;
