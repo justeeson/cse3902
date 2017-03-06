@@ -14,22 +14,18 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Rectangle Rectangle { get; set; }
-        public Vector2 location { get; set; }
-
-        public Coin(Game1 game, Vector2 location)
+        public Coin(Game1 game)
         {
             MyGame = game;
             this.Sprite = SpriteFactory.CreateCoin();
             MyGame.sprite = this.Sprite;
             Rectangle = new Rectangle(200, 160, 4, 8);
-            this.location = location;
-
 
         }
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
-            Sprite.Update(gameTime);
+            Sprite.Update(MyGame.GameTime);
         }
         public Rectangle Area()
         {
@@ -39,6 +35,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.CoinTexture);
+            MyGame.Store.ArrayOfSprites[2] = Sprite;
             this.Rectangle = new Rectangle();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

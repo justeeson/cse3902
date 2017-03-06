@@ -18,7 +18,7 @@ namespace SuperMario
         private Texture2D background;
         private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
-        //public GameTime gameTime;
+        public GameTime gameTime;
         public ObjectAndSpriteStore store;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
@@ -152,7 +152,7 @@ namespace SuperMario
 
         protected override void Update(GameTime gameTime)
         {
-            //this.gameTime = gameTime;
+            this.gameTime = gameTime;
             KeyboardController.Update(gameTime);
             GamepadController.Update(gameTime);
             Mario.Update(gameTime);

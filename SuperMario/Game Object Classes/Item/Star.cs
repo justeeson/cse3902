@@ -35,7 +35,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            this.Sprite = new CleanSprite(SpriteFactory.StarTexture);
+            this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             this.Rectangle = new Rectangle();
             //MyGame.store.arrayOfSprites[6] = Sprite;
             Mario.StarPowerUp();

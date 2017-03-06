@@ -14,19 +14,15 @@ namespace SuperMario
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
-        public Vector2 location { get; set; }
-
-        public BreakableCurlyBrick(Game1 game, Vector2 location)
+        public BreakableCurlyBrick(Game1 game)
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateBreakableCurlyBrick();
             MyGame.sprite = Sprite;
-            this.location = location;
-
         }
         public void BrickToDisappear()
         {
-            new SolidBrick(MyGame, location);
+            new SolidBrick(MyGame);
         }
         public void HiddenToUsed()
         {
