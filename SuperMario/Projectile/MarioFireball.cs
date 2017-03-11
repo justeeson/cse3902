@@ -43,12 +43,12 @@ namespace SuperMario
         public void Update(GameTime GameTime)
         {
 
-            /*
+            
             if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
             {
                 fire = false;
             }
-            */
+            
             if (fire == true)
             {
                 movementTimer += GameTime.ElapsedGameTime.Milliseconds;
@@ -56,10 +56,14 @@ namespace SuperMario
                 {
                     if (marioOrientation == (int)Mario.Orientations.StandingRight || marioOrientation == (int)Mario.Orientations.RunningRight
                         || marioOrientation == (int)Mario.Orientations.CrouchingRight)
-                            LocationX += 5;
+                            LocationX += 6;
                     else if (marioOrientation == (int)Mario.Orientations.StandingLeft || marioOrientation == (int)Mario.Orientations.RunningLeft
                         || marioOrientation == (int)Mario.Orientations.CrouchingLeft)
-                             LocationX -= 5;
+                             LocationX -= 6;
+                }
+                if (movementTimer > 100)
+                {
+                    LocationY = LocationY + yVelocity;
                 }
             }
         }
@@ -69,7 +73,7 @@ namespace SuperMario
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
-            yVelocity = 15;
+            yVelocity = 3;
             marioOrientation = orientation;
             Console.WriteLine(marioOrientation);
             fire = true;

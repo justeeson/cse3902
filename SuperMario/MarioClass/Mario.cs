@@ -53,6 +53,7 @@ namespace SuperMario
             LocationY = (int)location.Y;
             starPowerTimer = 0;
             fireDelay = 0;
+            fireStatus = false;
             invulnTimer = 0;
             yAcceleration = -1;
             yVelocity = 0;
@@ -119,25 +120,28 @@ namespace SuperMario
 
         public void Fire()
         {
-            bool aCreateNew = true;
-            foreach (MarioFireball aFireball in Game1.mFireballs)
+            if (!fireStatus)
             {
-                if (aFireball.fire == false)
+                bool aCreateNew = true;
+                foreach (MarioFireball aFireball in Game1.mFireballs)
                 {
-                    aCreateNew = false;
-                    aFireball.Fire(Orientation, LocationX, LocationY);
-                    break;
+                    if (aFireball.fire == false)
+                    {
+                        aCreateNew = false;
+                        aFireball.Fire(Orientation, LocationX, LocationY);
+                        break;
+                    }
                 }
-            }
 
-            if (aCreateNew == true)
-            {
-                MarioFireball aFireball = new MarioFireball();
-                aFireball.LoadContent(mContentManager);
-                Game1.mFireballs.Add(aFireball);
-                aFireball.Fire(Orientation, LocationX, LocationY);
+                if (aCreateNew == true)
+                {
+                    MarioFireball aFireball = new MarioFireball();
+                    aFireball.LoadContent(mContentManager);
+                    Game1.mFireballs.Add(aFireball);
+                    aFireball.Fire(Orientation, LocationX, LocationY);
+                }
+                fireStatus = true;
             }
-            fireStatus = true;
         }
 
         public static void LoadContent(ContentManager theContentManager)
@@ -247,6 +251,15 @@ namespace SuperMario
                 if (starPowerTimer > 10000)
                 {
                     StarPowerUp();
+                }
+            }
+            if(fireStatus)
+            {
+                fireDelay += GameTime.ElapsedGameTime.Milliseconds;
+                if(fireDelay > 500)
+                {
+                    fireStatus = false;
+                    fireDelay = 0;
                 }
             }
             if (InvulnStatus)
