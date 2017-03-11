@@ -79,5 +79,27 @@ namespace SuperMario.Levels
                 enemy.Draw(MyGame.SpriteBatch, location);
             }
         }
+
+        public void addFlower(Vector2 location)
+        {
+            ItemList.Add(new Flower(MyGame, location));
+        }
+        public void addMushroom(Vector2 location)
+        {
+            ItemList.Add(new GrownupMushroom(MyGame, location));
+        }
+        public void addFireMushroom(Vector2 location)
+        {
+            ItemList.Add(new FireMushroom(MyGame, location));
+        }
+        public void addCoin(Vector2 location)
+        {
+            ItemList.Add(new Coin(MyGame, location));
+        }
+        public void addStar(Vector2 location)
+        {
+            ItemList.Add(new Star(MyGame, location));
+        }
+
     }
 }

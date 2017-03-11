@@ -13,7 +13,7 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
-        public Rectangle Rectangle { get; set; }
+        public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
 
         public GrownupMushroom(Game1 game, Vector2 location)
@@ -21,7 +21,7 @@ namespace SuperMario
             MyGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
             MyGame.sprite = Sprite;
-            Rectangle = new Rectangle(300, 160, 4, 8);
+            hasBeenUsed = false;
             this.Location = location;
         }
 
@@ -31,12 +31,15 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            return Rectangle;
+            if (hasBeenUsed)
+                return new Rectangle(0, 0, 0, 0);
+            else
+                return Sprite.Area(Location);
         }
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
-            this.Rectangle = new Rectangle();
+            hasBeenUsed = true;
             if (Mario.MarioMode == (int)Mario.MarioModes.Small)
             {
                 MyGame.Mario.MarioBigState();
