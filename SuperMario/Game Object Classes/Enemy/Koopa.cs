@@ -41,7 +41,7 @@ namespace SuperMario
         }
         public void ChangeDirection()
         {
-            if (movingLeft)
+            if (!movingLeft)
             {
                 this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 4, 8);
             }
