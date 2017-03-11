@@ -61,6 +61,7 @@
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />
@@ -100,7 +101,7 @@
     <Compile Include="Game Object Classes\Obstacle\SolidBrick.cs" />
     <Compile Include="Game Object Sprite Classes\CleanSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveLeftSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />

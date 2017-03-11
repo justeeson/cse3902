@@ -37,7 +37,11 @@ namespace SuperMario
                 dead = true;
             }
         }
+        public void ChangeDirection()
+        {
+            
 
+        }
         public void Update(GameTime GameTime)
         {
             //flip direction if at edge of screen

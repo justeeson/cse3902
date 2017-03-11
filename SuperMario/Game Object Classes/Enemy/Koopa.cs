@@ -20,12 +20,13 @@ namespace SuperMario
         public Rectangle Area { get; set; }
         private bool dead;
         private int deadCounter = 10;
+
         public Koopa(Game1 game, Vector2 location)
         {
             movingLeft = true;
             isFalling = true;
             MyGame = game;
-            Sprite = SpriteFactory.CreateKoopa();
+            Sprite = SpriteFactory.CreateKoopaMoveLeft();
             MyGame.sprite = Sprite;
             canAttack = true;
             this.Location = location;
@@ -34,9 +35,21 @@ namespace SuperMario
         {
             if (!dead)
             {
-                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaTexture, 4, 8);
+                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 4, 8);
                 dead = true;
             }
+        }
+        public void ChangeDirection()
+        {
+            if (movingLeft)
+            {
+                this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 4, 8);
+            }
+            else
+            {
+                this.Sprite = new KoopaMoveLeftSprite(SpriteFactory.koopaMoveLeftTexture, 4, 8);
+            }
+
         }
         public void Update(GameTime GameTime)
         {
@@ -66,7 +79,7 @@ namespace SuperMario
             }
             if (deadCounter == 0)
             {
-                Sprite = new CleanSprite(SpriteFactory.koopaTexture);
+                Sprite = new CleanSprite(SpriteFactory.koopaMoveLeftTexture);
             }
 
         }

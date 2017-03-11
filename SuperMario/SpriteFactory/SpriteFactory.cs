@@ -19,7 +19,8 @@ namespace SuperMario
         public static Texture2D growupMushroomTexture;
         public static Texture2D fireMushroomTexture;
         public static Texture2D starTexture;
-        public static Texture2D koopaTexture;
+        public static Texture2D koopaMoveLeftTexture;
+        public static Texture2D koopaMoveRightTexture;
         public static Texture2D solidBrickTexture;
         public static Texture2D solidBrickWithCrewsTexture;
         public static Texture2D questionMarkBrickTexture;
@@ -29,7 +30,8 @@ namespace SuperMario
 
         public static void LoadAllTextures(ContentManager content)
         {
-            koopaTexture = content.Load<Texture2D>("turtle");
+            koopaMoveLeftTexture = content.Load<Texture2D>("turtleMoveLeft");
+            koopaMoveRightTexture = content.Load<Texture2D>("turtleMoveRight");
             flowerTexture = content.Load<Texture2D>("flower");
             coinTexture = content.Load<Texture2D>("coin");
             growupMushroomTexture = content.Load<Texture2D>("growupMushroom");
@@ -44,10 +46,13 @@ namespace SuperMario
             pipeTexture = content.Load<Texture2D>("pipe");
         }
 
-
-        public static ISprite CreateKoopa()
+        public static ISprite CreateKoopaMoveLeft()
         {
-            return new KoopaSprite(koopaTexture, 32, 32);
+            return new KoopaMoveLeftSprite(koopaMoveLeftTexture, 32, 32);
+        }
+        public static ISprite CreateKoopaMoveRight()
+        {
+            return new KoopaMoveRightSprite(koopaMoveRightTexture, 32, 32);
         }
         public static ISprite CreateFlower()
         {

@@ -10,7 +10,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class KoopaSprite : ISprite
+    class KoopaMoveLeftSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -22,7 +22,7 @@ namespace SuperMario
         private int turtleState;
         private enum turtleStates { Normal, InShell, Dead}
 
-        public KoopaSprite(Texture2D texture, int rows, int columns)
+        public KoopaMoveLeftSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
