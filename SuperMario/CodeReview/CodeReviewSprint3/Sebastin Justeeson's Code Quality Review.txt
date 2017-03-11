@@ -1,0 +1,11 @@
+﻿Sebastin Justeeson
+2/27/2017
+Sprint 3
+GrownupMushroom.cs
+Son Le
+
+The code is well written and easily readable and maintainable. The cyclomatic complexity is also quite low
+as it only uses minimal number of block statements. Code file has high cohesion as all functions are directly 
+related to the mushroom object - drawing it, handling collision and updating its animation. The code has
+moderate amount of coupling as it declares 3 public variables and also uses a public static variable
+directly from the Mario class. 

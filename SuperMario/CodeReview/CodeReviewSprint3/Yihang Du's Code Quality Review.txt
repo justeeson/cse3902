@@ -1,0 +1,13 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 02/27/2017
+Sprint number: 3
+Name of the .cs file being reviewed: MarioAndEnemyCollisionHandling.cs
+Author of the .cs file being reviewed: Dellon Collin
+Specific comments on code quality: This is a long class, it is not so easy to understand. However, the cyclomatic complexity is high. It used a lot of if else
+statements, and many of them are nested together. This will make code become harder to maintain. One of the solution is to used switch case with if else, in 
+order to reduce the cyclomatic complexity of the code and will make the code easier to maintain.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If we decided to create life count for mario, it will be not so easy to modify this class. In this class, we set the mario will alway transfer from fire 
+to big then to small. It will require a lot of changes in order to make it functions with life count. It is also not so easy to change if mario is collision
+with multiple objects.
