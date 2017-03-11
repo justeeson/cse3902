@@ -67,12 +67,12 @@ namespace SuperMario.Sprites
             {
                 if (Mario.JumpStatus)
                 {
-                    if (mario.LocationX >= 800)
+                    if (Mario.LocationX >= 800)
                     {
-                        mario.LocationX = 0;
+                        Mario.LocationX = 0;
                     }
                     else
-                        mario.LocationX += 2;
+                        Mario.LocationX += 2;
                     currentFrame = 10;
                 }
                 else
@@ -85,18 +85,18 @@ namespace SuperMario.Sprites
                     }
                     if (currentFrame == startFrame + totalFrames)
                         currentFrame = startFrame;
-                    if (mario.LocationX == 800)
+                    if (Mario.LocationX == 800)
                     {
-                        mario.LocationX = 0;
+                        Mario.LocationX = 0;
                     }
                     else
                     {
                         if (Mario.RunStatus == true)
                         {
-                            mario.LocationX += 4;
+                            Mario.LocationX += 4;
                         }
                         else
-                            mario.LocationX += 2;
+                            Mario.LocationX += 2;
                     }
                 }
             }

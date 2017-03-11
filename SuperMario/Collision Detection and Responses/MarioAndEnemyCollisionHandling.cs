@@ -15,7 +15,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
             if (collisionRectangle.Bottom == enemy.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
-                mario.LocationY += collisionRectangle.Height + 1;
+                Mario.LocationY += collisionRectangle.Height + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
@@ -45,13 +45,13 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                mario.LocationY -= collisionRectangle.Height + 1;
+                Mario.LocationY -= collisionRectangle.Height + 1;
                 item.GetKilled();
                 item.canAttack = false;
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
             {
-                mario.LocationX += collisionRectangle.Width + 1;
+                Mario.LocationX += collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
@@ -81,7 +81,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Left == enemy.Area(item.Location).Left)
             {
-                mario.LocationX -= collisionRectangle.Width + 1;
+                Mario.LocationX -= collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)

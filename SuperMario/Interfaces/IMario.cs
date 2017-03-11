@@ -12,8 +12,6 @@ namespace SuperMario.Interfaces
     public interface IMario
     {
         IMarioState State { get; set; }
-        int LocationX { get; set; }
-        int LocationY { get; set; }
         Texture2D Texture { get; set; }
 
         Rectangle Area();
