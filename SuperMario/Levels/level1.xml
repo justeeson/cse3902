@@ -6,6 +6,8 @@
   <hiddenBlock x="400" y="250" />
   <BreakableCurlyBrick x="500" y ="250" />
   <horizontalblock x="600" y="250" />
+  <BreakableCurlyBrick x="500" y ="300" />
+
 
   <pipe x="700" y="300" />
 
@@ -18,12 +20,5 @@
   <fireMushroom x="120" y="50" />
   <GrownupMushroom x="220" y="50" />
   <star x="420" y="50" />
-
-
-  <cloud x="620" y="20" />
-  <tripleCloud x="320" y="100" />
-  <bush x="300" y="448" />
-  <bigMountain x="40" y="412" />
-  <smallMountain x="600" y="442" />
 
 </level>

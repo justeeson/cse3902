@@ -28,8 +28,8 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 36;
-            int height = 34;
+            int width = 30;
+            int height = 30;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -41,8 +41,8 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 34;//Texture.Width / Columns;
-            int height = 32;//Texture.Height;// / Rows;
+            int width = 30;//Texture.Width / Columns;
+            int height = 30;//Texture.Height;// / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
 
         }
