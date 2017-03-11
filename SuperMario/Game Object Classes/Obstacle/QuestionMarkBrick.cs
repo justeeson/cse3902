@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
+using SuperMario.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
+        private bool hasBeenUsed;
 
         public QuestionMarkBrick(Game1 game, Vector2 location)
         {
             MyGame = game;
+            hasBeenUsed = false;
             Sprite = SpriteFactory.CreateQuestionMarkBrick();
             MyGame.sprite = Sprite;
             this.Location = location;
@@ -31,6 +34,29 @@ namespace SuperMario
         }
         public void BecomeUsed()
         {
+            if(!hasBeenUsed)
+            {
+                hasBeenUsed = true;
+                Random rnd = new Random();
+                switch (rnd.Next(1, 6))
+                {
+                    case 1:
+                        MyGame.World.Level.addCoin(new Vector2(Location.X, Location.Y - 30));
+                        break;
+                    case 2:
+                        MyGame.World.Level.addFireMushroom(new Vector2(Location.X, Location.Y - 30));
+                        break;
+                    case 3:
+                        MyGame.World.Level.addFlower(new Vector2(Location.X, Location.Y - 30));
+                        break;
+                    case 4:
+                        MyGame.World.Level.addMushroom(new Vector2(Location.X, Location.Y - 30));
+                        break;
+                    case 5:
+                        MyGame.World.Level.addStar(new Vector2(Location.X, Location.Y - 30));
+                        break;
+                }
+            }
         }
         public void Update(GameTime GameTime)
         {

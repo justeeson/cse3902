@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
@@ -175,9 +176,12 @@
     <Content Include="CodeReview\CodeReviewSprint3\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Son Le%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Yihang Du%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint4\Dellon Collins%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />
-    <Content Include="Levels\level2.xml" />
+    <Content Include="Levels\level2.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Levels\level1.xml" />
     <Content Include="README.txt" />
   </ItemGroup>

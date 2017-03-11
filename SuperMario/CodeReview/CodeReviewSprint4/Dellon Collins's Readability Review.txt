@@ -1,0 +1,8 @@
+Dellon Collins
+3/10/2017
+Sprint 4
+
+Levels/LevelClass.cs Code Author: Yihang Du
+ 
+This is very readable and cohesive. The purpose of this class is obvious and 
+focused and is well within the line limits.

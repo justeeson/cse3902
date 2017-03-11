@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using Microsoft.Xna.Framework.Content;
+using SuperMario.Levels;
 
 namespace SuperMario
 {
@@ -21,6 +22,8 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         private bool hasBeenUsed;
+        private int width;
+        private int height;
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -29,6 +32,8 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
+            width = 51;
+            height = 29;
             hasBeenUsed = false;
         }
 
@@ -49,12 +54,11 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 52;
-            int height = 34;
+          
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X - 7 , (int)location.Y - 2, width + 4, height +4);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
@@ -68,6 +72,8 @@ namespace SuperMario
         public void CollisionSprite()
         {
             Texture = SpriteFactory.solidBrickWithCrewsTexture;
+            width = 30;
+            height = 30;
             hasBeenUsed = true;
             currentFrame = 0;
         }
