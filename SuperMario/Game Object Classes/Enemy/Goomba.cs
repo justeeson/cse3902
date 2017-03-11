@@ -29,22 +29,26 @@ namespace SuperMario
         }
 
         public void Update(GameTime GameTime)
-        {        
-            if(canAttack)
+        {
+            //flip direction if at edge of screen
+            if (Location.X < 0)
             {
-                //flip direction if at edge of screen
-                if (Location.X == 0 || Location.X == MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
-                    movingLeft = !movingLeft;
-
-                if (movingLeft)
-                    Location = new Vector2(Location.X - 1, Location.Y);
-                else
-                    Location = new Vector2(Location.X + 1, Location.Y);
-
-                if (isFalling)
-                    Location = new Vector2(Location.X, Location.Y + 5);
+                movingLeft = !movingLeft;
+                Location = new Vector2(Location.X + 2, Location.Y);
+            }
+            else if (Location.X > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            {
+                movingLeft = !movingLeft;
+                Location = new Vector2(Location.X - 2, Location.Y);
             }
 
+            if (movingLeft)
+                Location = new Vector2(Location.X - 3, Location.Y);
+            else
+                Location = new Vector2(Location.X + 3, Location.Y);
+
+            if (isFalling)
+                Location = new Vector2(Location.X, Location.Y + 3);
 
             Sprite.Update(GameTime);
         }

@@ -13,13 +13,14 @@ namespace SuperMario.Collision_Detection_and_Responses
                 collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y + collisionRectangle.Height + 1);
+                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y + collisionRectangle.Height + 2);
                 }
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height + 1));
+                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height + 2));
                     enemy.isFalling = false;
                 }
+
                 collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
                 if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
@@ -31,8 +32,8 @@ namespace SuperMario.Collision_Detection_and_Responses
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
                     enemy.movingLeft = !enemy.movingLeft;
                 }
+                
 
-          
 
         }
 

@@ -27,7 +27,7 @@ namespace SuperMario.Levels
                 Location.Y = Int32.Parse(nodeList[i].Attributes["y"].Value);
                 switch (nodeList[i].Name)
                 {
-                    case "solidbrickwithcrews":
+                    case "usedblock":
                         LevelClass.BlockList.Add(new SolidBrickWithCrews(MyGame, Location));
                         break;
                     case "questionBlock":

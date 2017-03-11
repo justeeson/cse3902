@@ -33,18 +33,24 @@ namespace SuperMario
         public void Update(GameTime GameTime)
         {
             //flip direction if at edge of screen
-            if (Location.X == 0 || Location.X == MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            if (Location.X < 0)
+            {
                 movingLeft = !movingLeft;
+                Location = new Vector2(Location.X + 2, Location.Y);
+            }
+            else if (Location.X > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            {
+                movingLeft = !movingLeft;
+                Location = new Vector2(Location.X - 2, Location.Y);
+            }
 
             if (movingLeft)
-                Location = new Vector2(Location.X - 1, Location.Y);
+                Location = new Vector2(Location.X - 3, Location.Y);
             else
-                Location = new Vector2(Location.X + 1, Location.Y);
+                Location = new Vector2(Location.X + 3, Location.Y);
 
             if (isFalling)
-                Location = new Vector2(Location.X, Location.Y + 5);
-
-            Sprite.Update(GameTime);
+                Location = new Vector2(Location.X, Location.Y + 3);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

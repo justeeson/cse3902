@@ -42,6 +42,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     MarioAndBlockCollisionHandling.HandleCollision(game.Mario, item);
                 }
+                
 
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)
                 {
@@ -49,6 +50,8 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                     if (blockRect.Intersects(enemyInList.Sprite.Area(enemyInList.Location)))
                         EnemyAndBlockCollisionHandling.HandleCollision(enemyInList, item);
+                    else
+                        enemyInList.isFalling = true;
                 }
             }
 
