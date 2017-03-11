@@ -12,11 +12,10 @@ namespace SuperMario.Collision_Detection_and_Responses
             Rectangle collisionRectangle;
             ISprite enemy = item.Sprite;
 
-            collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area());
-            if (collisionRectangle.Bottom == enemy.Area().Bottom && collisionRectangle.Width > collisionRectangle.Height)
+            collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
+            if (collisionRectangle.Bottom == enemy.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
-                Mario.LocationY += collisionRectangle.Height + 1;
-
+                mario.LocationY += collisionRectangle.Height + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
@@ -44,16 +43,15 @@ namespace SuperMario.Collision_Detection_and_Responses
                     }
                 }
             }
-            else if (collisionRectangle.Top == enemy.Area().Top && collisionRectangle.Width > collisionRectangle.Height)
+            else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                Mario.LocationY -= collisionRectangle.Height + 1;
+                mario.LocationY -= collisionRectangle.Height + 1;
                 enemy.CollisionSprite();
                 item.canAttack = false;
             }
-            else if (collisionRectangle.Right == enemy.Area().Right)
+            else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
             {
-                Mario.LocationX += collisionRectangle.Width + 1;
-
+                mario.LocationX += collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
@@ -81,9 +79,9 @@ namespace SuperMario.Collision_Detection_and_Responses
                     }
                 }
             }
-            else if (collisionRectangle.Left == enemy.Area().Left)
+            else if (collisionRectangle.Left == enemy.Area(item.Location).Left)
             {
-                Mario.LocationX -= collisionRectangle.Width + 1;
+                mario.LocationX -= collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (Mario.MarioMode == (int)Mario.MarioModes.Fire)

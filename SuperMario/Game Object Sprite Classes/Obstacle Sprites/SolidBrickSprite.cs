@@ -17,9 +17,6 @@ namespace SuperMario
         public Vector2 Location { get; set; }
 
         private int currentFrame;
-        private int locationX;
-        private int locationY;
-
         public SolidBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -38,20 +35,18 @@ namespace SuperMario
             int height = 34;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
-            locationX = (int)location.X;
-            locationY = (int)location.Y;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(locationX, locationY, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = 33;//Texture.Width / Columns;
             int height = 33;//Texture.Height / Rows;
-            return new Rectangle(locationX, locationY, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

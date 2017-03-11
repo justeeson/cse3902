@@ -19,7 +19,7 @@ namespace SuperMario.Levels
         public void Load()
         {
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
-            xmlDoc.Load("../../../../Levels/level1.xml");
+            xmlDoc.Load("../../../../Levels/level2.xml");
             XmlNodeList nodeList = xmlDoc.ChildNodes[1].ChildNodes;
             for(int i = 0; i < nodeList.Count; i++)
             {
@@ -70,6 +70,10 @@ namespace SuperMario.Levels
                         break;
                     case "star":
                         LevelClass.ItemList.Add(new Star(MyGame, Location));
+                        break;
+
+                    case "mario":
+                        MyGame.Mario = new Mario(MyGame.texture, 3, 12, Location);
                         break;
 
                 }

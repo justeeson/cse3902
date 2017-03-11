@@ -42,20 +42,20 @@ using SuperMario.Interfaces;
                 int column = currentFrame % Columns;
 
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle(500, 250, width, height);
+                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
                 spriteBatch.Begin();
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 spriteBatch.End();
             }
             
         }
-    public Rectangle Area()
+    public Rectangle Area(Vector2 location)
     {
         if (isNotDestroyed)
         {
             int width = 30;//Texture.Width / Columns;
             int height = 30;//Texture.Height / Rows;
-            return new Rectangle(500, 250, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);
     }

@@ -65,12 +65,12 @@ namespace SuperMario
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(700, 160, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             if (turtleState == (int)turtleStates.Dead)
             {
@@ -78,7 +78,7 @@ namespace SuperMario
             }
             int width = 16;//Texture.Width / Columns;
             int height = 24;// Texture.Height / Rows;
-            return new Rectangle(700 - 4, 160, width, height);
+            return new Rectangle((int)location.X - 4, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

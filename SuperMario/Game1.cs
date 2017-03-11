@@ -14,7 +14,7 @@ namespace SuperMario
     {
         private GraphicsDeviceManager graphics;
         public SpriteBatch SpriteBatch;
-        private Texture2D texture { get; set; }
+        public Texture2D texture { get; set; }
         private Texture2D background;
         private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
@@ -98,7 +98,7 @@ namespace SuperMario
             texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            Mario = new Mario(texture, 3, 12);
+            //Mario = new Mario(texture, 3, 12);
 
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);

@@ -16,6 +16,7 @@ namespace SuperMario.Levels
         public static List<IEnemy> EnemyList = new List<IEnemy>();
         public static List<IBlock> BlockList = new List<IBlock>();
         public static List<IBackground> BackgroundList = new List<IBackground>();
+        public static IMario Player;
 
         public LevelReader Loader;
         private int count = 0;
@@ -29,6 +30,14 @@ namespace SuperMario.Levels
         public void Load()
         {
             Loader.Load();
+        }
+
+        public void Reset()
+        {
+            ItemList.Clear();
+            EnemyList.Clear();
+            BlockList.Clear();
+            BackgroundList.Clear();
         }
 
         public void Update(GameTime GameTime)
