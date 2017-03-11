@@ -1,0 +1,10 @@
+Sebastin Justeeson
+3/10/2017
+Sprint 4
+
+SpriteFactory.cs Code Author: Son Le
+ 
+The code is really long but this is necessary in order for the class to perform its function properly. The code
+is easy to understand at a glance since there are no complex functions and the code only consists of one line
+assignments. The function names and the variable names used also immediately let the reader know what is going on. 
+Overall, this code file is very easily readable and there isn't much room for improvement.

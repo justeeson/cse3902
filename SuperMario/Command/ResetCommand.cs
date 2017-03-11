@@ -17,7 +17,7 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            MyGame.Mario.Reset();
+            MyGame.MarioSprite.Reset();
             MyGame.World.Reset();
             MyGame.World.Load();
             //MyGame.store.Initialize(MyGame);

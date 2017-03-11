@@ -42,7 +42,7 @@ namespace SuperMario
             hasBeenUsed = true;
             if (Mario.MarioMode == (int)Mario.MarioModes.Small)
             {
-                MyGame.Mario.MarioBigState();
+                MyGame.MarioSprite.MarioBigState();
             }
             //MyGame.store.arrayOfSprites[5] = Sprite;
         }

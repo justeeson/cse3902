@@ -40,7 +40,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
             //MyGame.store.arrayOfSprites[4] = Sprite;
-            MyGame.Mario.MarioFireState();
+            MyGame.MarioSprite.MarioFireState();
             hasBeenUsed = true;
         }
 
