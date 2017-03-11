@@ -167,9 +167,9 @@ namespace SuperMario
             GamepadController.Update(GameTime);
             MarioSprite.Update(GameTime);
             //store.Update();
-            camera.UpdateX(Mario.LocationX);
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
+            camera.UpdateX(Mario.LocationX);
             base.Update(GameTime);
         }
 
