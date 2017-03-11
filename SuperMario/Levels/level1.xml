@@ -9,7 +9,7 @@
   <BreakableCurlyBrick x="500" y ="300" />
 
 
-  <pipe x="700" y="300" />
+  <pipe x="500" y="400" />
 
   <goomba x="220" y="190" />
   <koopa x="120" y="190" />
