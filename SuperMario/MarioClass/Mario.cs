@@ -206,41 +206,42 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            if (StarStatus)
-            {
-                starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
-                if (starPowerTimer > 10000)
+            if (LocationY <= 480){
+                if (StarStatus)
                 {
-                    StarPowerUp();
+                    starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
+                    if (starPowerTimer > 10000)
+                    {
+                        StarPowerUp();
+                    }
                 }
-            }
-            if (InvulnStatus)
-            {
-                invulnTimer += GameTime.ElapsedGameTime.Milliseconds;
-                if (invulnTimer > 1800)
+                if (InvulnStatus)
                 {
-                    Mario.InvulnStatus = false;
-                    invulnTimer = 0;
+                    invulnTimer += GameTime.ElapsedGameTime.Milliseconds;
+                    if (invulnTimer > 1800)
+                    {
+                        Mario.InvulnStatus = false;
+                        invulnTimer = 0;
+                    }
                 }
-            }
-            if (JumpStatus)
-            {
-                LocationY = LocationY - yVelocity;
-                yVelocity = yVelocity + yAcceleration;
-                /*if (LocationY >= 350)
-                    Mario.JumpStatus = false;*/
-            }
-
-            if(RunStatus)
-            {
-                KeyboardState newKeyboardState = Keyboard.GetState();
-                if(!(newKeyboardState.IsKeyDown(Keys.X)))
+                if (JumpStatus)
                 {
-                    RunStatus = false;
+                    LocationY = LocationY - yVelocity;
+                    yVelocity = yVelocity + yAcceleration;
+                    /*if (LocationY >= 350)
+                        Mario.JumpStatus = false;*/
                 }
 
+                if (RunStatus)
+                {
+                    KeyboardState newKeyboardState = Keyboard.GetState();
+                    if (!(newKeyboardState.IsKeyDown(Keys.X)))
+                    {
+                        RunStatus = false;
+                    }
+                }
+                State.Update(GameTime);
             }
-            State.Update(GameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
