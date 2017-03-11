@@ -50,8 +50,8 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 52;
-            int height = 34;
+            int width = 55;
+            int height = 32;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);

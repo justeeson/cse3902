@@ -91,7 +91,12 @@ namespace SuperMario.Sprites
                     }
                     else
                     {
-                        mario.LocationX -= 2;
+                        if (Mario.RunStatus == true)
+                        {
+                            mario.LocationX -= 4;
+                        }
+                        else
+                            mario.LocationX -= 2;
                     }
                 }
             }

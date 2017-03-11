@@ -35,8 +35,8 @@ namespace SuperMario
         {
             if (isHidden == false)
             {
-                int width = 36;
-                int height = 34;
+                int width = 30;
+                int height = 30;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 

@@ -13,6 +13,7 @@ namespace SuperMario.Controller
     public class KeyboardController : IController
     {
         private Dictionary<Keys, ICommand> controllerMappings;
+        private ICommand command;
 
         public KeyboardController()
         {
@@ -29,6 +30,11 @@ namespace SuperMario.Controller
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();          
                 foreach (Keys key in pressedKeys)
                 {
+                    if((Mario.MarioMode == (int)Mario.MarioModes.Fire) && key == Keys.X)
+                     {
+                        command = new MarioFireCommand(Game1.Self);
+                        command.Execute();
+                     }
                     if (Game1.validKeys.Contains(key))
                     {
                         controllerMappings[key].Execute();

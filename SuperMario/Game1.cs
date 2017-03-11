@@ -16,6 +16,7 @@ namespace SuperMario
         public SpriteBatch SpriteBatch;
         public Texture2D texture { get; set; }
         private Texture2D background;
+        private Texture2D fireballSprite;
         private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
         public GameTime GameTime;
@@ -33,7 +34,15 @@ namespace SuperMario
             set
             { Sprite = value; }
         }
+        private IProjectile fireball;
 
+        public IProjectile Fireball
+        {
+            get
+            { return fireball; }
+            set
+            { fireball = value; }
+        }
         private IMario mario;
         public IMario Mario
         {
@@ -97,9 +106,10 @@ namespace SuperMario
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background");
+            fireballSprite = Content.Load<Texture2D>("fireball");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             //Mario = new Mario(texture, 3, 12);
-
+            Fireball = new MarioFireball(fireballSprite, 1, 1);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
             /*store = new ObjectAndSpriteStore(this);
@@ -117,6 +127,7 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.D, new MarioLookRightCommand(this));
             KeyboardController.RegisterCommand(Keys.S, new MarioLookDownCommand(this));
             KeyboardController.RegisterCommand(Keys.Z, new MarioJumpCommand(this));
+            KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
 
             KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeFireCommand(this));
             KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
@@ -151,6 +162,7 @@ namespace SuperMario
             KeyboardController.Update(GameTime);
             GamepadController.Update(GameTime);
             Mario.Update(GameTime);
+            Fireball.Update(GameTime);
             //store.Update();
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
@@ -164,11 +176,13 @@ namespace SuperMario
             SpriteBatch.Draw(background, mainFrame, Color.White);
             SpriteBatch.End();
             World.Draw(Location);
+
             //foreach (ISprite obj in store.arrayOfSprites)
             //{
             //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             //}
             Mario.Draw(SpriteBatch, new Vector2(xPos, yPos));
+            Fireball.Draw(SpriteBatch);
             base.Draw(GameTime);
         }
     }

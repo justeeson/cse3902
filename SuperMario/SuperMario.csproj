@@ -57,6 +57,10 @@
     <Compile Include="BlockClass\BlockLogic.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
+    <Compile Include="Command\MarioFireCommand.cs" />
+    <Compile Include="Command\MarioRunCommand.cs" />
+    <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />
     <Compile Include="Collision Detection and Responses\CollsionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
@@ -171,6 +175,7 @@
     <Content Include="CodeReview\CodeReviewSprint3\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Son Le%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint3\Yihang Du%27s Readability Review.txt" />
+    <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />
     <Content Include="Levels\level2.xml" />
     <Content Include="Levels\level1.xml" />
