@@ -24,6 +24,8 @@ namespace SuperMario.Interfaces
         void Dead();
         void MarioFireState();
         void Reset();
+        void Fire();
+        void Run();
         void Update(GameTime GameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

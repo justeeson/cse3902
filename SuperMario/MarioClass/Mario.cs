@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.Sprites;
 using System.Timers;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario
 {
@@ -17,6 +18,7 @@ namespace SuperMario
         public static int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
+        public static Boolean RunStatus;
         private int yVelocity, yAcceleration;
         public static Boolean JumpStatus;
         private int invulnTimer;
@@ -50,6 +52,7 @@ namespace SuperMario
             yVelocity = 0;
             InvulnStatus = false;
             StarStatus = false;
+            RunStatus = false;
             Orientation = (int)Orientations.StandingRight;
             MarioMode = (int)MarioModes.Small;
 
@@ -101,6 +104,13 @@ namespace SuperMario
                 Orientation = (int)Orientations.StandingRight;
                 State = getState(Orientation, MarioMode);
             }
+        }
+
+        public void Fire()
+        {
+            MarioFireball.LocationX = LocationX;
+            MarioFireball.LocationY = LocationY;
+            MarioFireball.Fire(Mario.Orientation);
         }
 
         public void LookDown()
@@ -183,6 +193,10 @@ namespace SuperMario
             Mario.LocationY = 350;
         }
 
+        public void Run()
+        {
+            RunStatus = true;
+        }
         public void Update(GameTime GameTime)
         {
             if (StarStatus)
@@ -208,6 +222,16 @@ namespace SuperMario
                 yVelocity = yVelocity + yAcceleration;
                 if (LocationY >= 350)
                     Mario.JumpStatus = false;
+            }
+
+            if(RunStatus)
+            {
+                KeyboardState newKeyboardState = Keyboard.GetState();
+                if(!(newKeyboardState.IsKeyDown(Keys.X)))
+                {
+                    RunStatus = false;
+                }
+
             }
             State.Update(GameTime);
         }

@@ -55,6 +55,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BlockClass\BlockLogic.cs" />
+    <Compile Include="Command\MarioFireCommand.cs" />
+    <Compile Include="Command\MarioRunCommand.cs" />
+    <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />
     <Compile Include="Collision Detection and Responses\CollsionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
