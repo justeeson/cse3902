@@ -5,6 +5,7 @@ using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
+using SuperMario.Levels;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,7 +25,9 @@ namespace SuperMario
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
         public static Game1 Self;
+        public Camera camera;
         public WorldManager World;
+        public LevelClass Level;
         public Vector2 Location { get; set; }
         public static List<MarioFireball> mFireballs = new List<MarioFireball>();
 
@@ -98,6 +101,8 @@ namespace SuperMario
         protected override void Initialize()
         {
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
+            camera = new Camera();
+            Level = new LevelClass(this);
             Self = this;
             base.Initialize();
         }
@@ -162,6 +167,7 @@ namespace SuperMario
             GamepadController.Update(GameTime);
             MarioSprite.Update(GameTime);
             //store.Update();
+            camera.UpdateX(MarioSprite.LocationX);
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(GameTime);
@@ -170,9 +176,9 @@ namespace SuperMario
         protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            SpriteBatch.Begin();
-            SpriteBatch.Draw(background, mainFrame, Color.White);
-            SpriteBatch.End();
+            //SpriteBatch.Begin();
+            //SpriteBatch.Draw(background, mainFrame, Color.White);
+            //SpriteBatch.End();
             World.Draw(Location);
 
             //foreach (ISprite obj in store.arrayOfSprites)
@@ -183,7 +189,9 @@ namespace SuperMario
             {
                 aFireball.Draw(SpriteBatch);
             }
-            MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
+            World.Draw(new Vector2(camera.cameraPositionX, camera.cameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(camera.cameraPositionX, camera.cameraPositionY));
+            //MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
             base.Draw(GameTime);
         }
     }
