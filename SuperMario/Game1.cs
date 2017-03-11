@@ -5,6 +5,7 @@ using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
+using SuperMario.Levels;
 using System;
 using System.Collections;
 
@@ -24,6 +25,8 @@ namespace SuperMario
         private ISprite Sprite;
         public static Game1 Self;
         public WorldManager World;
+        public Camera camera;
+        public LevelClass Level;
         public Vector2 Location { get; set; }
       
         
@@ -97,6 +100,8 @@ namespace SuperMario
         protected override void Initialize()
         {
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
+            camera = new Camera();
+            Level = new LevelClass(this);
             Self = this;
             base.Initialize();
         }
@@ -164,6 +169,7 @@ namespace SuperMario
             Mario.Update(GameTime);
             Fireball.Update(GameTime);
             //store.Update();
+            camera.UpdateX(Mario.LocationX);
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(GameTime);
@@ -172,17 +178,17 @@ namespace SuperMario
         protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            SpriteBatch.Begin();
-            SpriteBatch.Draw(background, mainFrame, Color.White);
-            SpriteBatch.End();
-            World.Draw(Location);
-
+            //SpriteBatch.Begin();
+            //SpriteBatch.Draw(background, mainFrame, Color.White);
+            //SpriteBatch.End();
             //foreach (ISprite obj in store.arrayOfSprites)
             //{
             //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             //}
-            Mario.Draw(SpriteBatch, new Vector2(xPos, yPos));
+            World.Draw(new Vector2(camera.cameraPositionX, camera.cameraPositionY));
+            Mario.Draw(SpriteBatch, new Vector2(camera.cameraPositionX, camera.cameraPositionY));
             Fireball.Draw(SpriteBatch);
+
             base.Draw(GameTime);
         }
     }
