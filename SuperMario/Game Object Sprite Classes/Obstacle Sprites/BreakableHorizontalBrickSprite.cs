@@ -50,7 +50,7 @@ using SuperMario.Interfaces;
             
         }
     public Rectangle Area(Vector2 location)
-    {
+    {   
         if (isNotDestroyed)
         {
             int width = 31;//Texture.Width / Columns;
