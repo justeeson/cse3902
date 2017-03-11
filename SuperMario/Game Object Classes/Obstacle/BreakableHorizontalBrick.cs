@@ -15,7 +15,8 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
-
+        private int timer=0;
+        private bool destroyed = false;
         public BreakableHorizontalBrick(Game1 game, Vector2 location)
         {
             MyGame = game;
@@ -31,11 +32,28 @@ namespace SuperMario
         {
         }
         public void BecomeUsed()
-        {   
+        {
+            if (Mario.MarioMode == (int)Mario.MarioModes.Small)
+            {
+                Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
+                timer = 1;
+            }
+            if (Mario.MarioMode == (int)Mario.MarioModes.Fire || Mario.MarioMode == (int)Mario.MarioModes.Big)
+            {
+                Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
+                destroyed = true;
+            }
+            
         }
         public void Update(GameTime GameTime)
         {
+            if (timer == 0 && !destroyed)
+            {
+                Sprite = new BreakableHorizontalBrickSprite(SpriteFactory.brickableHorizontalBrickTexture,4,8);
+
+            }
             Sprite.Update(GameTime);
+            timer = 0;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

@@ -62,6 +62,7 @@
     <Compile Include="Command\MarioRunCommand.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickForSmallMarioSprite.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />
