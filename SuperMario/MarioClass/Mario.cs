@@ -83,6 +83,10 @@ namespace SuperMario
             return StateArray[mMode, orient];
         }
 
+        public void ResetVelocity()
+        {
+
+        }
 
         public void LookLeft()
         {
