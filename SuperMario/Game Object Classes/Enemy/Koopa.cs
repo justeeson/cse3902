@@ -18,7 +18,8 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-       
+        private bool dead;
+        private int deadCounter = 10;
         public Koopa(Game1 game, Vector2 location)
         {
             movingLeft = true;
@@ -29,7 +30,14 @@ namespace SuperMario
             canAttack = true;
             this.Location = location;
         }
-
+        public void GetKilled()
+        {
+            if (!dead)
+            {
+                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaTexture, 4, 8);
+                dead = true;
+            }
+        }
         public void Update(GameTime GameTime)
         {
             //flip direction if at edge of screen
@@ -51,6 +59,16 @@ namespace SuperMario
 
             if (isFalling)
                 Location = new Vector2(Location.X, Location.Y + 3);
+
+            if (dead)
+            {
+                deadCounter--;
+            }
+            if (deadCounter == 0)
+            {
+                Sprite = new CleanSprite(SpriteFactory.koopaTexture);
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

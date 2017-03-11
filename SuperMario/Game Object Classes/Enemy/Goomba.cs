@@ -15,7 +15,8 @@ namespace SuperMario
         public Rectangle Area { get; set; }
 
         private int yVelocity, yAcceleration;
-
+        private bool dead;
+        private int deadCounter = 10;
         public Goomba(Game1 game, Vector2 location)
         {
             movingLeft = true;
@@ -26,6 +27,15 @@ namespace SuperMario
             Location = location;
             yVelocity = 15;
             yAcceleration = -1;
+            dead = false;
+        }
+        public void GetKilled()
+        {
+            if (!dead)
+            {
+                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,4,8);
+                dead = true;
+            }
         }
 
         public void Update(GameTime GameTime)
@@ -49,6 +59,15 @@ namespace SuperMario
 
             if (isFalling)
                 Location = new Vector2(Location.X, Location.Y + 3);
+
+            if (dead)
+            {
+                deadCounter--;
+            }
+            if (deadCounter == 0)
+            {
+                Sprite = new CleanSprite(SpriteFactory.goombaTexture);
+            }
 
             Sprite.Update(GameTime);
         }

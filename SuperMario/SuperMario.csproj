@@ -60,6 +60,7 @@
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />

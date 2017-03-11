@@ -38,7 +38,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     
                     if (Mario.StarStatus)
                     {
-                        enemy.CollisionSprite();
+                        item.GetKilled();
                         item.canAttack = false;
                     }
                 }
@@ -46,7 +46,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
                 mario.LocationY -= collisionRectangle.Height + 1;
-                enemy.CollisionSprite();
+                item.GetKilled();
                 item.canAttack = false;
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
@@ -74,7 +74,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                     if (Mario.StarStatus)
                     {
-                        enemy.CollisionSprite();
+                        item.GetKilled();
                         item.canAttack = false;
                     }
                 }
@@ -104,7 +104,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                     if (Mario.StarStatus)
                     {
-                        enemy.CollisionSprite();
+                        item.GetKilled();
                         item.canAttack = false;
                     }
                 }
