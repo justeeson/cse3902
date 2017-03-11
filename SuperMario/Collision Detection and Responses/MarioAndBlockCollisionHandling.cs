@@ -15,6 +15,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     mario.LocationY += collisionRectangle.Height+1;
                     block.CollisionSprite();
+                    item.BecomeUsed();
                 }
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {

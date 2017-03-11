@@ -13,7 +13,7 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
-        public Rectangle Rectangle { get; set; }
+        public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
 
         public Coin(Game1 game, Vector2 location)
@@ -21,7 +21,7 @@ namespace SuperMario
             MyGame = game;
             Sprite = SpriteFactory.CreateCoin();
             MyGame.sprite = this.Sprite;
-            Rectangle = new Rectangle(200, 160, 4, 8);
+            hasBeenUsed = false;
             Location = location;
         }
 
@@ -31,14 +31,17 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            return Rectangle;
+            if (hasBeenUsed)
+                return new Rectangle(0, 0, 0, 0);
+            else
+                return Sprite.Area(Location);
         }
 
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
             //MyGame.store.arrayOfSprites[2] = Sprite;
-            this.Rectangle = new Rectangle();
+            hasBeenUsed = true;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

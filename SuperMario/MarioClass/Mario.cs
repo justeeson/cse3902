@@ -190,7 +190,7 @@ namespace SuperMario
                 Mario.JumpStatus = true;
             }
         }
-
+        
         public void Reset()
         {
             Orientation = (int)Orientations.StandingRight;

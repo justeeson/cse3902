@@ -66,9 +66,9 @@ namespace SuperMario
             {
                 return new Rectangle(0, 0, 0, 0);
             }
-            int width = 22;//Texture.Width / Columns;
+            int width = 27;//Texture.Width / Columns;
             int height = 22;//Texture.Height / Rows;
-            return new Rectangle((int)location.X - 4, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

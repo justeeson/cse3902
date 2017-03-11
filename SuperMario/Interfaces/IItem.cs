@@ -12,7 +12,7 @@ namespace SuperMario.Interfaces
     {
         ISprite Sprite { get; set; }
         Game1 MyGame { get; set; }
-        Rectangle Rectangle { get; set; }
+        bool hasBeenUsed { get; set; }
         Vector2 Location { get; set; }
         Rectangle Area();
         void UpdateCollision();
