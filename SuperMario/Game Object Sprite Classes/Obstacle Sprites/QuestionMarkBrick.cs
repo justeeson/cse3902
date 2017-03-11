@@ -32,8 +32,8 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
-            width = 55;
-            height = 32;
+            width = 51;
+            height = 29;
             hasBeenUsed = false;
         }
 
@@ -58,7 +58,7 @@ namespace SuperMario
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X - 7 , (int)location.Y - 2, width + 4, height +4);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
