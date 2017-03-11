@@ -22,6 +22,8 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         private bool hasBeenUsed;
+        private int width;
+        private int height;
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -30,6 +32,8 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 350;
+            width = 55;
+            height = 32;
             hasBeenUsed = false;
         }
 
@@ -50,8 +54,7 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 55;
-            int height = 32;
+          
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
@@ -69,6 +72,8 @@ namespace SuperMario
         public void CollisionSprite()
         {
             Texture = SpriteFactory.solidBrickWithCrewsTexture;
+            width = 30;
+            height = 30;
             hasBeenUsed = true;
             currentFrame = 0;
         }
