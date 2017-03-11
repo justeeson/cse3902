@@ -25,7 +25,7 @@ namespace SuperMario
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
         public static Game1 Self;
-        public Camera camera;
+        public Camera CameraPointer;
         public WorldManager World;
         public LevelClass Level;
         public Vector2 Location { get; set; }
@@ -101,7 +101,7 @@ namespace SuperMario
         protected override void Initialize()
         {
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
-            camera = new Camera();
+            CameraPointer = new Camera();
             Level = new LevelClass(this);
             Self = this;
             base.Initialize();
@@ -169,7 +169,7 @@ namespace SuperMario
             //store.Update();
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
-            camera.UpdateX(Mario.LocationX);
+            CameraPointer.UpdateX(Mario.LocationX);
             base.Update(GameTime);
         }
 
@@ -189,8 +189,8 @@ namespace SuperMario
             {
                 aFireball.Draw(SpriteBatch);
             }
-            World.Draw(new Vector2(camera.cameraPositionX, camera.cameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(camera.cameraPositionX, camera.cameraPositionY));
+            World.Draw(new Vector2(CameraPointer.cameraPositionX, CameraPointer.cameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(CameraPointer.cameraPositionX, CameraPointer.cameraPositionY));
             //MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
             base.Draw(GameTime);
         }
