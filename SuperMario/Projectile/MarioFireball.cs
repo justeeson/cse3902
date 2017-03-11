@@ -18,73 +18,70 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         private int currentFrame;
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
-        public static int LocationX;
-        public static int LocationY;
-        public int Columns { get; set; }
-        private static Boolean fire;
+        public int LocationX;
+        public int LocationY;
+        const int MAX_DISTANCE = 500;
+        public Boolean fire;
         private int bounce;
+        private int startingLocation;
         private SpriteBatch spriteBatch;
         private int movementTimer;
-        private static int marioOrientation;
-        private static int yVelocity, yAcceleration;
-        public MarioFireball(Texture2D texture, int rows, int columns)
+        private int marioOrientation;
+        private int yVelocity, yAcceleration;
+        public MarioFireball()
         {
-            Texture = texture;
-            Rows = rows;
-            Columns = columns;
             currentFrame = 0;
             fire = false;
             movementTimer = 0;
             yVelocity = 0;
+            startingLocation = 0;
             bounce = 50;
             yAcceleration = -1;
         }
 
+
         public void Update(GameTime GameTime)
         {
-            if(fire == true)
+
+            /*
+            if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
+            {
+                fire = false;
+            }
+            */
+            if (fire == true)
             {
                 movementTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (movementTimer > 50)
                 {
-                    if (marioOrientation == (int)Mario.Orientations.StandingRight)
-                        LocationX+=5;
-                    else if (marioOrientation == (int)Mario.Orientations.StandingLeft)
-                        LocationX-=5;
-                }
-            }
-            if (movementTimer > 100)
-            {
-                LocationY = LocationY - yVelocity;
-                yVelocity = yVelocity + yAcceleration;
-                if (LocationY >= 400)
-                {
-                    LocationY = 400 - bounce;
-                    yVelocity = 15;
-                    bounce = bounce - 10;
-                    if(bounce == 0)
-                    {
-                        fire = false;
-                    }
+                    if (marioOrientation == (int)Mario.Orientations.StandingRight || marioOrientation == (int)Mario.Orientations.RunningRight
+                        || marioOrientation == (int)Mario.Orientations.CrouchingRight)
+                            LocationX += 5;
+                    else if (marioOrientation == (int)Mario.Orientations.StandingLeft || marioOrientation == (int)Mario.Orientations.RunningLeft
+                        || marioOrientation == (int)Mario.Orientations.CrouchingLeft)
+                             LocationX -= 5;
                 }
             }
         }
 
-        public static void Fire(int orientation)
+        public void Fire(int orientation, int LocationX, int LocationY)
         {
+            this.LocationX = LocationX;
+            startingLocation = LocationX;
+            this.LocationY = LocationY;
             yVelocity = 15;
             marioOrientation = orientation;
+            Console.WriteLine(marioOrientation);
             fire = true;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            if((Mario.MarioMode == (int)Mario.MarioModes.Fire) && (fire == true))
+            if(fire == true)
                 {
                 int width = Texture.Width;
                 int height = Texture.Height;
-                int row = (int)((float)currentFrame / (float)Columns);
-                int column = currentFrame % Columns;
+                int row = (int)((float)currentFrame / (float)1);
+                int column = currentFrame % 1;
                 this.spriteBatch = spriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
                 Rectangle destinationRectangle = new Rectangle(LocationX, LocationY, width / 2, height / 2);
@@ -92,6 +89,11 @@ namespace SuperMario
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 spriteBatch.End();
             }
+        }
+
+        public void LoadContent(ContentManager Content)
+        {
+            Texture = Content.Load<Texture2D>("fireball");
         }
     }
 }

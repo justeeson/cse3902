@@ -5,6 +5,8 @@ using SuperMario.Interfaces;
 using SuperMario.Sprites;
 using System.Timers;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework.Content;
 
 namespace SuperMario
 {
@@ -18,12 +20,14 @@ namespace SuperMario
         public int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
+        private int fireDelay;
+        private Boolean fireStatus;
         public static Boolean RunStatus;
         private int yVelocity, yAcceleration;
         public static Boolean JumpStatus;
         private int invulnTimer;
         private int starPowerTimer;
-
+        private static ContentManager mContentManager;
         public enum Orientations
         {
             CrouchingRight, CrouchingLeft,
@@ -38,6 +42,7 @@ namespace SuperMario
         public static int Orientation, MarioMode;
         IMarioState[,] StateArray;
 
+
         public Mario(Texture2D texture, int rows, int columns, Vector2 location)
         {
             State = new StandingRightSmallMarioState(this);
@@ -47,6 +52,7 @@ namespace SuperMario
             LocationX = (int)location.X;
             LocationY = (int)location.Y;
             starPowerTimer = 0;
+            fireDelay = 0;
             invulnTimer = 0;
             yAcceleration = -1;
             yVelocity = 0;
@@ -109,11 +115,35 @@ namespace SuperMario
 
         public void Fire()
         {
-            MarioFireball.LocationX = LocationX;
-            MarioFireball.LocationY = LocationY;
-            MarioFireball.Fire(Mario.Orientation);
+            bool aCreateNew = true;
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                if (aFireball.fire == false)
+                {
+                    aCreateNew = false;
+                    aFireball.Fire(Orientation, LocationX, LocationY);
+                    break;
+                }
+            }
+
+            if (aCreateNew == true)
+            {
+                MarioFireball aFireball = new MarioFireball();
+                aFireball.LoadContent(mContentManager);
+                Game1.mFireballs.Add(aFireball);
+                aFireball.Fire(Orientation, LocationX, LocationY);
+            }
+            fireStatus = true;
         }
 
+        public static void LoadContent(ContentManager theContentManager)
+        {
+            mContentManager = theContentManager;
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                aFireball.LoadContent(theContentManager);
+            }
+        }
         public void LookDown()
         {
             if (Orientation == (int)Orientations.StandingRight || Orientation == (int)Orientations.RunningRight)
@@ -206,6 +236,7 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
+            KeyboardState currentKeyboardState = Keyboard.GetState();
             if (StarStatus)
             {
                 starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
@@ -240,12 +271,21 @@ namespace SuperMario
                 }
 
             }
+            UpdateFireball(GameTime);
             State.Update(GameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             State.Draw(spriteBatch, new Vector2(LocationX, LocationY));
+        }
+
+        private void UpdateFireball(GameTime GameTime)
+        {
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                aFireball.Update(GameTime);
+            }
         }
 
         public static void StarPowerUp()

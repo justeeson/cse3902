@@ -7,6 +7,7 @@ using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace SuperMario
 {
@@ -25,8 +26,8 @@ namespace SuperMario
         public static Game1 Self;
         public WorldManager World;
         public Vector2 Location { get; set; }
-      
-        
+        public static List<MarioFireball> mFireballs = new List<MarioFireball>();
+
         public ISprite sprite
         {
             get
@@ -44,7 +45,7 @@ namespace SuperMario
             { fireball = value; }
         }
         private IMario mario;
-        public IMario Mario
+        public IMario MarioSprite
         {
             get
             { return mario; }
@@ -106,16 +107,14 @@ namespace SuperMario
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background");
-            fireballSprite = Content.Load<Texture2D>("fireball");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             //Mario = new Mario(texture, 3, 12);
-            Fireball = new MarioFireball(fireballSprite, 1, 1);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
             /*store = new ObjectAndSpriteStore(this);
             store.Initialize(this);*/
             block = new BlockLogic(this);
-
+            Mario.LoadContent(Content);
             World = new WorldManager(this);
             World.Load();
 
@@ -161,8 +160,7 @@ namespace SuperMario
             this.GameTime = GameTime;
             KeyboardController.Update(GameTime);
             GamepadController.Update(GameTime);
-            Mario.Update(GameTime);
-            Fireball.Update(GameTime);
+            MarioSprite.Update(GameTime);
             //store.Update();
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
@@ -181,8 +179,11 @@ namespace SuperMario
             //{
             //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
             //}
-            Mario.Draw(SpriteBatch, new Vector2(xPos, yPos));
-            Fireball.Draw(SpriteBatch);
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                aFireball.Draw(SpriteBatch);
+            }
+            MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
             base.Draw(GameTime);
         }
     }

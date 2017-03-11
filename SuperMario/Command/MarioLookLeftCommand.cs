@@ -18,7 +18,7 @@ namespace SuperMario.Command
 
         public void Execute()
         {
-            MyGame.Mario.LookLeft();
+            MyGame.MarioSprite.LookLeft();
         }
     }
 }

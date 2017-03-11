@@ -19,7 +19,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         }
         public static void Update(LevelClass level, Game1 game)
         {
-            Rectangle marioRect = game.Mario.Area();
+            Rectangle marioRect = game.MarioSprite.Area();
 
             foreach (IItem item in LevelClass.ItemList)
             {
@@ -28,7 +28,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (marioRect.Intersects(itemRect))
                 {
-                    MarioAndItemCollisionResponser.Response(game.Mario, item);
+                    MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
                 }
 
             }
@@ -40,7 +40,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (marioRect.Intersects(blockRect))
                 {
-                    MarioAndBlockCollisionHandling.HandleCollision(game.Mario, item);
+                    MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }
                 
 
@@ -60,9 +60,9 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 Rectangle enemyRect = item.Sprite.Area(item.Location);
 
-                if (marioRect.Intersects(enemyRect) && !game.Mario.isDead())
+                if (marioRect.Intersects(enemyRect) && !game.MarioSprite.isDead())
                 {
-                    MarioAndEnemyCollisionHandling.HandleCollision(game.Mario, item);
+                    MarioAndEnemyCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }
                                
             }

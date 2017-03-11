@@ -18,7 +18,7 @@ namespace SuperMario.Command
 
         public void Execute()
         {
-            MyGame.Mario.Jump();
+            MyGame.MarioSprite.Jump();
         }
     }
 }

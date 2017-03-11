@@ -73,7 +73,7 @@ namespace SuperMario.Levels
                         break;
 
                     case "mario":
-                        MyGame.Mario = new Mario(MyGame.texture, 3, 12, Location);
+                        MyGame.MarioSprite = new Mario(MyGame.texture, 3, 12, Location);
                         break;
 
                 }
