@@ -223,7 +223,7 @@ namespace SuperMario
                     invulnTimer = 0;
                 }
             }
-            if (JumpStatus)
+            if (true)
             {
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
@@ -240,7 +240,13 @@ namespace SuperMario
                 }
 
             }
+            
             State.Update(GameTime);
+        }
+
+        public void ResetVelocity()
+        {
+            yVelocity = 0;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

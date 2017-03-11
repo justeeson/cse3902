@@ -26,6 +26,7 @@ namespace SuperMario.Interfaces
         void Dead();
         void MarioFireState();
         void Reset();
+        void ResetVelocity();
         void Fire();
         void Run();
         void Update(GameTime GameTime);

@@ -21,6 +21,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     mario.LocationY -= collisionRectangle.Height+1;
                     Mario.JumpStatus = false;
+                    mario.ResetVelocity();
                 }
                 else if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
