@@ -178,7 +178,9 @@
     <Content Include="CodeReview\CodeReviewSprint3\Yihang Du%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />
-    <Content Include="Levels\level2.xml" />
+    <Content Include="Levels\level2.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Levels\level1.xml" />
     <Content Include="README.txt" />
   </ItemGroup>
