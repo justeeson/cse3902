@@ -16,8 +16,8 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public int LocationX { get; set; }
-        public int LocationY { get; set; }
+        public static int LocationX { get; set; }
+        public static int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
         private int fireDelay;
