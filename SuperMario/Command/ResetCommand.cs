@@ -18,7 +18,8 @@ namespace SuperMario.Command
         public void Execute()
         {
             MyGame.Mario.Reset();
-            //MyGame.World.Load();
+            MyGame.World.Reset();
+            MyGame.World.Load();
             //MyGame.store.Initialize(MyGame);
         }
     }

@@ -22,7 +22,7 @@ namespace SuperMario
             Sprite = SpriteFactory.CreateFireMushroom();
             MyGame.sprite = Sprite;
             Rectangle = new Rectangle(400, 160, 4, 8);
-            this.Location = location;
+            Location = location;
         }
 
         public void Update(GameTime GameTime)
@@ -43,8 +43,8 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(location.X, location.Y);
-            Sprite.Draw(spriteBatch, location);
+            //location = new Vector2(location.X, location.Y);
+            Sprite.Draw(spriteBatch, Location);
         }
     }
 }

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<level>
+  <BreakableCurlyBrick x="-30" y ="400" />
+  <BreakableCurlyBrick x="0" y ="400" />
+  <BreakableCurlyBrick x="30" y ="400" />
+  <BreakableCurlyBrick x="60" y ="400" />
+  <BreakableCurlyBrick x="90" y ="400" />
+  <BreakableCurlyBrick x="120" y ="400" />
+  <BreakableCurlyBrick x="150" y ="400" />
+  <BreakableCurlyBrick x="180" y ="400" />
+  <BreakableCurlyBrick x="210" y ="400" />
+  <BreakableCurlyBrick x="240" y ="400" />
+  <BreakableCurlyBrick x="270" y ="400" />
+  <BreakableCurlyBrick x="300" y ="400" />
+  <BreakableCurlyBrick x="330" y ="400" />
+  <BreakableCurlyBrick x="360" y ="400" />
+  <BreakableCurlyBrick x="390" y ="400" />
+  <BreakableCurlyBrick x="420" y ="400" />
+  <BreakableCurlyBrick x="450" y ="400" />
+  <BreakableCurlyBrick x="480" y ="400" />
+  <BreakableCurlyBrick x="510" y ="400" />
+  <BreakableCurlyBrick x="540" y ="400" />
+  <BreakableCurlyBrick x="570" y ="400" />
+  <BreakableCurlyBrick x="600" y ="400" />
+  <BreakableCurlyBrick x="630" y ="400" />
+  <BreakableCurlyBrick x="660" y ="400" />
+  <BreakableCurlyBrick x="690" y ="400" />
+  <BreakableCurlyBrick x="720" y ="400" />
+  <BreakableCurlyBrick x="750" y ="400" />
+  <BreakableCurlyBrick x="780" y ="400" />
+
+  <pipe x="660" y ="335" />
+
+  <usedblock x="200" y="300" />
+  <usedblock x="150" y="150" />
+
+  <horizontalblock x="300" y="300" />
+  <horizontalblock x="360" y="300" />
+  <horizontalblock x="420" y="300" />
+
+  <questionBlock x="330" y="300" />
+  <questionBlock x="390" y="300" />
+  
+  <mario x="250" y="100" />
+
+  <koopa x="780" y="150" />
+  <goomba x="680" y="150" />
+
+
+  <flower x="20" y="50" />
+  <coin x="320" y="50" />
+  <fireMushroom x="120" y="50" />
+  <GrownupMushroom x="220" y="50" />
+  <star x="420" y="50" />
+
+
+  <cloud x="620" y="20" />
+  <tripleCloud x="320" y="100" />
+  <bush x="300" y="448" />
+  <bigMountain x="40" y="412" />
+  <smallMountain x="600" y="442" />
+
+</level>

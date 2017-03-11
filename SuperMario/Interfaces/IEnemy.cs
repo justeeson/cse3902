@@ -10,6 +10,8 @@ namespace SuperMario.Interfaces
 {
     public interface IEnemy : IObject
     {
+        bool movingLeft { get; set; }
+        bool isFalling { get; set; }
         bool canAttack { get; set; }
         Vector2 Location { get; set; }
         ISprite Sprite { get; set; }

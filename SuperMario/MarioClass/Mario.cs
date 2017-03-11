@@ -14,8 +14,8 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public static int LocationX { get; set; }
-        public static int LocationY { get; set; }
+        public int LocationX { get; set; }
+        public int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
         public static Boolean RunStatus;
@@ -38,18 +38,19 @@ namespace SuperMario
         public static int Orientation, MarioMode;
         IMarioState[,] StateArray;
 
-        public Mario(Texture2D texture, int rows, int columns)
+        public Mario(Texture2D texture, int rows, int columns, Vector2 location)
         {
             State = new StandingRightSmallMarioState(this);
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            LocationX = 400;
-            LocationY = 350;
+            LocationX = (int)location.X;
+            LocationY = (int)location.Y;
             starPowerTimer = 0;
             invulnTimer = 0;
             yAcceleration = -1;
             yVelocity = 0;
+            JumpStatus = true;
             InvulnStatus = false;
             StarStatus = false;
             RunStatus = false;
@@ -136,6 +137,12 @@ namespace SuperMario
                 State = getState(Orientation, MarioMode);
             }
         }
+
+        public bool isDead()
+        {
+            return Orientation == (int)Orientations.Dead;
+        }
+
         public void MarioBigState()
         {
             if (MarioMode != (int)MarioModes.Big)
@@ -177,7 +184,7 @@ namespace SuperMario
 
         public void Jump()
         {
-            if (Mario.JumpStatus == false)
+            if (Mario.JumpStatus == false && !isDead())
             {
                 yVelocity = 15;
                 Mario.JumpStatus = true;
@@ -189,8 +196,8 @@ namespace SuperMario
             Orientation = (int)Orientations.StandingRight;
             MarioMode = (int)MarioModes.Small;
             State = getState(Orientation, MarioMode);
-            Mario.LocationX = 400;
-            Mario.LocationY = 350;
+            LocationX = 400;
+            LocationY = 350;
         }
 
         public void Run()
@@ -220,8 +227,8 @@ namespace SuperMario
             {
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
-                if (LocationY >= 350)
-                    Mario.JumpStatus = false;
+                /*if (LocationY >= 350)
+                    Mario.JumpStatus = false;*/
             }
 
             if(RunStatus)

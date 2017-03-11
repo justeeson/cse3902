@@ -21,9 +21,6 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         private bool hasBeenUsed;
-        private int locationX;
-        private int locationY;
-
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -56,20 +53,17 @@ namespace SuperMario
             int height = 34;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
-            locationX = (int)location.X;
-            locationY = (int)location.Y;
-
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(locationX, locationY, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width  = 30; //Texture.Width / Columns;
             int height =30;// Texture.Height / Rows;
-            return new Rectangle(locationX, locationY, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

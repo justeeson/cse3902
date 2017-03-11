@@ -53,16 +53,16 @@ namespace SuperMario
             this.spriteBatch = spriteBatch;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(100, 160, width, height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            return new Rectangle(100, 160, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

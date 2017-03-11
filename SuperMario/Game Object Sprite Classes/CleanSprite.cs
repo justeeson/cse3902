@@ -36,7 +36,7 @@ namespace SuperMario
         public void CollisionSprite()
         { }
 
-        public Rectangle Area()
+        public Rectangle Area(Vector2 location)
         {
             return new Rectangle();
 

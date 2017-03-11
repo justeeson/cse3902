@@ -19,10 +19,10 @@ namespace SuperMario
         public Coin(Game1 game, Vector2 location)
         {
             MyGame = game;
-            this.Sprite = SpriteFactory.CreateCoin();
+            Sprite = SpriteFactory.CreateCoin();
             MyGame.sprite = this.Sprite;
             Rectangle = new Rectangle(200, 160, 4, 8);
-            this.Location = location;
+            Location = location;
         }
 
         public void Update(GameTime GameTime)
@@ -42,8 +42,7 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(location.X, location.Y);
-            Sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, Location);
         }
     }
 }
