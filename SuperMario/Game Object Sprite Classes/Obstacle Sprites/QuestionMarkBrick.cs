@@ -72,8 +72,8 @@ namespace SuperMario
         public void CollisionSprite()
         {
             Texture = SpriteFactory.solidBrickWithCrewsTexture;
-            width = 30;
-            height = 30;
+            width = 28;
+            height = 29;
             hasBeenUsed = true;
             currentFrame = 0;
         }
