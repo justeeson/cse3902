@@ -171,6 +171,7 @@ namespace SuperMario
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             CameraPointer.UpdateX(Mario.LocationX);
             base.Update(GameTime);
+           
         }
 
         protected override void Draw(GameTime GameTime)

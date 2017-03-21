@@ -19,6 +19,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         }
         public static void Update(LevelClass level, Game1 game)
         {
+            int check = 0;
             Rectangle marioRect = game.MarioSprite.Area();
 
             foreach (IItem item in LevelClass.ItemList)
@@ -30,19 +31,31 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
                 }
-
             }
 
             foreach (IBlock item in LevelClass.BlockList)
             {
-
                 Rectangle blockRect = item.Sprite.Area(item.Location);
-
+                 
                 if (marioRect.Intersects(blockRect))
                 {
-                    MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
+                    Mario.DisableJump = false;
+                    MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);                 
                 }
-                
+                else
+                {
+                    Rectangle testRect;
+                    if(Mario.MarioMode == (int) Mario.MarioModes.Small)
+                        testRect = new Rectangle(Mario.LocationX + 12, Mario.LocationY + 32, 29, 33);
+                    else
+                        testRect = new Rectangle(Mario.LocationX + 10, Mario.LocationY + 6, 33, 65);
+                    if (testRect.Intersects(blockRect))
+                    {
+                        Mario.DisableJump = false;
+                        Mario.GroundedStatus = true;
+                        check = 1;                      
+                    }
+                }
 
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)
                 {
@@ -53,6 +66,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                     else
                         enemyInList.isFalling = true;
                 }
+            }
+
+            if (check == 0)
+            {
+                Mario.DisableJump = true;
+                Mario.GroundedStatus = false;
             }
 
             foreach (IEnemy item in LevelClass.EnemyList)
