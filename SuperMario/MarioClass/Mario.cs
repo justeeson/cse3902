@@ -20,6 +20,8 @@ namespace SuperMario
         public static int LocationY { get; set; }
         public static Boolean StarStatus;
         public static Boolean InvulnStatus;
+        public static Boolean GroundedStatus;
+        public static Boolean DisableJump;
         private int fireDelay;
         private Boolean fireStatus;
         public static Boolean RunStatus;
@@ -58,6 +60,8 @@ namespace SuperMario
             yAcceleration = -1;
             yVelocity = 0;
             JumpStatus = true;
+            DisableJump = false;
+            GroundedStatus = false;
             InvulnStatus = false;
             StarStatus = false;
             RunStatus = false;
@@ -222,7 +226,7 @@ namespace SuperMario
 
         public void Jump()
         {
-            if (Mario.JumpStatus == false && !isDead())
+            if (Mario.JumpStatus == false && !isDead() && !(Mario.DisableJump == true))
             {
                 yVelocity = 15;
                 Mario.JumpStatus = true;
@@ -275,8 +279,6 @@ namespace SuperMario
             {
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
-                /*if (LocationY >= 350)
-                    Mario.JumpStatus = false;*/
             }
 
             if(RunStatus)
@@ -287,6 +289,11 @@ namespace SuperMario
                     RunStatus = false;
                 }
 
+            }
+        
+            if (!GroundedStatus && !JumpStatus)
+            {
+                Mario.LocationY+= 5;
             }
             UpdateFireball(GameTime);
             State.Update(GameTime);

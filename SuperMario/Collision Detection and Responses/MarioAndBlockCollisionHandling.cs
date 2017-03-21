@@ -19,7 +19,8 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    Mario.LocationY -= collisionRectangle.Height + 1;
+                    Mario.GroundedStatus = true;
+                    Mario.LocationY -= collisionRectangle.Height + 5;
                     Mario.JumpStatus = false;
                     mario.ResetVelocity();
                 }

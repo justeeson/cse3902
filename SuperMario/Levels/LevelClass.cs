@@ -43,10 +43,12 @@ namespace SuperMario.Levels
 
         public void Update(GameTime GameTime)
         {
+            
             foreach (IEnemy enemy in EnemyList)
             {
                 enemy.Update(GameTime);
             }
+            
             foreach (IBlock block in BlockList)
             {
                 block.Update(GameTime);
@@ -75,10 +77,12 @@ namespace SuperMario.Levels
             {
                 block.Draw(MyGame.SpriteBatch, location);
             }
+            
             foreach (IEnemy enemy in EnemyList)
             {
                 enemy.Draw(MyGame.SpriteBatch, location);
             }
+            
         }
 
         public void addFlower(Vector2 location)
