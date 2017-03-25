@@ -1,10 +1,13 @@
 Author of the code review: Son Le
 Date of the code review: 3/10/2017
 Sprint number: 03
-Name of the .cs file being reviewed: MarioAndEnemyCollisionHandling.cs
-Author of the .cs file being reviewed: Dellon
-Number of minutes taken to complete the review: 5 minutes
-Code is easy to understand because of the name convention. By reading the name of variables and names of methods,
-we can definitely tell what type of variables or what variables we are using. Other than that, the structure of nested
-if statements is also easy to understand by comparing the side of the mario rectangle with collision rectangle from bottom to top
-and from left to right, so we can identify what kind of collision it is.
+Name of the .cs file being reviewed: LevelClass.cs
+Author of the .cs file being reviewed: Yihang
+Number of minutes taken to complete the review: 4 minutes
+The code has many dependent variables which other classes are using them such as collections of items,
+blocks, enemies, camera and mario. However, there is no way around it to loosen the coupling of this class
+because this is the main class that is in touch with other object classes so that we can manipulate and controll
+our objects of the game. This class enable us to set up objects with specications from the XML provided and then
+creates objects in other classes. Thus, thats why we see many global variables which are acessed by other classes
+here. Other than that, I'd say this class has high cohesion because it does only some tasks for specific objects
+of the game.
