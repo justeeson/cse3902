@@ -37,8 +37,8 @@ using SuperMario.Interfaces;
         {
             if (isNotDestroyed)
             {
-                int width = 31;
-                int height = 31;
+                int width = 32;
+                int height = 32;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 
@@ -63,8 +63,8 @@ using SuperMario.Interfaces;
     {
         if (isNotDestroyed)
         {
-            int width = 31;//Texture.Width / Columns;
-            int height = 31;//Texture.Height / Rows;
+            int width = 32;//Texture.Width / Columns;
+            int height = 32;//Texture.Height / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);

@@ -35,8 +35,8 @@ namespace SuperMario
         {
             if (isHidden == false)
             {
-                int width = 30;
-                int height = 30;
+                int width = 32;
+                int height = 32;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 
@@ -49,8 +49,8 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 28;//Texture.Width / Columns;
-            int height = 26;//Texture.Height / Rows;
+            int width = 32;//Texture.Width / Columns;
+            int height = 32;//Texture.Height / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()

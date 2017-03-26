@@ -36,8 +36,8 @@ using SuperMario.Interfaces;
         {
             if (isNotDestroyed)
             {
-                int width = 31;
-                int height = 30;
+                int width = 32;
+                int height = 32;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 
