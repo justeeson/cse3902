@@ -190,8 +190,8 @@ namespace SuperMario
             {
                 aFireball.Draw(SpriteBatch);
             }
-            World.Draw(new Vector2(CameraPointer.cameraPositionX, CameraPointer.cameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(CameraPointer.cameraPositionX, CameraPointer.cameraPositionY));
+            World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             //MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
             base.Draw(GameTime);
         }

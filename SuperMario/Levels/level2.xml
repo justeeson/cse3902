@@ -1,125 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <level>
-  <BreakableCurlyBrick x="-30" y ="400" />
-  <BreakableCurlyBrick x="0" y ="400" />
-  <BreakableCurlyBrick x="30" y ="400" />
-  <BreakableCurlyBrick x="60" y ="400" />
-  <BreakableCurlyBrick x="90" y ="400" />
-  <BreakableCurlyBrick x="120" y ="400" />
-  <BreakableCurlyBrick x="150" y ="400" />
-  <BreakableCurlyBrick x="180" y ="400" />
-  <BreakableCurlyBrick x="210" y ="400" />
-  <BreakableCurlyBrick x="240" y ="400" />
-  <BreakableCurlyBrick x="270" y ="400" />
-  <BreakableCurlyBrick x="300" y ="400" />
-  <BreakableCurlyBrick x="330" y ="400" />
-  <BreakableCurlyBrick x="360" y ="400" />
-  <BreakableCurlyBrick x="390" y ="400" />
-  <BreakableCurlyBrick x="420" y ="400" />
-  <BreakableCurlyBrick x="450" y ="400" />
-  <BreakableCurlyBrick x="480" y ="400" />
-  <BreakableCurlyBrick x="510" y ="400" />
-  <BreakableCurlyBrick x="540" y ="400" />
-  <BreakableCurlyBrick x="570" y ="400" />
-  <BreakableCurlyBrick x="600" y ="400" />
-  <BreakableCurlyBrick x="630" y ="400" />
-  <BreakableCurlyBrick x="660" y ="400" />
-  <BreakableCurlyBrick x="690" y ="400" />
-  <BreakableCurlyBrick x="720" y ="400" />
-  <BreakableCurlyBrick x="750" y ="400" />
-  <BreakableCurlyBrick x="780" y ="400" />
-  <BreakableCurlyBrick x="810" y ="400" />
-  <BreakableCurlyBrick x="840" y ="400" />
-  <BreakableCurlyBrick x="870" y ="400" />
-  <BreakableCurlyBrick x="900" y ="400" />
-  <BreakableCurlyBrick x="930" y ="400" />
-  <BreakableCurlyBrick x="960" y ="400" />
-  <BreakableCurlyBrick x="990" y ="400" />
-  <BreakableCurlyBrick x="1020" y ="400" />
-  <BreakableCurlyBrick x="1050" y ="400" />
-  <BreakableCurlyBrick x="1080" y ="400" />
+  <CurlyBrick x="-30" y ="400" />
+  <CurlyBrick x="0" y ="400" />
+  <CurlyBrick x="30" y ="400" />
+  <CurlyBrick x="60" y ="400" />
+  <CurlyBrick x="90" y ="400" />
+  <CurlyBrick x="120" y ="400" />
+  <CurlyBrick x="150" y ="400" />
+  <CurlyBrick x="180" y ="400" />
+  <CurlyBrick x="210" y ="400" />
+  <CurlyBrick x="240" y ="400" />
+  <CurlyBrick x="270" y ="400" />
+  <CurlyBrick x="300" y ="400" />
+  <CurlyBrick x="330" y ="400" />
+  <CurlyBrick x="360" y ="400" />
+  <CurlyBrick x="390" y ="400" />
+  <CurlyBrick x="420" y ="400" />
+  <CurlyBrick x="450" y ="400" />
+  <CurlyBrick x="480" y ="400" />
+  <CurlyBrick x="510" y ="400" />
+  <CurlyBrick x="540" y ="400" />
+  <CurlyBrick x="570" y ="400" />
+  <CurlyBrick x="600" y ="400" />
+  <CurlyBrick x="630" y ="400" />
+  <CurlyBrick x="660" y ="400" />
+  <CurlyBrick x="690" y ="400" />
+  <CurlyBrick x="720" y ="400" />
+  <CurlyBrick x="750" y ="400" />
+  <CurlyBrick x="780" y ="400" />
+  <CurlyBrick x="810" y ="400" />
+  <CurlyBrick x="840" y ="400" />
+  <CurlyBrick x="870" y ="400" />
+  <CurlyBrick x="900" y ="400" />
+  <CurlyBrick x="930" y ="400" />
+  <CurlyBrick x="960" y ="400" />
+  <CurlyBrick x="990" y ="400" />
+  <CurlyBrick x="1020" y ="400" />
+  <CurlyBrick x="1050" y ="400" />
+  <CurlyBrick x="1080" y ="400" />
 
+  <CurlyBrick x="-30" y ="430" />
+  <CurlyBrick x="0" y ="430" />
+  <CurlyBrick x="30" y ="430" />
+  <CurlyBrick x="60" y ="430" />
+  <CurlyBrick x="90" y ="430" />
+  <CurlyBrick x="120" y ="430" />
+  <CurlyBrick x="150" y ="430" />
+  <CurlyBrick x="180" y ="430" />
+  <CurlyBrick x="210" y ="430" />
+  <CurlyBrick x="240" y ="430" />
+  <CurlyBrick x="270" y ="430" />
+  <CurlyBrick x="300" y ="430" />
+  <CurlyBrick x="330" y ="430" />
+  <CurlyBrick x="360" y ="430" />
+  <CurlyBrick x="390" y ="430" />
+  <CurlyBrick x="420" y ="430" />
+  <CurlyBrick x="450" y ="430" />
+  <CurlyBrick x="480" y ="430" />
+  <CurlyBrick x="510" y ="430" />
+  <CurlyBrick x="540" y ="430" />
+  <CurlyBrick x="570" y ="430" />
+  <CurlyBrick x="600" y ="430" />
+  <CurlyBrick x="630" y ="430" />
+  <CurlyBrick x="660" y ="430" />
+  <CurlyBrick x="690" y ="430" />
+  <CurlyBrick x="720" y ="430" />
+  <CurlyBrick x="750" y ="430" />
+  <CurlyBrick x="780" y ="430" />
 
-  <BreakableCurlyBrick x="-30" y ="430" />
-  <BreakableCurlyBrick x="0" y ="430" />
-  <BreakableCurlyBrick x="30" y ="430" />
-  <BreakableCurlyBrick x="60" y ="430" />
-  <BreakableCurlyBrick x="90" y ="430" />
-  <BreakableCurlyBrick x="120" y ="430" />
-  <BreakableCurlyBrick x="150" y ="430" />
-  <BreakableCurlyBrick x="180" y ="430" />
-  <BreakableCurlyBrick x="210" y ="430" />
-  <BreakableCurlyBrick x="240" y ="430" />
-  <BreakableCurlyBrick x="270" y ="430" />
-  <BreakableCurlyBrick x="300" y ="430" />
-  <BreakableCurlyBrick x="330" y ="430" />
-  <BreakableCurlyBrick x="360" y ="430" />
-  <BreakableCurlyBrick x="390" y ="430" />
-  <BreakableCurlyBrick x="420" y ="430" />
-  <BreakableCurlyBrick x="450" y ="430" />
-  <BreakableCurlyBrick x="480" y ="430" />
-  <BreakableCurlyBrick x="510" y ="430" />
-  <BreakableCurlyBrick x="540" y ="430" />
-  <BreakableCurlyBrick x="570" y ="430" />
-  <BreakableCurlyBrick x="600" y ="430" />
-  <BreakableCurlyBrick x="630" y ="430" />
-  <BreakableCurlyBrick x="660" y ="430" />
-  <BreakableCurlyBrick x="690" y ="430" />
-  <BreakableCurlyBrick x="720" y ="430" />
-  <BreakableCurlyBrick x="750" y ="430" />
-  <BreakableCurlyBrick x="780" y ="430" />
-
-  <BreakableCurlyBrick x="-30" y ="460" />
-  <BreakableCurlyBrick x="0" y ="460" />
-  <BreakableCurlyBrick x="30" y ="460" />
-  <BreakableCurlyBrick x="60" y ="460" />
-  <BreakableCurlyBrick x="90" y ="460" />
-  <BreakableCurlyBrick x="120" y ="460" />
-  <BreakableCurlyBrick x="150" y ="460" />
-  <BreakableCurlyBrick x="180" y ="460" />
-  <BreakableCurlyBrick x="210" y ="460" />
-  <BreakableCurlyBrick x="240" y ="460" />
-  <BreakableCurlyBrick x="270" y ="460" />
-  <BreakableCurlyBrick x="300" y ="460" />
-  <BreakableCurlyBrick x="330" y ="460" />
-  <BreakableCurlyBrick x="360" y ="460" />
-  <BreakableCurlyBrick x="390" y ="460" />
-  <BreakableCurlyBrick x="420" y ="460" />
-  <BreakableCurlyBrick x="450" y ="460" />
-  <BreakableCurlyBrick x="480" y ="460" />
-  <BreakableCurlyBrick x="510" y ="460" />
-  <BreakableCurlyBrick x="540" y ="460" />
-  <BreakableCurlyBrick x="570" y ="460" />
-  <BreakableCurlyBrick x="600" y ="460" />
-  <BreakableCurlyBrick x="630" y ="460" />
-  <BreakableCurlyBrick x="660" y ="460" />
-  <BreakableCurlyBrick x="690" y ="460" />
-  <BreakableCurlyBrick x="720" y ="460" />
-  <BreakableCurlyBrick x="750" y ="460" />
-  <BreakableCurlyBrick x="780" y ="460" />
+  <CurlyBrick x="-30" y ="460" />
+  <CurlyBrick x="0" y ="460" />
+  <CurlyBrick x="30" y ="460" />
+  <CurlyBrick x="60" y ="460" />
+  <CurlyBrick x="90" y ="460" />
+  <CurlyBrick x="120" y ="460" />
+  <CurlyBrick x="150" y ="460" />
+  <CurlyBrick x="180" y ="460" />
+  <CurlyBrick x="210" y ="460" />
+  <CurlyBrick x="240" y ="460" />
+  <CurlyBrick x="270" y ="460" />
+  <CurlyBrick x="300" y ="460" />
+  <CurlyBrick x="330" y ="460" />
+  <CurlyBrick x="360" y ="460" />
+  <CurlyBrick x="390" y ="460" />
+  <CurlyBrick x="420" y ="460" />
+  <CurlyBrick x="450" y ="460" />
+  <CurlyBrick x="480" y ="460" />
+  <CurlyBrick x="510" y ="460" />
+  <CurlyBrick x="540" y ="460" />
+  <CurlyBrick x="570" y ="460" />
+  <CurlyBrick x="600" y ="460" />
+  <CurlyBrick x="630" y ="460" />
+  <CurlyBrick x="660" y ="460" />
+  <CurlyBrick x="690" y ="460" />
+  <CurlyBrick x="720" y ="460" />
+  <CurlyBrick x="750" y ="460" />
+  <CurlyBrick x="780" y ="460" />
   
 
-  <usedblock x="200" y="300" />
-  <usedblock x="150" y="150" />
+  <Usedblock x="200" y="300" />
+  <Usedblock x="150" y="150" />
 
-  <horizontalblock x="300" y="300" />
-  <horizontalblock x="360" y="300" />
-  <horizontalblock x="420" y="300" />
+  <Horizontalblock x="300" y="300" />
+  <Horizontalblock x="360" y="300" />
+  <Horizontalblock x="420" y="300" />
 
-  <questionBlock x="330" y="300" />
-  <questionBlock x="391" y="300" />
+  <QuestionBlock x="330" y="300" />
+  <QuestionBlock x="391" y="300" />
   
   <mario x="250" y="100" />
 
-  <koopa x="780" y="150" />
-  <goomba x="680" y="150" />
+  <Koopa x="780" y="150" />
+  <Goomba x="680" y="150" />
 
-  <cloud x="620" y="20" />
-  <tripleCloud x="320" y="100" />
-  <bush x="300" y="448" />
-  <bigMountain x="40" y="412" />
-  <smallMountain x="600" y="442" />
-  <pipe x="660" y ="332" />
-  <pipe x="900" y ="332" />
+  <Pipe x="660" y ="332" />
+  <Pipe x="900" y ="332" />
 
 </level>
