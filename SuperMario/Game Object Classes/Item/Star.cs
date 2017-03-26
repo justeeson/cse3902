@@ -46,8 +46,8 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            //location = new Vector2(location.X, location.Y);
-            Sprite.Draw(spriteBatch, Location);
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+
         }
     }
 }
