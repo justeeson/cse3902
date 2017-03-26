@@ -8,8 +8,8 @@ namespace SuperMario
 {
     public class Camera
     {
-        public int cameraPositionX;
-        public int cameraPositionY;
+        public static int cameraPositionX;
+        public static int cameraPositionY;
 
         public Camera()
         {
@@ -19,7 +19,7 @@ namespace SuperMario
 
         public void UpdateX(int MarioPositionX)
         {
-            if (MarioPositionX < 6000)
+            if (MarioPositionX < 6350)
             {
                 if (MarioPositionX > cameraPositionX + 400)
                 {

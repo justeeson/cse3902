@@ -28,32 +28,49 @@ namespace SuperMario.Levels
                 Location.Y = Int32.Parse(nodeList[i].Attributes["y"].Value);
                 switch (nodeList[i].Name)
                 {
-                    case "usedblock":
+                    case "UsedBlock":
                         LevelClass.BlockList.Add(new SolidBrickWithCrews(MyGame, Location));
                         break;
-                    case "questionBlock":
+                    case "QuestionBlock":
                         LevelClass.BlockList.Add(new QuestionMarkBrick(MyGame, Location));
                         break;
-                    case "solidbrick":
+                    case "SolidBrick":
                         LevelClass.BlockList.Add(new SolidBrick(MyGame, Location));
                         break;
-                    case "hiddenBlock":
+                    case "HiddenBlock":
                         LevelClass.BlockList.Add(new HiddenBrick(MyGame, Location));
                         break;
-                    case "BreakableCurlyBrick":
+                    case "CurlyBrick":
                         LevelClass.BlockList.Add(new BreakableCurlyBrick(MyGame, Location));
                         break;
-                    case "horizontalblock":
+                    case "HorizontalBlock":
                         LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
                         break;
-                    case "pipe":
+                    case "HorizontalBlockWithItem":
+                        // This Block need more implementation
+                        LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
+                        break;
+                    case "Pipe":
                         LevelClass.BlockList.Add(new Pipe(MyGame, Location));
                         break;
+                    case "MediumPipe":
+                        // TO DO: This need to be medium pipe instead of short
+                        LevelClass.BlockList.Add(new Pipe(MyGame, Location));
+                        break;
+                    case "HighPipe":
+                        // TO DO: This need to be high pipe instead of short
+                        LevelClass.BlockList.Add(new Pipe(MyGame, Location));
+                        break;
+                    case "FlagPole":
+                        // TO DO: This need to be FlagPole
 
-                    case "goomba":
+                    case "Castle":
+                        // TO DO: This need to be Castle
+
+                    case "Goomba":
                         LevelClass.EnemyList.Add(new Goomba(MyGame, Location));
                         break;
-                    case "koopa":
+                    case "Koopa":
                         LevelClass.EnemyList.Add(new Koopa(MyGame, Location));
                         break;
 
@@ -66,13 +83,13 @@ namespace SuperMario.Levels
                     case "fireMushroom":
                         LevelClass.ItemList.Add(new FireMushroom(MyGame, Location));
                         break;
-                    case "GrownupMushroom":
+                    case "grownupMushroom":
                         LevelClass.ItemList.Add(new GrownupMushroom(MyGame, Location));
                         break;
                     case "star":
                         LevelClass.ItemList.Add(new Star(MyGame, Location));
                         break;
-
+                    
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.texture, 3, 12, Location);
                         Location.X = 0;

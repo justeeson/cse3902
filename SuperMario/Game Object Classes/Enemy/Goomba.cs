@@ -13,6 +13,7 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
+        public int cameraPositionX { get; set; }
 
         private int yVelocity, yAcceleration;
         private bool dead;
@@ -79,7 +80,7 @@ namespace SuperMario
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             //location = new Vector2(location.X, location.Y);
-            Sprite.Draw(spriteBatch, this.Location);
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
         }
     }
 
