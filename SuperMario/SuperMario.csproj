@@ -54,6 +54,8 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BackgroundClass\BackgroundSprite.cs" />
+    <Compile Include="BackgroundClass\BackgroundClass.cs" />
     <Compile Include="BlockClass\BlockLogic.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />

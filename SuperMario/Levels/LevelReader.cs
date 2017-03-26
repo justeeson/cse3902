@@ -75,6 +75,9 @@ namespace SuperMario.Levels
 
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.texture, 3, 12, Location);
+                        Location.X = 0;
+                        Location.Y = 0;
+                        LevelClass.BackgroundList.Add(new Background(MyGame, Location));
                         break;
 
                 }
