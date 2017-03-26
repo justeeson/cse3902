@@ -45,7 +45,7 @@ namespace SuperMario
             brickableHorizontalBrickTexture = content.Load<Texture2D>("brickableHorizontalBrick");
             breakableCurlyBrickTexture = content.Load<Texture2D>("breakableCurlyBrick");
             pipeTexture = content.Load<Texture2D>("pipe");
-            backgroundTexture = content.Load<Texture2D>("background1");
+            backgroundTexture = content.Load<Texture2D>("background3");
         }
 
         public static ISprite CreateKoopaMoveLeft()
