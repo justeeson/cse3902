@@ -13,7 +13,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    Mario.LocationY += collisionRectangle.Height + 1;
+                    Mario.LocationY += collisionRectangle.Height + 5;
                     block.CollisionSprite();
                     item.BecomeUsed();
                 }
