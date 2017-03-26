@@ -111,7 +111,7 @@ namespace SuperMario
         {
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             texture = Content.Load<Texture2D>("MarioSheet");
-            background = Content.Load<Texture2D>("background");
+            background = Content.Load<Texture2D>("background3");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             //Mario = new Mario(texture, 3, 12);
             SpriteFactory = new SpriteFactory();
