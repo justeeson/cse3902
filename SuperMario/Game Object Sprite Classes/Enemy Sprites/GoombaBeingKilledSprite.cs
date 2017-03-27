@@ -10,8 +10,6 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
 
 
         public GoombaBeingKilledSprite(Texture2D texture, int rows, int columns)
@@ -20,8 +18,6 @@ namespace SuperMario
             Rows = rows;
             Columns = columns;
             currentFrame = 1;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 350;
         }
 
         public void Update(GameTime GameTime)

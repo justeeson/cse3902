@@ -125,7 +125,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && !(Mario.DisableJump == true))
             {
-                yVelocity = 15;
+                yVelocity = 17;
                 Mario.JumpStatus = true;
             }
         }
