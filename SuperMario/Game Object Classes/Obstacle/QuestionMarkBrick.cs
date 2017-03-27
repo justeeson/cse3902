@@ -42,19 +42,19 @@ namespace SuperMario
                 switch (rnd.Next(1, 6))
                 {   
                     case 1:
-                        MyGame.World.Level.addCoin(new Vector2(Location.X-3, Location.Y - 30));
+                        MyGame.World.Level.addCoin(new Vector2(Location.X-2, Location.Y - 30));
                         break;
                     case 2:
-                        MyGame.World.Level.addFireMushroom(new Vector2(Location.X - 3, Location.Y - 30));
+                        MyGame.World.Level.addFireMushroom(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
                     case 3:
-                        MyGame.World.Level.addFlower(new Vector2(Location.X - 3, Location.Y - 30));
+                        MyGame.World.Level.addFlower(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
                     case 4:
-                        MyGame.World.Level.addMushroom(new Vector2(Location.X - 3, Location.Y - 30));
+                        MyGame.World.Level.addMushroom(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
                     case 5:
-                        MyGame.World.Level.addStar(new Vector2(Location.X - 3, Location.Y - 30));
+                        MyGame.World.Level.addStar(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
                 }
             }
