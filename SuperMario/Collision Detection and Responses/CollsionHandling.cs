@@ -27,15 +27,12 @@ namespace SuperMario.Collision_Detection_and_Responses
 
             foreach (IItem item in LevelClass.ItemList)
             {
-
                 Rectangle itemRect = item.Area();
 
                 if (marioRect.Intersects(itemRect))
                 {
                     MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
                 }
-
-               
             }
 
             foreach (IBlock item in LevelClass.BlockList)
@@ -50,7 +47,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else
                 {
                     Rectangle testRect = marioRect;
-                    //testRect.X += 5;
                     testRect.Y += 5;
                     if (testRect.Intersects(blockRect))
                     {
@@ -135,8 +131,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                     item.isFalling = true;
                 }
             }
-
-          
         }
     }
 }
