@@ -83,7 +83,7 @@ namespace SuperMario
 
       
 
-        private static int xPos, yPos, xMax, yMax;
+        public static int xPos, yPos, xMax, yMax;
         
         private static ArrayList Valid_Keys;
         public static ArrayList validKeys

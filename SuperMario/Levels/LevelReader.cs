@@ -20,7 +20,7 @@ namespace SuperMario.Levels
         public void Load()
         {
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
-            xmlDoc.Load("../../../../Levels/Level3.xml");
+            xmlDoc.Load("../../../../Levels/Level.xml");
             XmlNodeList nodeList = xmlDoc.ChildNodes[1].ChildNodes;
             for(int i = 0; i < nodeList.Count; i++)
             {
@@ -32,7 +32,7 @@ namespace SuperMario.Levels
                         LevelClass.BlockList.Add(new SolidBrickWithCrews(MyGame, Location));
                         break;
                     case "QuestionBlock":
-                        LevelClass.BlockList.Add(new QuestionMarkBrick(MyGame, Location));
+                        LevelClass.BlockList.Add(new QuestionMarkBrick(MyGame, Location, nodeList[i].Attributes["item"].Value));
                         break;
                     case "SolidBrick":
                         LevelClass.BlockList.Add(new SolidBrick(MyGame, Location));

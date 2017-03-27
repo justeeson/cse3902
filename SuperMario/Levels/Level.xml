@@ -445,23 +445,17 @@
 
 
   <Goomba x="700" y="384" />
-  <QuestionBlock x="544" y="280" />
-  
-  <coin x="544" y="310" />
+  <QuestionBlock x="544" y="280" item="coin" />
   
   <HorizontalBlock x="672" y="280" />
-  <QuestionBlock x="704" y="280" />
+  <QuestionBlock x="704" y="280" item="growmushroom" />
   
-  <fireMushroom x="704" y="310" />
   
   <HorizontalBlock x="736" y="280" />
-  <QuestionBlock x="736" y="152" />
+  <QuestionBlock x="736" y="152" item="coin" />
+
   
-  <coin x="736" y="182" />
-  
-  <QuestionBlock x="768" y="280" />
-  
-  <coin x="768" y="310" />
+  <QuestionBlock x="768" y="280" item="coin"/>
   
   <HorizontalBlock x="800" y="280" />
   <Pipe x="928" y="351" />
@@ -473,9 +467,7 @@
   <HighPipe x="1856" y="290" />
   <hiddenBlock x="2080" y="248" />
   <HorizontalBlock x="2528" y="280" />
-  <QuestionBlock x="2560" y="280" />
-  
-  <flower x="2560" y="310" />
+  <QuestionBlock x="2560" y="280" item="flower"/>
   
   <HorizontalBlock x="2592" y="280" />
 
@@ -494,7 +486,7 @@
   <HorizontalBlock x="2976" y="152" />
   <HorizontalBlock x="3008" y="152" />
   <HorizontalBlock x="3040" y="152" />
-  <QuestionBlock x="3072" y="152" />
+  <QuestionBlock x="3072" y="152" item="coin"/>
   
   <coin x="3072" y="182" />
   
@@ -514,19 +506,19 @@
   
   <Koopa x="3420" y="368" />
 
-  <QuestionBlock x="3424" y="280" />
+  <QuestionBlock x="3424" y="280" item="coin"/>
   
   <coin x="3424" y="310" />
   
-  <QuestionBlock x="3520" y="280" />
+  <QuestionBlock x="3520" y="280" item="coin"/>
   
   <coin x="3520" y="310" />
   
-  <QuestionBlock x="3616" y="280" />
+  <QuestionBlock x="3616" y="280" item="coin"/>
   
   <coin x="3616" y="310" />
   
-  <QuestionBlock x="3520" y="152" />
+  <QuestionBlock x="3520" y="152" item="firemushroom"/>
   
   <fireMushroom x="3520" y="182" />
   
@@ -536,13 +528,13 @@
   <HorizontalBlock x="3968" y="152" />
 
   <HorizontalBlock x="4128" y="152" />
-  <QuestionBlock x="4160" y="152" />
+  <QuestionBlock x="4160" y="152" item="coin"/>
   
   <coin x="4160" y="182" />
   
-  <QuestionBlock x="4192" y="152" />
+  <QuestionBlock x="4192" y="152" item="coin"/>
   
-  <coin x="4192" y="182" />
+  <coin x="4192" y="182" item="coin"/>
   
   <HorizontalBlock x="4224" y="152" />
   <HorizontalBlock x="4160" y="280" />

@@ -45,7 +45,7 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            //flip direction if at edge of screen
+            /*//flip direction if at edge of screen
             if (Location.X - Camera.cameraPositionX < 0)
             {
                 movingLeft = false;
@@ -55,7 +55,7 @@ namespace SuperMario
             {
                 movingLeft = true;
                 //Location = new Vector2(Location.X - 2, Location.Y);
-            }
+            }*/
 
             if (movingLeft)
                 Location = new Vector2(Location.X - 3, Location.Y);

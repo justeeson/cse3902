@@ -13,18 +13,20 @@ namespace SuperMario
     public class QuestionMarkBrick : IBlock
     {
         public ISprite Sprite { get; set; }
+        public String itemObject { get; set; }
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
         private bool hasBeenUsed;
 
-        public QuestionMarkBrick(Game1 game, Vector2 location)
+        public QuestionMarkBrick(Game1 game, Vector2 location, String item)
         {
             MyGame = game;
             hasBeenUsed = false;
             Sprite = SpriteFactory.CreateQuestionMarkBrick();
             MyGame.sprite = Sprite;
             this.Location = location;
+            itemObject = item;
         }
         public void BrickToDisappear()
         {
@@ -39,22 +41,24 @@ namespace SuperMario
                this.Location = new Vector2(Location.X+5, Location.Y);
                 hasBeenUsed = true;
                 Random rnd = new Random();
-                switch (rnd.Next(1, 6))
-                {   
-                    case 1:
-                        MyGame.World.Level.addCoin(new Vector2(Location.X-2, Location.Y - 30));
+                switch (itemObject)
+                {
+                    case "coin":
+                        MyGame.World.Level.addCoin(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
-                    case 2:
+                    case "firemushroom":
                         MyGame.World.Level.addFireMushroom(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
-                    case 3:
+                    case "flower":
                         MyGame.World.Level.addFlower(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
-                    case 4:
+                    case "growmushroom":
                         MyGame.World.Level.addMushroom(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
-                    case 5:
+                    case "star":
                         MyGame.World.Level.addStar(new Vector2(Location.X - 2, Location.Y - 30));
+                        break;
+                    default:
                         break;
                 }
             }
