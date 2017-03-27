@@ -18,6 +18,7 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+
         public BackgroundSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -28,9 +29,26 @@ namespace SuperMario
             millisecondsPerFrame = 200;
         }
 
-        public void Update(GameTime GameTime)
-        {   
-           
+        public void Update(GameTime gameTime)
+        {
+            //timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            //if (timeSinceLastFrame > millisecondsPerFrame)
+            //{
+            //    timeSinceLastFrame -= millisecondsPerFrame;
+            //    currentFrame++; ;
+            //    if (currentFrame == 1000)
+            //    { currentFrame = 1; }
+            //}
+            //if (currentFrame > 1000)
+            //{
+            //    currentFrame = 0;
+            //}
+            //else
+            //{
+            //    currentFrame += 1;
+            //}
+
+
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
