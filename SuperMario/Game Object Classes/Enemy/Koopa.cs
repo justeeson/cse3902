@@ -59,19 +59,19 @@ namespace SuperMario
                 movingLeft = !movingLeft;
                 //Location = new Vector2(Location.X + 2, Location.Y);
             }
-            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
-            {
-                movingLeft = !movingLeft;
-                //Location = new Vector2(Location.X - 2, Location.Y);
-            }
+            //else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            //{
+            //    movingLeft = !movingLeft;
+            //    //Location = new Vector2(Location.X - 2, Location.Y);
+            //}
 
             if (movingLeft)
-                Location = new Vector2(Location.X - 3, Location.Y);
+                Location = new Vector2(Location.X - 4, Location.Y);
             else
-                Location = new Vector2(Location.X + 3, Location.Y);
+                Location = new Vector2(Location.X + 4, Location.Y);
 
             if (isFalling)
-                Location = new Vector2(Location.X, Location.Y + 3);
+                Location = new Vector2(Location.X, Location.Y + 4);
 
             if (dead)
             {
