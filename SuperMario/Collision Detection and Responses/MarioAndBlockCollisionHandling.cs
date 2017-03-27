@@ -9,7 +9,46 @@ namespace SuperMario.Collision_Detection_and_Responses
         {   
             Rectangle collisionRectangle = new Rectangle();
             ISprite block = item.Sprite;
-            if (!block.Area(item.Location).Equals(collisionRectangle)){
+            if (block.Area(item.Location).Equals(collisionRectangle)){
+                return;
+            }
+            collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
+            if (collisionRectangle.Width >= collisionRectangle.Height)
+            {
+                if (collisionRectangle.Top == block.Area(item.Location).Top)
+                {
+                    Mario.GroundedStatus = true;
+                    Mario.LocationY -= (collisionRectangle.Height + 5);
+                    Mario.JumpStatus = false;
+                    mario.ResetVelocity();
+                }
+                else if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
+                {
+                    Mario.LocationY += collisionRectangle.Height;
+                    block.CollisionSprite();
+                    item.BecomeUsed();
+                }
+                
+                collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
+                if (collisionRectangle.Right == block.Area(item.Location).Right)
+                {
+                    Mario.LocationX += collisionRectangle.Width;
+                }
+                else if (collisionRectangle.Left == block.Area(item.Location).Left)
+                {
+                    Mario.LocationX -= collisionRectangle.Width;
+                }
+            }
+            else
+            {
+                if (collisionRectangle.Right == block.Area(item.Location).Right)
+                {
+                    Mario.LocationX += collisionRectangle.Width;
+                }
+                else if (collisionRectangle.Left == block.Area(item.Location).Left)
+                {
+                    Mario.LocationX -= collisionRectangle.Width;
+                }
                 collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
                 {
@@ -24,18 +63,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     Mario.JumpStatus = false;
                     mario.ResetVelocity();
                 }
-                collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-                if (collisionRectangle.Right == block.Area(item.Location).Right)
-                {
-                    Mario.LocationX += collisionRectangle.Width + 0;
-                }
-                else if (collisionRectangle.Left == block.Area(item.Location).Left)
-                {
-                    Mario.LocationX -= collisionRectangle.Width + 0;
-                }
-
             }
-
         }
 
     }

@@ -46,17 +46,16 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
                 else
                 {
-                    Rectangle testRect;
-                    if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
-                        testRect = new Rectangle(Mario.LocationX + 12, Mario.LocationY + 32, 29, 33);
-                    else
-                        testRect = new Rectangle(Mario.LocationX + 10, Mario.LocationY + 6, 33, 65);
+                    Rectangle testRect = marioRect;
+                    //testRect.X += 5;
+                    testRect.Y += 5;
                     if (testRect.Intersects(blockRect))
                     {
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
                         check = 1;                      
                     }
+                    testRect.Y -= 5;
                 }
 
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)

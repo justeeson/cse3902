@@ -73,7 +73,7 @@ namespace SuperMario
 
         public void ResetVelocity()
         {
-
+            yVelocity = 0;
         }
 
         public void LookLeft()
