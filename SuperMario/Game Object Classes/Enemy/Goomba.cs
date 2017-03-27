@@ -15,7 +15,6 @@ namespace SuperMario
         public Rectangle Area { get; set; }
         public int cameraPositionX { get; set; }
 
-        private int yVelocity, yAcceleration;
         private bool dead;
         private int deadCounter = 10;
         public Goomba(Game1 game, Vector2 location)
@@ -26,8 +25,6 @@ namespace SuperMario
             Sprite = SpriteFactory.CreateGoomba();
             canAttack = true;
             Location = location;
-            yVelocity = 15;
-            yAcceleration = -1;
             dead = false;
         }
         public void GetKilled()

@@ -21,13 +21,13 @@ namespace SuperMario
         {
             if (MarioPositionX < 6350)
             {
-                if (MarioPositionX > cameraPositionX + 400)
+                if (MarioPositionX > cameraPositionX + 300)
                 {
-                    cameraPositionX += MarioPositionX - (cameraPositionX + 400);
+                    cameraPositionX += MarioPositionX - (cameraPositionX + 300);
                 }
-                else if (MarioPositionX < cameraPositionX + 400 && cameraPositionX > (cameraPositionX + 400) - MarioPositionX)
+                else if (MarioPositionX < cameraPositionX + 300 && cameraPositionX > (cameraPositionX + 300) - MarioPositionX)
                 {
-                    cameraPositionX -= (cameraPositionX + 400) - MarioPositionX;
+                    cameraPositionX -= (cameraPositionX + 300) - MarioPositionX;
                 }
             }
         }
