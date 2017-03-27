@@ -20,15 +20,36 @@ namespace SuperMario
 
         public FireMushroom(Game1 game, Vector2 location)
         {
+            movingLeft = false;
             MyGame = game;
             Sprite = SpriteFactory.CreateFireMushroom();
             MyGame.sprite = Sprite;
             hasBeenUsed = false;
+            isFalling = true;
             Location = location;
         }
 
         public void Update(GameTime GameTime)
         {
+            if (Location.X - Camera.cameraPositionX < 0)
+            {
+                movingLeft = !movingLeft;
+            }
+            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            {
+                movingLeft = !movingLeft;
+            }
+
+            if (movingLeft)
+                Location = new Vector2(Location.X - 3, Location.Y);
+            else
+                Location = new Vector2(Location.X + 3, Location.Y);
+
+            if (isFalling)
+            {
+                Location = new Vector2(Location.X, Location.Y + 3);
+            }
+
             Sprite.Update(GameTime);
         }
         public Rectangle Area()
