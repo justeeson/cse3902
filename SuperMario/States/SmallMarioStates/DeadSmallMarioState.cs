@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using SuperMario.Interfaces;
+using SuperMario.Command;
 
 namespace SuperMario.Sprites
 {
@@ -15,21 +16,25 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int currentFrame;
         private int flashStatus;
-        private int nextFlashTime;
-        private int millisecondsPerFlash;
-
+        private int resetTimer;
+        private ICommand command;
         public DeadSmallMarioState(Mario mario)
         {
             this.mario = mario;
             currentFrame = 0;
             flashStatus = 0;
-            nextFlashTime = 0;
-            millisecondsPerFlash = 400;
+            resetTimer = 0;
+            command = new ResetCommand(Game1.Self);
         }
 
         public void Update(GameTime GameTime)
         {
-           
+            resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+            if (resetTimer > 2000)
+            {
+                resetTimer -= 2000;
+                command.Execute();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

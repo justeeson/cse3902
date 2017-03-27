@@ -15,6 +15,7 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
+        private float locationX;
 
         public GrownupMushroom(Game1 game, Vector2 location)
         {
@@ -23,11 +24,13 @@ namespace SuperMario
             MyGame.sprite = Sprite;
             hasBeenUsed = false;
             this.Location = location;
+            locationX = Location.X;
         }
 
         public void Update(GameTime GameTime)
         {
-            Sprite.Update(GameTime);
+                locationX++;
+                Sprite.Update(GameTime);
         }
         public Rectangle Area()
         {
@@ -50,7 +53,7 @@ namespace SuperMario
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             //location = new Vector2(location.X, location.Y);
-            Sprite.Draw(spriteBatch, Location);
+            Sprite.Draw(spriteBatch, new Vector2(locationX, Location.Y));
         }
     }
 }

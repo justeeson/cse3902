@@ -75,7 +75,6 @@ namespace SuperMario
             this.LocationY = LocationY;
             yVelocity = 3;
             marioOrientation = orientation;
-            Console.WriteLine(marioOrientation);
             fire = true;
         }
         public void Draw(SpriteBatch spriteBatch)
