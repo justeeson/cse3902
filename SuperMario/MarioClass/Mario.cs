@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using SuperMario.MarioClass;
+using SuperMario.Command;
 
 namespace SuperMario
 {
@@ -32,6 +33,7 @@ namespace SuperMario
         private int invulnTimer;
         private int starPowerTimer;
         private static ContentManager mContentManager;
+        private ICommand command;
        
         public Mario(Texture2D texture, int rows, int columns, Vector2 location)
         {
@@ -39,6 +41,7 @@ namespace SuperMario
             Texture = texture;
             StateMachine = new MarioStateMachine(this);
             Rows = rows;
+            command = new ResetCommand(Game1.Self);
             Columns = columns;
             LocationX = (int)location.X;
             LocationY = (int)location.Y;
@@ -191,6 +194,10 @@ namespace SuperMario
             }
             UpdateFireball(GameTime);
             State.Update(GameTime);
+            if(LocationY >= 400)
+            {
+                command.Execute();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
