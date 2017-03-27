@@ -51,6 +51,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
             {
+                item.movingLeft = true;
                 Mario.LocationX += collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
@@ -81,6 +82,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Left == enemy.Area(item.Location).Left)
             {
+                item.movingLeft = false;
                 Mario.LocationX -= collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {

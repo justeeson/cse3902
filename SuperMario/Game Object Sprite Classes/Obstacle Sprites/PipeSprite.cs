@@ -39,9 +39,9 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 65; //Texture.Width / Columns;
-            int height = 65;//Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            int width = 40; //Texture.Width / Columns;
+            int height = 56;//Texture.Height / Rows;
+            return new Rectangle((int)location.X - Camera.cameraPositionX, (int)location.Y + 12, width, height);
         }
         public void CollisionSprite()
         {

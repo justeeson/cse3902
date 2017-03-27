@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
+using SuperMario;
 
-
-    class BreakableHorizontalBrickSprite : ISprite
+class BreakableHorizontalBrickSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -55,7 +55,7 @@ using SuperMario.Interfaces;
         {
             int width = 32;//Texture.Width / Columns;
             int height = 32;//Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X - Camera.cameraPositionX, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);
     }

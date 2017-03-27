@@ -162,7 +162,6 @@ namespace SuperMario
             GamepadController.Update(GameTime);
             CameraPointer.UpdateX(Mario.LocationX);
             MarioSprite.Update(GameTime);
-            //store.Update();
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(GameTime);
@@ -176,18 +175,13 @@ namespace SuperMario
             //SpriteBatch.Draw(background, mainFrame, Color.White);
             //SpriteBatch.End();
             World.Draw(Location);
-
-            //foreach (ISprite obj in store.arrayOfSprites)
-            //{
-            //    obj.Draw(spriteBatch, new Vector2(xPos, yPos));
-            //}
+            
             foreach (MarioFireball aFireball in Game1.mFireballs)
             {
                 aFireball.Draw(SpriteBatch);
             }
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            //MarioSprite.Draw(SpriteBatch, new Vector2(xPos, yPos));
             base.Draw(GameTime);
         }
     }

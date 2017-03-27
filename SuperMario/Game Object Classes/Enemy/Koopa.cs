@@ -54,15 +54,15 @@ namespace SuperMario
         public void Update(GameTime GameTime)
         {
             //flip direction if at edge of screen
-            if (Location.X < 0)
+            if (Location.X - Camera.cameraPositionX < 0)
             {
                 movingLeft = !movingLeft;
-                Location = new Vector2(Location.X + 2, Location.Y);
+                //Location = new Vector2(Location.X + 2, Location.Y);
             }
-            else if (Location.X > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
             {
                 movingLeft = !movingLeft;
-                Location = new Vector2(Location.X - 2, Location.Y);
+                //Location = new Vector2(Location.X - 2, Location.Y);
             }
 
             if (movingLeft)
@@ -79,8 +79,10 @@ namespace SuperMario
             }
             if (deadCounter == 0)
             {
-                Sprite = new CleanSprite(SpriteFactory.koopaMoveLeftTexture);
+                Sprite = new CleanSprite(SpriteFactory.goombaTexture);
             }
+
+            Sprite.Update(GameTime);
 
         }
 

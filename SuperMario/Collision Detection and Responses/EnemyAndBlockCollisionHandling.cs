@@ -25,13 +25,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                 if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
                     enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width + 1, enemy.Location.Y);
-                    enemy.movingLeft = !enemy.movingLeft;
+                    enemy.movingLeft = false;
                     enemy.ChangeDirection();
                 }
                 else if (collisionRectangle.Left == block.Area(item.Location).Left)
                 {
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
-                    enemy.movingLeft = !enemy.movingLeft;
+                    enemy.movingLeft = true;
                     enemy.ChangeDirection();
 
             }

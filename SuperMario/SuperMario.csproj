@@ -192,6 +192,9 @@
     <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />
+    <Content Include="Levels\level3.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Levels\level2.xml">
       <SubType>Designer</SubType>
     </Content>

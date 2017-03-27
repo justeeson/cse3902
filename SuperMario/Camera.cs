@@ -25,7 +25,7 @@ namespace SuperMario
                 {
                     cameraPositionX += MarioPositionX - (cameraPositionX + 400);
                 }
-                if (MarioPositionX < cameraPositionX + 400 && cameraPositionX > (cameraPositionX + 400) - MarioPositionX)
+                else if (MarioPositionX < cameraPositionX + 400 && cameraPositionX > (cameraPositionX + 400) - MarioPositionX)
                 {
                     cameraPositionX -= (cameraPositionX + 400) - MarioPositionX;
                 }

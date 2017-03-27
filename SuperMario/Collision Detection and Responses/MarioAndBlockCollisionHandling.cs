@@ -26,11 +26,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
                 else if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
-                    Mario.LocationX += collisionRectangle.Width + 1;
+                    Mario.LocationX += collisionRectangle.Width + 0;
                 }
                 else if (collisionRectangle.Left == block.Area(item.Location).Left)
                 {
-                    Mario.LocationX -= collisionRectangle.Width + 1;
+                    Mario.LocationX -= collisionRectangle.Width + 0;
                 }
 
             }
