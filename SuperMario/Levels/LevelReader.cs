@@ -62,11 +62,11 @@ namespace SuperMario.Levels
                         LevelClass.BlockList.Add(new Pipe(MyGame, Location));
                         break;
                     case "FlagPole":
-                        // TO DO: This need to be FlagPole
-
+                        LevelClass.BackgroundList.Add(new FlagPole(MyGame, Location));
+                        break;
                     case "Castle":
-                        // TO DO: This need to be Castle
-
+                        LevelClass.BackgroundList.Add(new Castle(MyGame, Location));
+                        break;
                     case "Goomba":
                         LevelClass.EnemyList.Add(new Goomba(MyGame, Location));
                         break;
