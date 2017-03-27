@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Interfaces;
+using System;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -16,8 +17,12 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 2));
+                if(powerup is Star)
+                    powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 50));
+                else
+                    powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 2));
                 powerup.isFalling = false;
+                
             }
 
             collisionRectangle = Rectangle.Intersect(powerup.Sprite.Area(powerup.Location), block.Area(item.Location));
