@@ -269,9 +269,9 @@ namespace SuperMario
         public Rectangle Area() 
         {
             if (StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
-                return new Rectangle(LocationX + 12, LocationY + 27, 29, 33);
+                return new Rectangle(LocationX + 12, LocationY + 27, 26, 33);
             else
-                return new Rectangle(LocationX + 10, LocationY + 1, 33, 65);
+                return new Rectangle(LocationX + 10, LocationY + 1, 31, 65);
         }
     }
 }

@@ -10,6 +10,8 @@ namespace SuperMario.Interfaces
 {
     public interface IItem
     {
+        bool movingLeft { get; set; }
+        bool isFalling { get; set; }
         ISprite Sprite { get; set; }
         Game1 MyGame { get; set; }
         bool hasBeenUsed { get; set; }

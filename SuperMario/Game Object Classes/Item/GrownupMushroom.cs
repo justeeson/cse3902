@@ -14,26 +14,49 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
+        public bool movingLeft { get; set; }
+        public bool isFalling { get; set; }
         public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
-        private float locationX;
 
         public GrownupMushroom(Game1 game, Vector2 location)
         {
+            movingLeft = false;
             MyGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
+            isFalling = true;
             MyGame.sprite = Sprite;
             hasBeenUsed = false;
             this.Location = location;
-            locationX = Location.X;
             
         }
 
         public void Update(GameTime GameTime)
         {
-            locationX++;
+            //locationX++;
+            if (Location.X - Camera.cameraPositionX < 0)
+            {
+                movingLeft = !movingLeft;
+            }
+            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            {
+                movingLeft = !movingLeft;
+            }
+
+            if (movingLeft)
+                Location = new Vector2(Location.X - 3, Location.Y);
+            else
+                Location = new Vector2(Location.X + 3, Location.Y);
+
+            if (isFalling)
+            {
+                Location = new Vector2(Location.X, Location.Y + 3);
+            }
+
             Sprite.Update(GameTime);
         }
+
+
         public Rectangle Area()
         {
             if (hasBeenUsed)
@@ -54,7 +77,7 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(locationX - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
 
         }
     }

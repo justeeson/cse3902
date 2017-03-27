@@ -20,7 +20,8 @@ namespace SuperMario.Collision_Detection_and_Responses
         }
         public static void Update(LevelClass level, Game1 game)
         {
-            int check = 0;
+            int marioCheck = 0;
+            int itemCheck = 0;
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
 
@@ -33,6 +34,8 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
                 }
+
+               
             }
 
             foreach (IBlock item in LevelClass.BlockList)
@@ -53,7 +56,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     {
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
-                        check = 1;                      
+                        marioCheck = 1;                      
                     }
                     testRect.Y -= 5;
                 }
@@ -69,7 +72,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
             }
 
-            if (check == 0)
+            if (marioCheck == 0)
             {
                 Mario.DisableJump = true;
                 Mario.GroundedStatus = false;
@@ -101,6 +104,39 @@ namespace SuperMario.Collision_Detection_and_Responses
                     }
                 }
             }
+
+            for (int i = 0; i < LevelClass.ItemList.Count; i++)
+            {
+                for (int j = 0; j < LevelClass.BlockList.Count; j++)
+                {
+                    IItem item = LevelClass.ItemList.ElementAt<IItem>(i);
+                    IBlock block = LevelClass.BlockList.ElementAt<IBlock>(j);
+                    if (item.Sprite.Area(item.Location).Intersects(block.Sprite.Area(block.Location)))
+                    {
+                        ItemAndBlockCollisionHandling.HandleCollision(item, block);
+                    }
+
+                    else
+                    {
+                        Rectangle testRect = item.Sprite.Area(item.Location);
+                        testRect.Y += 2;
+                        if (testRect.Intersects(block.Sprite.Area(block.Location)))
+                        {
+                            itemCheck = 1;
+                        }
+                        testRect.Y -= 2;
+                    }
+
+                }
+
+                if (itemCheck == 0)
+                {
+                    IItem item = LevelClass.ItemList.ElementAt<IItem>(i);
+                    item.isFalling = true;
+                }
+            }
+
+          
         }
     }
 }

@@ -15,6 +15,8 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
+        public bool movingLeft { get; set; }
+        public bool isFalling { get; set; }
 
         public Coin(Game1 game, Vector2 location)
         {

@@ -13,6 +13,8 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
+        public bool movingLeft { get; set; }
+        public bool isFalling { get; set; }
         public bool hasBeenUsed{ get; set; }
         public Vector2 Location { get; set; }
 

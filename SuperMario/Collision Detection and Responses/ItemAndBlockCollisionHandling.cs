@@ -1,0 +1,40 @@
+﻿using Microsoft.Xna.Framework;
+using SuperMario.Interfaces;
+
+namespace SuperMario.Collision_Detection_and_Responses
+{
+    public class ItemAndBlockCollisionHandling
+    {
+        public static void HandleCollision(IItem powerup, IBlock item)
+        {
+            Rectangle collisionRectangle;
+            ISprite block = item.Sprite;
+            collisionRectangle = Rectangle.Intersect(powerup.Sprite.Area(powerup.Location), block.Area(item.Location));
+            if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
+            {
+                powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y + collisionRectangle.Height + 2);
+            }
+            else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
+            {
+                powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 2));
+                powerup.isFalling = false;
+            }
+
+            collisionRectangle = Rectangle.Intersect(powerup.Sprite.Area(powerup.Location), block.Area(item.Location));
+            if (collisionRectangle.Right == block.Area(item.Location).Right)
+            {
+                powerup.Location = new Vector2(powerup.Location.X + collisionRectangle.Width + 1, powerup.Location.Y);
+                powerup.movingLeft = false;
+            }
+            else if (collisionRectangle.Left == block.Area(item.Location).Left)
+            {
+                powerup.Location = new Vector2(powerup.Location.X - (collisionRectangle.Width + 1), powerup.Location.Y);
+                powerup.movingLeft = true;
+            }
+
+
+
+        }
+
+    }
+}
