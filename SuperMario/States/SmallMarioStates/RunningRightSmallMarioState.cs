@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 
 using Microsoft.Xna.Framework.Input;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Sprites
 {
@@ -100,8 +101,8 @@ namespace SuperMario.Sprites
             }
             else
             {
-                Mario.MarioMode = (int)Mario.MarioModes.Small;
-                Mario.Orientation = (int)Mario.Orientations.StandingRight;
+                mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
+                mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingRight;
                 currentFrame = 6;
             }
         }

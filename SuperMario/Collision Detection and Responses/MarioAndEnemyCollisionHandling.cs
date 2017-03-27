@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperMario.Interfaces;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -18,12 +19,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.LocationY += collisionRectangle.Height + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
+                    if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
+                    else if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();
@@ -55,12 +56,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.LocationX += collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
+                    if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
+                    else if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();
@@ -86,12 +87,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.LocationX -= collisionRectangle.Width + 1;
                 if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
-                    if (Mario.MarioMode == (int)Mario.MarioModes.Fire)
+                    if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
                         mario.MarioBigState();
                         Mario.Invulnerability();
                     }
-                    else if (Mario.MarioMode == (int)Mario.MarioModes.Big)
+                    else if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Big)
                     {
                         mario.MarioSmallState();
                         Mario.Invulnerability();

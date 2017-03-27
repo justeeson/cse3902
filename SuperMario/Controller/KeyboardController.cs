@@ -30,7 +30,7 @@ namespace SuperMario.Controller
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();          
                 foreach (Keys key in pressedKeys)
                 {
-                    if((Mario.MarioMode == (int)Mario.MarioModes.Fire) && key == Keys.X)
+                    if(key == Keys.X)
                      {
                         command = new MarioFireCommand(Game1.Self);
                         command.Execute();

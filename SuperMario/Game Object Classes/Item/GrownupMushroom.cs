@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -40,7 +41,7 @@ namespace SuperMario
         {
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
             hasBeenUsed = true;
-            if (Mario.MarioMode == (int)Mario.MarioModes.Small)
+            if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
                 MyGame.MarioSprite.MarioBigState();
             }

@@ -11,20 +11,21 @@ namespace SuperMario.Collision_Detection_and_Responses
             ISprite block = item.Sprite;
             if (!block.Area(item.Location).Equals(collisionRectangle)){
                 collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-                if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
+                if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
                 {
                     Mario.LocationY += collisionRectangle.Height + 5;
                     block.CollisionSprite();
                     item.BecomeUsed();
                 }
-                else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
+                else if (collisionRectangle.Top == block.Area(item.Location).Top)
                 {
                     Mario.GroundedStatus = true;
                     Mario.LocationY -= collisionRectangle.Height + 5;
                     Mario.JumpStatus = false;
                     mario.ResetVelocity();
                 }
-                else if (collisionRectangle.Right == block.Area(item.Location).Right)
+                collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
+                if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
                     Mario.LocationX += collisionRectangle.Width + 0;
                 }

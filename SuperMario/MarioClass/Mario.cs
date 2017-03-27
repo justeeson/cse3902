@@ -7,6 +7,7 @@ using System.Timers;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -14,6 +15,7 @@ namespace SuperMario
     {
         public IMarioState State { get; set; }
         public Texture2D Texture { get; set; }
+        public MarioStateMachine StateMachine { get; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         public static int LocationX { get; set; }
@@ -30,25 +32,12 @@ namespace SuperMario
         private int invulnTimer;
         private int starPowerTimer;
         private static ContentManager mContentManager;
-        public enum Orientations
-        {
-            CrouchingRight, CrouchingLeft,
-            RunningRight, RunningLeft,
-            StandingRight, StandingLeft,
-            Dead
-        };
-
-        public enum MarioModes
-        { Big, Fire, Small };
-
-        public static int Orientation, MarioMode;
-        IMarioState[,] StateArray;
-
-
+       
         public Mario(Texture2D texture, int rows, int columns, Vector2 location)
         {
             State = new StandingRightSmallMarioState(this);
             Texture = texture;
+            StateMachine = new MarioStateMachine(this);
             Rows = rows;
             Columns = columns;
             LocationX = (int)location.X;
@@ -65,27 +54,21 @@ namespace SuperMario
             InvulnStatus = false;
             StarStatus = false;
             RunStatus = false;
-            Orientation = (int)Orientations.StandingRight;
-            MarioMode = (int)MarioModes.Small;
-
-
-            StateArray = new IMarioState[3, 7] {
-                {new MovingDownRightBigMarioState(this), new MovingDownLeftBigMarioState(this),
-                 new RunningRightBigMarioState(this), new RunningLeftBigMarioState(this),
-                    new StandingRightBigMarioState(this), new StandingLeftBigMarioState(this), new DeadBigMarioState(this)},
-
-                {new MovingDownRightFireMarioState(this), new MovingDownLeftFireMarioState(this),
-                new RunningRightFireMarioState(this), new RunningLeftFireMarioState(this),
-                    new StandingRightFireMarioState(this), new StandingLeftFireMarioState(this), new DeadFireMarioState(this)},
-
-                {new MovingDownRightSmallMario(this), new MovingDownLeftSmallMario(this),
-                new RunningRightSmallMarioState(this), new RunningLeftSmallMarioState(this),
-                    new StandingRightSmallMarioState(this), new StandingLeftSmallMarioState(this), new DeadSmallMarioState(this)} };
         }
 
-        private IMarioState getState(int orient, int mMode)
+        public void setState()
         {
-            return StateArray[mMode, orient];
+            State = StateMachine.getState();
+        }
+
+        public int MarioMode()
+        {
+            return StateMachine.MarioMode;
+        }
+
+        public int Orientation()
+        {
+            return StateMachine.Orientation;
         }
 
         public void ResetVelocity()
@@ -95,133 +78,44 @@ namespace SuperMario
 
         public void LookLeft()
         {
-            if (Orientation == (int)Orientations.StandingLeft)
-            {
-                Orientation = (int)Orientations.RunningLeft;
-                State = getState(Orientation, MarioMode);
-            }
-
-            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningLeft))
-            {
-                Orientation = (int)Orientations.StandingLeft;
-                State = getState(Orientation, MarioMode);
-            }
+            StateMachine.LookLeft();
         }
 
         public void LookRight()
         {
-            if (Orientation == (int)Orientations.StandingRight)
-            {
-                Orientation = (int)Orientations.RunningRight;
-                State = getState(Orientation, MarioMode);
-            }
-            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningRight))
-            {
-                Orientation = (int)Orientations.StandingRight;
-                State = getState(Orientation, MarioMode);
-            }
+            StateMachine.LookRight();
         }
 
-        public void Fire()
-        {
-            if (!fireStatus)
-            {
-                bool aCreateNew = true;
-                foreach (MarioFireball aFireball in Game1.mFireballs)
-                {
-                    if (aFireball.fire == false)
-                    {
-                        aCreateNew = false;
-                        aFireball.Fire(Orientation, LocationX, LocationY);
-                        break;
-                    }
-                }
-
-                if (aCreateNew == true)
-                {
-                    MarioFireball aFireball = new MarioFireball();
-                    aFireball.LoadContent(mContentManager);
-                    Game1.mFireballs.Add(aFireball);
-                    aFireball.Fire(Orientation, LocationX, LocationY);
-                }
-                fireStatus = true;
-            }
-        }
-
-        public static void LoadContent(ContentManager theContentManager)
-        {
-            mContentManager = theContentManager;
-            foreach (MarioFireball aFireball in Game1.mFireballs)
-            {
-                aFireball.LoadContent(theContentManager);
-            }
-        }
+        
         public void LookDown()
         {
-            if (Orientation == (int)Orientations.StandingRight || Orientation == (int)Orientations.RunningRight)
-            {
-                Orientation = (int)Orientations.CrouchingRight;
-                State = getState(Orientation, MarioMode);
-            }
-            else if (Orientation == (int)Orientations.StandingLeft || Orientation == (int)Orientations.RunningLeft)
-            {
-                Orientation = (int)Orientations.CrouchingLeft;
-                State = getState(Orientation, MarioMode);
-            }
+            StateMachine.LookDown();
         }
 
 
         public void Dead()
         {
-            if (Orientation != (int)Orientations.Dead)
-            {
-                Orientation = (int)Orientations.Dead;
-                State = getState(Orientation, MarioMode);
-            }
+            StateMachine.Dead();
         }
 
         public bool isDead()
         {
-            return Orientation == (int)Orientations.Dead;
+            return StateMachine.Orientation == (int)MarioStateMachine.Orientations.Dead;
         }
 
         public void MarioBigState()
         {
-            if (MarioMode != (int)MarioModes.Big)
-            {
-                MarioMode = (int)MarioModes.Big;
-            }
-            if (Orientation == (int)Orientations.Dead)
-            {
-                Orientation = (int)Orientations.StandingRight;
-            }
-            State = getState(Orientation, MarioMode);
+            StateMachine.MarioBigState();
         }
 
         public void MarioSmallState()
         {
-            if (MarioMode != (int)MarioModes.Small)
-            {
-                MarioMode = (int)MarioModes.Small;
-            }
-            if (Orientation == (int)Orientations.Dead)
-            {
-                Orientation = (int)Orientations.StandingRight;
-            }
-            State = getState(Orientation, MarioMode);
+            StateMachine.MarioSmallState();
         }
 
         public void MarioFireState()
         {
-            if (MarioMode != (int)MarioModes.Fire)
-            {
-                MarioMode = (int)MarioModes.Fire;
-            }
-            if (Orientation == (int)Orientations.Dead)
-            {
-                Orientation = (int)Orientations.StandingRight;
-            }
-            State = getState(Orientation, MarioMode);
+            StateMachine.MarioFireState();
         }
 
         public void Jump()
@@ -235,9 +129,8 @@ namespace SuperMario
 
         public void Reset()
         {
-            Orientation = (int)Orientations.StandingRight;
-            MarioMode = (int)MarioModes.Small;
-            State = getState(Orientation, MarioMode);
+            StateMachine.Reset();
+            State = StateMachine.getState();
             LocationX = 400;
             LocationY = 350;
         }
@@ -248,6 +141,7 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
+            setState();
             KeyboardState currentKeyboardState = Keyboard.GetState();
             if (StarStatus)
             {
@@ -304,6 +198,44 @@ namespace SuperMario
             State.Draw(spriteBatch, new Vector2(LocationX, LocationY));
         }
 
+        public void Fire()
+        {
+            if (StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
+                return;
+
+            if (!fireStatus)
+            {
+                bool aCreateNew = true;
+                foreach (MarioFireball aFireball in Game1.mFireballs)
+                {
+                    if (aFireball.fire == false)
+                    {
+                        aCreateNew = false;
+                        aFireball.Fire(StateMachine.Orientation, LocationX, LocationY);
+                        break;
+                    }
+                }
+
+                if (aCreateNew == true)
+                {
+                    MarioFireball aFireball = new MarioFireball();
+                    aFireball.LoadContent(mContentManager);
+                    Game1.mFireballs.Add(aFireball);
+                    aFireball.Fire(StateMachine.Orientation, LocationX, LocationY);
+                }
+                fireStatus = true;
+            }
+        }
+
+        public static void LoadContent(ContentManager theContentManager)
+        {
+            mContentManager = theContentManager;
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                aFireball.LoadContent(theContentManager);
+            }
+        }
+
         private void UpdateFireball(GameTime GameTime)
         {
             foreach (MarioFireball aFireball in Game1.mFireballs)
@@ -327,9 +259,9 @@ namespace SuperMario
 
         }
 
-        public Rectangle Area()
+        public Rectangle Area() 
         {
-            if (MarioMode == (int)MarioModes.Small)
+            if (StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
                 return new Rectangle(LocationX + 12, LocationY + 27, 29, 33);
             else
                 return new Rectangle(LocationX + 10, LocationY + 1, 33, 65);

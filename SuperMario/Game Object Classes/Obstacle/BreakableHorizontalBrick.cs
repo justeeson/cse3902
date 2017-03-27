@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -33,12 +34,12 @@ namespace SuperMario
         }
         public void BecomeUsed()
         {
-            if (Mario.MarioMode == (int)Mario.MarioModes.Small)
+            if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
                 Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
                 timer = 1;
             }
-            if (Mario.MarioMode == (int)Mario.MarioModes.Fire || Mario.MarioMode == (int)Mario.MarioModes.Big)
+            else
             {
                 Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
                 destroyed = true;

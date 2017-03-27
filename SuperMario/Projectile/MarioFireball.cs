@@ -9,6 +9,7 @@ using SuperMario;
 using SuperMario.Interfaces;
 using System.Collections;
 using Microsoft.Xna.Framework;
+using SuperMario.MarioClass;
 
 namespace SuperMario
 {
@@ -28,6 +29,7 @@ namespace SuperMario
         private int movementTimer;
         private int marioOrientation;
         private int yVelocity, yAcceleration;
+
         public MarioFireball()
         {
             currentFrame = 0;
@@ -54,11 +56,11 @@ namespace SuperMario
                 movementTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (movementTimer > 50)
                 {
-                    if (marioOrientation == (int)Mario.Orientations.StandingRight || marioOrientation == (int)Mario.Orientations.RunningRight
-                        || marioOrientation == (int)Mario.Orientations.CrouchingRight)
+                    if (marioOrientation == (int)MarioStateMachine.Orientations.StandingRight || marioOrientation == (int)MarioStateMachine.Orientations.RunningRight
+                        || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingRight)
                             LocationX += 6;
-                    else if (marioOrientation == (int)Mario.Orientations.StandingLeft || marioOrientation == (int)Mario.Orientations.RunningLeft
-                        || marioOrientation == (int)Mario.Orientations.CrouchingLeft)
+                    else if (marioOrientation == (int)MarioStateMachine.Orientations.StandingLeft || marioOrientation == (int)MarioStateMachine.Orientations.RunningLeft
+                        || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingLeft)
                              LocationX -= 6;
                 }
                 if (movementTimer > 100)

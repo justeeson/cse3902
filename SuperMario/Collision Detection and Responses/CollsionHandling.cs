@@ -2,6 +2,7 @@
 using SuperMario.Collision_Detection_and_Responses;
 using SuperMario.Interfaces;
 using SuperMario.Levels;
+using SuperMario.MarioClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
             int check = 0;
             Rectangle marioRect = game.MarioSprite.Area();
+            IMario mario = game.MarioSprite;
 
             foreach (IItem item in LevelClass.ItemList)
             {
@@ -45,7 +47,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else
                 {
                     Rectangle testRect;
-                    if(Mario.MarioMode == (int) Mario.MarioModes.Small)
+                    if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                         testRect = new Rectangle(Mario.LocationX + 12, Mario.LocationY + 32, 29, 33);
                     else
                         testRect = new Rectangle(Mario.LocationX + 10, Mario.LocationY + 6, 33, 65);
