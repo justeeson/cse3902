@@ -41,9 +41,9 @@ namespace SuperMario
             }
 
             if (movingLeft)
-                Location = new Vector2(Location.X - 3, Location.Y);
+                Location = new Vector2(Location.X - 4, Location.Y);
             else
-                Location = new Vector2(Location.X + 3, Location.Y);
+                Location = new Vector2(Location.X + 4, Location.Y);
 
             if (isFalling)
             {

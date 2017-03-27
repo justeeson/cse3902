@@ -26,27 +26,22 @@ namespace SuperMario
             Columns = columns;
             currentFrame = 0;
             timeSinceLastFrame = 0;
-            millisecondsPerFrame = 200;
+            millisecondsPerFrame = 1500;
         }
 
         public void Update(GameTime gameTime)
         {
-            //timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            //if (timeSinceLastFrame > millisecondsPerFrame)
-            //{
-            //    timeSinceLastFrame -= millisecondsPerFrame;
-            //    currentFrame++; ;
-            //    if (currentFrame == 1000)
-            //    { currentFrame = 1; }
-            //}
-            //if (currentFrame > 1000)
-            //{
-            //    currentFrame = 0;
-            //}
-            //else
-            //{
-            //    currentFrame += 1;
-            //}
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
+            if (timeSinceLastFrame > millisecondsPerFrame)
+            {
+                timeSinceLastFrame = 0;
+                currentFrame++;
+            }
+            if (currentFrame > 3)
+            {
+                currentFrame = 0;
+            }
+           
 
 
         }

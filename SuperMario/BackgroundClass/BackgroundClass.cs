@@ -30,8 +30,6 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int marioLocation = Mario.LocationX;
-            location = new Vector2(marioLocation+location.X, location.Y);
             Sprite.Draw(spriteBatch, this.Location);
         }
 
