@@ -530,11 +530,11 @@
   <HorizontalBlock x="4128" y="152" />
   <QuestionBlock x="4160" y="152" item="coin"/>
   
-  <coin x="4160" y="182" />
+  <coin x="4161" y="182" />
   
   <QuestionBlock x="4192" y="152" item="coin"/>
   
-  <coin x="4192" y="182" item="coin"/>
+  <coin x="4193" y="182"/>
   
   <HorizontalBlock x="4224" y="152" />
   <HorizontalBlock x="4160" y="280" />
