@@ -464,7 +464,7 @@
   <coin x="768" y="310" />
   
   <HorizontalBlock x="800" y="280" />
-  <Pipe x="928" y="354" />
+  <Pipe x="928" y="351" />
   <MediumPipe x="1248" y="322" />
   <Goomba x="1312" y="384" />
   <HighPipe x="1504" y="290" />
