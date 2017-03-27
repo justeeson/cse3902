@@ -41,7 +41,7 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 33;//Texture.Width / Columns;
+            int width = 32;//Texture.Width / Columns;
             int height = 32;//Texture.Height;// / Rows;
             return new Rectangle((int)location.X - Camera.cameraPositionX, (int)location.Y, width, height);
 
