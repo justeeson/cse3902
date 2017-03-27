@@ -94,10 +94,10 @@ namespace SuperMario.Sprites
                     {
                         if (Mario.RunStatus == true)
                         {
-                            Mario.LocationX += 4;
+                            Mario.LocationX += 6;
                         }
                         else
-                            Mario.LocationX += 2;
+                            Mario.LocationX += 3;
                     }
                 }
             }

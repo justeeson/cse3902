@@ -70,7 +70,7 @@ namespace SuperMario.Sprites
                 {
                     if (Mario.LocationX <= 6350)
                     {
-                        Mario.LocationX += 4;
+                        Mario.LocationX += 6;
                     }
                     currentFrame = 10;
                 }
@@ -78,7 +78,7 @@ namespace SuperMario.Sprites
                 {
                     if (Mario.LocationX <= 6350)
                     {
-                        Mario.LocationX += 2;
+                        Mario.LocationX += 3;
                     }
                     currentFrame = 10;
                 }
