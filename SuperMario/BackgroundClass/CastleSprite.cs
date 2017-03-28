@@ -16,8 +16,6 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
 
         public CastleSprite(Texture2D texture, int rows, int columns)
         {
@@ -25,8 +23,6 @@ namespace SuperMario
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 1500;
         }
 
         public void Update(GameTime gameTime)

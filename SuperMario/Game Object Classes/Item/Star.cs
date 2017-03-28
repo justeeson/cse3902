@@ -17,9 +17,6 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
-        private float locationY;
-        private float yVelocity;
-        private float yAcceleration;
 
 
         public Star(Game1 game, Vector2 location)
@@ -29,9 +26,6 @@ namespace SuperMario
             MyGame.sprite = Sprite;
             hasBeenUsed = false;
             movingLeft = false;
-            locationY = 0;
-            yVelocity = 18;
-            yAcceleration = -1;
             isFalling = true;
             this.Location = location;
         }

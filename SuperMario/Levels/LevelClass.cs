@@ -20,7 +20,6 @@ namespace SuperMario.Levels
         public Camera camera;
 
         public LevelReader Loader;
-        private int count = 0;
 
         public LevelClass(Game1 game)
         {
