@@ -9,10 +9,11 @@ right/D : To move Mario right
 
 Z : Jump
 
-X : Shoot fireball when mario is in Fire Mode.
+X : Runing in the other state. Shoot fireball when mario is in Fire Mode. 
 
-Q = Quit program.
-R = Reset program.
+Q = Quit game.
+
+R = Reset the Mario to the start position.
 
 Note: 
 	There are alot of warnings with similarities. There are similar warning repeated in the same class because the
