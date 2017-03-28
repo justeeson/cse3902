@@ -1,0 +1,12 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 03/27/2017
+Sprint number: 4
+Name of the .cs file being reviewed: MarioFireball.cs
+Author of the .cs file being reviewed: Sebastine Justinson
+Specific comments on code quality: This is a long class, it is not hard to understand. However, the cyclomatic complexity is high. It used a lot of if else
+statements, and there are three if statement nested together. This will make code become harder to maintain. In fact some of the function or vaiable is not
+being used at this point, so it is possible to shorten this class for less than 100 lines of code.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If we try to change the fireball's speed, we could easily change the Velocity and Acceleration to the value we want. In another case, if we want to change 
+the side of the fireball, we could change the size of the destination rectangle where it being drawed.

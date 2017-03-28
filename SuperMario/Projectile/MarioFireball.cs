@@ -17,10 +17,10 @@ namespace SuperMario
     {
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
+        public float LocationX { get; set; }
+        public float LocationY { get; set; }
         private int currentFrame;
         public Texture2D Texture { get; set; }
-        public int LocationX;
-        public int LocationY;
         const int MAX_DISTANCE = 500;
         public Boolean fire;
         private int bounce;
@@ -70,8 +70,13 @@ namespace SuperMario
             }
         }
 
+        public void KillFireball()
+        {
+            fire = false;
+        }
         public void Fire(int orientation, int LocationX, int LocationY)
         {
+            //if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
@@ -89,7 +94,7 @@ namespace SuperMario
                 int column = currentFrame % 1;
                 this.spriteBatch = spriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle(LocationX - Camera.cameraPositionX, LocationY, width / 2, height / 2);
+                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.cameraPositionX, (int)LocationY, width / 2, height / 2);
                 spriteBatch.Begin();
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 spriteBatch.End();

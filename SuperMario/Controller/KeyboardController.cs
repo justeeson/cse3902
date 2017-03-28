@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using SuperMario.Interfaces;
 using SuperMario.Command;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Controller
 {
@@ -14,10 +15,12 @@ namespace SuperMario.Controller
     {
         private Dictionary<Keys, ICommand> controllerMappings;
         private ICommand command;
+        private IMario mario;
 
         public KeyboardController()
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
+            mario = Game1.Self.MarioSprite;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
