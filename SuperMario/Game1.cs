@@ -81,7 +81,7 @@ namespace SuperMario
 
       
 
-        public static int xPos, yPos, xMax, yMax;
+        public static int xMax, yMax;
         
         private static ArrayList Valid_Keys;
         public static ArrayList validKeys
@@ -144,8 +144,6 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
             xMax = GraphicsDevice.Viewport.Width;
             yMax = GraphicsDevice.Viewport.Height;
-            xPos = xMax / 2;
-            yPos = yMax / 2;
         }
 
         protected override void UnloadContent()
@@ -168,9 +166,6 @@ namespace SuperMario
         protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            //SpriteBatch.Begin();
-            //SpriteBatch.Draw(background, mainFrame, Color.White);
-            //SpriteBatch.End();
             World.Draw(Location);
  
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
