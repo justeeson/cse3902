@@ -14,7 +14,7 @@ namespace SuperMario
         public FlagPole(Game1 game, Vector2 location)
         {
             this.MyGame = game;
-            this.Sprite = SpriteFactory.CreateBackground();
+            this.Sprite = SpriteFactory.CreateFlagPole();
             MyGame.sprite = Sprite;
             this.Location = location;
         }

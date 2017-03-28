@@ -446,17 +446,17 @@
 
   <Goomba x="700" y="150" />
   <QuestionBlock x="544" y="280" item="coin" />
-  
+
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="growmushroom" />
-  
-  
+
+
   <HorizontalBlock x="736" y="280" />
   <QuestionBlock x="736" y="152" item="coin" />
 
-  
+
   <QuestionBlock x="768" y="280" item="coin"/>
-  
+
   <HorizontalBlock x="800" y="280" />
   <Pipe x="928" y="351" />
   <MediumPipe x="1248" y="343" />
@@ -468,7 +468,7 @@
   <hiddenBlock x="2080" y="248" />
   <HorizontalBlock x="2528" y="280" />
   <QuestionBlock x="2560" y="280" item="flower"/>
-  
+
   <HorizontalBlock x="2592" y="280" />
 
 
@@ -487,25 +487,25 @@
   <HorizontalBlock x="3008" y="152" />
   <HorizontalBlock x="3040" y="152" />
   <QuestionBlock x="3072" y="152" item="coin"/>
-  
+
   <HorizontalBlockWithItem x="3072" y="280" />
-    
+
   <Goomba x="3200" y="384" />
   <Goomba x="3250" y="384" />
 
   <HorizontalBlock x="3232" y="280" />
   <HorizontalBlockWithItem x="3264" y="280" />
-  
+
   <Koopa x="3420" y="368" />
 
   <QuestionBlock x="3424" y="280" item="coin"/>
-  
+
   <QuestionBlock x="3520" y="280" item="coin"/>
-  
+
   <QuestionBlock x="3616" y="280" item="coin"/>
-  
+
   <QuestionBlock x="3520" y="152" item="firemushroom"/>
-    
+
   <HorizontalBlock x="3808" y="280" />
   <HorizontalBlock x="3904" y="152" />
   <HorizontalBlock x="3936" y="152" />
@@ -513,9 +513,9 @@
 
   <HorizontalBlock x="4128" y="152" />
   <QuestionBlock x="4160" y="152" item="coin"/>
-  
+
   <QuestionBlock x="4192" y="152" item="coin"/>
-  
+
   <HorizontalBlock x="4224" y="152" />
   <HorizontalBlock x="4160" y="280" />
   <HorizontalBlock x="4192" y="280" />
@@ -555,7 +555,7 @@
   <SolidBrick x="4864" y="352" />
   <SolidBrick x="4864" y="320" />
   <SolidBrick x="4864" y="288" />
-  
+
   <SolidBrick x="5056" y="384" />
   <SolidBrick x="5024" y="384" />
   <SolidBrick x="5024" y="352" />
@@ -627,7 +627,7 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
 
-  <FlagPole x="6300" y="58" />
+  <FlagPole x="6200" y="69" />
   <Castle x="6400" y="258" />
 
   <mario x="250" y="100" />

@@ -16,8 +16,7 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
+      
 
         public FlagPoleSprite(Texture2D texture, int rows, int columns)
         {
@@ -25,22 +24,12 @@ namespace SuperMario
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            timeSinceLastFrame = 0;
-            millisecondsPerFrame = 1500;
+            
         }
 
         public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
-            if (timeSinceLastFrame > millisecondsPerFrame)
-            {
-                timeSinceLastFrame = 0;
-                currentFrame++;
-            }
-            if (currentFrame > 3)
-            {
-                currentFrame = 0;
-            }
+            
            
 
 
@@ -48,7 +37,7 @@ namespace SuperMario
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 58;
-            int height = 338;
+            int height = 348;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
