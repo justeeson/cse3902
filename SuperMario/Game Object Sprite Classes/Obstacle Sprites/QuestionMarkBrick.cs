@@ -65,10 +65,9 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width  = 21; 
-            int height = 25;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
-            //32
+            int currentWidth = 21;
+            int currentHeight = 25;
+            return new Rectangle((int)location.X, (int)location.Y, currentWidth, currentHeight);
         }
         public void CollisionSprite()
         {

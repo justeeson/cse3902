@@ -37,7 +37,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
 
 
-       static void  CollideBottom(IMario mario, IEnemy item, Rectangle collisionRectangle)
+       private static void  CollideBottom(IMario mario, IEnemy item, Rectangle collisionRectangle)
         {
             Mario.LocationY += collisionRectangle.Height + 1;
             if (item.CanAttack && !Mario.StarStatus && !Mario.InvulnStatus)
@@ -69,14 +69,14 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         }
 
-        static void CollideTop(IMario mario, IEnemy item, Rectangle collisionRectangle)
+        private static void CollideTop(IMario mario, IEnemy item, Rectangle collisionRectangle)
         {
             Mario.LocationY -= collisionRectangle.Height + 1;
             item.GetKilled();
             item.CanAttack = false;
         }
 
-        static void CollideRight(IMario mario, IEnemy item, Rectangle collisionRectangle)
+        private static void CollideRight(IMario mario, IEnemy item, Rectangle collisionRectangle)
         {
             item.MovingLeft = true;
             Mario.LocationX += collisionRectangle.Width + 1;
@@ -107,7 +107,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
             }
         }
-        static void CollideLeft(IMario mario, IEnemy item, Rectangle collisionRectangle)
+        private static void CollideLeft(IMario mario, IEnemy item, Rectangle collisionRectangle)
         {
             item.MovingLeft = false;
             Mario.LocationX -= collisionRectangle.Width + 1;
