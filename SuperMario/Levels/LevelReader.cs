@@ -47,7 +47,6 @@ namespace SuperMario.Levels
                         LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
                         break;
                     case "HorizontalBlockWithItem":
-                        // This Block need more implementation
                         LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
                         break;
                     case "Pipe":
