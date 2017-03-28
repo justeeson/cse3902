@@ -178,6 +178,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BurndownChartAssessment.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Dellon Collins%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Readability Review.txt" />
@@ -199,6 +200,7 @@
     <Content Include="CodeReview\CodeReviewSprint4\Dellon Collins%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Son Le%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Son Le%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint4\Sebastin Justeeson%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />

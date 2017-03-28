@@ -111,11 +111,8 @@ namespace SuperMario
             texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            //Mario = new Mario(texture, 3, 12);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
-            /*store = new ObjectAndSpriteStore(this);
-            store.Initialize(this);*/
             block = new BlockLogic(this);
             Mario.LoadContent(Content);
             World = new WorldManager(this);
@@ -168,9 +165,6 @@ namespace SuperMario
         protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            //SpriteBatch.Begin();
-            //SpriteBatch.Draw(background, mainFrame, Color.White);
-            //SpriteBatch.End();
             World.Draw(Location);
  
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));

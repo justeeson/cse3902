@@ -1,0 +1,15 @@
+﻿Author of the code review: Sebastin Justeeson
+Date of the code review: 03/27/2017
+Sprint number: 4
+Name of the .cs file being reviewed: Camera.cs
+Author of the .cs file being reviewed: Yihang Du
+Specific comments on code quality: This is a very short class and is extremely easy to understand. The cohesion is quite high
+since all the member variables and functions are directly relevant to what the camera class aims to do. The variables have 
+also been named very aptly and their intent is immediately clear. The cyclomatic complexity is quite low as there are only a 
+bunch of if statements.
+
+One hypothetical change that could be made in order to improve the code is to use constant variables instead of utilizing
+magic numbers. These magic numbers make the code slightly harder to understand for an outside reviewer who may not immediately
+understand why those specific numbers have been chosen. For example, instead of using the number 6350 directly, a constant 
+variable named 'EndOfLevel' could have been used. This would make the code easier to maintain and extend for others classes.
+This would also improve the readability.
