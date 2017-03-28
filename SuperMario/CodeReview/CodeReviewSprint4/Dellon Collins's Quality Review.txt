@@ -1,0 +1,10 @@
+Author of the code review: Dellon Collins
+Date of the code review: 02/27/2017
+Sprint number: 3
+Name of the .cs file being reviewed: flower.cs
+Author of the .cs file being reviewed: Son Le
+The class holds all properties of object flower. It performs its tasks like drawing, update, and respond to
+collision. Thus, the class has high cohesion inside itself. Also, the class has low coupling since it only uses 
+internal variables which a few interferes with other classes if we just compare those varibles within the class.
+This class has good design. It allows us to update any features to the game easily and add other properties to
+the class if necessary in the future.
