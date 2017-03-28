@@ -520,8 +520,6 @@
   <HorizontalBlock x="4160" y="280" />
   <HorizontalBlock x="4192" y="280" />
 
-  <Goomba x="3904" y="384" />
-  <Goomba x="3946" y="384" />
   <Goomba x="3998" y="384" />
   <Goomba x="4040" y="384" />
 
