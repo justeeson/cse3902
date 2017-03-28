@@ -47,8 +47,8 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 116;
-            int height = 400;
+            int width = 58;
+            int height = 338;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
