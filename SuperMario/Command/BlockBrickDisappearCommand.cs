@@ -9,11 +9,9 @@ namespace SuperMario.Command
 {
     class BlockBrickDisappearCommand : ICommand
     {
-        private Game1 MyGame;
 
         public BlockBrickDisappearCommand(Game1 game)
         {
-            MyGame = game;
         }
         public void Execute()
         {

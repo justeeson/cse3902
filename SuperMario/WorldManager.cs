@@ -11,8 +11,10 @@ namespace SuperMario
 {
     public class WorldManager
     {
-        public Game1 MyGame;
-        public LevelClass Level;
+        public Game1 MyGame
+        {get ; set;}
+    public LevelClass Level
+        {get ; set;}
 
         public WorldManager(Game1 game)
         {

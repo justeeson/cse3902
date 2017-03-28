@@ -4,14 +4,15 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    class MarioAndEnemyCollisionHandling
+    public static class MarioAndEnemyCollisionHandling
     {
         
 
         public static void HandleCollision(IMario mario, IEnemy item)
         {
-            Rectangle collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
             ISprite enemy = item.Sprite;
+            Rectangle collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
+            
 
             if (collisionRectangle.Bottom == enemy.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    class MarioAndItemCollisionResponser
+    public static class MarioAndItemCollisionResponser
     {
         public static void Response(IMario mario, IItem item)
         {

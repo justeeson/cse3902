@@ -4,7 +4,7 @@ using System;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    public class ItemAndBlockCollisionHandling
+    public static class ItemAndBlockCollisionHandling
     {
         public static void HandleCollision(IItem powerup, IBlock item)
         {
