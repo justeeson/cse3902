@@ -19,7 +19,7 @@ namespace SuperMario.Levels
 
         public void Load()
         {
-            XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
+            XmlDocument xmlDoc = new XmlDocument(); 
             xmlDoc.Load("../../../../Levels/Level.xml");
             XmlNodeList nodeList = xmlDoc.ChildNodes[1].ChildNodes;
             for(int i = 0; i < nodeList.Count; i++)
@@ -53,12 +53,10 @@ namespace SuperMario.Levels
                         LevelClass.BlockList.Add(new Pipe(MyGame, Location));
                         break;
                     case "MediumPipe":
-                        // TO DO: This need to be medium pipe instead of short
-                        LevelClass.BlockList.Add(new Pipe(MyGame, Location));
+                        LevelClass.BlockList.Add(new MediumPipe(MyGame, Location));
                         break;
                     case "HighPipe":
-                        // TO DO: This need to be high pipe instead of short
-                        LevelClass.BlockList.Add(new Pipe(MyGame, Location));
+                        LevelClass.BlockList.Add(new HighPipe(MyGame, Location));
                         break;
                     case "FlagPole":
                         LevelClass.BlockList.Add(new FlagPole(MyGame, Location));
