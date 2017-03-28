@@ -28,6 +28,7 @@ namespace SuperMario
         private SpriteBatch spriteBatch;
         private int movementTimer;
         private int marioOrientation;
+        private int mode;
         private int yVelocity, yAcceleration;
 
         public MarioFireball()
@@ -74,15 +75,16 @@ namespace SuperMario
         {
             fire = false;
         }
-        public void Fire(int orientation, int LocationX, int LocationY)
+        public void Fire(int orientation, int marioMode, int LocationX, int LocationY)
         {
-            //if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
             yVelocity = 3;
             marioOrientation = orientation;
-            fire = true;
+            mode = marioMode;
+            if(mode == (int)MarioStateMachine.MarioModes.Fire)
+                fire = true;
         }
         public void Draw(SpriteBatch spriteBatch)
         {

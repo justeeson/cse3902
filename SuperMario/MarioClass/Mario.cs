@@ -218,7 +218,7 @@ namespace SuperMario
                     if (aFireball.fire == false)
                     {
                         aCreateNew = false;
-                        aFireball.Fire(StateMachine.Orientation, LocationX, LocationY);
+                        aFireball.Fire(StateMachine.Orientation, StateMachine.MarioMode, LocationX, LocationY);
                         break;
                     }
                 }
@@ -228,7 +228,7 @@ namespace SuperMario
                     MarioFireball aFireball = new MarioFireball();
                     aFireball.LoadContent(mContentManager);
                     Game1.mFireballs.Add(aFireball);
-                    aFireball.Fire(StateMachine.Orientation, LocationX, LocationY);
+                    aFireball.Fire(StateMachine.Orientation, StateMachine.MarioMode, LocationX, LocationY);
                 }
                 fireStatus = true;
             }
