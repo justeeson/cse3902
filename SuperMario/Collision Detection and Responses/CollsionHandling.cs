@@ -25,6 +25,18 @@ namespace SuperMario.Collision_Detection_and_Responses
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
 
+            MarioDetection( level,  game,  marioRect, mario);
+            BlockDetection(level, game, marioRect, marioCheck);
+            EnemyDetection( level,  game,  marioRect,  mario);
+            ItemDetection( level,  game,  marioRect,  itemCheck);
+            FireballDetection( level,  game,  marioRect, mario);
+
+        }
+
+
+
+        private static void MarioDetection(LevelClass level, Game1 game, Rectangle marioRect, IMario mario)
+        {
             foreach (IItem item in LevelClass.ItemList)
             {
                 Rectangle itemRect = item.Area();
@@ -34,7 +46,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                     MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
                 }
             }
+        }
 
+
+        private static void BlockDetection(LevelClass level, Game1 game, Rectangle marioRect, int marioCheck)
+        {
             foreach (IBlock item in LevelClass.BlockList)
             {
                 Rectangle blockRect = item.Sprite.Area(item.Location);
@@ -62,7 +78,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     Rectangle ballRect = fireBall.Area();
                     if (ballRect.Intersects(blockRect))
                     {
-                       
+
                         MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                     }
                 }
@@ -83,6 +99,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = true;
                 Mario.GroundedStatus = false;
             }
+        }
+
+
+        private static void EnemyDetection(LevelClass level, Game1 game, Rectangle marioRect, IMario mario)
+        {
             foreach (IEnemy item in LevelClass.EnemyList)
             {
 
@@ -108,6 +129,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                     }
                 }
             }
+        }
+
+
+        private static void ItemDetection(LevelClass level, Game1 game, Rectangle marioRect, int itemCheck)
+        {
 
             for (int i = 0; i < LevelClass.ItemList.Count; i++)
             {
@@ -139,17 +165,23 @@ namespace SuperMario.Collision_Detection_and_Responses
                     item.IsFalling = true;
                 }
             }
+        }
 
+
+
+
+        private static void FireballDetection(LevelClass level, Game1 game, Rectangle marioRect, IMario mario)
+        {
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 Rectangle projectileRect = aFireball.Area();
-                for(int i = 0; i < LevelClass.BlockList.Count; i++)
+                for (int i = 0; i < LevelClass.BlockList.Count; i++)
                 {
                     IBlock block = LevelClass.BlockList.ElementAt<IBlock>(i);
-                    if(projectileRect.Intersects(block.Sprite.Area(block.Location)))
-                        {
-                         ProjectileAndBlockCollisionHandling.HandleCollision(aFireball, block);
-                        }
+                    if (projectileRect.Intersects(block.Sprite.Area(block.Location)))
+                    {
+                        ProjectileAndBlockCollisionHandling.HandleCollision(aFireball, block);
+                    }
                 }
                 projectileRect = aFireball.Area();
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)
@@ -158,9 +190,10 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                     if (projectileRect.Intersects(enemyInList.Sprite.Area(enemyInList.Location)))
                         ProjectileAndEnemyCollisionHandling.HandleCollision(enemyInList, aFireball);
-                  
+
                 }
             }
         }
+
     }
 }
