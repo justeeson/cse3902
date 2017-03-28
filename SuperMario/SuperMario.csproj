@@ -69,9 +69,13 @@
     <Compile Include="Collision Detection and Responses\ItemAndBlockCollisionHandling.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
+    <Compile Include="Game Object Classes\Obstacle\HighPipe.cs" />
+    <Compile Include="Game Object Classes\Obstacle\MediumPipe.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickForSmallMarioSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HighPipeSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\MediumPipeSprite.cs" />
     <Compile Include="Interfaces\IMarioStateMachine.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="MarioClass\MarioStateMachine.cs" />
