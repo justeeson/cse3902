@@ -51,7 +51,7 @@ namespace SuperMario
             invulnTimer = 0;
             yAcceleration = -1;
             yVelocity = 0;
-            JumpStatus = true;
+            JumpStatus = false;
             DisableJump = false;
             GroundedStatus = false;
             InvulnStatus = false;
@@ -125,7 +125,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && !(Mario.DisableJump == true))
             {
-                yVelocity = 18;
+                yVelocity = 19;
                 Mario.JumpStatus = true;
             }
         }
@@ -191,6 +191,7 @@ namespace SuperMario
         
             if (!GroundedStatus && !JumpStatus)
             {
+                DisableJump = true;
                 Mario.LocationY+= 5;
             }
             UpdateFireball(GameTime);
@@ -208,8 +209,8 @@ namespace SuperMario
 
         public void Fire()
         {
-            if (StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
-                return;
+            /*if (StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
+                return;*/
 
             if (!fireStatus)
             {

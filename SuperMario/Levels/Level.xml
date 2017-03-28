@@ -445,7 +445,7 @@
 
 
   <Goomba x="700" y="384" />
-  <QuestionBlock x="544" y="280" item="star" /> 
+  <QuestionBlock x="544" y="280" item="coin" />
   
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="growmushroom" />
@@ -488,40 +488,24 @@
   <HorizontalBlock x="3040" y="152" />
   <QuestionBlock x="3072" y="152" item="coin"/>
   
-  <coin x="3072" y="182" />
-  
   <HorizontalBlockWithItem x="3072" y="280" />
-  
-  <coin x="3072" y="310" />
-
-  
+    
   <Goomba x="3200" y="384" />
   <Goomba x="3250" y="384" />
 
   <HorizontalBlock x="3232" y="280" />
   <HorizontalBlockWithItem x="3264" y="280" />
   
-  <coin x="3264" y="310" />
-
-  
   <Koopa x="3420" y="368" />
 
   <QuestionBlock x="3424" y="280" item="coin"/>
   
-  <coin x="3424" y="310" />
-  
   <QuestionBlock x="3520" y="280" item="coin"/>
-  
-  <coin x="3520" y="310" />
   
   <QuestionBlock x="3616" y="280" item="coin"/>
   
-  <coin x="3616" y="310" />
-  
   <QuestionBlock x="3520" y="152" item="firemushroom"/>
-  
-  <fireMushroom x="3520" y="182" />
-  
+    
   <HorizontalBlock x="3808" y="280" />
   <HorizontalBlock x="3904" y="152" />
   <HorizontalBlock x="3936" y="152" />
@@ -530,11 +514,7 @@
   <HorizontalBlock x="4128" y="152" />
   <QuestionBlock x="4160" y="152" item="coin"/>
   
-  <coin x="4161" y="182" />
-  
   <QuestionBlock x="4192" y="152" item="coin"/>
-  
-  <coin x="4193" y="182"/>
   
   <HorizontalBlock x="4224" y="152" />
   <HorizontalBlock x="4160" y="280" />
