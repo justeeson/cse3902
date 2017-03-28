@@ -64,6 +64,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
+    <Compile Include="Collision Detection and Responses\FireBallAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\ItemAndBlockCollisionHandling.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />

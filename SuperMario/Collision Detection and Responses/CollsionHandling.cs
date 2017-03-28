@@ -56,6 +56,16 @@ namespace SuperMario.Collision_Detection_and_Responses
                     }
                     testRect.Y -= 5;
                 }
+                blockRect = item.Sprite.Area(item.Location);
+                foreach (MarioFireball fireBall in Game1.mFireballs)
+                {
+                    Rectangle ballRect = fireBall.Area();
+                    if (ballRect.Intersects(blockRect))
+                    {
+                       
+                        MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
+                    }
+                }
 
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)
                 {
