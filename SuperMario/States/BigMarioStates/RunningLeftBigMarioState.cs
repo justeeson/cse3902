@@ -69,7 +69,7 @@ namespace SuperMario.Sprites
                     currentFrame = 13;
                     if (Mario.LocationX >= -400)
                     {
-                        Mario.LocationX -= 4;
+                        Mario.LocationX -= 6;
                     }
                 }
                 else if (Mario.JumpStatus)
@@ -77,7 +77,7 @@ namespace SuperMario.Sprites
                     currentFrame = 13;
                     if (Mario.LocationX >= -400)
                     {
-                        Mario.LocationX -= 2;
+                        Mario.LocationX -= 3;
                     }
                 }
                 else

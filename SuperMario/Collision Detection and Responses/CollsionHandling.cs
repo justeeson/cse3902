@@ -38,8 +38,8 @@ namespace SuperMario.Collision_Detection_and_Responses
             foreach (IBlock item in LevelClass.BlockList)
             {
                 Rectangle blockRect = item.Sprite.Area(item.Location);
-                 Rectangle testRect = marioRect;
-                    testRect.Y += 5;
+                Rectangle testRect = marioRect;
+                testRect.Y += 5;
                 if (marioRect.Intersects(blockRect))
                 {
                     Mario.DisableJump = false;
@@ -55,6 +55,16 @@ namespace SuperMario.Collision_Detection_and_Responses
                         marioCheck = 1;
                     }
                     testRect.Y -= 5;
+                }
+                blockRect = item.Sprite.Area(item.Location);
+                foreach (MarioFireball fireBall in Game1.mFireballs)
+                {
+                    Rectangle ballRect = fireBall.Area();
+                    if (ballRect.Intersects(blockRect))
+                    {
+                       
+                        MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
+                    }
                 }
 
                 for (int i = 0; i < LevelClass.EnemyList.Count; i++)
@@ -82,7 +92,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     MarioAndEnemyCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }
-                               
+
             }
 
 
@@ -128,6 +138,29 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     IItem item = LevelClass.ItemList.ElementAt<IItem>(i);
                     item.isFalling = true;
+                }
+            }
+
+            //projectile and block collision
+            foreach (MarioFireball aFireball in Game1.mFireballs)
+            {
+                Rectangle projectileRect = aFireball.Area();
+                for(int i = 0; i < LevelClass.BlockList.Count; i++)
+                {
+                    IBlock block = LevelClass.BlockList.ElementAt<IBlock>(i);
+                    if(projectileRect.Intersects(block.Sprite.Area(block.Location)))
+                        {
+                         ProjectileAndBlockCollisionHandling.HandleCollision(aFireball, block);
+                        }
+                }
+                projectileRect = aFireball.Area();
+                for (int i = 0; i < LevelClass.EnemyList.Count; i++)
+                {
+                    IEnemy enemyInList = LevelClass.EnemyList.ElementAt<IEnemy>(i);
+
+                    if (projectileRect.Intersects(enemyInList.Sprite.Area(enemyInList.Location)))
+                        ProjectileAndEnemyCollisionHandling.HandleCollision(enemyInList, aFireball);
+                  
                 }
             }
         }

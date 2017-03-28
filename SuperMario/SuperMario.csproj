@@ -64,6 +64,8 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
+    <Compile Include="Collision Detection and Responses\ProjectileAndEnemyCollisionHandling.cs" />
+    <Compile Include="Collision Detection and Responses\ProjectileAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\ItemAndBlockCollisionHandling.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
@@ -196,6 +198,7 @@
     <Content Include="CodeReview\CodeReviewSprint4\Dellon Collins%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Son Le%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Son Le%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />

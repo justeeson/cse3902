@@ -181,7 +181,8 @@ namespace SuperMario
             if(RunStatus)
             {
                 KeyboardState newKeyboardState = Keyboard.GetState();
-                if(!(newKeyboardState.IsKeyDown(Keys.X)))
+                GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
+                if (!(newKeyboardState.IsKeyDown(Keys.X)) && !newGamepadState.IsButtonDown(Buttons.B))
                 {
                     RunStatus = false;
                 }
@@ -208,8 +209,6 @@ namespace SuperMario
 
         public void Fire()
         {
-            /*if (StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
-                return;*/
 
             if (!fireStatus)
             {

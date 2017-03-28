@@ -13,6 +13,7 @@ namespace SuperMario.Controller
     public class GamepadController : IController
     {
         private Dictionary<Buttons, ICommand> controllerMappings;
+        private ICommand command;
 
         public GamepadController()
         {
@@ -26,7 +27,6 @@ namespace SuperMario.Controller
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             
-
             if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickLeft))
             {
                 controllerMappings[Buttons.LeftThumbstickLeft].Execute();
@@ -37,14 +37,24 @@ namespace SuperMario.Controller
                 controllerMappings[Buttons.LeftThumbstickRight].Execute();
             }
 
-            else if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickUp))
-            {
-                controllerMappings[Buttons.LeftThumbstickUp].Execute();
-            }
-
             else if (currentState.IsConnected && currentState.IsButtonDown(Buttons.LeftThumbstickDown))
             {
                 controllerMappings[Buttons.LeftThumbstickDown].Execute();
+            }
+
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.A))
+            {
+                controllerMappings[Buttons.A].Execute();
+            }
+
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
+            {
+                controllerMappings[Buttons.B].Execute();
+            }
+            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
+            {
+                command = new MarioFireCommand(Game1.Self);
+                command.Execute();
             }
         }
 
