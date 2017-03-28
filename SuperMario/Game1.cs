@@ -16,7 +16,7 @@ namespace SuperMario
     {
         private GraphicsDeviceManager graphics;
         public SpriteBatch SpriteBatch;
-        public Texture2D texture { get; set; }
+        public Texture2D Texture { get; set; }
         private Texture2D background;
         private Rectangle mainFrame;
         public GameTime GameTime;
@@ -26,7 +26,7 @@ namespace SuperMario
         public WorldManager World;
         public LevelClass Level;
         public Vector2 Location { get; set; }
-        public static List<MarioFireball> mFireballs = new List<MarioFireball>();
+        public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
 
         public ISprite Sprite
         { get; set; }
@@ -68,7 +68,7 @@ namespace SuperMario
         protected override void LoadContent()
         {
             SpriteBatch = new SpriteBatch(GraphicsDevice);
-            texture = Content.Load<Texture2D>("MarioSheet");
+            Texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
@@ -131,7 +131,7 @@ namespace SuperMario
             World.Draw(Location);
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            foreach (MarioFireball aFireball in Game1.mFireballs)
+            foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 aFireball.Draw(SpriteBatch);
             }

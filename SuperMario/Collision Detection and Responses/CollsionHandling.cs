@@ -57,7 +57,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     testRect.Y -= 5;
                 }
                 blockRect = item.Sprite.Area(item.Location);
-                foreach (MarioFireball fireBall in Game1.mFireballs)
+                foreach (MarioFireball fireBall in Game1.Mfireballs)
                 {
                     Rectangle ballRect = fireBall.Area();
                     if (ballRect.Intersects(blockRect))
@@ -96,7 +96,6 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
 
 
-            //enemy and enemy collision
             for (int i = 0; i < LevelClass.EnemyList.Count - 1; i++)
             {
                 for (int j = i + 1; j < LevelClass.EnemyList.Count; j++)
@@ -141,8 +140,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
             }
 
-            //projectile and block collision
-            foreach (MarioFireball aFireball in Game1.mFireballs)
+            foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 Rectangle projectileRect = aFireball.Area();
                 for(int i = 0; i < LevelClass.BlockList.Count; i++)
