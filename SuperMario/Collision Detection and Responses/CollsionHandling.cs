@@ -38,21 +38,21 @@ namespace SuperMario.Collision_Detection_and_Responses
             foreach (IBlock item in LevelClass.BlockList)
             {
                 Rectangle blockRect = item.Sprite.Area(item.Location);
-                 
+                 Rectangle testRect = marioRect;
+                    testRect.Y += 5;
                 if (marioRect.Intersects(blockRect))
                 {
                     Mario.DisableJump = false;
-                    MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);                 
+                    MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }
-                else
+                else if (true)
                 {
-                    Rectangle testRect = marioRect;
-                    testRect.Y += 5;
+
                     if (testRect.Intersects(blockRect))
                     {
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
-                        marioCheck = 1;                      
+                        marioCheck = 1;
                     }
                     testRect.Y -= 5;
                 }
@@ -73,7 +73,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = true;
                 Mario.GroundedStatus = false;
             }
-
             foreach (IEnemy item in LevelClass.EnemyList)
             {
 

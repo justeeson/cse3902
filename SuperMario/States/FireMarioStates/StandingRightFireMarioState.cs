@@ -53,7 +53,7 @@ namespace SuperMario.Sprites
 
             if (Mario.JumpStatus)
             {
-                currentFrame = 35;
+                currentFrame = 34;
             }
             else
                 currentFrame = 30;

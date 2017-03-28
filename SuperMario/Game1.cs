@@ -137,8 +137,9 @@ namespace SuperMario
 
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
-            //KeyboardController.RegisterCommand(Keys.X, new MarioFireCommand(this));
-            KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
+            KeyboardController.RegisterCommand(Keys.X, new MarioFireCommand(this));
+            KeyboardController.RegisterCommand(Keys.C, new MarioRunCommand(this));
+
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
