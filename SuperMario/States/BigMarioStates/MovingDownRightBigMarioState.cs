@@ -64,7 +64,7 @@ namespace SuperMario.Sprites
             }
             else
             {
-                currentFrame = 18;
+                mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Big;
                 mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingRight;
             }
         }

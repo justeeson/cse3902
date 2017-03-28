@@ -54,6 +54,10 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BackgroundClass\CastleClass.cs" />
+    <Compile Include="BackgroundClass\FlagPoleClass.cs" />
+    <Compile Include="BackgroundClass\CastleSprite.cs" />
+    <Compile Include="BackgroundClass\FlagPoleSprite.cs" />
     <Compile Include="BackgroundClass\BackgroundSprite.cs" />
     <Compile Include="BackgroundClass\BackgroundClass.cs" />
     <Compile Include="BlockClass\BlockLogic.cs" />

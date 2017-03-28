@@ -17,6 +17,10 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public bool hasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
+        private float locationY;
+        private float yVelocity;
+        private float yAcceleration;
+
 
         public Star(Game1 game, Vector2 location)
         {
@@ -24,11 +28,35 @@ namespace SuperMario
             Sprite = SpriteFactory.CreateStar();
             MyGame.sprite = Sprite;
             hasBeenUsed = false;
+            movingLeft = false;
+            locationY = 0;
+            yVelocity = 18;
+            yAcceleration = -1;
+            isFalling = true;
             this.Location = location;
         }
 
         public void Update(GameTime GameTime)
         {
+            if (Location.X - Camera.cameraPositionX < 0)
+            {
+                movingLeft = !movingLeft;
+            }
+            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            {
+                movingLeft = !movingLeft;
+            }
+
+            if (movingLeft)
+                Location = new Vector2(Location.X - 4, Location.Y);
+            else
+                Location = new Vector2(Location.X + 4, Location.Y);
+
+            if (isFalling)
+            {
+                Location = new Vector2(Location.X, Location.Y + 3);
+            }
+
             Sprite.Update(GameTime);
         }
         public Rectangle Area()

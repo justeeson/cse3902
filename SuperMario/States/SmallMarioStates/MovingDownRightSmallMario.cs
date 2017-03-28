@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using Microsoft.Xna.Framework.Input;
-
+using SuperMario.MarioClass;
 namespace SuperMario.Sprites
 {
     public class MovingDownRightSmallMario : IMarioState
@@ -25,34 +25,13 @@ namespace SuperMario.Sprites
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
+            
         }
 
         public void Update(GameTime GameTime)
         {
-            KeyboardState newKeyboardState = Keyboard.GetState();
-            GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
-            if (Mario.StarStatus)
-            {
-                nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
-                if (nextFlashTime > millisecondsPerFlash)
-                {
-                    nextFlashTime -= millisecondsPerFlash;
-                    if (flashStatus == 0)
-                    {
-                        flashStatus = 1;
-                    }
-
-                    else if (flashStatus == 1)
-                    {
-                        flashStatus = 0;
-                    }
-
-                }
-            }
-            else
-            {
-                flashStatus = 0;
-            }
+            mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
+            mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingRight;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

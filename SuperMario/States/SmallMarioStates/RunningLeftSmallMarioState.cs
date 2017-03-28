@@ -66,11 +66,19 @@ namespace SuperMario.Sprites
             }
             if (newKeyboardState.IsKeyDown(Keys.Left) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft) || newKeyboardState.IsKeyDown(Keys.A))
             {
-                if (Mario.JumpStatus)
+                if (Mario.JumpStatus && Mario.RunStatus)
                 {
                     if (Mario.LocationX >= -400)
                     {
-                        Mario.LocationX -= 2;
+                        Mario.LocationX -= 6;
+                    }
+                    currentFrame = 1;
+                }
+                else if (Mario.JumpStatus)
+                {
+                    if (Mario.LocationX >= -400)
+                    {
+                        Mario.LocationX -= 3;
                     }
                     currentFrame = 1;
                 }
@@ -103,7 +111,6 @@ namespace SuperMario.Sprites
             {
                 mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
                 mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingLeft;
-                currentFrame = 5;
             }
         }
 

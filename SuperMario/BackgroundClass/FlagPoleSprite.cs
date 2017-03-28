@@ -10,42 +10,45 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class StarSprite : ISprite
+    class FlagPoleSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        public StarSprite(Texture2D texture, int rows, int columns)
+
+        public FlagPoleSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 1;
+            currentFrame = 0;
             timeSinceLastFrame = 0;
-            millisecondsPerFrame = 250;
+            millisecondsPerFrame = 1500;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
-            timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
+            timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
             if (timeSinceLastFrame > millisecondsPerFrame)
             {
-                timeSinceLastFrame -= millisecondsPerFrame;
+                timeSinceLastFrame = 0;
                 currentFrame++;
             }
+            if (currentFrame > 3)
+            {
+                currentFrame = 0;
+            }
+           
 
-            if (currentFrame == 4)
-            { currentFrame = 1; }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 28;
-            int height = 27;
+            int width = 300;
+            int height = 700;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -61,8 +64,8 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {
-            int width = 27;
-            int height = 27;
+            int width = Texture.Width / Columns;
+            int height = Texture.Height / Rows;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }

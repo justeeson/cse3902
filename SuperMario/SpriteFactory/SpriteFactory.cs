@@ -28,6 +28,9 @@ namespace SuperMario
         public static Texture2D breakableCurlyBrickTexture;
         public static Texture2D pipeTexture;
         public static Texture2D backgroundTexture;
+        public static Texture2D flagPoleTexture;
+        public static Texture2D castleTexture;
+
 
         public static void LoadAllTextures(ContentManager content)
         {
@@ -46,6 +49,9 @@ namespace SuperMario
             breakableCurlyBrickTexture = content.Load<Texture2D>("breakableCurlyBrick");
             pipeTexture = content.Load<Texture2D>("pipe");
             backgroundTexture = content.Load<Texture2D>("background3");
+            flagPoleTexture = content.Load<Texture2D>("FlagPole");
+            castleTexture = content.Load<Texture2D>("castle");
+
         }
 
         public static ISprite CreateKoopaMoveLeft()
@@ -121,6 +127,14 @@ namespace SuperMario
         public static ISprite CreateBackground()
         {
             return new BackgroundSprite(backgroundTexture, 32, 32);
+        }
+        public static ISprite CreateCastle()
+        {
+            return new CastleSprite(castleTexture, 32, 32);
+        }
+        public static ISprite CreateFlagPole()
+        {
+            return new FlagPoleSprite(flagPoleTexture, 32, 32);
         }
     }
 }
