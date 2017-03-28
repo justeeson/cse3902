@@ -41,7 +41,7 @@ namespace SuperMario
             Texture = texture;
             StateMachine = new MarioStateMachine(this);
             Rows = rows;
-            command = new ResetCommand(Game1.Self);
+            command = new ResetCommand(Game1.GetInstance());
             Columns = columns;
             LocationX = (int)location.X;
             LocationY = (int)location.Y;

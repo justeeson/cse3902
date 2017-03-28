@@ -22,8 +22,8 @@ namespace SuperMario
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         private ISprite Sprite;
-        public static Game1 Self;
         public Camera CameraPointer;
+        private static Game1 instance;
         public WorldManager World;
         public LevelClass Level;
         public Vector2 Location { get; set; }
@@ -93,7 +93,8 @@ namespace SuperMario
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";         
+            Content.RootDirectory = "Content";
+            instance = this;
         }
 
         protected override void Initialize()
@@ -101,7 +102,6 @@ namespace SuperMario
             Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
             CameraPointer = new Camera();
             Level = new LevelClass(this);
-            Self = this;
             base.Initialize();
         }
 
@@ -129,16 +129,17 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.Y, new MarioBecomeFireCommand(this));
             KeyboardController.RegisterCommand(Keys.U, new MarioBecomeBigCommand(this));
             KeyboardController.RegisterCommand(Keys.I, new MarioBecomeSmallCommand(this));
-
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
+
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
+
             xMax = GraphicsDevice.Viewport.Width;
             yMax = GraphicsDevice.Viewport.Height;
             xPos = xMax / 2;
@@ -149,6 +150,14 @@ namespace SuperMario
         {
         }
 
+        public static Game1 GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Game1();
+            }
+            return instance;
+        }
         protected override void Update(GameTime GameTime)
         {
             this.GameTime = GameTime;

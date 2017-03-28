@@ -20,7 +20,7 @@ namespace SuperMario.Controller
         public KeyboardController()
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
-            mario = Game1.Self.MarioSprite;
+            mario = Game1.GetInstance().MarioSprite;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -35,7 +35,7 @@ namespace SuperMario.Controller
                 {
                     if(key == Keys.X)
                      {
-                        command = new MarioFireCommand(Game1.Self);
+                        command = new MarioFireCommand(Game1.GetInstance());
                         command.Execute();
                      }
                     if (Game1.validKeys.Contains(key))
