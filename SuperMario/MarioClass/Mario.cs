@@ -61,7 +61,7 @@ namespace SuperMario
 
         public void setState()
         {
-            State = StateMachine.getState();
+            State = StateMachine.GetState();
         }
 
         public int MarioMode()
@@ -123,7 +123,7 @@ namespace SuperMario
 
         public void Jump()
         {
-            if (Mario.JumpStatus == false && !isDead() && !(Mario.DisableJump == true))
+            if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
             {
                 yVelocity = 19;
                 Mario.JumpStatus = true;
@@ -133,7 +133,7 @@ namespace SuperMario
         public void Reset()
         {
             StateMachine.Reset();
-            State = StateMachine.getState();
+            State = StateMachine.GetState();
             LocationX = 400;
             LocationY = 350;
         }
