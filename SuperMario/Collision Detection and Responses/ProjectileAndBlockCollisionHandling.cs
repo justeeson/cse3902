@@ -4,7 +4,7 @@ using System;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    public class ProjectileAndBlockCollisionHandling
+    public static class ProjectileAndBlockCollisionHandling
     {
         public static void HandleCollision(IProjectile projectile, IBlock item)
         {

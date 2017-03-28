@@ -4,7 +4,7 @@ using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    class MarioAndEnemyCollisionHandling
+    public static class MarioAndEnemyCollisionHandling
     {
         
 

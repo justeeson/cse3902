@@ -3,7 +3,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
-    public class EnemyAndBlockCollisionHandling
+    public static class EnemyAndBlockCollisionHandling
     {
         public static void HandleCollision(IEnemy enemy, IBlock item)
         {

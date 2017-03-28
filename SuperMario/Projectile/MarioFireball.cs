@@ -83,7 +83,7 @@ namespace SuperMario
             if (mode == (int)MarioStateMachine.MarioModes.Fire)
                 fire = true;
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch myspriteBatch)
         {
             if(fire == true)
                 {
@@ -91,12 +91,12 @@ namespace SuperMario
                 int height = 27;
                 int row = (int)((float)currentFrame / (float)1);
                 int column = currentFrame % 1;
-                this.spriteBatch = spriteBatch;
+                this.spriteBatch = myspriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.cameraPositionX, (int)LocationY, width / 2, height / 2);
-                spriteBatch.Begin();
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
+                myspriteBatch.Begin();
+                myspriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                myspriteBatch.End();
             }
         }
 
