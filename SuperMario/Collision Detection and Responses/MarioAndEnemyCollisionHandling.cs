@@ -17,7 +17,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (collisionRectangle.Bottom == enemy.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
                 Mario.LocationY += collisionRectangle.Height + 1;
-                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
+                if (item.CanAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
@@ -34,13 +34,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if(item.canAttack)
+                else if(item.CanAttack)
                 {
                     
                     if (Mario.StarStatus)
                     {
                         item.GetKilled();
-                        item.canAttack = false;
+                        item.CanAttack = false;
                     }
                 }
             }
@@ -48,13 +48,13 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
                 Mario.LocationY -= collisionRectangle.Height + 1;
                 item.GetKilled();
-                item.canAttack = false;
+                item.CanAttack = false;
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
             {
-                item.movingLeft = true;
+                item.MovingLeft = true;
                 Mario.LocationX += collisionRectangle.Width + 1;
-                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
+                if (item.CanAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
@@ -71,21 +71,21 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if (item.canAttack)
+                else if (item.CanAttack)
                 {
 
                     if (Mario.StarStatus)
                     {
                         item.GetKilled();
-                        item.canAttack = false;
+                        item.CanAttack = false;
                     }
                 }
             }
             else if (collisionRectangle.Left == enemy.Area(item.Location).Left)
             {
-                item.movingLeft = false;
+                item.MovingLeft = false;
                 Mario.LocationX -= collisionRectangle.Width + 1;
-                if (item.canAttack && !Mario.StarStatus && !Mario.InvulnStatus)
+                if (item.CanAttack && !Mario.StarStatus && !Mario.InvulnStatus)
                 {
                     if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
                     {
@@ -102,13 +102,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                         mario.Dead();
                     }
                 }
-                else if (item.canAttack)
+                else if (item.CanAttack)
                 {
 
                     if (Mario.StarStatus)
                     {
                         item.GetKilled();
-                        item.canAttack = false;
+                        item.CanAttack = false;
                     }
                 }
             }

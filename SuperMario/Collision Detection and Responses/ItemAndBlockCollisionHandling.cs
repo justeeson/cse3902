@@ -21,7 +21,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 50));
                 else
                     powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y - (collisionRectangle.Height + 2));
-                powerup.isFalling = false;
+                powerup.IsFalling = false;
                 
             }
 
@@ -29,12 +29,12 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
                 powerup.Location = new Vector2(powerup.Location.X + collisionRectangle.Width + 1, powerup.Location.Y);
-                powerup.movingLeft = false;
+                powerup.MovingLeft = false;
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
                 powerup.Location = new Vector2(powerup.Location.X - (collisionRectangle.Width + 1), powerup.Location.Y);
-                powerup.movingLeft = true;
+                powerup.MovingLeft = true;
             }
 
 

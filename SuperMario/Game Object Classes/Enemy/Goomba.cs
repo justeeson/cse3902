@@ -6,9 +6,9 @@ namespace SuperMario
 {
     public class Goomba : IEnemy
     {
-        public bool movingLeft { get; set; }
-        public bool canAttack { get; set; }
-        public bool isFalling { get; set; }
+        public bool MovingLeft { get; set; }
+        public bool CanAttack { get; set; }
+        public bool IsFalling { get; set; }
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
@@ -19,11 +19,11 @@ namespace SuperMario
         private int deadCounter = 10;
         public Goomba(Game1 game, Vector2 location)
         {
-            movingLeft = true;
-            isFalling = true;
+            MovingLeft = true;
+            IsFalling = true;
             MyGame = game;
             Sprite = SpriteFactory.CreateGoomba();
-            canAttack = true;
+            CanAttack = true;
             Location = location;
             dead = false;
         }
@@ -42,24 +42,18 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            //flip direction if at edge of screen
             if (Location.X - Camera.cameraPositionX < 0)
             {
-                movingLeft = false;
+                MovingLeft = false;
                 Location = new Vector2(Location.X + 2, Location.Y);
             }
-            // if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
-            //{
-            //    movingLeft = true;
-            //    Location = new Vector2(Location.X - 2, Location.Y);
-            //}
-
-            if (movingLeft)
+    
+            if (MovingLeft)
                 Location = new Vector2(Location.X - 4, Location.Y);
             else
                 Location = new Vector2(Location.X + 4, Location.Y);
 
-            if (isFalling)
+            if (IsFalling)
                 Location = new Vector2(Location.X, Location.Y + 4);
 
             if (dead)
@@ -76,7 +70,6 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            //location = new Vector2(location.X, location.Y);
             Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
         }
     }

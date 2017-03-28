@@ -10,11 +10,11 @@ namespace SuperMario.Interfaces
 {
     public interface IItem
     {
-        bool movingLeft { get; set; }
-        bool isFalling { get; set; }
+        bool MovingLeft { get; set; }
+        bool IsFalling { get; set; }
         ISprite Sprite { get; set; }
         Game1 MyGame { get; set; }
-        bool hasBeenUsed { get; set; }
+        bool HasBeenUsed { get; set; }
         Vector2 Location { get; set; }
         Rectangle Area();
         void UpdateCollision();

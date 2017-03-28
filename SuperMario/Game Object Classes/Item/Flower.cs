@@ -13,9 +13,9 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
-        public bool movingLeft { get; set; }
-        public bool isFalling { get; set; }
-        public bool hasBeenUsed{ get; set; }
+        public bool MovingLeft { get; set; }
+        public bool IsFalling { get; set; }
+        public bool HasBeenUsed{ get; set; }
         public Vector2 Location { get; set; }
 
         public Flower(Game1 game, Vector2 location)
@@ -23,7 +23,7 @@ namespace SuperMario
             MyGame = game;
             Sprite = SpriteFactory.CreateFlower();
             MyGame.Sprite = Sprite;
-            hasBeenUsed = false;
+            HasBeenUsed = false;
             this.Location = location;
         }
 
@@ -33,7 +33,7 @@ namespace SuperMario
         }
         public Rectangle Area()
         {
-            if (hasBeenUsed)
+            if (HasBeenUsed)
                 return new Rectangle(0, 0, 0, 0);
             else
                 return Sprite.Area(Location);
@@ -43,7 +43,7 @@ namespace SuperMario
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
             //MyGame.store.arrayOfSprites[4] = Sprite;
             MyGame.MarioSprite.MarioFireState();
-            hasBeenUsed = true;
+            HasBeenUsed = true;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

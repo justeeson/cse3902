@@ -9,7 +9,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         public static void HandleCollision(IEnemy enemy, IProjectile ball)
         {
             enemy.GetKilled();
-            enemy.canAttack = false;
+            enemy.CanAttack = false;
             ball.KillFireball();
         }
 

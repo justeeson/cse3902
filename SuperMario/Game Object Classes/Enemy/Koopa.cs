@@ -11,9 +11,9 @@ namespace SuperMario
 {
    public class Koopa : IEnemy
     {
-        public bool movingLeft { get; set; }
-        public bool isFalling { get; set; }
-        public bool canAttack { get; set; }
+        public bool MovingLeft { get; set; }
+        public bool IsFalling { get; set; }
+        public bool CanAttack { get; set; }
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
@@ -23,12 +23,12 @@ namespace SuperMario
 
         public Koopa(Game1 game, Vector2 location)
         {
-            movingLeft = true;
-            isFalling = true;
+            MovingLeft = true;
+            IsFalling = true;
             MyGame = game;
             Sprite = SpriteFactory.CreateKoopaMoveLeft();
             MyGame.Sprite = Sprite;
-            canAttack = true;
+            CanAttack = true;
             this.Location = location;
         }
         public void GetKilled()
@@ -41,7 +41,7 @@ namespace SuperMario
         }
         public void ChangeDirection()
         {
-            if (!movingLeft)
+            if (!MovingLeft)
             {
                 this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 4, 8);
             }
@@ -53,24 +53,17 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            //flip direction if at edge of screen
             if (Location.X - Camera.cameraPositionX < 0)
             {
-                movingLeft = !movingLeft;
-                //Location = new Vector2(Location.X + 2, Location.Y);
+                MovingLeft = !MovingLeft;
             }
-            //else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
-            //{
-            //    movingLeft = !movingLeft;
-            //    //Location = new Vector2(Location.X - 2, Location.Y);
-            //}
 
-            if (movingLeft)
+            if (MovingLeft)
                 Location = new Vector2(Location.X - 4, Location.Y);
             else
                 Location = new Vector2(Location.X + 4, Location.Y);
 
-            if (isFalling)
+            if (IsFalling)
                 Location = new Vector2(Location.X, Location.Y + 4);
 
             if (dead)
@@ -88,7 +81,6 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            //location = new Vector2(this.Area.X, this.Area.Y);
             Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
         }
     }
