@@ -137,15 +137,13 @@ namespace SuperMario
 
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
-            //KeyboardController.RegisterCommand(Keys.X, new MarioFireCommand(this));
             KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
-            GamepadController.RegisterCommand(Buttons.LeftThumbstickUp, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
-            GamepadController.RegisterCommand(Buttons.B, new MarioFireCommand(this));
+            GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
             xMax = GraphicsDevice.Viewport.Width;
             yMax = GraphicsDevice.Viewport.Height;
             xPos = xMax / 2;
@@ -176,14 +174,17 @@ namespace SuperMario
             //SpriteBatch.Draw(background, mainFrame, Color.White);
             //SpriteBatch.End();
             World.Draw(Location);
-            
+ 
+            World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+
             foreach (MarioFireball aFireball in Game1.mFireballs)
             {
                 aFireball.Draw(SpriteBatch);
             }
-            World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             base.Draw(GameTime);
         }
+
+  
     }
 }

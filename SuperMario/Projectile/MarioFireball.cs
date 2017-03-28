@@ -83,8 +83,8 @@ namespace SuperMario
         {
             if(fire == true)
                 {
-                int width = Texture.Width;
-                int height = Texture.Height;
+                int width = 27;
+                int height = 27;
                 int row = (int)((float)currentFrame / (float)1);
                 int column = currentFrame % 1;
                 this.spriteBatch = spriteBatch;
@@ -96,6 +96,12 @@ namespace SuperMario
             }
         }
 
+        public Rectangle Area()
+        {
+            int width = 15;
+            int height = 15;
+            return new Rectangle((int)LocationX, (int)LocationY, width, height);
+        }
         public void LoadContent(ContentManager Content)
         {
             Texture = Content.Load<Texture2D>("fireball");

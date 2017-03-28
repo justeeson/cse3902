@@ -301,7 +301,7 @@
 /processorParam:TextureFormat=Color
 /build:castle.png
 
-#begin FlagPole.PNG
+#begin FlagPole.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -311,5 +311,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FlagPole.PNG
+/build:FlagPole.png
 
