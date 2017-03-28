@@ -5,7 +5,7 @@ using System;
 
 namespace SuperMario
 {
-    public class Castle : IBackground
+    public class Castle : IBlock
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
@@ -15,9 +15,18 @@ namespace SuperMario
         {
             this.MyGame = game;
             this.Sprite = SpriteFactory.CreateCastle();
+            MyGame.sprite = Sprite;
             this.Location = location;
         }
-
+        public void BrickToDisappear()
+        {
+        }
+        public void HiddenToUsed()
+        {
+        }
+        public void BecomeUsed()
+        {
+        }
         public void Used()
         {
 
@@ -30,7 +39,8 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, this.Location);
+            location = new Vector2(Location.X - Camera.cameraPositionX, Location.Y);
+            Sprite.Draw(spriteBatch, location);
         }
 
     }
