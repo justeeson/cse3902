@@ -4,7 +4,7 @@ using SuperMario.Interfaces;
 
 namespace SuperMario
 {
-    class PipeSprite : ISprite
+    class HighPipeSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -12,7 +12,7 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         private int currentFrame;
 
-        public PipeSprite(Texture2D texture, int rows, int columns)
+        public HighPipeSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -27,7 +27,7 @@ namespace SuperMario
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = 40;
-            int height = 65;
+            int height = 85;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -39,9 +39,9 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 40;
-            int height = 56;
-            return new Rectangle((int)location.X, (int)location.Y + 12, width, height);
+            int width = 40; //Texture.Width / Columns;
+            int height = 85;//Texture.Height / Rows;
+            return new Rectangle((int)location.X, (int)location.Y , width, height);
         }
         public void CollisionSprite()
         {

@@ -444,7 +444,7 @@
   <CurlyBrick x="6752" y ="416" />
 
 
-  <Goomba x="700" y="384" />
+  <Goomba x="700" y="150" />
   <QuestionBlock x="544" y="280" item="coin" />
   
   <HorizontalBlock x="672" y="280" />
@@ -459,12 +459,12 @@
   
   <HorizontalBlock x="800" y="280" />
   <Pipe x="928" y="351" />
-  <MediumPipe x="1248" y="351" />
+  <MediumPipe x="1248" y="343" />
   <Goomba x="1312" y="384" />
-  <HighPipe x="1504" y="351" />
+  <HighPipe x="1504" y="331" />
   <Goomba x="1568" y="384" />
   <Goomba x="1620" y="384" />
-  <HighPipe x="1856" y="351" />
+  <HighPipe x="1856" y="331" />
   <hiddenBlock x="2080" y="248" />
   <HorizontalBlock x="2528" y="280" />
   <QuestionBlock x="2560" y="280" item="flower"/>
@@ -520,8 +520,6 @@
   <HorizontalBlock x="4160" y="280" />
   <HorizontalBlock x="4192" y="280" />
 
-  <Goomba x="3904" y="384" />
-  <Goomba x="3946" y="384" />
   <Goomba x="3998" y="384" />
   <Goomba x="4040" y="384" />
 
@@ -629,8 +627,8 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
 
-  <FlagPole x="6336" y="78" />
-  <Castle x="6464" y="258" />
+  <FlagPole x="6236" y="18" />
+  <Castle x="6400" y="18" />
 
   <mario x="250" y="100" />
 

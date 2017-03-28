@@ -24,7 +24,7 @@ namespace SuperMario.Sprites
             currentFrame = 0;
             flashStatus = 0;
             resetTimer = 0;
-            command = new ResetCommand(Game1.Self);
+            command = new ResetCommand(Game1.GetInstance());
         }
 
         public void Update(GameTime GameTime)

@@ -1,20 +1,26 @@
-﻿using SuperMario.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SuperMario;
+using SuperMario.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace SuperMario
 {
-    public class FlagPole : IBlock
+    public class HighPipe : IBlock
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
-        public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        public FlagPole(Game1 game, Vector2 location)
+        public Vector2 Location { get; set; }
+
+        public HighPipe(Game1 game, Vector2 location)
         {
-            this.MyGame = game;
-            this.Sprite = SpriteFactory.CreateBackground();
+            MyGame = game;
+            Sprite = SpriteFactory.CreateHighPipe();
             MyGame.sprite = Sprite;
             this.Location = location;
         }
@@ -27,21 +33,13 @@ namespace SuperMario
         public void BecomeUsed()
         {
         }
-        public void Used()
+        public void Update(GameTime GameTime)
         {
-
+            Sprite.Update(GameTime);
         }
-
-        public void Update(GameTime gameTime)
-        {
-            Sprite.Update(gameTime);
-        }
-
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(Location.X - Camera.cameraPositionX, Location.Y);
-            Sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
         }
-
     }
 }
