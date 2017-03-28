@@ -72,7 +72,7 @@ namespace SuperMario
         {
             fire = false;
         }
-        public void Fire(int orientation, int marioMode, int LocationX, int LocationY)
+        public void MarioFire(int orientation, int marioMode, int LocationX, int LocationY)
         {
             this.LocationX = LocationX;
             startingLocation = LocationX;
