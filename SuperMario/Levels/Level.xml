@@ -627,8 +627,8 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
 
-  <FlagPole x="100" y="18" />
-  <Castle x="6400" y="18" />
+  <FlagPole x="6300" y="58" />
+  <Castle x="6400" y="258" />
 
   <mario x="250" y="100" />
 
