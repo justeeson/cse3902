@@ -26,7 +26,7 @@ namespace SuperMario
             Columns = columns;
             currentFrame = 0;
             timeSinceLastFrame = 0;
-            millisecondsPerFrame = 1500;
+            millisecondsPerFrame = 1700;
         }
 
         public void Update(GameTime gameTime)

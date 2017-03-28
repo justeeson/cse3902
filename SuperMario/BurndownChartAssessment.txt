@@ -1,0 +1,10 @@
+﻿By analyzing the burndown chart for this sprint, it is clear that the amount of workremaining was almost always above 
+the recommended line. This was because of a few major bugs that were extremely hard to detect at first. However, after 
+meeting with the professor and having discussions with each other, these bugs were spotted and fixed during the week leading 
+up to the deadline for the refactored implementation. The biggest time sink was implementing the level reader using XML. 
+After a lot of review, the team finally got the reader to work. After this, designing the rest of the level took very little
+time.
+
+However, the amount of work remaining did not drop much because new features were constantly being added and new bugs kept 
+arising leading up to the deadline. Even though the team took careful precautions to avoid the mistakes made during the
+previous sprints, the scope of this sprint was underestimated by the team as it was larger and more difficult than the others.
