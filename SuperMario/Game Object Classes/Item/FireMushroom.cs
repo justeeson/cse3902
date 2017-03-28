@@ -23,7 +23,7 @@ namespace SuperMario
             movingLeft = false;
             MyGame = game;
             Sprite = SpriteFactory.CreateFireMushroom();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             hasBeenUsed = false;
             isFalling = true;
             Location = location;

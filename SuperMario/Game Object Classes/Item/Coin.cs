@@ -22,7 +22,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateCoin();
-            MyGame.sprite = this.Sprite;
+            MyGame.Sprite = this.Sprite;
             hasBeenUsed = false;
             Location = location;
         }

@@ -27,17 +27,17 @@ namespace SuperMario
 
         public void BrickToDisappear()
         {
-           //new SolidBrick(MyGame);
+ 
         }
 
         public void HiddenToUsed()
         {
-           //new HiddenBrick(MyGame);
+    
         }
 
         public void BecomeUsed()
         {
-            //new QuestionMarkBrickToUsed(MyGame);
+       
         }
     }
 }

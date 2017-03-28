@@ -27,7 +27,7 @@ namespace SuperMario
             isFalling = true;
             MyGame = game;
             Sprite = SpriteFactory.CreateKoopaMoveLeft();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             canAttack = true;
             this.Location = location;
         }

@@ -20,7 +20,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateSolidBrickWithCrews3();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
         }
         public void BrickToDisappear()

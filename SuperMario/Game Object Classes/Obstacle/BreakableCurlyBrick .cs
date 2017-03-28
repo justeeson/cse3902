@@ -20,7 +20,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateBreakableCurlyBrick();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
         }
 
