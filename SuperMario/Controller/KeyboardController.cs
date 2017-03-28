@@ -38,7 +38,7 @@ namespace SuperMario.Controller
                         command = new MarioFireCommand(Game1.GetInstance());
                         command.Execute();
                      }
-                    if (Game1.validKeys.Contains(key))
+                    if (Game1.ValidKeysList.Contains(key))
                     {
                         controllerMappings[key].Execute();
                     }

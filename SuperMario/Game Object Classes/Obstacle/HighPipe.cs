@@ -21,7 +21,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateHighPipe();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
         }
         public void BrickToDisappear()

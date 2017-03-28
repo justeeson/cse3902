@@ -22,7 +22,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateBreakableHorizonalBrick();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
         }
 

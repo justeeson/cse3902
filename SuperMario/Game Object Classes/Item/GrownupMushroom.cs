@@ -25,7 +25,7 @@ namespace SuperMario
             MyGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
             isFalling = true;
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             hasBeenUsed = false;
             this.Location = location;
             

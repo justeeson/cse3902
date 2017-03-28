@@ -15,7 +15,7 @@ namespace SuperMario
         {
             this.MyGame = game;
             this.Sprite = SpriteFactory.CreateCastle();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
         }
         public void BrickToDisappear()

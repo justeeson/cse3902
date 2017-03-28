@@ -22,7 +22,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateFlower();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             hasBeenUsed = false;
             this.Location = location;
         }

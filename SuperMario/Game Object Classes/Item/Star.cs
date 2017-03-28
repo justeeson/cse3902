@@ -23,7 +23,7 @@ namespace SuperMario
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateStar();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             hasBeenUsed = false;
             movingLeft = false;
             isFalling = true;

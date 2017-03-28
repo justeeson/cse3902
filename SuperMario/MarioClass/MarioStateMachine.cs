@@ -46,7 +46,7 @@ namespace SuperMario.MarioClass
                     new StandingRightSmallMarioState(player), new StandingLeftSmallMarioState(player), new DeadSmallMarioState(player)} };
         }
 
-        public IMarioState getState()
+        public IMarioState GetState()
         {
             return StateArray[MarioMode, Orientation];
         }
@@ -56,13 +56,13 @@ namespace SuperMario.MarioClass
             if (Orientation == (int)Orientations.StandingLeft)
             {
                 Orientation = (int)Orientations.RunningLeft;
-                player.State = getState();
+                player.State = GetState();
             }
 
-            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningLeft))
+            else if (Orientation != (int)Orientations.Dead && (Orientation != (int)Orientations.RunningLeft))
             {
                 Orientation = (int)Orientations.StandingLeft;
-                State = getState();
+                State = GetState();
             }
         }
 
@@ -71,12 +71,12 @@ namespace SuperMario.MarioClass
             if (Orientation == (int)Orientations.StandingRight)
             {
                 Orientation = (int)Orientations.RunningRight;
-                State = getState();
+                State = GetState();
             }
-            else if (Orientation != (int)Orientations.Dead && !(Orientation == (int)Orientations.RunningRight))
+            else if (Orientation != (int)Orientations.Dead && (Orientation != (int)Orientations.RunningRight))
             {
                 Orientation = (int)Orientations.StandingRight;
-                State = getState();
+                State = GetState();
             }
         }
 
@@ -85,22 +85,19 @@ namespace SuperMario.MarioClass
             if (Orientation == (int)Orientations.StandingRight || Orientation == (int)Orientations.RunningRight)
             {
                 Orientation = (int)Orientations.CrouchingRight;
-                State = getState();
+                State = GetState();
             }
             else if (Orientation == (int)Orientations.StandingLeft || Orientation == (int)Orientations.RunningLeft)
             {
                 Orientation = (int)Orientations.CrouchingLeft;
-                State = getState();
+                State = GetState();
             }
         }
 
         public void Dead()
         {
-            if (Orientation != (int)Orientations.Dead)
-            {
-                Orientation = (int)Orientations.Dead;
-                State = getState();
-            }
+            Orientation = (int)Orientations.Dead;
+            State = GetState();
         }
 
         public bool isDead()
@@ -110,41 +107,32 @@ namespace SuperMario.MarioClass
 
         public void MarioBigState()
         {
-            if (MarioMode != (int)MarioModes.Big)
-            {
-                MarioMode = (int)MarioModes.Big;
-            }
+            MarioMode = (int)MarioModes.Big;
             if (Orientation == (int)Orientations.Dead)
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = getState();
+            State = GetState();
         }
 
         public void MarioSmallState()
         {
-            if (MarioMode != (int)MarioModes.Small)
-            {
-                MarioMode = (int)MarioModes.Small;
-            }
+            MarioMode = (int)MarioModes.Small;
             if (Orientation == (int)Orientations.Dead)
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = getState();
+            State = GetState();
         }
 
         public void MarioFireState()
         {
-            if (MarioMode != (int)MarioModes.Fire)
-            {
-                MarioMode = (int)MarioModes.Fire;
-            }
+            MarioMode = (int)MarioModes.Fire;
             if (Orientation == (int)Orientations.Dead)
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = getState();
+            State = GetState();
         }
 
         public void Reset()

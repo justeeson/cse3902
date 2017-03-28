@@ -24,7 +24,7 @@ namespace SuperMario
             MyGame = game;
             hasBeenUsed = false;
             Sprite = SpriteFactory.CreateQuestionMarkBrick();
-            MyGame.sprite = Sprite;
+            MyGame.Sprite = Sprite;
             this.Location = location;
             itemObject = item;
         }

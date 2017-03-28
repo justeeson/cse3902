@@ -21,7 +21,6 @@ namespace SuperMario
         private Rectangle mainFrame;
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
-        private ISprite Sprite;
         public Camera CameraPointer;
         private static Game1 instance;
         public WorldManager World;
@@ -29,66 +28,27 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public static List<MarioFireball> mFireballs = new List<MarioFireball>();
 
-        public ISprite sprite
-        {
-            get
-            { return Sprite; }
-            set
-            { Sprite = value; }
-        }
-        private IProjectile fireball;
-
-        public IProjectile Fireball
-        {
-            get
-            { return fireball; }
-            set
-            { fireball = value; }
-        }
-        private IMario mario;
-        public IMario MarioSprite
-        {
-            get
-            { return mario; }
-            set
-            { mario = value; }
-        }
-
-        private IBlock block;
-        public IBlock Block
-        {
-            get {return block; }
-            set {block = value; }
-        }
-
-        private KeyboardController keyboardController;
-        public KeyboardController KeyboardController
-        {
-            get
-            { return keyboardController; }
-            set
-            { keyboardController = value; }
-        }
-
-        private GamepadController gamepadController;
-        public GamepadController GamepadController
-        {
-            get
-            { return gamepadController; }
-            set
-            { gamepadController = value; }
-        }
-
-      
-
-        public static int xMax, yMax;
+        public ISprite Sprite
+        { get; set; }
         
-        private static ArrayList Valid_Keys;
-        public static ArrayList validKeys
-        {
-            get
-            { return Valid_Keys; }
-        }
+        public IProjectile Fireball
+        { get; set; }
+        public IMario MarioSprite
+        { get; set; }
+
+        public IBlock Block
+        { get; set; }
+        public KeyboardController KeyboardController
+        { get; set; }
+
+        public GamepadController GamepadController
+        { get; set; }
+
+
+
+        public static int XMax, YMax;
+        public static ArrayList ValidKeysList
+        { get; set; }
 
         public Game1()
         {
@@ -99,7 +59,7 @@ namespace SuperMario
 
         protected override void Initialize()
         {
-            Valid_Keys = ValidKeys.Instance.ArrayOfKeys();
+            ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
             CameraPointer = new Camera();
             Level = new LevelClass(this);
             base.Initialize();
@@ -113,7 +73,7 @@ namespace SuperMario
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
-            block = new BlockLogic(this);
+            Block = new BlockLogic(this);
             Mario.LoadContent(Content);
             World = new WorldManager(this);
             World.Load();
@@ -137,8 +97,8 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
 
-            xMax = GraphicsDevice.Viewport.Width;
-            yMax = GraphicsDevice.Viewport.Height;
+            XMax = GraphicsDevice.Viewport.Width;
+            YMax = GraphicsDevice.Viewport.Height;
         }
 
         protected override void UnloadContent()
@@ -162,25 +122,20 @@ namespace SuperMario
             MarioSprite.Update(GameTime);
             World.Update(GameTime);
             Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
-            base.Update(GameTime);
-           
+            base.Update(GameTime);           
         }
 
         protected override void Draw(GameTime GameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             World.Draw(Location);
- 
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-
             foreach (MarioFireball aFireball in Game1.mFireballs)
             {
                 aFireball.Draw(SpriteBatch);
             }
             base.Draw(GameTime);
-        }
-
-  
+        } 
     }
 }
