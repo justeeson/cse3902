@@ -20,6 +20,7 @@ namespace SuperMario
         public float LocationX { get; set; }
         public float LocationY { get; set; }
         private int currentFrame;
+        private int mode;
         public Texture2D Texture { get; set; }
         const int MAX_DISTANCE = 500;
         public Boolean fire;
@@ -71,7 +72,7 @@ namespace SuperMario
         {
             fire = false;
         }
-        public void Fire(int orientation, int LocationX, int LocationY)
+        public void Fire(int orientation, int marioMode, int LocationX, int LocationY)
         {
             //if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             this.LocationX = LocationX;
@@ -79,7 +80,9 @@ namespace SuperMario
             this.LocationY = LocationY;
             yVelocity = 3;
             marioOrientation = orientation;
-            fire = true;
+            mode = marioMode;
+            if (mode == (int)MarioStateMachine.MarioModes.Fire)
+                fire = true;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -100,6 +103,11 @@ namespace SuperMario
 
         public Rectangle Area()
         {
+            if (!fire)
+            {
+                return new Rectangle();
+
+            }
             int width = 15;
             int height = 15;
             return new Rectangle((int)LocationX, (int)LocationY, width, height);

@@ -15,17 +15,12 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int currentFrame;
         private int flashStatus;
-        private int nextFlashTime;
-        private int millisecondsPerFlash;
 
         public MovingDownLeftSmallMario(Mario mario)
         {
             this.mario = mario;
             currentFrame = 5;
-            flashStatus = 0;
-            nextFlashTime = 0;
-            millisecondsPerFlash = 400;
-            
+            flashStatus = 0;            
         }
 
         public void Update(GameTime GameTime)
