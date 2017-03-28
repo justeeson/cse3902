@@ -18,8 +18,6 @@ namespace SuperMario
         public SpriteBatch SpriteBatch;
         public Texture2D texture { get; set; }
         private Texture2D background;
-        private Texture2D fireballSprite;
-        private Texture2D enemies; // need to load the enemies somewhere
         private Rectangle mainFrame;
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;

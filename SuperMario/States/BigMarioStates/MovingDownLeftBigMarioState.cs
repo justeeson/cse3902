@@ -15,10 +15,6 @@ namespace SuperMario.Sprites
     {
         private Mario mario;
         private int currentFrame;
-        private int startFrame;
-        private int totalFrames;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
         private int flashStatus;
         private int nextFlashTime;
         private int millisecondsPerFlash;

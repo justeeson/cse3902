@@ -14,16 +14,12 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int currentFrame;
         private int flashStatus;
-        private int nextFlashTime;
-        private int millisecondsPerFlash;
 
         public DeadFireMarioState(Mario mario)
         {
             this.mario = mario;
             currentFrame = 0;
             flashStatus = 0;
-            nextFlashTime = 0;
-            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime GameTime)

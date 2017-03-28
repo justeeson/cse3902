@@ -100,6 +100,11 @@ namespace SuperMario
 
         public Rectangle Area()
         {
+            if (!fire)
+            {
+                return new Rectangle();
+
+            }
             int width = 15;
             int height = 15;
             return new Rectangle((int)LocationX, (int)LocationY, width, height);
