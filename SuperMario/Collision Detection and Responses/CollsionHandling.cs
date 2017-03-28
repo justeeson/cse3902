@@ -74,7 +74,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     if (blockRect.Intersects(enemyInList.Sprite.Area(enemyInList.Location)))
                         EnemyAndBlockCollisionHandling.HandleCollision(enemyInList, item);
                     else
-                        enemyInList.isFalling = true;
+                        enemyInList.IsFalling = true;
                 }
             }
 
@@ -137,7 +137,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 if (itemCheck == 0)
                 {
                     IItem item = LevelClass.ItemList.ElementAt<IItem>(i);
-                    item.isFalling = true;
+                    item.IsFalling = true;
                 }
             }
 

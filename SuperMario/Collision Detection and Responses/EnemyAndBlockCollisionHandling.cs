@@ -11,11 +11,11 @@ namespace SuperMario.Collision_Detection_and_Responses
             ISprite block = item.Sprite;
             /*if (enemy.Location.X - Camera.cameraPositionX  < 5)
             {
-                enemy.movingLeft = false;
+                enemy.MovingLeft = false;
             }
             else if (enemy.Location.X - Camera.cameraPositionX > Game1.xMax - 5)
             {
-                enemy.movingLeft = true;
+                enemy.MovingLeft = true;
             }*/
                 
 
@@ -29,20 +29,20 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {
                     enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height + 2));
-                    enemy.isFalling = false;
+                    enemy.IsFalling = false;
                 }
 
                 collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
                 if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
                     enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width + 1, enemy.Location.Y);
-                    enemy.movingLeft = false;
+                    enemy.MovingLeft = false;
                     enemy.ChangeDirection();
                 }
                 else if (collisionRectangle.Left == block.Area(item.Location).Left)
                 {
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
-                    enemy.movingLeft = true;
+                    enemy.MovingLeft = true;
                     enemy.ChangeDirection();
                 }
             }
@@ -51,13 +51,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                 if (collisionRectangle.Right == block.Area(item.Location).Right)
                 {
                     enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width + 1, enemy.Location.Y);
-                    enemy.movingLeft = false;
+                    enemy.MovingLeft = false;
                     enemy.ChangeDirection();
                 }
                 else if (collisionRectangle.Left == block.Area(item.Location).Left)
                 {
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
-                    enemy.movingLeft = true;
+                    enemy.MovingLeft = true;
                     enemy.ChangeDirection();
                 }
                 collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
@@ -69,7 +69,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {
                     enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height + 2));
-                    enemy.isFalling = false;
+                    enemy.IsFalling = false;
                 }
 
             }

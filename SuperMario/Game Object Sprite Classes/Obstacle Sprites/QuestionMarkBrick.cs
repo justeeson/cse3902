@@ -21,7 +21,7 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        private bool hasBeenUsed;
+        private bool HasBeenUsed;
         private int width;
         private int height;
         public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
@@ -34,12 +34,12 @@ namespace SuperMario
             millisecondsPerFrame = 350;
             width = 51;
             height = 29;
-            hasBeenUsed = false;
+            HasBeenUsed = false;
         }
 
         public void Update(GameTime GameTime)
         {
-            if(!hasBeenUsed)
+            if(!HasBeenUsed)
             {
                 timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)
@@ -75,7 +75,7 @@ namespace SuperMario
             Texture = SpriteFactory.solidBrickWithCrewsTexture;
             width = 28;
             height = 29;
-            hasBeenUsed = true;
+            HasBeenUsed = true;
             currentFrame = 0;
         }
     }

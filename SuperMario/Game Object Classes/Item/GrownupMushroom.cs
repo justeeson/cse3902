@@ -14,19 +14,19 @@ namespace SuperMario
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
-        public bool movingLeft { get; set; }
-        public bool isFalling { get; set; }
-        public bool hasBeenUsed { get; set; }
+        public bool MovingLeft { get; set; }
+        public bool IsFalling { get; set; }
+        public bool HasBeenUsed { get; set; }
         public Vector2 Location { get; set; }
 
         public GrownupMushroom(Game1 game, Vector2 location)
         {
-            movingLeft = false;
+            MovingLeft = false;
             MyGame = game;
             Sprite = SpriteFactory.CreateGrowupMushroom();
-            isFalling = true;
+            IsFalling = true;
             MyGame.Sprite = Sprite;
-            hasBeenUsed = false;
+            HasBeenUsed = false;
             this.Location = location;
             
         }
@@ -36,19 +36,19 @@ namespace SuperMario
             //locationX++;
             if (Location.X - Camera.cameraPositionX < 0)
             {
-                movingLeft = !movingLeft;
+                MovingLeft = !MovingLeft;
             }
             else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
             {
-                movingLeft = !movingLeft;
+                MovingLeft = !MovingLeft;
             }
 
-            if (movingLeft)
+            if (MovingLeft)
                 Location = new Vector2(Location.X - 4, Location.Y);
             else
                 Location = new Vector2(Location.X + 4, Location.Y);
 
-            if (isFalling)
+            if (IsFalling)
             {
                 Location = new Vector2(Location.X, Location.Y + 3);
             }
@@ -59,7 +59,7 @@ namespace SuperMario
 
         public Rectangle Area()
         {
-            if (hasBeenUsed)
+            if (HasBeenUsed)
                 return new Rectangle(0, 0, 0, 0);
             else
                 return Sprite.Area(Location);
@@ -67,7 +67,7 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
-            hasBeenUsed = true;
+            HasBeenUsed = true;
             if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
                 MyGame.MarioSprite.MarioBigState();
