@@ -53,8 +53,8 @@ class BreakableHorizontalBrickSprite : ISprite
     {   
         if (isNotDestroyed)
         {
-            int width = 32;//Texture.Width / Columns;
-            int height = 32;//Texture.Height / Rows;
+            int width = 32;
+            int height = 32;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);

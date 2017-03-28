@@ -65,8 +65,8 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width  = 21; //Texture.Width / Columns;
-            int height = 25;// Texture.Height / Rows;
+            int width  = 21; 
+            int height = 25;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
             //32
         }

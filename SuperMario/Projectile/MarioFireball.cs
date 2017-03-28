@@ -74,7 +74,6 @@ namespace SuperMario
         }
         public void Fire(int orientation, int marioMode, int LocationX, int LocationY)
         {
-            //if(mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
