@@ -1,10 +1,13 @@
 ﻿Author of the code review: Dellon Collins
 Date of the code review: 02/27/2017
 Sprint number: 3
-Name of the .cs file being reviewed: flower.cs
-Author of the .cs file being reviewed: Son Le
-The class holds all properties of object flower. It performs its tasks like drawing, update, and respond to
-collision. Thus, the class has high cohesion inside itself. Also, the class has low coupling since it only uses 
-internal variables which a few interferes with other classes if we just compare those varibles within the class.
-This class has good design. It allows us to update any features to the game easily and add other properties to
-the class if necessary in the future.
+
+Name of the .cs file being reviewed: SuperMario.Camera.cs
+
+Author of the .cs file being reviewed: Yihang Du
+
+The class controls the camera that follows the player. The class has high cohesion inside itself since its only function
+is scroll the camera along with the player. The class is coupled with every game object since the sprites have to be drawn
+relative to the camera, but this is necessary for the game to work. We could make the camera position fields static 
+(or non-static for multiple types of cameras) so that other classes can't inadvertently change the camera position. 
+Overall well written with no extra functionality; This class has good design. 
