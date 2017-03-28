@@ -19,3 +19,6 @@ Note:
 	compiler thinks we didn't use those fields, but in fact, we use them somewhere else. That's the only way to implement 
 	those because for instance, sprite factory is where we create new objects, we dont use those objects in there. we use them
 	somewhere else because that's the purpose of sprite factory which make senses so we ignore those warnings. 
+
+	Sometimes, animations of mario are changing during the game. Also, the mario can climb on the edge of blocks near the end of the
+	game, we are looking forward to fix those.
