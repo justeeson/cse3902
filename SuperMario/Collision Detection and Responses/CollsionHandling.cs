@@ -153,6 +153,15 @@ namespace SuperMario.Collision_Detection_and_Responses
                          ProjectileAndBlockCollisionHandling.HandleCollision(aFireball, block);
                         }
                 }
+                projectileRect = aFireball.Area();
+                for (int i = 0; i < LevelClass.EnemyList.Count; i++)
+                {
+                    IEnemy enemyInList = LevelClass.EnemyList.ElementAt<IEnemy>(i);
+
+                    if (projectileRect.Intersects(enemyInList.Sprite.Area(enemyInList.Location)))
+                        ProjectileAndEnemyCollisionHandling.HandleCollision(enemyInList, aFireball);
+                  
+                }
             }
         }
     }

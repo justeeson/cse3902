@@ -23,12 +23,11 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         const int MAX_DISTANCE = 500;
         public Boolean fire;
-        private int bounce;
         private int startingLocation;
         private SpriteBatch spriteBatch;
         private int movementTimer;
         private int marioOrientation;
-        private int yVelocity, yAcceleration;
+        private int yVelocity;
 
         public MarioFireball()
         {
@@ -37,8 +36,6 @@ namespace SuperMario
             movementTimer = 0;
             yVelocity = 0;
             startingLocation = 0;
-            bounce = 50;
-            yAcceleration = -1;
         }
 
 
