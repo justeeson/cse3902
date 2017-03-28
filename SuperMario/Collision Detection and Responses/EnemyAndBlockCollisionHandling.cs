@@ -9,16 +9,6 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
             Rectangle collisionRectangle;
             ISprite block = item.Sprite;
-            /*if (enemy.Location.X - Camera.cameraPositionX  < 5)
-            {
-                enemy.MovingLeft = false;
-            }
-            else if (enemy.Location.X - Camera.cameraPositionX > Game1.xMax - 5)
-            {
-                enemy.MovingLeft = true;
-            }*/
-                
-
             collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
             if(collisionRectangle.Width > collisionRectangle.Height)
             {

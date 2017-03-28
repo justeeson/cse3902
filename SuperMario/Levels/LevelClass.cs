@@ -17,7 +17,7 @@ namespace SuperMario.Levels
         public static List<IBlock> BlockList = new List<IBlock>();
         public static List<IBackground> BackgroundList = new List<IBackground>();
         public static IMario Player;
-        public Camera camera;
+        public Camera Camera;
 
         public LevelReader Loader;
 

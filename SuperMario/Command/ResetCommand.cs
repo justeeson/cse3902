@@ -21,7 +21,6 @@ namespace SuperMario.Command
             MyGame.World.Reset();
             MyGame.World.Load();
             MyGame.CameraPointer = new Camera();
-            //MyGame.store.Initialize(MyGame);
         }
     }
 }

@@ -217,7 +217,7 @@ namespace SuperMario
             if (!fireStatus)
             {
                 bool aCreateNew = true;
-                foreach (MarioFireball aFireball in Game1.mFireballs)
+                foreach (MarioFireball aFireball in Game1.Mfireballs)
                 {
                     if (aFireball.fire == false)
                     {
@@ -231,7 +231,7 @@ namespace SuperMario
                 {
                     MarioFireball aFireball = new MarioFireball();
                     aFireball.LoadContent(mContentManager);
-                    Game1.mFireballs.Add(aFireball);
+                    Game1.Mfireballs.Add(aFireball);
                     aFireball.Fire(StateMachine.Orientation, StateMachine.MarioMode, LocationX, LocationY);
                 }
                 fireStatus = true;
@@ -241,7 +241,7 @@ namespace SuperMario
         public static void LoadContent(ContentManager theContentManager)
         {
             mContentManager = theContentManager;
-            foreach (MarioFireball aFireball in Game1.mFireballs)
+            foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 aFireball.LoadContent(theContentManager);
             }
@@ -249,7 +249,7 @@ namespace SuperMario
 
         private void UpdateFireball(GameTime GameTime)
         {
-            foreach (MarioFireball aFireball in Game1.mFireballs)
+            foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 aFireball.Update(GameTime);
             }

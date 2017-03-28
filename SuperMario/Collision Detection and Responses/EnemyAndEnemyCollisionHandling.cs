@@ -20,7 +20,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height+1));
                     enemy.IsFalling = false;
                 }
-                //collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
+              
                 else if (collisionRectangle.Right == enemy.Sprite.Area(enemy.Location).Right)
                 {
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 0), enemy.Location.Y);

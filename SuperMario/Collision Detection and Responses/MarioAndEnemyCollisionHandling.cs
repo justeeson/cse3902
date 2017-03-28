@@ -10,10 +10,9 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         public static void HandleCollision(IMario mario, IEnemy item)
         {
-            Rectangle collisionRectangle;
+            Rectangle collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
             ISprite enemy = item.Sprite;
 
-            collisionRectangle = Rectangle.Intersect(mario.Area(), enemy.Area(item.Location));
             if (collisionRectangle.Bottom == enemy.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
                 Mario.LocationY += collisionRectangle.Height + 1;
