@@ -209,8 +209,6 @@ namespace SuperMario
 
         public void Fire()
         {
-            /*if (StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
-                return;*/
 
             if (!fireStatus)
             {

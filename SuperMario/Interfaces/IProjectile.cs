@@ -12,6 +12,10 @@ namespace SuperMario.Interfaces
     {
         Vector2 Location { get; set; }
         Game1 MyGame { get; set; }
+        float LocationX { get; set; }
+        float LocationY { get; set; }
+        void KillFireball();
+
         Rectangle Area();
         void Update(GameTime GameTime);
         void Draw(SpriteBatch spriteBatch);
