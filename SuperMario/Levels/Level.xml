@@ -464,7 +464,7 @@
   <HighPipe x="1504" y="331" />
   <Goomba x="1568" y="384" />
   <Goomba x="1620" y="384" />
-  <HighPipe x="1856" y="331" />
+  <PipeToUnderground x="1856" y="331" />
   <hiddenBlock x="2080" y="248" />
   <HorizontalBlock x="2528" y="280" />
   <QuestionBlock x="2560" y="280" item="flower"/>

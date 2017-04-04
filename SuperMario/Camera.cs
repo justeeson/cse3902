@@ -10,6 +10,7 @@ namespace SuperMario
     {
         public static int cameraPositionX;
         public static int cameraPositionY;
+        public bool disableCamera = false;
 
         public Camera()
         {
@@ -19,17 +20,24 @@ namespace SuperMario
 
         public void UpdateX(int MarioPositionX)
         {
-            if (MarioPositionX < 6350)
+            if (!disableCamera)
             {
-                if (MarioPositionX > cameraPositionX + 350)
+                if (MarioPositionX < 6350)
                 {
-                    cameraPositionX += MarioPositionX - (cameraPositionX + 350);
-                }
-                else if (MarioPositionX < cameraPositionX + 350 && cameraPositionX > (cameraPositionX + 350) - MarioPositionX)
-                {
-                    cameraPositionX -= (cameraPositionX + 350) - MarioPositionX;
+                    if (MarioPositionX > cameraPositionX + 350)
+                    {
+                        cameraPositionX += MarioPositionX - (cameraPositionX + 350);
+                    }
+                    else if (MarioPositionX < cameraPositionX + 350 && cameraPositionX > (cameraPositionX + 350) - MarioPositionX)
+                    {
+                        cameraPositionX -= (cameraPositionX + 350) - MarioPositionX;
+                    }
                 }
             }
+        }
+        public void SetPositionZero()
+        {
+            cameraPositionX = 0;
         }
     }
 }

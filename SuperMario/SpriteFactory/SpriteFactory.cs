@@ -136,6 +136,16 @@ namespace SuperMario
         {
             return new HighPipeSprite(highPipeTexture, 32, 32);
         }
+        // Might need to created a new pipe sprite class
+        public static ISprite CreateUndergroundPipeToGround()
+        {
+            return new PipeSprite(highPipeTexture, 32, 32);
+        }
+        // Might need to created a new pipe sprite class
+        public static ISprite CreatePipeToUnderground()
+        {
+            return new HighPipeSprite(highPipeTexture, 32, 32);
+        }
         public static ISprite CreateBackground()
         {
             return new BackgroundSprite(backgroundTexture, 32, 32);

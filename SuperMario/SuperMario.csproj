@@ -68,17 +68,23 @@
     <Compile Include="Collision Detection and Responses\ProjectileAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\ProjectileAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\ItemAndBlockCollisionHandling.cs" />
+    <Compile Include="Command\MarioBackToGroundCommand.cs" />
     <Compile Include="Command\MarioFireCommand.cs" />
+    <Compile Include="Command\MarioGoToUndergroundCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
     <Compile Include="Game Object Classes\Obstacle\HighPipe.cs" />
     <Compile Include="Game Object Classes\Obstacle\MediumPipe.cs" />
+    <Compile Include="Game Object Classes\Obstacle\PipeToUnderground.cs" />
+    <Compile Include="Game Object Classes\Obstacle\UndergroundPipeToGround.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickForSmallMarioSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HighPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\MediumPipeSprite.cs" />
+    <Compile Include="Interfaces\ILevel.cs" />
     <Compile Include="Interfaces\IMarioStateMachine.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Levels\UnderGroundWorld.cs" />
     <Compile Include="MarioClass\MarioStateMachine.cs" />
     <Compile Include="Projectile\MarioFireball.cs" />
     <Compile Include="WorldManager.cs" />
@@ -210,16 +216,10 @@
     <Content Include="CodeReview\CodeReviewSprint4\Yihang Du%27s Readability Review.txt" />
     <Content Include="Content\fireball.png" />
     <Content Include="Icon.ico" />
-    <Content Include="Levels\level3.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Levels\level2.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Levels\level1.xml" />
     <Content Include="Levels\Level.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Levels\UnderGroundWorld.xml" />
     <Content Include="README.txt" />
   </ItemGroup>
   <ItemGroup>

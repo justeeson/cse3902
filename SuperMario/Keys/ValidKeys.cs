@@ -41,6 +41,7 @@ namespace SuperMario.Game_Object_Classes
             result.Add(Keys.R);
             result.Add(Keys.Z);
             result.Add(Keys.X);
+            result.Add(Keys.N);
             return result;
         }
     }

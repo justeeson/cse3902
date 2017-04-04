@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using Microsoft.Xna.Framework;
+using SuperMario.Interfaces;
 
 namespace SuperMario.Levels
 {
@@ -8,90 +9,96 @@ namespace SuperMario.Levels
     {
         Game1 MyGame;
         public Vector2 Location;
-        public LevelClass Level;
+        public ILevel Level;
         public enum Itemtype { Star, Coin, GreenMushroom, RedMushroom, Flower };
 
-        public LevelReader(LevelClass level, Game1 game)
+        public LevelReader(ILevel level, Game1 game)
         {
             this.Level = level;
             MyGame = game;
         }
 
-        public void Load()
+        public void Load(string fileName)
         {
-            XmlDocument xmlDoc = new XmlDocument(); 
-            xmlDoc.Load("../../../../Levels/Level.xml");
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("../../../../Levels/" + fileName);
             XmlNodeList nodeList = xmlDoc.ChildNodes[1].ChildNodes;
-            for(int i = 0; i < nodeList.Count; i++)
+            for (int i = 0; i < nodeList.Count; i++)
             {
                 Location.X = Int32.Parse(nodeList[i].Attributes["x"].Value);
                 Location.Y = Int32.Parse(nodeList[i].Attributes["y"].Value);
                 switch (nodeList[i].Name)
                 {
                     case "UsedBlock":
-                        LevelClass.BlockList.Add(new SolidBrickWithCrews(MyGame, Location));
+                        Level.BlockList.Add(new SolidBrickWithCrews(MyGame, Location));
                         break;
                     case "QuestionBlock":
-                        LevelClass.BlockList.Add(new QuestionMarkBrick(MyGame, Location, nodeList[i].Attributes["item"].Value));
+                        Level.BlockList.Add(new QuestionMarkBrick(MyGame, Location, nodeList[i].Attributes["item"].Value));
                         break;
                     case "SolidBrick":
-                        LevelClass.BlockList.Add(new SolidBrick(MyGame, Location));
+                        Level.BlockList.Add(new SolidBrick(MyGame, Location));
                         break;
                     case "HiddenBlock":
-                        LevelClass.BlockList.Add(new HiddenBrick(MyGame, Location));
+                        Level.BlockList.Add(new HiddenBrick(MyGame, Location));
                         break;
                     case "CurlyBrick":
-                        LevelClass.BlockList.Add(new BreakableCurlyBrick(MyGame, Location));
+                        Level.BlockList.Add(new BreakableCurlyBrick(MyGame, Location));
                         break;
                     case "HorizontalBlock":
-                        LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
+                        Level.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
                         break;
                     case "HorizontalBlockWithItem":
-                        LevelClass.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
+                        Level.BlockList.Add(new BreakableHorizontalBrick(MyGame, Location));
                         break;
                     case "Pipe":
-                        LevelClass.BlockList.Add(new Pipe(MyGame, Location));
+                        Level.BlockList.Add(new Pipe(MyGame, Location));
                         break;
                     case "MediumPipe":
-                        LevelClass.BlockList.Add(new MediumPipe(MyGame, Location));
+                        Level.BlockList.Add(new MediumPipe(MyGame, Location));
                         break;
                     case "HighPipe":
-                        LevelClass.BlockList.Add(new HighPipe(MyGame, Location));
+                        Level.BlockList.Add(new HighPipe(MyGame, Location));
+                        break;
+                    case "PipeToUnderground":
+                        Level.BlockList.Add(new PipeToUnderground(MyGame, Location));
+                        break;
+                    case "UndergroundPipeToGround":
+                        Level.BlockList.Add(new UndergroundPipeToGround(MyGame, Location));
                         break;
                     case "FlagPole":
-                        LevelClass.BlockList.Add(new FlagPole(MyGame, Location));
+                        Level.BlockList.Add(new FlagPole(MyGame, Location));
                         break;
                     case "Castle":
-                        LevelClass.BlockList.Add(new Castle(MyGame, Location));
+                        Level.BlockList.Add(new Castle(MyGame, Location));
                         break;
                     case "Goomba":
-                        LevelClass.EnemyList.Add(new Goomba(MyGame, Location));
+                        Level.EnemyList.Add(new Goomba(MyGame, Location));
                         break;
                     case "Koopa":
-                        LevelClass.EnemyList.Add(new Koopa(MyGame, Location));
+                        Level.EnemyList.Add(new Koopa(MyGame, Location));
                         break;
 
                     case "flower":
-                        LevelClass.ItemList.Add(new Flower(MyGame, Location));
+                        Level.ItemList.Add(new Flower(MyGame, Location));
                         break;
                     case "coin":
-                        LevelClass.ItemList.Add(new Coin(MyGame, Location));
+                        Level.ItemList.Add(new Coin(MyGame, Location));
                         break;
                     case "fireMushroom":
-                        LevelClass.ItemList.Add(new FireMushroom(MyGame, Location));
+                        Level.ItemList.Add(new FireMushroom(MyGame, Location));
                         break;
                     case "grownupMushroom":
-                        LevelClass.ItemList.Add(new GrownupMushroom(MyGame, Location));
+                        Level.ItemList.Add(new GrownupMushroom(MyGame, Location));
                         break;
                     case "star":
-                        LevelClass.ItemList.Add(new Star(MyGame, Location));
+                        Level.ItemList.Add(new Star(MyGame, Location));
                         break;
-                    
+
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.Texture, 3, 12, Location);
                         Location.X = 0;
                         Location.Y = 0;
-                        LevelClass.BackgroundList.Add(new Background(MyGame, Location));
+                        Level.BackgroundList.Add(new Background(MyGame, Location));
                         break;
 
                 }

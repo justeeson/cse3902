@@ -1,55 +1,47 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using SuperMario.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuperMario.Interfaces;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperMario.Levels
 {
-    public class LevelClass : ILevel
+    public class UnderGroundWorld : ILevel
     {
         public Game1 MyGame { get; set; }
         public List<IItem> ItemList { get; set; }
         public List<IEnemy> EnemyList { get; set; }
         public List<IBlock> BlockList { get; set; }
         public List<IBackground> BackgroundList { get; set; }
-        public Camera Camera;
         public LevelReader Reader;
+        private ILevel underLevel;
         private string currentFileName;
-        public LevelClass(Game1 game, string fileName)
+        public UnderGroundWorld(Game1 game, ILevel level, string fileName)
         {
-            MyGame = game;
+            this.MyGame = game;
             ItemList = new List<IItem>();
             EnemyList = new List<IEnemy>();
             BlockList = new List<IBlock>();
             BackgroundList = new List<IBackground>();
             Reader = new LevelReader(this, game);
             currentFileName = fileName;
+            underLevel = level;
+            MyGame.CameraPointer.SetPositionZero();
+
         }
         public void Load()
         {
-            Reader.Load(currentFileName);
-        }
-
-        public void Reset()
-        {
-            ItemList.Clear();
-            EnemyList.Clear();
-            BlockList.Clear();
-            BackgroundList.Clear();
+            this.Reader.Load(currentFileName);
         }
 
         public void Update(GameTime GameTime)
         {
-
             foreach (IEnemy enemy in EnemyList)
             {
                 enemy.Update(GameTime);
             }
-
             foreach (IBlock block in BlockList)
             {
                 block.Update(GameTime);
@@ -62,6 +54,7 @@ namespace SuperMario.Levels
             foreach (IBackground background in BackgroundList)
             {
                 background.Update(GameTime);
+
             }
         }
         public void Draw(Vector2 location)
@@ -84,7 +77,13 @@ namespace SuperMario.Levels
                 enemy.Draw(MyGame.SpriteBatch, location);
             }
         }
-
+        public void Reset()
+        {
+            ItemList.Clear();
+            EnemyList.Clear();
+            BlockList.Clear();
+            BackgroundList.Clear();
+        }
         public void addFlower(Vector2 location)
         {
             ItemList.Add(new Flower(MyGame, location));
@@ -105,9 +104,9 @@ namespace SuperMario.Levels
         {
             ItemList.Add(new Star(MyGame, location));
         }
-
         public void ReturnGround()
         {
+            MyGame.World.Level = underLevel;
         }
     }
 }

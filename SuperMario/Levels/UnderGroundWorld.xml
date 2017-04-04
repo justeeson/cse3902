@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Level>
+  <CurlyBrick x="-32" y ="416" />
+  <CurlyBrick x="-64" y ="416" />
+  <CurlyBrick x="-96" y ="416" />
+  <CurlyBrick x="-128" y ="416" />
+  <CurlyBrick x="-160" y ="416" />
+  <CurlyBrick x="-192" y ="416" />
+  <CurlyBrick x="-224" y ="416" />
+  <CurlyBrick x="-256" y ="416" />
+  <CurlyBrick x="-288" y ="416" />
+  <CurlyBrick x="-320" y ="416" />
+  <CurlyBrick x="-352" y ="416" />
+  <CurlyBrick x="-384" y ="416" />
+  <CurlyBrick x="-416" y ="416" />
+  <CurlyBrick x="0" y ="416" />
+  <CurlyBrick x="32" y ="416" />
+  <CurlyBrick x="64" y ="416" />
+  <CurlyBrick x="96" y ="416" />
+  <CurlyBrick x="128" y ="416" />
+  <CurlyBrick x="160" y ="416" />
+  <CurlyBrick x="192" y ="416" />
+  <CurlyBrick x="224" y ="416" />
+  <CurlyBrick x="256" y ="416" />
+  <CurlyBrick x="288" y ="416" />
+  <CurlyBrick x="320" y ="416" />
+  <CurlyBrick x="352" y ="416" />
+  <CurlyBrick x="384" y ="416" />
+  <CurlyBrick x="416" y ="416" />
+  <CurlyBrick x="448" y ="416" />
+  <CurlyBrick x="480" y ="416" />
+  <CurlyBrick x="512" y ="416" />
+  <CurlyBrick x="544" y ="416" />
+  <CurlyBrick x="576" y ="416" />
+  <CurlyBrick x="608" y ="416" />
+  <CurlyBrick x="640" y ="416" />
+  <CurlyBrick x="672" y ="416" />
+  <CurlyBrick x="704" y ="416" />
+  <CurlyBrick x="736" y ="416" />
+  <CurlyBrick x="768" y ="416" />
+  <CurlyBrick x="800" y ="416" />
+
+  <CurlyBrick x="-32" y ="448" />
+  <CurlyBrick x="-64" y ="448" />
+  <CurlyBrick x="-96" y ="448" />
+  <CurlyBrick x="-128" y ="448" />
+  <CurlyBrick x="-160" y ="448" />
+  <CurlyBrick x="-192" y ="448" />
+  <CurlyBrick x="-224" y ="448" />
+  <CurlyBrick x="-256" y ="448" />
+  <CurlyBrick x="-288" y ="448" />
+  <CurlyBrick x="-320" y ="448" />
+  <CurlyBrick x="-352" y ="448" />
+  <CurlyBrick x="-384" y ="448" />
+  <CurlyBrick x="-416" y ="448" />
+  <CurlyBrick x="0" y ="448" />
+  <CurlyBrick x="32" y ="448" />
+  <CurlyBrick x="64" y ="448" />
+  <CurlyBrick x="96" y ="448" />
+  <CurlyBrick x="128" y ="448" />
+  <CurlyBrick x="160" y ="448" />
+  <CurlyBrick x="192" y ="448" />
+  <CurlyBrick x="224" y ="448" />
+  <CurlyBrick x="256" y ="448" />
+  <CurlyBrick x="288" y ="448" />
+  <CurlyBrick x="320" y ="448" />
+  <CurlyBrick x="352" y ="448" />
+  <CurlyBrick x="384" y ="448" />
+  <CurlyBrick x="416" y ="448" />
+  <CurlyBrick x="448" y ="448" />
+  <CurlyBrick x="480" y ="448" />
+  <CurlyBrick x="512" y ="448" />
+  <CurlyBrick x="544" y ="448" />
+  <CurlyBrick x="576" y ="448" />
+  <CurlyBrick x="608" y ="448" />
+  <CurlyBrick x="640" y ="448" />
+  <CurlyBrick x="672" y ="448" />
+  <CurlyBrick x="704" y ="448" />
+  <CurlyBrick x="736" y ="448" />
+  <CurlyBrick x="768" y ="448" />
+  <CurlyBrick x="800" y ="448" />
+
+  <SolidBrick x="0" y="384"/>
+  <SolidBrick x="0" y="352"/>
+  <SolidBrick x="0" y="320"/>
+  <SolidBrick x="0" y="288"/>
+  <SolidBrick x="0" y="256"/>
+  <SolidBrick x="0" y="224"/>
+  <SolidBrick x="0" y="192"/>
+  <SolidBrick x="0" y="160"/>
+  <SolidBrick x="0" y="128"/>
+  <SolidBrick x="0" y="96"/>
+  <SolidBrick x="0" y="64"/>
+
+
+  <SolidBrick x="192" y="384"/>
+  <SolidBrick x="224" y="384"/>
+  <SolidBrick x="256" y="384"/>
+  <SolidBrick x="288" y="384"/>
+  <SolidBrick x="320" y="384"/>
+  <SolidBrick x="352" y="384"/>
+  <SolidBrick x="384" y="384"/>
+  <SolidBrick x="416" y="384"/>
+  <SolidBrick x="448" y="384"/>
+  <SolidBrick x="480" y="384"/>
+  <SolidBrick x="512" y="384"/>
+  <SolidBrick x="544" y="384"/>
+
+  <SolidBrick x="192" y="352"/>
+  <SolidBrick x="224" y="352"/>
+  <SolidBrick x="256" y="352"/>
+  <SolidBrick x="288" y="352"/>
+  <SolidBrick x="320" y="352"/>
+  <SolidBrick x="352" y="352"/>
+  <SolidBrick x="384" y="352"/>
+  <SolidBrick x="416" y="352"/>
+  <SolidBrick x="448" y="352"/>
+  <SolidBrick x="480" y="352"/>
+  <SolidBrick x="512" y="352"/>
+  <SolidBrick x="544" y="352"/>
+
+  <SolidBrick x="192" y="320"/>
+  <SolidBrick x="224" y="320"/>
+  <SolidBrick x="256" y="320"/>
+  <SolidBrick x="288" y="320"/>
+  <SolidBrick x="320" y="320"/>
+  <SolidBrick x="352" y="320"/>
+  <SolidBrick x="384" y="320"/>
+  <SolidBrick x="416" y="320"/>
+  <SolidBrick x="448" y="320"/>
+  <SolidBrick x="480" y="320"/>
+  <SolidBrick x="512" y="320"/>
+  <SolidBrick x="544" y="320"/>
+
+  <SolidBrick x="192" y="64"/>
+  <SolidBrick x="224" y="64"/>
+  <SolidBrick x="256" y="64"/>
+  <SolidBrick x="288" y="64"/>
+  <SolidBrick x="320" y="64"/>
+  <SolidBrick x="352" y="64"/>
+  <SolidBrick x="384" y="64"/>
+  <SolidBrick x="416" y="64"/>
+  <SolidBrick x="448" y="64"/>
+  <SolidBrick x="480" y="64"/>
+  <SolidBrick x="512" y="64"/>
+  <SolidBrick x="544" y="64"/>
+
+
+  <coin x="268" y="290"/>
+  <coin x="304" y="290"/>
+  <coin x="340" y="290"/>
+  <coin x="376" y="290"/>
+  <coin x="412" y="290"/>
+  <coin x="448" y="290"/>
+  <coin x="484" y="290"/>
+
+  <coin x="268" y="230"/>
+  <coin x="304" y="230"/>
+  <coin x="340" y="230"/>
+  <coin x="376" y="230"/>
+  <coin x="412" y="230"/>
+  <coin x="448" y="230"/>
+  <coin x="484" y="230"/>
+
+  <coin x="304" y="170"/>
+  <coin x="340" y="170"/>
+  <coin x="376" y="170"/>
+  <coin x="412" y="170"/>
+  <coin x="448" y="170"/>
+
+  <UndergroundPipeToGround x="676" y="352"/>
+
+</Level>

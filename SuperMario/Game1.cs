@@ -24,7 +24,7 @@ namespace SuperMario
         public Camera CameraPointer;
         private static Game1 instance;
         public WorldManager World;
-        public LevelClass Level;
+        public ILevel Level { get; set; }
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
 
@@ -61,7 +61,6 @@ namespace SuperMario
         {
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
             CameraPointer = new Camera();
-            Level = new LevelClass(this);
             base.Initialize();
         }
 
@@ -89,6 +88,8 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
+            KeyboardController.RegisterCommand(Keys.N, new MarioGoToUndergroundCommand(this));
+
 
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
@@ -121,7 +122,7 @@ namespace SuperMario
             CameraPointer.UpdateX(Mario.LocationX);
             MarioSprite.Update(GameTime);
             World.Update(GameTime);
-            Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
+            Collision_Detection_and_Responses.CollisionHandling.Update(Level, this);
             base.Update(GameTime);           
         }
 
