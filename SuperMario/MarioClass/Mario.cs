@@ -145,6 +145,7 @@ namespace SuperMario
         public void Update(GameTime GameTime)
         {
             setState();
+            State.Update(GameTime);
             KeyboardState currentKeyboardState = Keyboard.GetState();
             if (StarStatus)
             {
@@ -195,7 +196,7 @@ namespace SuperMario
                 Mario.LocationY+= 5;
             }
             UpdateFireball(GameTime);
-            State.Update(GameTime);
+            
             if(LocationY >= 400)
             {
                 command.Execute();

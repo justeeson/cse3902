@@ -47,12 +47,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
             }
         }
-
-
+        
         private static void BlockDetection(ILevel level, Game1 game, Rectangle marioRect, int marioCheck)
         {
-            foreach (IBlock item in level.BlockList)
+            for (int index = 0; index < level.BlockList.Count; index++)
             {
+                IBlock item = level.BlockList[index];
                 Rectangle blockRect = item.Sprite.Area(item.Location);
                 Rectangle testRect = marioRect;
                 testRect.Y += 5;

@@ -122,7 +122,7 @@ namespace SuperMario
             CameraPointer.UpdateX(Mario.LocationX);
             MarioSprite.Update(GameTime);
             World.Update(GameTime);
-            Collision_Detection_and_Responses.CollisionHandling.Update(Level, this);
+            Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(GameTime);           
         }
 
