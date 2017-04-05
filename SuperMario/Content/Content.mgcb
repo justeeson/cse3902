@@ -361,3 +361,9 @@
 /processorParam:Quality=Best
 /build:breakableBrickSoundEffect.mp3
 
+#begin pauseSoundEffect.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:pauseSoundEffect.mp3
+
