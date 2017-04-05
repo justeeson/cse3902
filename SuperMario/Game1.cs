@@ -24,7 +24,6 @@ namespace SuperMario
         public Camera CameraPointer;
         private static Game1 instance;
         public WorldManager World;
-        public ILevel Level { get; set; }
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
 
@@ -122,7 +121,7 @@ namespace SuperMario
             CameraPointer.UpdateX(Mario.LocationX);
             MarioSprite.Update(GameTime);
             World.Update(GameTime);
-            Collision_Detection_and_Responses.CollisionHandling.Update(Level, this);
+            Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
             base.Update(GameTime);           
         }
 
