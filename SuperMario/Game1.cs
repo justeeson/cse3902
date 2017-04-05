@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
@@ -22,6 +23,7 @@ namespace SuperMario
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
+        private Song backgroundMusic;
         private static Game1 instance;
         public WorldManager World;
         public Vector2 Location { get; set; }
@@ -68,6 +70,9 @@ namespace SuperMario
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             Texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
+            backgroundMusic = Content.Load<Song>("backgroundMusic");
+            //MediaPlayer.IsRepeating = true;
+            // MediaPlayer.Play(backgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);

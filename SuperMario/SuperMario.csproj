@@ -81,6 +81,7 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickForSmallMarioSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HighPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\MediumPipeSprite.cs" />
+    <Compile Include="Game1Utility.cs" />
     <Compile Include="Interfaces\ILevel.cs" />
     <Compile Include="Interfaces\IMarioStateMachine.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />

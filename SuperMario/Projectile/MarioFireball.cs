@@ -10,6 +10,7 @@ using SuperMario.Interfaces;
 using System.Collections;
 using Microsoft.Xna.Framework;
 using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -27,6 +28,7 @@ namespace SuperMario
         private int startingLocation;
         private SpriteBatch spriteBatch;
         private int movementTimer;
+        private Song soundEffect;
         private int marioOrientation;
         private int yVelocity;
 
@@ -41,9 +43,7 @@ namespace SuperMario
 
 
         public void Update(GameTime GameTime)
-        {
-
-            
+        {          
             if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
             {
                 fire = false;
@@ -74,6 +74,8 @@ namespace SuperMario
         }
         public void MarioFire(int orientation, int marioMode, int LocationX, int LocationY)
         {
+
+            MediaPlayer.Play(soundEffect);
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
@@ -113,6 +115,7 @@ namespace SuperMario
         }
         public void LoadContent(ContentManager Content)
         {
+            soundEffect = Content.Load<Song>("fireballSoundEffect");
             Texture = Content.Load<Texture2D>("fireball");
         }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -41,6 +42,7 @@ namespace SuperMario
             }
             else
             {
+                MediaPlayer.Play(Game1Utility.breakableBrickSoundEffect);
                 Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
                 destroyed = true;
             }

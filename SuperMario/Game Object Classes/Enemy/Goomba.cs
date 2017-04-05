@@ -1,6 +1,7 @@
 ﻿using SuperMario.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -14,7 +15,7 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
         public int cameraPositionX { get; set; }
-
+        private bool playDeathSoundEffect;
         private bool dead;
         private int deadCounter = 10;
         public Goomba(Game1 game, Vector2 location)
@@ -24,6 +25,7 @@ namespace SuperMario
             MyGame = game;
             Sprite = SpriteFactory.CreateGoomba();
             CanAttack = true;
+            playDeathSoundEffect = false;
             Location = location;
             dead = false;
         }
@@ -58,6 +60,11 @@ namespace SuperMario
 
             if (dead)
             {
+                if(playDeathSoundEffect == false)
+                {
+                    playDeathSoundEffect = true;
+                    MediaPlayer.Play(Game1Utility.goombaStompSoundEffect);
+                }
                 deadCounter--;
             }
             if (deadCounter == 0)

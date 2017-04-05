@@ -337,3 +337,27 @@
 /processorParam:TextureFormat=Color
 /build:pipe2.png
 
+#begin backgroundMusic.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:backgroundMusic.mp3
+
+#begin fireballSoundEffect.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:fireballSoundEffect.mp3
+
+#begin goombaStompSoundEffect.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:goombaStompSoundEffect.mp3
+
+#begin breakableBrickSoundEffect.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:breakableBrickSoundEffect.mp3
+
