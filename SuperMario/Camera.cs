@@ -35,6 +35,7 @@ namespace SuperMario
                 }
             }
         }
+        
         public void SetPositionZero()
         {
             cameraPositionX = 0;

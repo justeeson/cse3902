@@ -32,6 +32,7 @@ namespace SuperMario.Levels
         public void Load()
         {
             Reader.Load(currentFileName);
+            SortBlocks();
         }
 
         public void Reset()
@@ -41,6 +42,24 @@ namespace SuperMario.Levels
             BlockList.Clear();
             BackgroundList.Clear();
         }
+
+        public void SortBlocks()
+        {
+            for (int i = (BlockList.Count - 1); i >= 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    if (BlockList.ElementAt(j - 1).Location.Y > BlockList.ElementAt(j).Location.Y)
+                    {
+                        IBlock temp = BlockList[j - 1];
+                        BlockList[j - 1] = BlockList[j];
+                        BlockList[j] = temp;
+
+                    }
+                }
+            }
+        }
+
 
         public void Update(GameTime GameTime)
         {

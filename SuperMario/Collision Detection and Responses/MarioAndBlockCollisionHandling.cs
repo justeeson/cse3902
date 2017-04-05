@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using SuperMario.Interfaces;
-using SuperMario.MarioClass;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -15,17 +14,17 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (block.Area(item.Location).Equals(collisionRectangle)) {
                 return;
             }
+            
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-            if (collisionRectangle.Width < collisionRectangle.Height
+            if (collisionRectangle.Width <= collisionRectangle.Height/*
             && (KeyboardStatus.IsKeyDown(Keys.Right) || KeyboardStatus.IsKeyDown(Keys.Left)
-            || KeyboardStatus.IsKeyDown(Keys.A) || KeyboardStatus.IsKeyDown(Keys.D)))
+            || KeyboardStatus.IsKeyDown(Keys.A) || KeyboardStatus.IsKeyDown(Keys.D))*/)
             {
                 WidthSmallerThanHeight( mario,  item,  collisionRectangle,  block);
             }
             else
             {
                 HeightSmallerThanWidth(mario, item, collisionRectangle, block);
-
             }
         }
 
