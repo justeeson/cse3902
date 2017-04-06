@@ -179,7 +179,7 @@ namespace SuperMario
                     invulnTimer = 0;
                 }
             }
-            if (JumpStatus)
+            if (JumpStatus || !GroundedStatus)
             {
 
                 LocationY = LocationY - yVelocity;
@@ -200,7 +200,7 @@ namespace SuperMario
             if (!GroundedStatus && !JumpStatus)
             {
                 DisableJump = true;
-                Mario.LocationY += 5;
+                //Mario.LocationY += 5;
             }
             UpdateFireball(GameTime);
 
