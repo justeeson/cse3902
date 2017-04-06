@@ -3,6 +3,8 @@ using SuperMario.Collision_Detection_and_Responses;
 using SuperMario.Interfaces;
 using SuperMario.Levels;
 using SuperMario.MarioClass;
+using SuperMario.Blockclass;
+using SuperMario.Blocks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +28,11 @@ namespace SuperMario.Collision_Detection_and_Responses
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
 
-            MarioDetection( level,  game,  marioRect, mario);
+            MarioDetection(level,  game,  marioRect, mario);
             BlockDetection(level, game, marioRect, marioCheck);
-            EnemyDetection( level,  game,  marioRect,  mario);
-            ItemDetection( level,  game,  marioRect,  itemCheck);
-            FireballDetection( level,  game,  marioRect, mario);
+            EnemyDetection(level,  game,  marioRect,  mario);
+            ItemDetection(level,  game,  marioRect,  itemCheck);
+            FireballDetection(level,  game,  marioRect, mario);
 
         }
 
@@ -62,17 +64,24 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     //Mario.DisableJump = false;
                     MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
+                    if (item is PipeToUnderground)
+                    {
+                        item.BecomeUsed();
+                    }
+                    else if (item is UndergroundPipeToGround)
+                    {
+                        item.BecomeUsed();
+                    }
+
                 }
                 else
                 {
-
                     if (testRect.Intersects(blockRect))
                     {
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
                         marioCheck = 1;
                     }
-                    
                 }
                 testRect.Y -= 1;
                 blockRect = item.Sprite.Area(item.Location);
