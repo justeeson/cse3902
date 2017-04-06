@@ -31,5 +31,6 @@ namespace SuperMario
         public static int cameraOffset = 350;
         public static int fireballMaxDistance = 500;
         public static int maxValueY = 400;
+        public static int movingLeftOffset = -400;
     }
 }

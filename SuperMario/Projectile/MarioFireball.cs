@@ -95,7 +95,7 @@ namespace SuperMario
                 int column = currentFrame % 1;
                 this.spriteBatch = myspriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.cameraPositionX, (int)LocationY, width / 2, height / 2);
+                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);
                 myspriteBatch.Begin();
                 myspriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 myspriteBatch.End();

@@ -25,7 +25,7 @@ namespace SuperMario
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
-        public Song backgroundMusic;
+        public Song BackgroundMusic;
         private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
@@ -80,11 +80,11 @@ namespace SuperMario
             
             Texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
-            backgroundMusic = Content.Load<Song>("backgroundMusic");
+            BackgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = Game1Utility.RegularVolume;
-            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.Play(BackgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
@@ -168,9 +168,9 @@ namespace SuperMario
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             World.Draw(Location);
-            World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            PlayerStat.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+            World.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+            PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
 
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
