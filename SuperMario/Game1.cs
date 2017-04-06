@@ -29,6 +29,7 @@ namespace SuperMario
         private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
+        public static Boolean DisableControl;
         private static Game1 instance;
         public WorldManager World;
         public PlayerStatistic PlayerStat;
@@ -70,6 +71,7 @@ namespace SuperMario
             oldKeyboardState = new KeyboardState();
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
             isPaused = false;
+            DisableControl = false;
             CameraPointer = new Camera();
             base.Initialize();
         }
@@ -153,9 +155,12 @@ namespace SuperMario
             if (!isPaused)
             {
                 this.GameTime = GameTime;
-                KeyboardController.Update(GameTime);
-                GamepadController.Update(GameTime);
-                CameraPointer.UpdateX(Mario.LocationX);
+                if (!DisableControl)
+                {
+                    KeyboardController.Update(GameTime);
+                    GamepadController.Update(GameTime);
+                    CameraPointer.UpdateX(Mario.LocationX);
+                }
                 MarioSprite.Update(GameTime);
                 World.Update(GameTime);
                 Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);

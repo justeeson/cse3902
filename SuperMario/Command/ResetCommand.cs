@@ -24,6 +24,7 @@ namespace SuperMario.Command
             MyGame.PlayerStat.Reset();
             Camera.CameraPositionX = 0;
             MyGame.CameraPointer.disableCamera = false;
+            MediaPlayer.Volume = Game1Utility.RegularVolume;
             MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
         }
     }

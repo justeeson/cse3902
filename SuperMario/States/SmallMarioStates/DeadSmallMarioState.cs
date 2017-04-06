@@ -37,6 +37,7 @@ namespace SuperMario.Sprites
                 MediaPlayer.Stop();
                 Game1Utility.DeathSoundEffect.Play();
                 playSoundEffect = true;
+                Game1.DisableControl = true;
             }
             resetTimer += GameTime.ElapsedGameTime.Milliseconds;
             if (resetTimer > 3000)
@@ -45,6 +46,7 @@ namespace SuperMario.Sprites
                 playSoundEffect = false;
                 MediaPlayer.Volume = Game1Utility.RegularVolume;
                 MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+                Game1.DisableControl = false;
                 command.Execute();
             }
         }
