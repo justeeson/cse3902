@@ -26,9 +26,11 @@ namespace SuperMario
         }
         public void BecomeUsed()
         {
+            MyGame.PlayerStat.SetScoreValue(5000);
+            this.Sprite = SpriteFactory.CreateFlagPoleToUsed();
         }
         public void Used()
-        {
+        {   
 
         }
 
