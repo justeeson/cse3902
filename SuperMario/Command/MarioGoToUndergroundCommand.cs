@@ -26,7 +26,6 @@ namespace SuperMario.Command
             Mario.LocationX = 50;
             Mario.LocationY = 50;
             MyGame.CameraPointer.disableCamera = true;
-            MarioStateMachine.Crouching = 0;
         }
 
     }
