@@ -168,6 +168,6 @@
   <coin x="412" y="170"/>
   <coin x="448" y="170"/>
 
-  <UndergroundPipeToGround x="676" y="352"/>
+  <UndergroundPipeToGround x="676" y="200"/>
 
 </Level>
