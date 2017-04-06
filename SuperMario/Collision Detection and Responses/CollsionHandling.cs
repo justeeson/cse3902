@@ -13,6 +13,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     class CollisionHandling
     {
+        public static Boolean bottomCollision;
 
         private CollisionHandling()
         {
@@ -50,18 +51,19 @@ namespace SuperMario.Collision_Detection_and_Responses
         
         private static void BlockDetection(ILevel level, Game1 game, Rectangle marioRect, int marioCheck)
         {
+            bottomCollision = false;
             for (int index = 0; index < level.BlockList.Count; index++)
             {
                 IBlock item = level.BlockList[index];
                 Rectangle blockRect = item.Sprite.Area(item.Location);
                 Rectangle testRect = marioRect;
-                testRect.Y += 5;
+                testRect.Y += 1;
                 if (marioRect.Intersects(blockRect))
                 {
-                    Mario.DisableJump = false;
+                    //Mario.DisableJump = false;
                     MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }
-                else if (true)
+                else
                 {
 
                     if (testRect.Intersects(blockRect))
@@ -70,19 +72,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                         Mario.GroundedStatus = true;
                         marioCheck = 1;
                     }
-                    testRect.Y -= 5;
+                    
                 }
+                testRect.Y -= 1;
                 blockRect = item.Sprite.Area(item.Location);
-                foreach (MarioFireball fireBall in Game1.Mfireballs)
-                {
-                    Rectangle ballRect = fireBall.Area();
-                    if (ballRect.Intersects(blockRect))
-                    {
-
-                        MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
-                    }
-                }
-
+                
                 for (int i = 0; i < level.EnemyList.Count; i++)
                 {
                     IEnemy enemyInList = level.EnemyList.ElementAt<IEnemy>(i);
@@ -99,6 +93,8 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = true;
                 Mario.GroundedStatus = false;
             }
+
+            
         }
 
 
