@@ -1,0 +1,11 @@
+﻿Author of the code review: Son Le
+Date of the code review: 04/05/2017
+Sprint number: 5
+Name of the .cs file being reviewed: Game1.cs
+Author of the .cs file being reviewed: Sebastine
+Number of minutes taken to complete the review: 10
+This is the core class of the game. It has many fields, properties and a few methods but they are readable because
+the way the author named them. the name are meanningful so that the class rarely has any comments. The impletation of 
+methods provoked inside the class are written somewhere else so this reduce the complexity of the methods body inside
+the class. However, since this class has many connections with other classes through out the applications, there are alot
+of fields and methods needed to be reviewed.
