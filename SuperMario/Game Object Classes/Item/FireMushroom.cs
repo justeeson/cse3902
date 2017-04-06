@@ -41,9 +41,9 @@ namespace SuperMario
             }
 
             if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
+                Location = new Vector2(Location.X - 3, Location.Y);
             else
-                Location = new Vector2(Location.X + 4, Location.Y);
+                Location = new Vector2(Location.X + 3, Location.Y);
 
             if (IsFalling)
             {
@@ -61,6 +61,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            Game1Utility.greenMushroomSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
             //MyGame.store.arrayOfSprites[3] = Sprite;
             MyGame.MarioSprite.MarioFireState();

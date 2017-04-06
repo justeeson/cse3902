@@ -397,3 +397,21 @@
 /processorParam:Quality=Best
 /build:pauseSoundEffect.wav
 
+#begin starMusic.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:starMusic.mp3
+
+#begin 1UPSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:1UPSoundEffect.wav
+
+#begin deathSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:deathSoundEffect.wav
+

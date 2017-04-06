@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -42,9 +43,9 @@ namespace SuperMario
             }
 
             if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
+                Location = new Vector2(Location.X - 3, Location.Y);
             else
-                Location = new Vector2(Location.X + 4, Location.Y);
+                Location = new Vector2(Location.X + 3, Location.Y);
 
             if (IsFalling)
             {
@@ -62,6 +63,8 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            MediaPlayer.Play(Game1Utility.starMusic);
+            MediaPlayer.Volume = 0.8f;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             HasBeenUsed = true;
             //MyGame.store.arrayOfSprites[6] = Sprite;

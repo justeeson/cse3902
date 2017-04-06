@@ -25,7 +25,7 @@ namespace SuperMario
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
-        private Song backgroundMusic;
+        public Song backgroundMusic;
         private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
@@ -82,6 +82,7 @@ namespace SuperMario
             backgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.42f;
             MediaPlayer.Play(backgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();

@@ -17,12 +17,14 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public bool MovingLeft { get; set; }
         public bool IsFalling { get; set; }
+        private bool playSoundEffect;
 
         public Coin(Game1 game, Vector2 location)
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateCoin();
             MyGame.Sprite = this.Sprite;
+            playSoundEffect = false;
             HasBeenUsed = false;
             Location = location;
         }
@@ -34,7 +36,14 @@ namespace SuperMario
         public Rectangle Area()
         {
             if (HasBeenUsed)
+            {
+                if (!playSoundEffect)
+                {
+                    Game1Utility.coinSoundEffect.Play();
+                    playSoundEffect = true;
+                }
                 return new Rectangle(0, 0, 0, 0);
+            }
             else
                 return Sprite.Area(Location);
         }

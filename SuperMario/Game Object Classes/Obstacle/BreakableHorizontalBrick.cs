@@ -19,6 +19,7 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         private int timer=0;
         private bool destroyed = false;
+        private bool playSoundEffect = false;
         public BreakableHorizontalBrick(Game1 game, Vector2 location)
         {
             MyGame = game;
@@ -37,7 +38,11 @@ namespace SuperMario
         {
             if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
-                Game1Utility.breakableBrickBumpSoundEffect.Play();
+                if (!playSoundEffect)
+                {
+                    Game1Utility.breakableBrickBumpSoundEffect.Play();
+                    playSoundEffect = true;
+                }
                 Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
                 timer = 1;
             }
@@ -54,6 +59,7 @@ namespace SuperMario
             if (timer == 0 && !destroyed)
             {
                 Sprite = new BreakableHorizontalBrickSprite(SpriteFactory.brickableHorizontalBrickTexture,4,8);
+                playSoundEffect = false;
 
             }
             Sprite.Update(GameTime);
