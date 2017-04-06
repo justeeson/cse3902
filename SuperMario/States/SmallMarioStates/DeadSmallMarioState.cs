@@ -35,7 +35,7 @@ namespace SuperMario.Sprites
             if(!playSoundEffect)
             {
                 MediaPlayer.Stop();
-                Game1Utility.deathSoundEffect.Play();
+                Game1Utility.DeathSoundEffect.Play();
                 playSoundEffect = true;
             }
             resetTimer += GameTime.ElapsedGameTime.Milliseconds;
@@ -43,8 +43,8 @@ namespace SuperMario.Sprites
             {
                 resetTimer -= 3000;
                 playSoundEffect = false;
-                MediaPlayer.Volume = 0.42f;
-                MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
+                MediaPlayer.Volume = Game1Utility.RegularVolume;
+                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
                 command.Execute();
             }
         }

@@ -16,9 +16,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-            if (collisionRectangle.Width <= collisionRectangle.Height/*
-            && (KeyboardStatus.IsKeyDown(Keys.Right) || KeyboardStatus.IsKeyDown(Keys.Left)
-            || KeyboardStatus.IsKeyDown(Keys.A) || KeyboardStatus.IsKeyDown(Keys.D))*/)
+            if (collisionRectangle.Width <= collisionRectangle.Height)
             {
                 WidthSmallerThanHeight( mario,  item,  collisionRectangle,  block);
             }
@@ -41,13 +39,18 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
             {
-                Mario.LocationY += collisionRectangle.Height + 5;
+                Mario.LocationY += collisionRectangle.Height;
+                mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
             }
             else if (collisionRectangle.Top == block.Area(item.Location).Top)
             {
-                Mario.LocationY -= collisionRectangle.Height + 5;
+                Mario.GroundedStatus = true;
+                Mario.DisableJump = false;
+                Mario.JumpStatus = false;
+                Mario.LocationY -= (collisionRectangle.Height);
+                CollisionHandling.bottomCollision = true;
                 mario.ResetVelocity();
             }
         }
@@ -57,13 +60,17 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (collisionRectangle.Top == block.Area(item.Location).Top)
             {
                 Mario.GroundedStatus = true;
-                Mario.LocationY -= (collisionRectangle.Height + 5);
+                Mario.DisableJump = false;
                 Mario.JumpStatus = false;
+                Mario.LocationY -= (collisionRectangle.Height);
+                CollisionHandling.bottomCollision = true;
+
                 mario.ResetVelocity();
             }
             else if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
             {
                 Mario.LocationY += collisionRectangle.Height;
+                mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
             }
@@ -71,11 +78,11 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
-                Mario.LocationX += collisionRectangle.Width;
+                Mario.LocationX += collisionRectangle.Width + 1;
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
-                Mario.LocationX -= collisionRectangle.Width;
+                Mario.LocationX -= (collisionRectangle.Width + 1);
             }
         }
 

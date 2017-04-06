@@ -31,11 +31,11 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.cameraPositionX < 0)
+            if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = !MovingLeft;
             }
-            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            else if (Location.X - Camera.CameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
             {
                 MovingLeft = !MovingLeft;
             }
@@ -61,16 +61,15 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.greenMushroomSoundEffect.Play();
+            Game1Utility.GreenMushroomSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
-            //MyGame.store.arrayOfSprites[3] = Sprite;
             MyGame.MarioSprite.MarioFireState();
             HasBeenUsed = true;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
         }
     }
 }

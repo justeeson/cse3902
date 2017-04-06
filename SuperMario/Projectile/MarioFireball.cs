@@ -24,7 +24,6 @@ namespace SuperMario
         private int currentFrame;
         private int mode;
         public Texture2D Texture { get; set; }
-        const int MAX_DISTANCE = 500;
         public Boolean fire;
         private int startingLocation;
         private SpriteBatch spriteBatch;
@@ -45,7 +44,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {          
-            if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
+            if (Math.Abs(LocationX - startingLocation) > Game1Utility.fireballMaxDistance)
             {
                 fire = false;
             }
@@ -96,7 +95,7 @@ namespace SuperMario
                 int column = currentFrame % 1;
                 this.spriteBatch = myspriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.cameraPositionX, (int)LocationY, width / 2, height / 2);
+                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);
                 myspriteBatch.Begin();
                 myspriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 myspriteBatch.End();

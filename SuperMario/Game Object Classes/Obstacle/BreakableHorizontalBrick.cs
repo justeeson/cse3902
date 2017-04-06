@@ -40,7 +40,7 @@ namespace SuperMario
             {
                 if (!playSoundEffect)
                 {
-                    Game1Utility.breakableBrickBumpSoundEffect.Play();
+                    Game1Utility.BreakableBrickBumpSoundEffect.Play();
                     playSoundEffect = true;
                 }
                 Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
@@ -48,7 +48,7 @@ namespace SuperMario
             }
             else
             {
-                Game1Utility.breakableBrickSmashSoundEffect.Play();
+                Game1Utility.BreakableBrickSmashSoundEffect.Play();
                 Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
                 destroyed = true;
             }
@@ -67,7 +67,7 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            location = new Vector2(Location.X - Camera.cameraPositionX, Location.Y);
+            location = new Vector2(Location.X - Camera.CameraPositionX, Location.Y);
             Sprite.Draw(spriteBatch, location);
         }
     }

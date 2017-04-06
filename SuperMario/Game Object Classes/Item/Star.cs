@@ -33,11 +33,11 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.cameraPositionX < 0)
+            if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = !MovingLeft;
             }
-            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            else if (Location.X - Camera.CameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
             {
                 MovingLeft = !MovingLeft;
             }
@@ -63,17 +63,16 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            MediaPlayer.Play(Game1Utility.starMusic);
-            MediaPlayer.Volume = 0.8f;
+            MediaPlayer.Play(Game1Utility.StarMusic);
+            MediaPlayer.Volume = Game1Utility.HigherVolume;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             HasBeenUsed = true;
-            //MyGame.store.arrayOfSprites[6] = Sprite;
             Mario.StarPowerUp();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
 
         }
     }
