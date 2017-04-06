@@ -1,0 +1,12 @@
+﻿Author of the code review: Dellon Collins
+Date of the code review: 4/5/2017
+Sprint number: 5
+Name of the .cs file being reviewed: MarioClass.Mario.cs
+Author of the .cs file being reviewed: Sebastin Justeeson
+Number of minutes taken to complete the review: 8 mins
+
+Specific comments on what is readable and what is not: 
+The logic is easy to follow but the Mario class is getting cluttered
+and is making other bits of code harder to find and follow. Perhaps
+we could separate sound commands into another class called from Mario
+to reduce the number of lines in the Update() method.
