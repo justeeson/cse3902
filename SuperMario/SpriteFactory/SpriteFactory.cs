@@ -157,5 +157,9 @@ namespace SuperMario
         {
             return new FlagPoleSprite(flagPoleTexture, 32, 32);
         }
+        public static ISprite CreateFlagPoleToUsed()
+        {
+            return new FlagPoleToUsedSprite(flagPoleTexture, 32, 32);
+        }
     }
 }
