@@ -61,9 +61,8 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.greenMushroomSoundEffect.Play();
+            Game1Utility.GreenMushroomSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
-            //MyGame.store.arrayOfSprites[3] = Sprite;
             MyGame.MarioSprite.MarioFireState();
             HasBeenUsed = true;
         }

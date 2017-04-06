@@ -24,7 +24,6 @@ namespace SuperMario
         private int currentFrame;
         private int mode;
         public Texture2D Texture { get; set; }
-        const int MAX_DISTANCE = 500;
         public Boolean fire;
         private int startingLocation;
         private SpriteBatch spriteBatch;
@@ -45,7 +44,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {          
-            if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
+            if (Math.Abs(LocationX - startingLocation) > Game1Utility.fireballMaxDistance)
             {
                 fire = false;
             }

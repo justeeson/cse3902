@@ -39,7 +39,7 @@ namespace SuperMario
             {
                 if (!playSoundEffect)
                 {
-                    Game1Utility.coinSoundEffect.Play();
+                    Game1Utility.CoinSoundEffect.Play();
                     playSoundEffect = true;
                 }
                 return new Rectangle(0, 0, 0, 0);
@@ -51,7 +51,6 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
-            //MyGame.store.arrayOfSprites[2] = Sprite;
             HasBeenUsed = true;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

@@ -343,17 +343,17 @@
 /processorParam:Quality=Best
 /build:backgroundMusic.mp3
 
-#begin breakableBrickBumpSoundEffect.wav
+#begin BreakableBrickBumpSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:breakableBrickBumpSoundEffect.wav
+/build:BreakableBrickBumpSoundEffect.wav
 
-#begin coinSoundEffect.wav
+#begin CoinSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:coinSoundEffect.wav
+/build:CoinSoundEffect.wav
 
 #begin marioDeadSoundEffect.wav
 /importer:WavImporter
@@ -361,17 +361,17 @@
 /processorParam:Quality=Best
 /build:marioDeadSoundEffect.wav
 
-#begin marioJumpSoundEffect.wav
+#begin MarioJumpSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:marioJumpSoundEffect.wav
+/build:MarioJumpSoundEffect.wav
 
-#begin marioPowerUpSoundEffect.wav
+#begin MarioPowerUpSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:marioPowerUpSoundEffect.wav
+/build:MarioPowerUpSoundEffect.wav
 
 #begin fireballSoundEffect.wav
 /importer:WavImporter
@@ -379,17 +379,17 @@
 /processorParam:Quality=Best
 /build:fireballSoundEffect.wav
 
-#begin goombaStompSoundEffect.wav
+#begin GoombaStompSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:goombaStompSoundEffect.wav
+/build:GoombaStompSoundEffect.wav
 
-#begin breakableBrickSmashSoundEffect.wav
+#begin BreakableBrickSmashSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:breakableBrickSmashSoundEffect.wav
+/build:BreakableBrickSmashSoundEffect.wav
 
 #begin pauseSoundEffect.wav
 /importer:WavImporter
@@ -397,11 +397,11 @@
 /processorParam:Quality=Best
 /build:pauseSoundEffect.wav
 
-#begin starMusic.mp3
+#begin StarMusic.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:starMusic.mp3
+/build:StarMusic.mp3
 
 #begin 1UPSoundEffect.wav
 /importer:WavImporter
@@ -409,9 +409,9 @@
 /processorParam:Quality=Best
 /build:1UPSoundEffect.wav
 
-#begin deathSoundEffect.wav
+#begin DeathSoundEffect.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:deathSoundEffect.wav
+/build:DeathSoundEffect.wav
 

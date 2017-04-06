@@ -67,7 +67,7 @@ namespace SuperMario.Sprites
                 if (Mario.JumpStatus && Mario.RunStatus)
                 {
                     currentFrame = 22;
-                    if (Mario.LocationX <= 6350)
+                    if (Mario.LocationX <= Game1Utility.finalLevelLocation)
                     {
                         Mario.LocationX += 6;
                     }
@@ -75,7 +75,7 @@ namespace SuperMario.Sprites
                 else if (Mario.JumpStatus)
                 {
                     currentFrame = 22;
-                    if (Mario.LocationX <= 6350)
+                    if (Mario.LocationX <= Game1Utility.finalLevelLocation)
                     {
                         Mario.LocationX += 3;
                     }
@@ -90,7 +90,7 @@ namespace SuperMario.Sprites
                     }
                     if (currentFrame == startFrame + totalFrames)
                         currentFrame = startFrame;
-                    if (Mario.LocationX <= 6350)
+                    if (Mario.LocationX <= Game1Utility.finalLevelLocation)
                     {
                         if (Mario.RunStatus == true)
                         {

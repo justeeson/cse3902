@@ -20,7 +20,7 @@ namespace SuperMario
         public SpriteBatch SpriteBatch;
         public Texture2D Texture { get; set; }
         private Texture2D background;
-        public Boolean IsPaused;
+        private Boolean isPaused;
         private Rectangle mainFrame;
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
@@ -68,7 +68,7 @@ namespace SuperMario
             newKeyboardState = new KeyboardState();
             oldKeyboardState = new KeyboardState();
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
-            IsPaused = false;
+            isPaused = false;
             CameraPointer = new Camera();
             base.Initialize();
         }
@@ -82,7 +82,7 @@ namespace SuperMario
             backgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.42f;
+            MediaPlayer.Volume = Game1Utility.RegularVolume;
             MediaPlayer.Play(backgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
@@ -132,12 +132,23 @@ namespace SuperMario
         {
             newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
-            {              
-                IsPaused = !IsPaused;
+            {   
+                if(isPaused)
+                {
+                    MediaPlayer.Resume();
+                    isPaused = !isPaused;
+                }           
+                else
+                {
+                    
+                    MediaPlayer.Pause();
+                    isPaused = !isPaused;
+                }
+
                 pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
-            if (!IsPaused)
+            if (!isPaused)
             {
                 this.GameTime = GameTime;
                 KeyboardController.Update(GameTime);

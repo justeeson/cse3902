@@ -63,7 +63,7 @@ namespace SuperMario
                 if(playDeathSoundEffect == false)
                 {
                     playDeathSoundEffect = true;
-                    Game1Utility.goombaStompSoundEffect.Play();
+                    Game1Utility.GoombaStompSoundEffect.Play();
                 }
                 deadCounter--;
             }

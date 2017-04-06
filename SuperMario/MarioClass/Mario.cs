@@ -130,7 +130,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
             {
-                Game1Utility.marioJumpSoundEffect.Play();
+                Game1Utility.MarioJumpSoundEffect.Play();
                 yVelocity = 19;
                 Mario.JumpStatus = true;
             }
@@ -204,20 +204,20 @@ namespace SuperMario
             }
             UpdateFireball(GameTime);
             
-            if(LocationY >= 400)
+            if(LocationY >= Game1Utility.maxValueY)
             {
                 resetTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (!playSoundEffect)
                 {
                     MediaPlayer.Stop();
-                    Game1Utility.deathSoundEffect.Play();
+                    Game1Utility.DeathSoundEffect.Play();
                     playSoundEffect = true;
                 }
                 if (resetTimer > 3000)
                 {
                     resetTimer -= 3000;
                     playSoundEffect = false;
-                    MediaPlayer.Volume = 0.42f;
+                    MediaPlayer.Volume = Game1Utility.RegularVolume;
                     MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
                     command.Execute();
                 }
@@ -284,7 +284,7 @@ namespace SuperMario
             else
             {
                 StarStatus = false;
-                MediaPlayer.Volume = 0.42f;
+                MediaPlayer.Volume = Game1Utility.RegularVolume;
                 MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
             }
         }

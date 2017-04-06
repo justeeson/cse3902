@@ -66,14 +66,13 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.marioPowerUpSoundEffect.Play();
+            Game1Utility.MarioPowerUpSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.growupMushroomTexture);
             HasBeenUsed = true;
             if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
                 MyGame.MarioSprite.MarioBigState();
             }
-            //MyGame.store.arrayOfSprites[5] = Sprite;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

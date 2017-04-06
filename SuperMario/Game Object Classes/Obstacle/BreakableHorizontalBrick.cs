@@ -40,7 +40,7 @@ namespace SuperMario
             {
                 if (!playSoundEffect)
                 {
-                    Game1Utility.breakableBrickBumpSoundEffect.Play();
+                    Game1Utility.BreakableBrickBumpSoundEffect.Play();
                     playSoundEffect = true;
                 }
                 Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
@@ -48,7 +48,7 @@ namespace SuperMario
             }
             else
             {
-                Game1Utility.breakableBrickSmashSoundEffect.Play();
+                Game1Utility.BreakableBrickSmashSoundEffect.Play();
                 Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
                 destroyed = true;
             }

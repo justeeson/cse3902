@@ -63,11 +63,10 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            MediaPlayer.Play(Game1Utility.starMusic);
-            MediaPlayer.Volume = 0.8f;
+            MediaPlayer.Play(Game1Utility.StarMusic);
+            MediaPlayer.Volume = Game1Utility.HigherVolume;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             HasBeenUsed = true;
-            //MyGame.store.arrayOfSprites[6] = Sprite;
             Mario.StarPowerUp();
         }
 

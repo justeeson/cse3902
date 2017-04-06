@@ -16,9 +16,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-            if (collisionRectangle.Width <= collisionRectangle.Height/*
-            && (KeyboardStatus.IsKeyDown(Keys.Right) || KeyboardStatus.IsKeyDown(Keys.Left)
-            || KeyboardStatus.IsKeyDown(Keys.A) || KeyboardStatus.IsKeyDown(Keys.D))*/)
+            if (collisionRectangle.Width <= collisionRectangle.Height)
             {
                 WidthSmallerThanHeight( mario,  item,  collisionRectangle,  block);
             }

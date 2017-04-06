@@ -22,15 +22,15 @@ namespace SuperMario
         {
             if (!disableCamera)
             {
-                if (MarioPositionX < 6350)
+                if (MarioPositionX < Game1Utility.finalLevelLocation)
                 {
-                    if (MarioPositionX > cameraPositionX + 350)
+                    if (MarioPositionX > cameraPositionX + Game1Utility.cameraOffset)
                     {
-                        cameraPositionX += MarioPositionX - (cameraPositionX + 350);
+                        cameraPositionX += MarioPositionX - (cameraPositionX + Game1Utility.cameraOffset);
                     }
-                    else if (MarioPositionX < cameraPositionX + 350 && cameraPositionX > (cameraPositionX + 350) - MarioPositionX)
+                    else if (MarioPositionX < cameraPositionX + Game1Utility.cameraOffset && cameraPositionX > (cameraPositionX + Game1Utility.cameraOffset) - MarioPositionX)
                     {
-                        cameraPositionX -= (cameraPositionX + 350) - MarioPositionX;
+                        cameraPositionX -= (cameraPositionX + Game1Utility.cameraOffset) - MarioPositionX;
                     }
                 }
             }
