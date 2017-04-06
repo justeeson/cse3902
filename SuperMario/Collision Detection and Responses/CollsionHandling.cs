@@ -5,6 +5,7 @@ using SuperMario.Levels;
 using SuperMario.MarioClass;
 using SuperMario.Blockclass;
 using SuperMario.Blocks;
+using SuperMario.Sprites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,6 @@ namespace SuperMario.Collision_Detection_and_Responses
     class CollisionHandling
     {
         public static Boolean bottomCollision;
-
         private CollisionHandling()
         {
 
@@ -66,13 +66,18 @@ namespace SuperMario.Collision_Detection_and_Responses
                     MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                     if (item is PipeToUnderground)
                     {
-                        item.BecomeUsed();
+                        if (MarioStateMachine.Crouching == 1)
+                        {
+                            item.BecomeUsed();
+                        }
                     }
                     else if (item is UndergroundPipeToGround)
                     {
-                        item.BecomeUsed();
+                        if (MarioStateMachine.Crouching == 1)
+                        {
+                            item.BecomeUsed();
+                        }
                     }
-
                 }
                 else
                 {

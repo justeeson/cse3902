@@ -14,6 +14,7 @@ namespace SuperMario.MarioClass
         public int MarioMode, Orientation;
         IMarioState State;
         IMarioState[,] StateArray;
+        public static int Crouching;
 
         public enum Orientations
         {
@@ -84,11 +85,13 @@ namespace SuperMario.MarioClass
         {
             if (Orientation == (int)Orientations.StandingRight || Orientation == (int)Orientations.RunningRight)
             {
+                Crouching = 1;
                 Orientation = (int)Orientations.CrouchingRight;
                 State = GetState();
             }
             else if (Orientation == (int)Orientations.StandingLeft || Orientation == (int)Orientations.RunningLeft)
             {
+                Crouching = 1;
                 Orientation = (int)Orientations.CrouchingLeft;
                 State = GetState();
             }

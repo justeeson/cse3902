@@ -1,5 +1,6 @@
 ﻿using SuperMario.Interfaces;
 using SuperMario.Levels;
+using SuperMario.MarioClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace SuperMario.Command
             Mario.LocationX = 50;
             Mario.LocationY = 50;
             MyGame.CameraPointer.disableCamera = true;
+            MarioStateMachine.Crouching = 0;
         }
 
     }

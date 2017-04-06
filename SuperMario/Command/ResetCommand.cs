@@ -5,6 +5,7 @@ using System.Text;
 using SuperMario.Interfaces;
 using SuperMario.Game_Object_Classes;
 using Microsoft.Xna.Framework.Media;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Command
 {
@@ -27,6 +28,7 @@ namespace SuperMario.Command
             MediaPlayer.Volume = Game1Utility.RegularVolume;
             MediaPlayer.Stop();
             MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+            MarioStateMachine.Crouching = 0;
         }
     }
 }
