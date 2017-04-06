@@ -30,6 +30,7 @@ namespace SuperMario
         private KeyboardState oldKeyboardState;
         private static Game1 instance;
         public WorldManager World;
+        public PlayerStatistic PlayerStat;
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
 
@@ -89,6 +90,7 @@ namespace SuperMario
             Mario.LoadContent(Content);
             World = new WorldManager(this);
             World.Load();
+            PlayerStat = new PlayerStatistic(SpriteBatch, Content);
 
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
@@ -144,6 +146,7 @@ namespace SuperMario
                 MarioSprite.Update(GameTime);
                 World.Update(GameTime);
                 Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
+                PlayerStat.Update(GameTime);
                 base.Update(GameTime);
             }
         }
@@ -154,6 +157,8 @@ namespace SuperMario
             World.Draw(Location);
             World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
             MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+            PlayerStat.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 aFireball.Draw(SpriteBatch);

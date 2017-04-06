@@ -367,3 +367,9 @@
 /processorParam:Quality=Best
 /build:pauseSoundEffect.mp3
 
+#begin TextFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:TextFont.spritefont
+

@@ -44,6 +44,9 @@ namespace SuperMario
             this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
             //MyGame.store.arrayOfSprites[2] = Sprite;
             HasBeenUsed = true;
+            MyGame.PlayerStat.SetCoinValue();
+            MyGame.PlayerStat.SetScoreValue(200);
+
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
