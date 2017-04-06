@@ -55,7 +55,11 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BackgroundClass\FireworkSprite.cs" />
+    <Compile Include="BackgroundClass\FireworkClass.cs" />
+    <Compile Include="BackgroundClass\MarioWalkToCastleHandler.cs" />
     <Compile Include="BackgroundClass\CastleClass.cs" />
+    <Compile Include="BackgroundClass\MarioWalkToCastleSprite.cs" />
     <Compile Include="BackgroundClass\FlagPoleClass.cs" />
     <Compile Include="BackgroundClass\CastleSprite.cs" />
     <Compile Include="BackgroundClass\FlagPoleToUsedSprite.cs" />

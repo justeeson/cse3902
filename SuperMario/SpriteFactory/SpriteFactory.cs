@@ -33,7 +33,7 @@ namespace SuperMario
         public static Texture2D flagPoleTexture;
         public static Texture2D castleTexture;
         public static Texture2D undergroundPipeTexture;
-
+        public static Texture2D fireworks;
         public static void LoadAllTextures(ContentManager content)
         {
             koopaMoveLeftTexture = content.Load<Texture2D>("turtleMoveLeft");
@@ -56,6 +56,7 @@ namespace SuperMario
             flagPoleTexture = content.Load<Texture2D>("FlagPole");
             castleTexture = content.Load<Texture2D>("castle");
             undergroundPipeTexture = content.Load<Texture2D>("UndergroundPipe");
+            fireworks= content.Load<Texture2D>("fireworks");
         }
 
         public static ISprite CreateKoopaMoveLeft()
@@ -160,6 +161,10 @@ namespace SuperMario
         public static ISprite CreateFlagPoleToUsed()
         {
             return new FlagPoleToUsedSprite(flagPoleTexture, 32, 32);
+        }
+        public static ISprite CreateFirework()
+        {
+            return new FireworkSprite(fireworks, 32, 32);
         }
     }
 }

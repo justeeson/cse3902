@@ -5,16 +5,16 @@ using System;
 
 namespace SuperMario
 {
-    public class FlagPole : IBlock
+    public class FireworkClass : IBlock
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        public FlagPole(Game1 game, Vector2 location)
+        public FireworkClass(Game1 game, Vector2 location)
         {
             this.MyGame = game;
-            this.Sprite = SpriteFactory.CreateFlagPole();
+            this.Sprite = SpriteFactory.CreateFirework();
             MyGame.Sprite = Sprite;
             this.Location = location;
         }
@@ -25,14 +25,10 @@ namespace SuperMario
         {
         }
         public void BecomeUsed()
-        {
-            Game1.DisableControl = true;
-            MyGame.PlayerStat.SetScoreValue(5000);
-            MarioWalkToCastleHandler obj = new MarioWalkToCastleHandler(MyGame, Location);
-            this.Sprite = SpriteFactory.CreateFlagPoleToUsed();
+        {   
         }
         public void Used()
-        {   
+        {
 
         }
 
