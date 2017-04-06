@@ -23,7 +23,7 @@ namespace SuperMario
             Texture = texture;
             Rows = rows;
             Columns = columns;
-            currentFrame = 0;
+            currentFrame = 2;
             
         }
 
@@ -36,12 +36,12 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 58;
-            int height = 348;
+            int width = 68;
+            int height = 350;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
-            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
+            Rectangle sourceRectangle = new Rectangle(width * column +40, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -53,8 +53,8 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
+            int width = 30;
+            int height = 350;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }
