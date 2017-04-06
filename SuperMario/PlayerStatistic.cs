@@ -28,9 +28,9 @@ namespace SuperMario
         private int counter;
         private int displayTime=0;
 
-        public PlayerStatistic(SpriteBatch sb, ContentManager content)
+        public PlayerStatistic(SpriteBatch spritePatch, ContentManager content)
         {
-            spriteBatch = sb;
+            spriteBatch = spritePatch;
             textFont = content.Load<SpriteFont>("TextFont");
             position = new Vector2(400,22);
             displayPos = new Vector2();

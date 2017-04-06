@@ -79,6 +79,7 @@
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\BreakableHorizontalBrickForSmallMarioSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Obstacle Sprites\UndergroundPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HighPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\MediumPipeSprite.cs" />
     <Compile Include="Game1Utility.cs" />
