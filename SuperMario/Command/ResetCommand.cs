@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using SuperMario.Interfaces;
 using SuperMario.Game_Object_Classes;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario.Command
 {
@@ -23,6 +24,7 @@ namespace SuperMario.Command
             MyGame.PlayerStat.Reset();
             Camera.CameraPositionX = 0;
             MyGame.CameraPointer.disableCamera = false;
+            MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
         }
     }
 }
