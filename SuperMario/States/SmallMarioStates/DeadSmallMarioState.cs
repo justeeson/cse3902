@@ -44,7 +44,7 @@ namespace SuperMario.Sprites
                 resetTimer -= 3000;
                 playSoundEffect = false;
                 MediaPlayer.Volume = Game1Utility.RegularVolume;
-                MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
+                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
                 command.Execute();
             }
         }

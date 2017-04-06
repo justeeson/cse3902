@@ -50,7 +50,7 @@ namespace SuperMario.MarioClass
         {
             return StateArray[MarioMode, Orientation];
         }
-
+        
         public void LookLeft()
         {
             if (Orientation == (int)Orientations.StandingLeft)

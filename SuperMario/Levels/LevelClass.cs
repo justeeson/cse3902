@@ -19,6 +19,7 @@ namespace SuperMario.Levels
         public Camera Camera;
         public LevelReader Reader;
         private string currentFileName;
+
         public LevelClass(Game1 game, string fileName)
         {
             MyGame = game;
@@ -32,7 +33,7 @@ namespace SuperMario.Levels
         public void Load()
         {
             Reader.Load(currentFileName);
-            SortBlocks();
+            SortBlocks(BlockList);
         }
 
         public void Reset()
@@ -43,17 +44,17 @@ namespace SuperMario.Levels
             BackgroundList.Clear();
         }
 
-        public void SortBlocks()
+        public void SortBlocks(List<IBlock> list)
         {
-            for (int i = (BlockList.Count - 1); i >= 0; i--)
+            for (int i = (list.Count - 1); i >= 0; i--)
             {
                 for (int j = 1; j <= i; j++)
                 {
-                    if (BlockList.ElementAt(j - 1).Location.Y > BlockList.ElementAt(j).Location.Y)
+                    if (list.ElementAt(j - 1).Location.Y > list.ElementAt(j).Location.Y)
                     {
-                        IBlock temp = BlockList[j - 1];
-                        BlockList[j - 1] = BlockList[j];
-                        BlockList[j] = temp;
+                        IBlock temp = list[j - 1];
+                        list[j - 1] = list[j];
+                        list[j] = temp;
 
                     }
                 }
