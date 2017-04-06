@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using SuperMario.MarioClass;
 using SuperMario.Command;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -22,6 +23,8 @@ namespace SuperMario
         public static int LocationX { get; set; }
         public static int LocationY { get; set; }
         public static Boolean StarStatus;
+        private Boolean playSoundEffect;
+        private int resetTimer;
         public static Boolean InvulnStatus;
         public static Boolean GroundedStatus;
         public static Boolean DisableJump;
@@ -50,9 +53,11 @@ namespace SuperMario
             fireStatus = false;
             invulnTimer = 0;
             yAcceleration = -1;
+            resetTimer = 0;
             yVelocity = 0;
             JumpStatus = false;
             DisableJump = false;
+            playSoundEffect = false;
             GroundedStatus = false;
             InvulnStatus = false;
             StarStatus = false;
@@ -125,6 +130,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
             {
+                Game1Utility.marioJumpSoundEffect.Play();
                 yVelocity = 19;
                 Mario.JumpStatus = true;
             }
@@ -175,6 +181,7 @@ namespace SuperMario
             }
             if (JumpStatus)
             {
+                
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
             }
@@ -199,7 +206,21 @@ namespace SuperMario
             
             if(LocationY >= 400)
             {
-                command.Execute();
+                resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+                if (!playSoundEffect)
+                {
+                    MediaPlayer.Stop();
+                    Game1Utility.deathSoundEffect.Play();
+                    playSoundEffect = true;
+                }
+                if (resetTimer > 3000)
+                {
+                    resetTimer -= 3000;
+                    playSoundEffect = false;
+                    MediaPlayer.Volume = 0.42f;
+                    MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
+                    command.Execute();
+                }
             }
         }
 
@@ -261,7 +282,11 @@ namespace SuperMario
             if (StarStatus == false)
                 StarStatus = true;
             else
+            {
                 StarStatus = false;
+                MediaPlayer.Volume = 0.42f;
+                MediaPlayer.Play(Game1.GetInstance().backgroundMusic);
+            }
         }
 
         public static void Invulnerability()

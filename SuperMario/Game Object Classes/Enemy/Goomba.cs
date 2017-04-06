@@ -64,7 +64,7 @@ namespace SuperMario
                 if(playDeathSoundEffect == false)
                 {
                     playDeathSoundEffect = true;
-                    MediaPlayer.Play(Game1Utility.goombaStompSoundEffect);
+                    Game1Utility.goombaStompSoundEffect.Play();
                 }
                 deadCounter--;
             }

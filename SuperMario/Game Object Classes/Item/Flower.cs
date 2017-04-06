@@ -40,6 +40,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            Game1Utility.marioPowerUpSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
             //MyGame.store.arrayOfSprites[4] = Sprite;
             MyGame.MarioSprite.MarioFireState();
