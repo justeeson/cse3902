@@ -18,7 +18,7 @@ namespace SuperMario.Interfaces
         Game1 MyGame { get; set; }
         void Update(GameTime GameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        void GetKilled();
+        void GetKilled(bool killedBySmashed);
         void ChangeDirection();
     }
 }

@@ -62,7 +62,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (Mario.StarStatus)
                 {
-                    item.GetKilled();
+                    item.GetKilled(false);
                     item.CanAttack = false;
                 }
             }
@@ -72,7 +72,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         private static void CollideTop(IMario mario, IEnemy item, Rectangle collisionRectangle)
         {
             Mario.LocationY -= collisionRectangle.Height + 1;
-            item.GetKilled();
+            item.GetKilled(true);
             item.CanAttack = false;
         }
 
@@ -102,7 +102,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (Mario.StarStatus)
                 {
-                    item.GetKilled();
+                    item.GetKilled(true);
                     item.CanAttack = false;
                 }
             }
@@ -133,7 +133,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (Mario.StarStatus)
                 {
-                    item.GetKilled();
+                    item.GetKilled(false);
                     item.CanAttack = false;
                 }
             }
