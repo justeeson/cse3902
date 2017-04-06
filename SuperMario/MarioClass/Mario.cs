@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using SuperMario.MarioClass;
 using SuperMario.Command;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -22,6 +23,8 @@ namespace SuperMario
         public static int LocationX { get; set; }
         public static int LocationY { get; set; }
         public static Boolean StarStatus;
+        private Boolean playSoundEffect;
+        private int resetTimer;
         public static Boolean InvulnStatus;
         public static Boolean GroundedStatus;
         public static Boolean DisableJump;
@@ -34,7 +37,7 @@ namespace SuperMario
         private int starPowerTimer;
         private static ContentManager mContentManager;
         private ICommand command;
-       
+
         public Mario(Texture2D texture, int rows, int columns, Vector2 location)
         {
             State = new StandingRightSmallMarioState(this);
@@ -50,9 +53,11 @@ namespace SuperMario
             fireStatus = false;
             invulnTimer = 0;
             yAcceleration = -1;
+            resetTimer = 0;
             yVelocity = 0;
             JumpStatus = false;
             DisableJump = false;
+            playSoundEffect = false;
             GroundedStatus = false;
             InvulnStatus = false;
             StarStatus = false;
@@ -89,7 +94,7 @@ namespace SuperMario
             StateMachine.LookRight();
         }
 
-        
+
         public void LookDown()
         {
             StateMachine.LookDown();
@@ -125,6 +130,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
             {
+                Game1Utility.MarioJumpSoundEffect.Play();
                 yVelocity = 19;
                 Mario.JumpStatus = true;
             }
@@ -155,10 +161,10 @@ namespace SuperMario
                     StarPowerUp();
                 }
             }
-            if(fireStatus)
+            if (fireStatus)
             {
                 fireDelay += GameTime.ElapsedGameTime.Milliseconds;
-                if(fireDelay > 500)
+                if (fireDelay > 500)
                 {
                     fireStatus = false;
                     fireDelay = 0;
@@ -173,13 +179,14 @@ namespace SuperMario
                     invulnTimer = 0;
                 }
             }
-            if (JumpStatus || !GroundedStatus)
+            if (JumpStatus)
             {
+
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
             }
 
-            if(RunStatus)
+            if (RunStatus)
             {
                 KeyboardState newKeyboardState = Keyboard.GetState();
                 GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
@@ -189,23 +196,37 @@ namespace SuperMario
                 }
 
             }
-        
+
             if (!GroundedStatus && !JumpStatus)
             {
                 DisableJump = true;
-                //Mario.LocationY+= 5;
+                Mario.LocationY += 5;
             }
             UpdateFireball(GameTime);
-            
-            if(LocationY >= 400)
+
+            if (LocationY >= Game1Utility.maxValueY)
             {
-                command.Execute();
+                resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+                if (!playSoundEffect)
+                {
+                    MediaPlayer.Stop();
+                    Game1Utility.DeathSoundEffect.Play();
+                    playSoundEffect = true;
+                }
+                if (resetTimer > 3000)
+                {
+                    resetTimer -= 3000;
+                    playSoundEffect = false;
+                    MediaPlayer.Volume = Game1Utility.RegularVolume;
+                    MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+                    command.Execute();
+                }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            State.Draw(spriteBatch, new Vector2(LocationX - Camera.cameraPositionX, LocationY));
+            State.Draw(spriteBatch, new Vector2(LocationX - Camera.CameraPositionX, LocationY));
         }
 
         public void Fire()
@@ -261,7 +282,11 @@ namespace SuperMario
             if (StarStatus == false)
                 StarStatus = true;
             else
+            {
                 StarStatus = false;
+                MediaPlayer.Volume = Game1Utility.RegularVolume;
+                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+            }
         }
 
         public static void Invulnerability()

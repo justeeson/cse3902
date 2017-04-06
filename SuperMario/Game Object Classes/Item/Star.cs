@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -32,19 +33,19 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.cameraPositionX < 0)
+            if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = !MovingLeft;
             }
-            else if (Location.X - Camera.cameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
+            else if (Location.X - Camera.CameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
             {
                 MovingLeft = !MovingLeft;
             }
 
             if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
+                Location = new Vector2(Location.X - 3, Location.Y);
             else
-                Location = new Vector2(Location.X + 4, Location.Y);
+                Location = new Vector2(Location.X + 3, Location.Y);
 
             if (IsFalling)
             {
@@ -62,15 +63,16 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            MediaPlayer.Play(Game1Utility.StarMusic);
+            MediaPlayer.Volume = Game1Utility.HigherVolume;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             HasBeenUsed = true;
-            //MyGame.store.arrayOfSprites[6] = Sprite;
             Mario.StarPowerUp();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
 
         }
     }

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 using SuperMario.Interfaces;
 using SuperMario.Command;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario.Sprites
 {
@@ -16,6 +17,7 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int currentFrame;
         private int flashStatus;
+        private bool playSoundEffect;
         private int resetTimer;
         private ICommand command;
         public DeadSmallMarioState(Mario mario)
@@ -24,15 +26,25 @@ namespace SuperMario.Sprites
             currentFrame = 0;
             flashStatus = 0;
             resetTimer = 0;
+            playSoundEffect = false;
             command = new ResetCommand(Game1.GetInstance());
         }
 
         public void Update(GameTime GameTime)
         {
-            resetTimer += GameTime.ElapsedGameTime.Milliseconds;
-            if (resetTimer > 2000)
+            if(!playSoundEffect)
             {
-                resetTimer -= 2000;
+                MediaPlayer.Stop();
+                Game1Utility.DeathSoundEffect.Play();
+                playSoundEffect = true;
+            }
+            resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+            if (resetTimer > 3000)
+            {
+                resetTimer -= 3000;
+                playSoundEffect = false;
+                MediaPlayer.Volume = Game1Utility.RegularVolume;
+                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
                 command.Execute();
             }
         }

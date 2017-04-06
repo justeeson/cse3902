@@ -8,29 +8,29 @@ namespace SuperMario
 {
     public class Camera
     {
-        public static int cameraPositionX;
-        public static int cameraPositionY;
+        public static int CameraPositionX;
+        public static int CameraPositionY;
         public bool disableCamera = false;
 
         public Camera()
         {
-            cameraPositionX = 0;
-            cameraPositionY = 0;
+            CameraPositionX = 0;
+            CameraPositionY = 0;
         }
 
         public void UpdateX(int MarioPositionX)
         {
             if (!disableCamera)
             {
-                if (MarioPositionX < 6350)
+                if (MarioPositionX < Game1Utility.finalLevelLocation)
                 {
-                    if (MarioPositionX > cameraPositionX + 350)
+                    if (MarioPositionX > CameraPositionX + Game1Utility.cameraOffset)
                     {
-                        cameraPositionX += MarioPositionX - (cameraPositionX + 350);
+                        CameraPositionX += MarioPositionX - (CameraPositionX + Game1Utility.cameraOffset);
                     }
-                    else if (MarioPositionX < cameraPositionX + 350 && cameraPositionX > (cameraPositionX + 350) - MarioPositionX)
+                    else if (MarioPositionX < CameraPositionX + Game1Utility.cameraOffset && CameraPositionX > (CameraPositionX + Game1Utility.cameraOffset) - MarioPositionX)
                     {
-                        cameraPositionX -= (cameraPositionX + 350) - MarioPositionX;
+                        CameraPositionX -= (CameraPositionX + Game1Utility.cameraOffset) - MarioPositionX;
                     }
                 }
             }
@@ -38,7 +38,7 @@ namespace SuperMario
         
         public void SetPositionZero()
         {
-            cameraPositionX = 0;
+            CameraPositionX = 0;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace SuperMario
         public static Texture2D backgroundTexture;
         public static Texture2D flagPoleTexture;
         public static Texture2D castleTexture;
-
+        public static Texture2D undergroundPipe;
 
         public static void LoadAllTextures(ContentManager content)
         {
@@ -55,7 +55,7 @@ namespace SuperMario
             backgroundTexture = content.Load<Texture2D>("background3");
             flagPoleTexture = content.Load<Texture2D>("FlagPole");
             castleTexture = content.Load<Texture2D>("castle");
-
+            undergroundPipe = content.Load<Texture2D>("UndergroundPipe");
         }
 
         public static ISprite CreateKoopaMoveLeft()
@@ -136,10 +136,9 @@ namespace SuperMario
         {
             return new HighPipeSprite(highPipeTexture, 32, 32);
         }
-        // Might need to created a new pipe sprite class
         public static ISprite CreateUndergroundPipeToGround()
         {
-            return new PipeSprite(highPipeTexture, 32, 32);
+            return new PipeSprite(undergroundPipe, 32, 32);
         }
         // Might need to created a new pipe sprite class
         public static ISprite CreatePipeToUnderground()

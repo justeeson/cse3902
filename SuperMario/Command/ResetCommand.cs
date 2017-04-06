@@ -20,6 +20,7 @@ namespace SuperMario.Command
             MyGame.MarioSprite.Reset();
             MyGame.World.Reset();
             MyGame.World.Load();
+            MyGame.PlayerStat.Reset();
             MyGame.CameraPointer = new Camera();
         }
     }

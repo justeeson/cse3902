@@ -11,6 +11,7 @@ using System.Collections;
 using Microsoft.Xna.Framework;
 using SuperMario.MarioClass;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace SuperMario
 {
@@ -23,12 +24,11 @@ namespace SuperMario
         private int currentFrame;
         private int mode;
         public Texture2D Texture { get; set; }
-        const int MAX_DISTANCE = 500;
         public Boolean fire;
         private int startingLocation;
         private SpriteBatch spriteBatch;
         private int movementTimer;
-        private Song soundEffect;
+        private SoundEffect soundEffect;
         private int marioOrientation;
         private int yVelocity;
 
@@ -44,7 +44,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {          
-            if (Math.Abs(LocationX - startingLocation) > MAX_DISTANCE)
+            if (Math.Abs(LocationX - startingLocation) > Game1Utility.fireballMaxDistance)
             {
                 fire = false;
             }
@@ -75,7 +75,7 @@ namespace SuperMario
         public void MarioFire(int orientation, int marioMode, int LocationX, int LocationY)
         {
 
-            MediaPlayer.Play(soundEffect);
+            soundEffect.Play();
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
@@ -95,7 +95,7 @@ namespace SuperMario
                 int column = currentFrame % 1;
                 this.spriteBatch = myspriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.cameraPositionX, (int)LocationY, width / 2, height / 2);
+                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);
                 myspriteBatch.Begin();
                 myspriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 myspriteBatch.End();
@@ -115,7 +115,7 @@ namespace SuperMario
         }
         public void LoadContent(ContentManager Content)
         {
-            soundEffect = Content.Load<Song>("fireballSoundEffect");
+            soundEffect = Content.Load<SoundEffect>("fireballSoundEffect");
             Texture = Content.Load<Texture2D>("fireball");
         }
     }

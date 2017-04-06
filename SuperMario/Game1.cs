@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -19,17 +20,18 @@ namespace SuperMario
         public SpriteBatch SpriteBatch;
         public Texture2D Texture { get; set; }
         private Texture2D background;
-        public Boolean IsPaused;
+        private Boolean isPaused;
         private Rectangle mainFrame;
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
-        private Song backgroundMusic;
-        private Song pauseSoundEffect;
+        public Song BackgroundMusic;
+        private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
         private static Game1 instance;
         public WorldManager World;
+        public PlayerStatistic PlayerStat;
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
 
@@ -67,7 +69,7 @@ namespace SuperMario
             newKeyboardState = new KeyboardState();
             oldKeyboardState = new KeyboardState();
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
-            IsPaused = false;
+            isPaused = false;
             CameraPointer = new Camera();
             base.Initialize();
         }
@@ -78,10 +80,11 @@ namespace SuperMario
             
             Texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
-            backgroundMusic = Content.Load<Song>("backgroundMusic");
-            pauseSoundEffect = Content.Load<Song>("pauseSoundEffect");
-            //MediaPlayer.IsRepeating = true;
-            // MediaPlayer.Play(backgroundMusic);
+            BackgroundMusic = Content.Load<Song>("backgroundMusic");
+            pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = Game1Utility.RegularVolume;
+            MediaPlayer.Play(BackgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
@@ -89,6 +92,7 @@ namespace SuperMario
             Mario.LoadContent(Content);
             World = new WorldManager(this);
             World.Load();
+            PlayerStat = new PlayerStatistic(SpriteBatch, Content);
 
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
@@ -130,12 +134,23 @@ namespace SuperMario
         {
             newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
-            {              
-                IsPaused = !IsPaused;
-                MediaPlayer.Play(pauseSoundEffect);
+            {   
+                if(isPaused)
+                {
+                    MediaPlayer.Resume();
+                    isPaused = !isPaused;
+                }           
+                else
+                {
+                    
+                    MediaPlayer.Pause();
+                    isPaused = !isPaused;
+                }
+
+                pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
-            if (!IsPaused)
+            if (!isPaused)
             {
                 this.GameTime = GameTime;
                 KeyboardController.Update(GameTime);
@@ -144,6 +159,7 @@ namespace SuperMario
                 MarioSprite.Update(GameTime);
                 World.Update(GameTime);
                 Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
+                PlayerStat.Update(GameTime);
                 base.Update(GameTime);
             }
         }
@@ -152,8 +168,10 @@ namespace SuperMario
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             World.Draw(Location);
-            World.Draw(new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.cameraPositionX, Camera.cameraPositionY));
+            World.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+            PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
                 aFireball.Draw(SpriteBatch);

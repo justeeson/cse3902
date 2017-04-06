@@ -17,12 +17,14 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public bool MovingLeft { get; set; }
         public bool IsFalling { get; set; }
+        private bool playSoundEffect;
 
         public Coin(Game1 game, Vector2 location)
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateCoin();
             MyGame.Sprite = this.Sprite;
+            playSoundEffect = false;
             HasBeenUsed = false;
             Location = location;
         }
@@ -34,7 +36,14 @@ namespace SuperMario
         public Rectangle Area()
         {
             if (HasBeenUsed)
+            {
+                if (!playSoundEffect)
+                {
+                    Game1Utility.CoinSoundEffect.Play();
+                    playSoundEffect = true;
+                }
                 return new Rectangle(0, 0, 0, 0);
+            }
             else
                 return Sprite.Area(Location);
         }
@@ -42,12 +51,14 @@ namespace SuperMario
         public void UpdateCollision()
         {
             this.Sprite = new CleanSprite(SpriteFactory.coinTexture);
-            //MyGame.store.arrayOfSprites[2] = Sprite;
             HasBeenUsed = true;
+            MyGame.PlayerStat.SetCoinValue();
+            MyGame.PlayerStat.SetScoreValue(200);
+
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
         }
     }
 }

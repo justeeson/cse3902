@@ -14,7 +14,7 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        public int cameraPositionX { get; set; }
+        public int CameraPositionX { get; set; }
         private bool playDeathSoundEffect;
         private bool dead;
         private int deadCounter = 10;
@@ -35,6 +35,7 @@ namespace SuperMario
             {
                 this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,4,8);
                 dead = true;
+                MyGame.PlayerStat.SetScoreValue(400);
             }
         }
         public void ChangeDirection()
@@ -44,7 +45,7 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.cameraPositionX < 0)
+            if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = false;
                 Location = new Vector2(Location.X + 2, Location.Y);
@@ -63,7 +64,7 @@ namespace SuperMario
                 if(playDeathSoundEffect == false)
                 {
                     playDeathSoundEffect = true;
-                    MediaPlayer.Play(Game1Utility.goombaStompSoundEffect);
+                    Game1Utility.GoombaStompSoundEffect.Play();
                 }
                 deadCounter--;
             }
@@ -77,7 +78,7 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
         }
     }
 

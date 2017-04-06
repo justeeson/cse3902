@@ -40,15 +40,15 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            Game1Utility.MarioPowerUpSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
-            //MyGame.store.arrayOfSprites[4] = Sprite;
             MyGame.MarioSprite.MarioFireState();
             HasBeenUsed = true;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.cameraPositionX, Location.Y));
+            Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
         }
     }
 }
