@@ -26,7 +26,7 @@ namespace SuperMario
         public static SoundEffect DeathSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("deathSoundEffect");
         public static float RegularVolume = 0.42f;
         public static float HigherVolume = 0.8f;
-        public static Song StarMusic = Game1.GetInstance().Content.Load<Song>("starMusic");
+        public static Song StarMusic = Game1.GetInstance().Content.Load<Song>("StarMusic");
         public static int finalLevelLocation = 6350;
         public static int cameraOffset = 350;
         public static int fireballMaxDistance = 500;
