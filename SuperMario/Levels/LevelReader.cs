@@ -2,6 +2,8 @@
 using System.Xml;
 using Microsoft.Xna.Framework;
 using SuperMario.Interfaces;
+using SuperMario.Blocks;
+using SuperMario.Blockclass;
 
 namespace SuperMario.Levels
 {

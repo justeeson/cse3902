@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperMario
+namespace SuperMario.Blocks
 {
     public class QuestionMarkBrickToUsed : IBlock
     {

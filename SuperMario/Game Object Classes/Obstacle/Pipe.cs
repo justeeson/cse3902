@@ -8,7 +8,7 @@ using SuperMario.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace SuperMario
+namespace SuperMario.Blockclass
 {
     public class Pipe : IBlock
     {

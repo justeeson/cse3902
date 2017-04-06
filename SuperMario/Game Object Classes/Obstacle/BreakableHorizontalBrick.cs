@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMario.MarioClass;
 using Microsoft.Xna.Framework.Media;
 
-namespace SuperMario
+namespace SuperMario.Blocks
 {
     public class BreakableHorizontalBrick : IBlock
     {
