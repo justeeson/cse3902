@@ -26,8 +26,8 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 40;
-            int height = 85;
+            int width = 276;
+            int height = 524;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -39,8 +39,8 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 40; 
-            int height = 300;
+            int width = 276; 
+            int height = 524;
             return new Rectangle((int)location.X, (int)location.Y , width, height);
         }
         public void CollisionSprite()
