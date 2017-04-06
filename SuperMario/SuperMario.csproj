@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BurndownChartAssessment.txt" />
+    <Content Include="CodeReview\CodeReviewSprint5\Dellon Collins%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Dellon Collins%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint2\Son Le%27s Readability Review.txt" />
