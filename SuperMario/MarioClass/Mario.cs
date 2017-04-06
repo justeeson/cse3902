@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using SuperMario.MarioClass;
 using SuperMario.Command;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -125,6 +126,7 @@ namespace SuperMario
         {
             if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
             {
+                Game1Utility.marioJumpSoundEffect.Play();
                 yVelocity = 19;
                 Mario.JumpStatus = true;
             }
@@ -175,6 +177,7 @@ namespace SuperMario
             }
             if (JumpStatus)
             {
+                
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
             }

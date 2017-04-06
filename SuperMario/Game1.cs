@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -25,7 +26,7 @@ namespace SuperMario
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
         private Song backgroundMusic;
-        private Song pauseSoundEffect;
+        private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
         private static Game1 instance;
@@ -79,9 +80,9 @@ namespace SuperMario
             Texture = Content.Load<Texture2D>("MarioSheet");
             background = Content.Load<Texture2D>("background3");
             backgroundMusic = Content.Load<Song>("backgroundMusic");
-            pauseSoundEffect = Content.Load<Song>("pauseSoundEffect");
-            //MediaPlayer.IsRepeating = true;
-            // MediaPlayer.Play(backgroundMusic);
+            pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(backgroundMusic);
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
@@ -132,7 +133,7 @@ namespace SuperMario
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
             {              
                 IsPaused = !IsPaused;
-                MediaPlayer.Play(pauseSoundEffect);
+                pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
             if (!IsPaused)

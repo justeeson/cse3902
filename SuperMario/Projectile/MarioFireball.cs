@@ -11,6 +11,7 @@ using System.Collections;
 using Microsoft.Xna.Framework;
 using SuperMario.MarioClass;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
 namespace SuperMario
 {
@@ -28,7 +29,7 @@ namespace SuperMario
         private int startingLocation;
         private SpriteBatch spriteBatch;
         private int movementTimer;
-        private Song soundEffect;
+        private SoundEffect soundEffect;
         private int marioOrientation;
         private int yVelocity;
 
@@ -75,7 +76,7 @@ namespace SuperMario
         public void MarioFire(int orientation, int marioMode, int LocationX, int LocationY)
         {
 
-            MediaPlayer.Play(soundEffect);
+            soundEffect.Play();
             this.LocationX = LocationX;
             startingLocation = LocationX;
             this.LocationY = LocationY;
@@ -115,7 +116,7 @@ namespace SuperMario
         }
         public void LoadContent(ContentManager Content)
         {
-            soundEffect = Content.Load<Song>("fireballSoundEffect");
+            soundEffect = Content.Load<SoundEffect>("fireballSoundEffect");
             Texture = Content.Load<Texture2D>("fireball");
         }
     }

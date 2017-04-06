@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -15,7 +16,9 @@ namespace SuperMario
 {
     public static class Game1Utility 
     {
-        public static Song goombaStompSoundEffect = Game1.GetInstance().Content.Load<Song>("goombaStompSoundEffect");
-        public static Song breakableBrickSoundEffect = Game1.GetInstance().Content.Load<Song>("breakableBrickSoundEffect");
+        public static SoundEffect goombaStompSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("goombaStompSoundEffect");
+        public static SoundEffect breakableBrickSmashSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickSmashSoundEffect");
+        public static SoundEffect marioJumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioJumpSoundEffect");
+        public static SoundEffect breakableBrickBumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
     }
 }

@@ -37,12 +37,13 @@ namespace SuperMario
         {
             if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
             {
+                Game1Utility.breakableBrickBumpSoundEffect.Play();
                 Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
                 timer = 1;
             }
             else
             {
-                MediaPlayer.Play(Game1Utility.breakableBrickSoundEffect);
+                Game1Utility.breakableBrickSmashSoundEffect.Play();
                 Sprite = new CleanSprite(SpriteFactory.brickableHorizontalBrickTexture);
                 destroyed = true;
             }

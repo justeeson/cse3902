@@ -343,27 +343,57 @@
 /processorParam:Quality=Best
 /build:backgroundMusic.mp3
 
-#begin fireballSoundEffect.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin breakableBrickBumpSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:fireballSoundEffect.mp3
+/build:breakableBrickBumpSoundEffect.wav
 
-#begin goombaStompSoundEffect.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin coinSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:goombaStompSoundEffect.mp3
+/build:coinSoundEffect.wav
 
-#begin breakableBrickSoundEffect.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin marioDeadSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:breakableBrickSoundEffect.mp3
+/build:marioDeadSoundEffect.wav
 
-#begin pauseSoundEffect.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
+#begin marioJumpSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:pauseSoundEffect.mp3
+/build:marioJumpSoundEffect.wav
+
+#begin marioPowerUpSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:marioPowerUpSoundEffect.wav
+
+#begin fireballSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:fireballSoundEffect.wav
+
+#begin goombaStompSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:goombaStompSoundEffect.wav
+
+#begin breakableBrickSmashSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:breakableBrickSmashSoundEffect.wav
+
+#begin pauseSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:pauseSoundEffect.wav
 
