@@ -18,10 +18,11 @@ namespace SuperMario.Command
         public void Execute()
         {
             MyGame.MarioSprite.Reset();
-            MyGame.World.Reset();
+            MyGame.World = new WorldManager(MyGame);
             MyGame.World.Load();
             MyGame.PlayerStat.Reset();
-            MyGame.CameraPointer = new Camera();
+            Camera.CameraPositionX = 0;
+            MyGame.CameraPointer.disableCamera = false;
         }
     }
 }
