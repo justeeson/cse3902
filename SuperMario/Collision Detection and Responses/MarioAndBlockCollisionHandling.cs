@@ -14,7 +14,6 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (block.Area(item.Location).Equals(collisionRectangle)) {
                 return;
             }
-            
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Width <= collisionRectangle.Height)
             {
