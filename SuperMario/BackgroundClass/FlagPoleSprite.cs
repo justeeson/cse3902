@@ -54,7 +54,7 @@ namespace SuperMario
         public Rectangle Area(Vector2 location)
         {
             int width = 30;
-            int height = 350;
+            int height = 150;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }
