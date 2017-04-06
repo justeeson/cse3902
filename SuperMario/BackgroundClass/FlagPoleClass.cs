@@ -28,6 +28,7 @@ namespace SuperMario
         {
             Game1.DisableControl = true;
             MyGame.PlayerStat.SetScoreValue(5000);
+            MyGame.PlayerStat.SetEndGame(true);
             MarioWalkToCastleHandler obj = new MarioWalkToCastleHandler(MyGame, Location);
             this.Sprite = SpriteFactory.CreateFlagPoleToUsed();
         }
