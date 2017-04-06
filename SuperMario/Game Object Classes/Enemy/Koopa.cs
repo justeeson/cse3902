@@ -37,6 +37,8 @@ namespace SuperMario
             {
                 this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 4, 8);
                 dead = true;
+                MyGame.PlayerStat.SetScoreValue(400);
+
             }
         }
         public void ChangeDirection()
