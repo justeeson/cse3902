@@ -211,12 +211,14 @@ namespace SuperMario
                 {
                     MediaPlayer.Stop();
                     Game1Utility.DeathSoundEffect.Play();
+                    Game1.DisableControl = true;
                     playSoundEffect = true;
                 }
                 if (resetTimer > 3000)
                 {
                     resetTimer -= 3000;
                     playSoundEffect = false;
+                    Game1.DisableControl = false;
                     MediaPlayer.Volume = Game1Utility.RegularVolume;
                     MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
                     command.Execute();
