@@ -29,13 +29,19 @@ namespace SuperMario
             Location = location;
             dead = false;
         }
-        public void GetKilled()
+        public void GetKilled(bool killedBySmashed)
         {
             if (!dead)
             {
                 this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,4,8);
                 dead = true;
-                MyGame.PlayerStat.SetScoreValue(400);
+                if (killedBySmashed) {
+                    MyGame.PlayerStat.SetScoreValue(600);
+                }
+                else
+                {
+                    MyGame.PlayerStat.SetScoreValue(200);
+                }
             }
         }
         public void ChangeDirection()

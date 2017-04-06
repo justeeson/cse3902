@@ -40,7 +40,7 @@ namespace SuperMario
             int height = 348;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
-
+           
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
