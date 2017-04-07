@@ -138,6 +138,7 @@ namespace SuperMario
             spriteBatch.DrawString(textFont, headerVariables, position+(new Vector2(0,30)), Color.White, 0, OriginalFont, new Vector2(2, 2), SpriteEffects.None, 0.5f);
             if (endGame)
             {
+                ConvertTimeToScore();
                 spriteBatch.DrawString(textFont, flagScore, position + (new Vector2(150, 150)), Color.White, 0, OriginalFont, new Vector2(1, 1), SpriteEffects.None, 0.5f);
             }
 
