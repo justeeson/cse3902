@@ -16,21 +16,30 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int counter = 0;
-        private int speed = 16;
+        private int counter;
+        private int speed;
+        private int soundDelay;
 
         public FlagPoleToUsedSprite(Texture2D texture, int rows, int columns)
         {
+            counter = 0;
+            speed = 16;
             Texture = texture;
             Rows = rows;
             Columns = columns;
             currentFrame = 1;
-            
+            soundDelay = 0;
+            Game1Utility.FireworksSoundEffect.Play();
         }
 
         public void Update(GameTime gameTime)
         {
-
+            soundDelay += gameTime.ElapsedGameTime.Milliseconds;
+            if (soundDelay > 1000)
+            {
+                soundDelay -= 1000;
+                Game1Utility.FireworksSoundEffect.Play();
+            }
             counter++;
             if (counter % speed == 0)
             {

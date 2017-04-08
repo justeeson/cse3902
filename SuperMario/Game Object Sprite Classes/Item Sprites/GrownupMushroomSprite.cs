@@ -20,6 +20,7 @@ namespace SuperMario
         public Rectangle Rectangle { get; set; }
         private SpriteBatch spriteBatch;
 
+    
         public GrowupMushroomSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;

@@ -24,6 +24,7 @@ namespace SuperMario
         public static SoundEffect MarioPowerUpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioPowerUpSoundEffect");
         public static SoundEffect GreenMushroomSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("1UPSoundEffect");
         public static SoundEffect DeathSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("deathSoundEffect");
+        public static SoundEffect FireworksSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("FireworksSoundEffect");
         public static float RegularVolume = 0.42f;
         public static float HigherVolume = 0.8f;
         public static Song StarMusic = Game1.GetInstance().Content.Load<Song>("StarMusic");

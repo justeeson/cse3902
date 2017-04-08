@@ -30,9 +30,6 @@ namespace SuperMario
         public void Update(GameTime gameTime)
         {
             
-           
-
-
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

@@ -445,3 +445,9 @@
 /processorParam:TextureFormat=Color
 /build:fireworks.png
 
+#begin FireworksSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:FireworksSoundEffect.wav
+

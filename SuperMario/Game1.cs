@@ -35,6 +35,13 @@ namespace SuperMario
         public PlayerStatistic PlayerStat;
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
+        private enum GameState
+        {
+            LivesScreen,
+            Playing
+        }
+
+        private GameState gameState;
 
         public ISprite Sprite
         { get; set; }
@@ -72,6 +79,7 @@ namespace SuperMario
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
             isPaused = false;
             DisableControl = false;
+            gameState = GameState.Playing;
             CameraPointer = new Camera();
             base.Initialize();
         }
@@ -152,7 +160,7 @@ namespace SuperMario
                 pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
-            if (!isPaused)
+            if (!isPaused && (gameState == GameState.Playing))
             {
                 this.GameTime = GameTime;
                 if (!DisableControl)
@@ -171,17 +179,27 @@ namespace SuperMario
 
         protected override void Draw(GameTime GameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            World.Draw(Location);
-            World.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
-            MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
-            PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
-
-            foreach (MarioFireball aFireball in Game1.Mfireballs)
+            if (gameState == GameState.Playing)
             {
-                aFireball.Draw(SpriteBatch);
+                GraphicsDevice.Clear(Color.CornflowerBlue);
+                World.Draw(Location);
+                World.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+                MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+                PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+
+                foreach (MarioFireball aFireball in Game1.Mfireballs)
+                {
+                    aFireball.Draw(SpriteBatch);
+                }
+                base.Draw(GameTime);
             }
-            base.Draw(GameTime);
+
+            else if(gameState == GameState.LivesScreen)
+            {
+                GraphicsDevice.Clear(Color.Black);
+                PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+                MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+            }
         } 
     }
 }
