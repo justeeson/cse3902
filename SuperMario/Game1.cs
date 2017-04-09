@@ -20,7 +20,6 @@ namespace SuperMario
         public SpriteBatch SpriteBatch;
         public Texture2D Texture { get; set; }
         private Texture2D background;
-        private Boolean isPaused;
         private Rectangle mainFrame;
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
@@ -28,6 +27,7 @@ namespace SuperMario
         private int continueTimer;
         public Song BackgroundMusic;
         private SoundEffect pauseSoundEffect;
+        private bool playSound;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
         public static Boolean DisableControl;
@@ -39,7 +39,9 @@ namespace SuperMario
         public enum GameState
         {
             LivesScreen,
-            Playing
+            Playing,
+            Pause,
+            End
         }
 
         public GameState gameStatus;
@@ -78,9 +80,9 @@ namespace SuperMario
             newKeyboardState = new KeyboardState();
             oldKeyboardState = new KeyboardState();
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
-            isPaused = false;
             DisableControl = false;
             continueTimer = 0;
+            playSound = false;
             gameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
             base.Initialize();
@@ -144,25 +146,30 @@ namespace SuperMario
         }
         protected override void Update(GameTime GameTime)
         {
+            /*
+            if(Game1Utility.MarioTotalLives == 0)
+            {
+                gameStatus = GameState.End;
+            }*/
             newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
             {   
-                if(isPaused)
+                if(gameStatus == GameState.Pause)
                 {
                     MediaPlayer.Resume();
-                    isPaused = !isPaused;
+                    gameStatus = GameState.Playing;
+                    pauseSoundEffect.Play();
                 }           
-                else
+                else if(gameStatus == GameState.Playing)
                 {
                     
                     MediaPlayer.Pause();
-                    isPaused = !isPaused;
+                    gameStatus = GameState.Pause;
+                    pauseSoundEffect.Play();
                 }
-
-                pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
-            if (!isPaused && (gameStatus == GameState.Playing))
+            if (gameStatus == GameState.Playing)
             {
                 this.GameTime = GameTime;
                 if (!DisableControl)
@@ -181,7 +188,7 @@ namespace SuperMario
 
         protected override void Draw(GameTime GameTime)
         {
-            if (gameStatus == GameState.Playing)
+            if ((gameStatus == GameState.Playing) || (gameStatus == GameState.Pause))
             {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
                 World.Draw(Location);
@@ -198,6 +205,7 @@ namespace SuperMario
 
             else if(gameStatus == GameState.LivesScreen)
             {
+                Game1.DisableControl = true;
                 MediaPlayer.Stop();
                 continueTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if(continueTimer > 2500)
@@ -205,10 +213,24 @@ namespace SuperMario
                     continueTimer -= 2500;
                     gameStatus = GameState.Playing;
                     MediaPlayer.Play(BackgroundMusic);
+                    Game1.DisableControl = false;
                 }
                 GraphicsDevice.Clear(Color.Black);
                 PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
                 MarioSprite.Draw(SpriteBatch, new Vector2(250, 200));
+            }
+
+            else if(gameStatus == GameState.End)
+            {
+                Game1.DisableControl = true;
+                MediaPlayer.Stop();
+                if (!playSound)
+                {
+                    Game1Utility.GameOverSoundEffect.Play();
+                    playSound = true;
+                }
+                GraphicsDevice.Clear(Color.Black);
+                PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
             }
         } 
     }

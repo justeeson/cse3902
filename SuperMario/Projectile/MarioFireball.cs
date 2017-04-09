@@ -44,7 +44,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {          
-            if (Math.Abs(LocationX - startingLocation) > Game1Utility.fireballMaxDistance)
+            if (Math.Abs(LocationX - startingLocation) > Game1Utility.FireballMaxDistance)
             {
                 fire = false;
             }

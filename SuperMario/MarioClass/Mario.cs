@@ -34,7 +34,6 @@ namespace SuperMario
         private int yVelocity, yAcceleration;
         public static Boolean JumpStatus;
         private int invulnTimer;
-        public static int totalLivesLeft;
         private int starPowerTimer;
         private static ContentManager mContentManager;
         private ICommand command;
@@ -53,7 +52,6 @@ namespace SuperMario
             fireDelay = 0;
             fireStatus = false;
             invulnTimer = 0;
-            totalLivesLeft = 3;
             yAcceleration = -1;
             resetTimer = 0;
             yVelocity = 0;
@@ -98,7 +96,7 @@ namespace SuperMario
 
         public static String LivesRemaining()
         {
-            String totalLives = totalLivesLeft + "";
+            String totalLives = Game1Utility.MarioTotalLives + "";
             return totalLives;
         }
 
@@ -211,7 +209,7 @@ namespace SuperMario
             }
             UpdateFireball(GameTime);
 
-            if (LocationY >= Game1Utility.maxValueY)
+            if (LocationY >= Game1Utility.MaxValueY)
             {
                 resetTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (!playSoundEffect)

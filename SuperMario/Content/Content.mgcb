@@ -451,3 +451,9 @@
 /processorParam:Quality=Best
 /build:FireworksSoundEffect.wav
 
+#begin GameOverSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:GameOverSoundEffect.wav
+

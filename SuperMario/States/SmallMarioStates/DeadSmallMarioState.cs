@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
 using SuperMario.Command;
 using Microsoft.Xna.Framework.Media;
+using SuperMario.MarioClass;
 
 namespace SuperMario.Sprites
 {
@@ -27,7 +28,7 @@ namespace SuperMario.Sprites
             flashStatus = 0;
             resetTimer = 0;
             playSoundEffect = false;
-            command = new ResetCommand(Game1.GetInstance());
+            command = new ResetCommand(Game1.GetInstance());           
         }
 
         public void Update(GameTime GameTime)
@@ -38,16 +39,23 @@ namespace SuperMario.Sprites
                 Game1Utility.DeathSoundEffect.Play();
                 playSoundEffect = true;
                 Game1.DisableControl = true;
+                Game1Utility.MarioTotalLives--;
             }
             resetTimer += GameTime.ElapsedGameTime.Milliseconds;
             if (resetTimer > 3000)
-            {
+            {               
                 resetTimer -= 3000;
                 playSoundEffect = false;
                 MediaPlayer.Volume = Game1Utility.RegularVolume;
-                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
-                Game1.DisableControl = false;
                 command.Execute();
+                if (Game1Utility.MarioTotalLives == 0)
+                {
+                    Game1.GetInstance().gameStatus = Game1.GameState.End;
+                }
+                else
+                {
+                    Game1.GetInstance().gameStatus = Game1.GameState.LivesScreen;
+                }
             }
         }
 
