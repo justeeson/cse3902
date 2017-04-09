@@ -25,6 +25,7 @@ namespace SuperMario
         public GameTime GameTime;
         public SpriteFactory SpriteFactory;
         public Camera CameraPointer;
+        private int continueTimer;
         public Song BackgroundMusic;
         private SoundEffect pauseSoundEffect;
         private KeyboardState newKeyboardState;
@@ -35,13 +36,13 @@ namespace SuperMario
         public PlayerStatistic PlayerStat;
         public Vector2 Location { get; set; }
         public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
-        private enum GameState
+        public enum GameState
         {
             LivesScreen,
             Playing
         }
 
-        private GameState gameState;
+        public GameState gameStatus;
 
         public ISprite Sprite
         { get; set; }
@@ -79,7 +80,8 @@ namespace SuperMario
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
             isPaused = false;
             DisableControl = false;
-            gameState = GameState.Playing;
+            continueTimer = 0;
+            gameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
             base.Initialize();
         }
@@ -160,7 +162,7 @@ namespace SuperMario
                 pauseSoundEffect.Play();
             }
             oldKeyboardState = newKeyboardState;
-            if (!isPaused && (gameState == GameState.Playing))
+            if (!isPaused && (gameStatus == GameState.Playing))
             {
                 this.GameTime = GameTime;
                 if (!DisableControl)
@@ -179,12 +181,12 @@ namespace SuperMario
 
         protected override void Draw(GameTime GameTime)
         {
-            if (gameState == GameState.Playing)
+            if (gameStatus == GameState.Playing)
             {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
                 World.Draw(Location);
                 World.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
-                MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+                MarioSprite.Draw(SpriteBatch, new Vector2(Mario.LocationX - Camera.CameraPositionX, Mario.LocationY));
                 PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
 
                 foreach (MarioFireball aFireball in Game1.Mfireballs)
@@ -194,11 +196,19 @@ namespace SuperMario
                 base.Draw(GameTime);
             }
 
-            else if(gameState == GameState.LivesScreen)
+            else if(gameStatus == GameState.LivesScreen)
             {
+                MediaPlayer.Stop();
+                continueTimer += GameTime.ElapsedGameTime.Milliseconds;
+                if(continueTimer > 2500)
+                {
+                    continueTimer -= 2500;
+                    gameStatus = GameState.Playing;
+                    MediaPlayer.Play(BackgroundMusic);
+                }
                 GraphicsDevice.Clear(Color.Black);
                 PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
-                MarioSprite.Draw(SpriteBatch, new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
+                MarioSprite.Draw(SpriteBatch, new Vector2(250, 200));
             }
         } 
     }

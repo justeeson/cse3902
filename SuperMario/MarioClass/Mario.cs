@@ -34,6 +34,7 @@ namespace SuperMario
         private int yVelocity, yAcceleration;
         public static Boolean JumpStatus;
         private int invulnTimer;
+        public static int totalLivesLeft;
         private int starPowerTimer;
         private static ContentManager mContentManager;
         private ICommand command;
@@ -52,6 +53,7 @@ namespace SuperMario
             fireDelay = 0;
             fireStatus = false;
             invulnTimer = 0;
+            totalLivesLeft = 3;
             yAcceleration = -1;
             resetTimer = 0;
             yVelocity = 0;
@@ -94,6 +96,11 @@ namespace SuperMario
             StateMachine.LookRight();
         }
 
+        public static String LivesRemaining()
+        {
+            String totalLives = totalLivesLeft + "";
+            return totalLives;
+        }
 
         public void LookDown()
         {
@@ -228,7 +235,7 @@ namespace SuperMario
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            State.Draw(spriteBatch, new Vector2(LocationX - Camera.CameraPositionX, LocationY));
+            State.Draw(spriteBatch, location);
         }
 
         public void Fire()

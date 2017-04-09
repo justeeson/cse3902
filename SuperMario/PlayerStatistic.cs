@@ -21,6 +21,7 @@ namespace SuperMario
         private Vector2 displayPos;
         private Vector2 displayVelocity;
         private string headerKeywords;
+        private int livesRemaining;
         private string headerVariables;
         private ISprite coinTexture;
         private string displayScore;
@@ -141,7 +142,11 @@ namespace SuperMario
                 ConvertTimeToScore();
                 spriteBatch.DrawString(textFont, flagScore, position + (new Vector2(150, 150)), Color.White, 0, OriginalFont, new Vector2(1, 1), SpriteEffects.None, 0.5f);
             }
-
+            if(Game1.GetInstance().gameStatus == Game1.GameState.LivesScreen)
+            {
+                spriteBatch.DrawString(textFont, "x"+ "     " +Mario.LivesRemaining(), position + (new Vector2(280, 225)),
+                Color.White, 0, OriginalFont, new Vector2(2, 2), SpriteEffects.None, 0.5f);
+            }
             spriteBatch.End();
             coinTexture.Draw(spriteBatch, new Vector2(260,30));
         }
