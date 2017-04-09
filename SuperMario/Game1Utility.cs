@@ -16,24 +16,50 @@ namespace SuperMario
 {
     public static class Game1Utility 
     {
-        public static SoundEffect GoombaStompSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("goombaStompSoundEffect");
-        public static SoundEffect BreakableBrickSmashSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickSmashSoundEffect");
-        public static SoundEffect MarioJumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioJumpSoundEffect");
-        public static SoundEffect BreakableBrickBumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
-        public static SoundEffect CoinSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("coinSoundEffect");
-        public static SoundEffect MarioPowerUpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioPowerUpSoundEffect");
-        public static SoundEffect GreenMushroomSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("1UPSoundEffect");
-        public static SoundEffect DeathSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("deathSoundEffect");
-        public static SoundEffect FireworksSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("FireworksSoundEffect");
-        public static SoundEffect GameOverSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("GameOverSoundEffect");
-        public static float RegularVolume = 0.42f;
-        public static float HigherVolume = 0.8f;
-        public static Song StarMusic = Game1.GetInstance().Content.Load<Song>("StarMusic");
-        public static int FinalLevelLocation = 6350;
-        public static int CameraOffset = 350;
-        public static int FireballMaxDistance = 500;
-        public static int MaxValueY = 400;
-        public static int MovingLeftOffset = -400;
-        public static int MarioTotalLives = 3;
+        public static Song StarMusic;
+        public static SoundEffect GoombaStompSoundEffect;
+        public static SoundEffect BreakableBrickSmashSoundEffect;
+        public static SoundEffect MarioJumpSoundEffect;
+        public static SoundEffect BreakableBrickBumpSoundEffect;
+        public static SoundEffect CoinSoundEffect;
+        public static SoundEffect MarioPowerUpSoundEffect;
+        public static SoundEffect GreenMushroomSoundEffect;
+        public static SoundEffect DeathSoundEffect;
+        public static SoundEffect FireworksSoundEffect;
+        public static SoundEffect GameOverSoundEffect;
+        public static float RegularVolume;
+        public static float HigherVolume;
+        public static int FinalLevelLocation;
+        public static int CameraOffset;
+        public static int FireballMaxDistance;
+        public static int MaxValueY;
+        public static int MovingLeftOffset;
+        public static int MarioTotalLives;
+
+        public static void Initialize()
+        {
+            RegularVolume = 0.42f;
+            HigherVolume = 0.8f;
+            FinalLevelLocation = 6350;
+            CameraOffset = 350;
+            FireballMaxDistance = 500;
+            MaxValueY = 400;
+            MovingLeftOffset = -400;
+            MarioTotalLives = 3;
+         }
+        public static void LoadContent()
+        {
+             StarMusic = Game1.GetInstance().Content.Load<Song>("StarMusic");
+             GoombaStompSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("goombaStompSoundEffect");
+             BreakableBrickSmashSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickSmashSoundEffect");
+             MarioJumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioJumpSoundEffect");
+             BreakableBrickBumpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
+             CoinSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("coinSoundEffect");
+             MarioPowerUpSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("marioPowerUpSoundEffect");
+             GreenMushroomSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("1UPSoundEffect");
+             DeathSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("deathSoundEffect");
+             FireworksSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("FireworksSoundEffect");
+             GameOverSoundEffect = Game1.GetInstance().Content.Load<SoundEffect>("GameOverSoundEffect");
+        }
     }
 }

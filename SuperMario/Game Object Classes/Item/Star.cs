@@ -63,6 +63,7 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
+            MediaPlayer.Stop();
             MediaPlayer.Play(Game1Utility.StarMusic);
             MediaPlayer.Volume = Game1Utility.HigherVolume;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);

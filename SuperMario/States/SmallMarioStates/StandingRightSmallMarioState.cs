@@ -56,6 +56,7 @@ namespace SuperMario.Sprites
                 currentFrame = 10;
             else
                 currentFrame = 6;
+                
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

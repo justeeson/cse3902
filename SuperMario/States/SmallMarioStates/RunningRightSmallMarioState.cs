@@ -21,6 +21,7 @@ namespace SuperMario.Sprites
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         private int flashStatus;
+        private bool resetFrames;
         private int nextFlashTime;
         private int millisecondsPerFlash;
 
@@ -32,6 +33,7 @@ namespace SuperMario.Sprites
             currentFrame = 7;
             startFrame = currentFrame;
             totalFrames = 3;
+            resetFrames = false;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -68,14 +70,16 @@ namespace SuperMario.Sprites
             {
                 if (Mario.JumpStatus && Mario.RunStatus)
                 {
+                    resetFrames = true;
                     if (Mario.LocationX <= Game1Utility.FinalLevelLocation)
                     {
-                        Mario.LocationX += 6;
+                        Mario.LocationX += 7;
                     }
                     currentFrame = 10;
                 }
                 else if (Mario.JumpStatus)
                 {
+                    resetFrames = true;
                     if (Mario.LocationX <= Game1Utility.FinalLevelLocation)
                     {
                         Mario.LocationX += 3;
@@ -84,6 +88,11 @@ namespace SuperMario.Sprites
                 }
                 else
                 {
+                    if(resetFrames)
+                    {
+                        currentFrame = 7;
+                        resetFrames = false;
+                    }
                     timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                     if (timeSinceLastFrame > millisecondsPerFrame)
                     {
@@ -109,6 +118,7 @@ namespace SuperMario.Sprites
             }
             else
             {
+                currentFrame = 7;
                 mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
                 mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingRight;
             }

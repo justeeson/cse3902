@@ -77,6 +77,8 @@ namespace SuperMario
 
         protected override void Initialize()
         {
+            Game1Utility.Initialize();
+            Game1Utility.LoadContent();
             newKeyboardState = new KeyboardState();
             oldKeyboardState = new KeyboardState();
             ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
@@ -85,6 +87,7 @@ namespace SuperMario
             playSound = false;
             gameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
+            
             base.Initialize();
         }
 
@@ -97,8 +100,7 @@ namespace SuperMario
             BackgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = Game1Utility.RegularVolume;
-            MediaPlayer.Play(BackgroundMusic);
+            MediaPlayer.Volume = Game1Utility.RegularVolume;      
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
@@ -146,11 +148,6 @@ namespace SuperMario
         }
         protected override void Update(GameTime GameTime)
         {
-            /*
-            if(Game1Utility.MarioTotalLives == 0)
-            {
-                gameStatus = GameState.End;
-            }*/
             newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
             {   

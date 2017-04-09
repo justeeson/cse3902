@@ -19,6 +19,7 @@ namespace SuperMario.Sprites
         private int startFrame;
         private int totalFrames;
         private int timeSinceLastFrame;
+        private bool resetFrames;
         private int millisecondsPerFrame;
         private int flashStatus;
         private int nextFlashTime;
@@ -31,6 +32,7 @@ namespace SuperMario.Sprites
             startFrame = currentFrame;
             totalFrames = 3;
             timeSinceLastFrame = 0;
+            resetFrames = false;
             millisecondsPerFrame = 150;
             flashStatus = 0;
             nextFlashTime = 0;
@@ -70,9 +72,10 @@ namespace SuperMario.Sprites
                 {
                     if (Mario.LocationX >= Game1Utility.MovingLeftOffset) 
                     {
-                        Mario.LocationX -= 6;
+                        Mario.LocationX -= 7;
                     }
                     currentFrame = 1;
+                    resetFrames = true;
                 }
                 else if (Mario.JumpStatus)
                 {
@@ -81,9 +84,15 @@ namespace SuperMario.Sprites
                         Mario.LocationX -= 3;
                     }
                     currentFrame = 1;
+                    resetFrames = true;
                 }
                 else
                 {
+                    if(resetFrames)
+                    {
+                        currentFrame = 4;
+                        resetFrames = false;
+                    }
                     timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                     if (timeSinceLastFrame > millisecondsPerFrame)
                     {
@@ -109,6 +118,7 @@ namespace SuperMario.Sprites
             }
             else
             {
+                currentFrame = 4;
                 mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
                 mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingLeft;
             }

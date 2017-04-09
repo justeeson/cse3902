@@ -448,7 +448,7 @@
   <Castle x="550" y="258" />
   
   <Goomba x="700" y="150" />
-  <QuestionBlock x="544" y="280" item="coin" />
+  <QuestionBlock x="544" y="280" item="star" /> 
 
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="growmushroom" />

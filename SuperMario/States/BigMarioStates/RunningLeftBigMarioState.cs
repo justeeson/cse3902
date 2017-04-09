@@ -19,6 +19,7 @@ namespace SuperMario.Sprites
         private int totalFrames;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        private bool resetFrames;
         private int flashStatus;
         private int nextFlashTime;
         private int millisecondsPerFlash;
@@ -31,6 +32,7 @@ namespace SuperMario.Sprites
             totalFrames = 3;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 150;
+            resetFrames = false;
             flashStatus = 0;
             nextFlashTime = 0;
             millisecondsPerFlash = 400;
@@ -69,8 +71,9 @@ namespace SuperMario.Sprites
                     currentFrame = 13;
                     if (Mario.LocationX >= Game1Utility.MovingLeftOffset)
                     {
-                        Mario.LocationX -= 6;
+                        Mario.LocationX -= 7;
                     }
+                    resetFrames = true;
                 }
                 else if (Mario.JumpStatus)
                 {
@@ -79,9 +82,15 @@ namespace SuperMario.Sprites
                     {
                         Mario.LocationX -= 3;
                     }
+                    resetFrames = true;
                 }
                 else
                 {
+                    if(resetFrames)
+                    {
+                        currentFrame = 16;
+                        resetFrames = false;
+                    }
                     timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
                     if (timeSinceLastFrame > millisecondsPerFrame)
                     {
@@ -94,7 +103,7 @@ namespace SuperMario.Sprites
                     {
                         if (Mario.RunStatus == true)
                         {
-                            Mario.LocationX -= 6;
+                            Mario.LocationX -= 7;
                         }
                         else
                             Mario.LocationX -= 3;
@@ -107,6 +116,7 @@ namespace SuperMario.Sprites
             }
             else
             {
+                currentFrame = 16;
                 mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Big;
                 mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingLeft;
             }

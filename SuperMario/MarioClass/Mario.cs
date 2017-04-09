@@ -186,7 +186,6 @@ namespace SuperMario
             }
             if (JumpStatus || !GroundedStatus)
             {
-
                 LocationY = LocationY - yVelocity;
                 yVelocity = yVelocity + yAcceleration;
             }
@@ -205,7 +204,6 @@ namespace SuperMario
             if (!GroundedStatus && !JumpStatus)
             {
                 DisableJump = true;
-                //Mario.LocationY += 5;
             }
             UpdateFireball(GameTime);
 
@@ -218,15 +216,22 @@ namespace SuperMario
                     Game1Utility.DeathSoundEffect.Play();
                     Game1.DisableControl = true;
                     playSoundEffect = true;
+                    Game1Utility.MarioTotalLives--;
                 }
                 if (resetTimer > 3000)
                 {
                     resetTimer -= 3000;
                     playSoundEffect = false;
-                    Game1.DisableControl = false;
                     MediaPlayer.Volume = Game1Utility.RegularVolume;
-                    MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
                     command.Execute();
+                    if (Game1Utility.MarioTotalLives == 0)
+                    {
+                        Game1.GetInstance().gameStatus = Game1.GameState.End;
+                    }
+                    else
+                    {
+                        Game1.GetInstance().gameStatus = Game1.GameState.LivesScreen;
+                    }
                 }
             }
         }
