@@ -13,14 +13,12 @@ namespace SuperMario
     class FireworkSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
         private int timer;
-        public FireworkSprite(Texture2D texture, int rows, int columns)
+        public FireworkSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
             timer = 0;

@@ -38,7 +38,7 @@ namespace SuperMario.Sprites
                 MediaPlayer.Stop();
                 Game1Utility.DeathSoundEffect.Play();
                 playSoundEffect = true;
-                Game1.DisableControl = true;
+                Game1.GetInstance().DisableControl = true;
                 Game1Utility.MarioTotalLives--;
             }
             resetTimer += GameTime.ElapsedGameTime.Milliseconds;
@@ -50,11 +50,11 @@ namespace SuperMario.Sprites
                 command.Execute();
                 if (Game1Utility.MarioTotalLives == 0)
                 {
-                    Game1.GetInstance().gameStatus = Game1.GameState.End;
+                    Game1.GetInstance().GameStatus = Game1.GameState.End;
                 }
                 else
                 {
-                    Game1.GetInstance().gameStatus = Game1.GameState.LivesScreen;
+                    Game1.GetInstance().GameStatus = Game1.GameState.LivesScreen;
                 }
             }
         }

@@ -15,7 +15,7 @@ namespace SuperMario
         public MarioWalkToCastleHandler(Game1 game, Vector2 location)
         {
             this.MyGame = game;
-            game.MarioSprite =  new MarioWalkToCastleSprite(MyGame.Texture, 32 , 32, GetMarioStatus());
+            game.MarioSprite =  new MarioWalkToCastleSprite(MyGame.Texture, 32, GetMarioStatus());
             game.World.Level.BlockList.Add(new FireworkClass(game, location));
             Update(MyGame.GameTime);
             Draw(MyGame.SpriteBatch, location);

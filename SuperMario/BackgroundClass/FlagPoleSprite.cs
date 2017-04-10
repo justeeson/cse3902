@@ -13,15 +13,13 @@ namespace SuperMario
     class FlagPoleSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
       
 
-        public FlagPoleSprite(Texture2D texture, int rows, int columns)
+        public FlagPoleSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 2;
             

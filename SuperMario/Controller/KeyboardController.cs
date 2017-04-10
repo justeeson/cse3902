@@ -14,13 +14,11 @@ namespace SuperMario.Controller
     public class KeyboardController : IController
     {
         private Dictionary<Keys, ICommand> controllerMappings;
-        private ICommand command;
-        private IMario mario;
+        private ICommand fireCommand;
 
         public KeyboardController()
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
-            mario = Game1.GetInstance().MarioSprite;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -35,8 +33,8 @@ namespace SuperMario.Controller
                 {
                     if(key == Keys.X)
                      {
-                        command = new MarioFireCommand(Game1.GetInstance());
-                        command.Execute();
+                        fireCommand = new MarioFireCommand(Game1.GetInstance());
+                        fireCommand.Execute();
                      }
                     if (Game1.ValidKeysList.Contains(key))
                     {

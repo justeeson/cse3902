@@ -8,16 +8,14 @@ namespace SuperMario
     class BreakableCurlyBrickSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
+  
         private int currentFrame;
         
 
-        public BreakableCurlyBrickSprite(Texture2D texture, int rows, int columns)
+        public BreakableCurlyBrickSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
         }

@@ -7,15 +7,13 @@ namespace SuperMario
     class GoombaBeingKilledSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
 
 
-        public GoombaBeingKilledSprite(Texture2D texture, int rows, int columns)
+        public GoombaBeingKilledSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 1;
         }

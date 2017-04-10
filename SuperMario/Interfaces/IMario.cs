@@ -27,7 +27,7 @@ namespace SuperMario.Interfaces
         void MarioFireState();
         void Reset();
         void ResetVelocity();
-        void Fire();
+        void ThrowFire();
         void Run();
         void Update(GameTime GameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);

@@ -35,7 +35,7 @@ namespace SuperMario
         {
             if (!dead)
             {
-                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 4, 8);
+                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 8);
                 dead = true;
                 if (killedBySmashed)
                 {
@@ -51,11 +51,11 @@ namespace SuperMario
         {
             if (!MovingLeft)
             {
-                this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 4, 8);
+                this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 8);
             }
             else
             {
-                this.Sprite = new KoopaMoveLeftSprite(SpriteFactory.koopaMoveLeftTexture, 4, 8);
+                this.Sprite = new KoopaMoveLeftSprite(SpriteFactory.koopaMoveLeftTexture, 8);
             }
 
         }

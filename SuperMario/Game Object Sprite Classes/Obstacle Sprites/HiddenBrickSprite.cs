@@ -12,17 +12,14 @@ namespace SuperMario
     class HiddenBrickSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
         private int currentFrame;
 
         private Boolean isHidden = true;
 
-        public HiddenBrickSprite(Texture2D texture, int rows, int columns)
+        public HiddenBrickSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
         }

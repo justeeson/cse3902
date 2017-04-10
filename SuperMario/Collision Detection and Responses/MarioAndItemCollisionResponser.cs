@@ -9,7 +9,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     public static class MarioAndItemCollisionResponser
     {
-        public static void Response(IMario mario, IItem item)
+        public static void Response(IItem item)
         {
             item.UpdateCollision();
         }

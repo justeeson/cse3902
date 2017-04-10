@@ -14,9 +14,7 @@ namespace SuperMario
     class QuestionMarkBrickSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
 
         private int currentFrame;
         private int timeSinceLastFrame;
@@ -24,10 +22,9 @@ namespace SuperMario
         private bool HasBeenUsed;
         private int width;
         private int height;
-        public QuestionMarkBrickSprite(Texture2D texture, int rows, int columns)
+        public QuestionMarkBrickSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
             timeSinceLastFrame = 0;

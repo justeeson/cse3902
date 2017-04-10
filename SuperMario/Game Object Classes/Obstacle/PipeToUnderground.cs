@@ -17,9 +17,6 @@ namespace SuperMario.Blockclass
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
-
-        private int timer = 40;
-
         public PipeToUnderground(Game1 game, Vector2 location)
         {
             MyGame = game;

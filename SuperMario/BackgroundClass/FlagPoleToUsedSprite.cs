@@ -13,19 +13,17 @@ namespace SuperMario
     class FlagPoleToUsedSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
         private int counter;
         private int speed;
         private int soundDelay;
 
-        public FlagPoleToUsedSprite(Texture2D texture, int rows, int columns)
+        public FlagPoleToUsedSprite(Texture2D texture, int columns)
         {
             counter = 0;
             speed = 16;
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 1;
             soundDelay = 0;

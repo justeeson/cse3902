@@ -13,7 +13,6 @@ namespace SuperMario
     class KoopaMoveLeftSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
         private int timeSinceLastFrame;
@@ -22,10 +21,9 @@ namespace SuperMario
         private int turtleState;
         private enum turtleStates { Normal, InShell, Dead}
 
-        public KoopaMoveLeftSprite(Texture2D texture, int rows, int columns)
+        public KoopaMoveLeftSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
             timeSinceLastFrame = 0;

@@ -63,7 +63,6 @@ namespace SuperMario
         {
             Game1Utility.GreenMushroomSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.fireMushroomTexture);
-            MyGame.MarioSprite.MarioFireState();
             Game1Utility.MarioTotalLives++;
             HasBeenUsed = true;
         }

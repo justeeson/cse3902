@@ -66,7 +66,7 @@ namespace SuperMario
 
         public void setState()
         {
-            State = StateMachine.GetState();
+            State = StateMachine.GetState;
         }
 
         public int MarioMode()
@@ -144,7 +144,7 @@ namespace SuperMario
         public void Reset()
         {
             StateMachine.Reset();
-            State = StateMachine.GetState();
+            State = StateMachine.GetState;
             LocationX = 400;
             LocationY = 350;
         }
@@ -214,7 +214,7 @@ namespace SuperMario
                 {
                     MediaPlayer.Stop();
                     Game1Utility.DeathSoundEffect.Play();
-                    Game1.DisableControl = true;
+                    Game1.GetInstance().DisableControl = true;
                     playSoundEffect = true;
                     Game1Utility.MarioTotalLives--;
                 }
@@ -226,11 +226,11 @@ namespace SuperMario
                     command.Execute();
                     if (Game1Utility.MarioTotalLives == 0)
                     {
-                        Game1.GetInstance().gameStatus = Game1.GameState.End;
+                        Game1.GetInstance().GameStatus = Game1.GameState.End;
                     }
                     else
                     {
-                        Game1.GetInstance().gameStatus = Game1.GameState.LivesScreen;
+                        Game1.GetInstance().GameStatus = Game1.GameState.LivesScreen;
                     }
                 }
             }
@@ -241,7 +241,7 @@ namespace SuperMario
             State.Draw(spriteBatch, location);
         }
 
-        public void Fire()
+        public void ThrowFire()
         {
             if(StateMachine.MarioMode != (int)MarioStateMachine.MarioModes.Fire)
             {
@@ -253,7 +253,7 @@ namespace SuperMario
                 bool aCreateNew = true;
                 foreach (MarioFireball aFireball in Game1.Mfireballs)
                 {
-                    if (aFireball.fire == false)
+                    if (aFireball.Fire == false)
                     {
                         aCreateNew = false;
                         aFireball.MarioFire(StateMachine.Orientation, StateMachine.MarioMode, LocationX, LocationY);

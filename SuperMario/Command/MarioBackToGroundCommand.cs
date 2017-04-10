@@ -22,7 +22,7 @@ namespace SuperMario.Command
             Mario.LocationX = 5216;
             Mario.LocationY = 250;
             MyGame.CameraPointer.UpdateX((int)Mario.LocationX);
-            MyGame.CameraPointer.disableCamera = false;
+            MyGame.CameraPointer.DisableCamera = false;
         }
     }
 

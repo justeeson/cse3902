@@ -13,7 +13,7 @@ namespace SuperMario.Controller
     public class GamepadController : IController
     {
         private Dictionary<Buttons, ICommand> controllerMappings;
-        private ICommand command;
+        private ICommand fireCommand;
 
         public GamepadController()
         {
@@ -53,8 +53,8 @@ namespace SuperMario.Controller
             }
             if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
             {
-                command = new MarioFireCommand(Game1.GetInstance());
-                command.Execute();
+                fireCommand = new MarioFireCommand(Game1.GetInstance());
+                fireCommand.Execute();
             }
         }
 

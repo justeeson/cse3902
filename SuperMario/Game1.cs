@@ -11,31 +11,37 @@ using SuperMario.Levels;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace SuperMario
 {
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        public SpriteBatch SpriteBatch;
+        public SpriteBatch SpriteBatch
+        { get; set; }
         public Texture2D Texture { get; set; }
         private Texture2D background;
         private Rectangle mainFrame;
-        public GameTime GameTime;
-        public SpriteFactory SpriteFactory;
-        public Camera CameraPointer;
+        public GameTime GameTime
+        { get; set; }
+        public Camera CameraPointer
+        { get; set; }
         private int continueTimer;
-        public Song BackgroundMusic;
+        public Song BackgroundMusic
+        { get; set; }
         private SoundEffect pauseSoundEffect;
         private bool playSound;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
-        public static Boolean DisableControl;
+        public Boolean DisableControl;
         private static Game1 instance;
-        public WorldManager World;
-        public PlayerStatistic PlayerStat;
+        public WorldManager World
+        { get; set; }
+        public PlayerStatistic PlayerStat
+        { get; set; }
         public Vector2 Location { get; set; }
-        public static List<MarioFireball> Mfireballs = new List<MarioFireball>();
+        public static Collection<MarioFireball> Mfireballs = new Collection<MarioFireball>();
         public enum GameState
         {
             LivesScreen,
@@ -44,7 +50,8 @@ namespace SuperMario
             End
         }
 
-        public GameState gameStatus;
+        public GameState GameStatus
+        { get; set; }
 
         public ISprite Sprite
         { get; set; }
@@ -64,7 +71,7 @@ namespace SuperMario
 
 
 
-        public static int XMax, YMax;
+        private int XMax, YMax;
         public static ArrayList ValidKeysList
         { get; set; }
 
@@ -85,7 +92,7 @@ namespace SuperMario
             DisableControl = false;
             continueTimer = 0;
             playSound = false;
-            gameStatus = GameState.LivesScreen;
+            GameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
             
             base.Initialize();
@@ -102,7 +109,6 @@ namespace SuperMario
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = Game1Utility.RegularVolume;      
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            SpriteFactory = new SpriteFactory();
             SpriteFactory.LoadAllTextures(Content);
             Block = new BlockLogic(this);
             Mario.LoadContent(Content);
@@ -146,27 +152,28 @@ namespace SuperMario
             }
             return instance;
         }
+
         protected override void Update(GameTime GameTime)
         {
             newKeyboardState = Keyboard.GetState();
             if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
             {   
-                if(gameStatus == GameState.Pause)
+                if(GameStatus == GameState.Pause)
                 {
                     MediaPlayer.Resume();
-                    gameStatus = GameState.Playing;
+                    GameStatus = GameState.Playing;
                     pauseSoundEffect.Play();
                 }           
-                else if(gameStatus == GameState.Playing)
+                else if(GameStatus == GameState.Playing)
                 {
                     
                     MediaPlayer.Pause();
-                    gameStatus = GameState.Pause;
+                    GameStatus = GameState.Pause;
                     pauseSoundEffect.Play();
                 }
             }
             oldKeyboardState = newKeyboardState;
-            if (gameStatus == GameState.Playing)
+            if (GameStatus == GameState.Playing)
             {
                 this.GameTime = GameTime;
                 if (!DisableControl)
@@ -185,7 +192,7 @@ namespace SuperMario
 
         protected override void Draw(GameTime GameTime)
         {
-            if ((gameStatus == GameState.Playing) || (gameStatus == GameState.Pause))
+            if ((GameStatus == GameState.Playing) || (GameStatus == GameState.Pause))
             {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
                 World.Draw(Location);
@@ -200,26 +207,26 @@ namespace SuperMario
                 base.Draw(GameTime);
             }
 
-            else if(gameStatus == GameState.LivesScreen)
+            else if(GameStatus == GameState.LivesScreen)
             {
-                Game1.DisableControl = true;
+                DisableControl = true;
                 MediaPlayer.Stop();
                 continueTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if(continueTimer > 2500)
                 {
                     continueTimer -= 2500;
-                    gameStatus = GameState.Playing;
+                    GameStatus = GameState.Playing;
                     MediaPlayer.Play(BackgroundMusic);
-                    Game1.DisableControl = false;
+                    DisableControl = false;
                 }
                 GraphicsDevice.Clear(Color.Black);
                 PlayerStat.Draw(new Vector2(Camera.CameraPositionX, Camera.CameraPositionY));
                 MarioSprite.Draw(SpriteBatch, new Vector2(250, 200));
             }
 
-            else if(gameStatus == GameState.End)
+            else if(GameStatus == GameState.End)
             {
-                Game1.DisableControl = true;
+                DisableControl = true;
                 MediaPlayer.Stop();
                 if (!playSound)
                 {

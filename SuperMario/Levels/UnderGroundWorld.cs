@@ -2,6 +2,7 @@
 using SuperMario.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,20 +12,21 @@ namespace SuperMario.Levels
     public class UnderGroundWorld : ILevel
     {
         public Game1 MyGame { get; set; }
-        public List<IItem> ItemList { get; set; }
-        public List<IEnemy> EnemyList { get; set; }
-        public List<IBlock> BlockList { get; set; }
-        public List<IBackground> BackgroundList { get; set; }
-        public LevelReader Reader;
+        public Collection<IItem> ItemList { get;}
+        public Collection<IEnemy> EnemyList { get;}
+        public Collection<IBlock> BlockList { get;}
+        public Collection<IBackground> BackgroundList { get;}
+        public LevelReader Reader
+        { get; set; }
         private ILevel underLevel;
         private string currentFileName;
         public UnderGroundWorld(Game1 game, ILevel level, string fileName)
         {
             this.MyGame = game;
-            ItemList = new List<IItem>();
-            EnemyList = new List<IEnemy>();
-            BlockList = new List<IBlock>();
-            BackgroundList = new List<IBackground>();
+            ItemList = new Collection<IItem>();
+            EnemyList = new Collection<IEnemy>();
+            BlockList = new Collection<IBlock>();
+            BackgroundList = new Collection<IBackground>();
             Reader = new LevelReader(this, game);
             currentFileName = fileName;
             underLevel = level;

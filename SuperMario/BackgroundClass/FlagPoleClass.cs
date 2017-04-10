@@ -26,7 +26,7 @@ namespace SuperMario
         }
         public void BecomeUsed()
         {
-            Game1.DisableControl = true;
+            Game1.GetInstance().DisableControl = true;
             MyGame.PlayerStat.SetScoreValue(5000);
             MyGame.PlayerStat.SetEndGame(true);
             MarioWalkToCastleHandler obj = new MarioWalkToCastleHandler(MyGame, Location);

@@ -24,9 +24,9 @@ namespace SuperMario
         private int currentFrame;
         private int mode;
         public Texture2D Texture { get; set; }
-        public Boolean fire;
+        public Boolean Fire
+        { get; set; }
         private int startingLocation;
-        private SpriteBatch spriteBatch;
         private int movementTimer;
         private SoundEffect soundEffect;
         private int marioOrientation;
@@ -35,7 +35,7 @@ namespace SuperMario
         public MarioFireball()
         {
             currentFrame = 0;
-            fire = false;
+            Fire = false;
             movementTimer = 0;
             yVelocity = 0;
             startingLocation = 0;
@@ -46,10 +46,10 @@ namespace SuperMario
         {          
             if (Math.Abs(LocationX - startingLocation) > Game1Utility.FireballMaxDistance)
             {
-                fire = false;
+                Fire = false;
             }
             
-            if (fire == true)
+            if (Fire == true)
             {
                 movementTimer += GameTime.ElapsedGameTime.Milliseconds;
                 if (movementTimer > 50)
@@ -70,7 +70,7 @@ namespace SuperMario
 
         public void KillFireball()
         {
-            fire = false;
+            Fire = false;
         }
         public void MarioFire(int orientation, int marioMode, int LocationX, int LocationY)
         {
@@ -83,17 +83,16 @@ namespace SuperMario
             marioOrientation = orientation;
             mode = marioMode;
             if (mode == (int)MarioStateMachine.MarioModes.Fire)
-                fire = true;
+                Fire = true;
         }
         public void Draw(SpriteBatch myspriteBatch)
         {
-            if(fire == true)
+            if(Fire == true)
                 {
                 int width = 27;
                 int height = 27;
                 int row = (int)((float)currentFrame / (float)1);
                 int column = currentFrame % 1;
-                this.spriteBatch = myspriteBatch;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);
                 myspriteBatch.Begin();
@@ -104,7 +103,7 @@ namespace SuperMario
 
         public Rectangle Area()
         {
-            if (!fire)
+            if (!Fire)
             {
                 return new Rectangle();
 

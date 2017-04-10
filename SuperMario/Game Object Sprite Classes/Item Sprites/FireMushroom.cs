@@ -13,17 +13,13 @@ namespace SuperMario
     class FireMushroomSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        public ISprite Sprite { get; set; }
-        public Rectangle Rectangle { get; set; }
-        private SpriteBatch spriteBatch;
+        private SpriteBatch spriteBatchLocal;
 
-        public FireMushroomSprite(Texture2D texture, int rows, int columns)
+        public FireMushroomSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 0;
         }
@@ -38,7 +34,7 @@ namespace SuperMario
             int height = 28;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
-            this.spriteBatch = spriteBatch;
+            this.spriteBatchLocal = spriteBatch;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
             spriteBatch.Begin();
@@ -56,9 +52,9 @@ namespace SuperMario
             Rectangle sourceRectangle = new Rectangle(0, 0, 0, 0);
             Rectangle destinationRectangle = new Rectangle(0, 0, 0, 0);
 
-            this.spriteBatch.Begin();
-            this.spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            this.spriteBatch.End();
+            this.spriteBatchLocal.Begin();
+            this.spriteBatchLocal.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            this.spriteBatchLocal.End();
 
         }
     }

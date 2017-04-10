@@ -10,8 +10,9 @@ namespace SuperMario.Levels
     public class LevelReader
     {
         Game1 MyGame;
-        public Vector2 Location;
-        public ILevel Level;
+        private Vector2 Location;
+        public ILevel Level
+        { get; set; }
         public enum Itemtype { Star, Coin, GreenMushroom, RedMushroom, Flower };
 
         public LevelReader(ILevel level, Game1 game)

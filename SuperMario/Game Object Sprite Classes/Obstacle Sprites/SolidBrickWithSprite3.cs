@@ -14,7 +14,6 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
-        public Vector2 Location { get; set; }
         private int currentFrame;
 
         public SolidBrickWithCrewsSprite3(Texture2D texture, int rows, int columns)

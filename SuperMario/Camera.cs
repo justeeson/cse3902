@@ -10,17 +10,19 @@ namespace SuperMario
     {
         public static int CameraPositionX;
         public static int CameraPositionY;
-        public bool disableCamera = false;
+        public bool DisableCamera
+        { get; set; }
 
         public Camera()
         {
+            DisableCamera = false;
             CameraPositionX = 0;
             CameraPositionY = 0;
         }
 
         public void UpdateX(int MarioPositionX)
         {
-            if (!disableCamera)
+            if (!DisableCamera)
             {
                 if (MarioPositionX < Game1Utility.FinalLevelLocation)
                 {

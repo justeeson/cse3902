@@ -100,16 +100,9 @@
     <Compile Include="Collision Detection and Responses\MarioAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\MarioAndItemCollisionResponser.cs" />
-    <Compile Include="Command\BlockQuestionBecomeUsedCommand.cs" />
-    <Compile Include="Command\BlockBrickDisappearCommand.cs" />
-    <Compile Include="Command\BlockHiddenBlockUsedCommand.cs" />
     <Compile Include="Command\QuitCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\MarioLookDownCommand.cs" />
-    <Compile Include="Command\MarioBecomeSmallCommand.cs" />
-    <Compile Include="Command\MarioBecomeFireCommand.cs" />
-    <Compile Include="Command\MarioDeadCommand.cs" />
-    <Compile Include="Command\MarioBecomeBigCommand.cs" />
     <Compile Include="Command\MarioJumpCommand.cs" />
     <Compile Include="Command\MarioLookRightCommand.cs" />
     <Compile Include="Command\MarioLookLeftCommand.cs" />

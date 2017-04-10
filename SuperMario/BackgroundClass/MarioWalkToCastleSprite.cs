@@ -14,7 +14,6 @@ namespace SuperMario
     class MarioWalkToCastleSprite : IMario
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
 
         private int currentFrame;
@@ -23,10 +22,9 @@ namespace SuperMario
         int xCoordinate;
         private string currentMarioStatus;
         private bool reachedCastle;
-        public MarioWalkToCastleSprite(Texture2D texture, int rows, int columns, string marioStatus)
+        public MarioWalkToCastleSprite(Texture2D texture, int columns, string marioStatus)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             reachedCastle = false;
             currentMarioStatus = marioStatus;
@@ -86,15 +84,6 @@ namespace SuperMario
             spriteBatch.End();
         }
 
-        public void CollisionSprite()
-        { }
-
-        public Rectangle Area(Vector2 location)
-        {
-            int width = 28;
-            int height = 48;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
-        }
         public IMarioState State { get; set; }
 
 
@@ -151,7 +140,7 @@ namespace SuperMario
         {
         }
 
-        public void Fire()
+        public void ThrowFire()
         {
         }
 

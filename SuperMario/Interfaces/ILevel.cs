@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,10 @@ namespace SuperMario.Interfaces
     public interface ILevel
     {
         Game1 MyGame { get; set; }
-        List<IItem> ItemList { get; set; }
-        List<IEnemy> EnemyList { get; set; }
-        List<IBlock> BlockList { get; set; }
-        List<IBackground> BackgroundList { get; set; }
+        Collection<IItem> ItemList { get;}
+        Collection<IEnemy> EnemyList { get;}
+        Collection<IBlock> BlockList { get;}
+        Collection<IBackground> BackgroundList { get;}
 
         void Load();
         void Reset();

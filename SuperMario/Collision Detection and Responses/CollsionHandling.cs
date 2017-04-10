@@ -16,7 +16,6 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     class CollisionHandling
     {
-        public static Boolean bottomCollision;
         private CollisionHandling()
         {
 
@@ -28,17 +27,17 @@ namespace SuperMario.Collision_Detection_and_Responses
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
 
-            MarioDetection(level,  game,  marioRect, mario);
+            MarioDetection(level, marioRect);
             BlockDetection(level, game, marioRect, marioCheck);
-            EnemyDetection(level,  game,  marioRect,  mario);
-            ItemDetection(level,  game,  marioRect,  itemCheck);
-            FireballDetection(level,  game,  marioRect, mario);
+            EnemyDetection(level, game, marioRect);
+            ItemDetection(level, itemCheck);
+            FireballDetection(level);
 
         }
 
 
 
-        private static void MarioDetection(ILevel level, Game1 game, Rectangle marioRect, IMario mario)
+        private static void MarioDetection(ILevel level, Rectangle marioRect)
         {
             foreach (IItem item in level.ItemList)
             {
@@ -46,14 +45,13 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 if (marioRect.Intersects(itemRect))
                 {
-                    MarioAndItemCollisionResponser.Response(game.MarioSprite, item);
+                    MarioAndItemCollisionResponser.Response(item);
                 }
             }
         }
         
         private static void BlockDetection(ILevel level, Game1 game, Rectangle marioRect, int marioCheck)
         {
-            bottomCollision = false;
             for (int index = 0; index < level.BlockList.Count; index++)
             {
                 IBlock item = level.BlockList[index];
@@ -112,7 +110,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         }
 
 
-        private static void EnemyDetection(ILevel level, Game1 game, Rectangle marioRect, IMario mario)
+        private static void EnemyDetection(ILevel level, Game1 game, Rectangle marioRect)
         {
             foreach (IEnemy item in level.EnemyList)
             {
@@ -142,7 +140,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         }
 
 
-        private static void ItemDetection(ILevel level, Game1 game, Rectangle marioRect, int itemCheck)
+        private static void ItemDetection(ILevel level, int itemCheck)
         {
 
             for (int i = 0; i < level.ItemList.Count; i++)
@@ -180,7 +178,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
 
 
-        private static void FireballDetection(ILevel level, Game1 game, Rectangle marioRect, IMario mario)
+        private static void FireballDetection(ILevel level)
         {
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {

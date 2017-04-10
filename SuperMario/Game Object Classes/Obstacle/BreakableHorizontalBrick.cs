@@ -43,7 +43,7 @@ namespace SuperMario.Blocks
                     Game1Utility.BreakableBrickBumpSoundEffect.Play();
                     playSoundEffect = true;
                 }
-                Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 4, 8);
+                Sprite = new BreakableHorizontalBrickForSmallMarioSprite(SpriteFactory.brickableHorizontalBrickTexture, 8);
                 timer = 1;
             }
             else
@@ -58,7 +58,7 @@ namespace SuperMario.Blocks
         {
             if (timer == 0 && !destroyed)
             {
-                Sprite = new BreakableHorizontalBrickSprite(SpriteFactory.brickableHorizontalBrickTexture,4,8);
+                Sprite = new BreakableHorizontalBrickSprite(SpriteFactory.brickableHorizontalBrickTexture,8);
                 playSoundEffect = false;
 
             }

@@ -20,7 +20,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                CollideTop(mario, item, collisionRectangle);
+                CollideTop(item, collisionRectangle);
 
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
@@ -69,7 +69,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         }
 
-        private static void CollideTop(IMario mario, IEnemy item, Rectangle collisionRectangle)
+        private static void CollideTop(IEnemy item, Rectangle collisionRectangle)
         {
             Mario.LocationY -= collisionRectangle.Height + 1;
             item.GetKilled(true);

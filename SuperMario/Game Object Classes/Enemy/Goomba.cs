@@ -33,7 +33,7 @@ namespace SuperMario
         {
             if (!dead)
             {
-                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,4,8);
+                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,8);
                 dead = true;
                 if (killedBySmashed) {
                     MyGame.PlayerStat.SetScoreValue(600);

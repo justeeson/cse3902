@@ -20,12 +20,11 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Ned to change the color to black
             MyGame.World.Level = new UnderGroundWorld(MyGame, MyGame.World.Level, "UndergroundWorld.xml");
             MyGame.World.Load();
             Mario.LocationX = 50;
             Mario.LocationY = 50;
-            MyGame.CameraPointer.disableCamera = true;
+            MyGame.CameraPointer.DisableCamera = true;
         }
 
     }

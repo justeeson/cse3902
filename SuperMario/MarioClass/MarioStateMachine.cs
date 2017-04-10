@@ -11,8 +11,10 @@ namespace SuperMario.MarioClass
     public class MarioStateMachine: IMarioStateMachine
     {
         private Mario player;
-        public int MarioMode, Orientation;
-        IMarioState State;
+        public int Orientation
+        { get; set; }
+        public int MarioMode
+        { get; set; }
         IMarioState[,] StateArray;
         public static int Crouching;
 
@@ -47,9 +49,8 @@ namespace SuperMario.MarioClass
                     new StandingRightSmallMarioState(player), new StandingLeftSmallMarioState(player), new DeadSmallMarioState(player)} };
         }
 
-        public IMarioState GetState()
-        {
-            return StateArray[MarioMode, Orientation];
+        public IMarioState GetState
+        { get { return StateArray[MarioMode, Orientation]; }
         }
         
         public void LookLeft()
@@ -57,13 +58,12 @@ namespace SuperMario.MarioClass
             if (Orientation == (int)Orientations.StandingLeft)
             {
                 Orientation = (int)Orientations.RunningLeft;
-                player.State = GetState();
+                player.State = GetState;
             }
 
             else if (Orientation != (int)Orientations.Dead && (Orientation != (int)Orientations.RunningLeft))
             {
                 Orientation = (int)Orientations.StandingLeft;
-                State = GetState();
             }
         }
 
@@ -72,12 +72,10 @@ namespace SuperMario.MarioClass
             if (Orientation == (int)Orientations.StandingRight)
             {
                 Orientation = (int)Orientations.RunningRight;
-                State = GetState();
             }
             else if (Orientation != (int)Orientations.Dead && (Orientation != (int)Orientations.RunningRight))
             {
                 Orientation = (int)Orientations.StandingRight;
-                State = GetState();
             }
         }
 
@@ -87,20 +85,17 @@ namespace SuperMario.MarioClass
             {
                 Crouching = 1;
                 Orientation = (int)Orientations.CrouchingRight;
-                State = GetState();
             }
             else if (Orientation == (int)Orientations.StandingLeft || Orientation == (int)Orientations.RunningLeft)
             {
                 Crouching = 1;
                 Orientation = (int)Orientations.CrouchingLeft;
-                State = GetState();
             }
         }
 
         public void Dead()
         {
             Orientation = (int)Orientations.Dead;
-            State = GetState();
         }
 
         public bool isDead()
@@ -115,7 +110,6 @@ namespace SuperMario.MarioClass
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = GetState();
         }
 
         public void MarioSmallState()
@@ -125,7 +119,6 @@ namespace SuperMario.MarioClass
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = GetState();
         }
 
         public void MarioFireState()
@@ -135,7 +128,6 @@ namespace SuperMario.MarioClass
             {
                 Orientation = (int)Orientations.StandingRight;
             }
-            State = GetState();
         }
 
         public void Reset()

@@ -6,27 +6,28 @@ using System.Threading.Tasks;
 using SuperMario.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.ObjectModel;
 
 namespace SuperMario.Levels
 {
     public class LevelClass : ILevel
     {
         public Game1 MyGame { get; set; }
-        public List<IItem> ItemList { get; set; }
-        public List<IEnemy> EnemyList { get; set; }
-        public List<IBlock> BlockList { get; set; }
-        public List<IBackground> BackgroundList { get; set; }
-        public Camera Camera;
-        public LevelReader Reader;
+        public Collection<IItem> ItemList { get;}
+        public Collection<IEnemy> EnemyList { get;}
+        public Collection<IBlock> BlockList { get;}
+        public Collection<IBackground> BackgroundList { get; }
+        public LevelReader Reader
+        { get; set; }
         private string currentFileName;
 
         public LevelClass(Game1 game, string fileName)
         {
             MyGame = game;
-            ItemList = new List<IItem>();
-            EnemyList = new List<IEnemy>();
-            BlockList = new List<IBlock>();
-            BackgroundList = new List<IBackground>();
+            ItemList = new Collection<IItem>();
+            EnemyList = new Collection<IEnemy>();
+            BlockList = new Collection<IBlock>();
+            BackgroundList = new Collection<IBackground>();
             Reader = new LevelReader(this, game);
             currentFileName = fileName;
         }
@@ -44,7 +45,7 @@ namespace SuperMario.Levels
             BackgroundList.Clear();
         }
 
-        public void SortBlocks(List<IBlock> list)
+        public void SortBlocks(Collection<IBlock> list)
         {
             for (int i = (list.Count - 1); i >= 0; i--)
             {

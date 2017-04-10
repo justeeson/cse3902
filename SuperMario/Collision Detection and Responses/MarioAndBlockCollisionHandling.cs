@@ -49,7 +49,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = false;
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
-                CollisionHandling.bottomCollision = true;
                 mario.ResetVelocity();
             }
         }
@@ -62,7 +61,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = false;
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
-                CollisionHandling.bottomCollision = true;
 
                 mario.ResetVelocity();
             }

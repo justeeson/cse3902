@@ -7,7 +7,6 @@ namespace SuperMario
     class GoombaSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
         private int timeSinceLastFrame;
@@ -16,10 +15,9 @@ namespace SuperMario
         private int goombaState;
         private enum goombaStates { Normal, Smashed, Dead }
 
-        public GoombaSprite(Texture2D texture, int rows, int columns)
+        public GoombaSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
             currentFrame = 1;
             timeSinceLastFrame = 0;
