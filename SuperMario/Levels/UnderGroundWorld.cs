@@ -14,7 +14,9 @@ namespace SuperMario.Levels
         public Game1 MyGame { get; set; }
         public Collection<IItem> ItemList { get;}
         public Collection<IEnemy> EnemyList { get;}
-        public Collection<IBlock> BlockList { get;}
+        public Collection<IBlock> BlockList { get; }
+        public IBlock[] BlockListLeftFacingOrder { get; set; }
+        public IBlock[] BlockListRightFacingOrder { get; set; }
         public Collection<IBackground> BackgroundList { get;}
         public LevelReader Reader
         { get; set; }
@@ -36,6 +38,52 @@ namespace SuperMario.Levels
         public void Load()
         {
             this.Reader.Load(currentFileName);
+
+            BlockListLeftFacingOrder = new IBlock[BlockList.Count];
+            BlockListRightFacingOrder = new IBlock[BlockList.Count];
+
+            BlockList.CopyTo(BlockListLeftFacingOrder, 0);
+            BlockList.CopyTo(BlockListRightFacingOrder, 0);
+
+            SortBlocksFacingLeft(BlockListLeftFacingOrder);
+            SortBlocksFacingRight(BlockListRightFacingOrder);
+        }
+
+        public void SortBlocksFacingRight(IBlock[] list)
+        {
+            for (int i = (list.Length - 1); i >= 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    if (list.ElementAt(j - 1).Location.X + 800 * list.ElementAt(j - 1).Location.Y >
+                        list.ElementAt(j).Location.X + 800 * list.ElementAt(j).Location.Y)
+                    {
+                        IBlock temp = list[j - 1];
+                        list[j - 1] = list[j];
+                        list[j] = temp;
+
+                    }
+                }
+            }
+        }
+
+        
+        public void SortBlocksFacingLeft(IBlock[] list)
+        {
+            for (int i = (list.Length - 1); i >= 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    if (list.ElementAt(j - 1).Location.X + 800 * (480 - list.ElementAt(j - 1).Location.Y) >
+                        list.ElementAt(j).Location.X + 800 * (480 - list.ElementAt(j).Location.Y))
+                    {
+                        IBlock temp = list[j - 1];
+                        list[j - 1] = list[j];
+                        list[j] = temp;
+
+                    }
+                }
+            }
         }
 
         public void Update(GameTime GameTime)

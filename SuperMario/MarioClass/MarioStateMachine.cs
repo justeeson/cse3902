@@ -51,7 +51,18 @@ namespace SuperMario.MarioClass
         }
 
         public IMarioState GetState
-        { get { return StateArray[MarioMode, Orientation]; }
+        {
+            get { return StateArray[MarioMode, Orientation]; }
+        }
+
+        public bool isFacingLeft()
+        {
+            if (Orientation == (int)Orientations.CrouchingLeft
+               || Orientation == (int)Orientations.RunningLeft
+               || Orientation == (int)Orientations.StandingLeft)
+                return true;
+            else
+                return false;
         }
         
         public void LookLeft()

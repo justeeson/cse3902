@@ -14,8 +14,12 @@ namespace SuperMario.Interfaces
         Collection<IItem> ItemList { get;}
         Collection<IEnemy> EnemyList { get;}
         Collection<IBlock> BlockList { get;}
+        IBlock[] BlockListLeftFacingOrder { get; }
+        IBlock[] BlockListRightFacingOrder { get; }
         Collection<IBackground> BackgroundList { get;}
 
+        void SortBlocksFacingRight(IBlock[] list);
+        void SortBlocksFacingLeft(IBlock[] list);
         void Load();
         void Reset();
         void Update(GameTime GameTime);
