@@ -17,7 +17,6 @@ namespace SuperMario.Command
         }
         public void Execute()
         {
-            // Color for ground if needed
             MyGame.World.Level.ReturnGround();
             Mario.LocationX = 5216;
             Mario.LocationY = 250;

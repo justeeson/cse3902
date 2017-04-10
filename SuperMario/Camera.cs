@@ -8,8 +8,10 @@ namespace SuperMario
 {
     public class Camera
     {
-        public static int CameraPositionX;
-        public static int CameraPositionY;
+        public static int CameraPositionX
+        { get; set; }
+        public static int CameraPositionY
+        { get; set; }
         public bool DisableCamera
         { get; set; }
 
@@ -38,7 +40,7 @@ namespace SuperMario
             }
         }
         
-        public void SetPositionZero()
+        public static void SetPositionZero()
         {
             CameraPositionX = 0;
         }

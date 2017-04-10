@@ -18,11 +18,6 @@ namespace SuperMario
             this.Location = location;
         }
 
-        public void Used()
-        {
-
-        }
-
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

@@ -59,8 +59,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Rectangle testRect = marioRect;
                 testRect.Y += 1;
                 if (marioRect.Intersects(blockRect))
-                {
-                    //Mario.DisableJump = false;
+                {                  
                     MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                     if (item is PipeToUnderground)
                     {

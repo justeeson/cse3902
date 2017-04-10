@@ -17,12 +17,9 @@ namespace SuperMario
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager graphics;
         public SpriteBatch SpriteBatch
         { get; set; }
         public Texture2D Texture { get; set; }
-        private Texture2D background;
-        private Rectangle mainFrame;
         public GameTime GameTime
         { get; set; }
         public Camera CameraPointer
@@ -34,14 +31,17 @@ namespace SuperMario
         private bool playSound;
         private KeyboardState newKeyboardState;
         private KeyboardState oldKeyboardState;
-        public Boolean DisableControl;
+        public Boolean DisableControl
+        { get; set; }
         private static Game1 instance;
         public WorldManager World
         { get; set; }
         public PlayerStatistic PlayerStat
         { get; set; }
         public Vector2 Location { get; set; }
-        public static Collection<MarioFireball> Mfireballs = new Collection<MarioFireball>();
+        private static Collection<MarioFireball> fireballList;
+        public static Collection<MarioFireball> Mfireballs
+        { get { return fireballList; } }
         public enum GameState
         {
             LivesScreen,
@@ -69,15 +69,9 @@ namespace SuperMario
         public GamepadController GamepadController
         { get; set; }
 
-
-
-        private int XMax, YMax;
-        public static ArrayList ValidKeysList
-        { get; set; }
-
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);
+            new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             instance = this;
         }
@@ -86,9 +80,9 @@ namespace SuperMario
         {
             Game1Utility.Initialize();
             Game1Utility.LoadContent();
+            fireballList = new Collection<MarioFireball>();
             newKeyboardState = new KeyboardState();
-            oldKeyboardState = new KeyboardState();
-            ValidKeysList = ValidKeys.Instance.ArrayOfKeys();
+            oldKeyboardState = new KeyboardState();           
             DisableControl = false;
             continueTimer = 0;
             playSound = false;
@@ -103,12 +97,10 @@ namespace SuperMario
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             
             Texture = Content.Load<Texture2D>("MarioSheet");
-            background = Content.Load<Texture2D>("background3");
             BackgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = Game1Utility.RegularVolume;      
-            mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             SpriteFactory.LoadAllTextures(Content);
             Block = new BlockLogic(this);
             Mario.LoadContent(Content);
@@ -135,24 +127,16 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
-
-            XMax = GraphicsDevice.Viewport.Width;
-            YMax = GraphicsDevice.Viewport.Height;
         }
 
         protected override void UnloadContent()
         {
         }
-
-        public static Game1 GetInstance()
+        public static Game1 GetInstance
         {
-            if (instance == null)
-            {
-                instance = new Game1();
-            }
-            return instance;
+            get { if (instance == null) return new Game1();
+                else return instance; }
         }
-
         protected override void Update(GameTime GameTime)
         {
             newKeyboardState = Keyboard.GetState();

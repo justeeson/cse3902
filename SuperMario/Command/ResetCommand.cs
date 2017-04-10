@@ -27,7 +27,7 @@ namespace SuperMario.Command
             MyGame.CameraPointer.DisableCamera = false;
             MediaPlayer.Volume = Game1Utility.RegularVolume;
             MediaPlayer.Stop();
-            MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+            MediaPlayer.Play(Game1.GetInstance.BackgroundMusic);
             MarioStateMachine.Crouching = 0;
         }
     }

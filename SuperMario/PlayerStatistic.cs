@@ -70,7 +70,7 @@ namespace SuperMario
             headerVariables = FormatString(score,6) + "             x" + FormatString(coin, 2) + "                   1-1                  " + FormatString(time, 3);
         }
 
-        public string FormatString(int gameScore, int digit)
+        public static string FormatString(int gameScore, int digit)
         {
             string result = "";
             if (gameScore != 0)
@@ -141,12 +141,12 @@ namespace SuperMario
                 ConvertTimeToScore();
                 spriteBatch.DrawString(textFont, flagScore, position + (new Vector2(150, 150)), Color.White, 0, OriginalFont, new Vector2(1, 1), SpriteEffects.None, 0.5f);
             }
-            if(Game1.GetInstance().GameStatus == Game1.GameState.LivesScreen)
+            if(Game1.GetInstance.GameStatus == Game1.GameState.LivesScreen)
             {
                 spriteBatch.DrawString(textFont, "x"+ "     " +Mario.LivesRemaining(), position + (new Vector2(280, 225)),
                 Color.White, 0, OriginalFont, new Vector2(2, 2), SpriteEffects.None, 0.5f);
             }
-            else if(Game1.GetInstance().GameStatus == Game1.GameState.End)
+            else if(Game1.GetInstance.GameStatus == Game1.GameState.End)
             {
                 spriteBatch.DrawString(textFont, "GAME OVER", position + (new Vector2(250, 200)),
                 Color.White, 0, OriginalFont, new Vector2(2, 2), SpriteEffects.None, 0.5f);

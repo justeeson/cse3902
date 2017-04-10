@@ -16,7 +16,8 @@ namespace SuperMario.MarioClass
         public int MarioMode
         { get; set; }
         IMarioState[,] StateArray;
-        public static int Crouching;
+        public static int Crouching
+        { get; set; }
 
         public enum Orientations
         {

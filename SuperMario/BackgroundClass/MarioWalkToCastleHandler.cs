@@ -39,17 +39,7 @@ namespace SuperMario
             return result;
 
         }
-        public void HiddenToUsed()
-        {
-        }
-        public void BecomeUsed()
-        {   
-        }
-        public void Used()
-        {
-
-        }
-
+ 
         public void Update(GameTime gameTime)
         {
             MyGame.MarioSprite.Update(gameTime);

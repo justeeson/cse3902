@@ -27,11 +27,7 @@ namespace SuperMario
         public void BecomeUsed()
         {   
         }
-        public void Used()
-        {
-
-        }
-
+ 
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

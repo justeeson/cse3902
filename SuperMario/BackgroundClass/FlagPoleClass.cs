@@ -26,17 +26,12 @@ namespace SuperMario
         }
         public void BecomeUsed()
         {
-            Game1.GetInstance().DisableControl = true;
+            Game1.GetInstance.DisableControl = true;
             MyGame.PlayerStat.SetScoreValue(5000);
             MyGame.PlayerStat.SetEndGame(true);
             MarioWalkToCastleHandler obj = new MarioWalkToCastleHandler(MyGame, Location);
             this.Sprite = SpriteFactory.CreateFlagPoleToUsed();
         }
-        public void Used()
-        {   
-
-        }
-
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);

@@ -13,27 +13,48 @@ namespace SuperMario
 {
     public static class SpriteFactory
     {
-        public static Texture2D goombaTexture;
-        public static Texture2D flowerTexture;
-        public static Texture2D coinTexture;
-        public static Texture2D growupMushroomTexture;
-        public static Texture2D fireMushroomTexture;
-        public static Texture2D starTexture;
-        public static Texture2D koopaMoveLeftTexture;
-        public static Texture2D koopaMoveRightTexture;
-        public static Texture2D solidBrickTexture;
-        public static Texture2D solidBrickWithCrewsTexture;
-        public static Texture2D questionMarkBrickTexture;
-        public static Texture2D brickableHorizontalBrickTexture;
-        public static Texture2D breakableCurlyBrickTexture;
-        public static Texture2D pipeTexture;
-        public static Texture2D mediumPipeTexture;
-        public static Texture2D highPipeTexture;
-        public static Texture2D backgroundTexture;
-        public static Texture2D flagPoleTexture;
-        public static Texture2D castleTexture;
-        public static Texture2D undergroundPipeTexture;
-        public static Texture2D fireworks;
+        public static Texture2D goombaTexture
+        { get; set; }
+        public static Texture2D flowerTexture
+        { get; set; }
+        public static Texture2D coinTexture
+        { get; set; }
+        public static Texture2D growupMushroomTexture
+        { get; set; }
+        public static Texture2D fireMushroomTexture
+        { get; set; }
+        public static Texture2D starTexture
+        { get; set; }
+        public static Texture2D koopaMoveLeftTexture
+        { get; set; }
+        public static Texture2D koopaMoveRightTexture
+        { get; set; }
+        public static Texture2D solidBrickTexture
+        { get; set; }
+        public static Texture2D solidBrickWithCrewsTexture
+        { get; set; }
+        public static Texture2D questionMarkBrickTexture
+        { get; set; }
+        public static Texture2D brickableHorizontalBrickTexture
+        { get; set; }
+        public static Texture2D breakableCurlyBrickTexture
+        { get; set; }
+        public static Texture2D pipeTexture
+        { get; set; }
+        public static Texture2D mediumPipeTexture
+        { get; set; }
+        public static Texture2D highPipeTexture
+        { get; set; }
+        public static Texture2D backgroundTexture
+        { get; set; }
+        public static Texture2D flagPoleTexture
+        { get; set; }
+        public static Texture2D castleTexture
+        { get; set; }
+        public static Texture2D undergroundPipeTexture
+        { get; set; }
+        public static Texture2D fireworks
+        { get; set; }
         public static void LoadAllTextures(ContentManager content)
         {
             koopaMoveLeftTexture = content.Load<Texture2D>("turtleMoveLeft");
@@ -141,7 +162,6 @@ namespace SuperMario
         {
             return new UndergroundPipeSprite(undergroundPipeTexture, 32);
         }
-        // Might need to created a new pipe sprite class
         public static ISprite CreatePipeToUnderground()
         {
             return new HighPipeSprite(highPipeTexture, 32);

@@ -45,7 +45,7 @@ namespace SuperMario.Levels
             BackgroundList.Clear();
         }
 
-        public void SortBlocks(Collection<IBlock> list)
+        public static void SortBlocks(Collection<IBlock> list)
         {
             for (int i = (list.Count - 1); i >= 0; i--)
             {

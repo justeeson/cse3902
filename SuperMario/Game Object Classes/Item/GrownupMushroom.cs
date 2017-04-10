@@ -33,7 +33,6 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            //locationX++;
             if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = !MovingLeft;

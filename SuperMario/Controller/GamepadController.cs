@@ -53,7 +53,7 @@ namespace SuperMario.Controller
             }
             if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
             {
-                fireCommand = new MarioFireCommand(Game1.GetInstance());
+                fireCommand = new MarioFireCommand(Game1.GetInstance);
                 fireCommand.Execute();
             }
         }

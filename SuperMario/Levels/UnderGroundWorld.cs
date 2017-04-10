@@ -30,7 +30,7 @@ namespace SuperMario.Levels
             Reader = new LevelReader(this, game);
             currentFileName = fileName;
             underLevel = level;
-            MyGame.CameraPointer.SetPositionZero();
+            Camera.SetPositionZero();
 
         }
         public void Load()

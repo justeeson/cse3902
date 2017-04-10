@@ -22,17 +22,23 @@ namespace SuperMario
         public int Columns { get; set; }
         public static int LocationX { get; set; }
         public static int LocationY { get; set; }
-        public static Boolean StarStatus;
+        public static Boolean StarStatus
+        { get; set; }
         private Boolean playSoundEffect;
         private int resetTimer;
-        public static Boolean InvulnStatus;
-        public static Boolean GroundedStatus;
-        public static Boolean DisableJump;
+        public static Boolean InvulnStatus
+        { get; set; }
+        public static Boolean GroundedStatus
+        { get; set; }
+        public static Boolean DisableJump
+        { get; set; }
         private int fireDelay;
         private Boolean fireStatus;
-        public static Boolean RunStatus;
+        public static Boolean RunStatus
+        { get; set; }
         private int yVelocity, yAcceleration;
-        public static Boolean JumpStatus;
+        public static Boolean JumpStatus
+        { get; set; }
         private int invulnTimer;
         private int starPowerTimer;
         private static ContentManager mContentManager;
@@ -44,7 +50,7 @@ namespace SuperMario
             Texture = texture;
             StateMachine = new MarioStateMachine(this);
             Rows = rows;
-            command = new ResetCommand(Game1.GetInstance());
+            command = new ResetCommand(Game1.GetInstance);
             Columns = columns;
             LocationX = (int)location.X;
             LocationY = (int)location.Y;
@@ -214,7 +220,7 @@ namespace SuperMario
                 {
                     MediaPlayer.Stop();
                     Game1Utility.DeathSoundEffect.Play();
-                    Game1.GetInstance().DisableControl = true;
+                    Game1.GetInstance.DisableControl = true;
                     playSoundEffect = true;
                     Game1Utility.MarioTotalLives--;
                 }
@@ -226,11 +232,11 @@ namespace SuperMario
                     command.Execute();
                     if (Game1Utility.MarioTotalLives == 0)
                     {
-                        Game1.GetInstance().GameStatus = Game1.GameState.End;
+                        Game1.GetInstance.GameStatus = Game1.GameState.End;
                     }
                     else
                     {
-                        Game1.GetInstance().GameStatus = Game1.GameState.LivesScreen;
+                        Game1.GetInstance.GameStatus = Game1.GameState.LivesScreen;
                     }
                 }
             }
@@ -281,7 +287,7 @@ namespace SuperMario
             }
         }
 
-        private void UpdateFireball(GameTime GameTime)
+        private static void UpdateFireball(GameTime GameTime)
         {
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
@@ -297,7 +303,7 @@ namespace SuperMario
             {
                 StarStatus = false;
                 MediaPlayer.Volume = Game1Utility.RegularVolume;
-                MediaPlayer.Play(Game1.GetInstance().BackgroundMusic);
+                MediaPlayer.Play(Game1.GetInstance.BackgroundMusic);
             }
         }
 

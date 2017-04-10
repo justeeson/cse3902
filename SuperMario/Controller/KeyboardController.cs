@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperMario.Interfaces;
 using SuperMario.Command;
 using SuperMario.MarioClass;
+using SuperMario.Game_Object_Classes;
 
 namespace SuperMario.Controller
 {
@@ -33,10 +34,10 @@ namespace SuperMario.Controller
                 {
                     if(key == Keys.X)
                      {
-                        fireCommand = new MarioFireCommand(Game1.GetInstance());
+                        fireCommand = new MarioFireCommand(Game1.GetInstance);
                         fireCommand.Execute();
                      }
-                    if (Game1.ValidKeysList.Contains(key))
+                    if (ValidKeys.Instance.ArrayOfKeys().Contains(key))
                     {
                         controllerMappings[key].Execute();
                     }
