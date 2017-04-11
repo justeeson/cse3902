@@ -1,0 +1,12 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 04/11/2017
+Sprint number: 5
+Name of the .cs file being reviewed: PlayerStatistic.cs
+Author of the .cs file being reviewed: Sebastine Justinson
+Specific comments on code quality: This is a long class, it is not hard to understand. However, the cyclomatic complexity is high. It used a lot of if else
+statements, and there are three if statement nested together. It used in the FOrmatString method, this method is straight forward to understand. In drawing
+method it used a lot of if else statement, it could be replaced with switch case statement.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If we want to display how many life does mario have, we can easy update the field and bring the variable to the display. Since we already have variable about
+mario's life, so we could display it easily.
