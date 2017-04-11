@@ -1,0 +1,9 @@
+﻿Author of the code review: Dellon
+Date of the code review: 04/10/2017
+Sprint number: 5
+Name of the .cs file being reviewed: FlagPoleClass.cs
+Author of the .cs file being reviewed: Son Le
+Class does basic tasks for a block type which is flag pole. So the cohesion is strong. And it's quite fair
+coupling because the class use variables from other classes however it's necessary because the class
+needs those variables to be able to operate and manipulate on the date or function correctly. All in all,
+the class looks good in term of code metrics like complexity, cohesion, coupling and number lines of code.
