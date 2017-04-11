@@ -39,6 +39,7 @@ namespace SuperMario
             else if (marioStatus.Equals("fire"))
             { currentFrame = 31; }
             startFrame = currentFrame;
+            Game1.EndGameStatus = true;
             totalFrames = 3;
             count = 150;
             yCoordinate = 320;

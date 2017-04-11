@@ -22,6 +22,7 @@ namespace SuperMario
         private const int resetTime = 3000;
         private int gameTimeCounter;
         private bool playSoundEffect;
+        private bool outOfTimeEffect;
         private Vector2 position;
         private Vector2 displayPos;
         private Vector2 displayVelocity;
@@ -38,6 +39,7 @@ namespace SuperMario
         {
             spriteBatch = spritePatch;
             playSoundEffect = false;
+            outOfTimeEffect = false;
             command = new ResetCommand(Game1.GetInstance);
             gameTimeCounter = 0;
             textFont = content.Load<SpriteFont>("TextFont");
@@ -59,34 +61,39 @@ namespace SuperMario
 
         public void Update(GameTime gameTime)
         {
-            if(time == 0)
+            if ((time <= 0) && (!Game1.EndGameStatus))
             {
-                    gameTimeCounter += gameTime.ElapsedGameTime.Milliseconds;
-                    if (!playSoundEffect)
+                gameTimeCounter += gameTime.ElapsedGameTime.Milliseconds;
+                if (!playSoundEffect)
+                {
+                    MediaPlayer.Stop();
+                    Game1Utility.DeathSoundEffect.Play();
+                    Game1.GetInstance.DisableControl = true;
+                    playSoundEffect = true;
+                    Game1Utility.MarioTotalLives--;
+                }
+                if (gameTimeCounter > resetTime)
+                {
+                    gameTimeCounter -= resetTime;
+                    playSoundEffect = false;
+                    MediaPlayer.Volume = Game1Utility.RegularVolume;
+                    command.Execute();
+                    if (Game1Utility.MarioTotalLives == 0)
                     {
-                        MediaPlayer.Stop();
-                        Game1Utility.DeathSoundEffect.Play();
-                        Game1.GetInstance.DisableControl = true;
-                        playSoundEffect = true;
-                        Game1Utility.MarioTotalLives--;
+                        Game1.GetInstance.GameStatus = Game1.GameState.End;
                     }
-                    if (gameTimeCounter > resetTime)
+                    else
                     {
-                        gameTimeCounter -= resetTime;
-                        playSoundEffect = false;
-                        MediaPlayer.Volume = Game1Utility.RegularVolume;
-                        command.Execute();
-                        if (Game1Utility.MarioTotalLives == 0)
-                        {
-                            Game1.GetInstance.GameStatus = Game1.GameState.End;
-                        }
-                        else
-                        {
-                            Game1.GetInstance.GameStatus = Game1.GameState.LivesScreen;
-                        }
+                        Game1.GetInstance.GameStatus = Game1.GameState.LivesScreen;
                     }
                 }
-            counter++;
+            }
+            if((time <= 10) && !(Game1.EndGameStatus) && (!outOfTimeEffect))
+            {
+                Game1Utility.OutOfTimeSoundEffect.Play();
+                outOfTimeEffect = true;
+            }
+                counter++;
             if (counter == 60)
             {
                 counter = 0;

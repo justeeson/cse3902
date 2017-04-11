@@ -30,6 +30,8 @@ namespace SuperMario
         private SoundEffect pauseSoundEffect;
         private bool playSound;
         private KeyboardState newKeyboardState;
+        public static bool EndGameStatus
+        { get; set; }
         private KeyboardState oldKeyboardState;
         public Boolean DisableControl
         { get; set; }
@@ -85,6 +87,7 @@ namespace SuperMario
             oldKeyboardState = new KeyboardState();           
             DisableControl = false;
             continueTimer = 0;
+            EndGameStatus = false;
             playSound = false;
             GameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();

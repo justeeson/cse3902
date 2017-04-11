@@ -38,6 +38,8 @@ namespace SuperMario
         { get; set; }
         public static SoundEffect GameOverSoundEffect
         { get; set; }
+        public static SoundEffect OutOfTimeSoundEffect
+        { get; set; }
         public static float RegularVolume
         { get; set; }
         public static float HigherVolume
@@ -81,6 +83,7 @@ namespace SuperMario
              DeathSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("deathSoundEffect");
              FireworksSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("FireworksSoundEffect");
              GameOverSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("GameOverSoundEffect");
+             OutOfTimeSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("OutOfTimeSoundEffect");
         }
     }
 }

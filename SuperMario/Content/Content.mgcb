@@ -457,3 +457,9 @@
 /processorParam:Quality=Best
 /build:GameOverSoundEffect.wav
 
+#begin OutOfTimeSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:OutOfTimeSoundEffect.wav
+
