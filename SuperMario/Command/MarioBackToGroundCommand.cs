@@ -1,4 +1,5 @@
 ﻿using SuperMario.Interfaces;
+using SuperMario.MarioClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,9 @@ namespace SuperMario.Command
             Mario.LocationY = 250;
             MyGame.CameraPointer.UpdateX((int)Mario.LocationX);
             MyGame.CameraPointer.DisableCamera = false;
+            MarioStateMachine.GotoUnderground = false;
+            MarioStateMachine.GotoGround = false;
+            MarioStateMachine.Crouching = 0;
         }
     }
 
