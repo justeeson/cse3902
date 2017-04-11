@@ -18,7 +18,7 @@ namespace SuperMario
         private const int width = 68;
         private const int height = 350;
         private const int widthtArea = 50;
-        private const int heightArea = 300;
+        private const int heightArea = 150;
 
         public FlagPoleSprite(Texture2D texture, int columns)
         {
@@ -48,8 +48,7 @@ namespace SuperMario
         { }
 
         public Rectangle Area(Vector2 location)
-        {
-           
+        {           
             return new Rectangle((int)location.X, (int)location.Y, widthtArea, heightArea);
         }
     }

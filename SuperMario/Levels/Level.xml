@@ -442,8 +442,9 @@
   <CurlyBrick x="6688" y ="416" />
   <CurlyBrick x="6720" y ="416" />
   <CurlyBrick x="6752" y ="416" />
-  
-  <Goomba x="700" y="150" />
+   
+  <FlagPole x="1200" y="69" />
+  <Castle x="1300" y="258" />
   <QuestionBlock x="544" y="280" item="coin" /> 
 
   <HorizontalBlock x="672" y="280" />

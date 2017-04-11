@@ -18,7 +18,10 @@ namespace SuperMario
         private int counter;
         private int speed;
         private int soundDelay;
-
+        private  int width = 58;
+        private const int height = 350;
+        private const int widthArea = 68;
+        private const int heightArea = 350;
         public FlagPoleToUsedSprite(Texture2D texture, int columns)
         {
             counter = 0;
@@ -52,8 +55,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 58;
-            int height = 350;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             int xpostion = 0;
@@ -93,9 +94,7 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {
-            int width = 68;
-            int height = 350;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
         }
     }
 }
