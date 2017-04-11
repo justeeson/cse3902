@@ -11,13 +11,12 @@ namespace SuperMario.MarioClass
     public class MarioStateMachine : IMarioStateMachine
     {
         private Mario player;
-        public int Orientation
-        { get; set; }
-        public int MarioMode
-        { get; set; }
+        public int Orientation { get; set; }
+        public int MarioMode { get; set; }
         IMarioState[,] StateArray;
-        public static int Crouching
-        { get; set; }
+        public static int Crouching { get; set; }
+        public static bool GotoUnderground { get; set; }
+        public static bool GotoGround { get; set; }
 
         public enum Orientations
         {
@@ -35,6 +34,8 @@ namespace SuperMario.MarioClass
             player = mario;
             Orientation = (int)Orientations.StandingRight;
             MarioMode = (int)MarioModes.Small;
+            GotoUnderground = false;
+            GotoGround = false;
 
             StateArray = new IMarioState[3, 7] {
                 {new MovingDownRightBigMarioState(player), new MovingDownLeftBigMarioState(player),

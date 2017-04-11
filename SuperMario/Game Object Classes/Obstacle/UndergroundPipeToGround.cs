@@ -31,8 +31,6 @@ namespace SuperMario.Blockclass
         }
         public void BecomeUsed()
         {
-            ICommand gotoUnderground = new MarioBackToGroundCommand(MyGame);
-            gotoUnderground.Execute();
         }
         public void Update(GameTime GameTime)
         {
