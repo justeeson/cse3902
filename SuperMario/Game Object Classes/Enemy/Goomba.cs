@@ -54,10 +54,9 @@ namespace SuperMario
         {
            
 
-            if (Location.X /*- Camera.CameraPositionX*/ < 0)
+            if (Location.X /*- Camera.CameraPositionX*/ < 50)
             {
                 MovingLeft = false;
-                Location = new Vector2(Location.X + 2, Location.Y);
             }
     
             if (MovingLeft)
