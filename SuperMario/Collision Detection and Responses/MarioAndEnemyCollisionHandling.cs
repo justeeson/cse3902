@@ -6,7 +6,8 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     public static class MarioAndEnemyCollisionHandling
     {
-        
+
+        public static int ConsecutiveBonusPoint = 1;
 
         public static void HandleCollision(IMario mario, IEnemy item)
         {
@@ -103,6 +104,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 if (Mario.StarStatus)
                 {
                     item.GetKilled(true);
+                    ConsecutiveBonusPoint++;
                     item.CanAttack = false;
                 }
             }
@@ -138,6 +140,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                 }
             }
 
+        }
+        public static void SetBonusPoint(bool var)
+        {
+            if (var == false)
+            {
+                ConsecutiveBonusPoint = 1;
+            }
         }
        
 

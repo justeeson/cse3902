@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
+using SuperMario.Collision_Detection_and_Responses;
 
 namespace SuperMario
 {
@@ -36,7 +37,7 @@ namespace SuperMario
                 this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.goombaTexture,8);
                 dead = true;
                 if (killedBySmashed) {
-                    MyGame.PlayerStat.SetScoreValue(600);
+                    MyGame.PlayerStat.SetScoreValue(600 * MarioAndEnemyCollisionHandling.ConsecutiveBonusPoint);
                 }
                 else
                 {

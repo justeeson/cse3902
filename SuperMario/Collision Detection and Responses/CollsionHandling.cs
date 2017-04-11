@@ -21,6 +21,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
 
         }
+
         public static void Update(ILevel level, Game1 game)
         {
             int marioCheck = 0;

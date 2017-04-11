@@ -1,0 +1,10 @@
+Author of the code review: Son Le
+Date of the code review: 04/10/2017
+Sprint number: 5
+Name of the .cs file being reviewed: Game1.cs
+Author of the .cs file being reviewed: Sebastine Justinson
+Game1 has alot of dependencies and many classes would access to these fields or properties in the Game1 class. this make
+the class become tight coupling, but this is the way it is, so we can understand why many other classes have to acccess
+these variables in the Game1 class. This is because Game1 class is the central of the application. Similarly, the class is ok with
+cohesion because it's the tasks or methods which are necessary for the game to be able to run. The number of code may be alittle much,
+we can move some of them to somewhere else. thats my suggestion.

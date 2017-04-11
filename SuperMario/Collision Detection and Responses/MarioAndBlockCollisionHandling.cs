@@ -44,11 +44,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 item.BecomeUsed();
             }
             else if (collisionRectangle.Top == block.Area(item.Location).Top)
-            {
+            {   
                 Mario.GroundedStatus = true;
                 Mario.DisableJump = false;
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
+                MarioAndEnemyCollisionHandling.SetBonusPoint(false);
                 mario.ResetVelocity();
             }
         }
@@ -61,7 +62,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.DisableJump = false;
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
-
+                MarioAndEnemyCollisionHandling.SetBonusPoint(false);
                 mario.ResetVelocity();
             }
             else if (block.Area(item.Location).Top <= mario.Area().Top)
