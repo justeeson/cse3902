@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.MarioClass
 {
-    public class MarioStateMachine: IMarioStateMachine
+    public class MarioStateMachine : IMarioStateMachine
     {
         private Mario player;
         public int Orientation
@@ -48,6 +48,12 @@ namespace SuperMario.MarioClass
                 {new MovingDownRightSmallMario(player), new MovingDownLeftSmallMario(player),
                 new RunningRightSmallMarioState(player), new RunningLeftSmallMarioState(player),
                     new StandingRightSmallMarioState(player), new StandingLeftSmallMarioState(player), new DeadSmallMarioState(player)} };
+        }
+
+        public MarioStateMachine(IMario mario)
+        {
+            
+            Orientation = (int)Orientations.StandingRight;
         }
 
         public IMarioState GetState

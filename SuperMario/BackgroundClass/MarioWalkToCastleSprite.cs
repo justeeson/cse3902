@@ -15,7 +15,10 @@ namespace SuperMario
     {
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
-
+        public MarioStateMachine StateMachine
+        {
+            get;
+        }
         private int currentFrame;
         private int count;
         private int timer;
@@ -27,6 +30,7 @@ namespace SuperMario
             Texture = texture;
             Columns = columns;
             reachedCastle = false;
+            StateMachine = new MarioStateMachine(this);
             currentMarioStatus = marioStatus;
             currentFrame = 10;
             count = 300;
@@ -87,9 +91,7 @@ namespace SuperMario
         public IMarioState State { get; set; }
 
 
-        public MarioStateMachine StateMachine
-        { get;
-        }
+        
         public Rectangle Area()
         {
             return new Rectangle();

@@ -35,7 +35,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
                 Mario.LocationX -= (collisionRectangle.Width);
             }
-            /*collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
+            collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
             {
                 Mario.LocationY += collisionRectangle.Height;
@@ -50,7 +50,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
                 mario.ResetVelocity();
-            }*/
+            }
         }
 
         private static void HeightSmallerThanWidth(IMario mario, IBlock item, Rectangle collisionRectangle, ISprite block)
@@ -72,7 +72,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 item.BecomeUsed();
             }
 
-            /*collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
+            collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
                 Mario.LocationX += collisionRectangle.Width + 1;
@@ -80,7 +80,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
                 Mario.LocationX -= (collisionRectangle.Width + 1);
-            }*/
+            }
         }
 
     }
