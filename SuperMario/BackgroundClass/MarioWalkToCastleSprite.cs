@@ -15,37 +15,51 @@ namespace SuperMario
     {
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
-
+        private int startFrame;
+        private int totalFrames;
         private int currentFrame;
+        private int yCoordinate;
         private int count;
+        private int distance;
         private int timer;
-        int xCoordinate;
-        private string currentMarioStatus;
+        private int xCoordinate;    
         private bool reachedCastle;
         public MarioWalkToCastleSprite(Texture2D texture, int columns, string marioStatus)
         {
             Texture = texture;
             Columns = columns;
             reachedCastle = false;
-            currentMarioStatus = marioStatus;
-            currentFrame = 10;
-            count = 300;
+            if (marioStatus.Equals("small"))
+            { currentFrame = 7; }
+            else if (marioStatus.Equals("big"))
+            { currentFrame = 19; }
+            else if (marioStatus.Equals("fire"))
+            { currentFrame = 31; }
+            startFrame = currentFrame;
+            totalFrames = 3;
+            count = 150;
+            yCoordinate = 320;
             xCoordinate = 150;
+            distance = xCoordinate + 170;
         }
 
         public void Update(GameTime gameTime)
         {
-            timer++;
+            timer+= gameTime.ElapsedGameTime.Milliseconds;
             if (timer > count)
             {
                 timer -= count;
                 currentFrame++;
-                if (currentFrame == 15)
-                { currentFrame = 10; }
+                if (currentFrame == (startFrame + totalFrames))
+                { currentFrame = startFrame; }
             }
-            if (xCoordinate < 320)
+            if(yCoordinate < 355)
             {
-                xCoordinate += 1;
+                yCoordinate++;
+            }
+            if (xCoordinate < distance)
+            {
+                xCoordinate++;
             }
             else
             {
@@ -55,25 +69,13 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 0;
-            int height =0;
+            Columns = 12;
+            int width = 28;
+            int height = 36;
             int row = (int)((float)currentFrame / (float)Columns);
-            int column = currentFrame % Columns;
-            if (currentMarioStatus.Equals("small"))
-            {
-                width = 20;
-                height = 40;
-            }
-            else if (currentMarioStatus.Equals("big"))
-            {
-
-            }
-            else
-            {
-
-            }                    
+            int column = currentFrame % Columns;                
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(xCoordinate+200, 320, width, height);
+            Rectangle destinationRectangle = new Rectangle(xCoordinate+200, yCoordinate, width*2, height*2);
             if (reachedCastle)
             {
                 sourceRectangle = new Rectangle();
