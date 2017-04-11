@@ -18,6 +18,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        private const int width = 1000;
+        private const int height = 700;
 
         public BackgroundSprite(Texture2D texture, int rows, int columns)
         {
@@ -47,8 +49,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 1000;
-            int height = 700;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
