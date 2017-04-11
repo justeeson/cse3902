@@ -85,6 +85,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
                         marioCheck = 1;
+                        if (!(item is PipeToUnderground))
+                        {
+                            MarioStateMachine.GotoUnderground = false;
+                            MarioStateMachine.Crouching = 0;
+                        }
                     }
                 }
                 testRect.Y -= 1;
