@@ -22,7 +22,6 @@ namespace SuperMario.Sprites
         private int flashStatus;
         private bool resetFrames;
         private int nextFlashTime;
-        private int millisecondsPerFlash;
 
         public RunningRightBigMarioState(Mario mario)
         {
@@ -35,7 +34,6 @@ namespace SuperMario.Sprites
             flashStatus = 0;
             resetFrames = false;
             nextFlashTime = 0;
-            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime GameTime)
@@ -45,9 +43,9 @@ namespace SuperMario.Sprites
             if (Mario.StarStatus)
             {
                 nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
-                if (nextFlashTime > millisecondsPerFlash)
+                if (nextFlashTime > Game1Utility.MillisecondsPerFlash)
                 {
-                    nextFlashTime -= millisecondsPerFlash;
+                    nextFlashTime -= Game1Utility.MillisecondsPerFlash;
                     if (flashStatus == 0)
                     {
                         flashStatus = 1;

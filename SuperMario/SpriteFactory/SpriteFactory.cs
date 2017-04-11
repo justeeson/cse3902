@@ -55,6 +55,8 @@ namespace SuperMario
         { get; set; }
         public static Texture2D fireworks
         { get; set; }
+        private const int rowNumber = 32;
+        private const int columnNumber = 32;
         public static void LoadAllTextures(ContentManager content)
         {
             koopaMoveLeftTexture = content.Load<Texture2D>("turtleMoveLeft");
@@ -82,109 +84,109 @@ namespace SuperMario
 
         public static ISprite CreateKoopaMoveLeft()
         {
-            return new KoopaMoveLeftSprite(koopaMoveLeftTexture, 32);
+            return new KoopaMoveLeftSprite(koopaMoveLeftTexture, columnNumber);
         }
         public static ISprite CreateKoopaMoveRight()
         {
-            return new KoopaMoveRightSprite(koopaMoveRightTexture, 32);
+            return new KoopaMoveRightSprite(koopaMoveRightTexture, columnNumber);
         }
         public static ISprite CreateFlower()
         {
-            return new FlowerSprite(flowerTexture, 32, 32);
+            return new FlowerSprite(flowerTexture, rowNumber, columnNumber);
         }
 
         public static ISprite CreateCoin()
         {
-            return new CoinSprite(coinTexture, 32, 32);
+            return new CoinSprite(coinTexture, rowNumber, columnNumber);
         }
 
         public static ISprite CreateGrowupMushroom()
         {
-            return new GrowupMushroomSprite(growupMushroomTexture, 32);
+            return new GrowupMushroomSprite(growupMushroomTexture, columnNumber);
         }
         public static ISprite CreateFireMushroom()
         {
-            return new FireMushroomSprite(fireMushroomTexture, 32);
+            return new FireMushroomSprite(fireMushroomTexture, columnNumber);
         }
         public static ISprite CreateStar()
         {
-            return new StarSprite(starTexture, 32);
+            return new StarSprite(starTexture, columnNumber);
         }
         public static ISprite CreateGoomba()
         {
-            return new GoombaSprite(goombaTexture, 32);
+            return new GoombaSprite(goombaTexture, columnNumber);
         }
         public static ISprite CreateSolidBrick()
         {
-            return new SolidBrickSprite(solidBrickTexture, 32);
+            return new SolidBrickSprite(solidBrickTexture, columnNumber);
         }
         public static ISprite CreateSolidBrickWithCrews()
         {
-            return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, 32);
+            return new SolidBrickWithCrewsSprite(solidBrickWithCrewsTexture, columnNumber);
         }
 
         public static ISprite CreateHiddenBrick()
         {
-            return new HiddenBrickSprite(solidBrickWithCrewsTexture, 32);
+            return new HiddenBrickSprite(solidBrickWithCrewsTexture, columnNumber);
         }
 
         public static ISprite CreateSolidBrickWithCrews3()
         {
-            return new SolidBrickWithCrewsSprite3(solidBrickWithCrewsTexture, 32, 32);
+            return new SolidBrickWithCrewsSprite3(solidBrickWithCrewsTexture, rowNumber, columnNumber);
         }
 
         public static ISprite CreateQuestionMarkBrick()
         {
-            return new QuestionMarkBrickSprite(questionMarkBrickTexture, 32);
+            return new QuestionMarkBrickSprite(questionMarkBrickTexture, columnNumber);
         }
 
         public static ISprite CreateBreakableHorizonalBrick()
         {
-            return new BreakableHorizontalBrickSprite(brickableHorizontalBrickTexture, 32);
+            return new BreakableHorizontalBrickSprite(brickableHorizontalBrickTexture, columnNumber);
         }
         public static ISprite CreateBreakableCurlyBrick()
         {
-            return new BreakableCurlyBrickSprite(breakableCurlyBrickTexture, 32);
+            return new BreakableCurlyBrickSprite(breakableCurlyBrickTexture, columnNumber);
         }
         public static ISprite CreatePipe()
         {
-            return new PipeSprite(pipeTexture, 32);
+            return new PipeSprite(pipeTexture, columnNumber);
         }
         public static ISprite CreateMediumPipe()
         {
-            return new MediumPipeSprite(mediumPipeTexture, 32);
+            return new MediumPipeSprite(mediumPipeTexture, columnNumber);
         }
         public static ISprite CreateHighPipe()
         {
-            return new HighPipeSprite(highPipeTexture, 32);
+            return new HighPipeSprite(highPipeTexture, columnNumber);
         }
         public static ISprite CreateUndergroundPipeToGround()
         {
-            return new UndergroundPipeSprite(undergroundPipeTexture, 32);
+            return new UndergroundPipeSprite(undergroundPipeTexture, columnNumber);
         }
         public static ISprite CreatePipeToUnderground()
         {
-            return new HighPipeSprite(highPipeTexture, 32);
+            return new HighPipeSprite(highPipeTexture, columnNumber);
         }
         public static ISprite CreateBackground()
         {
-            return new BackgroundSprite(backgroundTexture, 32, 32);
+            return new BackgroundSprite(backgroundTexture, rowNumber, columnNumber);
         }
         public static ISprite CreateCastle()
         {
-            return new CastleSprite(castleTexture, 32);
+            return new CastleSprite(castleTexture, columnNumber);
         }
         public static ISprite CreateFlagPole()
         {
-            return new FlagPoleSprite(flagPoleTexture, 32);
+            return new FlagPoleSprite(flagPoleTexture, columnNumber);
         }
         public static ISprite CreateFlagPoleToUsed()
         {
-            return new FlagPoleToUsedSprite(flagPoleTexture, 32);
+            return new FlagPoleToUsedSprite(flagPoleTexture, columnNumber);
         }
         public static ISprite CreateFirework()
         {
-            return new FireworkSprite(fireworks, 32);
+            return new FireworkSprite(fireworks, columnNumber);
         }
     }
 }

@@ -31,19 +31,10 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.CameraPositionX < 0)
-            {
-                MovingLeft = !MovingLeft;
-            }
-            else if (Location.X - Camera.CameraPositionX > MyGame.GraphicsDevice.Viewport.Width - Sprite.Area(Location).Width)
-            {
-                MovingLeft = !MovingLeft;
-            }
-
             if (MovingLeft)
-                Location = new Vector2(Location.X - 3, Location.Y);
+                Location = new Vector2(Location.X - 4, Location.Y);
             else
-                Location = new Vector2(Location.X + 3, Location.Y);
+                Location = new Vector2(Location.X + 4, Location.Y);
 
             if (IsFalling)
             {

@@ -17,26 +17,22 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int currentFrame;
         private int startFrame;
-        private int totalFrames;
+        private const int totalFrames = 3;
         private int timeSinceLastFrame;
         private bool resetFrames;
-        private int millisecondsPerFrame;
+        private const int millisecondsPerFrame = 150;
         private int flashStatus;
         private int nextFlashTime;
-        private int millisecondsPerFlash;
 
         public RunningLeftSmallMarioState(Mario mario)
         {
             this.mario = mario;
             currentFrame = 4;
             startFrame = currentFrame;
-            totalFrames = 3;
             timeSinceLastFrame = 0;
             resetFrames = false;
-            millisecondsPerFrame = 150;
             flashStatus = 0;
             nextFlashTime = 0;
-            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime GameTime)
@@ -47,9 +43,9 @@ namespace SuperMario.Sprites
             if (Mario.StarStatus)
             {
                 nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
-                if (nextFlashTime > millisecondsPerFlash)
+                if (nextFlashTime > Game1Utility.MillisecondsPerFlash)
                 {
-                    nextFlashTime -= millisecondsPerFlash;
+                    nextFlashTime -= Game1Utility.MillisecondsPerFlash;
                     if (flashStatus == 0)
                     {
                         flashStatus = 1;

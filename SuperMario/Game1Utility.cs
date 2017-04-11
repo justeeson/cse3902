@@ -54,13 +54,15 @@ namespace SuperMario
         { get; set; }
         public static int MarioTotalLives
         { get; set; }
-
+        public static int MillisecondsPerFlash
+        { get; set; }
         public static void Initialize()
         {
             RegularVolume = 0.42f;
             HigherVolume = 0.8f;
             FinalLevelLocation = 6350;
             CameraOffset = 350;
+            MillisecondsPerFlash = 400;
             FireballMaxDistance = 500;
             MaxValueY = 400;
             MovingLeftOffset = -400;

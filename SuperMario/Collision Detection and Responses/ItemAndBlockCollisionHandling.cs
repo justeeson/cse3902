@@ -36,10 +36,6 @@ namespace SuperMario.Collision_Detection_and_Responses
                 powerup.Location = new Vector2(powerup.Location.X - (collisionRectangle.Width + 1), powerup.Location.Y);
                 powerup.MovingLeft = true;
             }
-
-
-
         }
-
     }
 }
