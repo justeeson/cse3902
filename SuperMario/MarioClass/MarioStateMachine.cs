@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperMario.MarioClass
 {
-    public class MarioStateMachine: IMarioStateMachine
+    public class MarioStateMachine : IMarioStateMachine
     {
         private Mario player;
         public int Orientation
@@ -50,8 +50,25 @@ namespace SuperMario.MarioClass
                     new StandingRightSmallMarioState(player), new StandingLeftSmallMarioState(player), new DeadSmallMarioState(player)} };
         }
 
+        public MarioStateMachine(IMario mario)
+        {
+            
+            Orientation = (int)Orientations.StandingRight;
+        }
+
         public IMarioState GetState
-        { get { return StateArray[MarioMode, Orientation]; }
+        {
+            get { return StateArray[MarioMode, Orientation]; }
+        }
+
+        public bool isFacingLeft()
+        {
+            if (Orientation == (int)Orientations.CrouchingLeft
+               || Orientation == (int)Orientations.RunningLeft
+               || Orientation == (int)Orientations.StandingLeft)
+                return true;
+            else
+                return false;
         }
         
         public void LookLeft()

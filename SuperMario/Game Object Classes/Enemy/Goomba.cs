@@ -51,7 +51,9 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            if (Location.X - Camera.CameraPositionX < 0)
+           
+
+            if (Location.X /*- Camera.CameraPositionX*/ < 0)
             {
                 MovingLeft = false;
                 Location = new Vector2(Location.X + 2, Location.Y);

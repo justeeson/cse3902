@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -26,13 +27,11 @@ namespace SuperMario.Collision_Detection_and_Responses
             int itemCheck = 0;
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
-
             MarioDetection(level, marioRect);
             BlockDetection(level, game, marioRect, marioCheck);
             EnemyDetection(level, game, marioRect);
             ItemDetection(level, itemCheck);
             FireballDetection(level);
-
         }
 
 
@@ -52,9 +51,16 @@ namespace SuperMario.Collision_Detection_and_Responses
         
         private static void BlockDetection(ILevel level, Game1 game, Rectangle marioRect, int marioCheck)
         {
-            for (int index = 0; index < level.BlockList.Count; index++)
+            IBlock[] BlockList;
+            if (!game.MarioSprite.StateMachine.isFacingLeft())
+                BlockList = level.BlockListLeftFacingOrder;
+            else
+                BlockList = level.BlockListRightFacingOrder;
+
+            for (int index = 0; index < BlockList.Length; index++)
             {
-                IBlock item = level.BlockList[index];
+                
+                IBlock item = BlockList[index];
                 Rectangle blockRect = item.Sprite.Area(item.Location);
                 Rectangle testRect = marioRect;
                 testRect.Y += 1;
