@@ -76,11 +76,21 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
+                if (item is FlagPole)
+                {
+                    item.BecomeUsed();
+                }
                 Mario.LocationX += collisionRectangle.Width + 1;
+               
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
+                if (item is FlagPole)
+                {
+                    item.BecomeUsed();
+                }
                 Mario.LocationX -= (collisionRectangle.Width + 1);
+               
             }
         }
 

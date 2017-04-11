@@ -15,7 +15,9 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-
+        private const int width = 161;
+        private const int height = 159;
+        private const int heightArea = 500;
         public CastleSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -32,8 +34,7 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 161;
-            int height = 159;
+          
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -50,7 +51,7 @@ namespace SuperMario
         public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
-            int height = 500;
+            int height = heightArea;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }
