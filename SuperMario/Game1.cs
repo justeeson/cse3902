@@ -29,10 +29,12 @@ namespace SuperMario
         { get; set; }
         private SoundEffect pauseSoundEffect;
         private bool playSound;
+        private GamePadState newGamepadState;
         private KeyboardState newKeyboardState;
         public static bool EndGameStatus
         { get; set; }
         private KeyboardState oldKeyboardState;
+        private GamePadState oldGamepadState;
         public Boolean DisableControl
         { get; set; }
         private static Game1 instance;
@@ -128,6 +130,7 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickDown, new MarioLookDownCommand(this));
+            GamepadController.RegisterCommand(Buttons.X, new ResetCommand(this));
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
         }
@@ -143,7 +146,9 @@ namespace SuperMario
         protected override void Update(GameTime GameTime)
         {
             newKeyboardState = Keyboard.GetState();
-            if (newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
+            newGamepadState = GamePad.GetState(PlayerIndex.One);
+            if ((newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P)) ||
+                newGamepadState.IsButtonDown(Buttons.Start) && oldGamepadState.IsButtonUp(Buttons.Start))
             {   
                 if(GameStatus == GameState.Pause)
                 {
@@ -160,6 +165,7 @@ namespace SuperMario
                 }
             }
             oldKeyboardState = newKeyboardState;
+            oldGamepadState = newGamepadState;
             if (GameStatus == GameState.Playing)
             {
                 this.GameTime = GameTime;
