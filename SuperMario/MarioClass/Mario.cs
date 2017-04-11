@@ -166,6 +166,10 @@ namespace SuperMario
             setState();
             State.Update(GameTime);
             KeyboardState currentKeyboardState = Keyboard.GetState();
+            if(LocationX <= 0)
+            {
+                LocationX = 0;
+            }
             if (StarStatus)
             {
                 starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
