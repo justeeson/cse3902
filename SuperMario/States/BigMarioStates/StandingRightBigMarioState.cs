@@ -24,7 +24,6 @@ namespace SuperMario.Sprites
             currentFrame = 18;
             flashStatus = 0;
             nextFlashTime = 0;
-            millisecondsPerFlash = 400;
         }
 
         public void Update(GameTime GameTime)
