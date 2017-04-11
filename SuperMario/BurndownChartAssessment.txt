@@ -1,10 +1,16 @@
-﻿By analyzing the burndown chart for this sprint, it is clear that the amount of workremaining was almost always above 
-the recommended line. This was because of a few major bugs that were extremely hard to detect at first. However, after 
-meeting with the professor and having discussions with each other, these bugs were spotted and fixed during the week leading 
-up to the deadline for the refactored implementation. The biggest time sink was implementing the level reader using XML. 
-After a lot of review, the team finally got the reader to work. After this, designing the rest of the level took very little
-time.
+﻿Sprint 5 - Burndown Chart Assessment
 
-However, the amount of work remaining did not drop much because new features were constantly being added and new bugs kept 
-arising leading up to the deadline. Even though the team took careful precautions to avoid the mistakes made during the
-previous sprints, the scope of this sprint was underestimated by the team as it was larger and more difficult than the others.
+For this sprint, the team was finally able to move at a much better pace compared to the previous sprints. By 
+analyzing the burndown chart, it is seen that the total amount of work done steadily decreased over the allocated
+time period for the Sprint. The small spikes were due to additional work being added as tasks which were overlooked
+during the initial planning period. However, compared to previous sprints, the magnitude of this error was very 
+small this time around. This was mostly due to the team reaziling the mistakes made from the previous sprints
+and making a conscious effort to avoid it this time around by discussing with each other as well as clarifying all
+doubts with the professor before working on the code. 
+
+The work was also split up better this time around. Different group members were allotted work based on what they
+had previously worked on as well as what they were interested in. However, due to plenty of code analysis warnings,
+code smells and bugs, the team was unable to bring the remaining work under the target line. Therefore, in the 
+future the team will also assign some time for such tasks which are not directly relevant to the implementation.
+Even with all the issues, this sprint was the one that the team had the most control over and came closest to
+developing a perfect solution for.

@@ -1,0 +1,20 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 04/10/2017
+Sprint number: 5
+Name of the .cs file being reviewed: MarioWalkToCastleSprite.cs
+Author of the .cs file being reviewed: Son Le
+Specific comments on code quality: This class is very long and uses a lot of instance variables. The cyclomatic
+complexity of the class is also fairly high because we have to account for the 3 different mario states as well
+as check for specific location conditions and take appropriate actions based on that. Since the class implements
+the IMario interface, it has to implement the method bodies defined in the interface such as ThrowFire(), Run(),
+etc. However, since these functions are not used by this class, their method bodies are left empty which is not
+ideal and makes the code less readable and maintainable. However, the code has low coupling and high cohesion
+since it does not rely on fields or methods from other classes and the tasks it performs are all very closely 
+related.
+
+Potential changes: The best change would be to completely get rid of this class and then add the logic to the Mario
+and Game1 classes instead. This change would be ideal since then we would be able to directly access the location
+values for Mario without having to rely on hardcoded values for the location of the flagpole. Another advantage
+of doing this is that the code would be more maintainable since now changes can be made to the Mario class alone
+instead of having to also make changes to the MarioWalkToCastleSprite class even though it does not use most
+of the functions and variables it implements from IMario.
