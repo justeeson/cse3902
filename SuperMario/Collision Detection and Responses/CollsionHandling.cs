@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using SuperMario.Command;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -60,7 +61,6 @@ namespace SuperMario.Collision_Detection_and_Responses
 
             for (int index = 0; index < BlockList.Length; index++)
             {
-                
                 IBlock item = BlockList[index];
                 Rectangle blockRect = item.Sprite.Area(item.Location);
                 Rectangle testRect = marioRect;
@@ -70,17 +70,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                     MarioAndBlockCollisionHandling.HandleCollision(game.MarioSprite, item);
                     if (item is PipeToUnderground)
                     {
-                        if (MarioStateMachine.Crouching == 1)
-                        {
-                            item.BecomeUsed();
-                        }
+                        MarioStateMachine.GotoUnderground = true;
                     }
-                    else if (item is UndergroundPipeToGround)
+                    else if (item is UndergroundPipeToGround && MarioStateMachine.GotoGround )
                     {
-                        if (MarioStateMachine.Crouching == 1)
-                        {
-                            item.BecomeUsed();
-                        }
+                        ICommand gotoUnderground = new MarioBackToGroundCommand(Game1.GetInstance);
+                        gotoUnderground.Execute();
                     }
                 }
                 else
@@ -90,6 +85,11 @@ namespace SuperMario.Collision_Detection_and_Responses
                         Mario.DisableJump = false;
                         Mario.GroundedStatus = true;
                         marioCheck = 1;
+                        if (!(item is PipeToUnderground))
+                        {
+                            MarioStateMachine.GotoUnderground = false;
+                            MarioStateMachine.Crouching = 0;
+                        }
                     }
                 }
                 testRect.Y -= 1;
@@ -122,7 +122,6 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
 
                 Rectangle enemyRect = item.Sprite.Area(item.Location);
-
                 if (marioRect.Intersects(enemyRect) && !game.MarioSprite.isDead())
                 {
                     MarioAndEnemyCollisionHandling.HandleCollision(game.MarioSprite, item);

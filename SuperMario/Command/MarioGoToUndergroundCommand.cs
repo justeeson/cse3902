@@ -12,7 +12,7 @@ namespace SuperMario.Command
     public class MarioGoToUndergroundCommand : ICommand
     {
 
-        private Game1 MyGame;
+        public Game1 MyGame { get; set; }
 
         public MarioGoToUndergroundCommand(Game1 game)
         {
@@ -25,6 +25,9 @@ namespace SuperMario.Command
             Mario.LocationX = 50;
             Mario.LocationY = 50;
             MyGame.CameraPointer.DisableCamera = true;
+            MarioStateMachine.GotoUnderground = false;
+            MarioStateMachine.GotoGround = true;
+            MarioStateMachine.Crouching = 0;
         }
 
     }

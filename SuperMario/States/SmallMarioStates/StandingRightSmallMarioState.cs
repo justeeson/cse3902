@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.Interfaces;
-
+using SuperMario.MarioClass;
+using SuperMario.Command;
 
 namespace SuperMario.Sprites
 {
@@ -29,6 +30,11 @@ namespace SuperMario.Sprites
 
         public void Update(GameTime GameTime)
         {
+            if (MarioStateMachine.Crouching == 1 && MarioStateMachine.GotoUnderground)
+            {
+                ICommand gotoUnderground = new MarioGoToUndergroundCommand(Game1.GetInstance);
+                gotoUnderground.Execute();
+            }
             if (Mario.StarStatus)
             {
                 nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
