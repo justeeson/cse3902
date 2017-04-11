@@ -39,7 +39,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
             {
                 Mario.LocationY += collisionRectangle.Height;
-                mario.ResetVelocity();
+                Mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
             }
@@ -50,7 +50,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
                 MarioAndEnemyCollisionHandling.SetBonusPoint(false);
-                mario.ResetVelocity();
+                Mario.ResetVelocity();
             }
         }
 
@@ -63,12 +63,12 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.JumpStatus = false;
                 Mario.LocationY -= (collisionRectangle.Height);
                 MarioAndEnemyCollisionHandling.SetBonusPoint(false);
-                mario.ResetVelocity();
+                Mario.ResetVelocity();
             }
             else if (block.Area(item.Location).Top <= mario.Area().Top)
             {
                 Mario.LocationY += collisionRectangle.Height;
-                mario.ResetVelocity();
+                Mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
             }

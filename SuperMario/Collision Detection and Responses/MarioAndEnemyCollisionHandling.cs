@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using SuperMario.Command;
 using SuperMario.Interfaces;
 using SuperMario.MarioClass;
 
@@ -6,8 +7,9 @@ namespace SuperMario.Collision_Detection_and_Responses
 {
     public static class MarioAndEnemyCollisionHandling
     {
-
-        public static int ConsecutiveBonusPoint = 1;
+        private static int consecutiveBonusPoint;
+        public static int ConsecutiveBonusPoint
+        { get { return consecutiveBonusPoint; } set { consecutiveBonusPoint = value; } }
 
         public static void HandleCollision(IMario mario, IEnemy item)
         {
@@ -21,7 +23,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                CollideTop(item, collisionRectangle);
+                CollideTop(item);
 
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
@@ -70,11 +72,14 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         }
 
-        private static void CollideTop(IEnemy item, Rectangle collisionRectangle)
+        private static void CollideTop(IEnemy item)
         {
-            Mario.LocationY -= collisionRectangle.Height + 1;
+            Mario.ResetVelocity();
+            Mario.JumpStatus = false;
+            Mario.GroundedStatus = false;
             item.GetKilled(true);
             item.CanAttack = false;
+            Mario.LocationY = (Mario.LocationY - 125);         
         }
 
         private static void CollideRight(IMario mario, IEnemy item, Rectangle collisionRectangle)
@@ -104,7 +109,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 if (Mario.StarStatus)
                 {
                     item.GetKilled(true);
-                    ConsecutiveBonusPoint++;
+                    ConsecutiveBonusPoint = ConsecutiveBonusPoint + 1;
                     item.CanAttack = false;
                 }
             }

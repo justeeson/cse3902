@@ -51,9 +51,8 @@ namespace SuperMario.MarioClass
                     new StandingRightSmallMarioState(player), new StandingLeftSmallMarioState(player), new DeadSmallMarioState(player)} };
         }
 
-        public MarioStateMachine(IMario mario)
-        {
-            
+        public MarioStateMachine()
+        {            
             Orientation = (int)Orientations.StandingRight;
         }
 

@@ -26,12 +26,12 @@ namespace SuperMario
         private bool reachedCastle;
         private const int width = 28;
         private const int height = 36;
-        public MarioWalkToCastleSprite(Texture2D texture, int columns, string marioStatus)
+        public MarioWalkToCastleSprite(Texture2D texture, string marioStatus)
         {
             Texture = texture;
             Columns = 12;
             reachedCastle = false;
-            StateMachine = new MarioStateMachine(this);
+            StateMachine = new MarioStateMachine();
             if (marioStatus.Equals("small"))
             { currentFrame = 7; }
             else if (marioStatus.Equals("big"))
@@ -137,11 +137,6 @@ namespace SuperMario
         public void Reset()
         {
         }
-
-        public void ResetVelocity()
-        {
-        }
-
         public void ThrowFire()
         {
         }

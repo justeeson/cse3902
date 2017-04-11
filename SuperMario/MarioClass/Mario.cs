@@ -36,7 +36,9 @@ namespace SuperMario
         private Boolean fireStatus;
         public static Boolean RunStatus
         { get; set; }
-        private int yVelocity, yAcceleration;
+        public static int yVelocity
+        { get; set; }
+        private int yAcceleration;
         public static Boolean JumpStatus
         { get; set; }
         private int invulnTimer;
@@ -85,7 +87,7 @@ namespace SuperMario
             return StateMachine.Orientation;
         }
 
-        public void ResetVelocity()
+        public static void ResetVelocity()
         {
             yVelocity = 0;
         }

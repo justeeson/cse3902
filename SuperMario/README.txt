@@ -15,11 +15,10 @@ Q = Quit game.
 
 R = Reset the Mario to the start position.
 
-Note: 
-	There are alot of warnings with similarities. There are similar warning repeated in the same class because the
-	compiler thinks we didn't use those fields, but in fact, we use them somewhere else. That's the only way to implement 
-	those because for instance, sprite factory is where we create new objects, we dont use those objects in there. we use them
-	somewhere else because that's the purpose of sprite factory which make senses so we ignore those warnings. 
+P = Pause the game
 
-	Sometimes, animations of mario are changing during the game. Also, the mario can climb on the edge of blocks near the end of the
-	game, we are looking forward to fix those.
+Note: 
+	For CA1502, there was no elegant solution since the class is adding every single type of object and there is no way to skip
+	this task. For CA1814, the warning was left unchecked because the array is of a small and fixed size and thus memory is not
+	a concern. CA1819 was not fixed since the array implementation was essential to how the variables were used elsewhere in the 
+	code. Fixing this warning would have taken too much time for little benefit and thus the warning was overlooked for now.
