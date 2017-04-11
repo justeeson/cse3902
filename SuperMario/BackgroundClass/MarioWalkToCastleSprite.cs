@@ -29,6 +29,7 @@ namespace SuperMario
             Texture = texture;
             Columns = columns;
             reachedCastle = false;
+            StateMachine = new MarioStateMachine(this);
             if (marioStatus.Equals("small"))
             { currentFrame = 7; }
             else if (marioStatus.Equals("big"))
