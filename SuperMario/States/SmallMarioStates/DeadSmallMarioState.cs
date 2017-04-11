@@ -20,6 +20,7 @@ namespace SuperMario.Sprites
         private int flashStatus;
         private bool playSoundEffect;
         private int resetTimer;
+        private const int waitTime = 3000;
         private ICommand command;
         public DeadSmallMarioState(Mario mario)
         {
@@ -42,9 +43,9 @@ namespace SuperMario.Sprites
                 Game1Utility.MarioTotalLives--;
             }
             resetTimer += GameTime.ElapsedGameTime.Milliseconds;
-            if (resetTimer > 3000)
+            if (resetTimer > waitTime)
             {               
-                resetTimer -= 3000;
+                resetTimer -= waitTime;
                 playSoundEffect = false;
                 MediaPlayer.Volume = Game1Utility.RegularVolume;
                 command.Execute();

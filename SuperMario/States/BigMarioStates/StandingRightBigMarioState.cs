@@ -15,7 +15,6 @@ namespace SuperMario.Sprites
         private Mario mario;
         private int flashStatus;
         private int nextFlashTime;
-        private int millisecondsPerFlash;
 
         public StandingRightBigMarioState(Mario mario)
         {
@@ -31,9 +30,9 @@ namespace SuperMario.Sprites
             if (Mario.StarStatus)
             {
                 nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
-                if (nextFlashTime > millisecondsPerFlash)
+                if (nextFlashTime > Game1Utility.MillisecondsPerFlash)
                 {
-                    nextFlashTime -= millisecondsPerFlash;
+                    nextFlashTime -= Game1Utility.MillisecondsPerFlash;
                     if (flashStatus == 0)
                     {
                         flashStatus = 1;
