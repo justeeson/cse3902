@@ -9,7 +9,10 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-
+        private const int width = 68;
+        private const int height = 400;
+        private const int widthArea = 276;
+        private const int heightArea = 524;
         public UndergroundPipeSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -23,8 +26,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 68;
-            int height = 400;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -36,9 +37,7 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 276; 
-            int height = 524;
-            return new Rectangle((int)location.X, (int)location.Y , width, height);
+            return new Rectangle((int)location.X, (int)location.Y , widthArea, heightArea);
         }
         public void CollisionSprite()
         {

@@ -22,6 +22,7 @@ namespace SuperMario
         private bool HasBeenUsed;
         private int width;
         private int height;
+
         public QuestionMarkBrickSprite(Texture2D texture, int columns)
         {
             Texture = texture;

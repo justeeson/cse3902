@@ -14,7 +14,10 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-
+        private const int width = 28;
+        private const int height = 29;
+        private const int widthArea = 32;
+        private const int heightArea = 32;
         public SolidBrickWithCrewsSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -28,8 +31,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 28;
-            int height = 29;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -41,9 +42,7 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = 32;
-            int height = 32;
-            return new Rectangle((int)location.X - 2, (int)location.Y, width, height);
+            return new Rectangle((int)location.X - 2, (int)location.Y, widthArea, heightArea);
         }
         public void CollisionSprite()
         {
