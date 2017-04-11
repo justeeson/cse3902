@@ -17,6 +17,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
+        private const int width = 28;
+        private const int height = 27;
         public StarSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -41,8 +43,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 28;
-            int height = 27;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -58,8 +58,6 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {
-            int width = 27;
-            int height = 27;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }

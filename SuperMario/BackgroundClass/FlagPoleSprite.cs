@@ -15,7 +15,10 @@ namespace SuperMario
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-      
+        private const int width = 68;
+        private const int height = 350;
+        private const int widthtArea = 50;
+        private const int heightArea = 300;
 
         public FlagPoleSprite(Texture2D texture, int columns)
         {
@@ -31,8 +34,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 68;
-            int height = 350;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -48,9 +49,8 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {
-            int width = 50;
-            int height = 300;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+           
+            return new Rectangle((int)location.X, (int)location.Y, widthtArea, heightArea);
         }
     }
 }

@@ -17,7 +17,10 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-
+        private const int width = 27;
+        private const int height = 24;
+        private const int widthArea = 16;
+        private const int heightArea = 24;
         private int turtleState;
         private enum turtleStates { Normal, InShell, Dead}
 
@@ -57,8 +60,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 27;
-            int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -74,9 +75,7 @@ namespace SuperMario
             {
                 return new Rectangle(0,0,0,0);
             }
-            int width = 16;
-            int height = 24;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
         }
         public void CollisionSprite()
         {

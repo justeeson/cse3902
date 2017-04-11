@@ -13,6 +13,10 @@ namespace SuperMario
         private int millisecondsPerFrame;
 
         private int goombaState;
+        private const int width = 26;
+        private const int height = 24;
+        private const int widthArea = 27;
+        private const int heightArea = 22;
         private enum goombaStates { Normal, Smashed, Dead }
 
         public GoombaSprite(Texture2D texture, int columns)
@@ -46,8 +50,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 26;
-            int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -64,9 +66,7 @@ namespace SuperMario
             {
                 return new Rectangle(0, 0, 0, 0);
             }
-            int width = 27;
-            int height = 22;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
         }
         public void CollisionSprite()
         {

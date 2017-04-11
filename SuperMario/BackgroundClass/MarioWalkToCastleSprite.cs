@@ -24,10 +24,12 @@ namespace SuperMario
         private int timer;
         private int xCoordinate;    
         private bool reachedCastle;
+        private const int width = 28;
+        private const int height = 36;
         public MarioWalkToCastleSprite(Texture2D texture, int columns, string marioStatus)
         {
             Texture = texture;
-            Columns = columns;
+            Columns = 12;
             reachedCastle = false;
             StateMachine = new MarioStateMachine(this);
             if (marioStatus.Equals("small"))
@@ -70,9 +72,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Columns = 12;
-            int width = 28;
-            int height = 36;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;                
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);

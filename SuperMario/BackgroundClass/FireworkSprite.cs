@@ -16,6 +16,9 @@ namespace SuperMario
         public int Columns { get; set; }
         private int currentFrame;
         private int timer;
+        private const int width = 300;
+        private const int height = 250;
+        private const int heightArea = 500;
         public FireworkSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -40,8 +43,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 300;
-            int height = 250;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
 
@@ -58,7 +59,7 @@ namespace SuperMario
         public Rectangle Area(Vector2 location)
         {
             int width = Texture.Width / Columns;
-            int height = 500;
+            int height = heightArea;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
     }

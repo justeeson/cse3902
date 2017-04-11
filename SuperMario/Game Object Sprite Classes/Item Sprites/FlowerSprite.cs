@@ -19,7 +19,8 @@ namespace SuperMario
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
         private SpriteBatch spriteBatchLocal;
-
+        private const int width = 16;
+        private const int height = 24;
         public FlowerSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
@@ -44,8 +45,6 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = 16;
-            int height = 24;
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             this.spriteBatchLocal = spriteBatch;
