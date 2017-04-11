@@ -15,7 +15,8 @@ class BreakableHorizontalBrickForSmallMarioSprite : ISprite
         private int currentFrame;
         private int timer;
         private Boolean isNotDestroyed;
-
+        private const int width = 32;
+        private const int height = 32;
     public BreakableHorizontalBrickForSmallMarioSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -34,8 +35,6 @@ class BreakableHorizontalBrickForSmallMarioSprite : ISprite
         {
             if (isNotDestroyed)
             {
-                int width = 32;
-                int height = 32;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 
@@ -60,8 +59,6 @@ class BreakableHorizontalBrickForSmallMarioSprite : ISprite
     {
         if (isNotDestroyed)
         {
-            int width = 32;
-            int height = 32;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);

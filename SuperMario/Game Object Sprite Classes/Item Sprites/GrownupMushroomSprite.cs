@@ -18,7 +18,8 @@ namespace SuperMario
         private SpriteBatch spriteBatchLocal;
         private const int width = 28;
         private const int height = 28;
-
+        private const int widthArea = 26;
+        private const int heightArea = 26;
         public GrowupMushroomSprite(Texture2D texture, int columns)
         {
             Texture = texture;
@@ -44,7 +45,7 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
         }
         public void CollisionSprite()
         {

@@ -13,8 +13,9 @@ class BreakableHorizontalBrickSprite : ISprite
         public Texture2D Texture { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-
-        private Boolean isNotDestroyed;
+        private const int width = 32;
+        private const int height = 32;
+    private Boolean isNotDestroyed;
 
     public BreakableHorizontalBrickSprite(Texture2D texture, int columns)
         {
@@ -33,8 +34,6 @@ class BreakableHorizontalBrickSprite : ISprite
         {
             if (isNotDestroyed)
             {
-                int width = 32;
-                int height = 32;
                 int row = (int)((float)currentFrame / (float)Columns);
                 int column = currentFrame % Columns;
 
@@ -50,8 +49,6 @@ class BreakableHorizontalBrickSprite : ISprite
     {   
         if (isNotDestroyed)
         {
-            int width = 32;
-            int height = 32;
             return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         return new Rectangle(0, 0, 0, 0);
