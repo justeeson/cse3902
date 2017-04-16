@@ -26,6 +26,8 @@ namespace SuperMario
         { get; set; }
         private Boolean playSoundEffect;
         private int resetTimer;
+        public static Boolean GodStatus
+        { get; set; }
         public static Boolean InvulnStatus
         { get; set; }
         public static Boolean GroundedStatus
@@ -70,6 +72,7 @@ namespace SuperMario
             InvulnStatus = false;
             StarStatus = false;
             RunStatus = false;
+            GodStatus = false;
         }
 
         public void setState()

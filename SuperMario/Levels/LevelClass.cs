@@ -159,6 +159,11 @@ namespace SuperMario.Levels
             ItemList.Add(new Star(MyGame, location));
         }
 
+        public void addGodMushroom(Vector2 location)
+        {
+            ItemList.Add(new GodMushroom(MyGame, location));
+        }
+
         public void ReturnGround()
         {
         }

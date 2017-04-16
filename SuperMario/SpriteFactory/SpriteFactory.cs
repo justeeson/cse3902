@@ -55,6 +55,8 @@ namespace SuperMario
         { get; set; }
         public static Texture2D fireworks
         { get; set; }
+        public static Texture2D godMushroomTexture
+        { get; set; }
         private const int rowNumber = 32;
         private const int columnNumber = 32;
         public static void LoadAllTextures(ContentManager content)
@@ -64,6 +66,7 @@ namespace SuperMario
             flowerTexture = content.Load<Texture2D>("flower");
             coinTexture = content.Load<Texture2D>("coin");
             growupMushroomTexture = content.Load<Texture2D>("growupMushroom");
+            godMushroomTexture = content.Load<Texture2D>("godMushroom");
             fireMushroomTexture = content.Load<Texture2D>("fireMushroom");
             starTexture = content.Load<Texture2D>("star");
             goombaTexture = content.Load<Texture2D>("normalMonster");
@@ -103,6 +106,10 @@ namespace SuperMario
         public static ISprite CreateGrowupMushroom()
         {
             return new GrowupMushroomSprite(growupMushroomTexture, columnNumber);
+        }
+        public static ISprite CreateGodMushroom()
+        {
+            return new GodMushroomSprite(godMushroomTexture, columnNumber);
         }
         public static ISprite CreateFireMushroom()
         {

@@ -13,7 +13,6 @@ namespace SuperMario.Levels
         private Vector2 Location;
         public ILevel Level
         { get; set; }
-        public enum Itemtype { Star, Coin, GreenMushroom, RedMushroom, Flower };
 
         public LevelReader(ILevel level, Game1 game)
         {
@@ -96,7 +95,9 @@ namespace SuperMario.Levels
                     case "star":
                         Level.ItemList.Add(new Star(MyGame, Location));
                         break;
-
+                    case "godMushroom":
+                        Level.ItemList.Add(new GodMushroom(MyGame, Location));
+                        break;
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.Texture, 3, 12, Location);
                         Location.X = 0;

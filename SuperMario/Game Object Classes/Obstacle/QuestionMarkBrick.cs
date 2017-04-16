@@ -58,6 +58,9 @@ namespace SuperMario.Blocks
                     case "star":
                         MyGame.World.Level.addStar(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
+                    case "godMushroom":
+                        MyGame.World.Level.addGodMushroom(new Vector2(Location.X - 2, Location.Y - 30));
+                        break;
                     default:
                         break;
                 }

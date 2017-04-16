@@ -89,6 +89,7 @@ namespace SuperMario
             oldKeyboardState = new KeyboardState();           
             DisableControl = false;
             continueTimer = 0;
+            this.IsMouseVisible = true;
             EndGameStatus = false;
             playSound = false;
             GameStatus = GameState.LivesScreen;
@@ -146,6 +147,7 @@ namespace SuperMario
         {
             newKeyboardState = Keyboard.GetState();
             newGamepadState = GamePad.GetState(PlayerIndex.One);
+            MouseState mouseState = Mouse.GetState();
             if ((newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P)) ||
                 newGamepadState.IsButtonDown(Buttons.Start) && oldGamepadState.IsButtonUp(Buttons.Start))
             {   

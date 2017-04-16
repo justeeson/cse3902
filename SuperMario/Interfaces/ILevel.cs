@@ -29,6 +29,7 @@ namespace SuperMario.Interfaces
         void addFireMushroom(Vector2 location);
         void addCoin(Vector2 location);
         void addStar(Vector2 location);
+        void addGodMushroom(Vector2 location);
         void ReturnGround();
     }
 }

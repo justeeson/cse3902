@@ -447,7 +447,7 @@
   <QuestionBlock x="544" y="280" item="coin" /> 
 
   <HorizontalBlock x="672" y="280" />
-  <QuestionBlock x="704" y="280" item="growmushroom" />
+  <QuestionBlock x="704" y="280" item="godMushroom" />
 
 
   <HorizontalBlock x="736" y="280" />
