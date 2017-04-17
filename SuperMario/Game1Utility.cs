@@ -32,9 +32,13 @@ namespace SuperMario
         { get; set; }
         public static SoundEffect GreenMushroomSoundEffect
         { get; set; }
+        public static SoundEffect GodMushroomSoundEffect
+        { get; set; }
         public static SoundEffect DeathSoundEffect
         { get; set; }
         public static SoundEffect FireworksSoundEffect
+        { get; set; }
+        public static SoundEffect BoltSoundEffect
         { get; set; }
         public static SoundEffect GameOverSoundEffect
         { get; set; }
@@ -72,18 +76,20 @@ namespace SuperMario
          }
         public static void LoadContent()
         {
-             StarMusic = Game1.GetInstance.Content.Load<Song>("StarMusic");
-             GoombaStompSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("goombaStompSoundEffect");
-             BreakableBrickSmashSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("breakableBrickSmashSoundEffect");
-             MarioJumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioJumpSoundEffect");
-             BreakableBrickBumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
-             CoinSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("coinSoundEffect");
-             MarioPowerUpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioPowerUpSoundEffect");
-             GreenMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("1UPSoundEffect");
-             DeathSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("deathSoundEffect");
-             FireworksSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("FireworksSoundEffect");
-             GameOverSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("GameOverSoundEffect");
-             OutOfTimeSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("OutOfTimeSoundEffect");
+            StarMusic = Game1.GetInstance.Content.Load<Song>("StarMusic");
+            GoombaStompSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("goombaStompSoundEffect");
+            BreakableBrickSmashSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("breakableBrickSmashSoundEffect");
+            MarioJumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioJumpSoundEffect");
+            BreakableBrickBumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
+            CoinSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("coinSoundEffect");
+            MarioPowerUpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioPowerUpSoundEffect");
+            GreenMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("1UPSoundEffect");
+            GodMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("godMushroomSoundEffect");
+            DeathSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("deathSoundEffect");
+            BoltSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("boltSoundEffect");
+            FireworksSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("FireworksSoundEffect");
+            GameOverSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("GameOverSoundEffect");
+            OutOfTimeSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("OutOfTimeSoundEffect");
         }
     }
 }

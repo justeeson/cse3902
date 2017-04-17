@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using SuperMario.Collision_Detection_and_Responses;
+using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace SuperMario
 {
@@ -17,6 +19,8 @@ namespace SuperMario
         public Rectangle Area { get; set; }
         public int CameraPositionX { get; set; }
         private bool playDeathSoundEffect;
+        private MouseState mouseState;
+        private Point mousePoint;
         private bool dead;
         private int deadCounter = 10;
         public Goomba(Game1 game, Vector2 location)
@@ -52,9 +56,16 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-           
-
-            if (Location.X /*- Camera.CameraPositionX*/ < 50)
+            mouseState = Game1.GetInstance.MouseState;
+            mousePoint = new Point(mouseState.X + Camera.CameraPositionX, mouseState.Y);    
+            if(Sprite.Area(Location).Contains(mousePoint) && Mario.GodStatus)
+            {
+                this.GetKilled(true);
+                this.CanAttack = false;
+                Game1Utility.BoltSoundEffect.Play();
+            }
+ 
+            if (Location.X < 50)
             {
                 MovingLeft = false;
             }
@@ -87,6 +98,7 @@ namespace SuperMario
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
+           
         }
     }
 

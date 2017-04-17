@@ -38,6 +38,9 @@ namespace SuperMario
         public Boolean DisableControl
         { get; set; }
         private static Game1 instance;
+        public MouseState MouseState
+        { get; set; }
+        private Texture2D blackHole;
         public WorldManager World
         { get; set; }
         public PlayerStatistic PlayerStat
@@ -86,10 +89,10 @@ namespace SuperMario
             Game1Utility.LoadContent();
             fireballList = new Collection<MarioFireball>();
             newKeyboardState = new KeyboardState();
-            oldKeyboardState = new KeyboardState();           
+            oldKeyboardState = new KeyboardState();
+            MouseState = new MouseState();      
             DisableControl = false;
             continueTimer = 0;
-            this.IsMouseVisible = true;
             EndGameStatus = false;
             playSound = false;
             GameStatus = GameState.LivesScreen;
@@ -105,6 +108,7 @@ namespace SuperMario
             Texture = Content.Load<Texture2D>("MarioSheet");
             BackgroundMusic = Content.Load<Song>("backgroundMusic");
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
+            blackHole = Content.Load<Texture2D>("blackholeSprite");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = Game1Utility.RegularVolume;      
             SpriteFactory.LoadAllTextures(Content);
@@ -147,7 +151,7 @@ namespace SuperMario
         {
             newKeyboardState = Keyboard.GetState();
             newGamepadState = GamePad.GetState(PlayerIndex.One);
-            MouseState mouseState = Mouse.GetState();
+            MouseState = Mouse.GetState();
             if ((newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P)) ||
                 newGamepadState.IsButtonDown(Buttons.Start) && oldGamepadState.IsButtonUp(Buttons.Start))
             {   
@@ -197,6 +201,12 @@ namespace SuperMario
                 foreach (MarioFireball aFireball in Game1.Mfireballs)
                 {
                     aFireball.Draw(SpriteBatch);
+                }
+                if (Mario.GodStatus)
+                {
+                    SpriteBatch.Begin();
+                    SpriteBatch.Draw(blackHole, new Vector2(MouseState.X - 20, MouseState.Y - 20), Color.White);
+                    SpriteBatch.End();
                 }
                 base.Draw(GameTime);
             }

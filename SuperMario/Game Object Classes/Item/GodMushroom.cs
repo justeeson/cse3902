@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using SuperMario.MarioClass;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
@@ -56,13 +57,10 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.MarioPowerUpSoundEffect.Play();
+            Game1Utility.GodMushroomSoundEffect.Play();
             this.Sprite = new CleanSprite(SpriteFactory.godMushroomTexture);
             HasBeenUsed = true;
-            if (MyGame.MarioSprite.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Small)
-            {
-                MyGame.MarioSprite.MarioBigState();
-            }
+            Mario.GodStatus = true;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

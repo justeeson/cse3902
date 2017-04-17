@@ -11,8 +11,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-
         private int goombaState;
+
         private const int width = 26;
         private const int height = 24;
         private const int widthArea = 27;
@@ -30,6 +30,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
+
             if (goombaState == (int)goombaStates.Normal)
             {
                 timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario
 {
@@ -14,6 +15,8 @@ namespace SuperMario
         public bool MovingLeft { get; set; }
         public bool IsFalling { get; set; }
         public bool CanAttack { get; set; }
+        private MouseState mouseState;
+        private Point mousePoint;
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
@@ -61,6 +64,14 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
+            mouseState = Game1.GetInstance.MouseState;
+            mousePoint = new Point(mouseState.X + Camera.CameraPositionX, mouseState.Y);
+            if (Sprite.Area(Location).Contains(mousePoint) && Mario.GodStatus)
+            {
+                this.GetKilled(true);
+                this.CanAttack = false;
+                Game1Utility.BoltSoundEffect.Play();
+            }
             if (Location.X - Camera.CameraPositionX < 0)
             {
                 MovingLeft = !MovingLeft;

@@ -26,6 +26,7 @@ namespace SuperMario
         { get; set; }
         private Boolean playSoundEffect;
         private int resetTimer;
+        private int godTimer;
         public static Boolean GodStatus
         { get; set; }
         public static Boolean InvulnStatus
@@ -65,6 +66,7 @@ namespace SuperMario
             yAcceleration = -1;
             resetTimer = 0;
             yVelocity = 0;
+            godTimer = 0;
             JumpStatus = false;
             DisableJump = false;
             playSoundEffect = false;
@@ -205,6 +207,15 @@ namespace SuperMario
                 yVelocity = yVelocity + yAcceleration;
             }
 
+            if (GodStatus)
+            {
+                godTimer += GameTime.ElapsedGameTime.Milliseconds;
+                if(godTimer > 5000)
+                {
+                    Mario.GodStatus = false;
+                    godTimer = 0;
+                }
+            }
             if (RunStatus)
             {
                 KeyboardState newKeyboardState = Keyboard.GetState();
