@@ -6,48 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
-using SuperMario.MarioClass;
-using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {
-    public class GodMushroom : IItem
+    public class EnergyDrink : IItem
     {
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public bool MovingLeft { get; set; }
         public bool IsFalling { get; set; }
-        public bool HasBeenUsed { get; set; }
+        public bool HasBeenUsed{ get; set; }
         public Vector2 Location { get; set; }
 
-        public GodMushroom(Game1 game, Vector2 location)
+        public EnergyDrink(Game1 game, Vector2 location)
         {
-            MovingLeft = false;
             MyGame = game;
-            Sprite = SpriteFactory.CreateGodMushroom();
-            IsFalling = true;
+            Sprite = SpriteFactory.CreateFlower();
             MyGame.Sprite = Sprite;
             HasBeenUsed = false;
             this.Location = location;
-            
         }
 
         public void Update(GameTime GameTime)
         {
-            if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
-            else
-                Location = new Vector2(Location.X + 4, Location.Y);
-
-            if (IsFalling)
-            {
-                Location = new Vector2(Location.X, Location.Y + 3);
-            }
-
             Sprite.Update(GameTime);
         }
-
-
         public Rectangle Area()
         {
             if (HasBeenUsed)
@@ -57,10 +40,10 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.GodMushroomSoundEffect.Play();
-            this.Sprite = new CleanSprite(SpriteFactory.godMushroomTexture);
+            Game1Utility.MarioPowerUpSoundEffect.Play();
+            this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
+            MyGame.MarioSprite.MarioFireState();
             HasBeenUsed = true;
-            Mario.GodStatus = true;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

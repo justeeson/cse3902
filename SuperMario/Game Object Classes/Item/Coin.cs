@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperMario
 {
@@ -31,7 +32,7 @@ namespace SuperMario
 
         public void Update(GameTime GameTime)
         {
-            Sprite.Update(GameTime);
+            Sprite.Update(GameTime);          
         }
         public Rectangle Area()
         {

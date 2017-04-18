@@ -210,7 +210,7 @@ namespace SuperMario
             if (GodStatus)
             {
                 godTimer += GameTime.ElapsedGameTime.Milliseconds;
-                if(godTimer > 5000)
+                if(godTimer > 10000)
                 {
                     Mario.GodStatus = false;
                     godTimer = 0;
