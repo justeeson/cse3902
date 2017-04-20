@@ -57,6 +57,8 @@ namespace SuperMario
         { get; set; }
         public static Texture2D godMushroomTexture
         { get; set; }
+        public static Texture2D cannonTexture
+        { get; set; }
         private const int rowNumber = 32;
         private const int columnNumber = 32;
         public static void LoadAllTextures(ContentManager content)
@@ -83,6 +85,7 @@ namespace SuperMario
             castleTexture = content.Load<Texture2D>("castle");
             undergroundPipeTexture = content.Load<Texture2D>("UndergroundPipe");
             fireworks= content.Load<Texture2D>("fireworks");
+            cannonTexture = content.Load<Texture2D>("cannon");
         }
 
         public static ISprite CreateKoopaMoveLeft()
@@ -194,6 +197,10 @@ namespace SuperMario
         public static ISprite CreateFirework()
         {
             return new FireworkSprite(fireworks, columnNumber);
+        }
+        public static ISprite CreateCannon()
+        {
+            return new CannonSprite(cannonTexture, columnNumber);
         }
     }
 }

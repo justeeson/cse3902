@@ -448,6 +448,7 @@
 
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="godMushroom" />
+  <Cannon x="750" y="300"/>
 
 
   <HorizontalBlock x="736" y="280" />
