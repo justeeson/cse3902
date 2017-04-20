@@ -6,21 +6,22 @@ namespace SuperMario.Collision_Detection_and_Responses
     public static class EnemyAndEnemyCollisionHandling
     {
         public static void HandleCollision(IEnemy enemy, IEnemy item)
-        {
-            Rectangle collisionRectangle;
-            ISprite block = item.Sprite;
-            
+        {   if (!(enemy is Missle))
+            {
+                Rectangle collisionRectangle;
+                ISprite block = item.Sprite;
+
                 collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y + collisionRectangle.Height+1);
+                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y + collisionRectangle.Height + 1);
                 }
                 else if (collisionRectangle.Top == block.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height+1));
+                    enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y - (collisionRectangle.Height + 1));
                     enemy.IsFalling = false;
                 }
-              
+
                 else if (collisionRectangle.Right == enemy.Sprite.Area(enemy.Location).Right)
                 {
                     enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 0), enemy.Location.Y);
@@ -28,17 +29,17 @@ namespace SuperMario.Collision_Detection_and_Responses
                     item.MovingLeft = false;
                     enemy.ChangeDirection();
                     item.ChangeDirection();
-            }
-            else if (collisionRectangle.Left == enemy.Sprite.Area(enemy.Location).Left)
+                }
+                else if (collisionRectangle.Left == enemy.Sprite.Area(enemy.Location).Left)
                 {
                     enemy.Location = new Vector2(enemy.Location.X + (collisionRectangle.Width + 0), enemy.Location.Y);
                     enemy.MovingLeft = false;
                     item.MovingLeft = true;
                     enemy.ChangeDirection();
                     item.ChangeDirection();
-            }
+                }
 
-          
+            }
 
         }
 

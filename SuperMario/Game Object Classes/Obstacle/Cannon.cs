@@ -15,13 +15,15 @@ namespace SuperMario.Blocks
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
-
+        private int missleCounter;
+        private const int missleMax =500;
         public Cannon(Game1 game, Vector2 location)
         {
             MyGame = game;
             Sprite = SpriteFactory.CreateCannon();
             MyGame.Sprite = Sprite;
             this.Location = location;
+            missleCounter = 0;
         }
 
         public void BrickToDisappear()
@@ -35,6 +37,12 @@ namespace SuperMario.Blocks
         }
         public void Update(GameTime GameTime)
         {
+            missleCounter++;
+            if (missleCounter == missleMax)
+            {
+                MyGame.World.Level.EnemyList.Add(new Missle(MyGame, Location));
+                missleCounter = 0;
+            }
             Sprite.Update(GameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

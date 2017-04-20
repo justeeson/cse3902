@@ -101,6 +101,9 @@ namespace SuperMario.Levels
                     case "Cannon":
                         Level.BlockList.Add(new Cannon(MyGame, Location));
                         break;
+                    case "Missle":
+                        Level.EnemyList.Add(new Missle(MyGame, Location));
+                        break;
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.Texture, 3, 12, Location);
                         Location.X = 0;

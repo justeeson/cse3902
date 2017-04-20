@@ -86,6 +86,7 @@
     <Compile Include="Game Object Classes\Obstacle\Cannon.cs" />
     <Compile Include="Game Object Classes\Obstacle\UndergroundPipeToGround.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\MissleSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\EnergyDrinkSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GodMushroomSprite.cs" />

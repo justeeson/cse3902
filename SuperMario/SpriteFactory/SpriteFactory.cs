@@ -59,6 +59,8 @@ namespace SuperMario
         { get; set; }
         public static Texture2D cannonTexture
         { get; set; }
+        public static Texture2D missleTexture
+        { get; set; }
         private const int rowNumber = 32;
         private const int columnNumber = 32;
         public static void LoadAllTextures(ContentManager content)
@@ -86,6 +88,7 @@ namespace SuperMario
             undergroundPipeTexture = content.Load<Texture2D>("UndergroundPipe");
             fireworks= content.Load<Texture2D>("fireworks");
             cannonTexture = content.Load<Texture2D>("cannon");
+            missleTexture= content.Load<Texture2D>("missle");
         }
 
         public static ISprite CreateKoopaMoveLeft()
@@ -201,6 +204,10 @@ namespace SuperMario
         public static ISprite CreateCannon()
         {
             return new CannonSprite(cannonTexture, columnNumber);
+        }
+        public static ISprite CreateMissle()
+        {
+            return new MissleSprite(missleTexture, columnNumber);
         }
     }
 }

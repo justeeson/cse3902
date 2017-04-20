@@ -10,16 +10,18 @@ namespace SuperMario.Collision_Detection_and_Responses
            
             ISprite block = item.Sprite;
             Rectangle collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
-            if(collisionRectangle.Width > collisionRectangle.Height)
+            if (!(enemy is Missle))
             {
-                HeightGreaterThanWidth( enemy,  item,  collisionRectangle,  block);
-            }
-            else
-            {
-                WidthGreaterThanHeight( enemy,  item,  collisionRectangle,  block);
+                if (collisionRectangle.Width > collisionRectangle.Height)
+                {
+                    HeightGreaterThanWidth(enemy, item, collisionRectangle, block);
+                }
+                else
+                {
+                    WidthGreaterThanHeight(enemy, item, collisionRectangle, block);
 
+                }
             }
-
 
         }
         private static void HeightGreaterThanWidth(IEnemy enemy, IBlock item, Rectangle collisionRectangle, ISprite block)

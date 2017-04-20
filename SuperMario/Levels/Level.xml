@@ -448,8 +448,8 @@
 
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="godMushroom" />
-  <Cannon x="750" y="300"/>
-
+  
+ 
 
   <HorizontalBlock x="736" y="280" />
   <QuestionBlock x="736" y="152" item="coin" />
@@ -572,6 +572,9 @@
   <Goomba x="5536" y="384" />
   <Goomba x="5583" y="384" />
   <Pipe x="5728" y="354" />
+  <Cannon x="5504" y="335"/>
+  <Missle x="1000" y="320"/>
+  <Missle x="3000" y="320"/>
 
   <SolidBrick x="5792" y="384" />
 

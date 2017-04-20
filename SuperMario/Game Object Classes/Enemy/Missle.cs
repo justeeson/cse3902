@@ -18,17 +18,13 @@ namespace SuperMario
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
         public int CameraPositionX { get; set; }
-        private bool playDeathSoundEffect;
-        private MouseState mouseState;
-        private Point mousePoint;
         public Missle(Game1 game, Vector2 location)
         {
             MovingLeft = true;
             IsFalling = true;
             MyGame = game;
-            Sprite = SpriteFactory.CreateGoomba();
+            Sprite = SpriteFactory.CreateMissle();
             CanAttack = true;
-            playDeathSoundEffect = false;
             Location = location;
         }
         public void GetKilled(bool killedBySmashed)
@@ -42,29 +38,7 @@ namespace SuperMario
         }
         public void Update(GameTime GameTime)
         {
-            mouseState = Game1.GetInstance.MouseState;
-            mousePoint = new Point(mouseState.X + Camera.CameraPositionX, mouseState.Y);    
-            if(Sprite.Area(Location).Contains(mousePoint) && Mario.GodStatus)
-            {
-                this.GetKilled(true);
-                this.CanAttack = false;
-                Game1Utility.BoltSoundEffect.Play();
-            }
- 
-            if (Location.X < 50)
-            {
-                MovingLeft = false;
-            }
-    
-            if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
-            else
-                Location = new Vector2(Location.X + 4, Location.Y);
-
-            if (IsFalling)
-                Location = new Vector2(Location.X, Location.Y + 4);
-
-            
+            Location = new Vector2(Location.X - 4, Location.Y);
             Sprite.Update(GameTime);
         }
 
