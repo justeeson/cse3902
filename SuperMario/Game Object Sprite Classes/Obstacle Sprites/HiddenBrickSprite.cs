@@ -15,7 +15,7 @@ namespace SuperMario
         public int Columns { get; set; }
         private int currentFrame;
 
-        private Boolean isHidden = true;
+        private bool isHidden = true;
         private const int width = 32;
         private const int height = 32;
         public HiddenBrickSprite(Texture2D texture, int columns)
@@ -25,7 +25,7 @@ namespace SuperMario
             currentFrame = 0;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
 
         }

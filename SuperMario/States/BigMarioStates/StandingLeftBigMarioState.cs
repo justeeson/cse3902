@@ -27,7 +27,7 @@ namespace SuperMario.Sprites
             nextFlashTime = 0;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if (MarioStateMachine.Crouching == 1 && MarioStateMachine.GotoUnderground)
             {
@@ -36,7 +36,7 @@ namespace SuperMario.Sprites
             }
             if (Mario.StarStatus)
             {
-                nextFlashTime += GameTime.ElapsedGameTime.Milliseconds;
+                nextFlashTime += gameTime.ElapsedGameTime.Milliseconds;
                 if (nextFlashTime > Game1Utility.MillisecondsPerFlash)
                 {
                     nextFlashTime -= Game1Utility.MillisecondsPerFlash;

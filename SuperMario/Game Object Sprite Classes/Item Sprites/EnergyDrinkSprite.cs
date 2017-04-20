@@ -16,8 +16,6 @@ namespace SuperMario
         public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
-        private int timeSinceLastFrame;
-        private int millisecondsPerFrame;
         private SpriteBatch spriteBatchLocal;
         private const int width = 16;
         private const int height = 24;
@@ -29,7 +27,7 @@ namespace SuperMario
             currentFrame = 1;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
          
         }

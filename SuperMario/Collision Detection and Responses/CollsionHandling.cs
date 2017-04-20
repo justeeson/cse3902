@@ -122,7 +122,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             {
 
                 Rectangle enemyRect = item.Sprite.Area(item.Location);
-                if (marioRect.Intersects(enemyRect) && !game.MarioSprite.isDead())
+                if (marioRect.Intersects(enemyRect) && !game.MarioSprite.IsDead())
                 {
                     MarioAndEnemyCollisionHandling.HandleCollision(game.MarioSprite, item);
                 }

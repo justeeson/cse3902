@@ -36,7 +36,7 @@ namespace SuperMario
             
 
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if (Location.X < 20)
             {
@@ -50,7 +50,7 @@ namespace SuperMario
                 Location = new Vector2(Location.X - 5, Location.Y);
             else
                 Location = new Vector2(Location.X + 5, Location.Y);
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

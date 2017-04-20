@@ -16,7 +16,7 @@ namespace SuperMario.Interfaces
         Texture2D Texture { get; set; }
         MarioStateMachine StateMachine { get; }
         Rectangle Area();
-        bool isDead();
+        bool IsDead();
         void Jump();
         void LookLeft();
         void LookRight();
@@ -28,7 +28,7 @@ namespace SuperMario.Interfaces
         void Reset();
         void ThrowFire();
         void Run();
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

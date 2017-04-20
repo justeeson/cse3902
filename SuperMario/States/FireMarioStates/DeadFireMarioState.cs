@@ -22,7 +22,7 @@ namespace SuperMario.Sprites
             flashStatus = 0;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
            
         }

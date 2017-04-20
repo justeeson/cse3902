@@ -35,11 +35,11 @@ namespace SuperMario
             HasBeenUsed = false;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if(!HasBeenUsed)
             {
-                timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)
                 {
                     timeSinceLastFrame -= millisecondsPerFrame;

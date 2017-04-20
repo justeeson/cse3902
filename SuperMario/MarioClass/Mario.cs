@@ -22,27 +22,27 @@ namespace SuperMario
         public int Columns { get; set; }
         public static int LocationX { get; set; }
         public static int LocationY { get; set; }
-        public static Boolean StarStatus
+        public static bool StarStatus
         { get; set; }
-        private Boolean playSoundEffect;
+        private bool playSoundEffect;
         private int resetTimer;
         private int godTimer;
-        public static Boolean GodStatus
+        public static bool GodStatus
         { get; set; }
-        public static Boolean InvulnStatus
+        public static bool InvulnStatus
         { get; set; }
-        public static Boolean GroundedStatus
+        public static bool GroundedStatus
         { get; set; }
-        public static Boolean DisableJump
+        public static bool DisableJump
         { get; set; }
         private int fireDelay;
-        private Boolean fireStatus;
-        public static Boolean RunStatus
+        private bool fireStatus;
+        public static bool RunStatus
         { get; set; }
         public static int yVelocity
         { get; set; }
         private int yAcceleration;
-        public static Boolean JumpStatus
+        public static bool JumpStatus
         { get; set; }
         private int invulnTimer;
         private int starPowerTimer;
@@ -77,7 +77,7 @@ namespace SuperMario
             GodStatus = false;
         }
 
-        public void setState()
+        public void SetState()
         {
             State = StateMachine.GetState;
         }
@@ -124,7 +124,7 @@ namespace SuperMario
             StateMachine.Dead();
         }
 
-        public bool isDead()
+        public bool IsDead()
         {
             return StateMachine.Orientation == (int)MarioStateMachine.Orientations.Dead;
         }
@@ -146,7 +146,7 @@ namespace SuperMario
 
         public void Jump()
         {
-            if (Mario.JumpStatus == false && !isDead() && (Mario.DisableJump != true))
+            if (!Mario.JumpStatus && !IsDead() && (!Mario.DisableJump))
             {
                 Game1Utility.MarioJumpSoundEffect.Play();
                 yVelocity = 19;
@@ -166,18 +166,17 @@ namespace SuperMario
         {
             RunStatus = true;
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
-            setState();
-            State.Update(GameTime);
-            KeyboardState currentKeyboardState = Keyboard.GetState();
+            SetState();
+            State.Update(gameTime);
             if(LocationX <= 0)
             {
                 LocationX = 0;
             }
             if (StarStatus)
             {
-                starPowerTimer += GameTime.ElapsedGameTime.Milliseconds;
+                starPowerTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (starPowerTimer > 10000)
                 {
                     StarPowerUp();
@@ -185,7 +184,7 @@ namespace SuperMario
             }
             if (fireStatus)
             {
-                fireDelay += GameTime.ElapsedGameTime.Milliseconds;
+                fireDelay += gameTime.ElapsedGameTime.Milliseconds;
                 if (fireDelay > 500)
                 {
                     fireStatus = false;
@@ -194,7 +193,7 @@ namespace SuperMario
             }
             if (InvulnStatus)
             {
-                invulnTimer += GameTime.ElapsedGameTime.Milliseconds;
+                invulnTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (invulnTimer > 1800)
                 {
                     Mario.InvulnStatus = false;
@@ -209,7 +208,7 @@ namespace SuperMario
 
             if (GodStatus)
             {
-                godTimer += GameTime.ElapsedGameTime.Milliseconds;
+                godTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if(godTimer > 10000)
                 {
                     Mario.GodStatus = false;
@@ -231,11 +230,11 @@ namespace SuperMario
             {
                 DisableJump = true;
             }
-            UpdateFireball(GameTime);
+            UpdateFireball(gameTime);
 
             if (LocationY >= Game1Utility.MaxValueY)
             {
-                resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+                resetTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (!playSoundEffect)
                 {
                     MediaPlayer.Stop();
@@ -279,7 +278,7 @@ namespace SuperMario
                 bool aCreateNew = true;
                 foreach (MarioFireball aFireball in Game1.Mfireballs)
                 {
-                    if (aFireball.Fire == false)
+                    if (!aFireball.Fire)
                     {
                         aCreateNew = false;
                         aFireball.MarioFire(StateMachine.Orientation, StateMachine.MarioMode, LocationX, LocationY);
@@ -287,7 +286,7 @@ namespace SuperMario
                     }
                 }
 
-                if (aCreateNew == true)
+                if (aCreateNew)
                 {
                     MarioFireball aFireball = new MarioFireball();
                     aFireball.LoadContent(mContentManager);
@@ -307,17 +306,17 @@ namespace SuperMario
             }
         }
 
-        private static void UpdateFireball(GameTime GameTime)
+        private static void UpdateFireball(GameTime gameTime)
         {
             foreach (MarioFireball aFireball in Game1.Mfireballs)
             {
-                aFireball.Update(GameTime);
+                aFireball.Update(gameTime);
             }
         }
 
         public static void StarPowerUp()
         {
-            if (StarStatus == false)
+            if (!StarStatus)
                 StarStatus = true;
             else
             {

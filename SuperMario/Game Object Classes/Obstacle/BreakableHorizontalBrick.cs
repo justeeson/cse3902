@@ -54,7 +54,7 @@ namespace SuperMario.Blocks
             }
             
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if (timer == 0 && !destroyed)
             {
@@ -62,7 +62,7 @@ namespace SuperMario.Blocks
                 playSoundEffect = false;
 
             }
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
             timer = 0;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

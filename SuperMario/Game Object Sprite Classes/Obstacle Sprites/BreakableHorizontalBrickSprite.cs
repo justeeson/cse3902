@@ -15,7 +15,7 @@ class BreakableHorizontalBrickSprite : ISprite
         private int currentFrame;
         private const int width = 32;
         private const int height = 32;
-    private Boolean isNotDestroyed;
+    private bool isNotDestroyed;
 
     public BreakableHorizontalBrickSprite(Texture2D texture, int columns)
         {
@@ -25,7 +25,7 @@ class BreakableHorizontalBrickSprite : ISprite
             isNotDestroyed = true;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
 
         }

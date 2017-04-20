@@ -24,7 +24,7 @@ namespace SuperMario
         private int currentFrame;
         private int mode;
         public Texture2D Texture { get; set; }
-        public Boolean Fire
+        public bool Fire
         { get; set; }
         private int startingLocation;
         private int movementTimer;
@@ -42,16 +42,16 @@ namespace SuperMario
         }
 
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {          
             if (Math.Abs(LocationX - startingLocation) > Game1Utility.FireballMaxDistance)
             {
                 Fire = false;
             }
             
-            if (Fire == true)
+            if (Fire)
             {
-                movementTimer += GameTime.ElapsedGameTime.Milliseconds;
+                movementTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if (movementTimer > 50)
                 {
                     if (marioOrientation == (int)MarioStateMachine.Orientations.StandingRight || marioOrientation == (int)MarioStateMachine.Orientations.RunningRight
@@ -87,11 +87,11 @@ namespace SuperMario
         }
         public void Draw(SpriteBatch myspriteBatch)
         {
-            if(Fire == true)
+            if(Fire)
                 {
                 int width = 27;
                 int height = 27;
-                int row = (int)((float)currentFrame / (float)1);
+                int row = currentFrame;
                 int column = currentFrame % 1;
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);

@@ -98,7 +98,7 @@ namespace SuperMario
             return new Rectangle();
         }
 
-        public bool isDead()
+        public bool IsDead()
         {
             return true;
         }

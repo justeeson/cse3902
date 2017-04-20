@@ -23,7 +23,7 @@ namespace SuperMario.Sprites
             flashStatus = 0;            
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
             mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingLeft;

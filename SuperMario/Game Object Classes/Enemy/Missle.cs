@@ -36,10 +36,10 @@ namespace SuperMario
             
 
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             Location = new Vector2(Location.X - 4, Location.Y);
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

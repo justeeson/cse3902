@@ -32,7 +32,7 @@ namespace SuperMario.Sprites
             command = new ResetCommand(Game1.GetInstance);           
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if(!playSoundEffect)
             {
@@ -42,7 +42,7 @@ namespace SuperMario.Sprites
                 Game1.GetInstance.DisableControl = true;
                 Game1Utility.MarioTotalLives--;
             }
-            resetTimer += GameTime.ElapsedGameTime.Milliseconds;
+            resetTimer += gameTime.ElapsedGameTime.Milliseconds;
             if (resetTimer > waitTime)
             {               
                 resetTimer -= waitTime;

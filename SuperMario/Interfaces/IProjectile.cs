@@ -17,7 +17,7 @@ namespace SuperMario.Interfaces
         void KillFireball();
 
         Rectangle Area();
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
     }
 }

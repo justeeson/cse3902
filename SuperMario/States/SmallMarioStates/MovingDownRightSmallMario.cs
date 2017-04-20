@@ -24,7 +24,7 @@ namespace SuperMario.Sprites
             
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             mario.StateMachine.MarioMode = (int)MarioStateMachine.MarioModes.Small;
             mario.StateMachine.Orientation = (int)MarioStateMachine.Orientations.StandingRight;

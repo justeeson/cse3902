@@ -18,7 +18,7 @@ namespace SuperMario.Interfaces
         Vector2 Location { get; set; }
         Rectangle Area();
         void UpdateCollision();
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

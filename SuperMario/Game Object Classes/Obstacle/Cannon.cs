@@ -35,7 +35,7 @@ namespace SuperMario.Blocks
         public void BecomeUsed()
         {
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             missleCounter++;
             if (missleCounter == missleMax)
@@ -43,7 +43,7 @@ namespace SuperMario.Blocks
                 MyGame.World.Level.EnemyList.Add(new Missle(MyGame, Location));
                 missleCounter = 0;
             }
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

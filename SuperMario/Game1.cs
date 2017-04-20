@@ -35,7 +35,7 @@ namespace SuperMario
         { get; set; }
         private KeyboardState oldKeyboardState;
         private GamePadState oldGamepadState;
-        public Boolean DisableControl
+        public bool DisableControl
         { get; set; }
         private static Game1 instance;
         public MouseState MouseState
@@ -147,7 +147,7 @@ namespace SuperMario
             get { if (instance == null) return new Game1();
                 else return instance; }
         }
-        protected override void Update(GameTime GameTime)
+        protected override void Update(GameTime gameTime)
         {
             newKeyboardState = Keyboard.GetState();
             newGamepadState = GamePad.GetState(PlayerIndex.One);
@@ -173,22 +173,22 @@ namespace SuperMario
             oldGamepadState = newGamepadState;
             if (GameStatus == GameState.Playing)
             {
-                this.GameTime = GameTime;
+                this.GameTime = gameTime;
                 if (!DisableControl)
                 {
-                    KeyboardController.Update(GameTime);
-                    GamepadController.Update(GameTime);
+                    KeyboardController.Update(gameTime);
+                    GamepadController.Update(gameTime);
                     CameraPointer.UpdateX(Mario.LocationX);
                 }
-                MarioSprite.Update(GameTime);
-                World.Update(GameTime);
+                MarioSprite.Update(gameTime);
+                World.Update(gameTime);
                 Collision_Detection_and_Responses.CollisionHandling.Update(World.Level, this);
-                PlayerStat.Update(GameTime);
-                base.Update(GameTime);
+                PlayerStat.Update(gameTime);
+                base.Update(gameTime);
             }
         }
 
-        protected override void Draw(GameTime GameTime)
+        protected override void Draw(GameTime gameTime)
         {
             if ((GameStatus == GameState.Playing) || (GameStatus == GameState.Pause))
             {
@@ -208,14 +208,14 @@ namespace SuperMario
                     SpriteBatch.Draw(blackHole, new Vector2(MouseState.X - 20, MouseState.Y - 20), Color.White);
                     SpriteBatch.End();
                 }
-                base.Draw(GameTime);
+                base.Draw(gameTime);
             }
 
             else if(GameStatus == GameState.LivesScreen)
             {
                 DisableControl = true;
                 MediaPlayer.Stop();
-                continueTimer += GameTime.ElapsedGameTime.Milliseconds;
+                continueTimer += gameTime.ElapsedGameTime.Milliseconds;
                 if(continueTimer > 2500)
                 {
                     continueTimer -= 2500;

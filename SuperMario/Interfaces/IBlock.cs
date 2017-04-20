@@ -15,7 +15,7 @@ namespace SuperMario.Interfaces
         Rectangle Area { get; set; }
         Vector2 Location { get; set; }
 
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void BrickToDisappear();
         void HiddenToUsed();
         void BecomeUsed();

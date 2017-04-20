@@ -116,7 +116,7 @@ namespace SuperMario.MarioClass
             Orientation = (int)Orientations.Dead;
         }
 
-        public bool isDead()
+        public bool IsDead()
         {
             return Orientation == (int)Orientations.Dead;
         }

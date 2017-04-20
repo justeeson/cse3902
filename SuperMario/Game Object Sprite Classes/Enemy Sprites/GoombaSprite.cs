@@ -28,12 +28,12 @@ namespace SuperMario
             millisecondsPerFrame = 350;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
 
             if (goombaState == (int)goombaStates.Normal)
             {
-                timeSinceLastFrame += GameTime.ElapsedGameTime.Milliseconds;
+                timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)
                 {
                     timeSinceLastFrame -= millisecondsPerFrame;

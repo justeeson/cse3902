@@ -27,9 +27,9 @@ namespace SuperMario
             this.Location = location;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
         public Rectangle Area()
         {

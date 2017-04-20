@@ -32,7 +32,7 @@ namespace SuperMario
             
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             if (MovingLeft)
                 Location = new Vector2(Location.X - 4, Location.Y);
@@ -44,7 +44,7 @@ namespace SuperMario
                 Location = new Vector2(Location.X, Location.Y + 3);
             }
 
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
 
 

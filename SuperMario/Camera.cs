@@ -22,19 +22,19 @@ namespace SuperMario
             CameraPositionY = 0;
         }
 
-        public void UpdateX(int MarioPositionX)
+        public void UpdateX(int marioPositionX)
         {
             if (!DisableCamera)
             {
-                if (MarioPositionX < Game1Utility.FinalLevelLocation)
+                if (marioPositionX < Game1Utility.FinalLevelLocation)
                 {
-                    if (MarioPositionX > CameraPositionX + Game1Utility.CameraOffset)
+                    if (marioPositionX > CameraPositionX + Game1Utility.CameraOffset)
                     {
-                        CameraPositionX += MarioPositionX - (CameraPositionX + Game1Utility.CameraOffset);
+                        CameraPositionX += marioPositionX - (CameraPositionX + Game1Utility.CameraOffset);
                     }
-                    else if (MarioPositionX < CameraPositionX + Game1Utility.CameraOffset && CameraPositionX > (CameraPositionX + Game1Utility.CameraOffset) - MarioPositionX)
+                    else if (marioPositionX < CameraPositionX + Game1Utility.CameraOffset && CameraPositionX > (CameraPositionX + Game1Utility.CameraOffset) - marioPositionX)
                     {
-                        CameraPositionX -= (CameraPositionX + Game1Utility.CameraOffset) - MarioPositionX;
+                        CameraPositionX -= (CameraPositionX + Game1Utility.CameraOffset) - marioPositionX;
                     }
                 }
             }

@@ -24,9 +24,9 @@ namespace SuperMario
             Level.Load();
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
-            Level.Update(GameTime);
+            Level.Update(gameTime);
 
         }
 

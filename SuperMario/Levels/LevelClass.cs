@@ -95,26 +95,26 @@ namespace SuperMario.Levels
         }
 
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
 
             foreach (IEnemy enemy in EnemyList)
             {
-                enemy.Update(GameTime);
+                enemy.Update(gameTime);
             }
 
             foreach (IBlock block in BlockList)
             {
-                block.Update(GameTime);
+                block.Update(gameTime);
             }
             foreach (IItem item in ItemList)
             {
-                item.Update(GameTime);
+                item.Update(gameTime);
 
             }
             foreach (IBackground background in BackgroundList)
             {
-                background.Update(GameTime);
+                background.Update(gameTime);
             }
         }
         public void Draw(Vector2 location)

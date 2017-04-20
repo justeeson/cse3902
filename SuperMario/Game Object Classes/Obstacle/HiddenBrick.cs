@@ -34,9 +34,9 @@ namespace SuperMario.Blocks
         public void BecomeUsed()
         {
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

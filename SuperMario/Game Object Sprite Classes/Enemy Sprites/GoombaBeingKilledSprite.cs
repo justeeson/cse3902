@@ -19,7 +19,7 @@ namespace SuperMario
             currentFrame = 1;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
 
         }

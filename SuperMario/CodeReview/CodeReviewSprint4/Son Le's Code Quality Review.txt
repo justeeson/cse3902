@@ -4,6 +4,6 @@ Sprint number: 4
 Name of the .cs file being reviewed: RunningLeftBigMarioState.cs
 Author of the .cs file being reviewed: Sebastine Justinson
 Specific comments on code quality: The class is simple to understand with simple methods which do their own jobs.
-There are two methods which are doing two tasks are drawing and update based on GameTime. The class has high cohesion
+There are two methods which are doing two tasks are drawing and update based on gameTime. The class has high cohesion
 because it does only 2 jobs. The class has medium coupling because it's using a few globla variables which are passing
 to it. But it the only way to update functions in the class, so it's worth it to keep it that way

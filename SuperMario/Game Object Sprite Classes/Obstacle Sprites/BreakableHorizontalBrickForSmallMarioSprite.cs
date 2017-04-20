@@ -14,7 +14,7 @@ class BreakableHorizontalBrickForSmallMarioSprite : ISprite
         public int Columns { get; set; }
         private int currentFrame;
         private int timer;
-        private Boolean isNotDestroyed;
+        private bool isNotDestroyed;
         private const int width = 32;
         private const int height = 32;
     public BreakableHorizontalBrickForSmallMarioSprite(Texture2D texture, int columns)
@@ -26,7 +26,7 @@ class BreakableHorizontalBrickForSmallMarioSprite : ISprite
             timer = 0;
         }
 
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             timer++;
         }

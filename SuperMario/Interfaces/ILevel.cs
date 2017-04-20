@@ -22,7 +22,7 @@ namespace SuperMario.Interfaces
         void SortBlocksFacingLeft(IBlock[] list);
         void Load();
         void Reset();
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void Draw(Vector2 location);
         void addFlower(Vector2 location);
         void addMushroom(Vector2 location);

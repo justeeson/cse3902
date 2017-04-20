@@ -54,7 +54,7 @@ namespace SuperMario
             
 
         }
-        public void Update(GameTime GameTime)
+        public void Update(GameTime gameTime)
         {
             mouseState = Game1.GetInstance.MouseState;
             mousePoint = new Point(mouseState.X + Camera.CameraPositionX, mouseState.Y);    
@@ -91,8 +91,7 @@ namespace SuperMario
             {
                 Sprite = new CleanSprite(SpriteFactory.goombaTexture);
             }
-
-            Sprite.Update(GameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

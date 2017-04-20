@@ -16,7 +16,7 @@ namespace SuperMario.Interfaces
         Vector2 Location { get; set; }
         ISprite Sprite { get; set; }
         Game1 MyGame { get; set; }
-        void Update(GameTime GameTime);
+        void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         void GetKilled(bool killedBySmashed);
         void ChangeDirection();
