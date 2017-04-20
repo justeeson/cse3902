@@ -443,7 +443,6 @@
   <CurlyBrick x="6720" y ="416" />
   <CurlyBrick x="6752" y ="416" />
   <Nami x="2800" y="100" />
-  <Nami x="4800" y="100" />
 
   <Goomba x="700" y="150" />
   <QuestionBlock x="544" y="280" item="flower" /> 
