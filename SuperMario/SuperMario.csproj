@@ -77,6 +77,7 @@
     <Compile Include="Command\MarioFireCommand.cs" />
     <Compile Include="Command\MarioGoToUndergroundCommand.cs" />
     <Compile Include="Command\MarioRunCommand.cs" />
+    <Compile Include="Game Object Classes\Enemy\Sun.cs" />
     <Compile Include="Game Object Classes\Enemy\Missle.cs" />
     <Compile Include="Game Object Classes\Item\EnergyDrink.cs" />
     <Compile Include="Game Object Classes\Item\GodMushroom.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Game Object Classes\Obstacle\Cannon.cs" />
     <Compile Include="Game Object Classes\Obstacle\UndergroundPipeToGround.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\SunSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\MissleSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveRightSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\EnergyDrinkSprite.cs" />

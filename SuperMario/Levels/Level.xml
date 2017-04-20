@@ -449,7 +449,7 @@
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="godMushroom" />
   
- 
+  <Sun x="850" y="50" />
 
   <HorizontalBlock x="736" y="280" />
   <QuestionBlock x="736" y="152" item="coin" />

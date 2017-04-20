@@ -104,6 +104,9 @@ namespace SuperMario.Levels
                     case "Missle":
                         Level.EnemyList.Add(new Missle(MyGame, Location));
                         break;
+                    case "Sun":
+                        Level.EnemyList.Add(new Sun(MyGame, Location));
+                        break;
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.Texture, 3, 12, Location);
                         Location.X = 0;
