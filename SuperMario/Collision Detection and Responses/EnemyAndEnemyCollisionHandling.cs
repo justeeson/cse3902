@@ -6,7 +6,7 @@ namespace SuperMario.Collision_Detection_and_Responses
     public static class EnemyAndEnemyCollisionHandling
     {
         public static void HandleCollision(IEnemy enemy, IEnemy item)
-        {   if (!(enemy is Missle))
+        {   if (!(enemy is Missle) && !(enemy is Octopus))
             {
                 Rectangle collisionRectangle;
                 ISprite block = item.Sprite;

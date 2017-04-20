@@ -444,13 +444,11 @@
   <CurlyBrick x="6752" y ="416" />
   
   <Goomba x="700" y="150" />
-  <QuestionBlock x="544" y="280" item="coin" /> 
+  <QuestionBlock x="544" y="280" item="flower" /> 
 
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="godMushroom" />
-  
-  <Sun x="850" y="50" />
-
+  <Sun x="300" y="50" />
   <HorizontalBlock x="736" y="280" />
   <QuestionBlock x="736" y="152" item="coin" />
 
