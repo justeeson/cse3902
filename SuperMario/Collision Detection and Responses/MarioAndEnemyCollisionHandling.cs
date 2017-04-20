@@ -23,7 +23,7 @@ namespace SuperMario.Collision_Detection_and_Responses
             }
             else if (collisionRectangle.Top == enemy.Area(item.Location).Top && collisionRectangle.Width > collisionRectangle.Height)
             {
-                CollideTop(item);
+                CollideTop(mario, item);
 
             }
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
@@ -60,7 +60,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     mario.Dead();
                 }
             }
-            else if (item.CanAttack)
+            else if (item.CanAttack && !(item is Missle) && !(item is Octopus) && !(item is Nami))
             {
 
                 if (Mario.StarStatus)
@@ -72,13 +72,38 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         }
 
-        private static void CollideTop(IEnemy item)
-        {
+        private static void CollideTop(IMario mario,  IEnemy item)
+        {   
             Mario.ResetVelocity();
             Mario.JumpStatus = false;
             Mario.GroundedStatus = false;
-            item.GetKilled(true);
-            item.CanAttack = false;
+            if ((item is Missle) || (item is Octopus) || (item is Nami))
+            {
+                if (item.CanAttack && !Mario.StarStatus && !Mario.InvulnStatus)
+                {
+                    if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Fire)
+                    {
+                        mario.MarioBigState();
+                        Mario.Invulnerability();
+                    }
+                    else if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Big)
+                    {
+                        mario.MarioSmallState();
+                        Mario.Invulnerability();
+                    }
+                    else
+                    {
+                        mario.Dead();
+                    }
+                }
+               
+            }
+            else
+            {
+                item.GetKilled(true);
+                item.CanAttack = false;
+
+            }
             Mario.LocationY = (Mario.LocationY - 125);         
         }
 
@@ -103,7 +128,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     mario.Dead();
                 }
             }
-            else if (item.CanAttack)
+            else if (item.CanAttack && !(item is Missle) && !(item is Octopus) && !(item is Nami))
             {
 
                 if (Mario.StarStatus)
@@ -135,7 +160,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     mario.Dead();
                 }
             }
-            else if (item.CanAttack)
+            else if (item.CanAttack && !(item is Missle) && !(item is Octopus) && !(item is Nami))
             {
 
                 if (Mario.StarStatus)

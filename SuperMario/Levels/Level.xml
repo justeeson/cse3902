@@ -442,7 +442,9 @@
   <CurlyBrick x="6688" y ="416" />
   <CurlyBrick x="6720" y ="416" />
   <CurlyBrick x="6752" y ="416" />
-  
+  <Nami x="2800" y="100" />
+  <Nami x="4800" y="100" />
+
   <Goomba x="700" y="150" />
   <QuestionBlock x="544" y="280" item="flower" /> 
 
@@ -457,6 +459,7 @@
 
   <HorizontalBlock x="800" y="280" />
   <Pipe x="928" y="351" />
+
   <MediumPipe x="1248" y="343" />
   <Goomba x="1312" y="384" />
   <HighPipe x="1504" y="331" />

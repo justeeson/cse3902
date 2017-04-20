@@ -88,6 +88,9 @@ namespace SuperMario.Levels
                     case "Missle":
                         Level.EnemyList.Add(new Missle(MyGame, Location));
                         break;
+                    case "Nami":
+                        Level.EnemyList.Add(new Nami(MyGame, Location));
+                        break;
                     case "flower":
                         Level.ItemList.Add(new Flower(MyGame, Location));
                         break;
