@@ -27,7 +27,7 @@ namespace SuperMario.Controller
             controllerMappings.Add(key, command);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();          
                 foreach (Keys key in pressedKeys)

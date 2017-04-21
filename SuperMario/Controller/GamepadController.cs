@@ -23,7 +23,7 @@ namespace SuperMario.Controller
         {
             controllerMappings.Add(button, command);
         }
-        public void Update(GameTime gameTime)
+        public void Update()
         {
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             
@@ -50,9 +50,6 @@ namespace SuperMario.Controller
             if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
             {
                 controllerMappings[Buttons.B].Execute();
-            }
-            if (currentState.IsConnected && currentState.IsButtonDown(Buttons.B))
-            {
                 fireCommand = new MarioFireCommand(Game1.GetInstance);
                 fireCommand.Execute();
             }

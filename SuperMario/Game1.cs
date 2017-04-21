@@ -27,6 +27,8 @@ namespace SuperMario
         private int continueTimer;
         public Song BackgroundMusic
         { get; set; }
+        public bool MouseControl
+        { get; set; }
         private SoundEffect pauseSoundEffect;
         private bool playSound;
         private GamePadState newGamepadState;
@@ -76,6 +78,9 @@ namespace SuperMario
         public GamepadController GamepadController
         { get; set; }
 
+        public MouseController MouseController
+        { get; set; }
+
         public Game1()
         {
             new GraphicsDeviceManager(this);
@@ -94,10 +99,11 @@ namespace SuperMario
             DisableControl = false;
             continueTimer = 0;
             EndGameStatus = false;
+            IsMouseVisible = false;
+            MouseControl = false;
             playSound = false;
             GameStatus = GameState.LivesScreen;
-            CameraPointer = new Camera();
-            
+            CameraPointer = new Camera();           
             base.Initialize();
         }
 
@@ -129,7 +135,7 @@ namespace SuperMario
             KeyboardController.RegisterCommand(Keys.Q, new QuitCommand(this));
             KeyboardController.RegisterCommand(Keys.R, new ResetCommand(this));
             KeyboardController.RegisterCommand(Keys.X, new MarioRunCommand(this));
-
+            
             GamepadController = new GamepadController();
             GamepadController.RegisterCommand(Buttons.LeftThumbstickLeft, new MarioLookLeftCommand(this));
             GamepadController.RegisterCommand(Buttons.LeftThumbstickRight, new MarioLookRightCommand(this));
@@ -137,6 +143,10 @@ namespace SuperMario
             GamepadController.RegisterCommand(Buttons.X, new ResetCommand(this));
             GamepadController.RegisterCommand(Buttons.A, new MarioJumpCommand(this));
             GamepadController.RegisterCommand(Buttons.B, new MarioRunCommand(this));
+
+            MouseController = new MouseController();
+            MouseController.RegisterCommand("LeftMouseClick", new MarioRunCommand(this));
+            MouseController.RegisterCommand("RightMouseClick", new MarioJumpCommand(this));
         }
 
         protected override void UnloadContent()
@@ -151,7 +161,7 @@ namespace SuperMario
         {
             newKeyboardState = Keyboard.GetState();
             newGamepadState = GamePad.GetState(PlayerIndex.One);
-            MouseState = Mouse.GetState();
+            MouseState = Mouse.GetState();          
             if ((newKeyboardState.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P)) ||
                 newGamepadState.IsButtonDown(Buttons.Start) && oldGamepadState.IsButtonUp(Buttons.Start))
             {   
@@ -169,6 +179,13 @@ namespace SuperMario
                     pauseSoundEffect.Play();
                 }
             }
+
+            if ((newKeyboardState.IsKeyDown(Keys.M) && oldKeyboardState.IsKeyUp(Keys.M)))
+            {
+                MouseControl = !MouseControl;
+                IsMouseVisible = !IsMouseVisible;
+            }
+
             oldKeyboardState = newKeyboardState;
             oldGamepadState = newGamepadState;
             if (GameStatus == GameState.Playing)
@@ -176,8 +193,9 @@ namespace SuperMario
                 this.GameTime = gameTime;
                 if (!DisableControl)
                 {
-                    KeyboardController.Update(gameTime);
-                    GamepadController.Update(gameTime);
+                    KeyboardController.Update();
+                    GamepadController.Update();
+                    MouseController.Update();
                     CameraPointer.UpdateX(Mario.LocationX);
                 }
                 MarioSprite.Update(gameTime);

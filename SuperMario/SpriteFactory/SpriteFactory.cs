@@ -61,6 +61,8 @@ namespace SuperMario
         { get; set; }
         public static Texture2D missleTexture
         { get; set; }
+        public static Texture2D energyDrinkTexture
+        { get; set; }
         public static Texture2D sunTexture
         { get; set; }
         public static Texture2D octopusTexture
@@ -88,6 +90,7 @@ namespace SuperMario
             pipeTexture = content.Load<Texture2D>("pipe");
             mediumPipeTexture = content.Load<Texture2D>("pipe2");
             highPipeTexture = content.Load<Texture2D>("pipe3");
+            energyDrinkTexture = content.Load<Texture2D>("energyDrink");
             backgroundTexture = content.Load<Texture2D>("background3");
             flagPoleTexture = content.Load<Texture2D>("FlagPole");
             castleTexture = content.Load<Texture2D>("castle");
@@ -112,6 +115,10 @@ namespace SuperMario
         public static ISprite CreateFlower()
         {
             return new FlowerSprite(flowerTexture, rowNumber, columnNumber);
+        }
+        public static ISprite CreateEnergyDrink()
+        {
+            return new EnergyDrinkSprite(energyDrinkTexture, columnNumber);
         }
 
         public static ISprite CreateCoin()

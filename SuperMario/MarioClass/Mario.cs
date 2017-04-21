@@ -175,7 +175,17 @@ namespace SuperMario
         {
             SetState();
             State.Update(gameTime);
-            if(LocationX <= 0)
+            if((Game1.GetInstance.MouseState.X > (LocationX - Camera.CameraPositionX)) && Game1.GetInstance.MouseControl)
+            {
+                (new MarioLookRightCommand(Game1.GetInstance)).Execute();
+            }
+
+            else if ((Game1.GetInstance.MouseState.X < (LocationX + Camera.CameraPositionX)) && Game1.GetInstance.MouseControl)
+            {
+                (new MarioLookLeftCommand(Game1.GetInstance)).Execute();
+            }
+
+            if (LocationX <= 0)
             {
                 LocationX = 0;
             }
@@ -234,7 +244,8 @@ namespace SuperMario
             {
                 KeyboardState newKeyboardState = Keyboard.GetState();
                 GamePadState newGamepadState = GamePad.GetState(PlayerIndex.One);
-                if (!(newKeyboardState.IsKeyDown(Keys.X)) && !newGamepadState.IsButtonDown(Buttons.B))
+                MouseState mouseState = Game1.GetInstance.MouseState;
+                if (!(newKeyboardState.IsKeyDown(Keys.X)) && !newGamepadState.IsButtonDown(Buttons.B) && !(mouseState.LeftButton == ButtonState.Pressed))
                 {
                     RunStatus = false;
                 }

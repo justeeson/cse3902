@@ -62,11 +62,13 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Left) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft) || newKeyboardState.IsKeyDown(Keys.A))
+            if (newKeyboardState.IsKeyDown(Keys.Left) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickLeft) ||
+                newKeyboardState.IsKeyDown(Keys.A) 
+                || ((Game1.GetInstance.MouseState.X < (Mario.LocationX - Camera.CameraPositionX)) && Game1.GetInstance.MouseControl))
             {
                 if (Mario.JumpStatus && Mario.RunStatus)
                 {
-                    if (Mario.LocationX >= Game1Utility.MovingLeftOffset) 
+                    if (Mario.LocationX >= Game1Utility.MovingLeftOffset)
                     {
                         Mario.LocationX -= 7 * Mario.EnergyStatus;
                     }
@@ -84,7 +86,7 @@ namespace SuperMario.Sprites
                 }
                 else
                 {
-                    if(resetFrames)
+                    if (resetFrames)
                     {
                         currentFrame = 4;
                         resetFrames = false;
@@ -108,6 +110,7 @@ namespace SuperMario.Sprites
                     }
                 }
             }
+        
             else if (Mario.JumpStatus)
             {
                 currentFrame = 1;

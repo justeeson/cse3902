@@ -104,14 +104,11 @@ namespace SuperMario.Levels
                     case "godMushroom":
                         Level.ItemList.Add(new GodMushroom(MyGame, Location));
                         break;
-                    case "Cannon":
-                        Level.BlockList.Add(new Cannon(MyGame, Location));
-                        break;
                     case "Missle":
                         Level.EnemyList.Add(new Missle(MyGame, Location));
                         break;
-                    case "Sun":
-                        Level.EnemyList.Add(new Sun(MyGame, Location));
+                    case "drink":
+                        Level.ItemList.Add(new EnergyDrink(MyGame, Location));
                         break;
                     case "mario":
                         MyGame.MarioSprite = new Mario(MyGame.Texture, 3, 12, Location);

@@ -583,3 +583,9 @@
 /processorParam:TextureFormat=Color
 /build:lulu.png
 
+#begin EnergyDrinkSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:EnergyDrinkSoundEffect.wav
+

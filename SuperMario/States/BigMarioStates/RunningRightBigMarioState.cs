@@ -62,7 +62,9 @@ namespace SuperMario.Sprites
             {
                 flashStatus = 0;
             }
-            if (newKeyboardState.IsKeyDown(Keys.Right) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickRight) || newKeyboardState.IsKeyDown(Keys.S))
+            if (newKeyboardState.IsKeyDown(Keys.Right) || newGamepadState.IsButtonDown(Buttons.LeftThumbstickRight) 
+                || newKeyboardState.IsKeyDown(Keys.S) 
+                || ((Game1.GetInstance.MouseState.X > (Mario.LocationX - Camera.CameraPositionX)) && Game1.GetInstance.MouseControl))
             {
                 if (Mario.JumpStatus && Mario.RunStatus)
                 {
