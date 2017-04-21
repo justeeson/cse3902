@@ -63,10 +63,10 @@ namespace SuperMario
         { get; set; }
         public static Texture2D sunTexture
         { get; set; }
-        
-        public static Texture2D energyDrinkTexture
+        public static Texture2D octopusTexture
         { get; set; }
-
+        public static Texture2D namiTexture
+        { get; set; }
         private const int rowNumber = 32;
         private const int columnNumber = 32;
         public static void LoadAllTextures(ContentManager content)
@@ -96,7 +96,8 @@ namespace SuperMario
             cannonTexture = content.Load<Texture2D>("cannon");
             missleTexture= content.Load<Texture2D>("missle");
             sunTexture = content.Load<Texture2D>("sun");
-            energyDrinkTexture = content.Load<Texture2D>("energyDrink");
+            octopusTexture = content.Load<Texture2D>("octopus");
+            namiTexture = content.Load<Texture2D>("nami");
 
         }
 
@@ -133,11 +134,6 @@ namespace SuperMario
         public static ISprite CreateStar()
         {
             return new StarSprite(starTexture, columnNumber);
-        }
-
-        public static ISprite CreateEnergyDrink()
-        {
-            return new EnergyDrinkSprite(energyDrinkTexture, columnNumber);
         }
         public static ISprite CreateGoomba()
         {
@@ -227,5 +223,14 @@ namespace SuperMario
         {
             return new SunSprite(sunTexture, columnNumber);
         }
+        public static ISprite CreateOctopus()
+        {
+            return new OctopusSprite(octopusTexture, columnNumber);
+        }
+        public static ISprite CreateNami()
+        {
+            return new NamiSprite(namiTexture, columnNumber);
+        }
+       
     }
 }

@@ -8,34 +8,23 @@ using System;
 
 namespace SuperMario
 {
-    public class Sun : IEnemy
+    public class Sun : IBlock
     {
-        public bool MovingLeft { get; set; }
-        public bool CanAttack { get; set; }
-        public bool IsFalling { get; set; }
         public ISprite Sprite { get; set; }
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        public int CameraPositionX { get; set; }
+        private bool MovingLeft { get; set; }
+        private int count;
+        private const int maxCount = 50;
         public Sun(Game1 game, Vector2 location)
         {
-            MovingLeft = true;
-            IsFalling = true;
             MyGame = game;
             Sprite = SpriteFactory.CreateSun();
-            CanAttack = true;
             Location = location;
+            count = 0;
         }
-        public void GetKilled(bool killedBySmashed)
-        {
-           
-        }
-        public void ChangeDirection()
-        {
-            
-
-        }
+      
         public void Update(GameTime gameTime)
         {
             if (Location.X < 20)
@@ -50,6 +39,13 @@ namespace SuperMario
                 Location = new Vector2(Location.X - 5, Location.Y);
             else
                 Location = new Vector2(Location.X + 5, Location.Y);
+
+            count++;
+            if (count == maxCount)
+            {
+                MyGame.World.Level.EnemyList.Add(new Octopus(MyGame, Location));
+                count = 0;
+            }
             Sprite.Update(gameTime);
         }
 
@@ -58,6 +54,15 @@ namespace SuperMario
             Sprite.Draw(spriteBatch, new Vector2(Location.X - Camera.CameraPositionX, Location.Y));
            
         }
+
+        public void BrickToDisappear()
+        {}
+
+        public void HiddenToUsed()
+        {}
+
+        public void BecomeUsed()
+        {}
     }
 
 }

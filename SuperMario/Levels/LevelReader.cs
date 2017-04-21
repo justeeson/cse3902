@@ -73,12 +73,19 @@ namespace SuperMario.Levels
                     case "Castle":
                         Level.BlockList.Add(new Castle(MyGame, Location));
                         break;
+                    case "Sun":
+                        Level.BlockList.Add(new Sun(MyGame, Location));
+                        break;
+                    case "Cannon":
+                        Level.BlockList.Add(new Cannon(MyGame, Location));
+                        break;
                     case "Goomba":
                         Level.EnemyList.Add(new Goomba(MyGame, Location));
                         break;
                     case "Koopa":
                         Level.EnemyList.Add(new Koopa(MyGame, Location));
                         break;
+
                     case "flower":
                         Level.ItemList.Add(new Flower(MyGame, Location));
                         break;
@@ -102,9 +109,6 @@ namespace SuperMario.Levels
                         break;
                     case "Missle":
                         Level.EnemyList.Add(new Missle(MyGame, Location));
-                        break;
-                    case "drink":
-                        Level.ItemList.Add(new EnergyDrink(MyGame, Location));
                         break;
                     case "Sun":
                         Level.EnemyList.Add(new Sun(MyGame, Location));

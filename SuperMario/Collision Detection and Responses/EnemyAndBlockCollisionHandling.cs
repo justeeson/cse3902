@@ -10,7 +10,7 @@ namespace SuperMario.Collision_Detection_and_Responses
            
             ISprite block = item.Sprite;
             Rectangle collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
-            if (!(enemy is Missle))
+            if (!(enemy is Missle) && !(enemy is Octopus) && !(enemy is Nami))
             {
                 if (collisionRectangle.Width > collisionRectangle.Height)
                 {
