@@ -559,3 +559,9 @@
 /processorParam:TextureFormat=Color
 /build:octopus.png
 
+#begin EnergyDrinkSoundEffect.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:EnergyDrinkSoundEffect.wav
+

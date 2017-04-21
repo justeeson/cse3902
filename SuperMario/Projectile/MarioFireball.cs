@@ -29,6 +29,7 @@ namespace SuperMario
         private int startingLocation;
         private int movementTimer;
         private SoundEffect soundEffect;
+        private int xOffset;
         private int marioOrientation;
         private int yVelocity;
 
@@ -39,16 +40,17 @@ namespace SuperMario
             movementTimer = 0;
             yVelocity = 0;
             startingLocation = 0;
+            xOffset = 0;
         }
 
 
         public void Update(GameTime gameTime)
-        {          
+        {
             if (Math.Abs(LocationX - startingLocation) > Game1Utility.FireballMaxDistance)
             {
                 Fire = false;
             }
-            
+
             if (Fire)
             {
                 movementTimer += gameTime.ElapsedGameTime.Milliseconds;
@@ -56,14 +58,18 @@ namespace SuperMario
                 {
                     if (marioOrientation == (int)MarioStateMachine.Orientations.StandingRight || marioOrientation == (int)MarioStateMachine.Orientations.RunningRight
                         || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingRight)
-                            LocationX += 6;
+                    {
+                        LocationX += 6;                       
+                    }
                     else if (marioOrientation == (int)MarioStateMachine.Orientations.StandingLeft || marioOrientation == (int)MarioStateMachine.Orientations.RunningLeft
                         || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingLeft)
-                             LocationX -= 6;
-                }
-                if (movementTimer > 100)
-                {
-                    LocationY = LocationY + yVelocity;
+                    {
+                        LocationX -= 6;                       
+                    }
+                    if (movementTimer > 100)
+                    {
+                        LocationY = LocationY + yVelocity;
+                    }
                 }
             }
         }
@@ -78,7 +84,7 @@ namespace SuperMario
             soundEffect.Play();
             this.LocationX = LocationX;
             startingLocation = LocationX;
-            this.LocationY = LocationY;
+            this.LocationY = LocationY + 35;
             yVelocity = 3;
             marioOrientation = orientation;
             mode = marioMode;
@@ -93,8 +99,18 @@ namespace SuperMario
                 int height = 27;
                 int row = currentFrame;
                 int column = currentFrame % 1;
+                if(marioOrientation == (int)MarioStateMachine.Orientations.StandingRight || marioOrientation == (int)MarioStateMachine.Orientations.RunningRight
+                        || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingRight)
+                {
+                    xOffset = 35;
+                }
+                else if (marioOrientation == (int)MarioStateMachine.Orientations.StandingLeft || marioOrientation == (int)MarioStateMachine.Orientations.RunningLeft
+                        || marioOrientation == (int)MarioStateMachine.Orientations.CrouchingLeft)
+                {
+                    xOffset = 10;
+                }
                 Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX, (int)LocationY, width / 2, height / 2);
+                Rectangle destinationRectangle = new Rectangle((int)LocationX - Camera.CameraPositionX + xOffset, (int)LocationY, width / 2, height / 2);
                 myspriteBatch.Begin();
                 myspriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 myspriteBatch.End();
@@ -110,7 +126,7 @@ namespace SuperMario
             }
             int width = 15;
             int height = 15;
-            return new Rectangle((int)LocationX, (int)LocationY, width, height);
+            return new Rectangle((int)LocationX, (int)LocationY, width/2, height/2);
         }
         public void LoadContent(ContentManager Content)
         {

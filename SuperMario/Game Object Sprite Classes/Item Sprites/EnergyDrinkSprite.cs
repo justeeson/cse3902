@@ -13,18 +13,18 @@ namespace SuperMario
     class EnergyDrinkSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        public int Rows { get; set; }
         public int Columns { get; set; }
         private int currentFrame;
         private SpriteBatch spriteBatchLocal;
-        private const int width = 16;
-        private const int height = 24;
-        public EnergyDrinkSprite(Texture2D texture, int rows, int columns)
+        private const int width = 28;
+        private const int height = 28;
+        private const int widthArea = 26;
+        private const int heightArea = 26;
+        public EnergyDrinkSprite(Texture2D texture, int columns)
         {
             Texture = texture;
-            Rows = rows;
             Columns = columns;
-            currentFrame = 1;
+            currentFrame = 0;
         }
 
         public void Update(GameTime gameTime)
@@ -45,9 +45,7 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            return new Rectangle((int)location.X, (int)location.Y, width, height);
+            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
         }
         public void CollisionSprite()
         {

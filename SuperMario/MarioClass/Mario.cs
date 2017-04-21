@@ -24,8 +24,11 @@ namespace SuperMario
         public static int LocationY { get; set; }
         public static bool StarStatus
         { get; set; }
+        public static int EnergyStatus
+        { get; set; }
         private bool playSoundEffect;
         private int resetTimer;
+        private int energyTimer;
         private int godTimer;
         public static bool GodStatus
         { get; set; }
@@ -60,6 +63,7 @@ namespace SuperMario
             LocationX = (int)location.X;
             LocationY = (int)location.Y;
             starPowerTimer = 0;
+            energyTimer = 0;
             fireDelay = 0;
             fireStatus = false;
             invulnTimer = 0;
@@ -67,13 +71,14 @@ namespace SuperMario
             resetTimer = 0;
             yVelocity = 0;
             godTimer = 0;
+            EnergyStatus = 1;
             JumpStatus = false;
             DisableJump = false;
             playSoundEffect = false;
             GroundedStatus = false;
             InvulnStatus = false;
             StarStatus = false;
-            RunStatus = false;
+            RunStatus = false;          
             GodStatus = false;
         }
 
@@ -180,7 +185,17 @@ namespace SuperMario
                 if (starPowerTimer > 10000)
                 {
                     StarPowerUp();
+                    starPowerTimer = 0;
                 }
+            }
+
+            if(Mario.EnergyStatus == 2)
+            {
+                energyTimer += gameTime.ElapsedGameTime.Milliseconds;
+                if(energyTimer > 6000)
+                {
+                    Mario.EnergyStatus = 1;
+                    energyTimer = 0;                }
             }
             if (fireStatus)
             {

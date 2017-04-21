@@ -30,6 +30,8 @@ namespace SuperMario.Interfaces
         void addCoin(Vector2 location);
         void addStar(Vector2 location);
         void addGodMushroom(Vector2 location);
+
+        void addEnergyDrink(Vector2 location);
         void ReturnGround();
     }
 }

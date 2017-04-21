@@ -61,6 +61,9 @@ namespace SuperMario.Blocks
                     case "godMushroom":
                         MyGame.World.Level.addGodMushroom(new Vector2(Location.X - 2, Location.Y - 30));
                         break;
+                    case "drink":
+                        MyGame.World.Level.addEnergyDrink(new Vector2(Location.X - 2, Location.Y - 30));
+                        break;
                     default:
                         break;
                 }

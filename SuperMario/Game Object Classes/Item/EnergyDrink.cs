@@ -21,7 +21,7 @@ namespace SuperMario
         public EnergyDrink(Game1 game, Vector2 location)
         {
             MyGame = game;
-            Sprite = SpriteFactory.CreateFlower();
+            Sprite = SpriteFactory.CreateEnergyDrink();
             MyGame.Sprite = Sprite;
             HasBeenUsed = false;
             this.Location = location;
@@ -40,9 +40,9 @@ namespace SuperMario
         }
         public void UpdateCollision()
         {
-            Game1Utility.MarioPowerUpSoundEffect.Play();
-            this.Sprite = new CleanSprite(SpriteFactory.flowerTexture);
-            MyGame.MarioSprite.MarioFireState();
+            Game1Utility.EnergyDrinkSoundEffect.Play();
+            this.Sprite = new CleanSprite(SpriteFactory.energyDrinkTexture);
+            Mario.EnergyStatus = 2;
             HasBeenUsed = true;
         }
 

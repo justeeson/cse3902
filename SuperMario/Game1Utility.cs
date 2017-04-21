@@ -24,6 +24,9 @@ namespace SuperMario
         { get; set; }
         public static SoundEffect MarioJumpSoundEffect
         { get; set; }
+
+        public static SoundEffect EnergyDrinkSoundEffect
+        { get; set; }
         public static SoundEffect BreakableBrickBumpSoundEffect
         { get; set; }
         public static SoundEffect CoinSoundEffect
@@ -69,7 +72,7 @@ namespace SuperMario
             FinalLevelLocation = 6350;
             CameraOffset = 350;
             MillisecondsPerFlash = 400;
-            FireballMaxDistance = 500;
+            FireballMaxDistance = 1000;
             MaxValueY = 400;
             MovingLeftOffset = -400;
             MarioTotalLives = 3;
@@ -87,6 +90,7 @@ namespace SuperMario
             GodMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("godMushroomSoundEffect");
             DeathSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("deathSoundEffect");
             BoltSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("boltSoundEffect");
+            EnergyDrinkSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("EnergyDrinkSoundEffect");
             FireworksSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("FireworksSoundEffect");
             GameOverSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("GameOverSoundEffect");
             OutOfTimeSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("OutOfTimeSoundEffect");

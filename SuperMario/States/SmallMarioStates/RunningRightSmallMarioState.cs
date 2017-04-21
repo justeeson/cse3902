@@ -69,7 +69,7 @@ namespace SuperMario.Sprites
                     resetFrames = true;
                     if (Mario.LocationX <= Game1Utility.FinalLevelLocation)
                     {
-                        Mario.LocationX += 7;
+                        Mario.LocationX += 7*Mario.EnergyStatus;
                     }
                     currentFrame = 10;
                 }
@@ -78,7 +78,7 @@ namespace SuperMario.Sprites
                     resetFrames = true;
                     if (Mario.LocationX <= Game1Utility.FinalLevelLocation)
                     {
-                        Mario.LocationX += 3;
+                        Mario.LocationX += 3*Mario.EnergyStatus;
                     }
                     currentFrame = 10;
                 }
@@ -101,10 +101,10 @@ namespace SuperMario.Sprites
                     {
                         if (Mario.RunStatus == true)
                         {
-                            Mario.LocationX += 4;
+                            Mario.LocationX += 4*Mario.EnergyStatus;
                         }
                         else
-                            Mario.LocationX += 2;
+                            Mario.LocationX += 2*Mario.EnergyStatus;
                     }
                 }
             }

@@ -137,7 +137,7 @@
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaMoveLeftSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\CoinSprite.cs" />
-    <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroom.cs" />
+    <Compile Include="Game Object Sprite Classes\Item Sprites\FireMushroomSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\FlowerSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\GrownupMushroomSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Item Sprites\StarSprite.cs" />
