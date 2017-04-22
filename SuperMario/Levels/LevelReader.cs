@@ -85,7 +85,9 @@ namespace SuperMario.Levels
                     case "Koopa":
                         Level.EnemyList.Add(new Koopa(MyGame, Location));
                         break;
-
+                    case "Nami":
+                        Level.EnemyList.Add(new Nami(MyGame, Location));
+                        break;
                     case "flower":
                         Level.ItemList.Add(new Flower(MyGame, Location));
                         break;

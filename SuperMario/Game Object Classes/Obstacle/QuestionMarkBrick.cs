@@ -40,7 +40,6 @@ namespace SuperMario.Blocks
             {
                this.Location = new Vector2(Location.X+5, Location.Y);
                 HasBeenUsed = true;
-                Random rnd = new Random();
                 switch (itemObject)
                 {
                     case "coin":
