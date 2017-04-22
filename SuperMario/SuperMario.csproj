@@ -103,6 +103,7 @@
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\HighPipeSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Obstacle Sprites\MediumPipeSprite.cs" />
     <Compile Include="Game1Utility.cs" />
+    <Compile Include="Levels\LevelGenerator.cs" />
     <Compile Include="PlayerStatistic.cs" />
     <Compile Include="Interfaces\ILevel.cs" />
     <Compile Include="Interfaces\IMarioStateMachine.cs" />
@@ -244,6 +245,7 @@
     <Content Include="Levels\Level.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Levels\Level1.xml" />
     <Content Include="Levels\UnderGroundWorld.xml">
       <SubType>Designer</SubType>
     </Content>

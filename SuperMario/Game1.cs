@@ -103,7 +103,7 @@ namespace SuperMario
             MouseControl = false;
             playSound = false;
             GameStatus = GameState.LivesScreen;
-            CameraPointer = new Camera();           
+            CameraPointer = new Camera();
             base.Initialize();
         }
 
@@ -123,6 +123,9 @@ namespace SuperMario
             World = new WorldManager(this);
             World.Load();
             PlayerStat = new PlayerStatistic(SpriteBatch, Content);
+               
+            // This is a temp location, the following command needs to be relocated
+            new LevelGenerator();
 
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));
