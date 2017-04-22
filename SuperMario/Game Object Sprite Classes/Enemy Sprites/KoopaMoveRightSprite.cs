@@ -17,10 +17,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        private const int width = 27;
-        private const int height = 24;
-        private const int widthArea = 16;
-        private const int heightArea = 24;
+        private const int width = 39;
+        private const int height = 32;
         private int turtleState;
         private enum turtleStates { Normal, InShell, Dead}
 
@@ -75,7 +73,7 @@ namespace SuperMario
             {
                 return new Rectangle(0,0,0,0);
             }
-            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
+            return new Rectangle((int)location.X, (int)location.Y, width, height);
         }
         public void CollisionSprite()
         {

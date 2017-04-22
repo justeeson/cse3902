@@ -23,7 +23,8 @@ namespace SuperMario
         public Rectangle Area { get; set; }
         private bool dead;
         private int deadCounter = 10;
-
+        private bool playDeathSoundEffect;
+        private bool shell;
         public Koopa(Game1 game, Vector2 location)
         {
             MovingLeft = true;
@@ -33,6 +34,10 @@ namespace SuperMario
             MyGame.Sprite = Sprite;
             CanAttack = true;
             this.Location = location;
+            playDeathSoundEffect = false;
+            shell = false;
+            dead = false;
+
         }
         public void GetKilled(bool killedBySmashed)
         {
@@ -72,28 +77,35 @@ namespace SuperMario
                 this.CanAttack = false;
                 Game1Utility.BoltSoundEffect.Play();
             }
-            if (Location.X - Camera.CameraPositionX < 0)
+
+            if (Location.X < 50)
             {
-                MovingLeft = !MovingLeft;
+                MovingLeft = false;
+                ChangeDirection();
+
             }
 
             if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
+                Location = new Vector2(Location.X - 2, Location.Y);
             else
-                Location = new Vector2(Location.X + 4, Location.Y);
+                Location = new Vector2(Location.X + 2, Location.Y);
 
             if (IsFalling)
-                Location = new Vector2(Location.X, Location.Y + 4);
+                Location = new Vector2(Location.X, Location.Y + 2);
 
             if (dead)
             {
+                if (playDeathSoundEffect == false)
+                {
+                    playDeathSoundEffect = true;
+                    Game1Utility.GoombaStompSoundEffect.Play();
+                }
                 deadCounter--;
             }
             if (deadCounter == 0)
             {
-                Sprite = new CleanSprite(SpriteFactory.goombaTexture);
+                Sprite = new CleanSprite(SpriteFactory.koopaMoveLeftTexture);
             }
-
             Sprite.Update(gameTime);
 
         }

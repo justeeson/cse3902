@@ -445,7 +445,9 @@
   
   <Nami x="2800" y="100" />
 
-  <Goomba x="700" y="150" />
+  <Koopa x="700" y="150" />
+  <Koopa x="450" y="300" />
+
   <QuestionBlock x="544" y="280" item="flower" /> 
 
   <HorizontalBlock x="672" y="280" />

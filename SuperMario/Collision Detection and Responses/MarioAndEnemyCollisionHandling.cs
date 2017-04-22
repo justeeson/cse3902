@@ -29,10 +29,12 @@ namespace SuperMario.Collision_Detection_and_Responses
             else if (collisionRectangle.Right == enemy.Area(item.Location).Right)
             {
                 CollideRight(mario, item, collisionRectangle);
+                item.ChangeDirection();
             }
             else if (collisionRectangle.Left == enemy.Area(item.Location).Left)
             {
                 CollideLeft(mario, item, collisionRectangle);
+                item.ChangeDirection();
             }
 
         }
