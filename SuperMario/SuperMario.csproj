@@ -238,6 +238,8 @@
     <Content Include="CodeReview\CodeReviewSprint5\Sebastin Justeeson%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint5\Yihang Du%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint5\Yihang Du%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint6\Son Le%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint6\Son Le%27s Readability Review.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Levels\Level.xml">
       <SubType>Designer</SubType>
@@ -262,9 +264,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CodeReview\CodeReviewSprint6\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

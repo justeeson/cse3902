@@ -1,0 +1,19 @@
+﻿Author of the code review: Son Le
+Date of the code review: 04/21/2017
+Sprint number: 5
+Name of the .cs file being reviewed: Game1.cs
+Author of the .cs file being reviewed: Sebastine
+Number of minutes taken to complete the review: 10
+
+The class is the central of the game, so it has alot of dependencies as well as fields and properties. By reading from the top
+to the bottom of the class, we can see that it has at least more than 20 fields and properties, but it has only 4 methods.
+This totally makes sense because other classes which implements function of the game needed to access fields in the game
+as well as these methods so that they can update the game properly. There are alot of fields and properties, so it may 
+take up to 10 minutes to read and understand what each of them doing in the game. 
+However, with their meaningful names and the way they are categorized, it takes bring down the time to read the game class
+to 10 minutes. If not, it would take longer to do so. Each field and the calling methods are put into each catergory so that
+it's easier to find them accross the class. On the other hand, I'd suggest that we can put the command into a separate class, 
+but this still doesn't help much because we still have alot of fields and properties which take a vast majority of
+space in the file. However, this is the only way to implement this game so we can have some trade-offs on that.
+Other than that, I also see that we put alot of implementations in other helper classes this already help reduce the complex
+of this class.

@@ -1,0 +1,15 @@
+Author of the code review: Son Le
+Date of the code review: 04/10/2017
+Sprint number: 5
+Name of the .cs file being reviewed: MouseController.cs
+Author of the .cs file being reviewed: Sebastine Justinson
+
+This file was recently added to the game as a feature to allow users to play with their mouse. This class contains 3 methods
+and 3 fields, so I would say this class has loose coupling because it doesn't depend much on properties of other class.
+Other than that, we also see that with the implementation of this class, the game or the client side doesn't need to know what
+actually happens when we click a button on mouse. Thus, this class also helps the game class reduce some of its complexity. 
+The class has 3 methods which are MouseController(), RegisterCommand(), Update(). These are basic methods so that the mouse
+can work properly and this is essential for the mouse object. I'd say this class is good in term of cohesion. There are not many
+things to do with this class. The number of lines of code seems reasonable. There are only 2 if statements for the left
+click and right click, so the complexity of the code is very low. I'd say this class is good. There is nothing to do. This class
+is also easy to maintenance or expand future features.   
