@@ -13,7 +13,7 @@ namespace SuperMario.Levels
         private int floorY;
         public LevelGenerator()
         {
-
+            createLevel();
         }
 
         public void createLevel()
@@ -40,10 +40,12 @@ namespace SuperMario.Levels
                     levelNode.AppendChild(floorNode);
                     floorX += 32;
                 }
-                doc.CreateWhitespace("\r\n\r\n");
                 floorY -= 32;
                 floorX = -416;
             }
+
+
+            //Insert Level contant generator here
 
 
             floorX = 5792;
@@ -86,10 +88,10 @@ namespace SuperMario.Levels
 
             XmlNode marioNode = doc.CreateElement("mario");
             XmlAttribute marioAttributeX = doc.CreateAttribute("x");
-            marioAttributeX.Value = "6400";
+            marioAttributeX.Value = "250";
             castleNode.Attributes.Append(marioAttributeX);
             XmlAttribute marioAttributeY = doc.CreateAttribute("y");
-            marioAttributeY.Value = "258";
+            marioAttributeY.Value = "100";
             castleNode.Attributes.Append(marioAttributeY);
             levelNode.AppendChild(marioNode);
 

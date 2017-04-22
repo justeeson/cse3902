@@ -245,6 +245,7 @@
     <Content Include="Levels\Level.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Levels\Level1.xml" />
     <Content Include="Levels\UnderGroundWorld.xml">
       <SubType>Designer</SubType>
     </Content>

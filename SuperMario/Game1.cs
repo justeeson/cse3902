@@ -123,6 +123,8 @@ namespace SuperMario
             World = new WorldManager(this);
             World.Load();
             PlayerStat = new PlayerStatistic(SpriteBatch, Content);
+               
+            // This is a temp location, the following command needs to be relocated
             new LevelGenerator();
 
             KeyboardController = new KeyboardController();
