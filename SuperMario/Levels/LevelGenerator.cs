@@ -11,8 +11,16 @@ namespace SuperMario.Levels
     {
         private int floorX;
         private int floorY;
+        private string[] enemyType;
+        private string[] blockType;
+        private string[] itemType;
+        private static Random rnd = new Random();
+
         public LevelGenerator()
         {
+            enemyType = new string[2] { "Goomba", "Koopa" };
+            blockType = new string[8] { "QuestionBlock", "HorizontalBlock", "Pipe", "MediumPipe", "HighPipe", "PipeToUnderground", "hiddenBlock", "SolidBrick" };
+            itemType = new string[] { "coin", "star", "firemushroom", "godMushroom", "flower" };
             createLevel();
         }
 
@@ -44,8 +52,73 @@ namespace SuperMario.Levels
                 floorX = -416;
             }
 
+            int limit = 10;
+            for (int k = 1; k <= limit; k++)
+            {
+                int r = rnd.Next(1, 10);
+                switch (enemyType[r % 2])
+                {
+                    case "Goomba":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode goombaNode = doc.CreateElement("Goomba");
+                        XmlAttribute goombaAttributeX = doc.CreateAttribute("x");
+                        goombaAttributeX.Value = floorX.ToString();
+                        goombaNode.Attributes.Append(goombaAttributeX);
+                        XmlAttribute goombaAttributeY = doc.CreateAttribute("y");
+                        goombaAttributeY.Value = "100";
+                        goombaNode.Attributes.Append(goombaAttributeY);
+                        levelNode.AppendChild(goombaNode);
+                        break;
+                    case "Koopa":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode koopaNode = doc.CreateElement("Koopa");
+                        XmlAttribute koopaAttributeX = doc.CreateAttribute("x");
+                        koopaAttributeX.Value = floorX.ToString();
+                        koopaNode.Attributes.Append(koopaAttributeX);
+                        XmlAttribute koopaAttributeY = doc.CreateAttribute("y");
+                        koopaAttributeY.Value = "100";
+                        koopaNode.Attributes.Append(koopaAttributeY);
+                        levelNode.AppendChild(koopaNode);
+                        break;
+                }
+            }
 
-            //Insert Level contant generator here
+            // Still working on it 
+            limit = 20;
+            for (int k = 1; k <= limit; k++)
+            {
+                int r = rnd.Next(1, 100);
+                switch (blockType[r % 8])
+                {
+                    case "QuestionBlock":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        string itemName = itemType[r % 5];
+                        XmlNode questionNode = doc.CreateElement("QuestionBlock");
+                        XmlAttribute questionAttributeX = doc.CreateAttribute("x");
+                        questionAttributeX.Value = floorX.ToString();
+                        questionNode.Attributes.Append(questionAttributeX);
+                        XmlAttribute questionAttributeY = doc.CreateAttribute("y");
+                        questionAttributeY.Value = "280";
+                        questionNode.Attributes.Append(questionAttributeY);
+                        XmlAttribute questionAttributeItem = doc.CreateAttribute("item");
+                        questionAttributeItem.Value = itemName;
+                        questionNode.Attributes.Append(questionAttributeItem);
+                        levelNode.AppendChild(questionNode);
+                        break;
+                    case "HorizontalBlock":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode horizontalNode = doc.CreateElement("HorizontalBlock");
+                        XmlAttribute horizontalAttributeX = doc.CreateAttribute("x");
+                        horizontalAttributeX.Value = floorX.ToString();
+                        horizontalNode.Attributes.Append(horizontalAttributeX);
+                        XmlAttribute horizontalAttributeY = doc.CreateAttribute("y");
+                        horizontalAttributeY.Value = "280";
+                        horizontalNode.Attributes.Append(horizontalAttributeY);
+                        levelNode.AppendChild(horizontalNode);
+                        break;
+                }
+            }
+
 
 
             floorX = 5792;
