@@ -10,17 +10,20 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
             Rectangle collisionRectangle = new Rectangle();
             ISprite block = item.Sprite;
+            if (item is FlagPole)
+            {
+                item.BecomeUsed();
+            }
             if (block.Area(item.Location).Equals(collisionRectangle)) {
                 return;
             }
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
-            if ((collisionRectangle.Width <= collisionRectangle.Height) /*|| Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Left)*/)
+            if ((collisionRectangle.Width <= collisionRectangle.Height))
             {
                 WidthSmallerThanHeight(mario, item, collisionRectangle, block);
             }
             else
             {
-                /*Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Left)*/
                 HeightSmallerThanWidth(mario, item, collisionRectangle, block);
             }
         }
@@ -76,22 +79,11 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
-              
                 Mario.LocationX += collisionRectangle.Width + 1;
-                if (item is FlagPole)
-                {
-                    item.BecomeUsed();
-                }
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
-              
                 Mario.LocationX -= (collisionRectangle.Width + 1);
-                if (item is FlagPole)
-                {
-                    item.BecomeUsed();
-                }
-
             }
         }
 

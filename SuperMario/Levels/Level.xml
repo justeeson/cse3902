@@ -442,6 +442,7 @@
   <CurlyBrick x="6688" y ="416" />
   <CurlyBrick x="6720" y ="416" />
   <CurlyBrick x="6752" y ="416" />
+  
   <Nami x="2800" y="100" />
 
   <Goomba x="700" y="150" />
@@ -630,7 +631,7 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
 
-  <FlagPole x="6275" y="69" />
+  <FlagPole x="800" y="69" />
   <Castle x="6400" y="258" />
 
   <mario x="250" y="100" />

@@ -49,7 +49,7 @@ namespace SuperMario
 
         public Rectangle Area(Vector2 location)
         {           
-            return new Rectangle((int)location.X, (int)location.Y, widthtArea, heightArea);
+            return new Rectangle((int)location.X, (int)location.Y-125, widthtArea+25, heightArea+400);
         }
     }
 }

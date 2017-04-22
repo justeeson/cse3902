@@ -104,6 +104,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                     else
                         enemyInList.IsFalling = true;
                 }
+                
             }
 
             if (marioCheck == 0)
