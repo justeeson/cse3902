@@ -66,8 +66,10 @@
     <Compile Include="BackgroundClass\FlagPoleSprite.cs" />
     <Compile Include="BackgroundClass\BackgroundSprite.cs" />
     <Compile Include="BackgroundClass\BackgroundClass.cs" />
+    <Compile Include="BackLog Writer\BackLog.cs" />
     <Compile Include="BlockClass\BlockLogic.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="CheatCode Handler\CheatCode_Handler.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndEnemyCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\EnemyAndBlockCollisionHandling.cs" />
     <Compile Include="Collision Detection and Responses\ProjectileAndEnemyCollisionHandling.cs" />

@@ -3,15 +3,17 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using SuperMario.BackLog_Writer;
 using SuperMario.Command;
 using SuperMario.Controller;
 using SuperMario.Game_Object_Classes;
 using SuperMario.Interfaces;
 using SuperMario.Levels;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
+using SuperMario.CheatCode_Handler;
 
 namespace SuperMario
 {
@@ -19,6 +21,10 @@ namespace SuperMario
     {
         public SpriteBatch SpriteBatch
         { get; set; }
+
+        public static BackLog backlog;
+        public CheatCodeHandler cheat;
+
         public Texture2D Texture { get; set; }
         public GameTime GameTime
         { get; set; }
@@ -104,6 +110,8 @@ namespace SuperMario
             playSound = false;
             GameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
+            backlog = new BackLog();
+            cheat = new CheatCodeHandler(this);
             base.Initialize();
         }
 
@@ -188,6 +196,8 @@ namespace SuperMario
                 MouseControl = !MouseControl;
                 IsMouseVisible = !IsMouseVisible;
             }
+
+            cheat.Update(oldKeyboardState, newKeyboardState);
 
             oldKeyboardState = newKeyboardState;
             oldGamepadState = newGamepadState;

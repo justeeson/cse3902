@@ -27,6 +27,7 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
             int marioCheck = 0;
             int itemCheck = 0;
+            
             Rectangle marioRect = game.MarioSprite.Area();
             IMario mario = game.MarioSprite;
             MarioDetection(level, marioRect);

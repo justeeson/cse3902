@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using SuperMario.Interfaces;
+using System;
+using System.IO;
 
 namespace SuperMario.Collision_Detection_and_Responses
 {
@@ -33,10 +35,12 @@ namespace SuperMario.Collision_Detection_and_Responses
             if (block.Area(item.Location).Right < mario.Area().Right)
             {
                 Mario.LocationX += collisionRectangle.Width;
+                writeCollision(mario.Area(), block.Area(item.Location), "left");
             }
             else if (block.Area(item.Location).Right >= mario.Area().Right)
             {
                 Mario.LocationX -= (collisionRectangle.Width);
+                writeCollision(mario.Area(), block.Area(item.Location), "right");
             }
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Bottom == block.Area(item.Location).Bottom)
@@ -45,6 +49,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
+                writeCollision(mario.Area(), block.Area(item.Location), "top");
             }
             else if (collisionRectangle.Top == block.Area(item.Location).Top)
             {   
@@ -54,6 +59,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.LocationY -= (collisionRectangle.Height);
                 MarioAndEnemyCollisionHandling.SetBonusPoint(false);
                 Mario.ResetVelocity();
+                writeCollision(mario.Area(), block.Area(item.Location), "bottom");
             }
         }
 
@@ -67,6 +73,7 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.LocationY -= (collisionRectangle.Height);
                 MarioAndEnemyCollisionHandling.SetBonusPoint(false);
                 Mario.ResetVelocity();
+                writeCollision(mario.Area(), block.Area(item.Location), "bottom");
             }
             else if (block.Area(item.Location).Top <= mario.Area().Top)
             {
@@ -74,16 +81,30 @@ namespace SuperMario.Collision_Detection_and_Responses
                 Mario.ResetVelocity();
                 block.CollisionSprite();
                 item.BecomeUsed();
+                writeCollision(mario.Area(), block.Area(item.Location), "top");
             }
 
             collisionRectangle = Rectangle.Intersect(mario.Area(), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
                 Mario.LocationX += collisionRectangle.Width + 1;
+                writeCollision(mario.Area(), block.Area(item.Location), "left");
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
                 Mario.LocationX -= (collisionRectangle.Width + 1);
+                writeCollision(mario.Area(), block.Area(item.Location), "right");
+            }
+        }
+
+
+        public static void writeCollision(Rectangle Mario, Rectangle Block, string direction)
+        {
+            using (StreamWriter writer = new StreamWriter(Game1.backlog.Path(), true))
+            {
+                writer.Write("Mario: x = " + Mario.X + " y = " + Mario.Y + "\r\n");
+                writer.Write("Block: x = " + Block.X + " y = " + Block.Y + "\r\n");
+                writer.WriteLine("Collision to the " + direction + " of Mario\r\n");
             }
         }
 
