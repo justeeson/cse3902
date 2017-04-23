@@ -450,19 +450,20 @@
   <CurlyBrick x="6688" y="416" />
   <CurlyBrick x="6720" y="416" />
   <CurlyBrick x="6752" y="416" />
-  <Goomba x="1067" y="100" />
-  <Goomba x="1514" y="100" />
-  <Goomba x="2070" y="100" />
-  <Goomba x="2500" y="100" />
-  <Koopa x="2887" y="100" />
-  <Koopa x="3640" y="100" />
-  <Koopa x="3862" y="100" />
-  <Goomba x="4657" y="100" />
-  <Goomba x="5079" y="100" />
-  <Koopa x="5462" y="100" />
-  <HorizontalBlock x="1205" y="280" />
-  <QuestionBlock x="2026" y="280" item="flower" />
-  <QuestionBlock x="3595" y="280" item="coin" />
+  <Koopa x="1078" y="100" />
+  <Goomba x="1220" y="100" />
+  <Goomba x="2013" y="100" />
+  <Koopa x="2620" y="100" />
+  <Koopa x="2763" y="100" />
+  <Goomba x="3311" y="100" />
+  <Koopa x="4192" y="100" />
+  <Goomba x="4494" y="100" />
+  <Goomba x="5071" y="100" />
+  <Goomba x="5231" y="100" />
+  <HorizontalBlock x="752" y="280" />
+  <QuestionBlock x="1990" y="280" item="flower" />
+  <HorizontalBlock x="3190" y="280" />
+  <QuestionBlock x="3280" y="280" item="godMushroom" />
   <SolidBrick x="5792" y="384" />
   <SolidBrick x="5824" y="384" />
   <SolidBrick x="5824" y="352" />

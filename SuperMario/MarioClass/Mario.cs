@@ -205,7 +205,8 @@ namespace SuperMario
                 if(energyTimer > 6000)
                 {
                     Mario.EnergyStatus = 1;
-                    energyTimer = 0;                }
+                    energyTimer = 0;
+                }
             }
             if (fireStatus)
             {

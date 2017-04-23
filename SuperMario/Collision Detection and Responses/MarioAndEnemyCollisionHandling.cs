@@ -49,11 +49,13 @@ namespace SuperMario.Collision_Detection_and_Responses
                 {
                     mario.MarioBigState();
                     Mario.Invulnerability();
+                    Game1Utility.PowerDownSoundEffect.Play();
                 }
                 else if (mario.StateMachine.MarioMode == (int)MarioStateMachine.MarioModes.Big)
                 {
                     mario.MarioSmallState();
                     Mario.Invulnerability();
+                    Game1Utility.PowerDownSoundEffect.Play();
                 }
                 else
                 {
