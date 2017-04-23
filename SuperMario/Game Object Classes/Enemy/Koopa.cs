@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperMario.Collision_Detection_and_Responses;
 
 namespace SuperMario
 {
@@ -21,10 +22,9 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        private bool dead;
         private int deadCounter = 10;
         private bool playDeathSoundEffect;
-        private bool shell;
+        private bool dead;
         public Koopa(Game1 game, Vector2 location)
         {
             MovingLeft = true;
@@ -35,19 +35,17 @@ namespace SuperMario
             CanAttack = true;
             this.Location = location;
             playDeathSoundEffect = false;
-            shell = false;
             dead = false;
-
         }
         public void GetKilled(bool killedBySmashed)
         {
             if (!dead)
             {
-                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 8);
+                this.Sprite = SpriteFactory.CreateKoopaShellSprite();
                 dead = true;
                 if (killedBySmashed)
                 {
-                    MyGame.PlayerStat.SetScoreValue(600);
+                    MyGame.PlayerStat.SetScoreValue(600 * MarioAndEnemyCollisionHandling.ConsecutiveBonusPoint);
                 }
                 else
                 {
@@ -57,6 +55,7 @@ namespace SuperMario
         }
         public void ChangeDirection()
         {
+            Location = new Vector2(Location.X - 2, Location.Y - 1);
             if (!MovingLeft)
             {
                 this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 8);
@@ -81,17 +80,7 @@ namespace SuperMario
             if (Location.X < 50)
             {
                 MovingLeft = false;
-                ChangeDirection();
-
             }
-
-            if (MovingLeft)
-                Location = new Vector2(Location.X - 2, Location.Y);
-            else
-                Location = new Vector2(Location.X + 2, Location.Y);
-
-            if (IsFalling)
-                Location = new Vector2(Location.X, Location.Y + 2);
 
             if (dead)
             {
@@ -102,6 +91,13 @@ namespace SuperMario
                 }
                 deadCounter--;
             }
+            if (MovingLeft)
+                    Location = new Vector2(Location.X - 2, Location.Y);
+            else
+                    Location = new Vector2(Location.X + 2, Location.Y);
+
+            if (IsFalling)
+                    Location = new Vector2(Location.X, Location.Y + 2);
             if (deadCounter == 0)
             {
                 Sprite = new CleanSprite(SpriteFactory.koopaMoveLeftTexture);

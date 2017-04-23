@@ -445,8 +445,8 @@
   
   <Nami x="2800" y="100" />
 
-  <Koopa x="700" y="150" />
-  <Koopa x="450" y="300" />
+  <Koopa x="950" y="300" />
+  <Goomba x="700" y="300" />
 
   <QuestionBlock x="544" y="280" item="flower" /> 
 
@@ -633,7 +633,7 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
 
-  <FlagPole x="6200" y="69" />
+  <FlagPole x="6245" y="69" />
   <Castle x="6400" y="258" />
 
   <mario x="250" y="100" />

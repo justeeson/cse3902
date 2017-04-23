@@ -39,15 +39,15 @@ namespace SuperMario.Collision_Detection_and_Responses
             collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
-                enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width + 1, enemy.Location.Y);
                 enemy.MovingLeft = false;
                 enemy.ChangeDirection();
+                enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width+1, enemy.Location.Y);
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
-                enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
                 enemy.MovingLeft = true;
                 enemy.ChangeDirection();
+                enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width +1), enemy.Location.Y);
             }
 
         }
@@ -55,15 +55,15 @@ namespace SuperMario.Collision_Detection_and_Responses
         {
             if (collisionRectangle.Right == block.Area(item.Location).Right)
             {
-                enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width + 1, enemy.Location.Y);
                 enemy.MovingLeft = false;
                 enemy.ChangeDirection();
+                enemy.Location = new Vector2(enemy.Location.X + collisionRectangle.Width+1, enemy.Location.Y);
             }
             else if (collisionRectangle.Left == block.Area(item.Location).Left)
             {
-                enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 1), enemy.Location.Y);
                 enemy.MovingLeft = true;
                 enemy.ChangeDirection();
+                enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width+1), enemy.Location.Y);
             }
             collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
 

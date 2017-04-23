@@ -15,7 +15,7 @@ namespace SuperMario
 
         private const int width = 26;
         private const int height = 24;
-        private const int widthArea = 27;
+        private const int widthArea = 24;
         private const int heightArea = 22;
         private enum goombaStates { Normal, Smashed, Dead }
 
@@ -67,7 +67,7 @@ namespace SuperMario
             {
                 return new Rectangle(0, 0, 0, 0);
             }
-            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
+            return new Rectangle((int)location.X, (int)location.Y, width, height-1);
         }
         public void CollisionSprite()
         {

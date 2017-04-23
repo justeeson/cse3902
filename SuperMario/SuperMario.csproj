@@ -90,6 +90,7 @@
     <Compile Include="Game Object Classes\Obstacle\Cannon.cs" />
     <Compile Include="Game Object Classes\Obstacle\UndergroundPipeToGround.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\GoombaBeingKilledSprite.cs" />
+    <Compile Include="Game Object Sprite Classes\Enemy Sprites\KoopaShellSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\NamiSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\OctopusSprite.cs" />
     <Compile Include="Game Object Sprite Classes\Enemy Sprites\MissleSprite.cs" />

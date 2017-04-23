@@ -40,7 +40,7 @@ namespace SuperMario.Blocks
             missleCounter++;
             if (missleCounter == missleMax)
             {
-                MyGame.World.Level.EnemyList.Add(new Missle(MyGame, Location));
+                MyGame.World.Level.EnemyList.Add(new Missle(MyGame, new Vector2(Location.X, Location.Y)));
                 missleCounter = 0;
             }
             Sprite.Update(gameTime);
