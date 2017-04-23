@@ -240,7 +240,9 @@
     <Content Include="CodeReview\CodeReviewSprint5\Sebastin Justeeson%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint5\Yihang Du%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint5\Yihang Du%27s Readability Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint6\Sebastin Justeeson%27s Code Quality Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint6\Son Le%27s Code Quality Review.txt" />
+    <Content Include="CodeReview\CodeReviewSprint6\Sebastin Justeeson%27s Readability Review.txt" />
     <Content Include="CodeReview\CodeReviewSprint6\Son Le%27s Readability Review.txt" />
     <Content Include="Icon.ico" />
     <Content Include="Levels\Level.xml">

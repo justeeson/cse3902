@@ -43,6 +43,10 @@ namespace SuperMario.Controller
                 controllerMappings["RightMouseClick"].Execute();
             }
 
+            if ((mouseState.MiddleButton == ButtonState.Pressed) && (Game1.GetInstance.MouseControl))
+            {
+                controllerMappings["MiddleMouseClick"].Execute();
+            }
         }
     }
 }

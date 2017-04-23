@@ -150,6 +150,7 @@ namespace SuperMario
             MouseController = new MouseController();
             MouseController.RegisterCommand("LeftMouseClick", new MarioRunCommand(this));
             MouseController.RegisterCommand("RightMouseClick", new MarioJumpCommand(this));
+            MouseController.RegisterCommand("MiddleMouseClick", new MarioLookDownCommand(this));
         }
 
         protected override void UnloadContent()
