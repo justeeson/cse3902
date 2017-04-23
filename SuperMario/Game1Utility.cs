@@ -47,10 +47,6 @@ namespace SuperMario
         { get; set; }
         public static SoundEffect OutOfTimeSoundEffect
         { get; set; }
-        public static float RegularVolume
-        { get; set; }
-        public static float HigherVolume
-        { get; set; }
         public static int FinalLevelLocation
         { get; set; }
         public static int CameraOffset
@@ -67,8 +63,6 @@ namespace SuperMario
         { get; set; }
         public static void Initialize()
         {
-            RegularVolume = 0.42f;
-            HigherVolume = 0.8f;
             FinalLevelLocation = 6350;
             CameraOffset = 350;
             MillisecondsPerFlash = 400;

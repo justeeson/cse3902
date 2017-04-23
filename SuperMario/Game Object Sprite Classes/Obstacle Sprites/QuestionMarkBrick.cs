@@ -56,7 +56,7 @@ namespace SuperMario
             int row = (int)((float)currentFrame / (float)Columns);
             int column = currentFrame % Columns;
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X - 7 , (int)location.Y - 2, width + 4, height +4);
+            Rectangle destinationRectangle = new Rectangle((int)location.X - 9 , (int)location.Y - 1, width + 11, height + 4);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();

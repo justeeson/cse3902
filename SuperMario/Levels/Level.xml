@@ -448,7 +448,7 @@
   <Koopa x="950" y="300" />
   <Goomba x="700" y="300" />
 
-  <QuestionBlock x="544" y="280" item="flower" /> 
+  <QuestionBlock x="544" y="280" item="star" /> 
 
   <HorizontalBlock x="672" y="280" />
   <QuestionBlock x="704" y="280" item="godMushroom" />

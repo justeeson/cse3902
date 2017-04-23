@@ -273,7 +273,6 @@ namespace SuperMario
                 {
                     resetTimer -= 3000;
                     playSoundEffect = false;
-                    MediaPlayer.Volume = Game1Utility.RegularVolume;
                     command.Execute();
                     if (Game1Utility.MarioTotalLives == 0)
                     {
@@ -347,7 +346,6 @@ namespace SuperMario
             else
             {
                 StarStatus = false;
-                MediaPlayer.Volume = Game1Utility.RegularVolume;
                 MediaPlayer.Play(Game1.GetInstance.BackgroundMusic);
             }
         }
