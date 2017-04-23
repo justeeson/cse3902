@@ -33,8 +33,8 @@ namespace SuperMario
         private bool playSound;
         private GamePadState newGamepadState;
         private KeyboardState newKeyboardState;
-        public static bool EndGameStatus
-        { get; set; }
+        public static bool EndGameStatus { get; set; }
+        public static string FileName { get; set; }
         private KeyboardState oldKeyboardState;
         private GamePadState oldGamepadState;
         public bool DisableControl
@@ -104,6 +104,7 @@ namespace SuperMario
             playSound = false;
             GameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
+            FileName = "level.xml";
             base.Initialize();
         }
 
@@ -123,9 +124,6 @@ namespace SuperMario
             World = new WorldManager(this);
             World.Load();
             PlayerStat = new PlayerStatistic(SpriteBatch, Content);
-               
-            // This is a temp location, the following command needs to be relocated
-            new LevelGenerator();
 
             KeyboardController = new KeyboardController();
             KeyboardController.RegisterCommand(Keys.Left, new MarioLookLeftCommand(this));

@@ -11,6 +11,7 @@ namespace SuperMario.Levels
     {
         private int floorX;
         private int floorY;
+        private string itemName;
         private string[] enemyType;
         private string[] blockType;
         private string[] itemType;
@@ -52,7 +53,7 @@ namespace SuperMario.Levels
                 floorX = -416;
             }
 
-            int limit = 10;
+            int limit = 20;
             for (int k = 1; k <= limit; k++)
             {
                 int r = rnd.Next(1, 10);
@@ -92,7 +93,7 @@ namespace SuperMario.Levels
                 {
                     case "QuestionBlock":
                         floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
-                        string itemName = itemType[r % 5];
+                        itemName = itemType[r % 5];
                         XmlNode questionNode = doc.CreateElement("QuestionBlock");
                         XmlAttribute questionAttributeX = doc.CreateAttribute("x");
                         questionAttributeX.Value = floorX.ToString();
@@ -116,8 +117,79 @@ namespace SuperMario.Levels
                         horizontalNode.Attributes.Append(horizontalAttributeY);
                         levelNode.AppendChild(horizontalNode);
                         break;
+                    case "hiddenBlock":
+                        itemName = itemType[r % 5];
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode hiddenNode = doc.CreateElement("HiddenBlock");
+                        XmlAttribute hiddenAttributeX = doc.CreateAttribute("x");
+                        hiddenAttributeX.Value = floorX.ToString();
+                        hiddenNode.Attributes.Append(hiddenAttributeX);
+                        XmlAttribute hiddenAttributeY = doc.CreateAttribute("y");
+                        hiddenAttributeY.Value = "280";
+                        hiddenNode.Attributes.Append(hiddenAttributeY);
+                        XmlAttribute hiddenAttributeItem = doc.CreateAttribute("item");
+                        hiddenAttributeItem.Value = itemName;
+                        hiddenNode.Attributes.Append(hiddenAttributeItem);
+                        levelNode.AppendChild(hiddenNode);
+                        break;
+                    case "SolidBrick":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode solidNode = doc.CreateElement("SolidBrick");
+                        XmlAttribute solidAttributeX = doc.CreateAttribute("x");
+                        solidAttributeX.Value = floorX.ToString();
+                        solidNode.Attributes.Append(solidAttributeX);
+                        XmlAttribute solidAttributeY = doc.CreateAttribute("y");
+                        solidAttributeY.Value = "384";
+                        solidNode.Attributes.Append(solidAttributeY);
+                        levelNode.AppendChild(solidNode);
+                        break;
+                    case "Pipe":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode pipeNode = doc.CreateElement("Pipe");
+                        XmlAttribute pipeAttributeX = doc.CreateAttribute("x");
+                        pipeAttributeX.Value = floorX.ToString();
+                        pipeNode.Attributes.Append(pipeAttributeX);
+                        XmlAttribute pipeAttributeY = doc.CreateAttribute("y");
+                        pipeAttributeY.Value = "351";
+                        pipeNode.Attributes.Append(pipeAttributeY);
+                        levelNode.AppendChild(pipeNode);
+                        break;
+                    case "MediumPipe":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode mediumPipeNode = doc.CreateElement("MediumPipe");
+                        XmlAttribute mediumPipeAttributeX = doc.CreateAttribute("x");
+                        mediumPipeAttributeX.Value = floorX.ToString();
+                        mediumPipeNode.Attributes.Append(mediumPipeAttributeX);
+                        XmlAttribute mediumPipeAttributeY = doc.CreateAttribute("y");
+                        mediumPipeAttributeY.Value = "343";
+                        mediumPipeNode.Attributes.Append(mediumPipeAttributeY);
+                        levelNode.AppendChild(mediumPipeNode);
+                        break;
+                    case "HighPipe":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode highPipeNode = doc.CreateElement("HighPipe");
+                        XmlAttribute highPipeAttributeX = doc.CreateAttribute("x");
+                        highPipeAttributeX.Value = floorX.ToString();
+                        highPipeNode.Attributes.Append(highPipeAttributeX);
+                        XmlAttribute highPipeAttributeY = doc.CreateAttribute("y");
+                        highPipeAttributeY.Value = "331";
+                        highPipeNode.Attributes.Append(highPipeAttributeY);
+                        levelNode.AppendChild(highPipeNode);
+                        break;
+                    case "PipeToUnderground":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode undergroundPipeNode = doc.CreateElement("PipeToUnderground");
+                        XmlAttribute undergroundPipeAttributeX = doc.CreateAttribute("x");
+                        undergroundPipeAttributeX.Value = floorX.ToString();
+                        undergroundPipeNode.Attributes.Append(undergroundPipeAttributeX);
+                        XmlAttribute undergroundPipeAttributeY = doc.CreateAttribute("y");
+                        undergroundPipeAttributeY.Value = "331";
+                        undergroundPipeNode.Attributes.Append(undergroundPipeAttributeY);
+                        levelNode.AppendChild(undergroundPipeNode);
+                        break;
                 }
             }
+
 
 
 
@@ -162,14 +234,12 @@ namespace SuperMario.Levels
             XmlNode marioNode = doc.CreateElement("mario");
             XmlAttribute marioAttributeX = doc.CreateAttribute("x");
             marioAttributeX.Value = "250";
-            castleNode.Attributes.Append(marioAttributeX);
+            marioNode.Attributes.Append(marioAttributeX);
             XmlAttribute marioAttributeY = doc.CreateAttribute("y");
             marioAttributeY.Value = "100";
-            castleNode.Attributes.Append(marioAttributeY);
+            marioNode.Attributes.Append(marioAttributeY);
             levelNode.AppendChild(marioNode);
 
-            //XmlTextWriter writer = new XmlTextWriter("../../../../Levels/Level1.xml", null);
-            //writer.Formatting = Formatting.Indented;
             doc.Save(@"../../../../Levels/Level1.xml");
         }
     }

@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using SuperMario.MarioClass;
+using SuperMario.Levels;
+using SuperMario.Command;
 
 namespace SuperMario
 {

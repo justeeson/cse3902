@@ -17,7 +17,7 @@ namespace SuperMario
         public WorldManager(Game1 game)
         {
             MyGame = game;
-            Level = new LevelClass(MyGame, "Level.xml");
+            Level = new LevelClass(MyGame, Game1.FileName);
         }
         public void Load()
         {

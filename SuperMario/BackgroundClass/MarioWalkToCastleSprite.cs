@@ -69,7 +69,6 @@ namespace SuperMario
             {
                 reachedCastle = true;
             }
-            
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

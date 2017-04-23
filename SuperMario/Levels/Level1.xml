@@ -450,23 +450,46 @@
   <CurlyBrick x="6688" y="416" />
   <CurlyBrick x="6720" y="416" />
   <CurlyBrick x="6752" y="416" />
-  <Goomba x="968" y="100" />
-  <Koopa x="1511" y="100" />
-  <Goomba x="2170" y="100" />
-  <Koopa x="2484" y="100" />
-  <Koopa x="2998" y="100" />
-  <Goomba x="3385" y="100" />
-  <Goomba x="4040" y="100" />
-  <Koopa x="4682" y="100" />
-  <Koopa x="4918" y="100" />
-  <Goomba x="5592" y="100" />
-  <QuestionBlock x="936" y="280" item="coin" />
-  <HorizontalBlock x="1209" y="280" />
-  <QuestionBlock x="1633" y="280" item="godMushroom" />
-  <HorizontalBlock x="1640" y="280" />
-  <HorizontalBlock x="2481" y="280" />
-  <HorizontalBlock x="2556" y="280" />
-  <QuestionBlock x="4338" y="280" item="flower" />
+  <Goomba x="602" y="100" />
+  <Koopa x="800" y="100" />
+  <Koopa x="1208" y="100" />
+  <Koopa x="1459" y="100" />
+  <Goomba x="1681" y="100" />
+  <Goomba x="1950" y="100" />
+  <Koopa x="2280" y="100" />
+  <Goomba x="2572" y="100" />
+  <Koopa x="2513" y="100" />
+  <Goomba x="2875" y="100" />
+  <Koopa x="2978" y="100" />
+  <Goomba x="3411" y="100" />
+  <Koopa x="3889" y="100" />
+  <Koopa x="3742" y="100" />
+  <Koopa x="4307" y="100" />
+  <Goomba x="4634" y="100" />
+  <Koopa x="4548" y="100" />
+  <Koopa x="5196" y="100" />
+  <Goomba x="4958" y="100" />
+  <Goomba x="5499" y="100" />
+  <PipeToUnderground x="601" y="331" />
+  <PipeToUnderground x="743" y="331" />
+  <Pipe x="1027" y="351" />
+  <MediumPipe x="1467" y="343" />
+  <Pipe x="1891" y="351" />
+  <SolidBrick x="1787" y="384" />
+  <PipeToUnderground x="2066" y="331" />
+  <PipeToUnderground x="2367" y="331" />
+  <QuestionBlock x="2752" y="280" item="godMushroom" />
+  <HorizontalBlock x="3125" y="280" />
+  <PipeToUnderground x="2957" y="331" />
+  <QuestionBlock x="3239" y="280" item="flower" />
+  <Pipe x="3622" y="351" />
+  <Pipe x="4130" y="351" />
+  <Pipe x="4039" y="351" />
+  <QuestionBlock x="4646" y="280" item="godMushroom" />
+  <HiddenBlock x="4866" y="280" item="coin" />
+  <SolidBrick x="5067" y="384" />
+  <HighPipe x="5316" y="331" />
+  <HighPipe x="5598" y="331" />
   <SolidBrick x="5792" y="384" />
   <SolidBrick x="5824" y="384" />
   <SolidBrick x="5824" y="352" />
@@ -513,6 +536,6 @@
   <SolidBrick x="6048" y="160" />
   <SolidBrick x="6048" y="128" />
   <FlagPole x="6275" y="69" />
-  <Castle x="250" y="100" />
-  <mario />
+  <Castle x="6400" y="258" />
+  <mario x="250" y="100" />
 </Level>
