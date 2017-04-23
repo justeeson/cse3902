@@ -6,6 +6,7 @@ using SuperMario.Interfaces;
 using SuperMario.Game_Object_Classes;
 using Microsoft.Xna.Framework.Media;
 using SuperMario.MarioClass;
+using SuperMario.Levels;
 
 namespace SuperMario.Command
 {
@@ -25,7 +26,6 @@ namespace SuperMario.Command
             MyGame.PlayerStat.Reset();
             Camera.CameraPositionX = 0;
             MyGame.CameraPointer.DisableCamera = false;
-            MediaPlayer.Volume = Game1Utility.RegularVolume;
             MediaPlayer.Stop();
             MediaPlayer.Play(Game1.GetInstance.BackgroundMusic);
             MarioStateMachine.Crouching = 0;

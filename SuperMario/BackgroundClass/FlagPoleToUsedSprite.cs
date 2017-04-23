@@ -18,7 +18,7 @@ namespace SuperMario
         private int counter;
         private int speed;
         private int soundDelay;
-        private  int width = 58;
+        private int width;
         private const int height = 350;
         private const int widthArea = 68;
         private const int heightArea = 350;
@@ -26,6 +26,7 @@ namespace SuperMario
         {
             counter = 0;
             speed = 16;
+            width = 58;
             Texture = texture;
             Columns = columns;
             currentFrame = 1;

@@ -8,11 +8,10 @@ namespace SuperMario.Collision_Detection_and_Responses
     {
         public static void HandleCollision(IItem powerup, IBlock item)
         {
-            Rectangle collisionRectangle;
             ISprite block = item.Sprite;
             if (!(item is Sun))
             {
-                collisionRectangle = Rectangle.Intersect(powerup.Sprite.Area(powerup.Location), block.Area(item.Location));
+                Rectangle collisionRectangle = Rectangle.Intersect(powerup.Sprite.Area(powerup.Location), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
                 {
                     powerup.Location = new Vector2(powerup.Location.X, powerup.Location.Y + collisionRectangle.Height + 2);

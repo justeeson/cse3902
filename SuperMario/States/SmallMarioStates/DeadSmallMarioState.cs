@@ -47,7 +47,6 @@ namespace SuperMario.Sprites
             {               
                 resetTimer -= waitTime;
                 playSoundEffect = false;
-                MediaPlayer.Volume = Game1Utility.RegularVolume;
                 command.Execute();
                 if (Game1Utility.MarioTotalLives == 0)
                 {

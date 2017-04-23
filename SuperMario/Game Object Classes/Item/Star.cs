@@ -65,7 +65,6 @@ namespace SuperMario
         {
             MediaPlayer.Stop();
             MediaPlayer.Play(Game1Utility.StarMusic);
-            MediaPlayer.Volume = Game1Utility.HigherVolume;
             this.Sprite = new CleanSprite(SpriteFactory.starTexture);
             HasBeenUsed = true;
             Mario.StarPowerUp();

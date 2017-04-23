@@ -6,12 +6,10 @@ namespace SuperMario.Collision_Detection_and_Responses
     public static class EnemyAndEnemyCollisionHandling
     {
         public static void HandleCollision(IEnemy enemy, IEnemy item)
-        {   if (!(enemy is Missle) && !(enemy is Octopus) && !(enemy is Nami))
+        {   if (!(enemy is Missle) && !(enemy is Octopus) && !(enemy is Nami) && !(item is Missle) && !(item is Octopus) && !(item is Nami))
             {
-                Rectangle collisionRectangle;
                 ISprite block = item.Sprite;
-
-                collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
+                Rectangle collisionRectangle = Rectangle.Intersect(enemy.Sprite.Area(enemy.Location), block.Area(item.Location));
                 if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
                 {
                     enemy.Location = new Vector2(enemy.Location.X, enemy.Location.Y + collisionRectangle.Height + 1);

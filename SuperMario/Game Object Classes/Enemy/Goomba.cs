@@ -51,8 +51,7 @@ namespace SuperMario
         }
         public void ChangeDirection()
         {
-            
-
+            Location = new Vector2(Location.X - 2, Location.Y-1);
         }
         public void Update(GameTime gameTime)
         {
@@ -71,12 +70,12 @@ namespace SuperMario
             }
     
             if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
+                Location = new Vector2(Location.X - 2, Location.Y);
             else
-                Location = new Vector2(Location.X + 4, Location.Y);
+                Location = new Vector2(Location.X + 2, Location.Y);
 
             if (IsFalling)
-                Location = new Vector2(Location.X, Location.Y + 4);
+                Location = new Vector2(Location.X, Location.Y + 2);
 
             if (dead)
             {

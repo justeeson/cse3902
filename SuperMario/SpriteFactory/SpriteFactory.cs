@@ -112,6 +112,10 @@ namespace SuperMario
         {
             return new KoopaMoveRightSprite(koopaMoveRightTexture, columnNumber);
         }
+        public static ISprite CreateKoopaShellSprite()
+        {
+            return new KoopaShellSprite(koopaMoveRightTexture, columnNumber);
+        }
         public static ISprite CreateFlower()
         {
             return new FlowerSprite(flowerTexture, rowNumber, columnNumber);

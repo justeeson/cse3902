@@ -1,0 +1,13 @@
+Author of the code review: Son Le
+Date of the code review: 04/22/2017
+Sprint number: 6
+Name of the .cs file being reviewed: MarioStateMachine.cs
+Author of the .cs file being reviewed: Dellon Collins
+
+This class has too many lines of code which is a common code smell. Naming conventions have been followed closely which add
+to the readability of the code. The class has high cohesion since all the methods and properties are directly relevant to
+what the class is trying to achieve - store the various states of mario and provide a way to easily transition between the 
+differnet states. The state array creates new objects of every state class and stores them. This drives up coupling since
+objects of external classes are being created. However, outside the constructor, coupling is minimum since there are no 
+references to any external methods or properties. The cyclomatic complexity of the code is medium since there are a bunch
+of if and if-else statements in the various methods. These are however, necessary for the proper functioning of the class.

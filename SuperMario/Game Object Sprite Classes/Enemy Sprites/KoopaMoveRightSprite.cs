@@ -17,12 +17,8 @@ namespace SuperMario
         private int currentFrame;
         private int timeSinceLastFrame;
         private int millisecondsPerFrame;
-        private const int width = 27;
-        private const int height = 24;
-        private const int widthArea = 16;
-        private const int heightArea = 24;
-        private int turtleState;
-        private enum turtleStates { Normal, InShell, Dead}
+        private const int width = 40;
+        private const int height = 34;
 
         public KoopaMoveRightSprite(Texture2D texture, int columns)
         {
@@ -31,13 +27,10 @@ namespace SuperMario
             currentFrame = 0;
             timeSinceLastFrame = 0;
             millisecondsPerFrame = 400;
-            turtleState = (int)turtleStates.Normal;
         }
 
         public void Update(GameTime gameTime)
         {
-            if (turtleState == (int)turtleStates.Normal)
-            {
                 timeSinceLastFrame += gameTime.ElapsedGameTime.Milliseconds;
                 if (timeSinceLastFrame > millisecondsPerFrame)
                 {
@@ -47,15 +40,6 @@ namespace SuperMario
 
                 if (currentFrame == 2)
                 { currentFrame = 0; }
-            }
-            else if (turtleState == (int)turtleStates.InShell)
-            {
-                currentFrame = 2;
-            }
-            else
-            {
-                currentFrame = 3;
-            }
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -71,22 +55,10 @@ namespace SuperMario
         }
         public Rectangle Area(Vector2 location)
         {
-            if (turtleState == (int)turtleStates.Dead)
-            {
-                return new Rectangle(0,0,0,0);
-            }
-            return new Rectangle((int)location.X, (int)location.Y, widthArea, heightArea);
+            return new Rectangle((int)location.X, (int)location.Y, width+5, height-3);
         }
         public void CollisionSprite()
         {
-            if (turtleState == (int)turtleStates.Normal)
-            {
-                turtleState = (int)turtleStates.InShell;
-            }
-            else if (turtleState == (int)turtleStates.InShell)
-            {
-                turtleState = (int)turtleStates.Dead;
-            }
         }
     }
 }

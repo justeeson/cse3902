@@ -8,9 +8,8 @@ namespace SuperMario.Collision_Detection_and_Responses
     {
         public static void HandleCollision(IProjectile projectile, IBlock item)
         {
-            Rectangle collisionRectangle;
             ISprite block = item.Sprite;
-            collisionRectangle = Rectangle.Intersect(projectile.Area(), block.Area(item.Location));
+            Rectangle collisionRectangle = Rectangle.Intersect(projectile.Area(), block.Area(item.Location));
             if (collisionRectangle.Bottom == block.Area(item.Location).Bottom && collisionRectangle.Width > collisionRectangle.Height)
             {
                 projectile.KillFireball();

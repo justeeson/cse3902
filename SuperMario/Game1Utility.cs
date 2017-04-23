@@ -37,6 +37,8 @@ namespace SuperMario
         { get; set; }
         public static SoundEffect GodMushroomSoundEffect
         { get; set; }
+        public static SoundEffect PowerDownSoundEffect
+        { get; set; }
         public static SoundEffect DeathSoundEffect
         { get; set; }
         public static SoundEffect FireworksSoundEffect
@@ -46,10 +48,6 @@ namespace SuperMario
         public static SoundEffect GameOverSoundEffect
         { get; set; }
         public static SoundEffect OutOfTimeSoundEffect
-        { get; set; }
-        public static float RegularVolume
-        { get; set; }
-        public static float HigherVolume
         { get; set; }
         public static int FinalLevelLocation
         { get; set; }
@@ -67,8 +65,6 @@ namespace SuperMario
         { get; set; }
         public static void Initialize()
         {
-            RegularVolume = 0.42f;
-            HigherVolume = 0.8f;
             FinalLevelLocation = 6350;
             CameraOffset = 350;
             MillisecondsPerFlash = 400;
@@ -85,6 +81,7 @@ namespace SuperMario
             MarioJumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioJumpSoundEffect");
             BreakableBrickBumpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("breakableBrickBumpSoundEffect");
             CoinSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("coinSoundEffect");
+            PowerDownSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("powerDownSoundEffect");
             MarioPowerUpSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("marioPowerUpSoundEffect");
             GreenMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("1UPSoundEffect");
             GodMushroomSoundEffect = Game1.GetInstance.Content.Load<SoundEffect>("godMushroomSoundEffect");

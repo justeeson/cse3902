@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperMario.Collision_Detection_and_Responses;
 
 namespace SuperMario
 {
@@ -21,9 +22,9 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        private bool dead;
         private int deadCounter = 10;
-
+        private bool playDeathSoundEffect;
+        private bool dead;
         public Koopa(Game1 game, Vector2 location)
         {
             MovingLeft = true;
@@ -33,16 +34,18 @@ namespace SuperMario
             MyGame.Sprite = Sprite;
             CanAttack = true;
             this.Location = location;
+            playDeathSoundEffect = false;
+            dead = false;
         }
         public void GetKilled(bool killedBySmashed)
         {
             if (!dead)
             {
-                this.Sprite = new GoombaBeingKilledSprite(SpriteFactory.koopaMoveLeftTexture, 8);
+                this.Sprite = SpriteFactory.CreateKoopaShellSprite();
                 dead = true;
                 if (killedBySmashed)
                 {
-                    MyGame.PlayerStat.SetScoreValue(600);
+                    MyGame.PlayerStat.SetScoreValue(600 * MarioAndEnemyCollisionHandling.ConsecutiveBonusPoint);
                 }
                 else
                 {
@@ -52,6 +55,7 @@ namespace SuperMario
         }
         public void ChangeDirection()
         {
+            Location = new Vector2(Location.X - 2, Location.Y - 1);
             if (!MovingLeft)
             {
                 this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 8);
@@ -72,28 +76,32 @@ namespace SuperMario
                 this.CanAttack = false;
                 Game1Utility.BoltSoundEffect.Play();
             }
-            if (Location.X - Camera.CameraPositionX < 0)
+
+            if (Location.X < 50)
             {
-                MovingLeft = !MovingLeft;
+                MovingLeft = false;
             }
-
-            if (MovingLeft)
-                Location = new Vector2(Location.X - 4, Location.Y);
-            else
-                Location = new Vector2(Location.X + 4, Location.Y);
-
-            if (IsFalling)
-                Location = new Vector2(Location.X, Location.Y + 4);
 
             if (dead)
             {
+                if (playDeathSoundEffect == false)
+                {
+                    playDeathSoundEffect = true;
+                    Game1Utility.GoombaStompSoundEffect.Play();
+                }
                 deadCounter--;
             }
+            if (MovingLeft)
+                    Location = new Vector2(Location.X - 2, Location.Y);
+            else
+                    Location = new Vector2(Location.X + 2, Location.Y);
+
+            if (IsFalling)
+                    Location = new Vector2(Location.X, Location.Y + 2);
             if (deadCounter == 0)
             {
-                Sprite = new CleanSprite(SpriteFactory.goombaTexture);
+                Sprite = new CleanSprite(SpriteFactory.koopaMoveLeftTexture);
             }
-
             Sprite.Update(gameTime);
 
         }
