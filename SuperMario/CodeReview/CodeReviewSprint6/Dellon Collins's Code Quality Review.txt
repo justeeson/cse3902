@@ -1,0 +1,9 @@
+Author of the code review: Dellon Collins
+Date of the code review: 04/23/2017
+Sprint number: 6
+Name of the .cs file being reviewed: GOC/Obstacle/Sun.cs
+Author of the .cs file being reviewed: Son Le
+
+The class is very cohesive. It only concerns itself with the actions of the Sun which moves and produces
+octopus enemies. The class is not long at all and the update and draw methods dont have any extra functionality
+within them. There is only coupling with the Game class, Octopus and Camera. Overall good.
