@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using SuperMario.Levels;
+using SuperMario.Command;
+using System.Threading.Tasks;
 
 namespace SuperMario
 {
@@ -11,6 +14,10 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
+        private GameTime gameTime;
+        private ICommand command;
+        private int timer;
+        private const int waitTime = 3000;
         public FlagPole(Game1 game, Vector2 location)
         {
             this.MyGame = game;
@@ -24,13 +31,20 @@ namespace SuperMario
         public void HiddenToUsed()
         {
         }
-        public void BecomeUsed()
+        public async void BecomeUsed()
         {
             Game1.GetInstance.DisableControl = true;
             MyGame.PlayerStat.SetScoreValue(5000);
             MyGame.PlayerStat.SetEndGame(true);
             MarioWalkToCastleHandler obj = new MarioWalkToCastleHandler(MyGame, Location);
             this.Sprite = SpriteFactory.CreateFlagPoleToUsed();
+            await Task.Delay(4000);
+            new LevelGenerator();
+            Game1.FileName = "Level1.xml";
+            Game1.GetInstance.GameStatus = Game1.GameState.LivesScreen;
+            command = new ResetCommand(Game1.GetInstance);
+            command.Execute();
+            
         }
         public void Update(GameTime gameTime)
         {

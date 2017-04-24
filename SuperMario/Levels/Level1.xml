@@ -450,46 +450,76 @@
   <CurlyBrick x="6688" y="416" />
   <CurlyBrick x="6720" y="416" />
   <CurlyBrick x="6752" y="416" />
-  <Koopa x="485" y="100" />
-  <Koopa x="757" y="100" />
-  <Goomba x="1043" y="100" />
-  <Goomba x="1450" y="100" />
-  <Koopa x="1919" y="100" />
-  <Koopa x="1715" y="100" />
-  <Goomba x="2354" y="100" />
-  <Koopa x="2350" y="100" />
-  <Koopa x="2711" y="100" />
-  <Koopa x="2815" y="100" />
-  <Goomba x="3220" y="100" />
-  <Goomba x="3682" y="100" />
-  <Koopa x="3942" y="100" />
-  <Goomba x="4044" y="100" />
-  <Goomba x="4206" y="100" />
-  <Goomba x="4681" y="100" />
-  <Goomba x="4716" y="100" />
-  <Koopa x="4757" y="100" />
-  <Koopa x="5317" y="100" />
-  <Goomba x="5594" y="100" />
-  <MediumPipe x="722" y="343" />
-  <SolidBrick x="703" y="384" />
-  <HighPipe x="1125" y="331" />
-  <MediumPipe x="1699" y="343" />
-  <HighPipe x="1768" y="331" />
-  <PipeToUnderground x="2157" y="331" />
-  <Pipe x="2239" y="351" />
-  <Pipe x="2417" y="351" />
-  <MediumPipe x="2926" y="343" />
-  <HighPipe x="2880" y="331" />
-  <PipeToUnderground x="3391" y="331" />
-  <QuestionBlock x="3591" y="280" item="firemushroom" />
-  <HighPipe x="3732" y="331" />
-  <Pipe x="4030" y="351" />
-  <MediumPipe x="4423" y="343" />
-  <QuestionBlock x="4478" y="280" item="flower" />
-  <MediumPipe x="4668" y="343" />
-  <SolidBrick x="4990" y="384" />
-  <Pipe x="5390" y="351" />
-  <PipeToUnderground x="5282" y="331" />
+  <Goomba x="507" y="300" />
+  <Goomba x="673" y="300" />
+  <Goomba x="1167" y="300" />
+  <Goomba x="1059" y="300" />
+  <Koopa x="1153" y="300" />
+  <Koopa x="1248" y="300" />
+  <Goomba x="1815" y="300" />
+  <Goomba x="1705" y="300" />
+  <Koopa x="2093" y="300" />
+  <Goomba x="2261" y="300" />
+  <Goomba x="2193" y="300" />
+  <Goomba x="2379" y="300" />
+  <Goomba x="2302" y="300" />
+  <Koopa x="2891" y="300" />
+  <Koopa x="2697" y="300" />
+  <Koopa x="2945" y="300" />
+  <Goomba x="2969" y="300" />
+  <Goomba x="3144" y="300" />
+  <Goomba x="3644" y="300" />
+  <Goomba x="3549" y="300" />
+  <Goomba x="3694" y="300" />
+  <Koopa x="4125" y="300" />
+  <Koopa x="4305" y="300" />
+  <Goomba x="4146" y="300" />
+  <Koopa x="4412" y="300" />
+  <Koopa x="4812" y="300" />
+  <Koopa x="4677" y="300" />
+  <Koopa x="5023" y="300" />
+  <Koopa x="5267" y="300" />
+  <Koopa x="5369" y="300" />
+  <HorizontalBlock x="614" y="280" />
+  <HiddenBlock x="659" y="280" item="godMushroom" />
+  <QuestionBlock x="1025" y="280" item="star" />
+  <SolidBrick x="1180" y="384" />
+  <HiddenBlock x="1005" y="280" item="flower" />
+  <HiddenBlock x="1266" y="280" item="firemushroom" />
+  <HiddenBlock x="1487" y="280" item="godMushroom" />
+  <SolidBrick x="1527" y="384" />
+  <HorizontalBlock x="1908" y="280" />
+  <HorizontalBlock x="2296" y="280" />
+  <HiddenBlock x="2235" y="280" item="firemushroom" />
+  <SolidBrick x="2133" y="384" />
+  <QuestionBlock x="2601" y="280" item="coin" />
+  <SolidBrick x="2494" y="384" />
+  <SolidBrick x="3081" y="384" />
+  <HiddenBlock x="3148" y="280" item="godMushroom" />
+  <SolidBrick x="3114" y="384" />
+  <HorizontalBlock x="3530" y="280" />
+  <QuestionBlock x="3469" y="280" item="godMushroom" />
+  <HorizontalBlock x="3689" y="280" />
+  <HiddenBlock x="3635" y="280" item="coin" />
+  <SolidBrick x="4093" y="384" />
+  <QuestionBlock x="4272" y="280" item="coin" />
+  <HorizontalBlock x="4362" y="280" />
+  <QuestionBlock x="4203" y="280" item="coin" />
+  <SolidBrick x="4566" y="384" />
+  <HorizontalBlock x="4754" y="280" />
+  <QuestionBlock x="5009" y="280" item="firemushroom" />
+  <HorizontalBlock x="5319" y="280" />
+  <HorizontalBlock x="5058" y="280" />
+  <Pipe x="1022" y="351" />
+  <HighPipe x="1388" y="331" />
+  <HighPipe x="1721" y="331" />
+  <HighPipe x="2394" y="331" />
+  <MediumPipe x="3005" y="343" />
+  <Pipe x="3334" y="351" />
+  <MediumPipe x="4034" y="343" />
+  <HighPipe x="4231" y="331" />
+  <HighPipe x="4899" y="331" />
+  <Pipe x="5404" y="351" />
   <SolidBrick x="5792" y="384" />
   <SolidBrick x="5824" y="384" />
   <SolidBrick x="5824" y="352" />

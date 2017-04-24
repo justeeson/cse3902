@@ -14,13 +14,15 @@ namespace SuperMario.Levels
         private string itemName;
         private string[] enemyType;
         private string[] blockType;
+        private string[] pipeType;
         private string[] itemType;
         private static Random rnd = new Random();
 
         public LevelGenerator()
         {
-            enemyType = new string[2] { "Goomba", "Koopa" };
-            blockType = new string[8] { "QuestionBlock", "HorizontalBlock", "Pipe", "MediumPipe", "HighPipe", "PipeToUnderground", "hiddenBlock", "SolidBrick" };
+            enemyType = new string[] { "Goomba", "Koopa" };
+            blockType = new string[] { "QuestionBlock", "HorizontalBlock", "hiddenBlock", "SolidBrick" };
+            pipeType = new string[] { "Pipe", "MediumPipe", "HighPipe"};
             itemType = new string[] { "coin", "star", "firemushroom", "godMushroom", "flower" };
             createLevel();
         }
@@ -53,7 +55,7 @@ namespace SuperMario.Levels
                 floorX = -416;
             }
 
-            int limit = 20;
+            int limit = 30;
             for (int k = 1; k <= limit; k++)
             {
                 int r = rnd.Next(1, 10);
@@ -66,7 +68,7 @@ namespace SuperMario.Levels
                         goombaAttributeX.Value = floorX.ToString();
                         goombaNode.Attributes.Append(goombaAttributeX);
                         XmlAttribute goombaAttributeY = doc.CreateAttribute("y");
-                        goombaAttributeY.Value = "100";
+                        goombaAttributeY.Value = "300";
                         goombaNode.Attributes.Append(goombaAttributeY);
                         levelNode.AppendChild(goombaNode);
                         break;
@@ -77,19 +79,18 @@ namespace SuperMario.Levels
                         koopaAttributeX.Value = floorX.ToString();
                         koopaNode.Attributes.Append(koopaAttributeX);
                         XmlAttribute koopaAttributeY = doc.CreateAttribute("y");
-                        koopaAttributeY.Value = "100";
+                        koopaAttributeY.Value = "300";
                         koopaNode.Attributes.Append(koopaAttributeY);
                         levelNode.AppendChild(koopaNode);
                         break;
                 }
             }
 
-            // Still working on it 
-            limit = 20;
+            limit = 30;
             for (int k = 1; k <= limit; k++)
             {
                 int r = rnd.Next(1, 100);
-                switch (blockType[r % 8])
+                switch (blockType[r % 4])
                 {
                     case "QuestionBlock":
                         floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
@@ -143,6 +144,16 @@ namespace SuperMario.Levels
                         solidNode.Attributes.Append(solidAttributeY);
                         levelNode.AppendChild(solidNode);
                         break;
+                }
+            }
+
+
+            limit = 10;
+            for (int k = 1; k <= limit; k++)
+            {
+                int r = rnd.Next(1, 100);
+                switch (pipeType[r % 3])
+                {
                     case "Pipe":
                         floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
                         XmlNode pipeNode = doc.CreateElement("Pipe");
@@ -176,21 +187,8 @@ namespace SuperMario.Levels
                         highPipeNode.Attributes.Append(highPipeAttributeY);
                         levelNode.AppendChild(highPipeNode);
                         break;
-                    case "PipeToUnderground":
-                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
-                        XmlNode undergroundPipeNode = doc.CreateElement("PipeToUnderground");
-                        XmlAttribute undergroundPipeAttributeX = doc.CreateAttribute("x");
-                        undergroundPipeAttributeX.Value = floorX.ToString();
-                        undergroundPipeNode.Attributes.Append(undergroundPipeAttributeX);
-                        XmlAttribute undergroundPipeAttributeY = doc.CreateAttribute("y");
-                        undergroundPipeAttributeY.Value = "331";
-                        undergroundPipeNode.Attributes.Append(undergroundPipeAttributeY);
-                        levelNode.AppendChild(undergroundPipeNode);
-                        break;
                 }
             }
-
-
 
 
             floorX = 5792;
