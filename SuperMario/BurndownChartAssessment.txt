@@ -1,16 +1,16 @@
-﻿Sprint 5 - Burndown Chart Assessment
+﻿Sprint 6 - Burndown Chart Assessment
 
 For this sprint, the team was finally able to move at a much better pace compared to the previous sprints. By 
 analyzing the burndown chart, it is seen that the total amount of work done steadily decreased over the allocated
 time period for the Sprint. The small spikes were due to additional work being added as tasks which were overlooked
-during the initial planning period. However, compared to previous sprints, the magnitude of this error was very 
-small this time around. This was mostly due to the team reaziling the mistakes made from the previous sprints
-and making a conscious effort to avoid it this time around by discussing with each other as well as clarifying all
-doubts with the professor before working on the code. 
+during the initial planning period. some of team memebers started and finished a vast majority of their tasks 3-4 days
+before the due which is really good. They may have time to fix some minor bugs before the due day. Some of team
+members still work their tasks several hours before the due date. These two facts mentions above balanced out the
+burn down chart. However, since many of the tasks are finished early we can see a decrease in the trend of the burn
+downchart during the last two days of the project.
 
-The work was also split up better this time around. Different group members were allotted work based on what they
-had previously worked on as well as what they were interested in. However, due to plenty of code analysis warnings,
-code smells and bugs, the team was unable to bring the remaining work under the target line. Therefore, in the 
-future the team will also assign some time for such tasks which are not directly relevant to the implementation.
-Even with all the issues, this sprint was the one that the team had the most control over and came closest to
-developing a perfect solution for.
+The work is split between each member of the team. Each member picks their own tasks to work on this project.
+We already asked for advise from the professor and made sure that the tasks which each team member working on
+were not too little. In general, some team members like to spend time on this project which make them have more
+features than the others. This far beyond meets the requirements for this project but also indicates those
+teammemers in contribution to this game project. 
