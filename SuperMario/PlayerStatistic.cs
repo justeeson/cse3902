@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SuperMario
@@ -35,6 +36,7 @@ namespace SuperMario
         private int counter;
         private int displayTime = 0;
         private string flagScore;
+        private int counterForEndGame;
         public PlayerStatistic(SpriteBatch spritePatch, ContentManager content)
         {
             spriteBatch = spritePatch;
@@ -55,6 +57,7 @@ namespace SuperMario
             time = 400;
             displayScore = "";
             headerVariables = FormatString(score, 6) + "             x" + FormatString(coin, 2) + "                   1-1                  " + FormatString(time, 3);
+            counterForEndGame = 0;
         }
 
        
@@ -107,7 +110,18 @@ namespace SuperMario
                 displayTime--;
                 displayPos += displayVelocity;
             }
-
+            if (endGame)
+            {
+                counterForEndGame++;
+            }
+            if (counterForEndGame > 5)
+            {
+                counterForEndGame = 0;
+            }
+            if (counterForEndGame == 0)
+            {
+                endGame = false;
+            }
             coinTexture.Update(gameTime);
             headerVariables = FormatString(score,6) + "             x" + FormatString(coin, 2) + "                   1-1                  " + FormatString(time, 3);
         }
