@@ -447,11 +447,6 @@
 
   <Koopa x="950" y="300" />
   <Goomba x="700" y="300" />
-  <HiddenBlock x="300" y="300" item ="coin"/>
-  <HiddenBlock x="350" y="300" item ="coin" />
-  <HiddenBlock x="400" y="300" item="star" />
-  <HiddenBlock x="250" y="300" item="firemushroom"/>
-  <HiddenBlock x="100" y="300" item="flower"/>
 
   <QuestionBlock x="544" y="280" item="star" /> 
 
