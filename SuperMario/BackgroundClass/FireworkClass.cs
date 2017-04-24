@@ -13,8 +13,6 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        private ICommand command;
-
         public FireworkClass(Game1 game, Vector2 location)
         {
             this.MyGame = game;
@@ -35,12 +33,6 @@ namespace SuperMario
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
-            // The Following code is used for level transformation. Need to find the right location to put them.
-            new LevelGenerator();
-            Game1.FileName = "Level1.xml";
-            Game1.GetInstance.GameStatus = Game1.GameState.LivesScreen;
-            command = new ResetCommand(Game1.GetInstance);
-            command.Execute();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
