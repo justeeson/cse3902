@@ -1,0 +1,12 @@
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 417 y = 383
+Block: x = 416 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 670 y = 247
+Block: x = 672 y = 280
+Collision to the bottom of Mario
+

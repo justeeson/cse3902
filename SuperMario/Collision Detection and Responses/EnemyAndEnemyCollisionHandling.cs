@@ -22,19 +22,21 @@ namespace SuperMario.Collision_Detection_and_Responses
 
                 else if (collisionRectangle.Right == enemy.Sprite.Area(enemy.Location).Right)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width + 0), enemy.Location.Y);
                     enemy.MovingLeft = true;
                     item.MovingLeft = false;
                     enemy.ChangeDirection();
                     item.ChangeDirection();
+                    enemy.Location = new Vector2(enemy.Location.X - (collisionRectangle.Width), enemy.Location.Y);
+
                 }
                 else if (collisionRectangle.Left == enemy.Sprite.Area(enemy.Location).Left)
                 {
-                    enemy.Location = new Vector2(enemy.Location.X + (collisionRectangle.Width + 0), enemy.Location.Y);
                     enemy.MovingLeft = false;
                     item.MovingLeft = true;
                     enemy.ChangeDirection();
                     item.ChangeDirection();
+                    enemy.Location = new Vector2(enemy.Location.X + (collisionRectangle.Width), enemy.Location.Y);
+
                 }
 
             }

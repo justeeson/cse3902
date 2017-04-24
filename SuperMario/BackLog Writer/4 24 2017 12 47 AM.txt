@@ -1,0 +1,1672 @@
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 558 y = 247
+Block: x = 544 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 646 y = 271
+Block: x = 672 y = 280
+Collision to the right of Mario
+
+Mario: x = 646 y = 259
+Block: x = 672 y = 280
+Collision to the right of Mario
+
+Mario: x = 653 y = 247
+Block: x = 672 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 733 y = 177
+Block: x = 741 y = 152
+Collision to the top of Mario
+
+Mario: x = 733 y = 247
+Block: x = 736 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 753 y = 119
+Block: x = 741 y = 152
+Collision to the bottom of Mario
+
+Mario: x = 773 y = 247
+Block: x = 768 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 1121 y = 408
+Block: x = 1088 y = 416
+Collision to the left of Mario
+
+Mario: x = 1121 y = 383
+Block: x = 1120 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1222 y = 329
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 346
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 364
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 383
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1249 y = 403
+Block: x = 1216 y = 416
+Collision to the left of Mario
+
+Mario: x = 1249 y = 383
+Block: x = 1248 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1223 y = 383
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 383
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 383
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1222 y = 383
+Block: x = 1248 y = 343
+Collision to the right of Mario
+
+Mario: x = 1229 y = 310
+Block: x = 1248 y = 343
+Collision to the bottom of Mario
+
+Mario: x = 1263 y = 310
+Block: x = 1248 y = 343
+Collision to the bottom of Mario
+
+Mario: x = 1325 y = 383
+Block: x = 1312 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1325 y = 383
+Block: x = 1344 y = 416
+Collision to the right of Mario
+
+Mario: x = 1478 y = 313
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 383
+Block: x = 1472 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1478 y = 383
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 383
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 383
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 383
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 364
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 346
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 329
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1478 y = 313
+Block: x = 1504 y = 331
+Collision to the right of Mario
+
+Mario: x = 1730 y = 383
+Block: x = 1728 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 2017 y = 398
+Block: x = 1984 y = 416
+Collision to the left of Mario
+
+Mario: x = 2017 y = 383
+Block: x = 2016 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 518 y = 298
+Block: x = 544 y = 280
+Collision to the right of Mario
+
+Mario: x = 481 y = 403
+Block: x = 448 y = 416
+Collision to the left of Mario
+
+Mario: x = 481 y = 383
+Block: x = 480 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 613 y = 383
+Block: x = 608 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 542 y = 305
+Block: x = 549 y = 280
+Collision to the top of Mario
+
+Mario: x = 528 y = 383
+Block: x = 512 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 528 y = 383
+Block: x = 544 y = 416
+Collision to the right of Mario
+
+Mario: x = 582 y = 383
+Block: x = 576 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 726 y = 247
+Block: x = 736 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 1057 y = 408
+Block: x = 1024 y = 416
+Collision to the left of Mario
+
+Mario: x = 1057 y = 383
+Block: x = 1056 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1089 y = 403
+Block: x = 1056 y = 416
+Collision to the left of Mario
+
+Mario: x = 1089 y = 383
+Block: x = 1088 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1229 y = 310
+Block: x = 1248 y = 343
+Collision to the bottom of Mario
+
+Mario: x = 1507 y = 298
+Block: x = 1504 y = 331
+Collision to the bottom of Mario
+
+Mario: x = 1673 y = 383
+Block: x = 1664 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1673 y = 383
+Block: x = 1696 y = 416
+Collision to the right of Mario
+
+Mario: x = 2025 y = 383
+Block: x = 2016 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 2025 y = 383
+Block: x = 2048 y = 416
+Collision to the right of Mario
+
+Mario: x = 2433 y = 403
+Block: x = 2400 y = 416
+Collision to the left of Mario
+
+Mario: x = 2433 y = 383
+Block: x = 2432 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 2561 y = 305
+Block: x = 2565 y = 280
+Collision to the top of Mario
+
+Mario: x = 2561 y = 383
+Block: x = 2560 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 2530 y = 247
+Block: x = 2528 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 2542 y = 215
+Block: x = 2528 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 2542 y = 215
+Block: x = 2565 y = 280
+Collision to the right of Mario
+
+Mario: x = 2664 y = 87
+Block: x = 2656 y = 152
+Collision to the bottom of Mario
+
+Mario: x = 2664 y = 87
+Block: x = 2688 y = 152
+Collision to the right of Mario
+
+Mario: x = 3093 y = 107
+Block: x = 3072 y = 152
+Collision to the left of Mario
+
+Mario: x = 3169 y = 362
+Block: x = 3136 y = 416
+Collision to the left of Mario
+
+Mario: x = 3169 y = 351
+Block: x = 3168 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 3361 y = 371
+Block: x = 3328 y = 416
+Collision to the left of Mario
+
+Mario: x = 3361 y = 351
+Block: x = 3360 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 3431 y = 305
+Block: x = 3429 y = 280
+Collision to the top of Mario
+
+Mario: x = 3431 y = 351
+Block: x = 3424 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 3431 y = 351
+Block: x = 3456 y = 416
+Collision to the right of Mario
+
+Mario: x = 3403 y = 215
+Block: x = 3429 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 3745 y = 376
+Block: x = 3712 y = 416
+Collision to the left of Mario
+
+Mario: x = 3745 y = 351
+Block: x = 3744 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4097 y = 171
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 161
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 162
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 164
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 167
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 171
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4097 y = 176
+Block: x = 4128 y = 152
+Collision to the right of Mario
+
+Mario: x = 4104 y = 184
+Block: x = 0 y = 0
+Collision to the top of Mario
+
+Mario: x = 4105 y = 184
+Block: x = 0 y = 0
+Collision to the left of Mario
+
+Mario: x = 4168 y = 215
+Block: x = 4160 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 4168 y = 215
+Block: x = 4192 y = 280
+Collision to the right of Mario
+
+Mario: x = 4481 y = 281
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 281
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 332
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 332
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 332
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4488 y = 351
+Block: x = 4480 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4488 y = 351
+Block: x = 4512 y = 416
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4446 y = 352
+Block: x = 4416 y = 320
+Collision to the top of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4449 y = 352
+Block: x = 4416 y = 416
+Collision to the left of Mario
+
+Mario: x = 4449 y = 351
+Block: x = 4448 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4442 y = 352
+Block: x = 4416 y = 320
+Collision to the top of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4449 y = 352
+Block: x = 4416 y = 416
+Collision to the left of Mario
+
+Mario: x = 4449 y = 351
+Block: x = 4448 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4446 y = 352
+Block: x = 4416 y = 320
+Collision to the top of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4449 y = 352
+Block: x = 4416 y = 416
+Collision to the left of Mario
+
+Mario: x = 4449 y = 351
+Block: x = 4448 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4442 y = 352
+Block: x = 4416 y = 320
+Collision to the top of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 352
+Collision to the left of Mario
+
+Mario: x = 4448 y = 352
+Block: x = 4416 y = 384
+Collision to the left of Mario
+
+Mario: x = 4449 y = 352
+Block: x = 4416 y = 416
+Collision to the left of Mario
+
+Mario: x = 4449 y = 351
+Block: x = 4448 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 384
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 351
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 314
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 352
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 297
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 281
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 281
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 266
+Block: x = 4512 y = 320
+Collision to the right of Mario
+
+Mario: x = 4481 y = 266
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 252
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4481 y = 239
+Block: x = 4512 y = 288
+Collision to the right of Mario
+
+Mario: x = 4488 y = 223
+Block: x = 4512 y = 288
+Collision to the bottom of Mario
+
+Mario: x = 4769 y = 309
+Block: x = 4800 y = 352
+Collision to the right of Mario
+
+Mario: x = 4769 y = 319
+Block: x = 4768 y = 384
+Collision to the bottom of Mario
+
+Mario: x = 4818 y = 255
+Block: x = 4832 y = 320
+Collision to the bottom of Mario
+
+Mario: x = 4833 y = 255
+Block: x = 4864 y = 288
+Collision to the right of Mario
+
+Mario: x = 4833 y = 236
+Block: x = 4864 y = 288
+Collision to the right of Mario
+
+Mario: x = 5134 y = 351
+Block: x = 5120 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 5134 y = 351
+Block: x = 5152 y = 416
+Collision to the right of Mario
+
+Mario: x = 5256 y = 314
+Block: x = 5216 y = 366
+Collision to the left of Mario
+
+Mario: x = 5256 y = 351
+Block: x = 5248 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 5256 y = 351
+Block: x = 5280 y = 416
+Collision to the right of Mario
+
+Mario: x = 5501 y = 270
+Block: x = 5504 y = 335
+Collision to the bottom of Mario
+
+Mario: x = 5830 y = 287
+Block: x = 5824 y = 352
+Collision to the bottom of Mario
+
+Mario: x = 5830 y = 287
+Block: x = 5856 y = 352
+Collision to the right of Mario
+
+Mario: x = 5825 y = 287
+Block: x = 5856 y = 320
+Collision to the right of Mario
+
+Mario: x = 5825 y = 287
+Block: x = 5856 y = 320
+Collision to the right of Mario
+
+Mario: x = 5825 y = 287
+Block: x = 5856 y = 320
+Collision to the right of Mario
+
+Mario: x = 5825 y = 287
+Block: x = 5856 y = 320
+Collision to the right of Mario
+
+Mario: x = 5825 y = 268
+Block: x = 5856 y = 320
+Collision to the right of Mario
+
+Mario: x = 5985 y = 107
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 112
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 118
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 127
+Block: x = 5984 y = 192
+Collision to the bottom of Mario
+
+Mario: x = 5985 y = 127
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 127
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 127
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 5985 y = 127
+Block: x = 6016 y = 160
+Collision to the right of Mario
+
+Mario: x = 6017 y = 73
+Block: x = 6048 y = 128
+Collision to the right of Mario
+
+Mario: x = 6017 y = 90
+Block: x = 6048 y = 128
+Collision to the right of Mario
+
+Mario: x = 6024 y = 95
+Block: x = 6016 y = 160
+Collision to the bottom of Mario
+
+Mario: x = 6024 y = 95
+Block: x = 6048 y = 160
+Collision to the right of Mario
+
+Mario: x = 6017 y = 95
+Block: x = 6048 y = 128
+Collision to the right of Mario
+
+Mario: x = 6017 y = 95
+Block: x = 6048 y = 128
+Collision to the right of Mario
+
+Mario: x = 6214 y = 10
+Block: x = 6245 y = -56
+Collision to the right of Mario
+
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 762 y = 259
+Block: x = 788 y = 280
+Collision to the right of Mario
+
+Mario: x = 762 y = 271
+Block: x = 788 y = 280
+Collision to the right of Mario
+
+Mario: x = 762 y = 284
+Block: x = 788 y = 280
+Collision to the right of Mario
+
+Mario: x = 762 y = 298
+Block: x = 788 y = 280
+Collision to the right of Mario
+
+Mario: x = 754 y = 313
+Block: x = 780 y = 331
+Collision to the right of Mario
+
+Mario: x = 754 y = 329
+Block: x = 780 y = 331
+Collision to the right of Mario
+
+Mario: x = 754 y = 346
+Block: x = 780 y = 331
+Collision to the right of Mario
+
+Mario: x = 754 y = 364
+Block: x = 780 y = 331
+Collision to the right of Mario
+
+Mario: x = 754 y = 383
+Block: x = 780 y = 331
+Collision to the right of Mario
+
+Mario: x = 769 y = 403
+Block: x = 736 y = 416
+Collision to the left of Mario
+
+Mario: x = 769 y = 383
+Block: x = 768 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 754 y = 383
+Block: x = 780 y = 331
+Collision to the right of Mario
+

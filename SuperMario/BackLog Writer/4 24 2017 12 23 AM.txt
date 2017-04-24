@@ -1,0 +1,84 @@
+Mario: x = 262 y = 383
+Block: x = 256 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 548 y = 305
+Block: x = 549 y = 280
+Collision to the top of Mario
+
+Mario: x = 548 y = 383
+Block: x = 544 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 577 y = 403
+Block: x = 544 y = 416
+Collision to the left of Mario
+
+Mario: x = 577 y = 383
+Block: x = 576 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 548 y = 305
+Block: x = 549 y = 280
+Collision to the top of Mario
+
+Mario: x = 646 y = 383
+Block: x = 640 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 685 y = 312
+Block: x = 0 y = 0
+Collision to the top of Mario
+
+Mario: x = 686 y = 312
+Block: x = 0 y = 0
+Collision to the left of Mario
+
+Mario: x = 686 y = 312
+Block: x = 704 y = 280
+Collision to the right of Mario
+
+Mario: x = 728 y = 383
+Block: x = 704 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 728 y = 383
+Block: x = 736 y = 416
+Collision to the right of Mario
+
+Mario: x = 668 y = 312
+Block: x = 0 y = 0
+Collision to the top of Mario
+
+Mario: x = 669 y = 312
+Block: x = 0 y = 0
+Collision to the left of Mario
+
+Mario: x = 673 y = 390
+Block: x = 640 y = 416
+Collision to the left of Mario
+
+Mario: x = 673 y = 383
+Block: x = 672 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 775 y = 247
+Block: x = 768 y = 280
+Collision to the bottom of Mario
+
+Mario: x = 775 y = 247
+Block: x = 800 y = 280
+Collision to the right of Mario
+
+Mario: x = 1125 y = 383
+Block: x = 1120 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1379 y = 383
+Block: x = 1376 y = 416
+Collision to the bottom of Mario
+
+Mario: x = 1638 y = 383
+Block: x = 1632 y = 416
+Collision to the bottom of Mario
+
