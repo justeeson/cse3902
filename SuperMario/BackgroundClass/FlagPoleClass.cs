@@ -1,10 +1,12 @@
 ﻿using SuperMario.Interfaces;
+using SuperMario.MarioClass;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using SuperMario.Levels;
 using SuperMario.Command;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperMario
 {

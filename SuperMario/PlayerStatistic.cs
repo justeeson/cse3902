@@ -175,8 +175,6 @@ namespace SuperMario
 
         public void Reset()
         {
-            score = 0;
-            coin = 0;
             time = 400;
         }
 
