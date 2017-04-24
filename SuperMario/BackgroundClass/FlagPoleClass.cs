@@ -16,10 +16,7 @@ namespace SuperMario
         public Game1 MyGame { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle Area { get; set; }
-        private GameTime gameTime;
         private ICommand command;
-        private int timer;
-        private const int waitTime = 3000;
         public FlagPole(Game1 game, Vector2 location)
         {
             this.MyGame = game;

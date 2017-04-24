@@ -1,0 +1,11 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 04/23/2017
+Sprint number: 6
+Name of the .cs file being reviewed: MarioAndBlockCollisionHandling.cs
+Author of the .cs file being reviewed: Dellon Collins
+Number of minutes taken to complete the review: 10
+Specific comments on what is readable and what is not: This class is used for Mario and Blocks collision handling.
+This class used a lot of if else statement, however it is not hard to understand. The naming for each method and
+parameter is clear and easy to understand. It is easy to understand what it does and how it works. In the last method,
+it used to write the collision to the log, which is straight forward to see what information he want to write to
+the log files and where to store it.

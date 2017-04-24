@@ -1,0 +1,13 @@
+﻿Author of the code review: Yihang Du
+Date of the code review: 04/23/2017
+Sprint number: 6
+Name of the .cs file being reviewed: FlagPoleClass.cs
+Author of the .cs file being reviewed: Son Le
+Specific comments on code quality: This is a short class, it is very easy to understand. The cyclomatic complexity is low. It did not use any conditional
+statements, nor loops. Each method is easy to understand. In BecomeUsed Method, it set mario to the successful state, generate the next level, load mario to
+the next level after 4 seconds delay, which will allow mario to have victory animation. In the Update and draw method, it just to update the flagpole and draw
+flagpoles.
+
+A hypothetical change to make to the game related to file being reviewed and how the current implementation could or could not easily support that change:
+If we want to change the behavior after mario touch the flagpole, we can easily to change the BecomeUsed method. We might need a new class, then after mario
+win (touch the flag), we can call that method to assign mario different behavior. 
