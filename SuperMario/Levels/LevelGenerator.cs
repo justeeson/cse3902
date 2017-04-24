@@ -21,7 +21,7 @@ namespace SuperMario.Levels
         public LevelGenerator()
         {
             enemyType = new string[] { "Goomba", "Koopa" };
-            blockType = new string[] { "QuestionBlock", "HorizontalBlock", "hiddenBlock", "SolidBrick" };
+            blockType = new string[] { "QuestionBlock", "HorizontalBlock", "hiddenBlock", "SolidBrickHigh", "SolidBrickLow" };
             pipeType = new string[] { "Pipe", "MediumPipe", "HighPipe"};
             itemType = new string[] { "coin", "star", "firemushroom", "godMushroom", "flower" };
             createLevel();
@@ -90,7 +90,7 @@ namespace SuperMario.Levels
             for (int k = 1; k <= limit; k++)
             {
                 int r = rnd.Next(1, 100);
-                switch (blockType[r % 4])
+                switch (blockType[r % 5])
                 {
                     case "QuestionBlock":
                         floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
@@ -133,16 +133,27 @@ namespace SuperMario.Levels
                         hiddenNode.Attributes.Append(hiddenAttributeItem);
                         levelNode.AppendChild(hiddenNode);
                         break;
-                    case "SolidBrick":
+                    case "SolidBrickHigh":
                         floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
-                        XmlNode solidNode = doc.CreateElement("SolidBrick");
-                        XmlAttribute solidAttributeX = doc.CreateAttribute("x");
-                        solidAttributeX.Value = floorX.ToString();
-                        solidNode.Attributes.Append(solidAttributeX);
-                        XmlAttribute solidAttributeY = doc.CreateAttribute("y");
-                        solidAttributeY.Value = "384";
-                        solidNode.Attributes.Append(solidAttributeY);
-                        levelNode.AppendChild(solidNode);
+                        XmlNode solidNodeHigh = doc.CreateElement("SolidBrick");
+                        XmlAttribute solidAttributeHighX = doc.CreateAttribute("x");
+                        solidAttributeHighX.Value = floorX.ToString();
+                        solidNodeHigh.Attributes.Append(solidAttributeHighX);
+                        XmlAttribute solidAttributeHighY = doc.CreateAttribute("y");
+                        solidAttributeHighY.Value = "280";
+                        solidNodeHigh.Attributes.Append(solidAttributeHighY);
+                        levelNode.AppendChild(solidNodeHigh);
+                        break;
+                    case "SolidBrickLow":
+                        floorX = rnd.Next((500 / limit) * 10 * k + 200, (500 / limit) * 10 * k + 700);
+                        XmlNode solidNodeLow = doc.CreateElement("SolidBrick");
+                        XmlAttribute solidAttributeLowX = doc.CreateAttribute("x");
+                        solidAttributeLowX.Value = floorX.ToString();
+                        solidNodeLow.Attributes.Append(solidAttributeLowX);
+                        XmlAttribute solidAttributeLowY = doc.CreateAttribute("y");
+                        solidAttributeLowY.Value = "384";
+                        solidNodeLow.Attributes.Append(solidAttributeLowY);
+                        levelNode.AppendChild(solidNodeLow);
                         break;
                 }
             }
