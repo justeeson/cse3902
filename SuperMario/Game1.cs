@@ -124,7 +124,7 @@ namespace SuperMario
             pauseSoundEffect = Content.Load<SoundEffect>("pauseSoundEffect");
             blackHole = Content.Load<Texture2D>("blackholeSprite");
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = Game1Utility.RegularVolume;      
+            MediaPlayer.Volume = 0.6f;
             SpriteFactory.LoadAllTextures(Content);
             Block = new BlockLogic(this);
             Mario.LoadContent(Content);
