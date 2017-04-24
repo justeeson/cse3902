@@ -100,7 +100,7 @@ namespace SuperMario.Collision_Detection_and_Responses
 
         public static void writeCollision(Rectangle Mario, Rectangle Block, string direction)
         {
-            using (StreamWriter writer = new StreamWriter(Game1.backlog.Path(), true))
+            using (StreamWriter writer = new StreamWriter(Game1.BackLog.Path(), true))
             {
                 writer.Write("Mario: x = " + Mario.X + " y = " + Mario.Y + "\r\n");
                 writer.Write("Block: x = " + Block.X + " y = " + Block.Y + "\r\n");

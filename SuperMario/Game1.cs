@@ -22,8 +22,8 @@ namespace SuperMario
         public SpriteBatch SpriteBatch
         { get; set; }
 
-        public static BackLog backlog;
-        public CheatCodeHandler cheat;
+        public static BackLog BackLog;
+        public CheatCodeHandler Cheat;
 
         public Texture2D Texture { get; set; }
         public GameTime GameTime
@@ -112,8 +112,8 @@ namespace SuperMario
             FileName = "Level.xml";
             GameStatus = GameState.LivesScreen;
             CameraPointer = new Camera();
-            backlog = new BackLog();
-            cheat = new CheatCodeHandler(this);
+            BackLog = new BackLog();
+            Cheat = new CheatCodeHandler(this);
             base.Initialize();
         }
 
@@ -196,7 +196,7 @@ namespace SuperMario
                 IsMouseVisible = !IsMouseVisible;
             }
 
-            cheat.Update(oldKeyboardState, newKeyboardState);
+            Cheat.Update(oldKeyboardState, newKeyboardState);
 
             oldKeyboardState = newKeyboardState;
             oldGamepadState = newGamepadState;
