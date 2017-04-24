@@ -16,8 +16,8 @@ namespace SuperMario
         private int currentFrame;
 
         private bool isHidden = true;
-        private const int width = 32;
-        private const int height = 32;
+        private const int width = 29;
+        private const int height = 29;
         public HiddenBrickSprite(Texture2D texture, int columns)
         {
             Texture = texture;

@@ -41,7 +41,7 @@ namespace SuperMario.Levels
                         Level.BlockList.Add(new SolidBrick(MyGame, Location));
                         break;
                     case "HiddenBlock":
-                        Level.BlockList.Add(new HiddenBrick(MyGame, Location));
+                        Level.BlockList.Add(new HiddenBrick(MyGame, Location, nodeList[i].Attributes["item"].Value));
                         break;
                     case "CurlyBrick":
                         Level.BlockList.Add(new BreakableCurlyBrick(MyGame, Location));

@@ -80,6 +80,7 @@ namespace SuperMario
             if (Location.X < 50)
             {
                 MovingLeft = false;
+                this.Sprite = new KoopaMoveRightSprite(SpriteFactory.koopaMoveRightTexture, 8);
             }
 
             if (dead)

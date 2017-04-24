@@ -17,12 +17,12 @@ namespace SuperMario.Blocks
         public Game1 MyGame { get; set; }
         public Rectangle Area { get; set; }
         public Vector2 Location { get; set; }
-        private bool HasBeenUsed;
+        private bool hasBeenUsed;
 
         public QuestionMarkBrick(Game1 game, Vector2 location, String item)
         {
             MyGame = game;
-            HasBeenUsed = false;
+            hasBeenUsed = false;
             Sprite = SpriteFactory.CreateQuestionMarkBrick();
             MyGame.Sprite = Sprite;
             this.Location = location;
@@ -36,10 +36,10 @@ namespace SuperMario.Blocks
         }
         public void BecomeUsed()
         {
-            if(!HasBeenUsed)
+            if(!hasBeenUsed)
             {
                this.Location = new Vector2(Location.X+5, Location.Y);
-                HasBeenUsed = true;
+                hasBeenUsed = true;
                 switch (itemObject)
                 {
                     case "coin":
