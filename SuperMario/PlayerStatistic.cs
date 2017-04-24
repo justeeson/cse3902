@@ -114,7 +114,7 @@ namespace SuperMario
             {
                 counterForEndGame++;
             }
-            if (counterForEndGame > 10)
+            if (counterForEndGame > 5)
             {
                 counterForEndGame = 0;
             }
